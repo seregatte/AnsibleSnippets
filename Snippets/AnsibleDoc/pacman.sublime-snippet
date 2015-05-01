@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name of the package to install, upgrade, or remove.
+#recurse = When removing a package, also remove its dependencies, provided that they are not required by other packages and were not explicitly installed by a user.
+#state = Desired state of the package.
+#update_cache = Whether or not to refresh the master package lists. This can be run as part of a package installation or as a separate step.
+}- name: ${2:Name for pacman module.}
+${3:  sudo: ${4:yes}}
+  pacman: ${5:name=${6: } }${7:recurse=${8: } }${9:state=${10: } }${11:update_cache=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>pacman</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

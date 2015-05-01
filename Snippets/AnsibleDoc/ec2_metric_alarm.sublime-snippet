@@ -1,0 +1,11 @@
+<snippet>
+<content><![CDATA[
+${1:}- name: ${2:Name for ec2_metric_alarm module.}
+${3:  sudo: ${4:yes}}
+  ec2_metric_alarm: 
+${5:  when: ${6: variable is defined}}
+${7:  with_items: ${8: array}}
+]]></content>
+	<tabTrigger>ec2_metric_alarm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

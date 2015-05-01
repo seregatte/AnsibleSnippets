@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = Librato account api key
+#description = The description contains extra meta-data about a particular annotation The description should contain specifics on the individual annotation e.g. Deployed 9b562b2 shipped new feature foo!
+#end_time = The unix timestamp indicating the the time at which the event referenced by this annotation ended For events that have a duration, this is a useful way to annotate the duration of the event
+#links = See examples
+#name = The annotation stream name If the annotation stream does not exist, it will be created automatically
+#source = A string which describes the originating source of an annotation when that annotation is tracked across multiple members of a population
+#start_time = The unix timestamp indicating the the time at which the event referenced by this annotation started
+#title = The title of an annotation is a string and may contain spaces The title should be a short, high-level summary of the annotation e.g. v45 Deployment
+#user = Librato account username
+}- name: ${2:Name for librato_annotation module.}
+${3:  sudo: ${4:yes}}
+  librato_annotation: ${5:api_key=${6: } }${7:description=${8: } }${9:end_time=${10: } }${11:links=${12: } }${13:name=${14: } }${15:source=${16: } }${17:start_time=${18: } }${19:title=${20: } }${21:user=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>librato_annotation</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

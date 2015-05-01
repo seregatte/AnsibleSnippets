@@ -1,0 +1,35 @@
+<snippet>
+<content><![CDATA[
+${1:#availability_zones = List of availability zone names in which to create the group.  Defaults to all the availability zones in the region if vpc_zone_identifier is not set.
+#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+#desired_capacity = Desired number of instances in group
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Must be specified if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used
+#health_check_period = Length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts checking its health.
+#health_check_type = The service you want the health status from, Amazon EC2 or Elastic Load Balancer.
+#launch_config_name = Name of the Launch configuration to use for the group. See the ec2_lc module for managing these.
+#lc_check = Check to make sure instances that are being replaced with replace_instances do not aready have the current launch_config.
+#load_balancers = List of ELB names to use for the group
+#max_size = Maximum number of instances in group
+#min_size = Minimum number of instances in group
+#name = Unique name for group to be created or deleted
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#replace_all_instances = In a rolling fashion, replace all instances with an old launch configuration with one from the current launch configuraiton.
+#replace_batch_size = Number of instances you'd like to replace at a time.  Used with replace_all_instances.
+#replace_instances = List of instance_ids belonging to the named ASG that you would like to terminate and be replaced with instances matching the current launch configuration.
+#security_token = security token to authenticate against AWS
+#state = register or deregister the instance
+#tags = A list of tags to add to the Auto Scale Group. Optional key is 'propagate_at_launch', which defaults to true.
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+#vpc_zone_identifier = List of VPC subnets to use
+#wait_timeout = how long before wait instances to become viable when replaced.  Used in concjunction with instance_ids option.
+}- name: ${2:Name for ec2_asg module.}
+${3:  sudo: ${4:yes}}
+  ec2_asg: ${5:availability_zones=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:desired_capacity=${12: } }${13:ec2_url=${14: } }${15:health_check_period=${16: } }${17:health_check_type=${18: } }${19:launch_config_name=${20: } }${21:lc_check=${22: } }${23:load_balancers=${24: } }${25:max_size=${26: } }${27:min_size=${28: } }${29:name=${30: } }${31:profile=${32: } }${33:region=${34: } }${35:replace_all_instances=${36: } }${37:replace_batch_size=${38: } }${39:replace_instances=${40: } }${41:security_token=${42: } }${43:state=${44: } }${45:tags=${46: } }${47:validate_certs=${48: } }${49:vpc_zone_identifier=${50: } }${51:wait_timeout=${52: } }
+${53:  when: ${54: variable is defined}}
+${55:  with_items: ${56: array}}
+]]></content>
+	<tabTrigger>ec2_asg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

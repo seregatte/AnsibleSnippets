@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#permanent = Should this configuration be in the running firewalld configuration or persist across reboots
+#port = Name of a port to add/remove to/from firewalld must be in the form PORT/PROTOCOL
+#rich_rule = Rich rule to add/remove to/from firewalld
+#service = Name of a service to add/remove to/from firewalld - service must be listed in /etc/services
+#state = Should this port accept(enabled) or reject(disabled) connections
+#timeout = The amount of time the rule should be in effect for when non-permanent
+#zone = The firewalld zone to add/remove to/from (NOTE: default zone can be configured per system but "public" is default from upstream. Available choices can be extended based on per-system configs, listed here are "out of the box" defaults).
+}- name: ${2:Name for firewalld module.}
+${3:  sudo: ${4:yes}}
+  firewalld: ${5:permanent=${6: } }${7:port=${8: } }${9:rich_rule=${10: } }${11:service=${12: } }${13:state=${14: } }${15:timeout=${16: } }${17:zone=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>firewalld</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

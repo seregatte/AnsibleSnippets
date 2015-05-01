@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#action = This tells the githooks module what you want it to do.
+#hookurl = When creating a new hook, this is the url that you want github to post to. It is only required when creating a new hook.
+#oauthkey = The oauth key provided by github. It can be found/generated on github under "Edit Your Profile" >> "Applications" >> "Personal Access Tokens"
+#repo = This is the API url for the repository you want to manage hooks for. It should be in the form of: https://api.github.com/repos/user:/repo:. Note this is different than the normal repo url.
+#user = Github username.
+#validate_certs = If `no', SSL certificates for the target repo will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for github_hooks module.}
+${3:  sudo: ${4:yes}}
+  github_hooks: ${5:action=${6: } }${7:hookurl=${8: } }${9:oauthkey=${10: } }${11:repo=${12: } }${13:user=${14: } }${15:validate_certs=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>github_hooks</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#command = The selected redis command
+#db = The database to flush (used in db mode) [flush command]
+#flush_mode = Type of flush (all the dbs in a redis instance or a specific one) [flush command]
+#login_host = The host running the database
+#login_password = The password used to authenticate with (usually not used)
+#login_port = The port to connect to
+#master_host = The host of the master instance [slave command]
+#master_port = The port of the master instance [slave command]
+#name = A redis config key.
+#slave_mode = the mode of the redis instance [slave command]
+#value = A redis config value.
+}- name: ${2:Name for redis module.}
+${3:  sudo: ${4:yes}}
+  redis: ${5:command=${6: } }${7:db=${8: } }${9:flush_mode=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_port=${16: } }${17:master_host=${18: } }${19:master_port=${20: } }${21:name=${22: } }${23:slave_mode=${24: } }${25:value=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>redis</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#get_md5 = Whether to return the md5 sum of the file
+#path = The full path of the file/object to get the facts of; both forward and back slashes are accepted.
+}- name: ${2:Name for win_stat module.}
+${3:  sudo: ${4:yes}}
+  win_stat: ${5:get_md5=${6: } }${7:path=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>win_stat</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

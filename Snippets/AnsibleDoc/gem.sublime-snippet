@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#executable = Override the path to the gem executable
+#gem_source = The path to a local gem used as installation source.
+#include_dependencies = Whether to include dependencies or not.
+#name = The name of the gem to be managed.
+#pre_release = Allow installation of pre-release versions of the gem.
+#repository = The repository from which the gem will be installed
+#state = The desired state of the gem. `latest' ensures that the latest version is installed.
+#user_install = Install gem in user's local gems cache or for all users
+#version = Version of the gem to be installed/removed.
+}- name: ${2:Name for gem module.}
+${3:  sudo: ${4:yes}}
+  gem: ${5:executable=${6: } }${7:gem_source=${8: } }${9:include_dependencies=${10: } }${11:name=${12: } }${13:pre_release=${14: } }${15:repository=${16: } }${17:state=${18: } }${19:user_install=${20: } }${21:version=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>gem</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

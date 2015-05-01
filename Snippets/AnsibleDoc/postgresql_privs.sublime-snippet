@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#database = Name of database to connect to. Alias: `db'
+#grant_option = Whether `role' may grant/revoke the specified privileges/group memberships to others. Set to `no' to revoke GRANT OPTION, leave unspecified to make no changes. `grant_option' only has an effect if `state' is `present'. Alias: `admin_option'
+#host = Database host address. If unspecified, connect via Unix socket. Alias: `login_host'
+#login = The username to authenticate with. Alias: `login_user'
+#objs = Comma separated list of database objects to set privileges on. If `type' is `table' or `sequence', the special value `ALL_IN_SCHEMA' can be provided instead to specify all database objects of type `type' in the schema specified via `schema'. (This also works with PostgreSQL < 9.0.) If `type' is `database', this parameter can be omitted, in which case privileges are set for the database specified via `database'. If `type' is `function', colons (":") in object names will be replaced with commas (needed to specify function signatures, see examples) Alias: `obj'
+#password = The password to authenticate with. Alias: `login_password')
+#port = Database port to connect to.
+#privs = Comma separated list of privileges to grant/revoke. Alias: `priv'
+#roles = Comma separated list of role (user/group) names to set permissions for. The special value `PUBLIC' can be provided instead to set permissions for the implicitly defined PUBLIC group. Alias: `role'
+#schema = Schema that contains the database objects specified via `objs'. May only be provided if `type' is `table', `sequence' or `function'. Defaults to  `public' in these cases.
+#state = If `present', the specified privileges are granted, if `absent' they are revoked.
+#type = Type of database object to set privileges on.
+}- name: ${2:Name for postgresql_privs module.}
+${3:  sudo: ${4:yes}}
+  postgresql_privs: ${5:database=${6: } }${7:grant_option=${8: } }${9:host=${10: } }${11:login=${12: } }${13:objs=${14: } }${15:password=${16: } }${17:port=${18: } }${19:privs=${20: } }${21:roles=${22: } }${23:schema=${24: } }${25:state=${26: } }${27:type=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>postgresql_privs</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

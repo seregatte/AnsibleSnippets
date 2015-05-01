@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#client_id = OAuth2 client ID
+#client_secret = OAuth2 client secret
+#msg = message body
+#topic = topic id to post message
+}- name: ${2:Name for typetalk module.}
+${3:  sudo: ${4:yes}}
+  typetalk: ${5:client_id=${6: } }${7:client_secret=${8: } }${9:msg=${10: } }${11:topic=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>typetalk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

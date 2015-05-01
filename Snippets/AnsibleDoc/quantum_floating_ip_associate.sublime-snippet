@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#auth_url = the keystone url for authentication
+#instance_name = name of the instance to which the public IP should be assigned
+#ip_address = floating ip that should be assigned to the instance
+#login_password = password of login user
+#login_tenant_name = the tenant name of the login user
+#login_username = login username to authenticate to keystone
+#region_name = name of the region
+#state = indicates the desired state of the resource
+}- name: ${2:Name for quantum_floating_ip_associate module.}
+${3:  sudo: ${4:yes}}
+  quantum_floating_ip_associate: ${5:auth_url=${6: } }${7:instance_name=${8: } }${9:ip_address=${10: } }${11:login_password=${12: } }${13:login_tenant_name=${14: } }${15:login_username=${16: } }${17:region_name=${18: } }${19:state=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>quantum_floating_ip_associate</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

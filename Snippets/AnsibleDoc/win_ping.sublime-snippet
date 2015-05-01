@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+${1:#data = Alternate data to return instead of 'pong'
+}- name: ${2:Name for win_ping module.}
+${3:  sudo: ${4:yes}}
+  win_ping: ${5:data=${6: } }
+${7:  when: ${8: variable is defined}}
+${9:  with_items: ${10: array}}
+]]></content>
+	<tabTrigger>win_ping</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#bucket = Bucket name.
+#dest = The destination file path when downloading an object/key with a GET operation.
+#expiration = Time limit (in seconds) for the URL generated and returned by GCA when performing a mode=put or mode=get_url operation. This url is only avaialbe when public-read is the acl for the object.
+#force = Forces an overwrite either locally on the filesystem or remotely with the object/key. Used with PUT and GET operations.
+#gcs_access_key = GCS access key. If not set then the value of the GCS_ACCESS_KEY environment variable is used.
+#gcs_secret_key = GCS secret key. If not set then the value of the GCS_SECRET_KEY environment variable is used.
+#mode = Switches the module behaviour between upload, download, get_url (return download url) , get_str (download object as string), create (bucket) and delete (bucket).
+#object = Keyname of the object inside the bucket. Can be also be used to create "virtual directories" (see examples).
+#permission = This option let's the user set the canned permissions on the object/bucket that are created. The permissions that can be set are 'private', 'public-read', 'authenticated-read'.
+#src = The source file path when performing a PUT operation.
+}- name: ${2:Name for gc_storage module.}
+${3:  sudo: ${4:yes}}
+  gc_storage: ${5:bucket=${6: } }${7:dest=${8: } }${9:expiration=${10: } }${11:force=${12: } }${13:gcs_access_key=${14: } }${15:gcs_secret_key=${16: } }${17:mode=${18: } }${19:object=${20: } }${21:permission=${22: } }${23:src=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>gc_storage</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

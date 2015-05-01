@@ -1,0 +1,47 @@
+<snippet>
+<content><![CDATA[
+${1:#assign_public_ip = when provisioning within vpc, assign a public IP address. Boto library must be 2.13.0+
+#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+#count = number of instances to launch
+#count_tag = Used with 'exact_count' to determine how many nodes based on a specific tag criteria should be running.  This can be expressed in multiple ways and is shown in the EXAMPLES section.  For instance, one can request 25 servers that are tagged with "class=webserver".
+#ebs_optimized = whether instance is using optimized EBS volumes, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Must be specified if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used
+#exact_count = An integer value which indicates how many instances that match the 'count_tag' parameter should be running. Instances are either created or terminated based on this value.
+#group = security group (or list of groups) to use with the instance
+#group_id = security group id (or list of ids) to use with the instance
+#id = identifier for this instance or set of instances, so that the module will be idempotent with respect to EC2 instances. This identifier is valid for at least 24 hours after the termination of the instance, and should not be reused for another call later on. For details, see the description of client token at http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html.
+#image = `emi' (or `ami') to use for the instance
+#instance_ids = list of instance ids, currently used for states: absent, running, stopped
+#instance_profile_name = Name of the IAM instance profile to use. Boto library must be 2.5.0+
+#instance_tags = a hash/dictionary of tags to add to the new instance; '{"key":"value"}' and '{"key":"value","key":"value"}'
+#instance_type = instance type to use for the instance
+#kernel = kernel `eki' to use for the instance
+#key_name = key pair to use on the instance
+#monitoring = enable detailed monitoring (CloudWatch) for instance
+#placement_group = placement group for the instance when using EC2 Clustered Compute
+#private_ip = the private ip address to assign the instance (from the vpc subnet)
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#ramdisk = ramdisk `eri' to use for the instance
+#region = The AWS region to use.  Must be specified if ec2_url is not used. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#security_token = security token to authenticate against AWS
+#source_dest_check = Enable or Disable the Source/Destination checks (for NAT instances and Virtual Routers)
+#spot_price = Maximum spot price to bid, If not set a regular on-demand instance is requested. A spot request is made with this maximum bid. When it is filled, the instance is started.
+#spot_wait_timeout = how long to wait for the spot instance request to be fulfilled
+#state = create or terminate instances
+#user_data = opaque blob of data which is made available to the ec2 instance
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+#volumes = a list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and type (and number of iops for io device type) must be specified for a new volume or a root volume, and may be passed for a snapshot volume. For any volume, a volume size less than 1 will be interpreted as a request not to create the volume.
+#vpc_subnet_id = the subnet ID in which to launch the instance (VPC)
+#wait = wait for the instance to be in state 'running' before returning
+#wait_timeout = how long before wait gives up, in seconds
+#zone = AWS availability zone in which to launch the instance
+}- name: ${2:Name for ec2 module.}
+${3:  sudo: ${4:yes}}
+  ec2: ${5:assign_public_ip=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:count=${12: } }${13:count_tag=${14: } }${15:ebs_optimized=${16: } }${17:ec2_url=${18: } }${19:exact_count=${20: } }${21:group=${22: } }${23:group_id=${24: } }${25:id=${26: } }${27:image=${28: } }${29:instance_ids=${30: } }${31:instance_profile_name=${32: } }${33:instance_tags=${34: } }${35:instance_type=${36: } }${37:kernel=${38: } }${39:key_name=${40: } }${41:monitoring=${42: } }${43:placement_group=${44: } }${45:private_ip=${46: } }${47:profile=${48: } }${49:ramdisk=${50: } }${51:region=${52: } }${53:security_token=${54: } }${55:source_dest_check=${56: } }${57:spot_price=${58: } }${59:spot_wait_timeout=${60: } }${61:state=${62: } }${63:user_data=${64: } }${65:validate_certs=${66: } }${67:volumes=${68: } }${69:vpc_subnet_id=${70: } }${71:wait=${72: } }${73:wait_timeout=${74: } }${75:zone=${76: } }
+${77:  when: ${78: variable is defined}}
+${79:  with_items: ${80: array}}
+]]></content>
+	<tabTrigger>ec2</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

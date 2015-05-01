@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#name = name of package to install/remove
+#state = state of the package
+#use_packages = use packages instead of ports whenever available
+}- name: ${2:Name for portinstall module.}
+${3:  sudo: ${4:yes}}
+  portinstall: ${5:name=${6: } }${7:state=${8: } }${9:use_packages=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>portinstall</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

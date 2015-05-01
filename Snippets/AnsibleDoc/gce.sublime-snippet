@@ -1,0 +1,25 @@
+<snippet>
+<content><![CDATA[
+${1:#disks = a list of persistent disks to attach to the instance; a string value gives the name of the disk; alternatively, a dictionary value can define 'name' and 'mode' ('READ_ONLY' or 'READ_WRITE'). The first entry will be the boot disk (which must be READ_WRITE).
+#image = image string to use for the instance
+#instance_names = a comma-separated list of instance names to create or destroy
+#machine_type = machine type to use for the instance, use 'n1-standard-1' by default
+#metadata = a hash/dictionary of custom data for the instance; '{"key":"value",...}'
+#name = identifier when working with a single instance
+#network = name of the network, 'default' will be used if not specified
+#pem_file = path to the pem file associated with the service account email
+#persistent_boot_disk = if set, create the instance with a persistent boot disk
+#project_id = your GCE project ID
+#service_account_email = service account email
+#state = desired state of the resource
+#tags = a comma-separated list of tags to associate with the instance
+#zone = the GCE zone to use
+}- name: ${2:Name for gce module.}
+${3:  sudo: ${4:yes}}
+  gce: ${5:disks=${6: } }${7:image=${8: } }${9:instance_names=${10: } }${11:machine_type=${12: } }${13:metadata=${14: } }${15:name=${16: } }${17:network=${18: } }${19:pem_file=${20: } }${21:persistent_boot_disk=${22: } }${23:project_id=${24: } }${25:service_account_email=${26: } }${27:state=${28: } }${29:tags=${30: } }${31:zone=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
+]]></content>
+	<tabTrigger>gce</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

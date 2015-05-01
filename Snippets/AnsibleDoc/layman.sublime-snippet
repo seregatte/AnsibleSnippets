@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#list_url = An URL of the alternative overlays list that defines the overlay to install. This list will be fetched and saved under `${overlay_defs}'/${name}.xml), where `overlay_defs' is readed from the Layman's configuration.
+#name = The overlay id to install, synchronize, or uninstall. Use 'ALL' to sync all of the installed overlays (can be used only when `state=updated').
+#state = Whether to install (`present'), sync (`updated'), or uninstall (`absent') the overlay.
+}- name: ${2:Name for layman module.}
+${3:  sudo: ${4:yes}}
+  layman: ${5:list_url=${6: } }${7:name=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>layman</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

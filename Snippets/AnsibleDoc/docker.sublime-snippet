@@ -1,0 +1,37 @@
+<snippet>
+<content><![CDATA[
+${1:#command = Set command to run in a container on startup
+#count = Set number of containers to run
+#detach = Enable detached mode on start up, leaves container running in background
+#dns = Set custom DNS servers for the container
+#docker_api_version = Remote API version to use. This defaults to the current default as specified by docker-py.
+#docker_url = URL of docker host to issue commands to
+#env = Set environment variables (e.g. env="PASSWORD=sEcRe7,WORKERS=4")
+#expose = Set container ports to expose for port mappings or links. (If the port is already exposed using EXPOSE in a Dockerfile, you don't need to expose it again.)
+#hostname = Set container hostname
+#image = Set container image to use
+#links = Link container(s) to other container(s) (e.g. links=redis,postgresql:db)
+#lxc_conf = LXC config parameters,  e.g. lxc.aa_profile:unconfined
+#memory_limit = Set RAM allocated to container
+#name = Set the name of the container (cannot use with count)
+#net = Set Network mode for the container (bridge, none, container:<name|id>, host). Requires docker >= 0.11.
+#password = Set remote API password
+#ports = Set private to public port mapping specification using docker CLI-style syntax [([<host_interface>:[host_port]])|(<host_port>):]<container_port>[/udp]
+#privileged = Set whether the container should run in privileged mode
+#publish_all_ports = Publish all exposed ports to the host interfaces
+#registry = The remote registry URL to use for pulling images.
+#state = Set the state of the container
+#stdin_open = Keep stdin open
+#tty = Allocate a pseudo-tty
+#username = Set remote API username
+#volumes = Set volume(s) to mount on the container
+#volumes_from = Set shared volume(s) from another container
+}- name: ${2:Name for docker module.}
+${3:  sudo: ${4:yes}}
+  docker: ${5:command=${6: } }${7:count=${8: } }${9:detach=${10: } }${11:dns=${12: } }${13:docker_api_version=${14: } }${15:docker_url=${16: } }${17:env=${18: } }${19:expose=${20: } }${21:hostname=${22: } }${23:image=${24: } }${25:links=${26: } }${27:lxc_conf=${28: } }${29:memory_limit=${30: } }${31:name=${32: } }${33:net=${34: } }${35:password=${36: } }${37:ports=${38: } }${39:privileged=${40: } }${41:publish_all_ports=${42: } }${43:registry=${44: } }${45:state=${46: } }${47:stdin_open=${48: } }${49:tty=${50: } }${51:username=${52: } }${53:volumes=${54: } }${55:volumes_from=${56: } }
+${57:  when: ${58: variable is defined}}
+${59:  with_items: ${60: array}}
+]]></content>
+	<tabTrigger>docker</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

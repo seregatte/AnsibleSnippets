@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+#disable_rollback = If a stacks fails to form, rollback will remove the stack
+#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#stack_name = name of the cloudformation stack
+#state = If state is "present", stack will be created.  If state is "present" and if stack exists and template has changed, it will be updated. If state is absent, stack will be removed.
+#tags = Dictionary of tags to associate with stack and it's resources during stack creation. Cannot be updated later. Requires at least Boto version 2.6.0.
+#template = the path of the cloudformation template
+#template_parameters = a list of hashes of all the template variables for the stack
+}- name: ${2:Name for cloudformation module.}
+${3:  sudo: ${4:yes}}
+  cloudformation: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:disable_rollback=${10: } }${11:region=${12: } }${13:stack_name=${14: } }${15:state=${16: } }${17:tags=${18: } }${19:template=${20: } }${21:template_parameters=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>cloudformation</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = name of cask to install/remove
+#state = state of the cask
+}- name: ${2:Name for homebrew_cask module.}
+${3:  sudo: ${4:yes}}
+  homebrew_cask: ${5:name=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>homebrew_cask</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

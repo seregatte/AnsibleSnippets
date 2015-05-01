@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#activationkey = supply an activation key for use with registration
+#channels = Optionally specify a list of comma-separated channels to subscribe to upon successful registration.
+#password = Red Hat Network password
+#server_url = Specify an alternative Red Hat Network server URL
+#state = whether to register (`present'), or unregister (`absent') a system
+#username = Red Hat Network username
+}- name: ${2:Name for rhn_register module.}
+${3:  sudo: ${4:yes}}
+  rhn_register: ${5:activationkey=${6: } }${7:channels=${8: } }${9:password=${10: } }${11:server_url=${12: } }${13:state=${14: } }${15:username=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>rhn_register</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

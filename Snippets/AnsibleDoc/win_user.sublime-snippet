@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Username of the user to manage
+#password = Password for the user (plain text)
+#state = Whether to create or delete a user
+}- name: ${2:Name for win_user module.}
+${3:  sudo: ${4:yes}}
+  win_user: ${5:name=${6: } }${7:password=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>win_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

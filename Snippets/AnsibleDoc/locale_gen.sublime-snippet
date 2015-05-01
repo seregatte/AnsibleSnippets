@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name and encoding of the locale, such as "en_GB.UTF-8".
+#state = Whether the locale shall be present.
+}- name: ${2:Name for locale_gen module.}
+${3:  sudo: ${4:yes}}
+  locale_gen: ${5:name=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>locale_gen</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

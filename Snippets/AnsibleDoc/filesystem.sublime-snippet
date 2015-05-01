@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#dev = Target block device.
+#force = If yes, allows to create new filesystem on devices that already has filesystem.
+#fstype = File System type to be created.
+#opts = List of options to be passed to mkfs command.
+}- name: ${2:Name for filesystem module.}
+${3:  sudo: ${4:yes}}
+  filesystem: ${5:dev=${6: } }${7:force=${8: } }${9:fstype=${10: } }${11:opts=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>filesystem</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

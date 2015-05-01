@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#from_path = The local directory from where to install
+#locallib = Specify the install base to install modules
+#mirror = Specifies the base URL for the CPAN mirror to use
+#name = The name of the Perl library to install. You may use the "full distribution path", e.g.  MIYAGAWA/Plack-0.99_05.tar.gz
+#notest = Do not run unit tests
+}- name: ${2:Name for cpanm module.}
+${3:  sudo: ${4:yes}}
+  cpanm: ${5:from_path=${6: } }${7:locallib=${8: } }${9:mirror=${10: } }${11:name=${12: } }${13:notest=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>cpanm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

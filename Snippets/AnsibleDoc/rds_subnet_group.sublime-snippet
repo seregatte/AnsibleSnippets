@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+#description = Database subnet group description. Only set when a new group is added.
+#name = Database subnet group identifier.
+#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#state = Specifies whether the subnet should be present or absent.
+#subnets = List of subnet IDs that make up the database subnet group.
+}- name: ${2:Name for rds_subnet_group module.}
+${3:  sudo: ${4:yes}}
+  rds_subnet_group: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:description=${10: } }${11:name=${12: } }${13:region=${14: } }${15:state=${16: } }${17:subnets=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>rds_subnet_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

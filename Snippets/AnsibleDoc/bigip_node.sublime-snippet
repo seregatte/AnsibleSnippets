@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#description = Node description.
+#host = Node IP. Required when state=present and node does not exist. Error when state=absent.
+#name = Node name
+#partition = Partition
+#password = BIG-IP password
+#server = BIG-IP host
+#state = Pool member state
+#user = BIG-IP username
+}- name: ${2:Name for bigip_node module.}
+${3:  sudo: ${4:yes}}
+  bigip_node: ${5:description=${6: } }${7:host=${8: } }${9:name=${10: } }${11:partition=${12: } }${13:password=${14: } }${15:server=${16: } }${17:state=${18: } }${19:user=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>bigip_node</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#command = Composer command like "install", "update" and so on
+#no_dev = Disables installation of require-dev packages ( see --no-dev )
+#no_plugins = Disables all plugins ( see --no-plugins )
+#no_scripts = Skips the execution of all scripts defined in composer.json ( see --no-scripts )
+#optimize_autoloader = Optimize autoloader during autoloader dump ( see --optimize-autoloader ). Convert PSR-0/4 autoloading to classmap to get a faster autoloader. This is recommended especially for production, but can take a bit of time to run so it is currently not done by default.
+#prefer_dist = Forces installation from package dist even for de versions ( see --prefer-dist )
+#prefer_source = Forces installation from package sources when possible ( see --prefer-source )
+#working_dir = Directory of your project ( see --working-dir )
+}- name: ${2:Name for composer module.}
+${3:  sudo: ${4:yes}}
+  composer: ${5:command=${6: } }${7:no_dev=${8: } }${9:no_plugins=${10: } }${11:no_scripts=${12: } }${13:optimize_autoloader=${14: } }${15:prefer_dist=${16: } }${17:prefer_source=${18: } }${19:working_dir=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>composer</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

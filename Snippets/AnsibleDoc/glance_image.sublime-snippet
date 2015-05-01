@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:#auth_url = The keystone url for authentication
+#container_format = The format of the container
+#copy_from = A url from where the image can be downloaded, mutually exclusive with file parameter
+#disk_format = The format of the disk that is getting uploaded
+#endpoint_type = The name of the glance service's endpoint URL type
+#file = The path to the file which has to be uploaded, mutually exclusive with copy_from
+#is_public = Whether the image can be accessed publicly
+#login_password = Password of login user
+#login_tenant_name = The tenant name of the login user
+#login_username = login username to authenticate to keystone
+#min_disk = The minimum disk space required to deploy this image
+#min_ram = The minimum ram required to deploy this image
+#name = Name that has to be given to the image
+#owner = The owner of the image
+#region_name = Name of the region
+#state = Indicate desired state of the resource
+#timeout = The time to wait for the image process to complete in seconds
+}- name: ${2:Name for glance_image module.}
+${3:  sudo: ${4:yes}}
+  glance_image: ${5:auth_url=${6: } }${7:container_format=${8: } }${9:copy_from=${10: } }${11:disk_format=${12: } }${13:endpoint_type=${14: } }${15:file=${16: } }${17:is_public=${18: } }${19:login_password=${20: } }${21:login_tenant_name=${22: } }${23:login_username=${24: } }${25:min_disk=${26: } }${27:min_ram=${28: } }${29:name=${30: } }${31:owner=${32: } }${33:region_name=${34: } }${35:state=${36: } }${37:timeout=${38: } }
+${39:  when: ${40: variable is defined}}
+${41:  with_items: ${42: array}}
+]]></content>
+	<tabTrigger>glance_image</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

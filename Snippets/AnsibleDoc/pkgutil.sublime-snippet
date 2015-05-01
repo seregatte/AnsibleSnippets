@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Package name, e.g. (`CSWnrpe')
+#site = Specifies the repository path to install the package from. Its global definition is done in `/etc/opt/csw/pkgutil.conf'.
+#state = Whether to install (`present'), or remove (`absent') a package. The upgrade (`latest') operation will update/install the package to the latest version available. Note: The module has a limitation that (`latest') only works for one package, not lists of them.
+}- name: ${2:Name for pkgutil module.}
+${3:  sudo: ${4:yes}}
+  pkgutil: ${5:name=${6: } }${7:site=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>pkgutil</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

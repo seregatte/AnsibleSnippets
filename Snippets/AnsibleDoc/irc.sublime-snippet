@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#channel = Channel name
+#color = Text color for the message. ("none" is a valid option in 1.6 or later, in 1.6 and prior, the default color is black, not "none").
+#key = Channel key
+#msg = The message body.
+#nick = Nickname. May be shortened, depending on server's NICKLEN setting.
+#passwd = Server password
+#port = IRC server port number
+#server = IRC server name/address
+#timeout = Timeout to use while waiting for successful registration and join messages, this is to prevent an endless loop
+#use_ssl = Designates whether TLS/SSL should be used when connecting to the IRC server
+}- name: ${2:Name for irc module.}
+${3:  sudo: ${4:yes}}
+  irc: ${5:channel=${6: } }${7:color=${8: } }${9:key=${10: } }${11:msg=${12: } }${13:nick=${14: } }${15:passwd=${16: } }${17:port=${18: } }${19:server=${20: } }${21:timeout=${22: } }${23:use_ssl=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>irc</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

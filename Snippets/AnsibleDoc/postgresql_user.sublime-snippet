@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:#db = name of database where permissions will be granted
+#encrypted = denotes if the password is already encrypted. boolean.
+#expires = sets the user's password expiration.
+#fail_on_user = if `yes', fail when user can't be removed. Otherwise just log and continue
+#login_host = Host running PostgreSQL.
+#login_password = Password used to authenticate with PostgreSQL
+#login_user = User (role) used to authenticate with PostgreSQL
+#name = name of the user (role) to add or remove
+#password = set the user's password, before 1.4 this was required. When passing an encrypted password, the encrypted parameter must also be true, and it must be generated with the format `'str["md5"] + md5[ password + username ]'', resulting in a total of 35 characters.  An easy way to do this is: `echo "md5`echo -n "verysecretpasswordJOE" | md5`"'.
+#port = Database port to connect to.
+#priv = PostgreSQL privileges string in the format: `table:priv1,priv2'
+#role_attr_flags = PostgreSQL role attributes string in the format: CREATEDB,CREATEROLE,SUPERUSER
+#state = The user (role) state
+}- name: ${2:Name for postgresql_user module.}
+${3:  sudo: ${4:yes}}
+  postgresql_user: ${5:db=${6: } }${7:encrypted=${8: } }${9:expires=${10: } }${11:fail_on_user=${12: } }${13:login_host=${14: } }${15:login_password=${16: } }${17:login_user=${18: } }${19:name=${20: } }${21:password=${22: } }${23:port=${24: } }${25:priv=${26: } }${27:role_attr_flags=${28: } }${29:state=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
+]]></content>
+	<tabTrigger>postgresql_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

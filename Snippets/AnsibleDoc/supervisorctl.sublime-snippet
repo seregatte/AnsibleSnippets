@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#config = The supervisor configuration file path
+#name = The name of the supervisord program or group to manage. The name will be taken as group name when it ends with a colon `:' Group support is only available in Ansible version 1.6 or later.
+#password = password to use for authentication
+#server_url = URL on which supervisord server is listening
+#state = The desired state of program/group.
+#supervisorctl_path = path to supervisorctl executable
+#username = username to use for authentication
+}- name: ${2:Name for supervisorctl module.}
+${3:  sudo: ${4:yes}}
+  supervisorctl: ${5:config=${6: } }${7:name=${8: } }${9:password=${10: } }${11:server_url=${12: } }${13:state=${14: } }${15:supervisorctl_path=${16: } }${17:username=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>supervisorctl</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

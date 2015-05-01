@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:#external_user_name = (chat only - required) Name of the "user" sending the message
+#from_address = (inbox only - required) Email address of the message sender
+#from_name = (inbox only) Name of the message sender
+#link = (inbox only) Link associated with the message. This will be used to link the message subject in Team Inbox.
+#msg = Content of the message
+#project = (inbox only) Human readable identifier for more detailed message categorization
+#reply_to = (inbox only) Email address for replies
+#source = (inbox only - required) Human readable identifier of the application that uses the Flowdock API
+#subject = (inbox only - required) Subject line of the message
+#tags = tags of the message, separated by commas
+#token = API token.
+#type = Whether to post to 'inbox' or 'chat'
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for flowdock module.}
+${3:  sudo: ${4:yes}}
+  flowdock: ${5:external_user_name=${6: } }${7:from_address=${8: } }${9:from_name=${10: } }${11:link=${12: } }${13:msg=${14: } }${15:project=${16: } }${17:reply_to=${18: } }${19:source=${20: } }${21:subject=${22: } }${23:tags=${24: } }${25:token=${26: } }${27:type=${28: } }${29:validate_certs=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
+]]></content>
+	<tabTrigger>flowdock</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

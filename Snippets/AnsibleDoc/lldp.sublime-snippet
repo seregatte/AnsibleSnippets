@@ -1,0 +1,11 @@
+<snippet>
+<content><![CDATA[
+${1:}- name: ${2:Name for lldp module.}
+${3:  sudo: ${4:yes}}
+  lldp: 
+${5:  when: ${6: variable is defined}}
+${7:  with_items: ${8: array}}
+]]></content>
+	<tabTrigger>lldp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key.
+#aws_secret_key = AWS secret key.
+#command = Specifies the action to take.
+#overwrite = Whether an existing record should be overwritten on create if values do not match
+#record = The full DNS record to create or delete
+#retry_interval = In the case that route53 is still servicing a prior request, this module will wait and try again after this many seconds. If you have many domain names, the default of 500 seconds may be too long.
+#ttl = The TTL to give the new record
+#type = The type of DNS record to create
+#value = The new value when creating a DNS record.  Multiple comma-spaced values are allowed.  When deleting a record all values for the record must be specified or Route53 will not delete it.
+#zone = The DNS zone to modify
+}- name: ${2:Name for route53 module.}
+${3:  sudo: ${4:yes}}
+  route53: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:command=${10: } }${11:overwrite=${12: } }${13:record=${14: } }${15:retry_interval=${16: } }${17:ttl=${18: } }${19:type=${20: } }${21:value=${22: } }${23:zone=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>route53</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

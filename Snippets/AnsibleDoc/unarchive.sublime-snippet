@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#copy = if true, the file is copied from the 'master' to the target machine, otherwise, the plugin will look for src archive at the target machine.
+#creates = a filename, when it already exists, this step will *not* be run.
+#dest = Remote absolute path where the archive should be unpacked
+#follow = This flag indicates that filesystem links, if they exist, should be followed.
+#group = name of the group that should own the file/directory, as would be fed to `chown'
+#mode = mode the file or directory should be, such as 0644 as would be fed to `chmod'. As of version 1.8, the mode may be specified as a symbolic mode (for example, `u+rwx' or `u=rw,g=r,o=r').
+#owner = name of the user that should own the file/directory, as would be fed to `chown'
+#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. `_default' feature works as for `seuser'.
+#serole = role part of SELinux file context, `_default' feature works as for `seuser'.
+#setype = type part of SELinux file context, `_default' feature works as for `seuser'.
+#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will use the `user' portion of the policy if available
+#src = Local path to archive file to copy to the remote server; can be absolute or relative.
+}- name: ${2:Name for unarchive module.}
+${3:  sudo: ${4:yes}}
+  unarchive: ${5:copy=${6: } }${7:creates=${8: } }${9:dest=${10: } }${11:follow=${12: } }${13:group=${14: } }${15:mode=${16: } }${17:owner=${18: } }${19:selevel=${20: } }${21:serole=${22: } }${23:setype=${24: } }${25:seuser=${26: } }${27:src=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>unarchive</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

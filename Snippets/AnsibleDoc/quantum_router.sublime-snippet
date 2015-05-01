@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#admin_state_up = desired admin state of the created router .
+#auth_url = The keystone url for authentication
+#login_password = Password of login user
+#login_tenant_name = The tenant name of the login user
+#login_username = login username to authenticate to keystone
+#name = Name to be give to the router
+#region_name = Name of the region
+#state = Indicate desired state of the resource
+#tenant_name = Name of the tenant for which the router has to be created, if none router would be created for the login tenant.
+}- name: ${2:Name for quantum_router module.}
+${3:  sudo: ${4:yes}}
+  quantum_router: ${5:admin_state_up=${6: } }${7:auth_url=${8: } }${9:login_password=${10: } }${11:login_tenant_name=${12: } }${13:login_username=${14: } }${15:name=${16: } }${17:region_name=${18: } }${19:state=${20: } }${21:tenant_name=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>quantum_router</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

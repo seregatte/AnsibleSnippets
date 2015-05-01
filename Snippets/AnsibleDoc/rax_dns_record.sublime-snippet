@@ -1,0 +1,27 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = Rackspace API key (overrides `credentials')
+#comment = Brief description of the domain. Maximum length of 160 characters
+#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
+#data = IP address for A/AAAA record, FQDN for CNAME/MX/NS, or text data for SRV/TXT
+#domain = Domain name to create the record in. This is an invalid option when type=PTR
+#env = pyrax-configuration
+#loadbalancer = Load Balancer ID to create a PTR record for. Only used with type=PTR
+#name = FQDN record name to create
+#priority = Required for MX and SRV records, but forbidden for other record types. If specified, must be an integer from 0 to 65535.
+#region = Region to create an instance in
+#server = Server ID to create a PTR record for. Only used with type=PTR
+#state = Indicate desired state of the resource
+#ttl = Time to live of record in seconds
+#type = DNS record type
+#username = Rackspace username (overrides `credentials')
+#verify_ssl = Whether or not to require SSL validation of API endpoints
+}- name: ${2:Name for rax_dns_record module.}
+${3:  sudo: ${4:yes}}
+  rax_dns_record: ${5:api_key=${6: } }${7:comment=${8: } }${9:credentials=${10: } }${11:data=${12: } }${13:domain=${14: } }${15:env=${16: } }${17:loadbalancer=${18: } }${19:name=${20: } }${21:priority=${22: } }${23:region=${24: } }${25:server=${26: } }${27:state=${28: } }${29:ttl=${30: } }${31:type=${32: } }${33:username=${34: } }${35:verify_ssl=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
+]]></content>
+	<tabTrigger>rax_dns_record</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

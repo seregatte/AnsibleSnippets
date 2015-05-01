@@ -1,0 +1,49 @@
+<snippet>
+<content><![CDATA[
+${1:#aclinherit = The aclinherit property.
+#aclmode = The aclmode property.
+#atime = The atime property.
+#canmount = The canmount property.
+#casesensitivity = The casesensitivity property.
+#checksum = The checksum property.
+#compression = The compression property.
+#copies = The copies property.
+#dedup = The dedup property.
+#devices = The devices property.
+#exec = The exec property.
+#jailed = The jailed property.
+#logbias = The logbias property.
+#mountpoint = The mountpoint property.
+#name = File system, snapshot or volume name e.g. `rpool/myfs'
+#nbmand = The nbmand property.
+#normalization = The normalization property.
+#primarycache = The primarycache property.
+#quota = The quota property.
+#readonly = The readonly property.
+#recordsize = The recordsize property.
+#refquota = The refquota property.
+#refreservation = The refreservation property.
+#reservation = The reservation property.
+#secondarycache = The secondarycache property.
+#setuid = The setuid property.
+#shareiscsi = The shareiscsi property.
+#sharenfs = The sharenfs property.
+#sharesmb = The sharesmb property.
+#snapdir = The snapdir property.
+#state = Whether to create (`present'), or remove (`absent') a file system, snapshot or volume.
+#sync = The sync property.
+#utf8only = The utf8only property.
+#volblocksize = The volblocksize property.
+#volsize = The volsize property.
+#vscan = The vscan property.
+#xattr = The xattr property.
+#zoned = The zoned property.
+}- name: ${2:Name for zfs module.}
+${3:  sudo: ${4:yes}}
+  zfs: ${5:aclinherit=${6: } }${7:aclmode=${8: } }${9:atime=${10: } }${11:canmount=${12: } }${13:casesensitivity=${14: } }${15:checksum=${16: } }${17:compression=${18: } }${19:copies=${20: } }${21:dedup=${22: } }${23:devices=${24: } }${25:exec=${26: } }${27:jailed=${28: } }${29:logbias=${30: } }${31:mountpoint=${32: } }${33:name=${34: } }${35:nbmand=${36: } }${37:normalization=${38: } }${39:primarycache=${40: } }${41:quota=${42: } }${43:readonly=${44: } }${45:recordsize=${46: } }${47:refquota=${48: } }${49:refreservation=${50: } }${51:reservation=${52: } }${53:secondarycache=${54: } }${55:setuid=${56: } }${57:shareiscsi=${58: } }${59:sharenfs=${60: } }${61:sharesmb=${62: } }${63:snapdir=${64: } }${65:state=${66: } }${67:sync=${68: } }${69:utf8only=${70: } }${71:volblocksize=${72: } }${73:volsize=${74: } }${75:vscan=${76: } }${77:xattr=${78: } }${79:zoned=${80: } }
+${81:  when: ${82: variable is defined}}
+${83:  with_items: ${84: array}}
+]]></content>
+	<tabTrigger>zfs</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

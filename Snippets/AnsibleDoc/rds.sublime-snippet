@@ -1,0 +1,43 @@
+<snippet>
+<content><![CDATA[
+${1:#apply_immediately = Used only when command=modify.  If enabled, the modifications will be applied as soon as possible rather than waiting for the next preferred maintenance window.
+#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+#backup_retention = Number of days backups are retained.  Set to 0 to disable backups.  Default is 1 day.  Valid range: 0-35. Used only when command=create or command=modify.
+#backup_window = Backup window in format of hh24:mi-hh24:mi.  If not specified then a random backup window is assigned. Used only when command=create or command=modify.
+#command = Specifies the action to take.
+#db_engine = The type of database.  Used only when command=create.
+#db_name = Name of a database to create within the instance.  If not specified then no database is created. Used only when command=create.
+#engine_version = Version number of the database engine to use. Used only when command=create. If not specified then the current Amazon RDS default engine version is used.
+#instance_name = Database instance identifier.
+#instance_type = The instance type of the database.  Must be specified when command=create. Optional when command=replicate, command=modify or command=restore. If not specified then the replica inherits the same instance type as the source instance.
+#iops = Specifies the number of IOPS for the instance.  Used only when command=create or command=modify. Must be an integer greater than 1000.
+#license_model = The license model for this DB instance. Used only when command=create or command=restore.
+#maint_window = Maintenance window in format of ddd:hh24:mi-ddd:hh24:mi.  (Example: Mon:22:00-Mon:23:15) If not specified then a random maintenance window is assigned. Used only when command=create or command=modify.
+#multi_zone = Specifies if this is a Multi-availability-zone deployment. Can not be used in conjunction with zone parameter. Used only when command=create or command=modify.
+#new_instance_name = Name to rename an instance to. Used only when command=modify.
+#option_group = The name of the option group to use.  If not specified then the default option group is used. Used only when command=create.
+#parameter_group = Name of the DB parameter group to associate with this instance.  If omitted then the RDS default DBParameterGroup will be used. Used only when command=create or command=modify.
+#password = Password for the master database username. Used only when command=create or command=modify.
+#port = Port number that the DB instance uses for connections.  Defaults to 3306 for mysql. Must be changed to 1521 for Oracle, 1443 for SQL Server, 5432 for PostgreSQL. Used only when command=create or command=replicate.
+#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#security_groups = Comma separated list of one or more security groups.  Used only when command=create or command=modify.
+#size = Size in gigabytes of the initial storage for the DB instance. Used only when command=create or command=modify.
+#snapshot = Name of snapshot to take. When command=delete, if no snapshot name is provided then no snapshot is taken. Used only when command=delete or command=snapshot.
+#source_instance = Name of the database to replicate. Used only when command=replicate.
+#subnet = VPC subnet group.  If specified then a VPC instance is created. Used only when command=create.
+#upgrade = Indicates that minor version upgrades should be applied automatically. Used only when command=create or command=replicate.
+#username = Master database username. Used only when command=create.
+#vpc_security_groups = Comma separated list of one or more vpc security group ids. Also requires `subnet` to be specified. Used only when command=create or command=modify.
+#wait = When command=create, replicate, modify or restore then wait for the database to enter the 'available' state.  When command=delete wait for the database to be terminated.
+#wait_timeout = how long before wait gives up, in seconds
+#zone = availability zone in which to launch the instance. Used only when command=create, command=replicate or command=restore.
+}- name: ${2:Name for rds module.}
+${3:  sudo: ${4:yes}}
+  rds: ${5:apply_immediately=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:backup_retention=${12: } }${13:backup_window=${14: } }${15:command=${16: } }${17:db_engine=${18: } }${19:db_name=${20: } }${21:engine_version=${22: } }${23:instance_name=${24: } }${25:instance_type=${26: } }${27:iops=${28: } }${29:license_model=${30: } }${31:maint_window=${32: } }${33:multi_zone=${34: } }${35:new_instance_name=${36: } }${37:option_group=${38: } }${39:parameter_group=${40: } }${41:password=${42: } }${43:port=${44: } }${45:region=${46: } }${47:security_groups=${48: } }${49:size=${50: } }${51:snapshot=${52: } }${53:source_instance=${54: } }${55:subnet=${56: } }${57:upgrade=${58: } }${59:username=${60: } }${61:vpc_security_groups=${62: } }${63:wait=${64: } }${65:wait_timeout=${66: } }${67:zone=${68: } }
+${69:  when: ${70: variable is defined}}
+${71:  with_items: ${72: array}}
+]]></content>
+	<tabTrigger>rds</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

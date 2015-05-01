@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name of the service
+#start_mode = Set the startup type for the service
+#state = `started'/`stopped' are idempotent actions that will not run commands unless necessary.  `restarted' will always bounce the service.
+}- name: ${2:Name for win_service module.}
+${3:  sudo: ${4:yes}}
+  win_service: ${5:name=${6: } }${7:start_mode=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>win_service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#msg = The customized message that is printed. If omitted, prints a generic message.
+#var = A variable name to debug.  Mutually exclusive with the 'msg' option.
+}- name: ${2:Name for debug module.}
+${3:  sudo: ${4:yes}}
+  debug: ${5:msg=${6: } }${7:var=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>debug</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

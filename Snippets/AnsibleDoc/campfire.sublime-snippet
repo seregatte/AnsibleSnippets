@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#msg = The message body.
+#notify = Send a notification sound before the message.
+#room = Room number to which the message should be sent.
+#subscription = The subscription name to use.
+#token = API token.
+}- name: ${2:Name for campfire module.}
+${3:  sudo: ${4:yes}}
+  campfire: ${5:msg=${6: } }${7:notify=${8: } }${9:room=${10: } }${11:subscription=${12: } }${13:token=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>campfire</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,27 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = Rackspace API key (overrides `credentials')
+#clear_meta = Optionally clear existing metadata when applying metadata to existing containers. Selecting this option is only appropriate when setting type=meta
+#container = The container to use for container or metadata operations.
+#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
+#env = pyrax-configuration
+#meta = A hash of items to set as metadata values on a container
+#private = Used to set a container as private, removing it from the CDN.  *Warning!* Private containers, if previously made public, can have live objects available until the TTL on cached objects expires
+#public = Used to set a container as public, available via the Cloud Files CDN
+#region = Region to create an instance in
+#state = Indicate desired state of the resource
+#ttl = In seconds, set a container-wide TTL for all objects cached on CDN edge nodes. Setting a TTL is only appropriate for containers that are public
+#type = Type of object to do work on, i.e. metadata object or a container object
+#username = Rackspace username (overrides `credentials')
+#verify_ssl = Whether or not to require SSL validation of API endpoints
+#web_error = Sets an object to be presented as the HTTP error page when accessed by the CDN URL
+#web_index = Sets an object to be presented as the HTTP index page when accessed by the CDN URL
+}- name: ${2:Name for rax_files module.}
+${3:  sudo: ${4:yes}}
+  rax_files: ${5:api_key=${6: } }${7:clear_meta=${8: } }${9:container=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:meta=${16: } }${17:private=${18: } }${19:public=${20: } }${21:region=${22: } }${23:state=${24: } }${25:ttl=${26: } }${27:type=${28: } }${29:username=${30: } }${31:verify_ssl=${32: } }${33:web_error=${34: } }${35:web_index=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
+]]></content>
+	<tabTrigger>rax_files</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,25 @@
+<snippet>
+<content><![CDATA[
+${1:#backup = Create a backup file (if `yes'), including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.
+#delimiter = A delimiter to separate the file contents.
+#dest = A file to create using the concatenation of all of the source files.
+#follow = This flag indicates that filesystem links, if they exist, should be followed.
+#group = name of the group that should own the file/directory, as would be fed to `chown'
+#mode = mode the file or directory should be, such as 0644 as would be fed to `chmod'. As of version 1.8, the mode may be specified as a symbolic mode (for example, `u+rwx' or `u=rw,g=r,o=r').
+#owner = name of the user that should own the file/directory, as would be fed to `chown'
+#regexp = Assemble files only if `regex' matches the filename. If not set, all files are assembled. All "\" (backslash) must be escaped as "\\" to comply yaml syntax. Uses Python regular expressions; see http://docs.python.org/2/library/re.html.
+#remote_src = If False, it will search for src at originating/master machine, if True it will go to the remote/target machine for the src. Default is True.
+#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. `_default' feature works as for `seuser'.
+#serole = role part of SELinux file context, `_default' feature works as for `seuser'.
+#setype = type part of SELinux file context, `_default' feature works as for `seuser'.
+#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will use the `user' portion of the policy if available
+#src = An already existing directory full of source files.
+}- name: ${2:Name for assemble module.}
+${3:  sudo: ${4:yes}}
+  assemble: ${5:backup=${6: } }${7:delimiter=${8: } }${9:dest=${10: } }${11:follow=${12: } }${13:group=${14: } }${15:mode=${16: } }${17:owner=${18: } }${19:regexp=${20: } }${21:remote_src=${22: } }${23:selevel=${24: } }${25:serole=${26: } }${27:setype=${28: } }${29:seuser=${30: } }${31:src=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
+]]></content>
+	<tabTrigger>assemble</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

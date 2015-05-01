@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#command = The command you would like to perform against the cluster.
+#config_dir = The path to the riak configuration directory
+#http_conn = The ip address and port that is listening for Riak HTTP queries
+#target_node = The target node for certain operations (join, ping)
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#wait_for_handoffs = Number of seconds to wait for handoffs to complete.
+#wait_for_ring = Number of seconds to wait for all nodes to agree on the ring.
+#wait_for_service = Waits for a riak service to come online before continuing.
+}- name: ${2:Name for riak module.}
+${3:  sudo: ${4:yes}}
+  riak: ${5:command=${6: } }${7:config_dir=${8: } }${9:http_conn=${10: } }${11:target_node=${12: } }${13:validate_certs=${14: } }${15:wait_for_handoffs=${16: } }${17:wait_for_ring=${18: } }${19:wait_for_service=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>riak</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

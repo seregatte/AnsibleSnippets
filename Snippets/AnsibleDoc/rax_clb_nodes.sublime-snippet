@@ -1,0 +1,27 @@
+<snippet>
+<content><![CDATA[
+${1:#address = IP address or domain name of the node
+#api_key = Rackspace API key (overrides `credentials')
+#condition = Condition for the node, which determines its role within the load balancer
+#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
+#env = pyrax-configuration
+#load_balancer_id = Load balancer id
+#node_id = Node id
+#port = Port number of the load balanced service on the node
+#region = Region to create an instance in
+#state = Indicate desired state of the node
+#type = Type of node
+#username = Rackspace username (overrides `credentials')
+#verify_ssl = Whether or not to require SSL validation of API endpoints
+#wait = Wait for the load balancer to become active before returning
+#wait_timeout = How long to wait before giving up and returning an error
+#weight = Weight of node
+}- name: ${2:Name for rax_clb_nodes module.}
+${3:  sudo: ${4:yes}}
+  rax_clb_nodes: ${5:address=${6: } }${7:api_key=${8: } }${9:condition=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:load_balancer_id=${16: } }${17:node_id=${18: } }${19:port=${20: } }${21:region=${22: } }${23:state=${24: } }${25:type=${26: } }${27:username=${28: } }${29:verify_ssl=${30: } }${31:wait=${32: } }${33:wait_timeout=${34: } }${35:weight=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
+]]></content>
+	<tabTrigger>rax_clb_nodes</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

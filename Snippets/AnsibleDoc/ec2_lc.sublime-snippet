@@ -1,0 +1,33 @@
+<snippet>
+<content><![CDATA[
+${1:#assign_public_ip = Used for Auto Scaling groups that launch instances into an Amazon Virtual Private Cloud. Specifies whether to assign a public IP address to each instance launched in a Amazon VPC.
+#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+#ebs_optimized = Specifies whether the instance is optimized for EBS I/O (true) or not (false).
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Must be specified if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used
+#image_id = The AMI unique identifier to be used for the group
+#instance_monitoring = whether instances in group are launched with detailed monitoring.
+#instance_profile_name = The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the instances.
+#instance_type = instance type to use for the instance
+#kernel_id = Kernel id for the EC2 instance
+#key_name = The SSH key name to be used for access to managed instances
+#name = Unique name for configuration
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#ramdisk_id = A RAM disk id for the instances.
+#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#security_groups = A list of security groups into which instances should be found
+#security_token = security token to authenticate against AWS
+#spot_price = The spot price you are bidding. Only applies for an autoscaling group with spot instances.
+#state = register or deregister the instance
+#user_data = opaque blob of data which is made available to the ec2 instance
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+#volumes = a list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and type (and number of iops for io device type) must be specified for a new volume or a root volume, and may be passed for a snapshot volume. For any volume, a volume size less than 1 will be interpreted as a request not to create the volume.
+}- name: ${2:Name for ec2_lc module.}
+${3:  sudo: ${4:yes}}
+  ec2_lc: ${5:assign_public_ip=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:ebs_optimized=${12: } }${13:ec2_url=${14: } }${15:image_id=${16: } }${17:instance_monitoring=${18: } }${19:instance_profile_name=${20: } }${21:instance_type=${22: } }${23:kernel_id=${24: } }${25:key_name=${26: } }${27:name=${28: } }${29:profile=${30: } }${31:ramdisk_id=${32: } }${33:region=${34: } }${35:security_groups=${36: } }${37:security_token=${38: } }${39:spot_price=${40: } }${41:state=${42: } }${43:user_data=${44: } }${45:validate_certs=${46: } }${47:volumes=${48: } }
+${49:  when: ${50: variable is defined}}
+${51:  with_items: ${52: array}}
+]]></content>
+	<tabTrigger>ec2_lc</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

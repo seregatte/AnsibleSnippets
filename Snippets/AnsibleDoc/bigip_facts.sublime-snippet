@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#filter = Shell-style glob matching string used to filter fact keys. Not applicable for software and system_info fact categories.
+#include = Fact category or list of categories to collect
+#password = BIG-IP password
+#server = BIG-IP host
+#session = BIG-IP session support; may be useful to avoid concurrency issues in certain circumstances.
+#user = BIG-IP username
+}- name: ${2:Name for bigip_facts module.}
+${3:  sudo: ${4:yes}}
+  bigip_facts: ${5:filter=${6: } }${7:include=${8: } }${9:password=${10: } }${11:server=${12: } }${13:session=${14: } }${15:user=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>bigip_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

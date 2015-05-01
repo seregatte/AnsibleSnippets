@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = The name of the `monit' program/process to manage
+#state = The state of service
+}- name: ${2:Name for monit module.}
+${3:  sudo: ${4:yes}}
+  monit: ${5:name=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>monit</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

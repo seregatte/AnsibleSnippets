@@ -1,0 +1,35 @@
+<snippet>
+<content><![CDATA[
+${1:#append = If `yes', will only add groups, not set them to just the list in `groups'.
+#comment = Optionally sets the description (aka `GECOS') of user account.
+#createhome = Unless set to `no', a home directory will be made for the user when the account is created or if the home directory does not exist.
+#force = When used with `state=absent', behavior is as with `userdel --force'.
+#generate_ssh_key = Whether to generate a SSH key for the user in question. This will *not* overwrite an existing SSH key.
+#group = Optionally sets the user's primary group (takes a group name).
+#groups = Puts the user in this comma-delimited list of groups. When set to the empty string ('groups='), the user is removed from all groups except the primary group.
+#home = Optionally set the user's home directory.
+#login_class = Optionally sets the user's login class for FreeBSD, OpenBSD and NetBSD systems.
+#move_home = If set to `yes' when used with `home=', attempt to move the user's home directory to the specified directory if it isn't there already.
+#name = Name of the user to create, remove or modify.
+#non_unique = Optionally when used with the -u option, this option allows to change the user ID to a non-unique value.
+#password = how-do-i-generate-crypted-passwords-for-the-user-module>`_ contains details on various ways to generate these password values.
+#remove = When used with `state=absent', behavior is as with `userdel --remove'.
+#shell = Optionally set the user's shell.
+#ssh_key_bits = Optionally specify number of bits in SSH key to create.
+#ssh_key_comment = Optionally define the comment for the SSH key.
+#ssh_key_file = Optionally specify the SSH key filename.
+#ssh_key_passphrase = Set a passphrase for the SSH key.  If no passphrase is provided, the SSH key will default to having no passphrase.
+#ssh_key_type = Optionally specify the type of SSH key to generate. Available SSH key types will depend on implementation present on target host.
+#state = Whether the account should exist.  When `absent', removes the user account.
+#system = When creating an account, setting this to `yes' makes the user a system account.  This setting cannot be changed on existing users.
+#uid = Optionally sets the `UID' of the user.
+#update_password = `always' will update passwords if they differ.  `on_create' will only set the password for newly created users.
+}- name: ${2:Name for user module.}
+${3:  sudo: ${4:yes}}
+  user: ${5:append=${6: } }${7:comment=${8: } }${9:createhome=${10: } }${11:force=${12: } }${13:generate_ssh_key=${14: } }${15:group=${16: } }${17:groups=${18: } }${19:home=${20: } }${21:login_class=${22: } }${23:move_home=${24: } }${25:name=${26: } }${27:non_unique=${28: } }${29:password=${30: } }${31:remove=${32: } }${33:shell=${34: } }${35:ssh_key_bits=${36: } }${37:ssh_key_comment=${38: } }${39:ssh_key_file=${40: } }${41:ssh_key_passphrase=${42: } }${43:ssh_key_type=${44: } }${45:state=${46: } }${47:system=${48: } }${49:uid=${50: } }${51:update_password=${52: } }
+${53:  when: ${54: variable is defined}}
+${55:  with_items: ${56: array}}
+]]></content>
+	<tabTrigger>user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

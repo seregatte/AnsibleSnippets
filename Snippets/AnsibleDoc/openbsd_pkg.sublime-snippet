@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name of the package.
+#state = `present' will make sure the package is installed. `latest' will make sure the latest version of the package is installed. `absent' will make sure the specified package is not installed.
+}- name: ${2:Name for openbsd_pkg module.}
+${3:  sudo: ${4:yes}}
+  openbsd_pkg: ${5:name=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>openbsd_pkg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

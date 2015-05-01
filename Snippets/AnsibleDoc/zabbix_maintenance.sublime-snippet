@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#collect_data = Type of maintenance. With data collection, or without.
+#desc = Short description of maintenance window.
+#host_groups = Host groups to manage maintenance window for. Separate multiple groups with commas. `host_group' is an alias for `host_groups'. *Required* option when `state' is `present' and no `host_names' specified.
+#host_names = Hosts to manage maintenance window for. Separate multiple hosts with commas. `host_name' is an alias for `host_names'. *Required* option when `state' is `present' and no `host_groups' specified.
+#login_password = Zabbix user password.
+#login_user = Zabbix user name.
+#minutes = Length of maintenance window in minutes.
+#name = Unique name of maintenance window.
+#server_url = Url of Zabbix server, with protocol (http or https). `url' is an alias for `server_url'.
+#state = Create or remove a maintenance window.
+}- name: ${2:Name for zabbix_maintenance module.}
+${3:  sudo: ${4:yes}}
+  zabbix_maintenance: ${5:collect_data=${6: } }${7:desc=${8: } }${9:host_groups=${10: } }${11:host_names=${12: } }${13:login_password=${14: } }${15:login_user=${16: } }${17:minutes=${18: } }${19:name=${20: } }${21:server_url=${22: } }${23:state=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>zabbix_maintenance</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

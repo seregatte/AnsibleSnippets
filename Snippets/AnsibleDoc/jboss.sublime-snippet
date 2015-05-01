@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#deploy_path = The location in the filesystem where the deployment scanner listens
+#deployment = The name of the deployment
+#src = The remote path of the application ear or war to deploy
+#state = Whether the application should be deployed or undeployed
+}- name: ${2:Name for jboss module.}
+${3:  sudo: ${4:yes}}
+  jboss: ${5:deploy_path=${6: } }${7:deployment=${8: } }${9:src=${10: } }${11:state=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>jboss</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

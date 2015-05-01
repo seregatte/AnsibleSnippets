@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = name of package to install/remove
+#state = state of the package
+}- name: ${2:Name for pkgin module.}
+${3:  sudo: ${4:yes}}
+  pkgin: ${5:name=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>pkgin</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

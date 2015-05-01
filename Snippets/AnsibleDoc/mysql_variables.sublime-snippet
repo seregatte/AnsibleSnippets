@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#login_host = mysql host to connect
+#login_password = password to connect mysql host, if defined login_user also needed.
+#login_unix_socket = unix socket to connect mysql server
+#login_user = username to connect mysql host, if defined login_password also needed.
+#value = If set, then sets variable value to this
+#variable = Variable name to operate
+}- name: ${2:Name for mysql_variables module.}
+${3:  sudo: ${4:yes}}
+  mysql_variables: ${5:login_host=${6: } }${7:login_password=${8: } }${9:login_unix_socket=${10: } }${11:login_user=${12: } }${13:value=${14: } }${15:variable=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>mysql_variables</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

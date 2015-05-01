@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#msg = W h a t   t o   s a y
+#voice = W h a t   v o i c e   t o   u s e
+}- name: ${2:Name for osx_say module.}
+${3:  sudo: ${4:yes}}
+  osx_say: ${5:msg=${6: } }${7:voice=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>osx_say</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

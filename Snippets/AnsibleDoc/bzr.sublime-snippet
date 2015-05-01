@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#dest = Absolute path of where the branch should be cloned to.
+#executable = Path to bzr executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.
+#force = If `yes', any modified files in the working tree will be discarded.
+#name = SSH or HTTP protocol address of the parent branch.
+#version = What version of the branch to clone.  This can be the bzr revno or revid.
+}- name: ${2:Name for bzr module.}
+${3:  sudo: ${4:yes}}
+  bzr: ${5:dest=${6: } }${7:executable=${8: } }${9:force=${10: } }${11:name=${12: } }${13:version=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>bzr</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

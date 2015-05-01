@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:#follow = This flag indicates that filesystem links, if they exist, should be followed.
+#force = force the creation of the symlinks in two cases: the source file does not exist (but will appear later); the destination exists and is a file (so, we need to unlink the "path" file and create symlink to the "src" file in place of it).
+#group = name of the group that should own the file/directory, as would be fed to `chown'
+#mode = mode the file or directory should be, such as 0644 as would be fed to `chmod'. As of version 1.8, the mode may be specified as a symbolic mode (for example, `u+rwx' or `u=rw,g=r,o=r').
+#owner = name of the user that should own the file/directory, as would be fed to `chown'
+#path = path to the file being managed.  Aliases: `dest', `name'
+#recurse = recursively set the specified file attributes (applies only to state=directory)
+#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. `_default' feature works as for `seuser'.
+#serole = role part of SELinux file context, `_default' feature works as for `seuser'.
+#setype = type part of SELinux file context, `_default' feature works as for `seuser'.
+#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will use the `user' portion of the policy if available
+#src = path of the file to link to (applies only to `state=link'). Will accept absolute, relative and nonexisting paths. Relative paths are not expanded.
+#state = If `directory', all immediate subdirectories will be created if they do not exist, since 1.7 they will be created with the supplied permissions. If `file', the file will NOT be created if it does not exist, see the [copy] or [template] module if you want that behavior.  If `link', the symbolic link will be created or changed. Use `hard' for hardlinks. If `absent', directories will be recursively deleted, and files or symlinks will be unlinked. If `touch' (new in 1.4), an empty file will be created if the c(path) does not exist, while an existing file or directory will receive updated file access and modification times (similar to the way `touch` works from the command line).
+}- name: ${2:Name for file module.}
+${3:  sudo: ${4:yes}}
+  file: ${5:follow=${6: } }${7:force=${8: } }${9:group=${10: } }${11:mode=${12: } }${13:owner=${14: } }${15:path=${16: } }${17:recurse=${18: } }${19:selevel=${20: } }${21:serole=${22: } }${23:setype=${24: } }${25:seuser=${26: } }${27:src=${28: } }${29:state=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
+]]></content>
+	<tabTrigger>file</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

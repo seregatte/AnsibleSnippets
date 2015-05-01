@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#account_key = Accout API Key.
+#account_secret = Accout Secret Key.
+#domain = Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the domain in DNS Made Easy (e.g. "839989") for faster resolution.
+#record_name = Record name to get/create/delete/update. If record_name is not specified; all records for the domain will be returned in "result" regardless of the state argument.
+#record_ttl = record's "Time to live".  Number of seconds the record remains cached in DNS servers.
+#record_type = Record type.
+#record_value = Record value. HTTPRED: <redirection URL>, MX: <priority> <target name>, NS: <name server>, PTR: <target name>, SRV: <priority> <weight> <port> <target name>, TXT: <text value> If record_value is not specified; no changes will be made and the record will be returned in 'result' (in other words, this module can be used to fetch a record's current id, type, and ttl)
+#state = whether the record should exist or not
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for dnsmadeeasy module.}
+${3:  sudo: ${4:yes}}
+  dnsmadeeasy: ${5:account_key=${6: } }${7:account_secret=${8: } }${9:domain=${10: } }${11:record_name=${12: } }${13:record_ttl=${14: } }${15:record_type=${16: } }${17:record_value=${18: } }${19:state=${20: } }${21:validate_certs=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>dnsmadeeasy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

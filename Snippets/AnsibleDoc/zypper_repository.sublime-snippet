@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#description = A description of the repository
+#disable_gpg_check = Whether to disable GPG signature checking of all packages. Has an effect only if state is `present'.
+#name = A name for the repository. Not required when adding repofiles.
+#repo = URI of the repository or .repo file. Required when state=present.
+#state = A source string state.
+}- name: ${2:Name for zypper_repository module.}
+${3:  sudo: ${4:yes}}
+  zypper_repository: ${5:description=${6: } }${7:disable_gpg_check=${8: } }${9:name=${10: } }${11:repo=${12: } }${13:state=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>zypper_repository</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

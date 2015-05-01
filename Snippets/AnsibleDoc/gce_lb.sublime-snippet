@@ -1,0 +1,29 @@
+<snippet>
+<content><![CDATA[
+${1:#external_ip = the external static IPv4 (or auto-assigned) address for the LB
+#httphealthcheck_healthy_count = number of consecutive successful checks before marking a node healthy
+#httphealthcheck_host = host header to pass through on HTTP check requests
+#httphealthcheck_interval = the duration in seconds between each health check request
+#httphealthcheck_name = the name identifier for the HTTP health check
+#httphealthcheck_path = the url path to use for HTTP health checking
+#httphealthcheck_port = the TCP port to use for HTTP health checking
+#httphealthcheck_timeout = the timeout in seconds before a request is considered a failed check
+#httphealthcheck_unhealthy_count = number of consecutive failed checks before marking a node unhealthy
+#members = a list of zone/nodename pairs, e.g ['us-central1-a/www-a', ...]
+#name = name of the load-balancer resource
+#pem_file = path to the pem file associated with the service account email
+#port_range = the port (range) to forward, e.g. 80 or 8000-8888 defaults to all ports
+#project_id = your GCE project ID
+#protocol = the protocol used for the load-balancer packet forwarding, tcp or udp
+#region = the GCE region where the load-balancer is defined
+#service_account_email = service account email
+#state = desired state of the LB
+}- name: ${2:Name for gce_lb module.}
+${3:  sudo: ${4:yes}}
+  gce_lb: ${5:external_ip=${6: } }${7:httphealthcheck_healthy_count=${8: } }${9:httphealthcheck_host=${10: } }${11:httphealthcheck_interval=${12: } }${13:httphealthcheck_name=${14: } }${15:httphealthcheck_path=${16: } }${17:httphealthcheck_port=${18: } }${19:httphealthcheck_timeout=${20: } }${21:httphealthcheck_unhealthy_count=${22: } }${23:members=${24: } }${25:name=${26: } }${27:pem_file=${28: } }${29:port_range=${30: } }${31:project_id=${32: } }${33:protocol=${34: } }${35:region=${36: } }${37:service_account_email=${38: } }${39:state=${40: } }
+${41:  when: ${42: variable is defined}}
+${43:  with_items: ${44: array}}
+]]></content>
+	<tabTrigger>gce_lb</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

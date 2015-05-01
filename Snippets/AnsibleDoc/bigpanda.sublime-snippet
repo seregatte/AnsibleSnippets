@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#component = The name of the component being deployed. Ex: billing
+#description = Free text description of the deployment.
+#env = The environment name, typically 'production', 'staging', etc.
+#hosts = Name of affected host name. Can be a list.
+#owner = The person responsible for the deployment.
+#state = State of the deployment.
+#token = API token.
+#url = Base URL of the API server.
+#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#version = The deployment version.
+}- name: ${2:Name for bigpanda module.}
+${3:  sudo: ${4:yes}}
+  bigpanda: ${5:component=${6: } }${7:description=${8: } }${9:env=${10: } }${11:hosts=${12: } }${13:owner=${14: } }${15:state=${16: } }${17:token=${18: } }${19:url=${20: } }${21:validate_certs=${22: } }${23:version=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>bigpanda</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

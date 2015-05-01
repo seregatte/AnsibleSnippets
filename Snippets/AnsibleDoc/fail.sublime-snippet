@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+${1:#msg = The customized message used for failing execution. If omitted, fail will simple bail out with a generic message.
+}- name: ${2:Name for fail module.}
+${3:  sudo: ${4:yes}}
+  fail: ${5:msg=${6: } }
+${7:  when: ${8: variable is defined}}
+${9:  with_items: ${10: array}}
+]]></content>
+	<tabTrigger>fail</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

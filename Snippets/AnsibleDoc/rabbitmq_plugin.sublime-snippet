@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#names = Comma-separated list of plugin names
+#new_only = Only enable missing plugins Does not disable plugins that are not in the names list
+#prefix = Specify a custom install prefix to a Rabbit
+#state = Specify if plugins are to be enabled or disabled
+}- name: ${2:Name for rabbitmq_plugin module.}
+${3:  sudo: ${4:yes}}
+  rabbitmq_plugin: ${5:names=${6: } }${7:new_only=${8: } }${9:prefix=${10: } }${11:state=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>rabbitmq_plugin</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

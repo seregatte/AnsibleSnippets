@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#detach_only = do not destroy the disk, merely detach it from an instance
+#image = the source image to use for the disk
+#instance_name = instance name if you wish to attach or detach the disk
+#mode = GCE mount mode of disk, READ_ONLY (default) or READ_WRITE
+#name = name of the disk
+#pem_file = path to the pem file associated with the service account email
+#project_id = your GCE project ID
+#service_account_email = service account email
+#size_gb = whole integer size of disk (in GB) to create, default is 10 GB
+#snapshot = the source snapshot to use for the disk
+#state = desired state of the persistent disk
+#zone = zone in which to create the disk
+}- name: ${2:Name for gce_pd module.}
+${3:  sudo: ${4:yes}}
+  gce_pd: ${5:detach_only=${6: } }${7:image=${8: } }${9:instance_name=${10: } }${11:mode=${12: } }${13:name=${14: } }${15:pem_file=${16: } }${17:project_id=${18: } }${19:service_account_email=${20: } }${21:size_gb=${22: } }${23:snapshot=${24: } }${25:state=${26: } }${27:zone=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>gce_pd</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

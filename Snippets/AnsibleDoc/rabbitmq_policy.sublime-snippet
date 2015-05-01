@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#name = The name of the policy to manage.
+#node = Erlang node name of the rabbit we wish to configure.
+#pattern = A regex of queues to apply the policy to.
+#priority = The priority of the policy.
+#state = The state of the policy.
+#tags = A dict or string describing the policy.
+#vhost = The name of the vhost to apply to.
+}- name: ${2:Name for rabbitmq_policy module.}
+${3:  sudo: ${4:yes}}
+  rabbitmq_policy: ${5:name=${6: } }${7:node=${8: } }${9:pattern=${10: } }${11:priority=${12: } }${13:state=${14: } }${15:tags=${16: } }${17:vhost=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>rabbitmq_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

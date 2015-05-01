@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#action = the action you want to perform on the entity
+#name = name of the entity
+#nsc_host = hostname or ip of your netscaler
+#nsc_protocol = protocol used to access netscaler
+#password = password
+#type = type of the entity
+#user = username
+#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for netscaler module.}
+${3:  sudo: ${4:yes}}
+  netscaler: ${5:action=${6: } }${7:name=${8: } }${9:nsc_host=${10: } }${11:nsc_protocol=${12: } }${13:password=${14: } }${15:type=${16: } }${17:user=${18: } }${19:validate_certs=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>netscaler</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#connection_limit = Pool member connection limit. Setting this to 0 disables the limit.
+#description = Pool member description
+#host = Pool member IP
+#partition = Partition
+#password = BIG-IP password
+#pool = Pool name. This pool must exist.
+#port = Pool member port
+#rate_limit = Pool member rate limit (connections-per-second). Setting this to 0 disables the limit.
+#ratio = Pool member ratio weight. Valid values range from 1 through 100. New pool members -- unless overriden with this value -- default to 1.
+#server = BIG-IP host
+#state = Pool member state
+#user = BIG-IP username
+}- name: ${2:Name for bigip_pool_member module.}
+${3:  sudo: ${4:yes}}
+  bigip_pool_member: ${5:connection_limit=${6: } }${7:description=${8: } }${9:host=${10: } }${11:partition=${12: } }${13:password=${14: } }${15:pool=${16: } }${17:port=${18: } }${19:rate_limit=${20: } }${21:ratio=${22: } }${23:server=${24: } }${25:state=${26: } }${27:user=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>bigip_pool_member</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

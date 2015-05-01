@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:#backup = If set, create a backup of the crontab before it is modified. The location of the backup is returned in the `backup' variable by this module.
+#cron_file = If specified, uses this file in cron.d instead of an individual user's crontab.
+#day = Day of the month the job should run ( 1-31, *, */2, etc )
+#hour = Hour when the job should run ( 0-23, *, */2, etc )
+#job = The command to execute. Required if state=present.
+#minute = Minute when the job should run ( 0-59, *, */2, etc )
+#month = Month of the year the job should run ( 1-12, *, */2, etc )
+#name = Description of a crontab entry.
+#reboot = If the job should be run at reboot. This option is deprecated. Users should use special_time.
+#special_time = Special time specification nickname.
+#state = Whether to ensure the job is present or absent.
+#user = The specific user whose crontab should be modified.
+#weekday = Day of the week that the job should run ( 0-6 for Sunday-Saturday, *, etc )
+}- name: ${2:Name for cron module.}
+${3:  sudo: ${4:yes}}
+  cron: ${5:backup=${6: } }${7:cron_file=${8: } }${9:day=${10: } }${11:hour=${12: } }${13:job=${14: } }${15:minute=${16: } }${17:month=${18: } }${19:name=${20: } }${21:reboot=${22: } }${23:special_time=${24: } }${25:state=${26: } }${27:user=${28: } }${29:weekday=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
+]]></content>
+	<tabTrigger>cron</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

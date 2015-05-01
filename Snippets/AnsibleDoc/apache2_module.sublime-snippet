@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = name of the module to enable/disable
+#state = indicate the desired state of the resource
+}- name: ${2:Name for apache2_module module.}
+${3:  sudo: ${4:yes}}
+  apache2_module: ${5:name=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>apache2_module</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

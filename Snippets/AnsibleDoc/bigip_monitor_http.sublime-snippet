@@ -1,0 +1,27 @@
+<snippet>
+<content><![CDATA[
+${1:#interval = The interval specifying how frequently the monitor instance of this template will run. By default, this interval is used for up and down states. The default API setting is 5.
+#ip = IP address part of the ipport definition. The default API setting is "0.0.0.0".
+#name = Monitor name
+#parent = The parent template of this monitor template
+#parent_partition = Partition for the parent monitor
+#partition = Partition for the monitor
+#password = BIG-IP password
+#port = port address part op the ipport definition. The default API setting is 0.
+#receive = The receive string for the monitor call
+#receive_disable = The receive disable string for the monitor call
+#send = The send string for the monitor call
+#server = BIG-IP host
+#state = Monitor state
+#time_until_up = Specifies the amount of time in seconds after the first successful response before a node will be marked up. A value of 0 will cause a node to be marked up immediately after a valid response is received from the node. The default API setting is 0.
+#timeout = The number of seconds in which the node or service must respond to the monitor request. If the target responds within the set time period, it is considered up. If the target does not respond within the set time period, it is considered down. You can change this number to any number you want, however, it should be 3 times the interval number of seconds plus 1 second. The default API setting is 16.
+#user = BIG-IP username
+}- name: ${2:Name for bigip_monitor_http module.}
+${3:  sudo: ${4:yes}}
+  bigip_monitor_http: ${5:interval=${6: } }${7:ip=${8: } }${9:name=${10: } }${11:parent=${12: } }${13:parent_partition=${14: } }${15:partition=${16: } }${17:password=${18: } }${19:port=${20: } }${21:receive=${22: } }${23:receive_disable=${24: } }${25:send=${26: } }${27:server=${28: } }${29:state=${30: } }${31:time_until_up=${32: } }${33:timeout=${34: } }${35:user=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
+]]></content>
+	<tabTrigger>bigip_monitor_http</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

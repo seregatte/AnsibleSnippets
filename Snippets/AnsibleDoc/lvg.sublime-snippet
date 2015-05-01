@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#force = If yes, allows to remove volume group with logical volumes.
+#pesize = The size of the physical extent in megabytes. Must be a power of 2.
+#pvs = List of comma-separated devices to use as physical devices in this volume group. Required when creating or resizing volume group.
+#state = Control if the volume group exists.
+#vg = The name of the volume group.
+#vg_options = Additional options to pass to `vgcreate' when creating the volume group.
+}- name: ${2:Name for lvg module.}
+${3:  sudo: ${4:yes}}
+  lvg: ${5:force=${6: } }${7:pesize=${8: } }${9:pvs=${10: } }${11:state=${12: } }${13:vg=${14: } }${15:vg_options=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>lvg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#arch = C P U   a r c h i t e c t u r e
+#distro = L i n u x   d i s t r i b u t i o n   ( e . g . ,   C ( u b u n t u ) )
+#region = E C 2   r e g i o n
+#release = s h o r t   n a m e   o f   t h e   r e l e a s e   ( e . g . ,   C ( p r e c i s e ) )
+#store = B a c k - e n d   s t o r e   f o r   i n s t a n c e
+#stream = T y p e   o f   r e l e a s e .
+#virt = v i r u t a l i z a t i o n   t y p e
+}- name: ${2:Name for ec2_ami_search module.}
+${3:  sudo: ${4:yes}}
+  ec2_ami_search: ${5:arch=${6: } }${7:distro=${8: } }${9:region=${10: } }${11:release=${12: } }${13:store=${14: } }${15:stream=${16: } }${17:virt=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>ec2_ami_search</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

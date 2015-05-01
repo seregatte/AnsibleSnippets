@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#apiid = Organizations boundary API ID
+#apikey = Organizations boundary API KEY
+#name = meter name
+#state = Whether to create or remove the client from boundary
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for boundary_meter module.}
+${3:  sudo: ${4:yes}}
+  boundary_meter: ${5:apiid=${6: } }${7:apikey=${8: } }${9:name=${10: } }${11:state=${12: } }${13:validate_certs=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>boundary_meter</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

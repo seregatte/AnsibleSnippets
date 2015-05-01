@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:#assignee = Sets the assignee on create or transition operations. Note not all transitions will allow this.
+#comment = The comment text to add.
+#description = The issue description, where appropriate.
+#fields = This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API (possibly after merging with other required data, as when passed to create). See examples for more information, and the JIRA REST API for the structure required for various fields.
+#issue = An existing issue key to operate on.
+#issuetype = The issue type, for issue creation.
+#operation = The operation to perform.
+#password = The password to log-in with.
+#project = The project for this operation. Required for issue creation.
+#status = The desired status; only relevant for the transition operation.
+#summary = The issue summary, where appropriate.
+#uri = Base URI for the JIRA instance
+#username = The username to log-in with.
+}- name: ${2:Name for jira module.}
+${3:  sudo: ${4:yes}}
+  jira: ${5:assignee=${6: } }${7:comment=${8: } }${9:description=${10: } }${11:fields=${12: } }${13:issue=${14: } }${15:issuetype=${16: } }${17:operation=${18: } }${19:password=${20: } }${21:project=${22: } }${23:status=${24: } }${25:summary=${26: } }${27:uri=${28: } }${29:username=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
+]]></content>
+	<tabTrigger>jira</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

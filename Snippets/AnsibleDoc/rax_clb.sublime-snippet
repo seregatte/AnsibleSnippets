@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:#algorithm = algorithm for the balancer being created
+#api_key = Rackspace API key (overrides `credentials')
+#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
+#env = pyrax-configuration
+#meta = A hash of metadata to associate with the instance
+#name = Name to give the load balancer
+#port = Port for the balancer being created
+#protocol = Protocol for the balancer being created
+#region = Region to create an instance in
+#state = Indicate desired state of the resource
+#timeout = timeout for communication between the balancer and the node
+#type = type of interface for the balancer being created
+#username = Rackspace username (overrides `credentials')
+#verify_ssl = Whether or not to require SSL validation of API endpoints
+#vip_id = Virtual IP ID to use when creating the load balancer for purposes of sharing an IP with another load balancer of another protocol
+#wait = wait for the balancer to be in state 'running' before returning
+#wait_timeout = how long before wait gives up, in seconds
+}- name: ${2:Name for rax_clb module.}
+${3:  sudo: ${4:yes}}
+  rax_clb: ${5:algorithm=${6: } }${7:api_key=${8: } }${9:credentials=${10: } }${11:env=${12: } }${13:meta=${14: } }${15:name=${16: } }${17:port=${18: } }${19:protocol=${20: } }${21:region=${22: } }${23:state=${24: } }${25:timeout=${26: } }${27:type=${28: } }${29:username=${30: } }${31:verify_ssl=${32: } }${33:vip_id=${34: } }${35:wait=${36: } }${37:wait_timeout=${38: } }
+${39:  when: ${40: variable is defined}}
+${41:  with_items: ${42: array}}
+]]></content>
+	<tabTrigger>rax_clb</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

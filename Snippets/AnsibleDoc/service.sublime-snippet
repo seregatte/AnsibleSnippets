@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#arguments = Additional arguments provided on the command line
+#enabled = Whether the service should start on boot. *At least one of state and enabled are required.*
+#name = Name of the service.
+#pattern = If the service does not respond to the status command, name a substring to look for as would be found in the output of the `ps' command as a stand-in for a status result.  If the string is found, the service will be assumed to be running.
+#runlevel = For OpenRC init scripts (ex: Gentoo) only.  The runlevel that this service belongs to.
+#sleep = If the service is being `restarted' then sleep this many seconds between the stop and start command. This helps to workaround badly behaving init scripts that exit immediately after signaling a process to stop.
+#state = `started'/`stopped' are idempotent actions that will not run commands unless necessary.  `restarted' will always bounce the service.  `reloaded' will always reload. *At least one of state and enabled are required.*
+}- name: ${2:Name for service module.}
+${3:  sudo: ${4:yes}}
+  service: ${5:arguments=${6: } }${7:enabled=${8: } }${9:name=${10: } }${11:pattern=${12: } }${13:runlevel=${14: } }${15:sleep=${16: } }${17:state=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#docker_url = URL of docker host to issue commands to
+#name = Image name to work with
+#nocache = Do not use cache with building
+#path = Path to directory with Dockerfile
+#state = Set the state of the image
+#tag = Image tag to work with
+#timeout = Set image operation timeout
+}- name: ${2:Name for docker_image module.}
+${3:  sudo: ${4:yes}}
+  docker_image: ${5:docker_url=${6: } }${7:name=${8: } }${9:nocache=${10: } }${11:path=${12: } }${13:state=${14: } }${15:tag=${16: } }${17:timeout=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>docker_image</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

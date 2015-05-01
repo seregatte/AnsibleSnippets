@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#encoding = Encoding of the database
+#lc_collate = Collation order (LC_COLLATE) to use in the database. Must match collation order of template database unless `template0' is used as template.
+#lc_ctype = Character classification (LC_CTYPE) to use in the database (e.g. lower, upper, ...) Must match LC_CTYPE of template database unless `template0' is used as template.
+#login_host = Host running the database
+#login_password = The password used to authenticate with
+#login_user = The username used to authenticate with
+#name = name of the database to add or remove
+#owner = Name of the role to set as owner of the database
+#port = Database port to connect to.
+#state = The database state
+#template = Template used to create the database
+}- name: ${2:Name for postgresql_db module.}
+${3:  sudo: ${4:yes}}
+  postgresql_db: ${5:encoding=${6: } }${7:lc_collate=${8: } }${9:lc_ctype=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_user=${16: } }${17:name=${18: } }${19:owner=${20: } }${21:port=${22: } }${23:state=${24: } }${25:template=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>postgresql_db</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

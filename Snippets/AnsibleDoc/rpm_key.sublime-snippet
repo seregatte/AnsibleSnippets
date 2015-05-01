@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#key = Key that will be modified. Can be a url, a file, or a keyid if the key already exists in the database.
+#state = Wheather the key will be imported or removed from the rpm db.
+#validate_certs = If `no' and the `key' is a url starting with https, SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for rpm_key module.}
+${3:  sudo: ${4:yes}}
+  rpm_key: ${5:key=${6: } }${7:state=${8: } }${9:validate_certs=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>rpm_key</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#link = The path to the symbolic link that should point to the real executable.
+#name = The generic name of the link.
+#path = The path to the real executable that the link should point to.
+}- name: ${2:Name for alternatives module.}
+${3:  sudo: ${4:yes}}
+  alternatives: ${5:link=${6: } }${7:name=${8: } }${9:path=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>alternatives</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

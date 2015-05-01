@@ -1,0 +1,11 @@
+<snippet>
+<content><![CDATA[
+${1:}- name: ${2:Name for stackdriver module.}
+${3:  sudo: ${4:yes}}
+  stackdriver: 
+${5:  when: ${6: variable is defined}}
+${7:  with_items: ${8: array}}
+]]></content>
+	<tabTrigger>stackdriver</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

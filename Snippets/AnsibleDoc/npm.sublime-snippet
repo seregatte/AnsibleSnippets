@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#executable = The executable location for npm. This is useful if you are using a version manager, such as nvm
+#global = Install the node.js library globally
+#ignore_scripts = Use the --ignore-scripts flag when installing.
+#name = The name of a node.js library to install
+#path = The base path where to install the node.js libraries
+#production = Install dependencies in production mode, excluding devDependencies
+#registry = The registry to install modules from.
+#state = The state of the node.js library
+#version = The version to be installed
+}- name: ${2:Name for npm module.}
+${3:  sudo: ${4:yes}}
+  npm: ${5:executable=${6: } }${7:global=${8: } }${9:ignore_scripts=${10: } }${11:name=${12: } }${13:path=${14: } }${15:production=${16: } }${17:registry=${18: } }${19:state=${20: } }${21:version=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>npm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

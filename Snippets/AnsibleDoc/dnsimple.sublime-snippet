@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#account_api_token = Account API token. See `account_email' for info.
+#account_email = getting-started
+#domain = Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the domain in DNSimple. If omitted, a list of domains will be returned. If domain is present but the domain doesn't exist, it will be created.
+#priority = Record priority
+#record = Record to add, if blank a record for the domain will be created, supports the wildcard (*)
+#record_ids = List of records to ensure they either exist or don't exist
+#solo = Whether the record should be the only one for that record type and record name. Only use with state=present on a record
+#state = whether the record should exist or not
+#ttl = The TTL to give the new record
+#type = The type of DNS record to create
+#value = Record value Must be specified when trying to ensure a record exists
+}- name: ${2:Name for dnsimple module.}
+${3:  sudo: ${4:yes}}
+  dnsimple: ${5:account_api_token=${6: } }${7:account_email=${8: } }${9:domain=${10: } }${11:priority=${12: } }${13:record=${14: } }${15:record_ids=${16: } }${17:solo=${18: } }${19:state=${20: } }${21:ttl=${22: } }${23:type=${24: } }${25:value=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>dnsimple</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

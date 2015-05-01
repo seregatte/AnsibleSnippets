@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#delay = number of seconds to wait before starting to poll
+#exclude_hosts = list of hosts or IPs to ignore when looking for active TCP connections for `drained' state
+#host = hostname or IP address to wait for
+#path = path to a file on the filesytem that must exist before continuing
+#port = port number to poll
+#search_regex = Can be used to match a string in either a file or a socket connection. Defaults to a multiline regex.
+#state = either `present', `started', or `stopped', `absent', or `drained' When checking a port `started' will ensure the port is open, `stopped' will check that it is closed, `drained' will check for active connections When checking for a file or a search string `present' or `started' will ensure that the file or string is present before continuing, `absent' will check that file is absent or removed
+#timeout = maximum number of seconds to wait for
+}- name: ${2:Name for wait_for module.}
+${3:  sudo: ${4:yes}}
+  wait_for: ${5:delay=${6: } }${7:exclude_hosts=${8: } }${9:host=${10: } }${11:path=${12: } }${13:port=${14: } }${15:search_regex=${16: } }${17:state=${18: } }${19:timeout=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>wait_for</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

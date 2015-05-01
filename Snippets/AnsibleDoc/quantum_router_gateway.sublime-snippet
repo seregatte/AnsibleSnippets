@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#auth_url = The keystone URL for authentication
+#login_password = Password of login user
+#login_tenant_name = The tenant name of the login user
+#login_username = login username to authenticate to keystone
+#network_name = Name of the external network which should be attached to the router.
+#region_name = Name of the region
+#router_name = Name of the router to which the gateway should be attached.
+#state = Indicate desired state of the resource
+}- name: ${2:Name for quantum_router_gateway module.}
+${3:  sudo: ${4:yes}}
+  quantum_router_gateway: ${5:auth_url=${6: } }${7:login_password=${8: } }${9:login_tenant_name=${10: } }${11:login_username=${12: } }${13:network_name=${14: } }${15:region_name=${16: } }${17:router_name=${18: } }${19:state=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>quantum_router_gateway</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

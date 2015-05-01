@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#action = Action to take.
+#author = Author to leave downtime comments as. Only usable with the `downtime' action.
+#cmdfile = Path to the nagios `command file' (FIFO pipe). Only required if auto-detection fails.
+#command = The raw command to send to nagios, which should not include the submitted time header or the line-feed *Required* option when using the `command' action.
+#host = Host to operate on in Nagios.
+#minutes = Minutes to schedule downtime for. Only usable with the `downtime' action.
+#services = What to manage downtime/alerts for. Separate multiple services with commas. `service' is an alias for `services'. *Required* option when using the `downtime', `enable_alerts', and `disable_alerts' actions.
+}- name: ${2:Name for nagios module.}
+${3:  sudo: ${4:yes}}
+  nagios: ${5:action=${6: } }${7:author=${8: } }${9:cmdfile=${10: } }${11:command=${12: } }${13:host=${14: } }${15:minutes=${16: } }${17:services=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>nagios</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

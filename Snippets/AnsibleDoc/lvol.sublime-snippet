@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#force = Shrink or remove operations of volumes requires this switch. Ensures that that filesystems get never corrupted/destroyed by mistake.
+#lv = The name of the logical volume.
+#size = The size of the logical volume, according to lvcreate(8) --size, by default in megabytes or optionally with one of [bBsSkKmMgGtTpPeE] units; or according to lvcreate(8) --extents as a percentage of [VG|PVS|FREE]; resizing is not supported with percentages.
+#state = Control if the logical volume exists.
+#vg = The volume group this logical volume is part of.
+}- name: ${2:Name for lvol module.}
+${3:  sudo: ${4:yes}}
+  lvol: ${5:force=${6: } }${7:lv=${8: } }${9:size=${10: } }${11:state=${12: } }${13:vg=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>lvol</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

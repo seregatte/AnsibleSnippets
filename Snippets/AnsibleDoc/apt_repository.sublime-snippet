@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#mode = The octal mode for newly created files in sources.list.d
+#repo = A source string for the repository.
+#state = A source string state.
+#update_cache = Run the equivalent of `apt-get update' when a change occurs.  Cache updates are run after making changes.
+#validate_certs = If `no', SSL certificates for the target repo will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for apt_repository module.}
+${3:  sudo: ${4:yes}}
+  apt_repository: ${5:mode=${6: } }${7:repo=${8: } }${9:state=${10: } }${11:update_cache=${12: } }${13:validate_certs=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>apt_repository</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#install_options = options flags to install a package
+#name = name of package to install/remove
+#state = state of the package
+#update_homebrew = update homebrew itself first
+#upgrade_all = upgrade all homebrew packages
+}- name: ${2:Name for homebrew module.}
+${3:  sudo: ${4:yes}}
+  homebrew: ${5:install_options=${6: } }${7:name=${8: } }${9:state=${10: } }${11:update_homebrew=${12: } }${13:upgrade_all=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>homebrew</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

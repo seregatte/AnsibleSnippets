@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#comment = Deploy comment (e.g. what is being deployed).
+#environment = Name of the environment being deployed, e.g. 'production'.
+#revision = Revision number/sha being deployed.
+#rollbar_user = Rollbar username of the user who deployed.
+#token = Your project access token.
+#url = Optional URL to submit the notification to.
+#user = User who deployed.
+#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for rollbar_deployment module.}
+${3:  sudo: ${4:yes}}
+  rollbar_deployment: ${5:comment=${6: } }${7:environment=${8: } }${9:revision=${10: } }${11:rollbar_user=${12: } }${13:token=${14: } }${15:url=${16: } }${17:user=${18: } }${19:validate_certs=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>rollbar_deployment</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

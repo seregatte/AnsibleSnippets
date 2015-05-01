@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#channel_token = Token of the channel to post to.
+#icon_url = Icon for the service
+#message = Message content
+#service = Name of the service (displayed as the "user" in the message)
+#url = Service URL for the web client
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for grove module.}
+${3:  sudo: ${4:yes}}
+  grove: ${5:channel_token=${6: } }${7:icon_url=${8: } }${9:message=${10: } }${11:service=${12: } }${13:url=${14: } }${15:validate_certs=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>grove</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

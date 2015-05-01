@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#chdir = cd into this directory before running the command
+#executable = The explicit executable or a pathname to the executable to be used to run pip for a specific version of Python installed in the system. For example `pip-3.3', if there are both Python 2.7 and 3.3 installations in the system and you want to run pip for the Python 3.3 installation.
+#extra_args = Extra arguments passed to pip.
+#name = The name of a Python library to install or the url of the remote package.
+#requirements = The path to a pip requirements file
+#state = The state of module
+#version = The version number to install of the Python library specified in the `name' parameter
+#virtualenv = An optional path to a `virtualenv' directory to install into
+#virtualenv_command = The command or a pathname to the command to create the virtual environment with. For example `pyvenv', `virtualenv', `virtualenv2', `~/bin/virtualenv', `/usr/local/bin/virtualenv'.
+#virtualenv_site_packages = Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if this setting is changed on an already existing virtual environment it will not have any effect, the environment must be deleted and newly created.
+}- name: ${2:Name for pip module.}
+${3:  sudo: ${4:yes}}
+  pip: ${5:chdir=${6: } }${7:executable=${8: } }${9:extra_args=${10: } }${11:name=${12: } }${13:requirements=${14: } }${15:state=${16: } }${17:version=${18: } }${19:virtualenv=${20: } }${21:virtualenv_command=${22: } }${23:virtualenv_site_packages=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>pip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

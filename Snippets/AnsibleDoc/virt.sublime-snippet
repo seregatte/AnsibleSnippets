@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#command = in addition to state management, various non-idempotent commands are available. See examples
+#name = name of the guest VM being managed. Note that VM must be previously defined with xml.
+#state = Note that there may be some lag for state requests like `shutdown' since these refer only to VM states. After starting a guest, it may not be immediately accessible.
+#uri = libvirt connection uri
+#xml = XML document used with the define command
+}- name: ${2:Name for virt module.}
+${3:  sudo: ${4:yes}}
+  virt: ${5:command=${6: } }${7:name=${8: } }${9:state=${10: } }${11:uri=${12: } }${13:xml=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>virt</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

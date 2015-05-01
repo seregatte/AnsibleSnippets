@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#name = The name of the vhost to manage
+#node = erlang node name of the rabbit we wish to configure
+#state = The state of vhost
+#tracing = Enable/disable tracing for a vhost
+}- name: ${2:Name for rabbitmq_vhost module.}
+${3:  sudo: ${4:yes}}
+  rabbitmq_vhost: ${5:name=${6: } }${7:node=${8: } }${9:state=${10: } }${11:tracing=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>rabbitmq_vhost</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

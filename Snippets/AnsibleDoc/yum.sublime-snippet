@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#conf_file = The remote yum configuration file to use for the transaction.
+#disable_gpg_check = Whether to disable the GPG checking of signatures of packages being installed. Has an effect only if state is `present' or `latest'.
+#disablerepo = `Repoid' of repositories to disable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a ",".
+#enablerepo = `Repoid' of repositories to enable for the install/update operation. These repos will not persist beyond the transaction. When specifying multiple repos, separate them with a ",".
+#list = Various (non-idempotent) commands for usage with `/usr/bin/ansible' and `not' playbooks. See examples.
+#name = Package name, or package specifier with version, like `name-1.0'. When using state=latest, this can be '*' which means run: yum -y update. You can also pass a url or a local path to a rpm file.
+#state = Whether to install (`present', `latest'), or remove (`absent') a package.
+}- name: ${2:Name for yum module.}
+${3:  sudo: ${4:yes}}
+  yum: ${5:conf_file=${6: } }${7:disable_gpg_check=${8: } }${9:disablerepo=${10: } }${11:enablerepo=${12: } }${13:list=${14: } }${15:name=${16: } }${17:state=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>yum</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

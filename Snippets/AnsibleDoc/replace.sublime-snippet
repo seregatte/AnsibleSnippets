@@ -1,0 +1,25 @@
+<snippet>
+<content><![CDATA[
+${1:#backup = Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.
+#dest = The file to modify.
+#follow = This flag indicates that filesystem links, if they exist, should be followed.
+#group = name of the group that should own the file/directory, as would be fed to `chown'
+#mode = mode the file or directory should be, such as 0644 as would be fed to `chmod'. As of version 1.8, the mode may be specified as a symbolic mode (for example, `u+rwx' or `u=rw,g=r,o=r').
+#others = All arguments accepted by the [file] module also work here.
+#owner = name of the user that should own the file/directory, as would be fed to `chown'
+#regexp = The regular expression to look for in the contents of the file. Uses Python regular expressions; see http://docs.python.org/2/library/re.html. Uses multiline mode, which means `^' and `$' match the beginning and end respectively of `each line' of the file.
+#replace = The string to replace regexp matches. May contain backreferences that will get expanded with the regexp capture groups if the regexp matches. If not set, matches are removed entirely.
+#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. `_default' feature works as for `seuser'.
+#serole = role part of SELinux file context, `_default' feature works as for `seuser'.
+#setype = type part of SELinux file context, `_default' feature works as for `seuser'.
+#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will use the `user' portion of the policy if available
+#validate = validation to run before copying into place
+}- name: ${2:Name for replace module.}
+${3:  sudo: ${4:yes}}
+  replace: ${5:backup=${6: } }${7:dest=${8: } }${9:follow=${10: } }${11:group=${12: } }${13:mode=${14: } }${15:others=${16: } }${17:owner=${18: } }${19:regexp=${20: } }${21:replace=${22: } }${23:selevel=${24: } }${25:serole=${26: } }${27:setype=${28: } }${29:seuser=${30: } }${31:validate=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
+]]></content>
+	<tabTrigger>replace</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

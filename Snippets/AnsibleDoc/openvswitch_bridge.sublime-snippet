@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#bridge = Name of bridge to manage
+#state = Whether the bridge should exist
+#timeout = How long to wait for ovs-vswitchd to respond
+}- name: ${2:Name for openvswitch_bridge module.}
+${3:  sudo: ${4:yes}}
+  openvswitch_bridge: ${5:bridge=${6: } }${7:state=${8: } }${9:timeout=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>openvswitch_bridge</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

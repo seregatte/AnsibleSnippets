@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#database = The name of the database to add/remove the user from
+#login_host = The host running the database
+#login_password = The password used to authenticate with
+#login_port = The port to connect to
+#login_user = The username used to authenticate with
+#password = The password to use for the user
+#replica_set = Replica set to connect to (automatically connects to primary for writes)
+#roles = The database user roles valid values are one or more of the following: read, 'readWrite', 'dbAdmin', 'userAdmin', 'clusterAdmin', 'readAnyDatabase', 'readWriteAnyDatabase', 'userAdminAnyDatabase', 'dbAdminAnyDatabase' This param requires mongodb 2.4+ and pymongo 2.5+
+#ssl = Whether to use an SSL connection when connecting to the database
+#state = The database user state
+#user = The name of the user to add or remove
+}- name: ${2:Name for mongodb_user module.}
+${3:  sudo: ${4:yes}}
+  mongodb_user: ${5:database=${6: } }${7:login_host=${8: } }${9:login_password=${10: } }${11:login_port=${12: } }${13:login_user=${14: } }${15:password=${16: } }${17:replica_set=${18: } }${19:roles=${20: } }${21:ssl=${22: } }${23:state=${24: } }${25:user=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>mongodb_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

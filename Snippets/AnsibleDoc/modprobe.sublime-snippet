@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name of kernel module to manage.
+#params = Modules parameters.
+#state = Whether the module should be present or absent.
+}- name: ${2:Name for modprobe module.}
+${3:  sudo: ${4:yes}}
+  modprobe: ${5:name=${6: } }${7:params=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>modprobe</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,25 @@
+<snippet>
+<content><![CDATA[
+${1:#changed_use = Include installed packages where USE flags have changed, except when flags that the user has not enabled are added or removed (--changed-use)
+#deep = Consider the entire dependency tree of packages (--deep)
+#depclean = Remove packages not needed by explicitly merged packages (--depclean) If no package is specified, clean up the world's dependencies Otherwise, --depclean serves as a dependency aware version of --unmerge
+#newuse = Include installed packages where USE flags have changed (--newuse)
+#nodeps = Only merge packages but not their dependencies (--nodeps)
+#noreplace = Do not re-emerge installed packages (--noreplace)
+#oneshot = Do not add the packages to the world file (--oneshot)
+#onlydeps = Only merge packages' dependencies but not the packages (--onlydeps)
+#package = Package atom or set, e.g. `sys-apps/foo' or `>foo-2.13' or `@world'
+#quiet = Run emerge in quiet mode (--quiet)
+#state = State of the package atom
+#sync = Sync package repositories first If yes, perform "emerge --sync" If web, perform "emerge-webrsync"
+#update = Update packages to the best version available (--update)
+#verbose = Run emerge in verbose mode (--verbose)
+}- name: ${2:Name for portage module.}
+${3:  sudo: ${4:yes}}
+  portage: ${5:changed_use=${6: } }${7:deep=${8: } }${9:depclean=${10: } }${11:newuse=${12: } }${13:nodeps=${14: } }${15:noreplace=${16: } }${17:oneshot=${18: } }${19:onlydeps=${20: } }${21:package=${22: } }${23:quiet=${24: } }${25:state=${26: } }${27:sync=${28: } }${29:update=${30: } }${31:verbose=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
+]]></content>
+	<tabTrigger>portage</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

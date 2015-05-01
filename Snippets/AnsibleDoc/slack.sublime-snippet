@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#channel = Channel to send the message to. If absent, the message goes to the channel selected for the `token'.
+#domain = Slack (sub)domain for your environment without protocol. (i.e. `future500.slack.com')
+#icon_emoji = Emoji for the message sender. See Slack documentation for options. (if `icon_emoji' is set, `icon_url' will not be used)
+#icon_url = Url for the message sender's icon (default `http://www.ansible.com/favicon.ico')
+#link_names = Automatically create links for channels and usernames in `msg'.
+#msg = Message to send.
+#parse = Setting for the message parser at Slack
+#token = Slack integration token
+#username = This is the sender of the message.
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+}- name: ${2:Name for slack module.}
+${3:  sudo: ${4:yes}}
+  slack: ${5:channel=${6: } }${7:domain=${8: } }${9:icon_emoji=${10: } }${11:icon_url=${12: } }${13:link_names=${14: } }${15:msg=${16: } }${17:parse=${18: } }${19:token=${20: } }${21:username=${22: } }${23:validate_certs=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>slack</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

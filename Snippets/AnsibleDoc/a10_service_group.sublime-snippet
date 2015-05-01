@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#host = hostname or ip of your A10 Networks device
+#password = admin password of your A10 Networks device
+#servers = A list of servers to add to the service group. Each list item should be a dictionary which specifies the `server:' and `port:', but can also optionally specify the `status:'. See the examples below for details.
+#service_group = slb service-group name
+#service_group_method = slb service-group loadbalancing method
+#service_group_protocol = slb service-group protocol
+#username = admin account of your A10 Networks device
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled devices using self-signed certificates.
+#write_config = If `yes', any changes will cause a write of the running configuration to non-volatile memory. This will save `all' configuration changes, including those that may have been made manually or through other modules, so care should be taken when specifying `yes'.
+}- name: ${2:Name for a10_service_group module.}
+${3:  sudo: ${4:yes}}
+  a10_service_group: ${5:host=${6: } }${7:password=${8: } }${9:servers=${10: } }${11:service_group=${12: } }${13:service_group_method=${14: } }${15:service_group_protocol=${16: } }${17:username=${18: } }${19:validate_certs=${20: } }${21:write_config=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>a10_service_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

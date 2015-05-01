@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+${1:#key = The variables whose values will be used as groups
+}- name: ${2:Name for group_by module.}
+${3:  sudo: ${4:yes}}
+  group_by: ${5:key=${6: } }
+${7:  when: ${8: variable is defined}}
+${9:  with_items: ${10: array}}
+]]></content>
+	<tabTrigger>group_by</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

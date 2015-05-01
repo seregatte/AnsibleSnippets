@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#category = Install/Remove category instead of a single package.
+#name = Package name, e.g. `SUNWcsr'
+#proxy = HTTP[s] proxy to be used if `src' is a URL.
+#response_file = Specifies the location of a response file to be used if package expects input on install. (added in Ansible 1.4)
+#src = Specifies the location to install the package from. Required when `state=present'. Can be any path acceptable to the `pkgadd' command's `-d' option. e.g.: `somefile.pkg', `/dir/with/pkgs', `http:/server/mypkgs.pkg'. If using a file or directory, they must already be accessible by the host. See the [copy] module for a way to get them there.
+#state = Whether to install (`present'), or remove (`absent') a package. If the package is to be installed, then `src' is required. The SVR4 package system doesn't provide an upgrade operation. You need to uninstall the old, then install the new package.
+#zone = Whether to install the package only in the current zone, or install it into all zones. The installation into all zones works only if you are working with the global zone.
+}- name: ${2:Name for svr4pkg module.}
+${3:  sudo: ${4:yes}}
+  svr4pkg: ${5:category=${6: } }${7:name=${8: } }${9:proxy=${10: } }${11:response_file=${12: } }${13:src=${14: } }${15:state=${16: } }${17:zone=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>svr4pkg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

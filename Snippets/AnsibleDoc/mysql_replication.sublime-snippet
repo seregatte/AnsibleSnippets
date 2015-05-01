@@ -1,0 +1,31 @@
+<snippet>
+<content><![CDATA[
+${1:#login_host = mysql host to connect
+#login_password = password to connect mysql host, if defined login_user also needed.
+#login_unix_socket = unix socket to connect mysql server
+#login_user = username to connect mysql host, if defined login_password also needed.
+#master_connect_retry = same as mysql variable
+#master_host = same as mysql variable
+#master_log_file = same as mysql variable
+#master_log_pos = same as mysql variable
+#master_password = same as mysql variable
+#master_port = same as mysql variable
+#master_ssl = same as mysql variable
+#master_ssl_ca = same as mysql variable
+#master_ssl_capath = same as mysql variable
+#master_ssl_cert = same as mysql variable
+#master_ssl_cipher = same as mysql variable
+#master_ssl_key = same as mysql variable
+#master_user = same as mysql variable
+#mode = module operating mode. Could be getslave (SHOW SLAVE STATUS), getmaster (SHOW MASTER STATUS), changemaster (CHANGE MASTER TO), startslave (START SLAVE), stopslave (STOP SLAVE)
+#relay_log_file = same as mysql variable
+#relay_log_pos = same as mysql variable
+}- name: ${2:Name for mysql_replication module.}
+${3:  sudo: ${4:yes}}
+  mysql_replication: ${5:login_host=${6: } }${7:login_password=${8: } }${9:login_unix_socket=${10: } }${11:login_user=${12: } }${13:master_connect_retry=${14: } }${15:master_host=${16: } }${17:master_log_file=${18: } }${19:master_log_pos=${20: } }${21:master_password=${22: } }${23:master_port=${24: } }${25:master_ssl=${26: } }${27:master_ssl_ca=${28: } }${29:master_ssl_capath=${30: } }${31:master_ssl_cert=${32: } }${33:master_ssl_cipher=${34: } }${35:master_ssl_key=${36: } }${37:master_user=${38: } }${39:mode=${40: } }${41:relay_log_file=${42: } }${43:relay_log_pos=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
+]]></content>
+	<tabTrigger>mysql_replication</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

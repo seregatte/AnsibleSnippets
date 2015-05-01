@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = DigitalOcean api key.
+#client_id = DigitalOcean manager id.
+#id = Numeric, the droplet id you want to operate on.
+#ip = The IP address to point a domain at.
+#name = String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key, or the name of a domain.
+#state = Indicate desired state of the target.
+}- name: ${2:Name for digital_ocean_domain module.}
+${3:  sudo: ${4:yes}}
+  digital_ocean_domain: ${5:api_key=${6: } }${7:client_id=${8: } }${9:id=${10: } }${11:ip=${12: } }${13:name=${14: } }${15:state=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>digital_ocean_domain</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
