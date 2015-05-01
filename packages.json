@@ -1,0 +1,20 @@
+{
+    "schema_version": "1.2",
+    "packages": [
+        {
+            "name": "AnsibleSnippets",
+            "description": "Provide some Ansible Snippets to SublimeText.",
+            "author": "seregatte",
+            "homepage": "https://github.com/seregatte/AnsibleSnippets.git",
+            "last_modified": "2015-04-30 23:30:00",
+            "platforms": {
+                "*": [
+                    {
+                        "version": "0.0.1",
+                        "url": "https://github.com/seregatte/AnsibleSnippets"
+                    }
+                ]
+            }
+        }
+    ]
+}
