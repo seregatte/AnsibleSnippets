@@ -1,61 +1,42 @@
-# Openresty
+# Ansible Snippets
 
-Configures and installs openresty
+Snippets for Ansible in ST2/3.
 
 ## Requirements
 
-- Ansible 1.2+
-- Ubuntu 14.04+
+- Sublime Text 2/3+
 
 ## Installation
 
-```shell
-$ ansible-galaxy install seregatte.openresty
-```
+### Package Manager
 
-## Variables
+First, install the Package Control plugin, instructions here: http://wbond.net/sublime_packages/package_control.
 
-### Openresty
+Once you install Package Control, restart Sublime Text and bring up the Command Palette (`Command+Shift+P` on OS X, `Control+Shift+P` on Linux/Windows).
 
-| Name 						| Default 								| Description 										|
-|---------------------------|---------------------------------------|---------------------------------------------------|
-| openresty_version			| 1.7.7.2 								| Openresty Version 								|
-| with_luajit				| true									| Compile with luajit support 						|          
-| with_dav					| true									| Compile with dav support 							|          
-| with_flv					| true									| Compile with flv support 							|          
-| with_geoip				| true									| Compile with geoip support 						|          
-| with_gzip_static			| true									| Compile with gzip_static support 					|          
-| with_image_filter			| true									| Compile with image_filter support 				|          
-| with_realip				| true									| Compile with realip support 						|          
-| with_stub_status			| true									| Compile with stub_status support 					|          
-| with_ssl 					| true									| Compile with ssl support 							|          
-| with_sub 					| true									| Compile with sub support 							|          
-| with_xslt					| true									| Compile with xslt support 						|          
-| with_ipv6					| true									| Compile with ipv support 							|          
-| with_sha1					| "/usr/include/openssl"				| Compile with sha support 							|          
-| with_md5					| "/usr/include/openssl"				| Compile with md support 							|          
-| with_mail 				| true									| Compile with mail support 						|          
-| with_mail_ssl				| true									| Compile with mail_ssl support 					|          
-| with_stub_status			| true									| Compile with stub_status support 					|          
-| with_secure_link			| true									| Compile with secure_link support 					|          
-| with_sub 					| true									| Compile with sub support 							|          
+Select "Package Control: Install Package", wait while Package Control fetches the latest package list, then select "AnsibleSnippets" when the list appears.
+
+The advantage of using this method is that Package Control will automatically keep this package up to date with the latest version.
+
+### Manual
+Clone the repository in your Sublime Text "Packages" directory:
+
+    git clone https://github.com/seregatte/AnsibleSnippets.git AnsibleSnippets
+
+The "Packages" directory is located at:
+
+* OS X:
+    `~/Library/Application Support/Sublime Text 2/Packages/`
+* Linux:
+    `~/.Sublime Text 2/Packages/`
+* Windows:
+    `%APPDATA%/Sublime Text 2/Packages/`
 
 Dependencies
 ------------
 
 None
 
-
-Example Playbook
-----------------
-
-Including an example of how to use your role:
-
-    - hosts: servers
-      vars:
-         - openresty_version: 1.7.7.2 # Optional because we already have a default value
-      roles:
-         - seregatte.openresty
 
 License
 -------
