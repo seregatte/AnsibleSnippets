@@ -1,0 +1,156 @@
+<snippet>
+	<content><![CDATA[---${1:
+# ^^^ YAML documents must begin with the document separator "---"
+#
+# Note:
+# YAML, like Python, cares about whitespace.  Indent consistently throughout.
+# Be aware! Unlike Python, YAML refuses to allow the tab character for
+# indentation, so always use spaces.
+# Notice the minus on the line below -- this starts the playbook's record
+# in the YAML document. Only one playbook is allowed per YAML file.  Indent
+# the body of the playbook.}${2:
+  ###########
+  # Playbook attribute: hosts
+  # Required: yes
+  # Description:
+  #   The name of a host or group of hosts that this playbook should apply to.
+  #
+  ## Example values:
+  #   hosts: all -- applies to all hosts
+  #} 
+- hosts: ${3:all}${4:
+  ###########
+  # Playbook attribute: sudo
+  # Default: False
+  # Required: no
+  # Description:
+  #   If True, always use sudo to run this playbook, just like passing the
+  #   --sudo (or -s) flag to ansible or ansible-playbook.}
+  sudo: ${5:True}${6:
+  ###########
+  # Playbook attribute:  user
+  # Default: "root'
+  # Required: no
+  # Description
+  #   Remote user to execute the playbook as}
+  ${7:user: ${8:remoteuser}}${9:
+  ###########
+  # Playbook attribute: vars
+  # Default: none
+  # Required: no
+  # Description:
+  #  Set configuration variables passed to templates & included playbooks
+  #  and handlers.  See below for example:
+  # 
+  # variable: value }
+  ${10:vars:
+    ${11:color: ${12:brown}}}${13:
+  ##########
+  # Playbook attribute: vars_files
+  # Required: no
+  # Description:
+  #   Specifies a list of YAML files to load variables from.
+  #   Always evaluated after the 'vars' section, no matter which section
+  #   occurs first in the playbook.  Examples are below.
+  #   Example YAML for a file to be included by vars_files:}
+  ${14:vars_files:
+    - ${15: [${16:vars/$platform.yml}, ${17:vars/default.yml}]}}${18:
+  ##########
+  # Playbook attribute: vars_prompt
+  # Required: no
+  # Description:
+  #   A list of variables that must be manually input each time this playbook
+  #   runs.  Used for sensitive data and also things like release numbers that
+  #   vary on each deployment.  Ansible always prompts for this value, even
+  #   if it's passed in through the inventory or --extra-vars.}
+  ${19:vars_prompt:
+    ${20:passphrase: ${21:"Please enter the passphrase for the SSL certificate"}}}${22:
+  ##########
+  # Playbook attribute: tasks
+  # Required: yes
+  # Description: A list of tasks to perform in this playbook.
+  #
+  # Variables expand in both name and action
+  # - name: Paint the server $color
+  #  action: command echo $color
+  #  notify: Restart Apache
+  #
+  # Include tasks from another file!
+  # - include: tasks/new_user.yml user=sklar color=red
+  #
+  # Choose between files or templates!
+  #
+  # - name: Template a file
+  #   action: template src=$item dest=/etc/myapp/foo.conf
+  #   first_available_file:
+  # 
+  #     # If we couldn't find a distribution-specific file, use default.conf:
+  #     - templates/myapp/default.conf
+  #
+  # Conditionally execute tasks!
+  #
+  # - name: "shutdown the government"
+  #   action: command /sbin/shutdown -t now
+  #   only_if: "'$ansible_hostname' == 'the_government'"}
+  ${23:tasks:}${25:
+  ##########
+  # Playbook attribute: handlers
+  # Required: no
+  # Description:
+  #   Handlers are tasks that run when another task has changed something.
+  #   See above for examples.  The format is exactly the same as for tasks.
+  #   Note that if multiple tasks notify the same handler in a playbook run
+  #   that handler will only run once.
+  #
+  #   Handlers are referred to by name. They will be run in the order declared
+  #   in the playbook.  For example: if a task were to notify the
+  #   handlers in reverse order like so:
+  #
+  #   - task: touch a file
+  #     action: file name=/tmp/lock.txt
+  #     notify:
+  #     - Restart application
+  #     - Restart nginx
+  #
+  #   The "Restart nginx" handler will still run before the "Restart
+  #   application" handler because it is declared first in this playbook.
+  #   - name: Restart nginx
+  #   action: service name=nginx state=restarted
+  #
+  # # Any module can be used for the handler action
+  # - name: Restart application
+  #   action: command /srv/myapp/restart.sh
+  #
+  # # It's also possible to include handlers from another file.  Structure is
+  # # the same as a tasks file, see the tasks section above for an example.
+  # - include: handlers/site.yml}
+  ${26:handlers:}${27:
+  ##########
+  # Playbook attribute: roles
+  # Required: no
+  # Description:
+  #   Roles in Ansible build on the idea of include files and combine them to 
+  #   form clean, reusable abstractions – they allow you to focus more on the 
+  #   big picture and only dive down into the details when needed.
+  #
+  # A role Folder structure example:
+  #
+  # playbook.yml
+  # roles/
+  #    common/
+  #      files/
+  #      templates/
+  #      tasks/
+  #      handlers/
+  #      vars/
+  #      defaults/
+  #      meta/
+  #
+  # Examples:
+  #   roles:
+  #     - common
+  #     - webservers}
+  ${28:roles:}]]></content>
+	<tabTrigger>playbook</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
