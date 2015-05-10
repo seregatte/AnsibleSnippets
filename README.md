@@ -1,4 +1,4 @@
-# Ansible Snippets 0.0.1
+# Ansible Snippets 0.0.2
 
 Snippets for Ansible in ST2/3.
 
