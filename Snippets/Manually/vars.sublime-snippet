@@ -1,0 +1,9 @@
+<snippet>
+<content><![CDATA[
+vars: ${1:
+  ${2:var1}: ${3:item1}
+  ${4:var2}: ${5:item1}
+]]></content>
+	<tabTrigger>with_items</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
