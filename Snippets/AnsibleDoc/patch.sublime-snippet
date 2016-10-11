@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#backup = passes --backup --version-control=numbered to patch, producing numbered backup copies
+#basedir = Path of a base directory in which the patch file will be applied. May be ommitted when `dest' option is
+#binary = Setting to true will disable patch's heuristic for transforming CRLF line endings into LF. Line endings of src
+#dest = Path of the file on the remote machine to be patched. The names of the files to be patched are usually taken
+#remote_src = If False, it will search for src at originating/master machine, if True it will go to the remote/target machine
+#src = Path of the patch file as accepted by the GNU patch tool. If `remote_src' is False, the patch source file is
+#strip = Number that indicates the smallest prefix containing leading slashes that will be stripped from each file name
+}- name: ${2:Name for patch module.}
+${3:  sudo: ${4:yes}}
+  patch: ${5:backup=${6: } }${7:basedir=${8: } }${9:binary=${10: } }${11:dest=${12: } }${13:remote_src=${14: } }${15:src=${16: } }${17:strip=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>patch</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -4,7 +4,8 @@ ${1:#address = Server IP address to modify metadata for, will match any IP assig
 #api_key = Rackspace API key (overrides `credentials')
 #auth_endpoint = The URI of the authentication service
 #credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
-#env = pyrax-configuration
+#env = Environment as configured in ~/.pyrax.cfg, see
+#https = pyrax-
 #id = Server ID to modify metadata for
 #identity_type = Authentication machanism to use, such as rackspace or keystone
 #meta = A hash of metadata to associate with the instance
@@ -16,9 +17,9 @@ ${1:#address = Server IP address to modify metadata for, will match any IP assig
 #verify_ssl = Whether or not to require SSL validation of API endpoints
 }- name: ${2:Name for rax_meta module.}
 ${3:  sudo: ${4:yes}}
-  rax_meta: ${5:address=${6: } }${7:api_key=${8: } }${9:auth_endpoint=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:id=${16: } }${17:identity_type=${18: } }${19:meta=${20: } }${21:name=${22: } }${23:region=${24: } }${25:tenant_id=${26: } }${27:tenant_name=${28: } }${29:username=${30: } }${31:verify_ssl=${32: } }
-${33:  when: ${34: variable is defined}}
-${35:  with_items: ${36: array}}
+  rax_meta: ${5:address=${6: } }${7:api_key=${8: } }${9:auth_endpoint=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:https=${16: } }${17:id=${18: } }${19:identity_type=${20: } }${21:meta=${22: } }${23:name=${24: } }${25:region=${26: } }${27:tenant_id=${28: } }${29:tenant_name=${30: } }${31:username=${32: } }${33:verify_ssl=${34: } }
+${35:  when: ${36: variable is defined}}
+${37:  with_items: ${38: array}}
 ]]></content>
 	<tabTrigger>rax_meta</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

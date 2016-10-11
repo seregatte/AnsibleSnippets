@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:#enable_ft = Enable the VMK interface for Fault Tolerance traffic
+#enable_mgmt = Enable the VMK interface for Management traffic
+#enable_vmotion = Enable the VMK interface for vMotion traffic
+#enable_vsan = Enable the VMK interface for VSAN traffic
+#hostname = The hostname or IP address of the ESXi Server
+#ip_address = The IP Address for the VMK interface
+#mtu = The MTU for the VMK interface
+#password = The password of ESXi Server
+#portgroup_name = The name of the portgroup for the VMK interface
+#subnet_mask = The Subnet Mask for the VMK interface
+#username = The username of the ESXi Server
+#vland_id = The VLAN ID for the VMK interface
+#vswitch_name = The name of the vswitch where to add the VMK interface
+}- name: ${2:Name for vmware_vmkernel module.}
+${3:  sudo: ${4:yes}}
+  vmware_vmkernel: ${5:enable_ft=${6: } }${7:enable_mgmt=${8: } }${9:enable_vmotion=${10: } }${11:enable_vsan=${12: } }${13:hostname=${14: } }${15:ip_address=${16: } }${17:mtu=${18: } }${19:password=${20: } }${21:portgroup_name=${22: } }${23:subnet_mask=${24: } }${25:username=${26: } }${27:vland_id=${28: } }${29:vswitch_name=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
+]]></content>
+	<tabTrigger>vmware_vmkernel</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

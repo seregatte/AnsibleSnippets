@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#change_hostname_to = The hostname that an ESXi host should be changed to.
+#dns_servers = The DNS servers that the host should be configured to use.
+#domainname = The domain the ESXi host should be apart of.
+#hostname = The hostname or IP address of the vSphere vCenter API server
+#password = The password of the vSphere vCenter
+#username = The username of the vSphere vCenter
+}- name: ${2:Name for vmware_dns_config module.}
+${3:  sudo: ${4:yes}}
+  vmware_dns_config: ${5:change_hostname_to=${6: } }${7:dns_servers=${8: } }${9:domainname=${10: } }${11:hostname=${12: } }${13:password=${14: } }${15:username=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>vmware_dns_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

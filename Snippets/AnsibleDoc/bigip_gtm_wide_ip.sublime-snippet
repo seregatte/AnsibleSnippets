@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#lb_method = LB method of wide ip
+#password = BIG-IP password
+#server = BIG-IP host
+#user = BIG-IP username
+#wide_ip = Wide IP name
+}- name: ${2:Name for bigip_gtm_wide_ip module.}
+${3:  sudo: ${4:yes}}
+  bigip_gtm_wide_ip: ${5:lb_method=${6: } }${7:password=${8: } }${9:server=${10: } }${11:user=${12: } }${13:wide_ip=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>bigip_gtm_wide_ip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

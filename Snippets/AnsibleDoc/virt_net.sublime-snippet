@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#autostart = Specify if a given storage pool should be started automatically on system boot.
+#command = in addition to state management, various non-idempotent commands are available. See examples.
+#name = name of the network being managed. Note that network must be previously defined with xml.
+#state = specify which state you want a network to be in. If 'active', network will be started. If 'present', ensure that
+#uri = libvirt connection uri.
+#xml = XML document used with the define command.
+}- name: ${2:Name for virt_net module.}
+${3:  sudo: ${4:yes}}
+  virt_net: ${5:autostart=${6: } }${7:command=${8: } }${9:name=${10: } }${11:state=${12: } }${13:uri=${14: } }${15:xml=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>virt_net</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

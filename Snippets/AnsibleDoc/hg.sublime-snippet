@@ -2,15 +2,16 @@
 <content><![CDATA[
 ${1:#dest = Absolute path of where the repository should be cloned to.
 #executable = Path to hg executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.
-#force = Discards uncommitted changes. Runs `hg update -C'.
+#force = Discards uncommitted changes. Runs `hg update -C'.  Prior to 1.9, the default was `yes`.
 #purge = Deletes untracked files. Runs `hg purge'.
 #repo = The repository address.
 #revision = Equivalent `-r' option in hg command which could be the changeset, revision number, branch name or even tag.
+#update = If `no', do not retrieve new revisions from the origin repository
 }- name: ${2:Name for hg module.}
 ${3:  sudo: ${4:yes}}
-  hg: ${5:dest=${6: } }${7:executable=${8: } }${9:force=${10: } }${11:purge=${12: } }${13:repo=${14: } }${15:revision=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  hg: ${5:dest=${6: } }${7:executable=${8: } }${9:force=${10: } }${11:purge=${12: } }${13:repo=${14: } }${15:revision=${16: } }${17:update=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
 ]]></content>
 	<tabTrigger>hg</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

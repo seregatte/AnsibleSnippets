@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:#force = Corresponds to the `--force' option for `urpmi'.
-#no = Corresponds to the `--no-suggests' option for `urpmi'.
+${1:#force = Assume "yes" is the answer to any question urpmi has to ask. Corresponds to the `--force' option for `urpmi'.
+#no = Corresponds to the `--no-recommends' option for `urpmi'.
 #pkg = name of package to install, upgrade or remove.
 #state = Indicates the desired package state
 #update_cache = update the package database first `urpmi.update -a'.

@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#datacenter = The datacenter in which to operate.
+#lan = The LAN to place the NIC on. You can pass a LAN that doesn't exist and it will be created. Required on create.
+#name = The name or ID of the NIC. This is only required on deletes, but not on create.
+#server = The server name or ID.
+#state = Indicate desired state of the resource
+#subscription_password = THe ProfitBricks password. Overrides the PB_PASSWORD environement variable.
+#subscription_user = The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environement variable.
+#wait = wait for the operation to complete before returning
+#wait_timeout = how long before wait gives up, in seconds
+}- name: ${2:Name for profitbricks_nic module.}
+${3:  sudo: ${4:yes}}
+  profitbricks_nic: ${5:datacenter=${6: } }${7:lan=${8: } }${9:name=${10: } }${11:server=${12: } }${13:state=${14: } }${15:subscription_password=${16: } }${17:subscription_user=${18: } }${19:wait=${20: } }${21:wait_timeout=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>profitbricks_nic</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

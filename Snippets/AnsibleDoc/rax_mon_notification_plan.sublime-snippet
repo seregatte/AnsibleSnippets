@@ -1,0 +1,27 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = Rackspace API key (overrides `credentials')
+#auth_endpoint = The URI of the authentication service
+#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
+#critical_state = Notification list to use when the alarm state is CRITICAL. Must be an array of valid rax_mon_notification ids.
+#env = Environment as configured in ~/.pyrax.cfg, see
+#https = pyrax-
+#identity_type = Authentication machanism to use, such as rackspace or keystone
+#label = Defines a friendly name for this notification plan. String between 1 and 255 characters long.
+#ok_state = Notification list to use when the alarm state is OK. Must be an array of valid rax_mon_notification ids.
+#region = Region to create an instance in
+#state = Ensure that the notification plan with this `label' exists or does not exist.
+#tenant_id = The tenant ID used for authentication
+#tenant_name = The tenant name used for authentication
+#username = Rackspace username (overrides `credentials')
+#verify_ssl = Whether or not to require SSL validation of API endpoints
+#warning_state = Notification list to use when the alarm state is WARNING. Must be an array of valid rax_mon_notification ids.
+}- name: ${2:Name for rax_mon_notification_plan module.}
+${3:  sudo: ${4:yes}}
+  rax_mon_notification_plan: ${5:api_key=${6: } }${7:auth_endpoint=${8: } }${9:credentials=${10: } }${11:critical_state=${12: } }${13:env=${14: } }${15:https=${16: } }${17:identity_type=${18: } }${19:label=${20: } }${21:ok_state=${22: } }${23:region=${24: } }${25:state=${26: } }${27:tenant_id=${28: } }${29:tenant_name=${30: } }${31:username=${32: } }${33:verify_ssl=${34: } }${35:warning_state=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
+]]></content>
+	<tabTrigger>rax_mon_notification_plan</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:#encoding = m e s s a g e   e n c o d i n g
-#host = h o s t   t o   c o n n e c t ,   o v e r r i d e s   u s e r   i n f o
+${1:#encoding = message encoding
+#host = host to connect, overrides user info
 #msg = The message body.
-#password = p a s s w o r d   f o r   u s e r   t o   c o n n e c t
-#port = p o r t   t o   c o n n e c t   t o ,   o v e r r i d e s   d e f a u l t
-#to = u s e r   I D   o r   n a m e   o f   t h e   r o o m ,   w h e n   u s i n g   r o o m   u s e   a   s l a s h   t o   i n d i c a t e   y o u r   n i c k .
-#user = U s e r   a s   w h i c h   t o   c o n n e c t
+#password = password for user to connect
+#port = port to connect to, overrides default
+#to = user ID or name of the room, when using room use a slash to indicate your nick.
+#user = User as which to connect
 }- name: ${2:Name for jabber module.}
 ${3:  sudo: ${4:yes}}
   jabber: ${5:encoding=${6: } }${7:host=${8: } }${9:msg=${10: } }${11:password=${12: } }${13:port=${14: } }${15:to=${16: } }${17:user=${18: } }

@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#location = Datacenter in which the policy lives/should live.
+#name = The name of the Anti Affinity Policy.
+#state = Whether to create or delete the policy.
+#wait = Whether to wait for the tasks to finish before returning.
+}- name: ${2:Name for clc_aa_policy module.}
+${3:  sudo: ${4:yes}}
+  clc_aa_policy: ${5:location=${6: } }${7:name=${8: } }${9:state=${10: } }${11:wait=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>clc_aa_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,26 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
 #cidr_block = The cidr block representing the VPC, e.g. 10.0.0.0/16
 #dns_hostnames = toggles the "Enable DNS hostname support for instances" flag
 #dns_support = toggles the "Enable DNS resolution" flag
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
 #instance_tenancy = The supported tenancy options for instances launched into the VPC.
 #internet_gateway = Toggle whether there should be an Internet gateway attached to the VPC
-#region = region in which the resource exists.
-#resource_tags = A dictionary array of resource tags of the form: { tag1: value1, tag2: value2 }.  Tags in this list are used in conjunction with CIDR block to uniquely identify a VPC in lieu of vpc_id. Therefore, if CIDR/Tag combination does not exits, a new VPC will be created.  VPC tags not on this list will be ignored. Prior to 1.7, specifying a resource tag was optional.
-#route_tables = A dictionary array of route tables to add of the form: { subnets: [172.22.2.0/24, 172.22.3.0/24,], routes: [{ dest: 0.0.0.0/0, gw: igw},] }. Where the subnets list is those subnets the route table should be associated with, and the routes list is a list of routes to be in the table.  The special keyword for the gw of igw specifies that you should the route should go through the internet gateway attached to the VPC. gw also accepts instance-ids in addition igw. This module is currently unable to affect the "main" route table due to some limitations in boto, so you must explicitly define the associated subnets or they will be attached to the main table implicitly. As of 1.8, if the route_tables parameter is not specified, no existing routes will be modified.
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#resource_tags = A dictionary array of resource tags of the form: { tag1: value1, tag2: value2 }.  Tags in this list are used in
+#route_tables = A dictionary array of route tables to add of the form: { subnets: [172.22.2.0/24, 172.22.3.0/24,], routes: [{
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #state = Create or terminate the VPC
-#subnets = A dictionary array of subnets to add of the form: { cidr: ..., az: ... , resource_tags: ... }. Where az is the desired availability zone of the subnet, but it is not required. Tags (i.e.: resource_tags) is also optional and use dictionary form: { "Environment":"Dev", "Tier":"Web", ...}. All VPC subnets not in this list will be removed. As of 1.8, if the subnets parameter is not specified, no existing subnets will be modified.
+#subnets = A dictionary array of subnets to add of the form: { cidr: ..., az: ... , resource_tags: ... }. Where az is the
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 #vpc_id = A VPC id to terminate when state=absent
 #wait = wait for the VPC to be in state 'available' before returning
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for ec2_vpc module.}
 ${3:  sudo: ${4:yes}}
-  ec2_vpc: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:cidr_block=${10: } }${11:dns_hostnames=${12: } }${13:dns_support=${14: } }${15:instance_tenancy=${16: } }${17:internet_gateway=${18: } }${19:region=${20: } }${21:resource_tags=${22: } }${23:route_tables=${24: } }${25:state=${26: } }${27:subnets=${28: } }${29:validate_certs=${30: } }${31:vpc_id=${32: } }${33:wait=${34: } }${35:wait_timeout=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  ec2_vpc: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:cidr_block=${10: } }${11:dns_hostnames=${12: } }${13:dns_support=${14: } }${15:ec2_url=${16: } }${17:instance_tenancy=${18: } }${19:internet_gateway=${20: } }${21:profile=${22: } }${23:region=${24: } }${25:http=${26: } }${27:resource_tags=${28: } }${29:route_tables=${30: } }${31:security_token=${32: } }${33:state=${34: } }${35:subnets=${36: } }${37:validate_certs=${38: } }${39:vpc_id=${40: } }${41:wait=${42: } }${43:wait_timeout=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
 ]]></content>
 	<tabTrigger>ec2_vpc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

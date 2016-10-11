@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
+#delete_on_termination = Delete the interface when the instance it is attached to is terminated. You can only specify this flag when the
+#description = Optional description of the ENI.
+#device_index = The index of the device for the network interface attachment on the instance.
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#eni_id = The ID of the ENI
+#force_detach = Force detachment of the interface. This applies either when explicitly detaching the interface by setting
+#instance_id = Instance ID that you wish to attach ENI to. To detach an ENI from an instance, use 'None'.
+#private_ip_address = Private IP address.
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#security_groups = List of security groups associated with the interface. Only used when state=present.
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
+#source_dest_check = By default, interfaces perform source/destination checks. NAT instances however need this check to be disabled.
+#state = Create or delete ENI.
+#subnet_id = ID of subnet in which to create the ENI. Only required when state=present.
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+}- name: ${2:Name for ec2_eni module.}
+${3:  sudo: ${4:yes}}
+  ec2_eni: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:delete_on_termination=${10: } }${11:description=${12: } }${13:device_index=${14: } }${15:ec2_url=${16: } }${17:eni_id=${18: } }${19:force_detach=${20: } }${21:instance_id=${22: } }${23:private_ip_address=${24: } }${25:profile=${26: } }${27:region=${28: } }${29:http=${30: } }${31:security_groups=${32: } }${33:security_token=${34: } }${35:source_dest_check=${36: } }${37:state=${38: } }${39:subnet_id=${40: } }${41:validate_certs=${42: } }
+${43:  when: ${44: variable is defined}}
+${45:  with_items: ${46: array}}
+]]></content>
+	<tabTrigger>ec2_eni</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

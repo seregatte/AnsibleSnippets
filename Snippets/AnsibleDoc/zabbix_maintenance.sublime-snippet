@@ -2,8 +2,8 @@
 <content><![CDATA[
 ${1:#collect_data = Type of maintenance. With data collection, or without.
 #desc = Short description of maintenance window.
-#host_groups = Host groups to manage maintenance window for. Separate multiple groups with commas. `host_group' is an alias for `host_groups'. *Required* option when `state' is `present' and no `host_names' specified.
-#host_names = Hosts to manage maintenance window for. Separate multiple hosts with commas. `host_name' is an alias for `host_names'. *Required* option when `state' is `present' and no `host_groups' specified.
+#host_groups = Host groups to manage maintenance window for. Separate multiple groups with commas. `host_group' is an alias for
+#host_names = Hosts to manage maintenance window for. Separate multiple hosts with commas. `host_name' is an alias for
 #login_password = Zabbix user password.
 #login_user = Zabbix user name.
 #minutes = Length of maintenance window in minutes.

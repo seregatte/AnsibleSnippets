@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#bits = 32 or 64 bits support.
+#checksum = The MD5 checksum value of this template. If set, we search by checksum instead of name.
+#cross_zones = Whether the template should be syned across zones. Only used if `state' is present.
+#details = Template details in key/value pairs.
+#display_text = Display text of the template.
+#format = The format for the template. Relevant when using `state=present'.
+#hypervisor = Name the hypervisor to be used for creating the new template. Relevant when using `state=present'.
+#is_dynamically_scalable = Register the template having XS/VMWare tools installed in order to support dynamic scaling of VM CPU/memory.
+#is_extractable = True if the template or its derivatives are extractable.
+#is_featured = Register the template to be featured. Only used if `state' is present.
+#is_public = Register the template to be publicly available to all users. Only used if `state' is present.
+#is_ready = This flag is used for searching existing templates. If set to `true', it will only list template ready for
+#is_routing = True if the template type is routing i.e., if template is used to deploy router. Only considered if `url' is
+#name = Name of the template.
+#os_type = OS type that best represents the OS of this template.
+#password_enabled = True if the template supports the password reset feature.
+#poll_async = Poll async jobs until job has finished.
+#project = Name of the project the template to be registered in.
+#requires_hvm = true if this template requires HVM.
+#snapshot = Name of the snapshot, created from the VM ROOT volume, the template will be created from. `vm' is required
+#sshkey_enabled = True if the template supports the sshkey upload feature.
+#state = State of the template.
+#template_filter = Name of the filter used to search for the template.
+#template_tag = the tag for this template.
+#url = URL of where the template is hosted on `state=present'. URL to which the template would be extracted on
+#vm = VM name the template will be created from its volume or alternatively from a snapshot. VM must be in stopped
+#zone = Name of the zone you wish the template to be registered or deleted from. If not specified, first found zone will
+}- name: ${2:Name for cs_template module.}
+${3:  sudo: ${4:yes}}
+  cs_template: ${5:api_http_method=${6: } }${7:api_key=${8: } }${9:api_region=${10: } }${11:api_secret=${12: } }${13:api_timeout=${14: } }${15:api_url=${16: } }${17:bits=${18: } }${19:checksum=${20: } }${21:cross_zones=${22: } }${23:details=${24: } }${25:display_text=${26: } }${27:format=${28: } }${29:hypervisor=${30: } }${31:is_dynamically_scalable=${32: } }${33:is_extractable=${34: } }${35:is_featured=${36: } }${37:is_public=${38: } }${39:is_ready=${40: } }${41:is_routing=${42: } }${43:name=${44: } }${45:os_type=${46: } }${47:password_enabled=${48: } }${49:poll_async=${50: } }${51:project=${52: } }${53:requires_hvm=${54: } }${55:snapshot=${56: } }${57:sshkey_enabled=${58: } }${59:state=${60: } }${61:template_filter=${62: } }${63:template_tag=${64: } }${65:url=${66: } }${67:vm=${68: } }${69:zone=${70: } }
+${71:  when: ${72: variable is defined}}
+${73:  with_items: ${74: array}}
+]]></content>
+	<tabTrigger>cs_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

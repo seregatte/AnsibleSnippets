@@ -6,7 +6,7 @@ ${1:#environment = The airbrake environment name, typically 'production', 'stagi
 #token = API token.
 #url = Optional URL to submit the notification to. Use to send notifications to Airbrake-compliant tools like Errbit.
 #user = The username of the person doing the deployment
-#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally
 }- name: ${2:Name for airbrake_deployment module.}
 ${3:  sudo: ${4:yes}}
   airbrake_deployment: ${5:environment=${6: } }${7:repo=${8: } }${9:revision=${10: } }${11:token=${12: } }${13:url=${14: } }${15:user=${16: } }${17:validate_certs=${18: } }

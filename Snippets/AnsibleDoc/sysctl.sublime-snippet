@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:#ignoreerrors = Use this option to ignore errors about unknown keys.
 #name = The dot-separated path (aka `key') specifying the sysctl variable.
-#reload = If `yes', performs a `/sbin/sysctl -p' if the `sysctl_file' is updated. If `no', does not reload `sysctl' even if the `sysctl_file' is updated.
+#reload = If `yes', performs a `/sbin/sysctl -p' if the `sysctl_file' is updated. If `no', does not reload `sysctl' even
 #state = Whether the entry should be present or absent in the sysctl file.
 #sysctl_file = Specifies the absolute path to `sysctl.conf', if not `/etc/sysctl.conf'.
 #sysctl_set = Verify token value with the sysctl command and set with -w if necessary

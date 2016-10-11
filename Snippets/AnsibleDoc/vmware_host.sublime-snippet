@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#cluster_name = Name of the cluster to add the host
+#datacenter_name = Name of the datacenter to add the host
+#esxi_hostname = ESXi hostname to manage
+#esxi_password = ESXi password
+#esxi_username = ESXi username
+#hostname = The hostname or IP address of the vSphere vCenter API server
+#password = The password of the vSphere vCenter
+#state = Add or remove the host
+#username = The username of the vSphere vCenter
+}- name: ${2:Name for vmware_host module.}
+${3:  sudo: ${4:yes}}
+  vmware_host: ${5:cluster_name=${6: } }${7:datacenter_name=${8: } }${9:esxi_hostname=${10: } }${11:esxi_password=${12: } }${13:esxi_username=${14: } }${15:hostname=${16: } }${17:password=${18: } }${19:state=${20: } }${21:username=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>vmware_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

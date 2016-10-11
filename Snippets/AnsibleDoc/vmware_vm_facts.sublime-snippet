@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#hostname = The hostname or IP address of the vSphere vCenter API server
+#password = The password of the vSphere vCenter
+#username = The username of the vSphere vCenter
+}- name: ${2:Name for vmware_vm_facts module.}
+${3:  sudo: ${4:yes}}
+  vmware_vm_facts: ${5:hostname=${6: } }${7:password=${8: } }${9:username=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>vmware_vm_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

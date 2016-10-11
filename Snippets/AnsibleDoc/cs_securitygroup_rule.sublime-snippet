@@ -1,0 +1,29 @@
+<snippet>
+<content><![CDATA[
+${1:#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#cidr = CIDR (full notation) to be used for security group rule.
+#end_port = End port for this rule. Required if `protocol=tcp' or `protocol=udp', but `start_port' will be used if not set.
+#icmp_code = Error code for this icmp message. Required if `protocol=icmp'.
+#icmp_type = Type of the icmp message being sent. Required if `protocol=icmp'.
+#poll_async = Poll async jobs until job has finished.
+#project = Name of the project the security group to be created in.
+#protocol = Protocol of the security group rule.
+#security_group = Name of the security group the rule is related to. The security group must be existing.
+#start_port = Start port for this rule. Required if `protocol=tcp' or `protocol=udp'.
+#state = State of the security group rule.
+#type = Ingress or egress security group rule.
+#user_security_group = Security group this rule is based of.
+}- name: ${2:Name for cs_securitygroup_rule module.}
+${3:  sudo: ${4:yes}}
+  cs_securitygroup_rule: ${5:api_http_method=${6: } }${7:api_key=${8: } }${9:api_region=${10: } }${11:api_secret=${12: } }${13:api_timeout=${14: } }${15:api_url=${16: } }${17:cidr=${18: } }${19:end_port=${20: } }${21:icmp_code=${22: } }${23:icmp_type=${24: } }${25:poll_async=${26: } }${27:project=${28: } }${29:protocol=${30: } }${31:security_group=${32: } }${33:start_port=${34: } }${35:state=${36: } }${37:type=${38: } }${39:user_security_group=${40: } }
+${41:  when: ${42: variable is defined}}
+${43:  with_items: ${44: array}}
+]]></content>
+	<tabTrigger>cs_securitygroup_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

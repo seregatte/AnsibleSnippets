@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:#auto_node_startup = whether the target node should be automatically connected at startup
-#discover = whether the list of target nodes on the portal should be (re)discovered and added to the persistent iscsi database. Keep in mind that iscsiadm discovery resets configurtion, like node.startup to manual, hence combined with auto_node_startup=yes will allways return a changed state.
+#discover = whether the list of target nodes on the portal should be (re)discovered and added to the persistent iscsi
 #login = whether the target node should be connected
 #node_auth = discovery.sendtargets.auth.authmethod
 #node_pass = discovery.sendtargets.auth.password

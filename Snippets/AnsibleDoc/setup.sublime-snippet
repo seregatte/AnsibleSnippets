@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#fact_path = path used for local ansible facts (*.fact) - files in this dir will be run (if executable) and their results be added to ansible_local facts if a file is not executable it is read. File/results format can be json or ini-format
+${1:#fact_path = path used for local ansible facts (*.fact) - files in this dir will be run (if executable) and their results be
 #filter = if supplied, only return facts that match this shell-style (fnmatch) wildcard.
 }- name: ${2:Name for setup module.}
 ${3:  sudo: ${4:yes}}

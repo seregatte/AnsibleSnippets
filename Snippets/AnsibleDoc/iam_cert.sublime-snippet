@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
+#cert = The path to the certificate body in PEM encoded format.
+#cert_chain = The path to the CA certificate chain in PEM encoded format.
+#dup_ok = By default the module will not upload a certifcate that is already uploaded into AWS. If set to True, it will
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#key = The path to the private key of the certificate in PEM encoded format.
+#name = Name of certificate to add, update or remove.
+#new_name = When present, this will update the name of the cert with the value passed here.
+#new_path = When present, this will update the path of the cert with the value passed here.
+#path = When creating or updating, specify the desired path of the certificate
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
+#state = Whether to create, delete certificate. When present is specified it will attempt to make an update if new_path
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+}- name: ${2:Name for iam_cert module.}
+${3:  sudo: ${4:yes}}
+  iam_cert: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:cert=${10: } }${11:cert_chain=${12: } }${13:dup_ok=${14: } }${15:ec2_url=${16: } }${17:key=${18: } }${19:name=${20: } }${21:new_name=${22: } }${23:new_path=${24: } }${25:path=${26: } }${27:profile=${28: } }${29:region=${30: } }${31:http=${32: } }${33:security_token=${34: } }${35:state=${36: } }${37:validate_certs=${38: } }
+${39:  when: ${40: variable is defined}}
+${41:  with_items: ${42: array}}
+]]></content>
+	<tabTrigger>iam_cert</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

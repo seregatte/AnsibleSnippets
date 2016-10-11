@@ -1,15 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:#executable = The explicit executable or a pathname to the executable to be used to run easy_install for a specific version of Python installed in the system. For example `easy_install-3.3', if there are both Python 2.7 and 3.3 installations in the system and you want to run easy_install for the Python 3.3 installation.
+${1:#executable = The explicit executable or a pathname to the executable to be used to run easy_install for a specific version of
 #name = A Python library name
-#virtualenv = an optional `virtualenv' directory path to install into. If the `virtualenv' does not exist, it is created automatically
+#state = The desired state of the library. `latest' ensures that the latest version is installed.
+#virtualenv = an optional `virtualenv' directory path to install into. If the `virtualenv' does not exist, it is created
 #virtualenv_command = The command to create the virtual environment with. For example `pyvenv', `virtualenv', `virtualenv2'.
-#virtualenv_site_packages = Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if this setting is changed on an already existing virtual environment it will not have any effect, the environment must be deleted and newly created.
+#virtualenv_site_packages = Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if
 }- name: ${2:Name for easy_install module.}
 ${3:  sudo: ${4:yes}}
-  easy_install: ${5:executable=${6: } }${7:name=${8: } }${9:virtualenv=${10: } }${11:virtualenv_command=${12: } }${13:virtualenv_site_packages=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  easy_install: ${5:executable=${6: } }${7:name=${8: } }${9:state=${10: } }${11:virtualenv=${12: } }${13:virtualenv_command=${14: } }${15:virtualenv_site_packages=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
 ]]></content>
 	<tabTrigger>easy_install</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

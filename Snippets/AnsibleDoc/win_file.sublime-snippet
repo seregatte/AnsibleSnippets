@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#path = path to the file being managed.  Aliases: `dest', `name'
+#state = If `directory', all immediate subdirectories will be created if they do not exist. If `file', the file will NOT
+}- name: ${2:Name for win_file module.}
+${3:  sudo: ${4:yes}}
+  win_file: ${5:path=${6: } }${7:state=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>win_file</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

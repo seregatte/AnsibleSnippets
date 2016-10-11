@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#application = The application under which the virtual directory is created or exists.
+#name = The name of the virtual directory to create or remove
+#physical_path = The physical path to the folder in which the new virtual directory is created. The specified folder must already
+#site = The site name under which the virtual directory is created or exists.
+#state = Whether to add or remove the specified virtual directory
+}- name: ${2:Name for win_iis_virtualdirectory module.}
+${3:  sudo: ${4:yes}}
+  win_iis_virtualdirectory: ${5:application=${6: } }${7:name=${8: } }${9:physical_path=${10: } }${11:site=${12: } }${13:state=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>win_iis_virtualdirectory</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

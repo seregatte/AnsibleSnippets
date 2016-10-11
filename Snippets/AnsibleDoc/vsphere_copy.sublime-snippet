@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#datacenter = The datacenter on the vCenter server that holds the datastore.
+#datastore = The datastore on the vCenter server to push files to.
+#host = The vCenter server on which the datastore is available.
+#login = The login name to authenticate on the vCenter server.
+#password = The password to authenticate on the vCenter server.
+#path = The file to push to the datastore on the vCenter server.
+#src = The file to push to vCenter
+#validate_certs = If `no', SSL certificates will not be validated. This should only be set to `no' when no other option exists.
+}- name: ${2:Name for vsphere_copy module.}
+${3:  sudo: ${4:yes}}
+  vsphere_copy: ${5:datacenter=${6: } }${7:datastore=${8: } }${9:host=${10: } }${11:login=${12: } }${13:password=${14: } }${15:path=${16: } }${17:src=${18: } }${19:validate_certs=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>vsphere_copy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

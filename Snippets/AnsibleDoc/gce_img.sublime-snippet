@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#description = an optional description
+#name = the name of the image to create or delete
+#pem_file = path to the pem file associated with the service account email
+#project_id = your GCE project ID
+#service_account_email = service account email
+#source = the source disk or the Google Cloud Storage URI to create the image from
+#state = desired state of the image
+#timeout = timeout for the operation
+#zone = the zone of the disk specified by source
+}- name: ${2:Name for gce_img module.}
+${3:  sudo: ${4:yes}}
+  gce_img: ${5:description=${6: } }${7:name=${8: } }${9:pem_file=${10: } }${11:project_id=${12: } }${13:service_account_email=${14: } }${15:source=${16: } }${17:state=${18: } }${19:timeout=${20: } }${21:zone=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>gce_img</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

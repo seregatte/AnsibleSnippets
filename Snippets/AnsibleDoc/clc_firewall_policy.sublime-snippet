@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#destination = The list of destination addresses for traffic on the terminating firewall. This is required when state is
+#destination_account_alias = CLC alias for the destination account
+#enabled = Whether the firewall policy is enabled or disabled
+#firewall_policy_id = Id of the firewall policy. This is required to update or delete an existing firewall policy
+#location = Target datacenter for the firewall policy
+#ports = The list of ports associated with the policy. TCP and UDP can take in single ports or port ranges.
+#source = The list  of source addresses for traffic on the originating firewall. This is required when state is 'present"
+#source_account_alias = CLC alias for the source account
+#state = Whether to create or delete the firewall policy
+#wait = Whether to wait for the provisioning tasks to finish before returning.
+}- name: ${2:Name for clc_firewall_policy module.}
+${3:  sudo: ${4:yes}}
+  clc_firewall_policy: ${5:destination=${6: } }${7:destination_account_alias=${8: } }${9:enabled=${10: } }${11:firewall_policy_id=${12: } }${13:location=${14: } }${15:ports=${16: } }${17:source=${18: } }${19:source_account_alias=${20: } }${21:state=${22: } }${23:wait=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>clc_firewall_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

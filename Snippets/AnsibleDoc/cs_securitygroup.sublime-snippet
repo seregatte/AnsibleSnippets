@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the security group is related to.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#description = Description of the security group.
+#domain = Domain the security group is related to.
+#name = Name of the security group.
+#project = Name of the project the security group to be created in.
+#state = State of the security group.
+}- name: ${2:Name for cs_securitygroup module.}
+${3:  sudo: ${4:yes}}
+  cs_securitygroup: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:description=${20: } }${21:domain=${22: } }${23:name=${24: } }${25:project=${26: } }${27:state=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>cs_securitygroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

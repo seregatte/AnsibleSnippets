@@ -1,14 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:#disable_gpg_check = Whether to disable to GPG signature checking of the package signature being installed. Has an effect only if state is `present' or `latest'.
-#disable_recommends = Corresponds to the `--no-recommends' option for `zypper'. Default behavior (`yes') modifies zypper's default behavior; `no' does install recommended packages.
-#name = package name or package specifier wth version `name' or `name-1.0'.
-#state = `present' will make sure the package is installed. `latest'  will make sure the latest version of the package is installed. `absent'  will make sure the specified package is not installed.
+${1:#disable_gpg_check = Whether to disable to GPG signature checking of the package signature being installed. Has an effect only if
+#disable_recommends = Corresponds to the `--no-recommends' option for `zypper'. Default behavior (`yes') modifies zypper's default
+#name = package name or package specifier with version `name' or `name-1.0'. You can also pass a url or a local path to
+#state = `present' will make sure the package is installed. `latest'  will make sure the latest version of the package is
+#type = The type of package to be operated on.
 }- name: ${2:Name for zypper module.}
 ${3:  sudo: ${4:yes}}
-  zypper: ${5:disable_gpg_check=${6: } }${7:disable_recommends=${8: } }${9:name=${10: } }${11:state=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  zypper: ${5:disable_gpg_check=${6: } }${7:disable_recommends=${8: } }${9:name=${10: } }${11:state=${12: } }${13:type=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
 ]]></content>
 	<tabTrigger>zypper</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

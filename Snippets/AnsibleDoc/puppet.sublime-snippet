@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#environment = Puppet environment to be used.
+#facter_basename = Basename of the facter output file
+#facts = A dict of values to pass in as persistent external facter facts
+#manifest = Path to the manifest file to run puppet apply on.
+#puppetmaster = The hostname of the puppetmaster to contact.
+#timeout = How long to wait for `puppet' to finish.
+}- name: ${2:Name for puppet module.}
+${3:  sudo: ${4:yes}}
+  puppet: ${5:environment=${6: } }${7:facter_basename=${8: } }${9:facts=${10: } }${11:manifest=${12: } }${13:puppetmaster=${14: } }${15:timeout=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>puppet</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

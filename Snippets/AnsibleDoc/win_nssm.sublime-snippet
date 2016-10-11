@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#app_parameters = Parameters to be passed to the application when it starts
+#application = The application binary to run as a service Specify this whenever the service may need to be installed (state:
+#dependencies = Service dependencies that has to be started to trigger startup, separated by comma.
+#name = Name of the service to operate on
+#password = Password to be used for service startup
+#start_mode = If `auto' is selected, the service will start at bootup. `manual' means that the service will start only when
+#state = State of the service on the system Note that NSSM actions like "pause", "continue", "rotate" do not fit the
+#stderr_file = Path to receive error output
+#stdout_file = Path to receive output
+#user = User to be used for service startup
+}- name: ${2:Name for win_nssm module.}
+${3:  sudo: ${4:yes}}
+  win_nssm: ${5:app_parameters=${6: } }${7:application=${8: } }${9:dependencies=${10: } }${11:name=${12: } }${13:password=${14: } }${15:start_mode=${16: } }${17:state=${18: } }${19:stderr_file=${20: } }${21:stdout_file=${22: } }${23:user=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>win_nssm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:#chdir = cd into this directory before running the command
-#creates = a filename, when it already exists, this step will *not* be run.
+#creates = a filename or (since 2.0) glob pattern, when it already exists, this step will *not* be run.
 #executable = change the shell used to execute the command. Should be an absolute path to the executable.
-#free_form = the command module takes a free form command to run.  There is no parameter actually named 'free form'. See the examples!
-#removes = a filename, when it does not exist, this step will *not* be run.
+#free_form = the command module takes a free form command to run.  There is no parameter actually named 'free form'. See the
+#removes = a filename or (since 2.0) glob pattern, when it does not exist, this step will *not* be run.
 #warn = if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false.
 }- name: ${2:Name for command module.}
 ${3:  sudo: ${4:yes}}

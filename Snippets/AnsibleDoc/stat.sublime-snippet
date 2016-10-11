@@ -1,14 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:#follow = Whether to follow symlinks
-#get_checksum = Whether to return a checksum of the file (currently sha1)
-#get_md5 = Whether to return the md5 sum of the file.  Will return None if we're unable to use md5 (Common for FIPS-140 compliant systems)
+${1:#checksum_algorithm = Algorithm to determine checksum of file. Will throw an error if the host is unable to use specified algorithm.
+#follow = Whether to follow symlinks
+#get_checksum = Whether to return a checksum of the file (default sha1)
+#get_md5 = Whether to return the md5 sum of the file.  Will return None if we're unable to use md5 (Common for FIPS-140
 #path = The full path of the file/object to get the facts of
 }- name: ${2:Name for stat module.}
 ${3:  sudo: ${4:yes}}
-  stat: ${5:follow=${6: } }${7:get_checksum=${8: } }${9:get_md5=${10: } }${11:path=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  stat: ${5:checksum_algorithm=${6: } }${7:follow=${8: } }${9:get_checksum=${10: } }${11:get_md5=${12: } }${13:path=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
 ]]></content>
 	<tabTrigger>stat</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

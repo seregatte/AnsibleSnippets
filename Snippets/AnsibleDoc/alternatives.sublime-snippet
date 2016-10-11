@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#link = The path to the symbolic link that should point to the real executable.
+${1:#link = The path to the symbolic link that should point to the real executable. This option is required on RHEL-based
 #name = The generic name of the link.
 #path = The path to the real executable that the link should point to.
 }- name: ${2:Name for alternatives module.}

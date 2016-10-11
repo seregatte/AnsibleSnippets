@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#instance_name = the name of the GCE instance to add/remove tags
+#pem_file = path to the pem file associated with the service account email
+#project_id = your GCE project ID
+#service_account_email = service account email
+#state = desired state of the tags
+#tags = comma-separated list of tags to add or remove
+#zone = the zone of the disk specified by source
+}- name: ${2:Name for gce_tag module.}
+${3:  sudo: ${4:yes}}
+  gce_tag: ${5:instance_name=${6: } }${7:pem_file=${8: } }${9:project_id=${10: } }${11:service_account_email=${12: } }${13:state=${14: } }${15:tags=${16: } }${17:zone=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>gce_tag</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

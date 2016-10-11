@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:#aggregate = Classifies the check as an aggregate check, making it available via the aggregate API
+#backup = Create a backup file (if yes), including the timestamp information so you can get the original file back if you
+#command = Path to the sensu check to run (not required when `state=absent')
+#dependencies = Other checks this check depends on, if dependencies fail, handling of this check will be disabled
+#handle = Whether the check should be handled or not
+#handlers = List of handlers to notify when the check fails
+#high_flap_threshold = The low threshhold for flap detection
+#interval = Check interval in seconds
+#low_flap_threshold = The low threshhold for flap detection
+#metric = Whether the check is a metric
+#name = The name of the check This is the key that is used to determine whether a check exists
+#occurrences = Number of event occurrences before the handler should take action
+#path = Path to the json file of the check to be added/removed. Will be created if it does not exist (unless
+#publish = Whether the check should be scheduled at all. You can still issue it via the sensu api
+#refresh = Number of seconds handlers should wait before taking second action
+#standalone = Whether the check should be scheduled by the sensu client or server This option obviates the need for specifying
+#state = Whether the check should be present or not
+#subdue_begin = When to disable handling of check failures
+#subdue_end = When to enable handling of check failures
+#subscribers = List of subscribers/channels this check should run for See sensu_subscribers to subscribe a machine to a channel
+#timeout = Timeout for the check
+}- name: ${2:Name for sensu_check module.}
+${3:  sudo: ${4:yes}}
+  sensu_check: ${5:aggregate=${6: } }${7:backup=${8: } }${9:command=${10: } }${11:dependencies=${12: } }${13:handle=${14: } }${15:handlers=${16: } }${17:high_flap_threshold=${18: } }${19:interval=${20: } }${21:low_flap_threshold=${22: } }${23:metric=${24: } }${25:name=${26: } }${27:occurrences=${28: } }${29:path=${30: } }${31:publish=${32: } }${33:refresh=${34: } }${35:standalone=${36: } }${37:state=${38: } }${39:subdue_begin=${40: } }${41:subdue_end=${42: } }${43:subscribers=${44: } }${45:timeout=${46: } }
+${47:  when: ${48: variable is defined}}
+${49:  with_items: ${50: array}}
+]]></content>
+	<tabTrigger>sensu_check</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

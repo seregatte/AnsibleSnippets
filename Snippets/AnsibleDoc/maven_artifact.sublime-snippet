@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#artifact_id = The maven artifactId coordinate
+#classifier = The maven classifier coordinate
+#dest = The path where the artifact should be written to
+#extension = The maven type/extension coordinate
+#group_id = The Maven groupId coordinate
+#password = The password to authenticate with to the Maven Repository
+#repository_url = The URL of the Maven Repository to download from
+#state = The desired state of the artifact
+#username = The username to authenticate as to the Maven Repository
+#validate_certs = If `no', SSL certificates will not be validated. This should only be set to `no' when no other option exists.
+#version = The maven version coordinate
+}- name: ${2:Name for maven_artifact module.}
+${3:  sudo: ${4:yes}}
+  maven_artifact: ${5:artifact_id=${6: } }${7:classifier=${8: } }${9:dest=${10: } }${11:extension=${12: } }${13:group_id=${14: } }${15:password=${16: } }${17:repository_url=${18: } }${19:state=${20: } }${21:username=${22: } }${23:validate_certs=${24: } }${25:version=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>maven_artifact</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

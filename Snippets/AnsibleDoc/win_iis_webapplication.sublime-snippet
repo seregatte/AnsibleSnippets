@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#application_pool = The application pool in which the new site executes.
+#name = Name of the Web applicatio
+#physical_path = The physical path on the remote host to use for the new applicatiojn. The specified folder must already exist.
+#site = Name of the site on which the application is created.
+#state = State of the web application
+}- name: ${2:Name for win_iis_webapplication module.}
+${3:  sudo: ${4:yes}}
+  win_iis_webapplication: ${5:application_pool=${6: } }${7:name=${8: } }${9:physical_path=${10: } }${11:site=${12: } }${13:state=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>win_iis_webapplication</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

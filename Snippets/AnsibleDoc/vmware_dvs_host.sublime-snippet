@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#esxi_hostname = The ESXi hostname
+#hostname = The hostname or IP address of the vSphere vCenter API server
+#password = The password of the vSphere vCenter
+#state = If the host should be present or absent attached to the vSwitch
+#switch_name = The name of the Distributed vSwitch
+#username = The username of the vSphere vCenter
+#vmnics = The ESXi hosts vmnics to use with the Distributed vSwitch
+}- name: ${2:Name for vmware_dvs_host module.}
+${3:  sudo: ${4:yes}}
+  vmware_dvs_host: ${5:esxi_hostname=${6: } }${7:hostname=${8: } }${9:password=${10: } }${11:state=${12: } }${13:switch_name=${14: } }${15:username=${16: } }${17:vmnics=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>vmware_dvs_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

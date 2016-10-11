@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#arguments = extra arguments for exchange. If defined this argument is a key/value dictionary
+#destination = destination exchange or queue for the binding
+#destination_type = Either queue or exchange
+#login_host = rabbitMQ host for connection
+#login_password = rabbitMQ password for connection
+#login_port = rabbitMQ management api port
+#login_user = rabbitMQ user for connection
+#name = source exchange to create binding on
+#routing_key = routing key for the binding default is
+#state = Whether the exchange should be present or absent Only present implemented atm
+#vhost = rabbitMQ virtual host default vhost is /
+}- name: ${2:Name for rabbitmq_binding module.}
+${3:  sudo: ${4:yes}}
+  rabbitmq_binding: ${5:arguments=${6: } }${7:destination=${8: } }${9:destination_type=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_port=${16: } }${17:login_user=${18: } }${19:name=${20: } }${21:routing_key=${22: } }${23:state=${24: } }${25:vhost=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>rabbitmq_binding</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

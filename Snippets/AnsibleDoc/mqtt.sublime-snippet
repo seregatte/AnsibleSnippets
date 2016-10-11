@@ -2,10 +2,10 @@
 <content><![CDATA[
 ${1:#client_id = MQTT client identifier
 #password = Password for `username' to authenticate against the broker.
-#payload = Payload. The special string `"None"' may be used to send a NULL (i.e. empty) payload which is useful to simply notify with the `topic' or to clear previously retained messages.
+#payload = Payload. The special string `"None"' may be used to send a NULL (i.e. empty) payload which is useful to simply
 #port = MQTT broker port number
 #qos = QoS (Quality of Service)
-#retain = Setting this flag causes the broker to retain (i.e. keep) the message so that applications that subsequently subscribe to the topic can received the last retained message immediately.
+#retain = Setting this flag causes the broker to retain (i.e. keep) the message so that applications that subsequently
 #server = MQTT broker address/name
 #topic = MQTT topic name
 #username = Username to authenticate against the broker.

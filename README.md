@@ -1,4 +1,4 @@
-# Ansible Snippets 0.0.2
+# Ansible Snippets 0.0.3
 
 Snippets for Ansible in ST2/3.
 
@@ -35,7 +35,7 @@ The "Packages" directory is located at:
 Dependencies
 ------------
 
-None
+Ansible 2.0.0.2 +
 
 
 License

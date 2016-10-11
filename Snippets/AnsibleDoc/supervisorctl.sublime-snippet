@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:#config = The supervisor configuration file path
-#name = The name of the supervisord program or group to manage. The name will be taken as group name when it ends with a colon `:' Group support is only available in Ansible version 1.6 or later.
+#name = The name of the supervisord program or group to manage. The name will be taken as group name when it ends with a
 #password = password to use for authentication
 #server_url = URL on which supervisord server is listening
 #state = The desired state of program/group.

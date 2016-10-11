@@ -1,19 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
 #description = Database parameter group description. Only set when a new group is added.
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
 #engine = The type of database for this group. Required for state=present.
 #immediate = Whether to apply the changes immediately, or after the next reboot of any associated instances.
 #name = Database parameter group identifier.
-#params = Map of parameter names and values. Numeric values may be represented as K for kilo (1024), M for mega (1024^2), G for giga (1024^3), or T for tera (1024^4), and these values will be expanded into the appropriate number before being set in the parameter group.
-#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#params = Map of parameter names and values. Numeric values may be represented as K for kilo (1024), M for mega (1024^2),
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #state = Specifies whether the group should be present or absent.
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 }- name: ${2:Name for rds_param_group module.}
 ${3:  sudo: ${4:yes}}
-  rds_param_group: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:description=${10: } }${11:engine=${12: } }${13:immediate=${14: } }${15:name=${16: } }${17:params=${18: } }${19:region=${20: } }${21:state=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  rds_param_group: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:description=${10: } }${11:ec2_url=${12: } }${13:engine=${14: } }${15:immediate=${16: } }${17:name=${18: } }${19:params=${20: } }${21:profile=${22: } }${23:region=${24: } }${25:http=${26: } }${27:security_token=${28: } }${29:state=${30: } }${31:validate_certs=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
 ]]></content>
 	<tabTrigger>rds_param_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

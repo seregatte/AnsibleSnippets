@@ -1,20 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:#collation = Collation mode
+${1:#collation = Collation mode (sorting). This only applies to new table/databases and does not update existing ones, this is a
+#config_file = Specify a config file from which user and password are to be read
 #encoding = Encoding mode
 #login_host = Host running the database
 #login_password = The password used to authenticate with
 #login_port = Port of the MySQL server. Requires login_host be defined as other then localhost if login_port is used
 #login_unix_socket = The path to a Unix domain socket for local connections
 #login_user = The username used to authenticate with
-#name = name of the database to add or remove
+#name = name of the database to add or remove name=all May only be provided if `state' is `dump' or `import'. if
+#ssl_ca = The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same certificate as
+#ssl_cert = The path to a client public key certificate.
+#ssl_key = The path to the client private key.
 #state = The database state
-#target = Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (`.sql') as well as bzip2 (`.bz2') and gzip (`.gz') compressed files are supported.
+#target = Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (`.sql') as well
 }- name: ${2:Name for mysql_db module.}
 ${3:  sudo: ${4:yes}}
-  mysql_db: ${5:collation=${6: } }${7:encoding=${8: } }${9:login_host=${10: } }${11:login_password=${12: } }${13:login_port=${14: } }${15:login_unix_socket=${16: } }${17:login_user=${18: } }${19:name=${20: } }${21:state=${22: } }${23:target=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  mysql_db: ${5:collation=${6: } }${7:config_file=${8: } }${9:encoding=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_port=${16: } }${17:login_unix_socket=${18: } }${19:login_user=${20: } }${21:name=${22: } }${23:ssl_ca=${24: } }${25:ssl_cert=${26: } }${27:ssl_key=${28: } }${29:state=${30: } }${31:target=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
 ]]></content>
 	<tabTrigger>mysql_db</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

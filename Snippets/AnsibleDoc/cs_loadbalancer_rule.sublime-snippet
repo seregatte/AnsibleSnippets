@@ -1,0 +1,31 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the rule is related to.
+#algorithm = Load balancer algorithm Required when using `state=present'.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#cidr = CIDR (full notation) to be used for firewall rule if required.
+#description = The description of the load balancer rule.
+#domain = Domain the rule is related to.
+#ip_address = Public IP address from where the network traffic will be load balanced from.
+#name = The name of the load balancer rule.
+#open_firewall = Whether the firewall rule for public port should be created, while creating the new rule. Use [cs_firewall] for
+#private_port = The private port of the private ip address/virtual machine where the network traffic will be load balanced to.
+#project = Name of the project the load balancer IP address is related to.
+#protocol = The protocol to be used on the load balancer
+#public_port = The public port from where the network traffic will be load balanced from. Required when using `state=present'.
+#state = State of the rule.
+#zone = Name of the zone in which the rule shoud be created. If not set, default zone is used.
+}- name: ${2:Name for cs_loadbalancer_rule module.}
+${3:  sudo: ${4:yes}}
+  cs_loadbalancer_rule: ${5:account=${6: } }${7:algorithm=${8: } }${9:api_http_method=${10: } }${11:api_key=${12: } }${13:api_region=${14: } }${15:api_secret=${16: } }${17:api_timeout=${18: } }${19:api_url=${20: } }${21:cidr=${22: } }${23:description=${24: } }${25:domain=${26: } }${27:ip_address=${28: } }${29:name=${30: } }${31:open_firewall=${32: } }${33:private_port=${34: } }${35:project=${36: } }${37:protocol=${38: } }${39:public_port=${40: } }${41:state=${42: } }${43:zone=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
+]]></content>
+	<tabTrigger>cs_loadbalancer_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

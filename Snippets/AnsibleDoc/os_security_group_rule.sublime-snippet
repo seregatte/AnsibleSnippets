@@ -1,0 +1,33 @@
+<snippet>
+<content><![CDATA[
+${1:#api_timeout = How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be
+#auth = Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default `password'
+#auth_type = Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the
+#availability_zone = Name of the availability zone.
+#cacert = A path to a CA Cert bundle that can be used as part of verifying SSL API requests.
+#cert = A path to a client certificate to use as part of the SSL transaction
+#cloud = Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is not needed
+#direction = The direction in which the security group rule is applied. Not all providers support egress.
+#endpoint_type = Endpoint URL type to fetch from the service catalog.
+#ethertype = Must be IPv4 or IPv6, and addresses represented in CIDR must match the ingress or egress rules. Not all
+#key = A path to a client key to use as part of the SSL transaction
+#port_range_max = Ending port
+#port_range_min = Starting port
+#protocol = IP protocol
+#region_name = Name of the region.
+#remote_group = ID of Security group to link (exclusive with remote_ip_prefix)
+#remote_ip_prefix = Source IP address(es) in CIDR notation (exclusive with remote_group)
+#security_group = Name of the security group
+#state = Should the resource be present or absent.
+#timeout = How long should ansible wait for the requested resource.
+#validate_certs = Whether or not SSL API requests should be verified.
+#wait = Should ansible wait until the requested resource is complete.
+}- name: ${2:Name for os_security_group_rule module.}
+${3:  sudo: ${4:yes}}
+  os_security_group_rule: ${5:api_timeout=${6: } }${7:auth=${8: } }${9:auth_type=${10: } }${11:availability_zone=${12: } }${13:cacert=${14: } }${15:cert=${16: } }${17:cloud=${18: } }${19:direction=${20: } }${21:endpoint_type=${22: } }${23:ethertype=${24: } }${25:key=${26: } }${27:port_range_max=${28: } }${29:port_range_min=${30: } }${31:protocol=${32: } }${33:region_name=${34: } }${35:remote_group=${36: } }${37:remote_ip_prefix=${38: } }${39:security_group=${40: } }${41:state=${42: } }${43:timeout=${44: } }${45:validate_certs=${46: } }${47:wait=${48: } }
+${49:  when: ${50: variable is defined}}
+${51:  with_items: ${52: array}}
+]]></content>
+	<tabTrigger>os_security_group_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

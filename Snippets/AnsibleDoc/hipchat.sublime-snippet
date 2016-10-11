@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#api = API url if using a self-hosted hipchat server
+${1:#api = API url if using a self-hosted hipchat server. For hipchat api version 2 use `/v2' path in URI
 #color = Background color for the message. Default is yellow.
 #from = Name the message will appear be sent from. max 15 characters. Over 15, will be shorten.
 #msg = The message body.
@@ -8,7 +8,7 @@ ${1:#api = API url if using a self-hosted hipchat server
 #notify = notify or not (change the tab color, play a sound, etc)
 #room = ID or name of the room.
 #token = API token.
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for hipchat module.}
 ${3:  sudo: ${4:yes}}
   hipchat: ${5:api=${6: } }${7:color=${8: } }${9:from=${10: } }${11:msg=${12: } }${13:msg_format=${14: } }${15:notify=${16: } }${17:room=${18: } }${19:token=${20: } }${21:validate_certs=${22: } }

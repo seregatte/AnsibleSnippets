@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#hostname = The hostname or IP address of the ESXi server
+#mtu = MTU to configure on vswitch
+#nic_name = vmnic name to attach to vswitch
+#number_of_ports = Number of port to configure on vswitch
+#password = The password of the ESXi server
+#state = Add or remove the switch
+#switch_name = vSwitch name to add
+#username = The username of the ESXi server
+}- name: ${2:Name for vmware_vswitch module.}
+${3:  sudo: ${4:yes}}
+  vmware_vswitch: ${5:hostname=${6: } }${7:mtu=${8: } }${9:nic_name=${10: } }${11:number_of_ports=${12: } }${13:password=${14: } }${15:state=${16: } }${17:switch_name=${18: } }${19:username=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>vmware_vswitch</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

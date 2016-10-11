@@ -1,22 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#backup = Create a backup file including the timestamp information so you can get the original file back if you somehow clobbered it incorrectly.
+${1:#backup = Create a backup file including the timestamp information so you can get the original file back if you somehow
 #dest = Location to render the template to on the remote machine.
 #follow = This flag indicates that filesystem links, if they exist, should be followed.
+#force = the default is `yes', which will replace the remote file when contents are different than the source.  If `no',
 #group = name of the group that should own the file/directory, as would be fed to `chown'
-#mode = mode the file or directory should be, such as 0644 as would be fed to `chmod'. As of version 1.8, the mode may be specified as a symbolic mode (for example, `u+rwx' or `u=rw,g=r,o=r').
+#mode = mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are actually octal
 #owner = name of the user that should own the file/directory, as would be fed to `chown'
-#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. `_default' feature works as for `seuser'.
+#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'.
 #serole = role part of SELinux file context, `_default' feature works as for `seuser'.
 #setype = type part of SELinux file context, `_default' feature works as for `seuser'.
-#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will use the `user' portion of the policy if available
+#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will
 #src = Path of a Jinja2 formatted template on the local server. This can be a relative or absolute path.
-#validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s' which must be present as in the visudo example below. validation to run before copying into place. The command is passed securely so shell features like expansion and pipes won't work.
+#validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s'
 }- name: ${2:Name for template module.}
 ${3:  sudo: ${4:yes}}
-  template: ${5:backup=${6: } }${7:dest=${8: } }${9:follow=${10: } }${11:group=${12: } }${13:mode=${14: } }${15:owner=${16: } }${17:selevel=${18: } }${19:serole=${20: } }${21:setype=${22: } }${23:seuser=${24: } }${25:src=${26: } }${27:validate=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  template: ${5:backup=${6: } }${7:dest=${8: } }${9:follow=${10: } }${11:force=${12: } }${13:group=${14: } }${15:mode=${16: } }${17:owner=${18: } }${19:selevel=${20: } }${21:serole=${22: } }${23:setype=${24: } }${25:seuser=${26: } }${27:src=${28: } }${29:validate=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
 ]]></content>
 	<tabTrigger>template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

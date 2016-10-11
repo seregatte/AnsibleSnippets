@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#dest = Location to render the template to on the remote machine.
+#src = Path of a Jinja2 formatted template on the local server. This can be a relative or absolute path.
+}- name: ${2:Name for win_template module.}
+${3:  sudo: ${4:yes}}
+  win_template: ${5:dest=${6: } }${7:src=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>win_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

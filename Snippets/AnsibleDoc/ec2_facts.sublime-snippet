@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+${1:#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for ec2_facts module.}
 ${3:  sudo: ${4:yes}}
   ec2_facts: ${5:validate_certs=${6: } }

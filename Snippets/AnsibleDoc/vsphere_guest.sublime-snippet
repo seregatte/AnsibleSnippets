@@ -1,25 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#cluster = The name of the cluster to create the VM in. By default this is derived from the host you tell the module to build the guest on.
-#esxi = Dictionary which includes datacenter and hostname on which the VM should be created. For standalone ESXi hosts, ha-datacenter should be used as the datacenter name
-#force = Boolean. Allows you to run commands which may alter the running state of a guest. Also used to reconfigure and destroy.
+${1:#cluster = The name of the cluster to create the VM in. By default this is derived from the host you tell the module to
+#esxi = Dictionary which includes datacenter and hostname on which the VM should be created. For standalone ESXi hosts,
+#force = Boolean. Allows you to run commands which may alter the running state of a guest. Also used to reconfigure and
+#from_template = Specifies if the VM should be deployed from a template (mutually exclusive with 'state' parameter). No guest
 #guest = The virtual server name you wish to manage.
 #password = Password of the user to connect to vcenter as.
+#power_on_after_clone = Specifies if the VM should be powered on after the clone.
 #resource_pool = The name of the resource_pool to create the VM in.
-#state = Indicate desired state of the vm.
+#snapshot_to_clone = A string that when specified, will create a linked clone copy of the VM. Snapshot must already be taken in
+#state = Indicate desired state of the vm. 'reconfigured' only applies changes to 'memory_mb' and 'num_cpus' in
+#template_src = Name of the source template to deploy from
 #username = Username to connect to vcenter as.
 #vcenter_hostname = The hostname of the vcenter server the module will connect to, to create the guest.
 #vm_disk = A key, value list of disks and their sizes and which datastore to keep it in.
-#vm_extra_config = A key, value pair of any extra values you want set or changed in the vmx file of the VM. Useful to set advanced options on the VM.
+#vm_extra_config = A key, value pair of any extra values you want set or changed in the vmx file of the VM. Useful to set advanced
 #vm_hardware = A key, value list of VM config settings. Must include ['memory_mb', 'num_cpus', 'osid', 'scsi'].
-#vm_hw_version = Desired hardware version identifier (for example, "vmx-08" for vms that needs to be managed with vSphere Client). Note that changing hardware version of existing vm is not supported.
+#vm_hw_version = Desired hardware version identifier (for example, "vmx-08" for vms that needs to be managed with vSphere
 #vm_nic = A key, value list of nics, their types and what network to put them on.
 #vmware_guest_facts = Gather facts from vCenter on a particular VM
 }- name: ${2:Name for vsphere_guest module.}
 ${3:  sudo: ${4:yes}}
-  vsphere_guest: ${5:cluster=${6: } }${7:esxi=${8: } }${9:force=${10: } }${11:guest=${12: } }${13:password=${14: } }${15:resource_pool=${16: } }${17:state=${18: } }${19:username=${20: } }${21:vcenter_hostname=${22: } }${23:vm_disk=${24: } }${25:vm_extra_config=${26: } }${27:vm_hardware=${28: } }${29:vm_hw_version=${30: } }${31:vm_nic=${32: } }${33:vmware_guest_facts=${34: } }
-${35:  when: ${36: variable is defined}}
-${37:  with_items: ${38: array}}
+  vsphere_guest: ${5:cluster=${6: } }${7:esxi=${8: } }${9:force=${10: } }${11:from_template=${12: } }${13:guest=${14: } }${15:password=${16: } }${17:power_on_after_clone=${18: } }${19:resource_pool=${20: } }${21:snapshot_to_clone=${22: } }${23:state=${24: } }${25:template_src=${26: } }${27:username=${28: } }${29:vcenter_hostname=${30: } }${31:vm_disk=${32: } }${33:vm_extra_config=${34: } }${35:vm_hardware=${36: } }${37:vm_hw_version=${38: } }${39:vm_nic=${40: } }${41:vmware_guest_facts=${42: } }
+${43:  when: ${44: variable is defined}}
+${45:  with_items: ${46: array}}
 ]]></content>
 	<tabTrigger>vsphere_guest</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

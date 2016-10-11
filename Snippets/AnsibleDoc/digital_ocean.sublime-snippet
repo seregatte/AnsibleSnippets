@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#api_key = DigitalOcean api key.
+${1:#api_token = DigitalOcean api token.
 #backups_enabled = Optional, Boolean, enables backups for your droplet.
-#client_id = DigitalOcean manager id.
 #command = Which target you want to operate on.
 #id = Numeric, the droplet id you want to operate on.
-#image_id = Numeric, this is the id of the image you would like the droplet created with.
+#image_id = This is the slug of the image you would like the droplet created with.
 #name = String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key.
 #private_networking = Bool, add an additional, private network interface to droplet for inter-droplet communication.
-#region_id = Numeric, this is the id of the region you would like your server to be created in.
-#size_id = Numeric, this is the id of the size you would like the droplet created with.
-#ssh_key_ids = Optional, comma separated list of ssh_key_ids that you would like to be added to the server.
+#region_id = This is the slug of the region you would like your server to be created in.
+#size_id = This is the slug of the size you would like the droplet created with.
+#ssh_key_ids = Optional, array of of SSH key (numeric) ID that you would like to be added to the server.
 #ssh_pub_key = The public SSH key you want to add to your account.
 #state = Indicate desired state of the target.
-#unique_name = Bool, require unique hostnames.  By default, DigitalOcean allows multiple hosts with the same name.  Setting this to "yes" allows only one host per name.  Useful for idempotence.
+#unique_name = Bool, require unique hostnames.  By default, DigitalOcean allows multiple hosts with the same name.  Setting
+#user_data = opaque blob of data which is made available to the droplet
 #virtio = Bool, turn on virtio driver in droplet for improved network and storage I/O.
-#wait = Wait for the droplet to be in state 'running' before returning.  If wait is "no" an ip_address may not be returned.
+#wait = Wait for the droplet to be in state 'running' before returning.  If wait is "no" an ip_address may not be
 #wait_timeout = How long before wait gives up, in seconds.
 }- name: ${2:Name for digital_ocean module.}
 ${3:  sudo: ${4:yes}}
-  digital_ocean: ${5:api_key=${6: } }${7:backups_enabled=${8: } }${9:client_id=${10: } }${11:command=${12: } }${13:id=${14: } }${15:image_id=${16: } }${17:name=${18: } }${19:private_networking=${20: } }${21:region_id=${22: } }${23:size_id=${24: } }${25:ssh_key_ids=${26: } }${27:ssh_pub_key=${28: } }${29:state=${30: } }${31:unique_name=${32: } }${33:virtio=${34: } }${35:wait=${36: } }${37:wait_timeout=${38: } }
+  digital_ocean: ${5:api_token=${6: } }${7:backups_enabled=${8: } }${9:command=${10: } }${11:id=${12: } }${13:image_id=${14: } }${15:name=${16: } }${17:private_networking=${18: } }${19:region_id=${20: } }${21:size_id=${22: } }${23:ssh_key_ids=${24: } }${25:ssh_pub_key=${26: } }${27:state=${28: } }${29:unique_name=${30: } }${31:user_data=${32: } }${33:virtio=${34: } }${35:wait=${36: } }${37:wait_timeout=${38: } }
 ${39:  when: ${40: variable is defined}}
 ${41:  with_items: ${42: array}}
 ]]></content>

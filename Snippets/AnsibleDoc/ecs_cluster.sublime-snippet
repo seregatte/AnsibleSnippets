@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#delay = Number of seconds to wait
+#name = The cluster name
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#repeat = The number of times to wait for the cluster to have an instance
+#state = The desired state of the cluster
+}- name: ${2:Name for ecs_cluster module.}
+${3:  sudo: ${4:yes}}
+  ecs_cluster: ${5:delay=${6: } }${7:name=${8: } }${9:region=${10: } }${11:http=${12: } }${13:repeat=${14: } }${15:state=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>ecs_cluster</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

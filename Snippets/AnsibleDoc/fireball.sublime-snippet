@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#minutes = The `fireball' listener daemon is started on nodes and will stay around for this number of minutes before turning itself off.
+${1:#minutes = The `fireball' listener daemon is started on nodes and will stay around for this number of minutes before
 #port = TCP port for ZeroMQ
 }- name: ${2:Name for fireball module.}
 ${3:  sudo: ${4:yes}}

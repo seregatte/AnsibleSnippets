@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#that = A string expression of the same form that can be passed to the 'when' statement Alternatively, a list of string expressions
+${1:#that = A string expression of the same form that can be passed to the 'when' statement Alternatively, a list of string
 }- name: ${2:Name for assert module.}
 ${3:  sudo: ${4:yes}}
   assert: ${5:that=${6: } }

@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the public key is related to.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#domain = Domain the public key is related to.
+#name = Name of public key.
+#project = Name of the project the public key to be registered in.
+#public_key = String of the public key.
+#state = State of the public key.
+}- name: ${2:Name for cs_sshkeypair module.}
+${3:  sudo: ${4:yes}}
+  cs_sshkeypair: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:domain=${20: } }${21:name=${22: } }${23:project=${24: } }${25:public_key=${26: } }${27:state=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>cs_sshkeypair</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

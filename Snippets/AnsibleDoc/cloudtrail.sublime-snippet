@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#include_global_events = record API calls from global services such as IAM and STS?
+#name = name for given CloudTrail configuration. This is a primary key and is used to identify the configuration.
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#s3_bucket_prefix = bucket to place CloudTrail in. this bucket should exist and have the proper policy. See
+#s3_key_prefix = prefix to keys in bucket. A trailing slash is not necessary and will be removed.
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
+#state = add or remove CloudTrail configuration.
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+}- name: ${2:Name for cloudtrail module.}
+${3:  sudo: ${4:yes}}
+  cloudtrail: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:include_global_events=${12: } }${13:name=${14: } }${15:profile=${16: } }${17:region=${18: } }${19:s3_bucket_prefix=${20: } }${21:s3_key_prefix=${22: } }${23:security_token=${24: } }${25:state=${26: } }${27:validate_certs=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>cloudtrail</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#checks = a list of checks that will be used to verify the session health. If all the checks fail, the session will be
+#datacenter = name of the datacenter in which the session exists or should be created.
+#delay = the optional lock delay that can be attached to the session when it is created. Locks for invalidated sessions
+#host = host of the consul agent defaults to localhost
+#name = the name that should be associated with the session. This is opaque to Consul and not required.
+#node = the name of the node that with which the session will be associated. by default this is the name of the agent.
+#port = the port on which the consul agent is running
+#state = whether the session should be present i.e. created if it doesn't exist, or absent, removed if present. If
+}- name: ${2:Name for consul_session module.}
+${3:  sudo: ${4:yes}}
+  consul_session: ${5:checks=${6: } }${7:datacenter=${8: } }${9:delay=${10: } }${11:host=${12: } }${13:name=${14: } }${15:node=${16: } }${17:port=${18: } }${19:state=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>consul_session</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#apikey = Uptime Robot API key.
+#monitorid = ID of the monitor to check.
+#state = Define whether or not the monitor should be running or paused.
+}- name: ${2:Name for uptimerobot module.}
+${3:  sudo: ${4:yes}}
+  uptimerobot: ${5:apikey=${6: } }${7:monitorid=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>uptimerobot</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

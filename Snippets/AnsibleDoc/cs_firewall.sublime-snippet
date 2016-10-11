@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the firewall rule is related to.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#cidr = CIDR (full notation) to be used for firewall rule.
+#domain = Domain the firewall rule is related to.
+#end_port = End port for this rule. Considered if `protocol=tcp' or `protocol=udp'. If not specified, equal `start_port'.
+#icmp_code = Error code for this icmp message. Considered if `protocol=icmp'.
+#icmp_type = Type of the icmp message being sent. Considered if `protocol=icmp'.
+#ip_address = Public IP address the ingress rule is assigned to. Required if `type=ingress'.
+#network = Network the egress rule is related to. Required if `type=egress'.
+#poll_async = Poll async jobs until job has finished.
+#project = Name of the project the firewall rule is related to.
+#protocol = Protocol of the firewall rule. `all' is only available if `type=egress'
+#start_port = Start port for this rule. Considered if `protocol=tcp' or `protocol=udp'.
+#state = State of the firewall rule.
+#type = Type of the firewall rule.
+#zone = Name of the zone in which the virtual machine is in. If not set, default zone is used.
+}- name: ${2:Name for cs_firewall module.}
+${3:  sudo: ${4:yes}}
+  cs_firewall: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:cidr=${20: } }${21:domain=${22: } }${23:end_port=${24: } }${25:icmp_code=${26: } }${27:icmp_type=${28: } }${29:ip_address=${30: } }${31:network=${32: } }${33:poll_async=${34: } }${35:project=${36: } }${37:protocol=${38: } }${39:start_port=${40: } }${41:state=${42: } }${43:type=${44: } }${45:zone=${46: } }
+${47:  when: ${48: variable is defined}}
+${49:  with_items: ${50: array}}
+]]></content>
+	<tabTrigger>cs_firewall</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

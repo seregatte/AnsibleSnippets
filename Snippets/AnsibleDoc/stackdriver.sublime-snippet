@@ -1,10 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:}- name: ${2:Name for stackdriver module.}
+${1:#annotated_by = The person or robot?who the annotation should be attributed to.
+#deployed_by = The person or robot responsible for deploying the code
+#deployed_to = The environment code was deployed to. (ie: development, staging, production)
+#event = The type of event to send, either annotation or deploy
+#event_epoch = Unix timestamp of where the event should appear in the timeline, defaults to now. Be careful with this.
+#instance_id = id of an EC2 instance that this event should be attached to, which will limit the contexts where this event is
+#key = API key.
+#level = one of INFO/WARN/ERROR, defaults to INFO if not supplied. ?May affect display.
+#msg = The contents of the annotation message, in plain text. ?Limited to 256 characters. Required for annotation.
+#repository = The repository (or project) deployed
+#revision_id = The revision of the code that was deployed. Required for deploy events
+}- name: ${2:Name for stackdriver module.}
 ${3:  sudo: ${4:yes}}
-  stackdriver: 
-${5:  when: ${6: variable is defined}}
-${7:  with_items: ${8: array}}
+  stackdriver: ${5:annotated_by=${6: } }${7:deployed_by=${8: } }${9:deployed_to=${10: } }${11:event=${12: } }${13:event_epoch=${14: } }${15:instance_id=${16: } }${17:key=${18: } }${19:level=${20: } }${21:msg=${22: } }${23:repository=${24: } }${25:revision_id=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
 ]]></content>
 	<tabTrigger>stackdriver</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

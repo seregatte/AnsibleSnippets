@@ -1,13 +1,15 @@
 <snippet>
 <content><![CDATA[
 ${1:#bridge = Name of bridge to manage
+#external_ids = A dictionary of external-ids. Omitting this parameter is a No-op. To  clear all external-ids pass an empty
+#fail_mode = Set bridge fail-mode. The default value (None) is a No-op.
 #state = Whether the bridge should exist
 #timeout = How long to wait for ovs-vswitchd to respond
 }- name: ${2:Name for openvswitch_bridge module.}
 ${3:  sudo: ${4:yes}}
-  openvswitch_bridge: ${5:bridge=${6: } }${7:state=${8: } }${9:timeout=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  openvswitch_bridge: ${5:bridge=${6: } }${7:external_ids=${8: } }${9:fail_mode=${10: } }${11:state=${12: } }${13:timeout=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
 ]]></content>
 	<tabTrigger>openvswitch_bridge</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#cluster_name = The name of the cluster that will be created
+#datacenter_name = The name of the datacenter the cluster will be created in.
+#enable_drs = If set to True will enable DRS when the cluster is created.
+#enable_ha = If set to True will enable HA when the cluster is created.
+#enable_vsan = If set to True will enable vSAN when the cluster is created.
+#hostname = The hostname or IP address of the vSphere vCenter
+#password = The password of the vSphere vCenter
+#username = The username of the vSphere vCenter
+}- name: ${2:Name for vmware_cluster module.}
+${3:  sudo: ${4:yes}}
+  vmware_cluster: ${5:cluster_name=${6: } }${7:datacenter_name=${8: } }${9:enable_drs=${10: } }${11:enable_ha=${12: } }${13:enable_vsan=${14: } }${15:hostname=${16: } }${17:password=${18: } }${19:username=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>vmware_cluster</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

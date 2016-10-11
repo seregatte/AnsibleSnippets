@@ -1,8 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:#executable = Override the path to the gem executable
+${1:#build_flags = Allow adding build flags for gem compilation
+#executable = Override the path to the gem executable
 #gem_source = The path to a local gem used as installation source.
 #include_dependencies = Whether to include dependencies or not.
+#include_doc = Install with or without docs.
 #name = The name of the gem to be managed.
 #pre_release = Allow installation of pre-release versions of the gem.
 #repository = The repository from which the gem will be installed
@@ -11,9 +13,9 @@ ${1:#executable = Override the path to the gem executable
 #version = Version of the gem to be installed/removed.
 }- name: ${2:Name for gem module.}
 ${3:  sudo: ${4:yes}}
-  gem: ${5:executable=${6: } }${7:gem_source=${8: } }${9:include_dependencies=${10: } }${11:name=${12: } }${13:pre_release=${14: } }${15:repository=${16: } }${17:state=${18: } }${19:user_install=${20: } }${21:version=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  gem: ${5:build_flags=${6: } }${7:executable=${8: } }${9:gem_source=${10: } }${11:include_dependencies=${12: } }${13:include_doc=${14: } }${15:name=${16: } }${17:pre_release=${18: } }${19:repository=${20: } }${21:state=${22: } }${23:user_install=${24: } }${25:version=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
 ]]></content>
 	<tabTrigger>gem</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

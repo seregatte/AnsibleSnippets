@@ -11,15 +11,16 @@ ${1:#delete = Delete rule.
 #name = Use profile located in `/etc/ufw/applications.d'
 #policy = Change the default policy for incoming or outgoing traffic.
 #proto = TCP/IP protocol.
+#route = Apply the rule to routed/forwarded packets.
 #rule = Add firewall rule
-#state = `enabled' reloads firewall and enables firewall on boot. `disabled' unloads firewall and disables firewall on boot. `reloaded' reloads firewall. `reset' disables and resets firewall to installation defaults.
+#state = `enabled' reloads firewall and enables firewall on boot. `disabled' unloads firewall and disables firewall on
 #to_ip = Destination IP address.
 #to_port = Destination port.
 }- name: ${2:Name for ufw module.}
 ${3:  sudo: ${4:yes}}
-  ufw: ${5:delete=${6: } }${7:direction=${8: } }${9:from_ip=${10: } }${11:from_port=${12: } }${13:insert=${14: } }${15:interface=${16: } }${17:log=${18: } }${19:logging=${20: } }${21:name=${22: } }${23:policy=${24: } }${25:proto=${26: } }${27:rule=${28: } }${29:state=${30: } }${31:to_ip=${32: } }${33:to_port=${34: } }
-${35:  when: ${36: variable is defined}}
-${37:  with_items: ${38: array}}
+  ufw: ${5:delete=${6: } }${7:direction=${8: } }${9:from_ip=${10: } }${11:from_port=${12: } }${13:insert=${14: } }${15:interface=${16: } }${17:log=${18: } }${19:logging=${20: } }${21:name=${22: } }${23:policy=${24: } }${25:proto=${26: } }${27:route=${28: } }${29:rule=${30: } }${31:state=${32: } }${33:to_ip=${34: } }${35:to_port=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
 ]]></content>
 	<tabTrigger>ufw</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

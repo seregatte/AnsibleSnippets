@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#network_mode = Configures the mode of the network connection.
+#network_name = The name of the network that should be attached to the virtual machine in the vApp.  The virtual network
+#operation = Specifies an operation to be performed on the vApp.
+#state = Configures the state of the vApp.
+#template_name = The name of the vApp template to use to create the vApp instance.  If the `state' is not `absent` then the
+#vapp_name = The name of the vCloud Air vApp instance
+#vdc_name = The name of the virtual data center (VDC) that contains the vAPP
+#vm_cpus = The number of vCPUs to configure for the VM in the vApp.   If the `vm_name' argument is provided, then this
+#vm_memory = The amount of memory in MB to allocate to VMs in the vApp.  If the `vm_name' argument is provided, then this
+#vm_name = The name of the virtual machine instance in the vApp to manage.
+}- name: ${2:Name for vca_vapp module.}
+${3:  sudo: ${4:yes}}
+  vca_vapp: ${5:network_mode=${6: } }${7:network_name=${8: } }${9:operation=${10: } }${11:state=${12: } }${13:template_name=${14: } }${15:vapp_name=${16: } }${17:vdc_name=${18: } }${19:vm_cpus=${20: } }${21:vm_memory=${22: } }${23:vm_name=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>vca_vapp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

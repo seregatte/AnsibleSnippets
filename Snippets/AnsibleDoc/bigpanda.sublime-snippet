@@ -8,7 +8,7 @@ ${1:#component = The name of the component being deployed. Ex: billing
 #state = State of the deployment.
 #token = API token.
 #url = Base URL of the API server.
-#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally
 #version = The deployment version.
 }- name: ${2:Name for bigpanda module.}
 ${3:  sudo: ${4:yes}}

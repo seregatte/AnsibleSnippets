@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#free = The file name from which variables should be loaded, if called from a role it will look for the file in vars/ subdirectory of the role, otherwise the path would be relative to playbook. An absolute path can also be provided.
+${1:#free = The file name from which variables should be loaded, if called from a role it will look for the file in vars/
 }- name: ${2:Name for include_vars module.}
 ${3:  sudo: ${4:yes}}
   include_vars: ${5:free=${6: } }

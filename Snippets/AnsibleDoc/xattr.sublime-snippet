@@ -3,7 +3,7 @@
 ${1:#follow = if yes, dereferences symlinks and sets/gets attributes on symlink target, otherwise acts on symlink itself.
 #key = The name of a specific Extended attribute key to set/retrieve
 #name = The full path of the file/object to get the facts of
-#state = defines which state you want to do. `read' retrieves the current value for a `key' (default) `present' sets `name' to `value', default if value is set `all' dumps all data `keys' retrieves all keys `absent' deletes the key
+#state = defines which state you want to do. `read' retrieves the current value for a `key' (default) `present' sets
 #value = The value to set the named name/key to, it automatically sets the `state' to 'set'
 }- name: ${2:Name for xattr module.}
 ${3:  sudo: ${4:yes}}

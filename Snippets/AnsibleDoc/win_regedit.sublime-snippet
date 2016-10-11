@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#data = Registry Value Data
+#datatype = Registry Value Data Type
+#key = Name of Registry Key
+#state = State of Registry Value
+#value = Name of Registry Value
+}- name: ${2:Name for win_regedit module.}
+${3:  sudo: ${4:yes}}
+  win_regedit: ${5:data=${6: } }${7:datatype=${8: } }${9:key=${10: } }${11:state=${12: } }${13:value=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>win_regedit</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

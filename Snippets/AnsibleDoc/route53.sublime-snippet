@@ -1,20 +1,34 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key.
-#aws_secret_key = AWS secret key.
+${1:#alias = Indicates if this is an alias record.
+#alias_hosted_zone_id = The hosted zone identifier.
+#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
 #command = Specifies the action to take.
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#failover = Failover resource record sets only. Whether this is the primary or secondary resource record set.
+#health_check = Health check to associate with this record
+#hosted_zone_id = The Hosted Zone ID of the DNS zone to modify
+#identifier = Weighted and latency-based resource record sets only. An identifier that differentiates among multiple resource
 #overwrite = Whether an existing record should be overwritten on create if values do not match
+#private_zone = If set to true, the private zone matching the requested name within the domain will be used if there are both
+#profile = uses a boto profile. Only works with boto >= 2.24.0
 #record = The full DNS record to create or delete
-#retry_interval = In the case that route53 is still servicing a prior request, this module will wait and try again after this many seconds. If you have many domain names, the default of 500 seconds may be too long.
+#region = Latency-based resource record sets only Among resource record sets that have the same combination of DNS name
+#retry_interval = In the case that route53 is still servicing a prior request, this module will wait and try again after this many
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #ttl = The TTL to give the new record
 #type = The type of DNS record to create
-#value = The new value when creating a DNS record.  Multiple comma-spaced values are allowed.  When deleting a record all values for the record must be specified or Route53 will not delete it.
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+#value = The new value when creating a DNS record.  Multiple comma-spaced values are allowed for non-alias records.  When
+#vpc_id = When used in conjunction with private_zone: true, this will only modify records in the private hosted zone
+#weight = Weighted resource record sets only. Among resource record sets that have the same combination of DNS name and
 #zone = The DNS zone to modify
 }- name: ${2:Name for route53 module.}
 ${3:  sudo: ${4:yes}}
-  route53: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:command=${10: } }${11:overwrite=${12: } }${13:record=${14: } }${15:retry_interval=${16: } }${17:ttl=${18: } }${19:type=${20: } }${21:value=${22: } }${23:zone=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  route53: ${5:alias=${6: } }${7:alias_hosted_zone_id=${8: } }${9:aws_access_key=${10: } }${11:aws_secret_key=${12: } }${13:command=${14: } }${15:ec2_url=${16: } }${17:failover=${18: } }${19:health_check=${20: } }${21:hosted_zone_id=${22: } }${23:identifier=${24: } }${25:overwrite=${26: } }${27:private_zone=${28: } }${29:profile=${30: } }${31:record=${32: } }${33:region=${34: } }${35:retry_interval=${36: } }${37:security_token=${38: } }${39:ttl=${40: } }${41:type=${42: } }${43:validate_certs=${44: } }${45:value=${46: } }${47:vpc_id=${48: } }${49:weight=${50: } }${51:zone=${52: } }
+${53:  when: ${54: variable is defined}}
+${55:  with_items: ${56: array}}
 ]]></content>
 	<tabTrigger>route53</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,27 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
 #device_name = device id to override device mapping. Assumes /dev/sdf for Linux/UNIX and /dev/xvdf for Windows.
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Must be specified if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
 #encrypted = Enable encryption at rest for this volume.
 #id = volume id if you wish to attach an existing volume (requires instance) or remove an existing volume
-#instance = instance ID if you wish to attach the volume.
+#instance = instance ID if you wish to attach the volume. Since 1.9 you can set to None to detach.
 #iops = the provisioned IOPs you want to associate with this volume (integer).
 #name = volume Name tag if you wish to attach an existing volume (requires instance)
 #profile = uses a boto profile. Only works with boto >= 2.24.0
-#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
-#security_token = security token to authenticate against AWS
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #snapshot = snapshot ID on which to base the volume
-#state = whether to ensure the volume is present or absent, or to list existing volumes (The `list' option was added in version 1.8).
+#state = whether to ensure the volume is present or absent, or to list existing volumes (The `list' option was added in
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 #volume_size = size of volume (in GB) to create.
+#volume_type = Type of EBS volume; standard (magnetic), gp2 (SSD), io1 (Provisioned IOPS). "Standard" is the old EBS default
 #zone = zone in which to create the volume, if unset uses the zone the instance is in (if set)
 }- name: ${2:Name for ec2_vol module.}
 ${3:  sudo: ${4:yes}}
-  ec2_vol: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:device_name=${10: } }${11:ec2_url=${12: } }${13:encrypted=${14: } }${15:id=${16: } }${17:instance=${18: } }${19:iops=${20: } }${21:name=${22: } }${23:profile=${24: } }${25:region=${26: } }${27:security_token=${28: } }${29:snapshot=${30: } }${31:state=${32: } }${33:validate_certs=${34: } }${35:volume_size=${36: } }${37:zone=${38: } }
-${39:  when: ${40: variable is defined}}
-${41:  with_items: ${42: array}}
+  ec2_vol: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:device_name=${10: } }${11:ec2_url=${12: } }${13:encrypted=${14: } }${15:id=${16: } }${17:instance=${18: } }${19:iops=${20: } }${21:name=${22: } }${23:profile=${24: } }${25:region=${26: } }${27:http=${28: } }${29:security_token=${30: } }${31:snapshot=${32: } }${33:state=${34: } }${35:validate_certs=${36: } }${37:volume_size=${38: } }${39:volume_type=${40: } }${41:zone=${42: } }
+${43:  when: ${44: variable is defined}}
+${45:  with_items: ${46: array}}
 ]]></content>
 	<tabTrigger>ec2_vol</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

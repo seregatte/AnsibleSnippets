@@ -6,17 +6,18 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #databases = Name of the databases that the user can access
 #db_password = Database user password
 #db_username = Name of the database user
-#env = pyrax-configuration
-#host = Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host
+#env = Environment as configured in ~/.pyrax.cfg, see
+#https = pyrax-
+#host = Specifies the host from which a user is allowed to connect to the database. Possible values are a string
 #region = Region to create an instance in
 #state = Indicate desired state of the resource
 #username = Rackspace username (overrides `credentials')
 #verify_ssl = Whether or not to require SSL validation of API endpoints
 }- name: ${2:Name for rax_cdb_user module.}
 ${3:  sudo: ${4:yes}}
-  rax_cdb_user: ${5:api_key=${6: } }${7:cdb_id=${8: } }${9:credentials=${10: } }${11:databases=${12: } }${13:db_password=${14: } }${15:db_username=${16: } }${17:env=${18: } }${19:host=${20: } }${21:region=${22: } }${23:state=${24: } }${25:username=${26: } }${27:verify_ssl=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  rax_cdb_user: ${5:api_key=${6: } }${7:cdb_id=${8: } }${9:credentials=${10: } }${11:databases=${12: } }${13:db_password=${14: } }${15:db_username=${16: } }${17:env=${18: } }${19:https=${20: } }${21:host=${22: } }${23:region=${24: } }${25:state=${26: } }${27:username=${28: } }${29:verify_ssl=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
 ]]></content>
 	<tabTrigger>rax_cdb_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

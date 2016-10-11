@@ -3,16 +3,17 @@
 ${1:#dest = Absolute path where the repository should be deployed.
 #executable = Path to svn executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.
 #export = If `yes', do export instead of checkout/update.
-#force = If `yes', modified files will be discarded. If `no', module will fail if it encounters modified files.
+#force = If `yes', modified files will be discarded. If `no', module will fail if it encounters modified files. Prior to
 #password = --password parameter passed to svn.
 #repo = The subversion URL to the repository.
 #revision = Specific revision to checkout.
+#switch = If `no', do not call svn switch before update.
 #username = --username parameter passed to svn.
 }- name: ${2:Name for subversion module.}
 ${3:  sudo: ${4:yes}}
-  subversion: ${5:dest=${6: } }${7:executable=${8: } }${9:export=${10: } }${11:force=${12: } }${13:password=${14: } }${15:repo=${16: } }${17:revision=${18: } }${19:username=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  subversion: ${5:dest=${6: } }${7:executable=${8: } }${9:export=${10: } }${11:force=${12: } }${13:password=${14: } }${15:repo=${16: } }${17:revision=${18: } }${19:switch=${20: } }${21:username=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
 ]]></content>
 	<tabTrigger>subversion</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

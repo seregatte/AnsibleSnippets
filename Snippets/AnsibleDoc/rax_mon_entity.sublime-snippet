@@ -1,0 +1,27 @@
+<snippet>
+<content><![CDATA[
+${1:#agent_id = Rackspace monitoring agent on the target device to which this entity is bound. Necessary to collect `agent.'
+#api_key = Rackspace API key (overrides `credentials')
+#auth_endpoint = The URI of the authentication service
+#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
+#env = Environment as configured in ~/.pyrax.cfg, see
+#https = pyrax-
+#identity_type = Authentication machanism to use, such as rackspace or keystone
+#label = Defines a name for this entity. Must be a non-empty string between 1 and 255 characters long.
+#metadata = Hash of arbitrary `name', `value' pairs that are passed to associated rax_mon_alarms. Names and values must all
+#named_ip_addresses = Hash of IP addresses that may be referenced by name by rax_mon_checks added to this entity. Must be a dictionary
+#region = Region to create an instance in
+#state = Ensure that an entity with this `name' exists or does not exist.
+#tenant_id = The tenant ID used for authentication
+#tenant_name = The tenant name used for authentication
+#username = Rackspace username (overrides `credentials')
+#verify_ssl = Whether or not to require SSL validation of API endpoints
+}- name: ${2:Name for rax_mon_entity module.}
+${3:  sudo: ${4:yes}}
+  rax_mon_entity: ${5:agent_id=${6: } }${7:api_key=${8: } }${9:auth_endpoint=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:https=${16: } }${17:identity_type=${18: } }${19:label=${20: } }${21:metadata=${22: } }${23:named_ip_addresses=${24: } }${25:region=${26: } }${27:state=${28: } }${29:tenant_id=${30: } }${31:tenant_name=${32: } }${33:username=${34: } }${35:verify_ssl=${36: } }
+${37:  when: ${38: variable is defined}}
+${39:  with_items: ${40: array}}
+]]></content>
+	<tabTrigger>rax_mon_entity</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#attach_options = Extra options to the zoneadm attach command. For example, this can be used to specify whether a minimum or full
+#config = The zonecfg configuration commands for this zone. See zonecfg(1M) for the valid options and syntax. Typically
+#create_options = Extra options to the zonecfg(1M) create command.
+#install_options = Extra options to the zoneadm(1M) install command. To automate Solaris 11 zone creation, use this to specify the
+#name = Zone name.
+#path = The path where the zone will be created. This is required when the zone is created, but not used otherwise.
+#root_password = The password hash for the root account. If not specified, the zone's root account will not have a password.
+#sparse = Whether to create a sparse (`true') or whole root (`false') zone.
+#state = `present', configure and install the zone. `installed', synonym for `present'. `running', if the zone already
+#timeout = Timeout, in seconds, for zone to boot.
+}- name: ${2:Name for solaris_zone module.}
+${3:  sudo: ${4:yes}}
+  solaris_zone: ${5:attach_options=${6: } }${7:config=${8: } }${9:create_options=${10: } }${11:install_options=${12: } }${13:name=${14: } }${15:path=${16: } }${17:root_password=${18: } }${19:sparse=${20: } }${21:state=${22: } }${23:timeout=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>solaris_zone</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

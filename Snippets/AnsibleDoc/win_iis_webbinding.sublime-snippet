@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#certificate_hash = Certificate hash for the SSL binding. The certificate hash is the unique identifier for the certificate.
+#certificate_store_name = Name of the certificate store where the certificate for the binding is located.
+#host_header = The host header to bind to / use for the new site.
+#ip = The IP address to bind to / use for the new site.
+#name = Names of web site
+#port = The port to bind to / use for the new site.
+#protocol = The protocol to be used for the Web binding (usually HTTP, HTTPS, or FTP).
+#state = State of the binding
+}- name: ${2:Name for win_iis_webbinding module.}
+${3:  sudo: ${4:yes}}
+  win_iis_webbinding: ${5:certificate_hash=${6: } }${7:certificate_store_name=${8: } }${9:host_header=${10: } }${11:ip=${12: } }${13:name=${14: } }${15:port=${16: } }${17:protocol=${18: } }${19:state=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>win_iis_webbinding</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#creates = If this file or directory exists the specified src will not be extracted.
+#dest = Destination of zip file (provide absolute path of directory). If it does not exist, the directory will be
+#recurse = Recursively expand zipped files within the src file.
+#rm = Remove the zip file, after unzipping
+#src = File to be unzipped (provide absolute path)
+}- name: ${2:Name for win_unzip module.}
+${3:  sudo: ${4:yes}}
+  win_unzip: ${5:creates=${6: } }${7:dest=${8: } }${9:recurse=${10: } }${11:rm=${12: } }${13:src=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>win_unzip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

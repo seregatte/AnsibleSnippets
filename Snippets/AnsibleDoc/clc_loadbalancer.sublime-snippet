@@ -1,0 +1,21 @@
+<snippet>
+<content><![CDATA[
+${1:#alias = The alias of your CLC Account
+#description = A description for the loadbalancer
+#location = The location of the datacenter where the load balancer resides in
+#method = - T h e   b a l a n c i n g   m e t h o d   f o r   t h e   l o a d   b a l a n c e r   p o o l
+#name = The name of the loadbalancer
+#nodes = A list of nodes that needs to be added to the load balancer pool
+#persistence = The persistence method for the load balancer
+#port = Port to configure on the public-facing side of the load balancer pool
+#state = Whether to create or delete the load balancer pool
+#status = The status of the loadbalancer
+}- name: ${2:Name for clc_loadbalancer module.}
+${3:  sudo: ${4:yes}}
+  clc_loadbalancer: ${5:alias=${6: } }${7:description=${8: } }${9:location=${10: } }${11:method=${12: } }${13:name=${14: } }${15:nodes=${16: } }${17:persistence=${18: } }${19:port=${20: } }${21:state=${22: } }${23:status=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
+]]></content>
+	<tabTrigger>clc_loadbalancer</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

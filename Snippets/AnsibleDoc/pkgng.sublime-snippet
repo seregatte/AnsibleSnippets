@@ -1,15 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:#annotation = a comma-separated list of keyvalue-pairs of the form <+/-/:><key>[=<value>]. A '+' denotes adding an annotation, a '-' denotes removing an annotation, and ':' denotes modifying an annotation. If setting or modifying annotations, a value must be provided.
+${1:#annotation = a comma-separated list of keyvalue-pairs of the form <+/-/:><key>[=<value>]. A '+' denotes adding an annotation,
 #cached = use local package base or try to fetch an updated one
 #name = name of package to install/remove
-#pkgsite = for pkgng versions before 1.1.4, specify packagesite to use for downloading packages, if not specified, use settings from /usr/local/etc/pkg.conf for newer pkgng versions, specify a the name of a repository configured in /usr/local/etc/pkg/repos
+#pkgsite = for pkgng versions before 1.1.4, specify packagesite to use for downloading packages, if not specified, use
+#rootdir = for pkgng versions 1.5 and later, pkg will install all packages within the specified root directory
 #state = state of the package
 }- name: ${2:Name for pkgng module.}
 ${3:  sudo: ${4:yes}}
-  pkgng: ${5:annotation=${6: } }${7:cached=${8: } }${9:name=${10: } }${11:pkgsite=${12: } }${13:state=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  pkgng: ${5:annotation=${6: } }${7:cached=${8: } }${9:name=${10: } }${11:pkgsite=${12: } }${13:rootdir=${14: } }${15:state=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
 ]]></content>
 	<tabTrigger>pkgng</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#current_portgroup_name = Portgroup name VMK interface is currently on
+#current_switch_name = Switch VMK interface is currently on
+#device = VMK interface name
+#esxi_hostname = ESXi hostname to be managed
+#hostname = The hostname or IP address of the vSphere vCenter API server
+#migrate_portgroup_name = Portgroup name to migrate VMK interface to
+#migrate_switch_name = Switch name to migrate VMK interface to
+#password = The password of the vSphere vCenter
+#username = The username of the vSphere vCenter
+}- name: ${2:Name for vmware_migrate_vmk module.}
+${3:  sudo: ${4:yes}}
+  vmware_migrate_vmk: ${5:current_portgroup_name=${6: } }${7:current_switch_name=${8: } }${9:device=${10: } }${11:esxi_hostname=${12: } }${13:hostname=${14: } }${15:migrate_portgroup_name=${16: } }${17:migrate_switch_name=${18: } }${19:password=${20: } }${21:username=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>vmware_migrate_vmk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

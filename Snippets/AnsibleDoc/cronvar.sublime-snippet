@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#backup = If set, create a backup of the crontab before it is modified. The location of the backup is returned in the
+#cron_file = If specified, uses this file in cron.d instead of an individual user's crontab.
+#insertafter = Used with `state=present'. If specified, the variable will be inserted after the variable specified.
+#insertbefore = Used with `state=present'. If specified, the variable will be inserted just before the variable specified.
+#name = Name of the crontab variable.
+#state = Whether to ensure that the variable is present or absent.
+#user = The specific user whose crontab should be modified.
+#value = The value to set this variable to.  Required if state=present.
+}- name: ${2:Name for cronvar module.}
+${3:  sudo: ${4:yes}}
+  cronvar: ${5:backup=${6: } }${7:cron_file=${8: } }${9:insertafter=${10: } }${11:insertbefore=${12: } }${13:name=${14: } }${15:state=${16: } }${17:user=${18: } }${19:value=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>cronvar</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

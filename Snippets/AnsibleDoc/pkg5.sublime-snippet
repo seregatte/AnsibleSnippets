@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#accept_licenses = Accept any licences.
+#name = An FRMI of the package(s) to be installed/removed/updated. Multiple packages may be specified, separated by `,'.
+#state = Whether to install (`present', `latest'), or remove (`absent') a package.
+}- name: ${2:Name for pkg5 module.}
+${3:  sudo: ${4:yes}}
+  pkg5: ${5:accept_licenses=${6: } }${7:name=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>pkg5</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

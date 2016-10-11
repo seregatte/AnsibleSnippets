@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#array_add = Add new elements to the array for a key which has an array as its value.
+#domain = The domain is a domain name of the form com.companyname.appname.
+#key = The key of the user preference
+#state = The state of the user defaults
+#type = The type of value to write.
+#value = The value to write. Only required when state = present.
+}- name: ${2:Name for osx_defaults module.}
+${3:  sudo: ${4:yes}}
+  osx_defaults: ${5:array_add=${6: } }${7:domain=${8: } }${9:key=${10: } }${11:state=${12: } }${13:type=${14: } }${15:value=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>osx_defaults</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#db = name of the database to add or remove the extension to/from
+#login_host = Host running the database
+#login_password = The password used to authenticate with
+#login_user = The username used to authenticate with
+#name = name of the extension to add or remove
+#port = Database port to connect to.
+#state = The database extension state
+}- name: ${2:Name for postgresql_ext module.}
+${3:  sudo: ${4:yes}}
+  postgresql_ext: ${5:db=${6: } }${7:login_host=${8: } }${9:login_password=${10: } }${11:login_user=${12: } }${13:name=${14: } }${15:port=${16: } }${17:state=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>postgresql_ext</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

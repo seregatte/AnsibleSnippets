@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = Circonus API key
+#category = Annotation Category
+#description = Description of annotation
+#duration = Duration in seconds of annotation, defaults to 0
+#start = Unix timestamp of event start, defaults to now
+#stop = Unix timestamp of event end, defaults to now + duration
+#title = Title of annotation
+}- name: ${2:Name for circonus_annotation module.}
+${3:  sudo: ${4:yes}}
+  circonus_annotation: ${5:api_key=${6: } }${7:category=${8: } }${9:description=${10: } }${11:duration=${12: } }${13:start=${14: } }${15:stop=${16: } }${17:title=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>circonus_annotation</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

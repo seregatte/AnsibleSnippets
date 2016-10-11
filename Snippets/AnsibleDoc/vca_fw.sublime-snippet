@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#api_version = The api version to be used with the vca
+#fw_rules = A list of firewall rules to be added to the gateway, Please see examples on valid entries
+#gateway_name = The name of the gateway of the vdc where the rule should be added
+#host = The authentication host to be used when service type  is vcd.
+#instance_id = The instance id in a vchs environment to be used for creating the vapp
+#org = The org to login to for creating vapp, mostly set when the service_type is vdc.
+#password = The vca password, if not set the environment variable VCA_PASS is checked for the password
+#service_type = The type of service we are authenticating against
+#state = if the object should be added or removed
+#username = The vca username or email address, if not set the environment variable VCA_USER is checked for the username.
+#vdc_name = The name of the vdc where the gateway is located.
+#verify_certs = If the certificates of the authentication is to be verified
+}- name: ${2:Name for vca_fw module.}
+${3:  sudo: ${4:yes}}
+  vca_fw: ${5:api_version=${6: } }${7:fw_rules=${8: } }${9:gateway_name=${10: } }${11:host=${12: } }${13:instance_id=${14: } }${15:org=${16: } }${17:password=${18: } }${19:service_type=${20: } }${21:state=${22: } }${23:username=${24: } }${25:vdc_name=${26: } }${27:verify_certs=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>vca_fw</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

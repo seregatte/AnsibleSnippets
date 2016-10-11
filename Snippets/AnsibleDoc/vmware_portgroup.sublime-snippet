@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#hostname = The hostname or IP address of the ESXi server
+#password = The password of the ESXi server
+#portgroup_name = Portgroup name to add
+#switch_name = vSwitch to modify
+#username = The username of the ESXi server
+#vlan_id = VLAN ID to assign to portgroup
+}- name: ${2:Name for vmware_portgroup module.}
+${3:  sudo: ${4:yes}}
+  vmware_portgroup: ${5:hostname=${6: } }${7:password=${8: } }${9:portgroup_name=${10: } }${11:switch_name=${12: } }${13:username=${14: } }${15:vlan_id=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>vmware_portgroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

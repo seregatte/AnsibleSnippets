@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#binstub_directory = Only applies if state is `present'. Specifies the directory to install any gem bins files to. When executed the
+#chdir = The directory to execute the bundler commands from. This directoy needs to contain a valid Gemfile or .bundle/
+#clean = Only applies if state is `present'. If set removes any gems on the target host that are not in the gemfile
+#deployment_mode = Only applies if state is `present'. If set it will only install gems that are in the default or production
+#exclude_groups = A list of Gemfile groups to exclude during operations. This only applies when state is `present'. Bundler
+#executable = The path to the bundler executable
+#extra_args = A space separated string of additional commands that can be applied to the Bundler command. Refer to the Bundler
+#gem_path = Only applies if state is `present'. Specifies the directory to install the gems into. If `chdir' is set then
+#gemfile = Only applies if state is `present'. The path to the gemfile to use to install gems.
+#local = If set only installs gems from the cache on the target host
+#state = The desired state of the Gem bundle. `latest' updates gems to the most recent, acceptable version
+#user_install = Only applies if state is `present'. Installs gems in the local user's cache or for all users
+}- name: ${2:Name for bundler module.}
+${3:  sudo: ${4:yes}}
+  bundler: ${5:binstub_directory=${6: } }${7:chdir=${8: } }${9:clean=${10: } }${11:deployment_mode=${12: } }${13:exclude_groups=${14: } }${15:executable=${16: } }${17:extra_args=${18: } }${19:gem_path=${20: } }${21:gemfile=${22: } }${23:local=${24: } }${25:state=${26: } }${27:user_install=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>bundler</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#hostname = The hostname or IP address of the vSphere vCenter API server
+#num_ports = The number of ports the portgroup should contain
+#password = The password of the vSphere vCenter
+#portgroup_name = The name of the portgroup that is to be created or deleted
+#portgroup_type = See VMware KB 1022312 regarding portgroup types
+#switch_name = The name of the distributed vSwitch the port group should be created on.
+#username = The username of the vSphere vCenter
+#vlan_id = The VLAN ID that should be configured with the portgroup
+}- name: ${2:Name for vmware_dvs_portgroup module.}
+${3:  sudo: ${4:yes}}
+  vmware_dvs_portgroup: ${5:hostname=${6: } }${7:num_ports=${8: } }${9:password=${10: } }${11:portgroup_name=${12: } }${13:portgroup_type=${14: } }${15:switch_name=${16: } }${17:username=${18: } }${19:vlan_id=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>vmware_dvs_portgroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

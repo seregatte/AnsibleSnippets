@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#application_pool = The application pool in which the new site executes.
+#hostname = The host header to bind to / use for the new site.
+#ip = The IP address to bind to / use for the new site.
+#name = Names of web site
+#parameters = Custom site Parameters from string where properties are seperated by a pipe and property name/values by colon
+#physical_path = The physical path on the remote host to use for the new site. The specified folder must already exist.
+#port = The port to bind to / use for the new site.
+#ssl = Enables HTTPS binding on the site..
+#state = State of the web site
+}- name: ${2:Name for win_iis_website module.}
+${3:  sudo: ${4:yes}}
+  win_iis_website: ${5:application_pool=${6: } }${7:hostname=${8: } }${9:ip=${10: } }${11:name=${12: } }${13:parameters=${14: } }${15:physical_path=${16: } }${17:port=${18: } }${19:ssl=${20: } }${21:state=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>win_iis_website</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name of the plugin to install
+#plugin_bin = Location of the plugin binary
+#plugin_dir = Your configured plugin directory specified in Elasticsearch
+#state = Desired state of a plugin.
+#timeout = Timeout setting: 30s, 1m, 1h...
+#url = Set exact URL to download the plugin from
+#version = Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated
+}- name: ${2:Name for elasticsearch_plugin module.}
+${3:  sudo: ${4:yes}}
+  elasticsearch_plugin: ${5:name=${6: } }${7:plugin_bin=${8: } }${9:plugin_dir=${10: } }${11:state=${12: } }${13:timeout=${14: } }${15:url=${16: } }${17:version=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
+]]></content>
+	<tabTrigger>elasticsearch_plugin</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

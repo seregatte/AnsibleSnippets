@@ -1,0 +1,31 @@
+<snippet>
+<content><![CDATA[
+${1:#admin_state_up = Desired admin state of the created or existing router.
+#api_timeout = How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be
+#auth = Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default `password'
+#auth_type = Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the
+#availability_zone = Name of the availability zone.
+#cacert = A path to a CA Cert bundle that can be used as part of verifying SSL API requests.
+#cert = A path to a client certificate to use as part of the SSL transaction
+#cloud = Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is not needed
+#enable_snat = Enable Source NAT (SNAT) attribute.
+#endpoint_type = Endpoint URL type to fetch from the service catalog.
+#external_fixed_ips = The IP address parameters for the external gateway network. Each is a dictionary with the subnet name or ID
+#interfaces = List of subnets to attach to the router internal interface.
+#key = A path to a client key to use as part of the SSL transaction
+#name = Name to be give to the router
+#network = Unique name or ID of the external gateway network.
+#region_name = Name of the region.
+#state = Indicate desired state of the resource
+#timeout = How long should ansible wait for the requested resource.
+#validate_certs = Whether or not SSL API requests should be verified.
+#wait = Should ansible wait until the requested resource is complete.
+}- name: ${2:Name for os_router module.}
+${3:  sudo: ${4:yes}}
+  os_router: ${5:admin_state_up=${6: } }${7:api_timeout=${8: } }${9:auth=${10: } }${11:auth_type=${12: } }${13:availability_zone=${14: } }${15:cacert=${16: } }${17:cert=${18: } }${19:cloud=${20: } }${21:enable_snat=${22: } }${23:endpoint_type=${24: } }${25:external_fixed_ips=${26: } }${27:interfaces=${28: } }${29:key=${30: } }${31:name=${32: } }${33:network=${34: } }${35:region_name=${36: } }${37:state=${38: } }${39:timeout=${40: } }${41:validate_certs=${42: } }${43:wait=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
+]]></content>
+	<tabTrigger>os_router</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

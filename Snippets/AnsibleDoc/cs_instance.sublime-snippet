@@ -1,0 +1,47 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the instance is related to.
+#affinity_groups = Affinity groups names to be applied to the new instance.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#cpu = The number of CPUs to allocate to the instance, used with custom service offerings
+#cpu_speed = The clock speed/shares allocated to the instance, used with custom service offerings
+#disk_offering = Name of the disk offering to be used.
+#disk_size = Disk size in GByte required if deploying instance from ISO.
+#display_name = Custom display name of the instances. Display name will be set to `name' if not specified. Either `name' or
+#domain = Domain the instance is related to.
+#force = Force stop/start the instance if required to apply changes, otherwise a running instance will not be changed.
+#group = Group in where the new instance should be in.
+#hypervisor = Name the hypervisor to be used for creating the new instance. Relevant when using `state=present', but only
+#ip6_address = IPv6 address for default instance's network.
+#ip_address = IPv4 address for default instance's network during creation.
+#ip_to_networks = List of mappings in the form {'network': NetworkName, 'ip': 1.2.3.4} Mutually exclusive with `networks' option.
+#iso = Name or id of the ISO to be used for creating the new instance. Required when using `state=present'. Mutually
+#keyboard = Keyboard device type for the instance.
+#memory = The memory allocated to the instance, used with custom service offerings
+#name = Host name of the instance. `name' can only contain ASCII letters. Name will be generated (UUID) by CloudStack if
+#networks = List of networks to use for the new instance.
+#poll_async = Poll async jobs until job has finished.
+#project = Name of the project the instance to be deployed in.
+#root_disk_size = Root disk size in GByte required if deploying instance with KVM hypervisor and want resize the root disk size at
+#security_groups = List of security groups the instance to be applied to.
+#service_offering = Name or id of the service offering of the new instance. If not set, first found service offering is used.
+#ssh_key = Name of the SSH key to be deployed on the new instance.
+#state = State of the instance.
+#tags = List of tags. Tags are a list of dictionaries having keys `key' and `value'. If you want to delete all tags, set
+#template = Name or id of the template to be used for creating the new instance. Required when using `state=present'.
+#user_data = Optional data (ASCII) that can be sent to the instance upon a successful deployment. The data will be
+#zone = Name of the zone in which the instance shoud be deployed. If not set, default zone is used.
+}- name: ${2:Name for cs_instance module.}
+${3:  sudo: ${4:yes}}
+  cs_instance: ${5:account=${6: } }${7:affinity_groups=${8: } }${9:api_http_method=${10: } }${11:api_key=${12: } }${13:api_region=${14: } }${15:api_secret=${16: } }${17:api_timeout=${18: } }${19:api_url=${20: } }${21:cpu=${22: } }${23:cpu_speed=${24: } }${25:disk_offering=${26: } }${27:disk_size=${28: } }${29:display_name=${30: } }${31:domain=${32: } }${33:force=${34: } }${35:group=${36: } }${37:hypervisor=${38: } }${39:ip6_address=${40: } }${41:ip_address=${42: } }${43:ip_to_networks=${44: } }${45:iso=${46: } }${47:keyboard=${48: } }${49:memory=${50: } }${51:name=${52: } }${53:networks=${54: } }${55:poll_async=${56: } }${57:project=${58: } }${59:root_disk_size=${60: } }${61:security_groups=${62: } }${63:service_offering=${64: } }${65:ssh_key=${66: } }${67:state=${68: } }${69:tags=${70: } }${71:template=${72: } }${73:user_data=${74: } }${75:zone=${76: } }
+${77:  when: ${78: variable is defined}}
+${79:  with_items: ${80: array}}
+]]></content>
+	<tabTrigger>cs_instance</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

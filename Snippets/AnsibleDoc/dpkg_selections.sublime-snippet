@@ -1,0 +1,13 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Name of the package
+#selection = The selection state to set the package to.
+}- name: ${2:Name for dpkg_selections module.}
+${3:  sudo: ${4:yes}}
+  dpkg_selections: ${5:name=${6: } }${7:selection=${8: } }
+${9:  when: ${10: variable is defined}}
+${11:  with_items: ${12: array}}
+]]></content>
+	<tabTrigger>dpkg_selections</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:#authkey = Authentication key, required if version is v3
+#community = The SNMP community string, required if version is v2/v2c
+#host = Set to target snmp server (normally {{inventory_hostname}})
+#integrity = Hashing algoritm, required if version is v3
+#level = Authentication level, required if version is v3
+#privacy = Encryption algoritm, required if level is authPriv
+#privkey = Encryption key, required if version is authPriv
+#username = Username for SNMPv3, required if version is v3
+#version = SNMP Version to use, v2/v2c or v3
+}- name: ${2:Name for snmp_facts module.}
+${3:  sudo: ${4:yes}}
+  snmp_facts: ${5:authkey=${6: } }${7:community=${8: } }${9:host=${10: } }${11:integrity=${12: } }${13:level=${14: } }${15:privacy=${16: } }${17:privkey=${18: } }${19:username=${20: } }${21:version=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
+]]></content>
+	<tabTrigger>snmp_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,17 @@
+<snippet>
+<content><![CDATA[
+${1:#api_key = Push bullet API token
+#body = Body of the notification, e.g. Details of the fault you're alerting.
+#channel = The channel TAG you wish to broadcast a push notification, as seen on the "My Channels" > "Edit your channel" at
+#device = The device NAME you wish to send a push notification, as seen on the Pushbullet main page.
+#push_type = Thing you wish to push.
+#title = Title of the notification.
+}- name: ${2:Name for pushbullet module.}
+${3:  sudo: ${4:yes}}
+  pushbullet: ${5:api_key=${6: } }${7:body=${8: } }${9:channel=${10: } }${11:device=${12: } }${13:push_type=${14: } }${15:title=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
+]]></content>
+	<tabTrigger>pushbullet</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

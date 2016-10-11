@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#backrefs = Used with `state=present'. If set, line can contain backreferences (both positional and named) that will get
+#backup = Create a backup file including the timestamp information so you can get the original file back if you somehow
+#create = Used with `state=present'. If specified, the file will be created if it does not already exist. By default it
+#dest = The path of the file to modify.
+#encoding = Specifies the encoding of the source text file to operate on (and thus what the output encoding will be). The
+#insertafter = Used with `state=present'. If specified, the line will be inserted after the last match of specified regular
+#insertbefore = Used with `state=present'. If specified, the line will be inserted before the last match of specified regular
+#line = Required for `state=present'. The line to insert/replace into the file. If `backrefs' is set, may contain
+#newline = Specifies the line separator style to use for the modified file. This defaults to the windows line separator (
+#regexp = The regular expression to look for in every line of the file. For `state=present', the pattern to replace if
+#state = Whether the line should be there or not.
+#validate = Validation to run before copying into place.  Use %s in the command to indicate the current file to validate.
+}- name: ${2:Name for win_lineinfile module.}
+${3:  sudo: ${4:yes}}
+  win_lineinfile: ${5:backrefs=${6: } }${7:backup=${8: } }${9:create=${10: } }${11:dest=${12: } }${13:encoding=${14: } }${15:insertafter=${16: } }${17:insertbefore=${18: } }${19:line=${20: } }${21:newline=${22: } }${23:regexp=${24: } }${25:state=${26: } }${27:validate=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>win_lineinfile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#ports = A list of ports to expose. This is required when state is 'present'
+#protocol = The protocol that the public IP will listen for.
+#server_ids = A list of servers to create public ips on.
+#state = Determine whether to create or delete public IPs. If present module will not create a second public ip if one
+#wait = Whether to wait for the tasks to finish before returning.
+}- name: ${2:Name for clc_publicip module.}
+${3:  sudo: ${4:yes}}
+  clc_publicip: ${5:ports=${6: } }${7:protocol=${8: } }${9:server_ids=${10: } }${11:state=${12: } }${13:wait=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>clc_publicip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

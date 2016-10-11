@@ -4,8 +4,10 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #auth_endpoint = The URI of the authentication service
 #credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
 #description = Description to give the volume being created
-#env = pyrax-configuration
+#env = Environment as configured in ~/.pyrax.cfg, see
+#https = pyrax-
 #identity_type = Authentication machanism to use, such as rackspace or keystone
+#image = image to use for bootable volumes. Can be an `id', `human_id' or `name'. This option requires `pyrax>=1.9.3'
 #meta = A hash of metadata to associate with the volume
 #name = Name to give the volume being created
 #region = Region to create an instance in
@@ -21,9 +23,9 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for rax_cbs module.}
 ${3:  sudo: ${4:yes}}
-  rax_cbs: ${5:api_key=${6: } }${7:auth_endpoint=${8: } }${9:credentials=${10: } }${11:description=${12: } }${13:env=${14: } }${15:identity_type=${16: } }${17:meta=${18: } }${19:name=${20: } }${21:region=${22: } }${23:size=${24: } }${25:snapshot_id=${26: } }${27:state=${28: } }${29:tenant_id=${30: } }${31:tenant_name=${32: } }${33:username=${34: } }${35:verify_ssl=${36: } }${37:volume_type=${38: } }${39:wait=${40: } }${41:wait_timeout=${42: } }
-${43:  when: ${44: variable is defined}}
-${45:  with_items: ${46: array}}
+  rax_cbs: ${5:api_key=${6: } }${7:auth_endpoint=${8: } }${9:credentials=${10: } }${11:description=${12: } }${13:env=${14: } }${15:https=${16: } }${17:identity_type=${18: } }${19:image=${20: } }${21:meta=${22: } }${23:name=${24: } }${25:region=${26: } }${27:size=${28: } }${29:snapshot_id=${30: } }${31:state=${32: } }${33:tenant_id=${34: } }${35:tenant_name=${36: } }${37:username=${38: } }${39:verify_ssl=${40: } }${41:volume_type=${42: } }${43:wait=${44: } }${45:wait_timeout=${46: } }
+${47:  when: ${48: variable is defined}}
+${49:  with_items: ${50: array}}
 ]]></content>
 	<tabTrigger>rax_cbs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

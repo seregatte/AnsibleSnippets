@@ -1,19 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
 #disable_rollback = If a stacks fails to form, rollback will remove the stack
-#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#notification_arns = The Simple Notification Service (SNS) topic ARNs to publish stack related events.
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #stack_name = name of the cloudformation stack
-#state = If state is "present", stack will be created.  If state is "present" and if stack exists and template has changed, it will be updated. If state is absent, stack will be removed.
-#tags = Dictionary of tags to associate with stack and it's resources during stack creation. Cannot be updated later. Requires at least Boto version 2.6.0.
-#template = the path of the cloudformation template
+#stack_policy = the path of the cloudformation stack policy
+#state = If state is "present", stack will be created.  If state is "present" and if stack exists and template has
+#tags = Dictionary of tags to associate with stack and it's resources during stack creation. Cannot be updated later.
+#template = The local path of the cloudformation template. This parameter is mutually exclusive with 'template_url'. Either
+#template_format = For local templates, allows specification of json or yaml format
 #template_parameters = a list of hashes of all the template variables for the stack
+#template_url = Location of file containing the template body. The URL must point to a template (max size 307,200 bytes) located
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 }- name: ${2:Name for cloudformation module.}
 ${3:  sudo: ${4:yes}}
-  cloudformation: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:disable_rollback=${10: } }${11:region=${12: } }${13:stack_name=${14: } }${15:state=${16: } }${17:tags=${18: } }${19:template=${20: } }${21:template_parameters=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  cloudformation: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:disable_rollback=${10: } }${11:ec2_url=${12: } }${13:notification_arns=${14: } }${15:profile=${16: } }${17:region=${18: } }${19:security_token=${20: } }${21:stack_name=${22: } }${23:stack_policy=${24: } }${25:state=${26: } }${27:tags=${28: } }${29:template=${30: } }${31:template_format=${32: } }${33:template_parameters=${34: } }${35:template_url=${36: } }${37:validate_certs=${38: } }
+${39:  when: ${40: variable is defined}}
+${41:  with_items: ${42: array}}
 ]]></content>
 	<tabTrigger>cloudformation</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#category_names = A scalar or list of categories to install updates from
+#log_path = If set, win_updates will append update progress to the specified file. The directory must already exist.
+#state = Controls whether found updates are returned as a list or actually installed. This module also supports Ansible
+}- name: ${2:Name for win_updates module.}
+${3:  sudo: ${4:yes}}
+  win_updates: ${5:category_names=${6: } }${7:log_path=${8: } }${9:state=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>win_updates</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

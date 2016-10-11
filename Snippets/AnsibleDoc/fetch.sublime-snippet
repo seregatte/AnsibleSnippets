@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:#dest = A directory to save the file into. For example, if the `dest' directory is `/backup' a `src' file named `/etc/profile' on host `host.example.com', would be saved into `/backup/host.example.com/etc/profile'
+${1:#dest = A directory to save the file into. For example, if the `dest' directory is `/backup' a `src' file named
 #fail_on_missing = Makes it fails when the source file is missing.
-#flat = A l l o w s   y o u   t o   o v e r r i d e   t h e   d e f a u l t   b e h a v i o r   o f   p r e p e n d i n g   h o s t n a m e / p a t h / t o / f i l e   t o   t h e   d e s t i n a t i o n .     I f   d e s t   e n d s   w i t h   ' / ' ,   i t   w i l l   u s e   t h e   b a s e n a m e   o f   t h e   s o u r c e   f i l e ,   s i m i l a r   t o   t h e   c o p y   m o d u l e .     O b v i o u s l y   t h i s   i s   o n l y   h a n d y   i f   t h e   f i l e n a m e s   a r e   u n i q u e .
-#src = The file on the remote system to fetch. This `must' be a file, not a directory. Recursive fetching may be supported in a later release.
+#flat = Allows you to override the default behavior of appending hostname/path/to/file to the destination.  If dest ends
+#src = The file on the remote system to fetch. This `must' be a file, not a directory. Recursive fetching may be
 #validate_checksum = Verify that the source and destination checksums match after the files are fetched.
 }- name: ${2:Name for fetch module.}
 ${3:  sudo: ${4:yes}}

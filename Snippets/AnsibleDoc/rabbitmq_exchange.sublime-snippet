@@ -1,0 +1,23 @@
+<snippet>
+<content><![CDATA[
+${1:#arguments = extra arguments for exchange. If defined this argument is a key/value dictionary
+#auto_delete = if the exchange should delete itself after all queues/exchanges unbound from it
+#durable = whether exchange is durable or not
+#exchange_type = type for the exchange
+#internal = exchange is available only for other exchanges
+#login_host = rabbitMQ host for connection
+#login_password = rabbitMQ password for connection
+#login_port = rabbitMQ management api port
+#login_user = rabbitMQ user for connection
+#name = Name of the exchange to create
+#state = Whether the exchange should be present or absent Only present implemented atm
+#vhost = rabbitMQ virtual host
+}- name: ${2:Name for rabbitmq_exchange module.}
+${3:  sudo: ${4:yes}}
+  rabbitmq_exchange: ${5:arguments=${6: } }${7:auto_delete=${8: } }${9:durable=${10: } }${11:exchange_type=${12: } }${13:internal=${14: } }${15:login_host=${16: } }${17:login_password=${18: } }${19:login_port=${20: } }${21:login_user=${22: } }${23:name=${24: } }${25:state=${26: } }${27:vhost=${28: } }
+${29:  when: ${30: variable is defined}}
+${31:  with_items: ${32: array}}
+]]></content>
+	<tabTrigger>rabbitmq_exchange</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

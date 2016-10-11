@@ -5,7 +5,7 @@ ${1:#api_key = Nexmo API Key
 #dest = Phone number(s) to send SMS message to
 #msg = Message to text to send. Messages longer than 160 characters will be split into multiple messages
 #src = Nexmo Number to send from
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for nexmo module.}
 ${3:  sudo: ${4:yes}}
   nexmo: ${5:api_key=${6: } }${7:api_secret=${8: } }${9:dest=${10: } }${11:msg=${12: } }${13:src=${14: } }${15:validate_certs=${16: } }

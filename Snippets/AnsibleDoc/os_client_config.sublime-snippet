@@ -1,0 +1,12 @@
+<snippet>
+<content><![CDATA[
+${1:#clouds = List of clouds to limit the return list to. No value means return information on all configured clouds
+}- name: ${2:Name for os_client_config module.}
+${3:  sudo: ${4:yes}}
+  os_client_config: ${5:clouds=${6: } }
+${7:  when: ${8: variable is defined}}
+${9:  with_items: ${10: array}}
+]]></content>
+	<tabTrigger>os_client_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -3,13 +3,13 @@
 ${1:#app_path = The path to the root of the Django application where *manage.py* lives.
 #apps = A list of space-delimited apps to target. Used by the 'test' command.
 #cache_table = The name of the table used for database-backed caching. Used by the 'createcachetable' command.
-#command = The name of the Django management command to run. Built in commands are cleanup, collectstatic, flush, loaddata, migrate, runfcgi, syncdb, test, and validate. Other commands can be entered, but will fail if they're unknown to Django.
+#command = The name of the Django management command to run. Built in commands are cleanup, collectstatic, flush, loaddata,
 #database = The database to target. Used by the 'createcachetable', 'flush', 'loaddata', and 'syncdb' commands.
 #failfast = Fail the command immediately if a test fails. Used by the 'test' command.
 #fixtures = A space-delimited list of fixture file names to load in the database. *Required* by the 'loaddata' command.
-#link = Will create links to the files instead of copying them, you can only use this parameter with 'collectstatic' command
-#merge = Will run out-of-order or missing migrations as they are not rollback migrations, you can only use this parameter with 'migrate' command
-#pythonpath = A directory to add to the Python path. Typically used to include the settings module if it is located external to the application directory.
+#link = Will create links to the files instead of copying them, you can only use this parameter with 'collectstatic'
+#merge = Will run out-of-order or missing migrations as they are not rollback migrations, you can only use this parameter
+#pythonpath = A directory to add to the Python path. Typically used to include the settings module if it is located external
 #settings = The Python path to the application's settings module, such as 'myapp.settings'.
 #skip = Will skip over out-of-order missing migrations, you can only use this parameter with `migrate'
 #virtualenv = An optional path to a `virtualenv' installation to use while running the manage application.

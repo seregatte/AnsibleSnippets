@@ -1,30 +1,35 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
+${1:#access_logs = An associative array of access logs configuration settings (see example)
+#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
 #connection_draining_timeout = Wait a specified timeout allowing connections to drain before terminating an instance
-#cross_az_load_balancing = Distribute load across all configured Availablity Zones
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Must be specified if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used
-#health_check = An associative array of health check configuration settigs (see example)
+#cross_az_load_balancing = Distribute load across all configured Availability Zones
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#health_check = An associative array of health check configuration settings (see example)
+#idle_timeout = ELB connections from clients and to servers are timed out after this amount of time
 #listeners = List of ports/protocols for this ELB to listen on (see example)
 #name = The name of the ELB
 #profile = uses a boto profile. Only works with boto >= 2.24.0
 #purge_listeners = Purge existing listeners on ELB that are not found in listeners
 #purge_subnets = Purge existing subnet on ELB that are not found in subnets
 #purge_zones = Purge existing availability zones on ELB that are not found in zones
-#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
 #scheme = The scheme to use when creating the ELB. For a private VPC-visible ELB use 'internal'.
 #security_group_ids = A list of security groups to apply to the elb
-#security_token = security token to authenticate against AWS
+#security_group_names = A list of security group names to apply to the elb
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #state = Create or destroy the ELB
+#stickiness = An associative array of stickness policy settings. Policy will be applied to all listeners ( see example )
 #subnets = A list of VPC subnets to use when creating ELB. Zones should be empty if using this.
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 #zones = List of availability zones to enable on this ELB
 }- name: ${2:Name for ec2_elb_lb module.}
 ${3:  sudo: ${4:yes}}
-  ec2_elb_lb: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:connection_draining_timeout=${10: } }${11:cross_az_load_balancing=${12: } }${13:ec2_url=${14: } }${15:health_check=${16: } }${17:listeners=${18: } }${19:name=${20: } }${21:profile=${22: } }${23:purge_listeners=${24: } }${25:purge_subnets=${26: } }${27:purge_zones=${28: } }${29:region=${30: } }${31:scheme=${32: } }${33:security_group_ids=${34: } }${35:security_token=${36: } }${37:state=${38: } }${39:subnets=${40: } }${41:validate_certs=${42: } }${43:zones=${44: } }
-${45:  when: ${46: variable is defined}}
-${47:  with_items: ${48: array}}
+  ec2_elb_lb: ${5:access_logs=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:connection_draining_timeout=${12: } }${13:cross_az_load_balancing=${14: } }${15:ec2_url=${16: } }${17:health_check=${18: } }${19:idle_timeout=${20: } }${21:listeners=${22: } }${23:name=${24: } }${25:profile=${26: } }${27:purge_listeners=${28: } }${29:purge_subnets=${30: } }${31:purge_zones=${32: } }${33:region=${34: } }${35:http=${36: } }${37:scheme=${38: } }${39:security_group_ids=${40: } }${41:security_group_names=${42: } }${43:security_token=${44: } }${45:state=${46: } }${47:stickiness=${48: } }${49:subnets=${50: } }${51:validate_certs=${52: } }${53:zones=${54: } }
+${55:  when: ${56: variable is defined}}
+${57:  with_items: ${58: array}}
 ]]></content>
 	<tabTrigger>ec2_elb_lb</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

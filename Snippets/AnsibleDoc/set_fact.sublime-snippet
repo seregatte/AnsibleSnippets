@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:#key_value = The `set_fact' module takes key=value pairs as variables to set in the playbook scope. Or alternatively, accepts complex arguments using the `args:' statement.
+${1:#key_value = The `set_fact' module takes key=value pairs as variables to set in the playbook scope. Or alternatively, accepts
 }- name: ${2:Name for set_fact module.}
 ${3:  sudo: ${4:yes}}
   set_fact: ${5:key_value=${6: } }

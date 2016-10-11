@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:#name = Package name, or package specifier with version, like `name-1.0'. Be aware that packages are not always named
+#state = Whether to install (`present', `latest'), or remove (`absent') a package.
+#use = The required package manager module to use (yum, apt, etc). The default 'auto' will use existing facts or try to
+}- name: ${2:Name for package module.}
+${3:  sudo: ${4:yes}}
+  package: ${5:name=${6: } }${7:state=${8: } }${9:use=${10: } }
+${11:  when: ${12: variable is defined}}
+${13:  with_items: ${14: array}}
+]]></content>
+	<tabTrigger>package</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

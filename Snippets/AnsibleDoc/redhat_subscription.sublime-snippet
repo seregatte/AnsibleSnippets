@@ -2,6 +2,7 @@
 <content><![CDATA[
 ${1:#activationkey = supply an activation key for use with registration
 #autosubscribe = Upon successful registration, auto-consume available subscriptions
+#org_id = Organisation ID to use in conjunction with activationkey
 #password = Red Hat Network password
 #pool = Specify a subscription pool name to consume.  Regular expressions accepted.
 #rhsm_baseurl = Specify CDN baseurl
@@ -11,9 +12,9 @@ ${1:#activationkey = supply an activation key for use with registration
 #username = Red Hat Network username
 }- name: ${2:Name for redhat_subscription module.}
 ${3:  sudo: ${4:yes}}
-  redhat_subscription: ${5:activationkey=${6: } }${7:autosubscribe=${8: } }${9:password=${10: } }${11:pool=${12: } }${13:rhsm_baseurl=${14: } }${15:server_hostname=${16: } }${17:server_insecure=${18: } }${19:state=${20: } }${21:username=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  redhat_subscription: ${5:activationkey=${6: } }${7:autosubscribe=${8: } }${9:org_id=${10: } }${11:password=${12: } }${13:pool=${14: } }${15:rhsm_baseurl=${16: } }${17:server_hostname=${18: } }${19:server_insecure=${20: } }${21:state=${22: } }${23:username=${24: } }
+${25:  when: ${26: variable is defined}}
+${27:  with_items: ${28: array}}
 ]]></content>
 	<tabTrigger>redhat_subscription</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

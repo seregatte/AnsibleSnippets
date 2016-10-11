@@ -1,13 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#name = Username of the user to manage
-#password = Password for the user (plain text)
-#state = Whether to create or delete a user
+${1:#account_disabled = `yes' will disable the user account.  `no' will clear the disabled flag.
+#account_locked = `no' will unlock the user account if locked.
+#description = Description of the user
+#fullname = Full name of the user
+#groups = Adds or removes the user from this comma-separated lis of groups, depending on the value of `groups_action'.
+#groups_action = If `replace', the user is added as a member of each group in `groups' and removed from any other groups.  If
+#name = Name of the user to create, remove or modify.
+#password = Optionally set the user's password to this (plain text) value.
+#password_expired = `yes' will require the user to change their password at next login. `no' will clear the expired password flag.
+#password_never_expires = `yes' will set the password to never expire.  `no' will allow the password to expire.
+#state = When `present', creates or updates the user account.  When `absent', removes the user account if it exists.
+#update_password = `always' will update passwords if they differ.  `on_create' will only set the password for newly created users.
+#user_cannot_change_password = `yes' will prevent the user from changing their password.  `no' will allow the user to change their password.
 }- name: ${2:Name for win_user module.}
 ${3:  sudo: ${4:yes}}
-  win_user: ${5:name=${6: } }${7:password=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  win_user: ${5:account_disabled=${6: } }${7:account_locked=${8: } }${9:description=${10: } }${11:fullname=${12: } }${13:groups=${14: } }${15:groups_action=${16: } }${17:name=${18: } }${19:password=${20: } }${21:password_expired=${22: } }${23:password_never_expires=${24: } }${25:state=${26: } }${27:update_password=${28: } }${29:user_cannot_change_password=${30: } }
+${31:  when: ${32: variable is defined}}
+${33:  with_items: ${34: array}}
 ]]></content>
 	<tabTrigger>win_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

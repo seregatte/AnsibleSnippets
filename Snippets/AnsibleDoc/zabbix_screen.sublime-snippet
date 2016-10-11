@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#login_password = Zabbix user password.
+#login_user = Zabbix user name.
+#screens = List of screens to be created/updated/deleted(see example). If the screen(s) already been added, the screen(s)
+#server_url = Url of Zabbix server, with protocol (http or https).
+#timeout = The timeout of API request (seconds).
+}- name: ${2:Name for zabbix_screen module.}
+${3:  sudo: ${4:yes}}
+  zabbix_screen: ${5:login_password=${6: } }${7:login_user=${8: } }${9:screens=${10: } }${11:server_url=${12: } }${13:timeout=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>zabbix_screen</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

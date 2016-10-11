@@ -2,14 +2,15 @@
 <content><![CDATA[
 ${1:#install_options = options flags to install a package
 #name = name of package to install/remove
+#path = ':' separated list of paths to search for 'brew' executable. Since A package (`formula' in homebrew parlance)
 #state = state of the package
 #update_homebrew = update homebrew itself first
 #upgrade_all = upgrade all homebrew packages
 }- name: ${2:Name for homebrew module.}
 ${3:  sudo: ${4:yes}}
-  homebrew: ${5:install_options=${6: } }${7:name=${8: } }${9:state=${10: } }${11:update_homebrew=${12: } }${13:upgrade_all=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  homebrew: ${5:install_options=${6: } }${7:name=${8: } }${9:path=${10: } }${11:state=${12: } }${13:update_homebrew=${14: } }${15:upgrade_all=${16: } }
+${17:  when: ${18: variable is defined}}
+${19:  with_items: ${20: array}}
 ]]></content>
 	<tabTrigger>homebrew</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

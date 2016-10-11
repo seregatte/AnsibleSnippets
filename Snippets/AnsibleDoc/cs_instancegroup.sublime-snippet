@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the instance group is related to.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#domain = Domain the instance group is related to.
+#name = Name of the instance group.
+#project = Project the instance group is related to.
+#state = State of the instance group.
+}- name: ${2:Name for cs_instancegroup module.}
+${3:  sudo: ${4:yes}}
+  cs_instancegroup: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:domain=${20: } }${21:name=${22: } }${23:project=${24: } }${25:state=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>cs_instancegroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

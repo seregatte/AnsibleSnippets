@@ -1,0 +1,33 @@
+<snippet>
+<content><![CDATA[
+${1:#api_timeout = How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be
+#auth = Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default `password'
+#auth_type = Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the
+#availability_zone = Name of the availability zone.
+#cacert = A path to a CA Cert bundle that can be used as part of verifying SSL API requests.
+#cert = A path to a client certificate to use as part of the SSL transaction
+#cloud = Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is not needed
+#config_drive = A configdrive file or HTTP(S) URL that will be passed along to the node.
+#deploy = Indicates if the resource should be deployed. Allows for deployment logic to be disengaged and control of the
+#endpoint_type = Endpoint URL type to fetch from the service catalog.
+#instance_info = Definition of the instance information which is used to deploy the node.  This information is only required when
+#ironic_url = If noauth mode is utilized, this is required to be set to the endpoint URL for the Ironic API.  Use with "auth"
+#key = A path to a client key to use as part of the SSL transaction
+#maintenance = A setting to allow the direct control if a node is in maintenance mode.
+#maintenance_reason = A string expression regarding the reason a node is in a maintenance mode.
+#power = A setting to allow power state to be asserted allowing nodes that are not yet deployed to be powered on, and
+#region_name = Name of the region.
+#state = Indicates desired state of the resource
+#timeout = How long should ansible wait for the requested resource.
+#uuid = globally unique identifier (UUID) to be given to the resource.
+#validate_certs = Whether or not SSL API requests should be verified.
+#wait = Should ansible wait until the requested resource is complete.
+}- name: ${2:Name for os_ironic_node module.}
+${3:  sudo: ${4:yes}}
+  os_ironic_node: ${5:api_timeout=${6: } }${7:auth=${8: } }${9:auth_type=${10: } }${11:availability_zone=${12: } }${13:cacert=${14: } }${15:cert=${16: } }${17:cloud=${18: } }${19:config_drive=${20: } }${21:deploy=${22: } }${23:endpoint_type=${24: } }${25:instance_info=${26: } }${27:ironic_url=${28: } }${29:key=${30: } }${31:maintenance=${32: } }${33:maintenance_reason=${34: } }${35:power=${36: } }${37:region_name=${38: } }${39:state=${40: } }${41:timeout=${42: } }${43:uuid=${44: } }${45:validate_certs=${46: } }${47:wait=${48: } }
+${49:  when: ${50: variable is defined}}
+${51:  with_items: ${52: array}}
+]]></content>
+	<tabTrigger>os_ironic_node</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

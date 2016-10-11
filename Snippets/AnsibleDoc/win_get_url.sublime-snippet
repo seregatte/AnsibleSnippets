@@ -1,12 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#dest = The absolute path of the location to save the file at the URL. Be sure to include a filename and extension as appropriate.
+${1:#dest = The absolute path of the location to save the file at the URL. Be sure to include a filename and extension as
+#force = If `yes', will always download the file.  If `no', will only download the file if it does not exist or the
+#password = Basic authentication password
+#proxy_password = Proxy authentication password
+#proxy_url = The full URL of the proxy server to download through.
+#proxy_username = Proxy authentication username
+#skip_certificate_validation = Skip SSL certificate validation if true
 #url = The full URL of a file to download
+#username = Basic authentication username
 }- name: ${2:Name for win_get_url module.}
 ${3:  sudo: ${4:yes}}
-  win_get_url: ${5:dest=${6: } }${7:url=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  win_get_url: ${5:dest=${6: } }${7:force=${8: } }${9:password=${10: } }${11:proxy_password=${12: } }${13:proxy_url=${14: } }${15:proxy_username=${16: } }${17:skip_certificate_validation=${18: } }${19:url=${20: } }${21:username=${22: } }
+${23:  when: ${24: variable is defined}}
+${25:  with_items: ${26: array}}
 ]]></content>
 	<tabTrigger>win_get_url</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

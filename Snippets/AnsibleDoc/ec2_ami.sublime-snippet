@@ -1,26 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
-#delete_snapshot = Whether or not to deleted an AMI while deregistering it.
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
+#delete_snapshot = Whether or not to delete an AMI while deregistering it.
 #description = An optional human-readable string describing the contents and purpose of the AMI.
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Must be specified if region is not used. If not set then the value of the EC2_URL environment variable, if any, is used
+#device_mapping = An optional list of device hashes/dictionaries with custom configurations (same block-device-mapping parameters)
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
 #image_id = Image ID to be deregistered.
 #instance_id = instance id of the image to create
+#launch_permissions = Users and groups that should be able to launch the ami. Expects dictionary with a key of user_ids and/or
 #name = The name of the new image to create
-#no_reboot = An optional flag indicating that the bundling process should not attempt to shutdown the instance before bundling. If this flag is True, the responsibility of maintaining file system integrity is left to the owner of the instance. The default choice is "no".
+#no_reboot = An optional flag indicating that the bundling process should not attempt to shutdown the instance before
 #profile = uses a boto profile. Only works with boto >= 2.24.0
-#region = The AWS region to use.  Must be specified if ec2_url is not used. If not specified then the value of the EC2_REGION environment variable, if any, is used.
-#security_token = security token to authenticate against AWS
+#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
+#http = ec2_region
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
 #state = create or deregister/delete image
+#tags = a hash/dictionary of tags to add to the new image; '{"key":"value"}' and '{"key":"value","key":"value"}'
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 #wait = wait for the AMI to be in state 'available' before returning.
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for ec2_ami module.}
 ${3:  sudo: ${4:yes}}
-  ec2_ami: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:delete_snapshot=${10: } }${11:description=${12: } }${13:ec2_url=${14: } }${15:image_id=${16: } }${17:instance_id=${18: } }${19:name=${20: } }${21:no_reboot=${22: } }${23:profile=${24: } }${25:region=${26: } }${27:security_token=${28: } }${29:state=${30: } }${31:validate_certs=${32: } }${33:wait=${34: } }${35:wait_timeout=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  ec2_ami: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:delete_snapshot=${10: } }${11:description=${12: } }${13:device_mapping=${14: } }${15:ec2_url=${16: } }${17:image_id=${18: } }${19:instance_id=${20: } }${21:launch_permissions=${22: } }${23:name=${24: } }${25:no_reboot=${26: } }${27:profile=${28: } }${29:region=${30: } }${31:http=${32: } }${33:security_token=${34: } }${35:state=${36: } }${37:tags=${38: } }${39:validate_certs=${40: } }${41:wait=${42: } }${43:wait_timeout=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
 ]]></content>
 	<tabTrigger>ec2_ami</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

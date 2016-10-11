@@ -1,0 +1,25 @@
+<snippet>
+<content><![CDATA[
+${1:#bricks = Brick paths on servers. Multiple brick paths can be separated by commas
+#cluster = List of hosts to use for probing and brick setup
+#directory = Directory for limit-usage
+#force = If brick is being created in the root partition, module will fail. Set force to true to override this behaviour
+#host = Override local hostname (for peer probing purposes)
+#name = The volume name
+#options = A dictionary/hash with options/settings for the volume
+#quota = Quota value for limit-usage (be sure to use 10.0MB instead of 10MB, see quota list)
+#rebalance = Controls whether the cluster is rebalanced after changes
+#replicas = Replica count for volume
+#start_on_create = Controls whether the volume is started after creation or not, defaults to yes
+#state = Use present/absent ensure if a volume exists or not, use started/stopped to control it's availability.
+#stripes = Stripe count for volume
+#transport = Transport type for volume
+}- name: ${2:Name for gluster_volume module.}
+${3:  sudo: ${4:yes}}
+  gluster_volume: ${5:bricks=${6: } }${7:cluster=${8: } }${9:directory=${10: } }${11:force=${12: } }${13:host=${14: } }${15:name=${16: } }${17:options=${18: } }${19:quota=${20: } }${21:rebalance=${22: } }${23:replicas=${24: } }${25:start_on_create=${26: } }${27:state=${28: } }${29:stripes=${30: } }${31:transport=${32: } }
+${33:  when: ${34: variable is defined}}
+${35:  with_items: ${36: array}}
+]]></content>
+	<tabTrigger>gluster_volume</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#clean_up = Clean up all domain resources like child domains and accounts. Considered on `state=absent'.
+#network_domain = Network domain for networks in the domain.
+#path = Path of the domain. Prefix `ROOT/' or `/ROOT/' in path is optional.
+#poll_async = Poll async jobs until job has finished.
+#state = State of the domain.
+}- name: ${2:Name for cs_domain module.}
+${3:  sudo: ${4:yes}}
+  cs_domain: ${5:api_http_method=${6: } }${7:api_key=${8: } }${9:api_region=${10: } }${11:api_secret=${12: } }${13:api_timeout=${14: } }${15:api_url=${16: } }${17:clean_up=${18: } }${19:network_domain=${20: } }${21:path=${22: } }${23:poll_async=${24: } }${25:state=${26: } }
+${27:  when: ${28: variable is defined}}
+${29:  with_items: ${30: array}}
+]]></content>
+	<tabTrigger>cs_domain</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -3,7 +3,7 @@
 ${1:#assignee = Sets the assignee on create or transition operations. Note not all transitions will allow this.
 #comment = The comment text to add.
 #description = The issue description, where appropriate.
-#fields = This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API (possibly after merging with other required data, as when passed to create). See examples for more information, and the JIRA REST API for the structure required for various fields.
+#fields = This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API
 #issue = An existing issue key to operate on.
 #issuetype = The issue type, for issue creation.
 #operation = The operation to perform.

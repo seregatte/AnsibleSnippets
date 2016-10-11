@@ -1,16 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:#key = The SSH public key, as a string
+${1:#exclusive = Whether to remove all other non-specified keys from the authorized_keys file. Multiple keys can be specified in
+#key = The SSH public key(s), as a string or (since 1.9) url (https://github.com/username.keys)
 #key_options = A string of ssh key options to be prepended to the key in the authorized_keys file
-#manage_dir = Whether this module should manage the directory of the authorized key file.  If set, the module will create the directory, as well as set the owner and permissions of an existing directory. Be sure to set `manage_dir=no' if you are using an alternate directory for authorized_keys, as set with `path', since you could lock yourself out of SSH access. See the example below.
+#manage_dir = Whether this module should manage the directory of the authorized key file.  If set, the module will create the
 #path = Alternate path to the authorized_keys file
 #state = Whether the given key (with the given key_options) should or should not be in the file
 #user = The username on the remote host whose authorized_keys file will be modified
 }- name: ${2:Name for authorized_key module.}
 ${3:  sudo: ${4:yes}}
-  authorized_key: ${5:key=${6: } }${7:key_options=${8: } }${9:manage_dir=${10: } }${11:path=${12: } }${13:state=${14: } }${15:user=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  authorized_key: ${5:exclusive=${6: } }${7:key=${8: } }${9:key_options=${10: } }${11:manage_dir=${12: } }${13:path=${14: } }${15:state=${16: } }${17:user=${18: } }
+${19:  when: ${20: variable is defined}}
+${21:  with_items: ${22: array}}
 ]]></content>
 	<tabTrigger>authorized_key</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

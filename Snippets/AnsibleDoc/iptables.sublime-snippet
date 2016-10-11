@@ -1,0 +1,31 @@
+<snippet>
+<content><![CDATA[
+${1:#chain = Chain to operate on. This option can either be the name of a user defined chain or any of the builtin chains:
+#comment = This specifies a comment that will be added to the rule
+#ctstate = ctstate is a list of the connection states to match in the conntrack module. Possible states are: 'INVALID',
+#destination = Destination specification. Address can be either a network name, a hostname, a network IP address (with /mask),
+#destination_port = Destination port or port range specification. This can either be a service name or a port number. An inclusive
+#fragment = This means that the rule only refers to second and further fragments of fragmented packets. Since there is no
+#goto = This specifies that the processing should continue in a user specified chain. Unlike the jump argument return
+#in_interface = Name of an interface via which a packet was received (only for packets entering the INPUT, FORWARD and
+#ip_version = Which version of the IP protocol this rule should apply to.
+#jump = This specifies the target of the rule; i.e., what to do if the packet matches it. The target can be a user-
+#limit = Specifies the maximum average number of matches to allow per second. The number can specify units explicitly,
+#match = Specifies a match to use, that is, an extension module that tests for a specific property. The set of matches
+#out_interface = Name of an interface via which a packet is going to be sent (for packets entering the FORWARD, OUTPUT and
+#protocol = The protocol of the rule or of the packet to check. The specified protocol can be one of tcp, udp, udplite,
+#set_counters = This enables the administrator to initialize the packet and byte counters of a rule (during INSERT, APPEND,
+#source = Source specification. Address can be either a network name, a hostname, a network IP address (with /mask), or a
+#source_port = Source port or port range specification. This can either be a service name or a port number. An inclusive range
+#state = Whether the rule should be absent or present.
+#table = This option specifies the packet matching table which the command should operate on. If the kernel is configured
+#to_ports = This specifies a destination port or range of ports to use: without this, the destination port is never altered.
+}- name: ${2:Name for iptables module.}
+${3:  sudo: ${4:yes}}
+  iptables: ${5:chain=${6: } }${7:comment=${8: } }${9:ctstate=${10: } }${11:destination=${12: } }${13:destination_port=${14: } }${15:fragment=${16: } }${17:goto=${18: } }${19:in_interface=${20: } }${21:ip_version=${22: } }${23:jump=${24: } }${25:limit=${26: } }${27:match=${28: } }${29:out_interface=${30: } }${31:protocol=${32: } }${33:set_counters=${34: } }${35:source=${36: } }${37:source_port=${38: } }${39:state=${40: } }${41:table=${42: } }${43:to_ports=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
+]]></content>
+	<tabTrigger>iptables</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

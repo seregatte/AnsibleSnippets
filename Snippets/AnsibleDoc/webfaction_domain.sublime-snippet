@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:#login_name = The webfaction account to use
+#login_password = The webfaction password to use
+#name = The name of the domain
+#state = Whether the domain should exist
+#subdomains = Any subdomains to create.
+}- name: ${2:Name for webfaction_domain module.}
+${3:  sudo: ${4:yes}}
+  webfaction_domain: ${5:login_name=${6: } }${7:login_password=${8: } }${9:name=${10: } }${11:state=${12: } }${13:subdomains=${14: } }
+${15:  when: ${16: variable is defined}}
+${17:  with_items: ${18: array}}
+]]></content>
+	<tabTrigger>webfaction_domain</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,17 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#endpoints = a comma-separated list of TCP ports to expose on the virtual machine (e.g., "22,80")
+${1:#auto_updates = Enable Auto Updates on Windows Machines
+#enable_winrm = Enable winrm on Windows Machines
+#endpoints = a comma-separated list of TCP ports to expose on the virtual machine (e.g., "22,80")
 #hostname = hostname to write /etc/hostname. Defaults to <name>.cloudapp.net.
-#image = system image for creating the virtual machine (e.g., b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-precise-12_04_3-LTS-amd64-server-20131205-en-us-30GB)
+#image = system image for creating the virtual machine (e.g., b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-
 #location = the azure location to use (e.g. 'East US')
-#management_cert_path = path to an azure management certificate associated with the subscription id. Overrides the AZURE_CERT_PATH environement variable.
+#management_cert_path = path to an azure management certificate associated with the subscription id. Overrides the AZURE_CERT_PATH
 #name = name of the virtual machine and associated cloud service.
+#os_type = The type of the os that is gettings provisioned
 #password = the unix password for the new virtual machine.
-#role_size = azure role size for the new virtual machine (e.g., Small, ExtraLarge, A6)
-#ssh_cert_path = path to an X509 certificate containing the public ssh key to install in the virtual machine. See http://www.windowsazure.com/en-us/manage/linux/tutorials/intro-to-linux/ for more details. if this option is specified, password-based ssh authentication will be disabled.
+#reset_pass_atlogon = Reset the admin password on first logon for windows hosts
+#role_size = azure role size for the new virtual machine (e.g., Small, ExtraLarge, A6). You have to pay attention to the fact
+#ssh_cert_path = path to an X509 certificate containing the public ssh key to install in the virtual machine. See
 #state = create or terminate instances
 #storage_account = the azure storage account in which to store the data disks.
-#subscription_id = azure subscription id. Overrides the AZURE_SUBSCRIPTION_ID environement variable.
+#subscription_id = azure subscription id. Overrides the AZURE_SUBSCRIPTION_ID environment variable.
 #user = the unix username for the new virtual machine.
 #virtual_network_name = Name of virtual network.
 #wait = wait for the instance to be in state 'running' before returning
@@ -19,9 +23,9 @@ ${1:#endpoints = a comma-separated list of TCP ports to expose on the virtual ma
 #wait_timeout_redirects = how long before wait gives up for redirects, in seconds
 }- name: ${2:Name for azure module.}
 ${3:  sudo: ${4:yes}}
-  azure: ${5:endpoints=${6: } }${7:hostname=${8: } }${9:image=${10: } }${11:location=${12: } }${13:management_cert_path=${14: } }${15:name=${16: } }${17:password=${18: } }${19:role_size=${20: } }${21:ssh_cert_path=${22: } }${23:state=${24: } }${25:storage_account=${26: } }${27:subscription_id=${28: } }${29:user=${30: } }${31:virtual_network_name=${32: } }${33:wait=${34: } }${35:wait_timeout=${36: } }${37:wait_timeout_redirects=${38: } }
-${39:  when: ${40: variable is defined}}
-${41:  with_items: ${42: array}}
+  azure: ${5:auto_updates=${6: } }${7:enable_winrm=${8: } }${9:endpoints=${10: } }${11:hostname=${12: } }${13:image=${14: } }${15:location=${16: } }${17:management_cert_path=${18: } }${19:name=${20: } }${21:os_type=${22: } }${23:password=${24: } }${25:reset_pass_atlogon=${26: } }${27:role_size=${28: } }${29:ssh_cert_path=${30: } }${31:state=${32: } }${33:storage_account=${34: } }${35:subscription_id=${36: } }${37:user=${38: } }${39:virtual_network_name=${40: } }${41:wait=${42: } }${43:wait_timeout=${44: } }${45:wait_timeout_redirects=${46: } }
+${47:  when: ${48: variable is defined}}
+${49:  with_items: ${50: array}}
 ]]></content>
 	<tabTrigger>azure</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

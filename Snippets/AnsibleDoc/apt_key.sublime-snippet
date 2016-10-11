@@ -2,12 +2,12 @@
 <content><![CDATA[
 ${1:#data = keyfile contents
 #file = keyfile path
-#id = identifier of key
+#id = identifier of key. Including this allows check mode to correctly report the changed state.
 #keyring = path to specific keyring file in /etc/apt/trusted.gpg.d
 #keyserver = keyserver to retrieve key from.
 #state = used to specify if key is being added or revoked
 #url = url to retrieve key from.
-#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally controlled sites using self-signed certificates.
+#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally
 }- name: ${2:Name for apt_key module.}
 ${3:  sudo: ${4:yes}}
   apt_key: ${5:data=${6: } }${7:file=${8: } }${9:id=${10: } }${11:keyring=${12: } }${13:keyserver=${14: } }${15:state=${16: } }${17:url=${18: } }${19:validate_certs=${20: } }

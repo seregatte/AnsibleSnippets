@@ -1,0 +1,19 @@
+<snippet>
+<content><![CDATA[
+${1:#assigned_roles = Comma separated list of roles to assign to the role.
+#cluster = Name of the Vertica cluster.
+#db = Name of the Vertica database.
+#login_password = The password used to authenticate with.
+#login_user = The username used to authenticate with.
+#name = Name of the role to add or remove.
+#port = Vertica cluster port to connect to.
+#state = Whether to create `present', drop `absent' or lock `locked' a role.
+}- name: ${2:Name for vertica_role module.}
+${3:  sudo: ${4:yes}}
+  vertica_role: ${5:assigned_roles=${6: } }${7:cluster=${8: } }${9:db=${10: } }${11:login_password=${12: } }${13:login_user=${14: } }${15:name=${16: } }${17:port=${18: } }${19:state=${20: } }
+${21:  when: ${22: variable is defined}}
+${23:  with_items: ${24: array}}
+]]></content>
+	<tabTrigger>vertica_role</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

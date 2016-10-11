@@ -3,12 +3,12 @@
 ${1:#host = hostname or ip of your A10 Networks device
 #password = admin password of your A10 Networks device
 #username = admin account of your A10 Networks device
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled devices using self-signed certificates.
+#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled devices using
 #virtual_server = slb virtual server name
 #virtual_server_ip = slb virtual server ip address
-#virtual_server_ports = A list of ports to create for the virtual server. Each list item should be a dictionary which specifies the `port:' and `type:', but can also optionally specify the `service_group:' as well as the `status:'. See the examples below for details. This parameter is required when `state' is `present'.
+#virtual_server_ports = A list of ports to create for the virtual server. Each list item should be a dictionary which specifies the
 #virtual_server_status = slb virtual server status
-#write_config = If `yes', any changes will cause a write of the running configuration to non-volatile memory. This will save `all' configuration changes, including those that may have been made manually or through other modules, so care should be taken when specifying `yes'.
+#write_config = If `yes', any changes will cause a write of the running configuration to non-volatile memory. This will save
 }- name: ${2:Name for a10_virtual_server module.}
 ${3:  sudo: ${4:yes}}
   a10_virtual_server: ${5:host=${6: } }${7:password=${8: } }${9:username=${10: } }${11:validate_certs=${12: } }${13:virtual_server=${14: } }${15:virtual_server_ip=${16: } }${17:virtual_server_ports=${18: } }${19:virtual_server_status=${20: } }${21:write_config=${22: } }

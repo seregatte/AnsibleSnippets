@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:#account = Account the network is related to.
+#acl_type = Access control type. Only considered on create.
+#api_http_method = HTTP method used.
+#api_key = API key of the CloudStack API.
+#api_region = Name of the ini section in the `cloustack.ini' file.
+#api_secret = Secret key of the CloudStack API.
+#api_timeout = HTTP timeout.
+#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
+#cidr_ipv6 = CIDR of IPv6 network, must be at least /64. Only considered on create.
+#clean_up = Cleanup old network elements. Only considered on `state=restarted'.
+#display_text = Display text of the network. If not specified, `name' will be used as `display_text'.
+#domain = Domain the network is related to.
+#end_ip = The ending IPv4 address of the network belongs to. If not specified, value of `start_ip' is used. Only
+#end_ipv6 = The ending IPv6 address of the network belongs to. If not specified, value of `start_ipv6' is used. Only
+#gateway = The gateway of the network. Required for shared networks and isolated networks when it belongs to VPC. Only
+#gateway_ipv6 = The gateway of the IPv6 network. Required for shared networks. Only considered on create.
+#isolated_pvlan = The isolated private vlan for this network.
+#name = Name (case sensitive) of the network.
+#netmask = The netmask of the network. Required for shared networks and isolated networks when it belongs to VPC. Only
+#network_domain = The network domain.
+#network_offering = Name of the offering for the network. Required if `state=present'.
+#poll_async = Poll async jobs until job has finished.
+#project = Name of the project the network to be deployed in.
+#start_ip = The beginning IPv4 address of the network belongs to. Only considered on create.
+#start_ipv6 = The beginning IPv6 address of the network belongs to. Only considered on create.
+#state = State of the network.
+#vlan = The ID or VID of the network.
+#vpc = The ID or VID of the network.
+#zone = Name of the zone in which the network should be deployed. If not set, default zone is used.
+}- name: ${2:Name for cs_network module.}
+${3:  sudo: ${4:yes}}
+  cs_network: ${5:account=${6: } }${7:acl_type=${8: } }${9:api_http_method=${10: } }${11:api_key=${12: } }${13:api_region=${14: } }${15:api_secret=${16: } }${17:api_timeout=${18: } }${19:api_url=${20: } }${21:cidr_ipv6=${22: } }${23:clean_up=${24: } }${25:display_text=${26: } }${27:domain=${28: } }${29:end_ip=${30: } }${31:end_ipv6=${32: } }${33:gateway=${34: } }${35:gateway_ipv6=${36: } }${37:isolated_pvlan=${38: } }${39:name=${40: } }${41:netmask=${42: } }${43:network_domain=${44: } }${45:network_offering=${46: } }${47:poll_async=${48: } }${49:project=${50: } }${51:start_ip=${52: } }${53:start_ipv6=${54: } }${55:state=${56: } }${57:vlan=${58: } }${59:vpc=${60: } }${61:zone=${62: } }
+${63:  when: ${64: variable is defined}}
+${65:  with_items: ${66: array}}
+]]></content>
+	<tabTrigger>cs_network</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

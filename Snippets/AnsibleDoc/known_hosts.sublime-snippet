@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#key = The SSH public host key, as a string (required if state=present, optional when state=absent, in which case all
+#name = The host to add or remove (must match a host specified in key)
+#path = The known_hosts file to edit
+#state = `present' to add the host, `absent' to remove it.
+}- name: ${2:Name for known_hosts module.}
+${3:  sudo: ${4:yes}}
+  known_hosts: ${5:key=${6: } }${7:name=${8: } }${9:path=${10: } }${11:state=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>known_hosts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

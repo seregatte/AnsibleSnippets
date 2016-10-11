@@ -1,0 +1,31 @@
+<snippet>
+<content><![CDATA[
+${1:#api_timeout = How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will be
+#auth = Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default `password'
+#auth_type = Name of the auth plugin to use. If the cloud uses something other than password authentication, the name of the
+#availability_zone = Name of the availability zone.
+#cacert = A path to a CA Cert bundle that can be used as part of verifying SSL API requests.
+#cert = A path to a client certificate to use as part of the SSL transaction
+#cloud = Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is not needed
+#display_description = String describing the volume
+#display_name = Name of volume
+#endpoint_type = Endpoint URL type to fetch from the service catalog.
+#image = Image name or id for boot from volume
+#key = A path to a client key to use as part of the SSL transaction
+#region_name = Name of the region.
+#size = Size of volume in GB
+#snapshot_id = Volume snapshot id to create from
+#state = Should the resource be present or absent.
+#timeout = How long should ansible wait for the requested resource.
+#validate_certs = Whether or not SSL API requests should be verified.
+#volume_type = Volume type for volume
+#wait = Should ansible wait until the requested resource is complete.
+}- name: ${2:Name for os_volume module.}
+${3:  sudo: ${4:yes}}
+  os_volume: ${5:api_timeout=${6: } }${7:auth=${8: } }${9:auth_type=${10: } }${11:availability_zone=${12: } }${13:cacert=${14: } }${15:cert=${16: } }${17:cloud=${18: } }${19:display_description=${20: } }${21:display_name=${22: } }${23:endpoint_type=${24: } }${25:image=${26: } }${27:key=${28: } }${29:region_name=${30: } }${31:size=${32: } }${33:snapshot_id=${34: } }${35:state=${36: } }${37:timeout=${38: } }${39:validate_certs=${40: } }${41:volume_type=${42: } }${43:wait=${44: } }
+${45:  when: ${46: variable is defined}}
+${47:  with_items: ${48: array}}
+]]></content>
+	<tabTrigger>os_volume</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

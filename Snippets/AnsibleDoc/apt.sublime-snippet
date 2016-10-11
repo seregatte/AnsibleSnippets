@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:#cache_valid_time = If `update_cache' is specified and the last run is less or equal than `cache_valid_time' seconds ago, the `update_cache' gets skipped.
+${1:#cache_valid_time = If `update_cache' is specified and the last run is less or equal than `cache_valid_time' seconds ago, the
 #deb = Path to a .deb package on the remote machine.
 #default_release = Corresponds to the `-t' option for `apt' and sets pin priorities
-#dpkg_options = Add dpkg options to apt command. Defaults to '-o "Dpkg::Options::=--force-confdef" -o "Dpkg::Options::=--force-confold"' Options should be supplied as comma separated list
+#dpkg_options = Add dpkg options to apt command. Defaults to '-o "Dpkg::Options::=--force-confdef" -o "Dpkg::Options::=--force-
 #force = If `yes', force installs/removes.
-#install_recommends = Corresponds to the `--no-install-recommends' option for `apt'. Default behavior (`yes') replicates apt's default behavior; `no' does not install recommended packages. Suggested packages are never installed.
-#name = A package name, like `foo', or package specifier with version, like `foo=1.0'. Name wildcards (fnmatch) like `apt*' and version wildcards like `foo=1.0*' are also supported.
+#install_recommends = Corresponds to the `--no-install-recommends' option for `apt'. `yes' installs recommended packages.  `no' does
+#name = A package name, like `foo', or package specifier with version, like `foo=1.0'. Name wildcards (fnmatch) like
 #purge = Will force purging of configuration files if the module state is set to `absent'.
-#state = Indicates the desired package state. `latest' ensures that the latest version is installed.
-#update_cache = Run the equivalent of `apt-get update' before the operation. Can be run as part of the package installation or as a separate step.
-#upgrade = If yes or safe, performs an aptitude safe-upgrade. If full, performs an aptitude full-upgrade. If dist, performs an apt-get dist-upgrade. Note: This does not upgrade a specific package, use state=latest for that.
+#state = Indicates the desired package state. `latest' ensures that the latest version is installed. `build-dep' ensures
+#update_cache = Run the equivalent of `apt-get update' before the operation. Can be run as part of the package installation or
+#upgrade = If yes or safe, performs an aptitude safe-upgrade. If full, performs an aptitude full-upgrade. If dist, performs
 }- name: ${2:Name for apt module.}
 ${3:  sudo: ${4:yes}}
   apt: ${5:cache_valid_time=${6: } }${7:deb=${8: } }${9:default_release=${10: } }${11:dpkg_options=${12: } }${13:force=${14: } }${15:install_recommends=${16: } }${17:name=${18: } }${19:purge=${20: } }${21:state=${22: } }${23:update_cache=${24: } }${25:upgrade=${26: } }

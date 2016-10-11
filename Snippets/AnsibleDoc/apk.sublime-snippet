@@ -1,0 +1,15 @@
+<snippet>
+<content><![CDATA[
+${1:#name = A package name, like `foo', or mutliple packages, like `foo, bar'.
+#state = Indicates the desired package(s) state. `present' ensures the package(s) is/are present. `absent' ensures the
+#update_cache = Update repository indexes. Can be run with other steps or on it's own.
+#upgrade = Upgrade all installed packages to their latest version.
+}- name: ${2:Name for apk module.}
+${3:  sudo: ${4:yes}}
+  apk: ${5:name=${6: } }${7:state=${8: } }${9:update_cache=${10: } }${11:upgrade=${12: } }
+${13:  when: ${14: variable is defined}}
+${15:  with_items: ${16: array}}
+]]></content>
+	<tabTrigger>apk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

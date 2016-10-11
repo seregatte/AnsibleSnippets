@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
+#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
+#change_id = The ID of the change batch request. The value that you specify here is the value that ChangeResourceRecordSets
+#delegation_set_id = The DNS Zone delegation set ID
+#dns_name = The first name in the lexicographic ordering of domain names that you want the list_command to start listing
+#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
+#health_check_id = The ID of the health check
+#health_check_method = This is used in conjunction with query: health_check. It allows for listing details, counts or tags of various
+#hosted_zone_id = The Hosted Zone ID of the DNS zone
+#hosted_zone_method = This is used in conjunction with query: hosted_zone. It allows for listing details, counts or tags of various
+#max_items = Maximum number of items to return for various get/list requests
+#next_marker = Some requests such as list_command: hosted_zones will return a maximum number of entries - EG 100. If the number
+#profile = uses a boto profile. Only works with boto >= 2.24.0
+#query = specifies the query action to take
+#resource_id = The ID/s of the specified resource/s
+#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
+#start_record_name = The first name in the lexicographic ordering of domain names that you want the list_command: record_sets to
+#type = The type of DNS record
+#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+}- name: ${2:Name for route53_facts module.}
+${3:  sudo: ${4:yes}}
+  route53_facts: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:change_id=${10: } }${11:delegation_set_id=${12: } }${13:dns_name=${14: } }${15:ec2_url=${16: } }${17:health_check_id=${18: } }${19:health_check_method=${20: } }${21:hosted_zone_id=${22: } }${23:hosted_zone_method=${24: } }${25:max_items=${26: } }${27:next_marker=${28: } }${29:profile=${30: } }${31:query=${32: } }${33:resource_id=${34: } }${35:security_token=${36: } }${37:start_record_name=${38: } }${39:type=${40: } }${41:validate_certs=${42: } }
+${43:  when: ${44: variable is defined}}
+${45:  with_items: ${46: array}}
+]]></content>
+	<tabTrigger>route53_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
