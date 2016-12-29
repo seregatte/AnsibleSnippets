@@ -15,6 +15,7 @@ phases:
     commands:
       - echo Build started on `date`
       - ls -la
+      - docker run hello-world
   post_build:
     commands:
       - echo Build completed on `date`
