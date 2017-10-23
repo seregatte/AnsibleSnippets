@@ -11,7 +11,7 @@ ${1:#datacenter_name = The name of the datacenter that will contain the dvSwitch
 #uplink_quantity = Quantity of uplink per ESXi host added to the switch
 #username = The username of the vSphere vCenter
 }- name: ${2:Name for vmware_dvswitch module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_dvswitch: ${5:datacenter_name=${6: } }${7:discovery_operation=${8: } }${9:discovery_proto=${10: } }${11:hostname=${12: } }${13:mtu=${14: } }${15:password=${16: } }${17:state=${18: } }${19:switch_name=${20: } }${21:uplink_quantity=${22: } }${23:username=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

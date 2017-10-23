@@ -6,7 +6,7 @@ ${1:#dvportgroup_name = Name of the portgroup to migrate to the virtual machine 
 #username = The username of the vSphere vCenter
 #vm_name = Name of the virtual machine to migrate to a dvSwitch
 }- name: ${2:Name for vmware_vm_vss_dvs_migrate module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_vm_vss_dvs_migrate: ${5:dvportgroup_name=${6: } }${7:hostname=${8: } }${9:password=${10: } }${11:username=${12: } }${13:vm_name=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

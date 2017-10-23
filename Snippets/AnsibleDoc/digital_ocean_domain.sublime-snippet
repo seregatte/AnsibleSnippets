@@ -6,7 +6,7 @@ ${1:#api_token = DigitalOcean api token.
 #name = String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key, or the
 #state = Indicate desired state of the target.
 }- name: ${2:Name for digital_ocean_domain module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   digital_ocean_domain: ${5:api_token=${6: } }${7:id=${8: } }${9:ip=${10: } }${11:name=${12: } }${13:state=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

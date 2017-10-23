@@ -9,7 +9,7 @@ ${1:#hostname = The hostname or IP address of the ESXi server
 #switch_name = vSwitch name to add
 #username = The username of the ESXi server
 }- name: ${2:Name for vmware_vswitch module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_vswitch: ${5:hostname=${6: } }${7:mtu=${8: } }${9:nic_name=${10: } }${11:number_of_ports=${12: } }${13:password=${14: } }${15:state=${16: } }${17:switch_name=${18: } }${19:username=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

@@ -6,7 +6,7 @@ ${1:#checkid = Pingdom ID of the check.
 #state = Define whether or not the check should be running or paused.
 #uid = Pingdom user ID.
 }- name: ${2:Name for pingdom module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pingdom: ${5:checkid=${6: } }${7:key=${8: } }${9:passwd=${10: } }${11:state=${12: } }${13:uid=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

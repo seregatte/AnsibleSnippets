@@ -8,7 +8,7 @@ ${1:#conf_file = The remote dnf configuration file to use for the transaction.
 #name = Package name, or package specifier with version, like `name-1.0'. When using state=latest, this can be '*' which
 #state = Whether to install (`present', `latest'), or remove (`absent') a package.
 }- name: ${2:Name for dnf module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   dnf: ${5:conf_file=${6: } }${7:disable_gpg_check=${8: } }${9:disablerepo=${10: } }${11:enablerepo=${12: } }${13:list=${14: } }${15:name=${16: } }${17:state=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

@@ -7,7 +7,7 @@ ${1:#downed = Should a 'down' file exist or not, if it exists it disables auto s
 #service_src = directory where services are defined, the source of symlinks to service_dir.
 #state = `Started'/`stopped' are idempotent actions that will not run commands unless necessary.  `restarted' will always
 }- name: ${2:Name for svc module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   svc: ${5:downed=${6: } }${7:enabled=${8: } }${9:name=${10: } }${11:service_dir=${12: } }${13:service_src=${14: } }${15:state=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

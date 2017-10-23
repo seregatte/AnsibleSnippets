@@ -6,7 +6,7 @@ ${1:#from_address = the address in the "from" field for the email
 #to_addresses = a list with one or more recipient email addresses
 #username = username for logging into the SendGrid account
 }- name: ${2:Name for sendgrid module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   sendgrid: ${5:from_address=${6: } }${7:password=${8: } }${9:subject=${10: } }${11:to_addresses=${12: } }${13:username=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

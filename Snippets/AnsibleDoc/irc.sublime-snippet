@@ -15,7 +15,7 @@ ${1:#channel = Channel name.  One of nick_to or channel needs to be set.  When b
 #topic = Set the channel topic
 #use_ssl = Designates whether TLS/SSL should be used when connecting to the IRC server
 }- name: ${2:Name for irc module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   irc: ${5:channel=${6: } }${7:color=${8: } }${9:key=${10: } }${11:msg=${12: } }${13:nick=${14: } }${15:nick_to=${16: } }${17:part=${18: } }${19:passwd=${20: } }${21:port=${22: } }${23:server=${24: } }${25:style=${26: } }${27:timeout=${28: } }${29:topic=${30: } }${31:use_ssl=${32: } }
 ${33:  when: ${34: variable is defined}}
 ${35:  with_items: ${36: array}}

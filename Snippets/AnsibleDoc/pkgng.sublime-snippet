@@ -7,7 +7,7 @@ ${1:#annotation = a comma-separated list of keyvalue-pairs of the form <+/-/:><k
 #rootdir = for pkgng versions 1.5 and later, pkg will install all packages within the specified root directory
 #state = state of the package
 }- name: ${2:Name for pkgng module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pkgng: ${5:annotation=${6: } }${7:cached=${8: } }${9:name=${10: } }${11:pkgsite=${12: } }${13:rootdir=${14: } }${15:state=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

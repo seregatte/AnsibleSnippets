@@ -8,7 +8,7 @@ ${1:#backup = passes --backup --version-control=numbered to patch, producing num
 #src = Path of the patch file as accepted by the GNU patch tool. If `remote_src' is False, the patch source file is
 #strip = Number that indicates the smallest prefix containing leading slashes that will be stripped from each file name
 }- name: ${2:Name for patch module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   patch: ${5:backup=${6: } }${7:basedir=${8: } }${9:binary=${10: } }${11:dest=${12: } }${13:remote_src=${14: } }${15:src=${16: } }${17:strip=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

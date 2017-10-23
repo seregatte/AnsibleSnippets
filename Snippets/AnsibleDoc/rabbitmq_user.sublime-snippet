@@ -11,7 +11,7 @@ ${1:#configure_priv = Regular expression to restrict configure actions on a reso
 #vhost = vhost to apply access privileges.
 #write_priv = Regular expression to restrict configure actions on a resource for the specified vhost. By default all actions
 }- name: ${2:Name for rabbitmq_user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rabbitmq_user: ${5:configure_priv=${6: } }${7:force=${8: } }${9:node=${10: } }${11:password=${12: } }${13:read_priv=${14: } }${15:state=${16: } }${17:tags=${18: } }${19:user=${20: } }${21:vhost=${22: } }${23:write_priv=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

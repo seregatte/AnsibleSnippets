@@ -8,7 +8,7 @@ ${1:#exclusive = Whether to remove all other non-specified keys from the authori
 #state = Whether the given key (with the given key_options) should or should not be in the file
 #user = The username on the remote host whose authorized_keys file will be modified
 }- name: ${2:Name for authorized_key module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   authorized_key: ${5:exclusive=${6: } }${7:key=${8: } }${9:key_options=${10: } }${11:manage_dir=${12: } }${13:path=${14: } }${15:state=${16: } }${17:user=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

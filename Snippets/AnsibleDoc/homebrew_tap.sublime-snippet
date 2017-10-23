@@ -3,7 +3,7 @@
 ${1:#state = state of the repository.
 #tap = The repository to tap.
 }- name: ${2:Name for homebrew_tap module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   homebrew_tap: ${5:state=${6: } }${7:tap=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

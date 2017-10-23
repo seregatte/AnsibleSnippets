@@ -8,7 +8,7 @@ ${1:#filter = Shell-style glob matching string used to filter fact keys. Not app
 #user = BIG-IP username
 #validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites.  Prior
 }- name: ${2:Name for bigip_facts module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   bigip_facts: ${5:filter=${6: } }${7:include=${8: } }${9:password=${10: } }${11:server=${12: } }${13:session=${14: } }${15:user=${16: } }${17:validate_certs=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

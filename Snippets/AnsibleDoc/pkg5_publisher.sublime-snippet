@@ -7,7 +7,7 @@ ${1:#enabled = Is the repository enabled or disabled?
 #state = Whether to ensure that a publisher is present or absent.
 #sticky = Packages installed from a sticky repository can only receive updates from that repository.
 }- name: ${2:Name for pkg5_publisher module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pkg5_publisher: ${5:enabled=${6: } }${7:mirror=${8: } }${9:name=${10: } }${11:origin=${12: } }${13:state=${14: } }${15:sticky=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

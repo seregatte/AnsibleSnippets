@@ -7,7 +7,7 @@ ${1:#chdir = cd into this directory before running the command
 #removes = a filename, when it does not exist, this step will *not* be run.
 #warn = if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false.
 }- name: ${2:Name for shell module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   shell: ${5:chdir=${6: } }${7:creates=${8: } }${9:executable=${10: } }${11:free_form=${12: } }${13:removes=${14: } }${15:warn=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

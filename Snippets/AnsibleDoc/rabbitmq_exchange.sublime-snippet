@@ -13,7 +13,7 @@ ${1:#arguments = extra arguments for exchange. If defined this argument is a key
 #state = Whether the exchange should be present or absent Only present implemented atm
 #vhost = rabbitMQ virtual host
 }- name: ${2:Name for rabbitmq_exchange module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rabbitmq_exchange: ${5:arguments=${6: } }${7:auto_delete=${8: } }${9:durable=${10: } }${11:exchange_type=${12: } }${13:internal=${14: } }${15:login_host=${16: } }${17:login_password=${18: } }${19:login_port=${20: } }${21:login_user=${22: } }${23:name=${24: } }${25:state=${26: } }${27:vhost=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

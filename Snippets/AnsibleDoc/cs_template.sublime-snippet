@@ -34,7 +34,7 @@ ${1:#api_http_method = HTTP method used.
 #vm = VM name the template will be created from its volume or alternatively from a snapshot. VM must be in stopped
 #zone = Name of the zone you wish the template to be registered or deleted from. If not specified, first found zone will
 }- name: ${2:Name for cs_template module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cs_template: ${5:api_http_method=${6: } }${7:api_key=${8: } }${9:api_region=${10: } }${11:api_secret=${12: } }${13:api_timeout=${14: } }${15:api_url=${16: } }${17:bits=${18: } }${19:checksum=${20: } }${21:cross_zones=${22: } }${23:details=${24: } }${25:display_text=${26: } }${27:format=${28: } }${29:hypervisor=${30: } }${31:is_dynamically_scalable=${32: } }${33:is_extractable=${34: } }${35:is_featured=${36: } }${37:is_public=${38: } }${39:is_ready=${40: } }${41:is_routing=${42: } }${43:name=${44: } }${45:os_type=${46: } }${47:password_enabled=${48: } }${49:poll_async=${50: } }${51:project=${52: } }${53:requires_hvm=${54: } }${55:snapshot=${56: } }${57:sshkey_enabled=${58: } }${59:state=${60: } }${61:template_filter=${62: } }${63:template_tag=${64: } }${65:url=${66: } }${67:vm=${68: } }${69:zone=${70: } }
 ${71:  when: ${72: variable is defined}}
 ${73:  with_items: ${74: array}}

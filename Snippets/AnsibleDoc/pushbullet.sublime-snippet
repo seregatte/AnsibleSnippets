@@ -7,7 +7,7 @@ ${1:#api_key = Push bullet API token
 #push_type = Thing you wish to push.
 #title = Title of the notification.
 }- name: ${2:Name for pushbullet module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pushbullet: ${5:api_key=${6: } }${7:body=${8: } }${9:channel=${10: } }${11:device=${12: } }${13:push_type=${14: } }${15:title=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

@@ -6,7 +6,7 @@ ${1:#command = in addition to state management, various non-idempotent commands 
 #uri = libvirt connection uri
 #xml = XML document used with the define command
 }- name: ${2:Name for virt module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   virt: ${5:command=${6: } }${7:name=${8: } }${9:state=${10: } }${11:uri=${12: } }${13:xml=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

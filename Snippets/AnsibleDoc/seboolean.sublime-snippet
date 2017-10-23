@@ -4,7 +4,7 @@ ${1:#name = Name of the boolean to configure
 #persistent = Set to `yes' if the boolean setting should survive a reboot
 #state = Desired boolean value
 }- name: ${2:Name for seboolean module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   seboolean: ${5:name=${6: } }${7:persistent=${8: } }${9:state=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

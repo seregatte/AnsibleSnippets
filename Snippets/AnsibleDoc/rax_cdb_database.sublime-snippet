@@ -13,7 +13,7 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #username = Rackspace username (overrides `credentials')
 #verify_ssl = Whether or not to require SSL validation of API endpoints
 }- name: ${2:Name for rax_cdb_database module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax_cdb_database: ${5:api_key=${6: } }${7:cdb_id=${8: } }${9:character_set=${10: } }${11:collate=${12: } }${13:credentials=${14: } }${15:env=${16: } }${17:https=${18: } }${19:name=${20: } }${21:region=${22: } }${23:state=${24: } }${25:username=${26: } }${27:verify_ssl=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

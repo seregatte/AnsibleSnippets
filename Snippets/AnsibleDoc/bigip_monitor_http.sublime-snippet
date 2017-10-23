@@ -18,7 +18,7 @@ ${1:#interval = The interval specifying how frequently the monitor instance of t
 #user = BIG-IP username
 #validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites.  Prior
 }- name: ${2:Name for bigip_monitor_http module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   bigip_monitor_http: ${5:interval=${6: } }${7:ip=${8: } }${9:name=${10: } }${11:parent=${12: } }${13:parent_partition=${14: } }${15:partition=${16: } }${17:password=${18: } }${19:port=${20: } }${21:receive=${22: } }${23:receive_disable=${24: } }${25:send=${26: } }${27:server=${28: } }${29:state=${30: } }${31:time_until_up=${32: } }${33:timeout=${34: } }${35:user=${36: } }${37:validate_certs=${38: } }
 ${39:  when: ${40: variable is defined}}
 ${41:  with_items: ${42: array}}

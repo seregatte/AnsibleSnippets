@@ -6,7 +6,7 @@ ${1:#package_id = The package id of the blue print.
 #state = Whether to install or un-install the package. Currently it supports only "present" for install action.
 #wait = Whether to wait for the tasks to finish before returning.
 }- name: ${2:Name for clc_blueprint_package module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   clc_blueprint_package: ${5:package_id=${6: } }${7:package_params=${8: } }${9:server_ids=${10: } }${11:state=${12: } }${13:wait=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

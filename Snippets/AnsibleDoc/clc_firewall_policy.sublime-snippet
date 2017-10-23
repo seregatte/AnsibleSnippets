@@ -11,7 +11,7 @@ ${1:#destination = The list of destination addresses for traffic on the terminat
 #state = Whether to create or delete the firewall policy
 #wait = Whether to wait for the provisioning tasks to finish before returning.
 }- name: ${2:Name for clc_firewall_policy module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   clc_firewall_policy: ${5:destination=${6: } }${7:destination_account_alias=${8: } }${9:enabled=${10: } }${11:firewall_policy_id=${12: } }${13:location=${14: } }${15:ports=${16: } }${17:source=${18: } }${19:source_account_alias=${20: } }${21:state=${22: } }${23:wait=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

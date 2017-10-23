@@ -3,7 +3,7 @@
 ${1:#groups = The groups to add the hostname to, comma separated.
 #name = The hostname/ip of the host to add to the inventory, can include a colon and a port number.
 }- name: ${2:Name for add_host module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   add_host: ${5:groups=${6: } }${7:name=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

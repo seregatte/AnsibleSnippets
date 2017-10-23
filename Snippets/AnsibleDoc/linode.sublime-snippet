@@ -14,7 +14,7 @@ ${1:#api_key = Linode API key
 #wait = wait for the instance to be in state 'running' before returning
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for linode module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   linode: ${5:api_key=${6: } }${7:datacenter=${8: } }${9:distribution=${10: } }${11:linode_id=${12: } }${13:name=${14: } }${15:password=${16: } }${17:payment_term=${18: } }${19:plan=${20: } }${21:ssh_pub_key=${22: } }${23:state=${24: } }${25:swap=${26: } }${27:wait=${28: } }${29:wait_timeout=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

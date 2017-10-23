@@ -18,7 +18,7 @@ ${1:#address = IP address or domain name of the node
 #wait_timeout = How long to wait before giving up and returning an error
 #weight = Weight of node
 }- name: ${2:Name for rax_clb_nodes module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax_clb_nodes: ${5:address=${6: } }${7:api_key=${8: } }${9:condition=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:https=${16: } }${17:load_balancer_id=${18: } }${19:node_id=${20: } }${21:port=${22: } }${23:region=${24: } }${25:state=${26: } }${27:type=${28: } }${29:username=${30: } }${31:verify_ssl=${32: } }${33:wait=${34: } }${35:wait_timeout=${36: } }${37:weight=${38: } }
 ${39:  when: ${40: variable is defined}}
 ${41:  with_items: ${42: array}}

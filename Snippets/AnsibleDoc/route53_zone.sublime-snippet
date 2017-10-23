@@ -14,7 +14,7 @@ ${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCES
 #vpc_region = The VPC Region the zone should be a part of (if this is going to be a private zone)
 #zone = The DNS zone record (eg: foo.com.)
 }- name: ${2:Name for route53_zone module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   route53_zone: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:comment=${10: } }${11:ec2_url=${12: } }${13:profile=${14: } }${15:region=${16: } }${17:http=${18: } }${19:security_token=${20: } }${21:state=${22: } }${23:validate_certs=${24: } }${25:vpc_id=${26: } }${27:vpc_region=${28: } }${29:zone=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

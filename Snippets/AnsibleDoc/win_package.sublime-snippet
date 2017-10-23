@@ -8,7 +8,7 @@ ${1:#arguments = Any arguments the installer needs
 #user_name = Username of an account with access to the package if its located on a file share. Only needed if the winrm user
 #user_password = Password of an account with access to the package if its located on a file share. Only needed if the winrm user
 }- name: ${2:Name for win_package module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_package: ${5:arguments=${6: } }${7:name=${8: } }${9:path=${10: } }${11:product_id=${12: } }${13:state=${14: } }${15:user_name=${16: } }${17:user_password=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

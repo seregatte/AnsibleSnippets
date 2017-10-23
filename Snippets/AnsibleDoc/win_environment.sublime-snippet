@@ -5,7 +5,7 @@ ${1:#level = The level at which to set the environment variable. Use 'machine' t
 #state = present to ensure environment variable is set, or absent to ensure it is removed
 #value = The value to store in the environment variable. Can be omitted for state=absent
 }- name: ${2:Name for win_environment module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_environment: ${5:level=${6: } }${7:name=${8: } }${9:state=${10: } }${11:value=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

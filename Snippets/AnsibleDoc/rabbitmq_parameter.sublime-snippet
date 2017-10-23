@@ -7,7 +7,7 @@ ${1:#component = Name of the component of which the parameter is being set
 #value = Value of the parameter, as a JSON term
 #vhost = vhost to apply access privileges.
 }- name: ${2:Name for rabbitmq_parameter module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rabbitmq_parameter: ${5:component=${6: } }${7:name=${8: } }${9:node=${10: } }${11:state=${12: } }${13:value=${14: } }${15:vhost=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

@@ -41,7 +41,7 @@ ${1:#assign_public_ip = when provisioning within vpc, assign a public IP address
 #wait_timeout = how long before wait gives up, in seconds
 #zone = AWS availability zone in which to launch the instance
 }- name: ${2:Name for ec2 module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2: ${5:assign_public_ip=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:count=${12: } }${13:count_tag=${14: } }${15:ebs_optimized=${16: } }${17:ec2_url=${18: } }${19:exact_count=${20: } }${21:group=${22: } }${23:group_id=${24: } }${25:image=${26: } }${27:instance_ids=${28: } }${29:instance_profile_name=${30: } }${31:instance_tags=${32: } }${33:instance_type=${34: } }${35:kernel=${36: } }${37:key_name=${38: } }${39:monitoring=${40: } }${41:network_interfaces=${42: } }${43:placement_group=${44: } }${45:private_ip=${46: } }${47:profile=${48: } }${49:ramdisk=${50: } }${51:region=${52: } }${53:http=${54: } }${55:security_token=${56: } }${57:source_dest_check=${58: } }${59:spot_price=${60: } }${61:spot_type=${62: } }${63:spot_wait_timeout=${64: } }${65:state=${66: } }${67:tenancy=${68: } }${69:termination_protection=${70: } }${71:user_data=${72: } }${73:validate_certs=${74: } }${75:volumes=${76: } }${77:vpc_subnet_id=${78: } }${79:wait=${80: } }${81:wait_timeout=${82: } }${83:zone=${84: } }
 ${85:  when: ${86: variable is defined}}
 ${87:  with_items: ${88: array}}

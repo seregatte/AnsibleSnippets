@@ -3,7 +3,7 @@
 ${1:#name = Name of package to install/remove; multiple names may be given, separated by commas
 #state = Intended state of the package
 }- name: ${2:Name for pkgin module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pkgin: ${5:name=${6: } }${7:state=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

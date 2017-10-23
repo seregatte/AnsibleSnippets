@@ -27,7 +27,7 @@ ${1:#config_file = Specify a config file from which user and password are to be 
 #ssl_cert = The path to a client public key certificate.
 #ssl_key = The path to the client private key.
 }- name: ${2:Name for mysql_replication module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mysql_replication: ${5:config_file=${6: } }${7:login_host=${8: } }${9:login_password=${10: } }${11:login_port=${12: } }${13:login_unix_socket=${14: } }${15:login_user=${16: } }${17:master_auto_position=${18: } }${19:master_connect_retry=${20: } }${21:master_host=${22: } }${23:master_log_file=${24: } }${25:master_log_pos=${26: } }${27:master_password=${28: } }${29:master_port=${30: } }${31:master_ssl=${32: } }${33:master_ssl_ca=${34: } }${35:master_ssl_capath=${36: } }${37:master_ssl_cert=${38: } }${39:master_ssl_cipher=${40: } }${41:master_ssl_key=${42: } }${43:master_user=${44: } }${45:mode=${46: } }${47:relay_log_file=${48: } }${49:relay_log_pos=${50: } }${51:ssl_ca=${52: } }${53:ssl_cert=${54: } }${55:ssl_key=${56: } }
 ${57:  when: ${58: variable is defined}}
 ${59:  with_items: ${60: array}}

@@ -37,7 +37,7 @@ ${1:#account = Account the instance is related to.
 #user_data = Optional data (ASCII) that can be sent to the instance upon a successful deployment. The data will be
 #zone = Name of the zone in which the instance shoud be deployed. If not set, default zone is used.
 }- name: ${2:Name for cs_instance module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cs_instance: ${5:account=${6: } }${7:affinity_groups=${8: } }${9:api_http_method=${10: } }${11:api_key=${12: } }${13:api_region=${14: } }${15:api_secret=${16: } }${17:api_timeout=${18: } }${19:api_url=${20: } }${21:cpu=${22: } }${23:cpu_speed=${24: } }${25:disk_offering=${26: } }${27:disk_size=${28: } }${29:display_name=${30: } }${31:domain=${32: } }${33:force=${34: } }${35:group=${36: } }${37:hypervisor=${38: } }${39:ip6_address=${40: } }${41:ip_address=${42: } }${43:ip_to_networks=${44: } }${45:iso=${46: } }${47:keyboard=${48: } }${49:memory=${50: } }${51:name=${52: } }${53:networks=${54: } }${55:poll_async=${56: } }${57:project=${58: } }${59:root_disk_size=${60: } }${61:security_groups=${62: } }${63:service_offering=${64: } }${65:ssh_key=${66: } }${67:state=${68: } }${69:tags=${70: } }${71:template=${72: } }${73:user_data=${74: } }${75:zone=${76: } }
 ${77:  when: ${78: variable is defined}}
 ${79:  with_items: ${80: array}}

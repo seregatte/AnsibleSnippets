@@ -8,7 +8,7 @@ ${1:#category = Install/Remove category instead of a single package.
 #state = Whether to install (`present'), or remove (`absent') a package. If the package is to be installed, then `src' is
 #zone = Whether to install the package only in the current zone, or install it into all zones. The installation into all
 }- name: ${2:Name for svr4pkg module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   svr4pkg: ${5:category=${6: } }${7:name=${8: } }${9:proxy=${10: } }${11:response_file=${12: } }${13:src=${14: } }${15:state=${16: } }${17:zone=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

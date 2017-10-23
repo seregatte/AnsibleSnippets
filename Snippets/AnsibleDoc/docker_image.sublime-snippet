@@ -15,7 +15,7 @@ ${1:#docker_api_version = Remote API version to use. This defaults to the curren
 #tls_hostname = A hostname to check matches what's supplied in the docker server's certificate.  If unspecified, the hostname is
 #use_tls = Whether to use tls to connect to the docker server.  "no" means not to use tls (and ignore any other tls related
 }- name: ${2:Name for docker_image module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   docker_image: ${5:docker_api_version=${6: } }${7:docker_url=${8: } }${9:dockerfile=${10: } }${11:name=${12: } }${13:nocache=${14: } }${15:path=${16: } }${17:state=${18: } }${19:tag=${20: } }${21:timeout=${22: } }${23:tls_ca_cert=${24: } }${25:tls_client_cert=${26: } }${27:tls_client_key=${28: } }${29:tls_hostname=${30: } }${31:use_tls=${32: } }
 ${33:  when: ${34: variable is defined}}
 ${35:  with_items: ${36: array}}

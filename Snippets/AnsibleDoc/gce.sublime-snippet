@@ -19,7 +19,7 @@ ${1:#disk_auto_delete = if set boot disk will be removed after instance destruct
 #tags = a comma-separated list of tags to associate with the instance
 #zone = the GCE zone to use
 }- name: ${2:Name for gce module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   gce: ${5:disk_auto_delete=${6: } }${7:disks=${8: } }${9:external_ip=${10: } }${11:image=${12: } }${13:instance_names=${14: } }${15:ip_forward=${16: } }${17:machine_type=${18: } }${19:metadata=${20: } }${21:name=${22: } }${23:network=${24: } }${25:pem_file=${26: } }${27:persistent_boot_disk=${28: } }${29:project_id=${30: } }${31:service_account_email=${32: } }${33:service_account_permissions=${34: } }${35:state=${36: } }${37:tags=${38: } }${39:zone=${40: } }
 ${41:  when: ${42: variable is defined}}
 ${43:  with_items: ${44: array}}

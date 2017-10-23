@@ -11,7 +11,7 @@ ${1:#alias = The alias of your CLC Account
 #state = Whether to create or delete the load balancer pool
 #status = The status of the loadbalancer
 }- name: ${2:Name for clc_loadbalancer module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   clc_loadbalancer: ${5:alias=${6: } }${7:description=${8: } }${9:location=${10: } }${11:method=${12: } }${13:name=${14: } }${15:nodes=${16: } }${17:persistence=${18: } }${19:port=${20: } }${21:state=${22: } }${23:status=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

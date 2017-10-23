@@ -8,7 +8,7 @@ ${1:#chdir = cd into this directory before running the command
 #responses = Mapping of expected string and string to respond with
 #timeout = Amount of time in seconds to wait for the expected strings
 }- name: ${2:Name for expect module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   expect: ${5:chdir=${6: } }${7:command=${8: } }${9:creates=${10: } }${11:echo=${12: } }${13:removes=${14: } }${15:responses=${16: } }${17:timeout=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

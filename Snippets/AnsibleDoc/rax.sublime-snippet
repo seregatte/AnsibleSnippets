@@ -37,7 +37,7 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #wait = wait for the instance to be in state 'running' before returning
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for rax module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax: ${5:api_key=${6: } }${7:auth_endpoint=${8: } }${9:auto_increment=${10: } }${11:boot_from_volume=${12: } }${13:boot_volume=${14: } }${15:boot_volume_size=${16: } }${17:boot_volume_terminate=${18: } }${19:config_drive=${20: } }${21:count=${22: } }${23:count_offset=${24: } }${25:credentials=${26: } }${27:disk_config=${28: } }${29:env=${30: } }${31:https=${32: } }${33:exact_count=${34: } }${35:extra_client_args=${36: } }${37:extra_create_args=${38: } }${39:files=${40: } }${41:flavor=${42: } }${43:group=${44: } }${45:identity_type=${46: } }${47:image=${48: } }${49:instance_ids=${50: } }${51:key_name=${52: } }${53:meta=${54: } }${55:name=${56: } }${57:networks=${58: } }${59:region=${60: } }${61:state=${62: } }${63:tenant_id=${64: } }${65:tenant_name=${66: } }${67:user_data=${68: } }${69:username=${70: } }${71:verify_ssl=${72: } }${73:wait=${74: } }${75:wait_timeout=${76: } }
 ${77:  when: ${78: variable is defined}}
 ${79:  with_items: ${80: array}}

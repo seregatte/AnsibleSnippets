@@ -12,7 +12,7 @@ ${1:#allowed = the protocol:ports to allow ('tcp:80' or 'tcp:80,443' or 'tcp:80-
 #state = desired state of the network or firewall
 #target_tags = the target instance tags for creating a firewall rule
 }- name: ${2:Name for gce_net module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   gce_net: ${5:allowed=${6: } }${7:fwname=${8: } }${9:ipv4_range=${10: } }${11:name=${12: } }${13:pem_file=${14: } }${15:project_id=${16: } }${17:service_account_email=${18: } }${19:src_range=${20: } }${21:src_tags=${22: } }${23:state=${24: } }${25:target_tags=${26: } }
 ${27:  when: ${28: variable is defined}}
 ${29:  with_items: ${30: array}}

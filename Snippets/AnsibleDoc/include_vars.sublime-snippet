@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:#free = The file name from which variables should be loaded, if called from a role it will look for the file in vars/
 }- name: ${2:Name for include_vars module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   include_vars: ${5:free=${6: } }
 ${7:  when: ${8: variable is defined}}
 ${9:  with_items: ${10: array}}

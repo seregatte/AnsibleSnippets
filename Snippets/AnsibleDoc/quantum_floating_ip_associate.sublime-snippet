@@ -9,7 +9,7 @@ ${1:#auth_url = the keystone url for authentication
 #region_name = name of the region
 #state = indicates the desired state of the resource
 }- name: ${2:Name for quantum_floating_ip_associate module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   quantum_floating_ip_associate: ${5:auth_url=${6: } }${7:instance_name=${8: } }${9:ip_address=${10: } }${11:login_password=${12: } }${13:login_tenant_name=${14: } }${15:login_username=${16: } }${17:region_name=${18: } }${19:state=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

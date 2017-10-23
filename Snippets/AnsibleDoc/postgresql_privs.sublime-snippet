@@ -14,7 +14,7 @@ ${1:#database = Name of database to connect to. Alias: `db'
 #type = Type of database object to set privileges on.
 #unix_socket = Path to a Unix domain socket for local connections. Alias: `login_unix_socket'
 }- name: ${2:Name for postgresql_privs module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   postgresql_privs: ${5:database=${6: } }${7:grant_option=${8: } }${9:host=${10: } }${11:login=${12: } }${13:objs=${14: } }${15:password=${16: } }${17:port=${18: } }${19:privs=${20: } }${21:roles=${22: } }${23:schema=${24: } }${25:state=${26: } }${27:type=${28: } }${29:unix_socket=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

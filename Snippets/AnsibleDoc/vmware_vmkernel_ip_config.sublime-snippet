@@ -7,7 +7,7 @@ ${1:#hostname = The hostname or IP address of the ESXi server
 #username = The username of the ESXi server
 #vmk_name = VMkernel interface name
 }- name: ${2:Name for vmware_vmkernel_ip_config module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_vmkernel_ip_config: ${5:hostname=${6: } }${7:ip_address=${8: } }${9:password=${10: } }${11:subnet_mask=${12: } }${13:username=${14: } }${15:vmk_name=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

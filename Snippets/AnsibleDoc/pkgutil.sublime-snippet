@@ -4,7 +4,7 @@ ${1:#name = Package name, e.g. (`CSWnrpe')
 #site = Specifies the repository path to install the package from. Its global definition is done in
 #state = Whether to install (`present'), or remove (`absent') a package. The upgrade (`latest') operation will
 }- name: ${2:Name for pkgutil module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pkgutil: ${5:name=${6: } }${7:site=${8: } }${9:state=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

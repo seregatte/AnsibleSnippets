@@ -9,7 +9,7 @@ ${1:#from_path = The local directory from where to install
 #notest = Do not run unit tests
 #system_lib = Use this if you want to install modules to the system perl include path. You must be root or have "passwordless"
 }- name: ${2:Name for cpanm module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cpanm: ${5:from_path=${6: } }${7:installdeps=${8: } }${9:locallib=${10: } }${11:mirror=${12: } }${13:mirror_only=${14: } }${15:name=${16: } }${17:notest=${18: } }${19:system_lib=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

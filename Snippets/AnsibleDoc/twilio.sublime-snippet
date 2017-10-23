@@ -7,7 +7,7 @@ ${1:#account_sid = u s e r ' s   T w i l i o   a c c o u n t   t o k e n   f o u
 #msg = t h e   b o d y   o f   t h e   t e x t   m e s s a g e
 #to_number = o n e   o r   m o r e   p h o n e   n u m b e r s   t o   s e n d   t h e   t e x t   m e s s a g e   t o ,   f
 }- name: ${2:Name for twilio module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   twilio: ${5:account_sid=${6: } }${7:auth_token=${8: } }${9:from_number=${10: } }${11:media_url=${12: } }${13:msg=${14: } }${15:to_number=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

@@ -10,7 +10,7 @@ ${1:#client_id = MQTT client identifier
 #topic = MQTT topic name
 #username = Username to authenticate against the broker.
 }- name: ${2:Name for mqtt module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mqtt: ${5:client_id=${6: } }${7:password=${8: } }${9:payload=${10: } }${11:port=${12: } }${13:qos=${14: } }${15:retain=${16: } }${17:server=${18: } }${19:topic=${20: } }${21:username=${22: } }
 ${23:  when: ${24: variable is defined}}
 ${25:  with_items: ${26: array}}

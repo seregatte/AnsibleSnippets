@@ -15,7 +15,7 @@ ${1:#backup = Create a backup file including the timestamp information so you ca
 #seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will
 #validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s'
 }- name: ${2:Name for replace module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   replace: ${5:backup=${6: } }${7:dest=${8: } }${9:follow=${10: } }${11:group=${12: } }${13:mode=${14: } }${15:others=${16: } }${17:owner=${18: } }${19:regexp=${20: } }${21:replace=${22: } }${23:selevel=${24: } }${25:serole=${26: } }${27:setype=${28: } }${29:seuser=${30: } }${31:validate=${32: } }
 ${33:  when: ${34: variable is defined}}
 ${35:  with_items: ${36: array}}

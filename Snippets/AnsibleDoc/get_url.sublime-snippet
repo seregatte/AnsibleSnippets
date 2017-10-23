@@ -14,7 +14,7 @@ ${1:#checksum = If a checksum is passed to this parameter, the digest of the des
 #use_proxy = if `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts.
 #validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for get_url module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   get_url: ${5:checksum=${6: } }${7:dest=${8: } }${9:force=${10: } }${11:force_basic_auth=${12: } }${13:headers=${14: } }${15:others=${16: } }${17:sha256sum=${18: } }${19:timeout=${20: } }${21:url=${22: } }${23:url_password=${24: } }${25:url_username=${26: } }${27:use_proxy=${28: } }${29:validate_certs=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

@@ -16,7 +16,7 @@ ${1:#db = name of database where permissions will be granted
 #role_attr_flags = PostgreSQL role attributes string in the format: CREATEDB,CREATEROLE,SUPERUSER
 #state = The user (role) state
 }- name: ${2:Name for postgresql_user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   postgresql_user: ${5:db=${6: } }${7:encrypted=${8: } }${9:expires=${10: } }${11:fail_on_user=${12: } }${13:login_host=${14: } }${15:login_password=${16: } }${17:login_unix_socket=${18: } }${19:login_user=${20: } }${21:name=${22: } }${23:no_password_changes=${24: } }${25:password=${26: } }${27:port=${28: } }${29:priv=${30: } }${31:role_attr_flags=${32: } }${33:state=${34: } }
 ${35:  when: ${36: variable is defined}}
 ${37:  with_items: ${38: array}}

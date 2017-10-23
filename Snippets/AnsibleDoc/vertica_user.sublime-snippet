@@ -14,7 +14,7 @@ ${1:#cluster = Name of the Vertica cluster.
 #roles = Comma separated list of roles to assign to the user.
 #state = Whether to create `present', drop `absent' or lock `locked' a user.
 }- name: ${2:Name for vertica_user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vertica_user: ${5:cluster=${6: } }${7:db=${8: } }${9:expired=${10: } }${11:ldap=${12: } }${13:login_password=${14: } }${15:login_user=${16: } }${17:name=${18: } }${19:password=${20: } }${21:port=${22: } }${23:profile=${24: } }${25:resource_pool=${26: } }${27:roles=${28: } }${29:state=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

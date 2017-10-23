@@ -9,7 +9,7 @@ ${1:#datacenter = The datacenter in which to operate.
 #wait = wait for the operation to complete before returning
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for profitbricks_volume_attachments module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   profitbricks_volume_attachments: ${5:datacenter=${6: } }${7:server=${8: } }${9:state=${10: } }${11:subscription_password=${12: } }${13:subscription_user=${14: } }${15:volume=${16: } }${17:wait=${18: } }${19:wait_timeout=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

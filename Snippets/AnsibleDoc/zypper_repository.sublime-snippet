@@ -7,7 +7,7 @@ ${1:#description = A description of the repository
 #repo = URI of the repository or .repo file. Required when state=present.
 #state = A source string state.
 }- name: ${2:Name for zypper_repository module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   zypper_repository: ${5:description=${6: } }${7:disable_gpg_check=${8: } }${9:name=${10: } }${11:refresh=${12: } }${13:repo=${14: } }${15:state=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

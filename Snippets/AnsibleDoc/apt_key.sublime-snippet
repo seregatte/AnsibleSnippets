@@ -9,7 +9,7 @@ ${1:#data = keyfile contents
 #url = url to retrieve key from.
 #validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally
 }- name: ${2:Name for apt_key module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   apt_key: ${5:data=${6: } }${7:file=${8: } }${9:id=${10: } }${11:keyring=${12: } }${13:keyserver=${14: } }${15:state=${16: } }${17:url=${18: } }${19:validate_certs=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

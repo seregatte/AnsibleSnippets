@@ -7,7 +7,7 @@ ${1:#description = A description of the Server Group
 #state = Whether to create or delete the group
 #wait = Whether to wait for the tasks to finish before returning.
 }- name: ${2:Name for clc_group module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   clc_group: ${5:description=${6: } }${7:location=${8: } }${9:name=${10: } }${11:parent=${12: } }${13:state=${14: } }${15:wait=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

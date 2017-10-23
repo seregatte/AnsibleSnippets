@@ -11,7 +11,7 @@ ${1:#arguments = Composer arguments like required package, version and so on
 #prefer_source = Forces installation from package sources when possible ( see --prefer-source )
 #working_dir = Directory of your project ( see --working-dir )
 }- name: ${2:Name for composer module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   composer: ${5:arguments=${6: } }${7:command=${8: } }${9:ignore_platform_reqs=${10: } }${11:no_dev=${12: } }${13:no_plugins=${14: } }${15:no_scripts=${16: } }${17:optimize_autoloader=${18: } }${19:prefer_dist=${20: } }${21:prefer_source=${22: } }${23:working_dir=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

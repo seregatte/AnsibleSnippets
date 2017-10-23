@@ -20,7 +20,7 @@ ${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCES
 #type = The type of DNS record
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 }- name: ${2:Name for route53_facts module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   route53_facts: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:change_id=${10: } }${11:delegation_set_id=${12: } }${13:dns_name=${14: } }${15:ec2_url=${16: } }${17:health_check_id=${18: } }${19:health_check_method=${20: } }${21:hosted_zone_id=${22: } }${23:hosted_zone_method=${24: } }${25:max_items=${26: } }${27:next_marker=${28: } }${29:profile=${30: } }${31:query=${32: } }${33:resource_id=${34: } }${35:security_token=${36: } }${37:start_record_name=${38: } }${39:type=${40: } }${41:validate_certs=${42: } }
 ${43:  when: ${44: variable is defined}}
 ${45:  with_items: ${46: array}}

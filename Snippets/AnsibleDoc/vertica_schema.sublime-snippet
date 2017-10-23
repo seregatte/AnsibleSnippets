@@ -11,7 +11,7 @@ ${1:#cluster = Name of the Vertica cluster.
 #state = Whether to create `present', or drop `absent' a schema.
 #usage_roles = Comma separated list of roles to create and grant usage access to the schema.
 }- name: ${2:Name for vertica_schema module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vertica_schema: ${5:cluster=${6: } }${7:create_roles=${8: } }${9:db=${10: } }${11:login_password=${12: } }${13:login_user=${14: } }${15:name=${16: } }${17:owner=${18: } }${19:port=${20: } }${21:state=${22: } }${23:usage_roles=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

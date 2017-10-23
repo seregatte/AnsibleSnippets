@@ -26,7 +26,7 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #wait = wait for the scaling group to finish provisioning the minimum amount of servers
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for rax_scaling_group module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax_scaling_group: ${5:api_key=${6: } }${7:config_drive=${8: } }${9:cooldown=${10: } }${11:credentials=${12: } }${13:disk_config=${14: } }${15:env=${16: } }${17:https=${18: } }${19:files=${20: } }${21:flavor=${22: } }${23:image=${24: } }${25:key_name=${26: } }${27:loadbalancers=${28: } }${29:max_entities=${30: } }${31:meta=${32: } }${33:min_entities=${34: } }${35:name=${36: } }${37:networks=${38: } }${39:region=${40: } }${41:server_name=${42: } }${43:state=${44: } }${45:user_data=${46: } }${47:username=${48: } }${49:verify_ssl=${50: } }${51:wait=${52: } }${53:wait_timeout=${54: } }
 ${55:  when: ${56: variable is defined}}
 ${57:  with_items: ${58: array}}

@@ -10,7 +10,7 @@ ${1:#executable = The executable location for npm. This is useful if you are usi
 #state = The state of the node.js library
 #version = The version to be installed
 }- name: ${2:Name for npm module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   npm: ${5:executable=${6: } }${7:global=${8: } }${9:ignore_scripts=${10: } }${11:name=${12: } }${13:path=${14: } }${15:production=${16: } }${17:registry=${18: } }${19:state=${20: } }${21:version=${22: } }
 ${23:  when: ${24: variable is defined}}
 ${25:  with_items: ${26: array}}

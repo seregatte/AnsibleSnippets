@@ -17,7 +17,7 @@ ${1:#backup = Create a backup file (if `yes'), including the timestamp informati
 #src = An already existing directory full of source files.
 #validate = The validation command to run before copying into place.  The path to the file to validate is passed in via '%s'
 }- name: ${2:Name for assemble module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   assemble: ${5:backup=${6: } }${7:delimiter=${8: } }${9:dest=${10: } }${11:follow=${12: } }${13:group=${14: } }${15:ignore_hidden=${16: } }${17:mode=${18: } }${19:owner=${20: } }${21:regexp=${22: } }${23:remote_src=${24: } }${25:selevel=${26: } }${27:serole=${28: } }${29:setype=${30: } }${31:seuser=${32: } }${33:src=${34: } }${35:validate=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

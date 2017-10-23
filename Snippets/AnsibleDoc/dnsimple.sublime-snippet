@@ -13,7 +13,7 @@ ${1:#account_api_token = Account API token. See `account_email' for info.
 #type = The type of DNS record to create
 #value = Record value Must be specified when trying to ensure a record exists
 }- name: ${2:Name for dnsimple module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   dnsimple: ${5:account_api_token=${6: } }${7:account_email=${8: } }${9:https=${10: } }${11:domain=${12: } }${13:priority=${14: } }${15:record=${16: } }${17:record_ids=${18: } }${19:solo=${20: } }${21:state=${22: } }${23:ttl=${24: } }${25:type=${26: } }${27:value=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

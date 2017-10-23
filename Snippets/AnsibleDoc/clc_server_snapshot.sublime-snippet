@@ -5,7 +5,7 @@ ${1:#expiration_days = The number of days to keep the server snapshot before it 
 #state = The state to insure that the provided resources are in.
 #wait = Whether to wait for the provisioning tasks to finish before returning.
 }- name: ${2:Name for clc_server_snapshot module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   clc_server_snapshot: ${5:expiration_days=${6: } }${7:server_ids=${8: } }${9:state=${10: } }${11:wait=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

@@ -12,7 +12,7 @@ ${1:#desc = Short description of maintenance window.
 #user = PagerDuty user ID.
 #validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for pagerduty module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pagerduty: ${5:desc=${6: } }${7:hours=${8: } }${9:minutes=${10: } }${11:name=${12: } }${13:passwd=${14: } }${15:requester_id=${16: } }${17:service=${18: } }${19:state=${20: } }${21:token=${22: } }${23:user=${24: } }${25:validate_certs=${26: } }
 ${27:  when: ${28: variable is defined}}
 ${29:  with_items: ${30: array}}

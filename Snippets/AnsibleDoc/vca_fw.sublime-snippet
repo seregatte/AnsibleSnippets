@@ -13,7 +13,7 @@ ${1:#api_version = The api version to be used with the vca
 #vdc_name = The name of the vdc where the gateway is located.
 #verify_certs = If the certificates of the authentication is to be verified
 }- name: ${2:Name for vca_fw module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vca_fw: ${5:api_version=${6: } }${7:fw_rules=${8: } }${9:gateway_name=${10: } }${11:host=${12: } }${13:instance_id=${14: } }${15:org=${16: } }${17:password=${18: } }${19:service_type=${20: } }${21:state=${22: } }${23:username=${24: } }${25:vdc_name=${26: } }${27:verify_certs=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

@@ -9,7 +9,7 @@ ${1:#host_name = Name of the host.
 #state = State of the macro. On `present', it will create if macro does not exist or update the macro if the associated
 #timeout = The timeout of API request (seconds).
 }- name: ${2:Name for zabbix_hostmacro module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   zabbix_hostmacro: ${5:host_name=${6: } }${7:login_password=${8: } }${9:login_user=${10: } }${11:macro_name=${12: } }${13:macro_value=${14: } }${15:server_url=${16: } }${17:state=${18: } }${19:timeout=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

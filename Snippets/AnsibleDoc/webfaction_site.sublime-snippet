@@ -9,7 +9,7 @@ ${1:#host = The webfaction host on which the site should be created.
 #state = Whether the website should exist
 #subdomains = A list of subdomains associated with this site.
 }- name: ${2:Name for webfaction_site module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   webfaction_site: ${5:host=${6: } }${7:https=${8: } }${9:login_name=${10: } }${11:login_password=${12: } }${13:name=${14: } }${15:site_apps=${16: } }${17:state=${18: } }${19:subdomains=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

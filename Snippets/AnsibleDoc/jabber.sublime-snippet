@@ -8,7 +8,7 @@ ${1:#encoding = message encoding
 #to = user ID or name of the room, when using room use a slash to indicate your nick.
 #user = User as which to connect
 }- name: ${2:Name for jabber module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   jabber: ${5:encoding=${6: } }${7:host=${8: } }${9:msg=${10: } }${11:password=${12: } }${13:port=${14: } }${15:to=${16: } }${17:user=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

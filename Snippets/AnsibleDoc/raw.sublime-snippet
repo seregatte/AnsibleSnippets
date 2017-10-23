@@ -3,7 +3,7 @@
 ${1:#executable = change the shell used to execute the command. Should be an absolute path to the executable.
 #free_form = the raw module takes a free form command to run
 }- name: ${2:Name for raw module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   raw: ${5:executable=${6: } }${7:free_form=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

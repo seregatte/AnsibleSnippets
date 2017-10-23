@@ -7,7 +7,7 @@ ${1:#column = Identifies the column in the record.
 #timeout = How long to wait for ovs-vswitchd to respond
 #value = Expected value for the table, record, column and key.
 }- name: ${2:Name for openvswitch_db module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   openvswitch_db: ${5:column=${6: } }${7:key=${8: } }${9:record=${10: } }${11:table=${12: } }${13:timeout=${14: } }${15:value=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

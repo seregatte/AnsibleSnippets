@@ -6,7 +6,7 @@ ${1:#name = Name of package to configure.
 #value = Value to set the configuration to
 #vtype = The type of the value supplied
 }- name: ${2:Name for debconf module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   debconf: ${5:name=${6: } }${7:question=${8: } }${9:unseen=${10: } }${11:value=${12: } }${13:vtype=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

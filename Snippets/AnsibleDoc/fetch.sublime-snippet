@@ -6,7 +6,7 @@ ${1:#dest = A directory to save the file into. For example, if the `dest' direct
 #src = The file on the remote system to fetch. This `must' be a file, not a directory. Recursive fetching may be
 #validate_checksum = Verify that the source and destination checksums match after the files are fetched.
 }- name: ${2:Name for fetch module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   fetch: ${5:dest=${6: } }${7:fail_on_missing=${8: } }${9:flat=${10: } }${11:src=${12: } }${13:validate_checksum=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

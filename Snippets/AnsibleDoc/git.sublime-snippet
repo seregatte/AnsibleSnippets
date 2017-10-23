@@ -19,7 +19,7 @@ ${1:#accept_hostkey = if `yes', adds the hostkey for the repo url if not already
 #verify_commit = if `yes', when cloning or checking out a `version' verify the signature of a GPG signed commit. This requires
 #version = What version of the repository to check out.  This can be the full 40-character `SHA-1' hash, the literal string
 }- name: ${2:Name for git module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   git: ${5:accept_hostkey=${6: } }${7:bare=${8: } }${9:clone=${10: } }${11:depth=${12: } }${13:dest=${14: } }${15:executable=${16: } }${17:force=${18: } }${19:key_file=${20: } }${21:recursive=${22: } }${23:reference=${24: } }${25:refspec=${26: } }${27:remote=${28: } }${29:repo=${30: } }${31:ssh_opts=${32: } }${33:track_submodules=${34: } }${35:update=${36: } }${37:verify_commit=${38: } }${39:version=${40: } }
 ${41:  when: ${42: variable is defined}}
 ${43:  with_items: ${44: array}}

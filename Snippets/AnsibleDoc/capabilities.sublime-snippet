@@ -4,7 +4,7 @@ ${1:#capability = Desired capability to set (with operator and flags, if state i
 #path = Specifies the path to the file to be managed.
 #state = Whether the entry should be present or absent in the file's capabilities.
 }- name: ${2:Name for capabilities module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   capabilities: ${5:capability=${6: } }${7:path=${8: } }${9:state=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

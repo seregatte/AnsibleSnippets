@@ -22,7 +22,7 @@ ${1:#aggregate = Classifies the check as an aggregate check, making it available
 #subscribers = List of subscribers/channels this check should run for See sensu_subscribers to subscribe a machine to a channel
 #timeout = Timeout for the check
 }- name: ${2:Name for sensu_check module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   sensu_check: ${5:aggregate=${6: } }${7:backup=${8: } }${9:command=${10: } }${11:dependencies=${12: } }${13:handle=${14: } }${15:handlers=${16: } }${17:high_flap_threshold=${18: } }${19:interval=${20: } }${21:low_flap_threshold=${22: } }${23:metric=${24: } }${25:name=${26: } }${27:occurrences=${28: } }${29:path=${30: } }${31:publish=${32: } }${33:refresh=${34: } }${35:standalone=${36: } }${37:state=${38: } }${39:subdue_begin=${40: } }${41:subdue_end=${42: } }${43:subscribers=${44: } }${45:timeout=${46: } }
 ${47:  when: ${48: variable is defined}}
 ${49:  with_items: ${50: array}}

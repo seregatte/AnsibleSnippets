@@ -12,7 +12,7 @@ ${1:#api_http_method = HTTP method used.
 #poll_async = Poll async jobs until job has finished.
 #state = State of the domain.
 }- name: ${2:Name for cs_domain module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cs_domain: ${5:api_http_method=${6: } }${7:api_key=${8: } }${9:api_region=${10: } }${11:api_secret=${12: } }${13:api_timeout=${14: } }${15:api_url=${16: } }${17:clean_up=${18: } }${19:network_domain=${20: } }${21:path=${22: } }${23:poll_async=${24: } }${25:state=${26: } }
 ${27:  when: ${28: variable is defined}}
 ${29:  with_items: ${30: array}}

@@ -11,7 +11,7 @@ ${1:#activationkey = supply an activation key for use with registration
 #state = whether to register and subscribe (`present'), or unregister (`absent') a system
 #username = Red Hat Network username
 }- name: ${2:Name for redhat_subscription module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   redhat_subscription: ${5:activationkey=${6: } }${7:autosubscribe=${8: } }${9:org_id=${10: } }${11:password=${12: } }${13:pool=${14: } }${15:rhsm_baseurl=${16: } }${17:server_hostname=${18: } }${19:server_insecure=${20: } }${21:state=${22: } }${23:username=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

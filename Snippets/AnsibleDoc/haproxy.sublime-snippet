@@ -10,7 +10,7 @@ ${1:#backend = Name of the HAProxy backend pool.
 #wait_retries = Number of times to check for status after changing the state.
 #weight = The value passed in argument. If the value ends with the `%` sign, then the new weight will be relative to the
 }- name: ${2:Name for haproxy module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   haproxy: ${5:backend=${6: } }${7:host=${8: } }${9:shutdown_sessions=${10: } }${11:socket=${12: } }${13:state=${14: } }${15:wait=${16: } }${17:wait_interval=${18: } }${19:wait_retries=${20: } }${21:weight=${22: } }
 ${23:  when: ${24: variable is defined}}
 ${25:  with_items: ${26: array}}

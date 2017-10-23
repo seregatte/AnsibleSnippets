@@ -17,7 +17,7 @@ ${1:#delete = Delete rule.
 #to_ip = Destination IP address.
 #to_port = Destination port.
 }- name: ${2:Name for ufw module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ufw: ${5:delete=${6: } }${7:direction=${8: } }${9:from_ip=${10: } }${11:from_port=${12: } }${13:insert=${14: } }${15:interface=${16: } }${17:log=${18: } }${19:logging=${20: } }${21:name=${22: } }${23:policy=${24: } }${25:proto=${26: } }${27:route=${28: } }${29:rule=${30: } }${31:state=${32: } }${33:to_ip=${34: } }${35:to_port=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

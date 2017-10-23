@@ -6,7 +6,7 @@ ${1:#datacenter_name = The name of the datacenter the cluster will be created in
 #state = If the datacenter should be present or absent
 #username = The username of the vSphere vCenter
 }- name: ${2:Name for vmware_datacenter module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_datacenter: ${5:datacenter_name=${6: } }${7:hostname=${8: } }${9:password=${10: } }${11:state=${12: } }${13:username=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

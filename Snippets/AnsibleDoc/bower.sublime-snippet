@@ -7,7 +7,7 @@ ${1:#name = The name of a bower package to install
 #state = The state of the bower package
 #version = The version to be installed
 }- name: ${2:Name for bower module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   bower: ${5:name=${6: } }${7:offline=${8: } }${9:path=${10: } }${11:production=${12: } }${13:state=${14: } }${15:version=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

@@ -7,7 +7,7 @@ ${1:#name = name of the software channel
 #url = The full url to the RHN/Satellite api
 #user = RHN/Satellite user
 }- name: ${2:Name for rhn_channel module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rhn_channel: ${5:name=${6: } }${7:password=${8: } }${9:state=${10: } }${11:sysname=${12: } }${13:url=${14: } }${15:user=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

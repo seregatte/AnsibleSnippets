@@ -22,7 +22,7 @@ ${1:#account = Account the ISO is related to.
 #url = URL where the ISO can be downloaded from. Required if `state' is present.
 #zone = Name of the zone you wish the ISO to be registered or deleted from. If not specified, first zone found will be
 }- name: ${2:Name for cs_iso module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cs_iso: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:bootable=${20: } }${21:checksum=${22: } }${23:domain=${24: } }${25:is_dynamically_scalable=${26: } }${27:is_featured=${28: } }${29:is_public=${30: } }${31:is_ready=${32: } }${33:iso_filter=${34: } }${35:name=${36: } }${37:os_type=${38: } }${39:project=${40: } }${41:state=${42: } }${43:url=${44: } }${45:zone=${46: } }
 ${47:  when: ${48: variable is defined}}
 ${49:  with_items: ${50: array}}

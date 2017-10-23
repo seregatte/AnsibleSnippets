@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:}- name: ${2:Name for docker_login module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   docker_login: 
 ${5:  when: ${6: variable is defined}}
 ${7:  with_items: ${8: array}}
