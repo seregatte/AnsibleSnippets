@@ -5,7 +5,7 @@ ${1:#app_token = P u s h o v e r   i s s u e d   t o k e n   i d e n t i f y i n
 #pri = M e s s a g e   p r i o r i t y   ( s e e   u ( h t t p s : / / p u s h o v e r . n e t )   f o r   d e t a i l
 #user_key = P u s h o v e r   i s s u e d   a u t h e n t i c a t i o n   k e y   f o r   y o u r   u s e r .
 }- name: ${2:Name for pushover module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pushover: ${5:app_token=${6: } }${7:msg=${8: } }${9:pri=${10: } }${11:user_key=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

@@ -6,7 +6,7 @@ ${1:#login_name = The webfaction account to use
 #mailbox_password = The password for the mailbox
 #state = Whether the mailbox should exist
 }- name: ${2:Name for webfaction_mailbox module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   webfaction_mailbox: ${5:login_name=${6: } }${7:login_password=${8: } }${9:mailbox_name=${10: } }${11:mailbox_password=${12: } }${13:state=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

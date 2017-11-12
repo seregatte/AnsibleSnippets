@@ -8,7 +8,7 @@ ${1:#action = This tells the githooks module what you want it to do.
 #user = Github username.
 #validate_certs = If `no', SSL certificates for the target repo will not be validated. This should only be used on personally
 }- name: ${2:Name for github_hooks module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   github_hooks: ${5:action=${6: } }${7:content_type=${8: } }${9:hookurl=${10: } }${11:oauthkey=${12: } }${13:repo=${14: } }${15:user=${16: } }${17:validate_certs=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

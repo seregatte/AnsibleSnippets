@@ -19,7 +19,7 @@ ${1:#account_type = Type of the account.
 #timezone = Timezone of the user to be created if account did not exist.
 #username = Username of the user to be created if account did not exist. Required on `state=present'.
 }- name: ${2:Name for cs_account module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cs_account: ${5:account_type=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:domain=${20: } }${21:email=${22: } }${23:first_name=${24: } }${25:last_name=${26: } }${27:name=${28: } }${29:network_domain=${30: } }${31:password=${32: } }${33:poll_async=${34: } }${35:state=${36: } }${37:timezone=${38: } }${39:username=${40: } }
 ${41:  when: ${42: variable is defined}}
 ${43:  with_items: ${44: array}}

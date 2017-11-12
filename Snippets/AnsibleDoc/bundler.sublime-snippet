@@ -13,7 +13,7 @@ ${1:#binstub_directory = Only applies if state is `present'. Specifies the direc
 #state = The desired state of the Gem bundle. `latest' updates gems to the most recent, acceptable version
 #user_install = Only applies if state is `present'. Installs gems in the local user's cache or for all users
 }- name: ${2:Name for bundler module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   bundler: ${5:binstub_directory=${6: } }${7:chdir=${8: } }${9:clean=${10: } }${11:deployment_mode=${12: } }${13:exclude_groups=${14: } }${15:executable=${16: } }${17:extra_args=${18: } }${19:gem_path=${20: } }${21:gemfile=${22: } }${23:local=${24: } }${25:state=${26: } }${27:user_install=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

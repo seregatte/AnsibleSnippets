@@ -3,7 +3,7 @@
 ${1:#dest = Remote absolute path where the file should be copied to. If src is a directory, this must be a directory too.
 #src = Local path to a file to copy to the remote server; can be absolute or relative. If path is a directory, it is
 }- name: ${2:Name for win_copy module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_copy: ${5:dest=${6: } }${7:src=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

@@ -5,7 +5,7 @@ ${1:#list_url = An URL of the alternative overlays list that defines the overlay
 #state = Whether to install (`present'), sync (`updated'), or uninstall (`absent') the overlay.
 #validate_certs = If `no', SSL certificates will not be validated. This should only be set to `no' when no other option exists.
 }- name: ${2:Name for layman module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   layman: ${5:list_url=${6: } }${7:name=${8: } }${9:state=${10: } }${11:validate_certs=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

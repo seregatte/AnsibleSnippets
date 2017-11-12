@@ -8,7 +8,7 @@ ${1:#inherit = Inherit flags on the ACL rules.  Can be specified as a comma sepa
 #type = Specify whether to allow or deny the rights specified
 #user = User or Group to add specified rights to act on src file/folder
 }- name: ${2:Name for win_acl module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_acl: ${5:inherit=${6: } }${7:path=${8: } }${9:propagation=${10: } }${11:rights=${12: } }${13:state=${14: } }${15:type=${16: } }${17:user=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

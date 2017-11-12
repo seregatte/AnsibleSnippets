@@ -4,7 +4,7 @@ ${1:#creates = a filename, when it already exists, this step will *not* be run.
 #free_form = path to the local script file followed by optional arguments.
 #removes = a filename, when it does not exist, this step will *not* be run.
 }- name: ${2:Name for script module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   script: ${5:creates=${6: } }${7:free_form=${8: } }${9:removes=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

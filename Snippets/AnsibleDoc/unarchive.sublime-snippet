@@ -14,7 +14,7 @@ ${1:#copy = If true, the file is copied from local 'master' to the target machin
 #seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will
 #src = If copy=yes (default), local path to archive file to copy to the target server; can be absolute or relative. If
 }- name: ${2:Name for unarchive module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   unarchive: ${5:copy=${6: } }${7:creates=${8: } }${9:dest=${10: } }${11:follow=${12: } }${13:group=${14: } }${15:list_files=${16: } }${17:mode=${18: } }${19:owner=${20: } }${21:selevel=${22: } }${23:serole=${24: } }${25:setype=${26: } }${27:seuser=${28: } }${29:src=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

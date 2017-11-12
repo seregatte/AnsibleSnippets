@@ -17,7 +17,7 @@ ${1:#check_id = an ID for the service check, defaults to the check name, ignored
 #token = the token key indentifying an ACL rule set. May be required to register services.
 #ttl = checks can be registered with a ttl instead of a script and interval this means that the service will check in
 }- name: ${2:Name for consul module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   consul: ${5:check_id=${6: } }${7:check_name=${8: } }${9:host=${10: } }${11:http=${12: } }${13:interval=${14: } }${15:notes=${16: } }${17:port=${18: } }${19:script=${20: } }${21:service_id=${22: } }${23:service_name=${24: } }${25:service_port=${26: } }${27:state=${28: } }${29:tags=${30: } }${31:timeout=${32: } }${33:token=${34: } }${35:ttl=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

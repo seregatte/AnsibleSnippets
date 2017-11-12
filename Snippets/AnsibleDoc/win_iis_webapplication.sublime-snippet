@@ -6,7 +6,7 @@ ${1:#application_pool = The application pool in which the new site executes.
 #site = Name of the site on which the application is created.
 #state = State of the web application
 }- name: ${2:Name for win_iis_webapplication module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_iis_webapplication: ${5:application_pool=${6: } }${7:name=${8: } }${9:physical_path=${10: } }${11:site=${12: } }${13:state=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

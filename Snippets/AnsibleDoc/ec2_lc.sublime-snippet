@@ -26,7 +26,7 @@ ${1:#assign_public_ip = Used for Auto Scaling groups that launch instances into 
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 #volumes = a list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and type
 }- name: ${2:Name for ec2_lc module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_lc: ${5:assign_public_ip=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:classic_link_vpc_id=${12: } }${13:classic_link_vpc_security_groups=${14: } }${15:ebs_optimized=${16: } }${17:ec2_url=${18: } }${19:image_id=${20: } }${21:instance_monitoring=${22: } }${23:instance_profile_name=${24: } }${25:instance_type=${26: } }${27:kernel_id=${28: } }${29:key_name=${30: } }${31:name=${32: } }${33:profile=${34: } }${35:ramdisk_id=${36: } }${37:region=${38: } }${39:http=${40: } }${41:security_groups=${42: } }${43:security_token=${44: } }${45:spot_price=${46: } }${47:state=${48: } }${49:user_data=${50: } }${51:validate_certs=${52: } }${53:volumes=${54: } }
 ${55:  when: ${56: variable is defined}}
 ${57:  with_items: ${58: array}}

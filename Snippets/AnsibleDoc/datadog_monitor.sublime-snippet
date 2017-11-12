@@ -16,7 +16,7 @@ ${1:#api_key = Your DataDog API key.
 #timeout_h = The number of hours of the monitor not reporting data before it will automatically resolve from a triggered
 #type = The type of the monitor.
 }- name: ${2:Name for datadog_monitor module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   datadog_monitor: ${5:api_key=${6: } }${7:app_key=${8: } }${9:escalation_message=${10: } }${11:message=${12: } }${13:name=${14: } }${15:no_data_timeframe=${16: } }${17:notify_audit=${18: } }${19:notify_no_data=${20: } }${21:query=${22: } }${23:renotify_interval=${24: } }${25:silenced=${26: } }${27:state=${28: } }${29:thresholds=${30: } }${31:timeout_h=${32: } }${33:type=${34: } }
 ${35:  when: ${36: variable is defined}}
 ${37:  with_items: ${38: array}}

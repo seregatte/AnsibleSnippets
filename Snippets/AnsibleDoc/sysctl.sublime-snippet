@@ -8,7 +8,7 @@ ${1:#ignoreerrors = Use this option to ignore errors about unknown keys.
 #sysctl_set = Verify token value with the sysctl command and set with -w if necessary
 #value = Desired value of the sysctl key.
 }- name: ${2:Name for sysctl module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   sysctl: ${5:ignoreerrors=${6: } }${7:name=${8: } }${9:reload=${10: } }${11:state=${12: } }${13:sysctl_file=${14: } }${15:sysctl_set=${16: } }${17:value=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

@@ -6,7 +6,7 @@ ${1:#host = the ejabberd host associated with this username
 #state = describe the desired state of the user to be managed
 #username = the name of the user to manage
 }- name: ${2:Name for ejabberd_user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ejabberd_user: ${5:host=${6: } }${7:logging=${8: } }${9:password=${10: } }${11:state=${12: } }${13:username=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

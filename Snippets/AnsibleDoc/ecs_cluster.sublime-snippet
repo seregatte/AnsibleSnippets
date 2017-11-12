@@ -7,7 +7,7 @@ ${1:#delay = Number of seconds to wait
 #repeat = The number of times to wait for the cluster to have an instance
 #state = The desired state of the cluster
 }- name: ${2:Name for ecs_cluster module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ecs_cluster: ${5:delay=${6: } }${7:name=${8: } }${9:region=${10: } }${11:http=${12: } }${13:repeat=${14: } }${15:state=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

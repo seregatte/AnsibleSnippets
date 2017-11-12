@@ -17,7 +17,7 @@ ${1:#changed_use = Include installed packages where USE flags have changed, exce
 #usepkgonly = Merge only binaries (no compiling). This sets getbinpkg=yes.
 #verbose = Run emerge in verbose mode (--verbose)
 }- name: ${2:Name for portage module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   portage: ${5:changed_use=${6: } }${7:deep=${8: } }${9:depclean=${10: } }${11:getbinpkg=${12: } }${13:newuse=${14: } }${15:nodeps=${16: } }${17:noreplace=${18: } }${19:oneshot=${20: } }${21:onlydeps=${22: } }${23:package=${24: } }${25:quiet=${26: } }${27:state=${28: } }${29:sync=${30: } }${31:update=${32: } }${33:usepkgonly=${34: } }${35:verbose=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

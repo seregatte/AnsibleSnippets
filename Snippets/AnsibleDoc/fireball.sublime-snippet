@@ -3,7 +3,7 @@
 ${1:#minutes = The `fireball' listener daemon is started on nodes and will stay around for this number of minutes before
 #port = TCP port for ZeroMQ
 }- name: ${2:Name for fireball module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   fireball: ${5:minutes=${6: } }${7:port=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

@@ -20,7 +20,7 @@ ${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCES
 #volume_type = Type of EBS volume; standard (magnetic), gp2 (SSD), io1 (Provisioned IOPS). "Standard" is the old EBS default
 #zone = zone in which to create the volume, if unset uses the zone the instance is in (if set)
 }- name: ${2:Name for ec2_vol module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_vol: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:device_name=${10: } }${11:ec2_url=${12: } }${13:encrypted=${14: } }${15:id=${16: } }${17:instance=${18: } }${19:iops=${20: } }${21:name=${22: } }${23:profile=${24: } }${25:region=${26: } }${27:http=${28: } }${29:security_token=${30: } }${31:snapshot=${32: } }${33:state=${34: } }${35:validate_certs=${36: } }${37:volume_size=${38: } }${39:volume_type=${40: } }${41:zone=${42: } }
 ${43:  when: ${44: variable is defined}}
 ${45:  with_items: ${46: array}}

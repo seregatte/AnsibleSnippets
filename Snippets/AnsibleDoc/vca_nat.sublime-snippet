@@ -14,7 +14,7 @@ ${1:#api_version = The api version to be used with the vca
 #vdc_name = The name of the vdc where the gateway is located.
 #verify_certs = If the certificates of the authentication is to be verified
 }- name: ${2:Name for vca_nat module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vca_nat: ${5:api_version=${6: } }${7:gateway_name=${8: } }${9:host=${10: } }${11:instance_id=${12: } }${13:nat_rules=${14: } }${15:org=${16: } }${17:password=${18: } }${19:purge_rules=${20: } }${21:service_type=${22: } }${23:state=${24: } }${25:username=${26: } }${27:vdc_name=${28: } }${29:verify_certs=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

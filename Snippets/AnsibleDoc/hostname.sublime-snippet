@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:#name = Name of the host
 }- name: ${2:Name for hostname module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   hostname: ${5:name=${6: } }
 ${7:  when: ${8: variable is defined}}
 ${9:  with_items: ${10: array}}

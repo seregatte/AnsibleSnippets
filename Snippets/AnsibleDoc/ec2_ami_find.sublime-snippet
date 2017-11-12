@@ -18,7 +18,7 @@ ${1:#ami_id = An AMI ID to match.
 #state = AMI state to match.
 #virtualization_type = Virtualization type to match (e.g. hvm).
 }- name: ${2:Name for ec2_ami_find module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_ami_find: ${5:ami_id=${6: } }${7:ami_tags=${8: } }${9:architecture=${10: } }${11:hypervisor=${12: } }${13:is_public=${14: } }${15:name=${16: } }${17:no_result_action=${18: } }${19:owner=${20: } }${21:platform=${22: } }${23:region=${24: } }${25:sort=${26: } }${27:sort_end=${28: } }${29:sort_order=${30: } }${31:sort_start=${32: } }${33:sort_tag=${34: } }${35:state=${36: } }${37:virtualization_type=${38: } }
 ${39:  when: ${40: variable is defined}}
 ${41:  with_items: ${42: array}}

@@ -9,7 +9,7 @@ ${1:#dump = dump (see fstab(8)), Note that if nulled, `state=present' will cease
 #src = device to be mounted on `name'.
 #state = If `mounted' or `unmounted', the device will be actively mounted or unmounted as needed and appropriately
 }- name: ${2:Name for mount module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mount: ${5:dump=${6: } }${7:fstab=${8: } }${9:fstype=${10: } }${11:name=${12: } }${13:opts=${14: } }${15:passno=${16: } }${17:src=${18: } }${19:state=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

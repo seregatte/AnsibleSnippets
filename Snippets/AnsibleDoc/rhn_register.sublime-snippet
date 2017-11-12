@@ -8,7 +8,7 @@ ${1:#activationkey = supply an activation key for use with registration
 #state = whether to register (`present'), or unregister (`absent') a system
 #username = Red Hat Network username
 }- name: ${2:Name for rhn_register module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rhn_register: ${5:activationkey=${6: } }${7:channels=${8: } }${9:password=${10: } }${11:profilename=${12: } }${13:server_url=${14: } }${15:state=${16: } }${17:username=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

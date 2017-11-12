@@ -4,7 +4,7 @@ ${1:#blacklist_file = If specified, use this blacklist file instead of `/etc/mod
 #name = Name of kernel module to black- or whitelist.
 #state = Whether the module should be present in the blacklist or absent.
 }- name: ${2:Name for kernel_blacklist module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   kernel_blacklist: ${5:blacklist_file=${6: } }${7:name=${8: } }${9:state=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

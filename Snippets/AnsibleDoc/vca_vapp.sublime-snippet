@@ -11,7 +11,7 @@ ${1:#network_mode = Configures the mode of the network connection.
 #vm_memory = The amount of memory in MB to allocate to VMs in the vApp.  If the `vm_name' argument is provided, then this
 #vm_name = The name of the virtual machine instance in the vApp to manage.
 }- name: ${2:Name for vca_vapp module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vca_vapp: ${5:network_mode=${6: } }${7:network_name=${8: } }${9:operation=${10: } }${11:state=${12: } }${13:template_name=${14: } }${15:vapp_name=${16: } }${17:vdc_name=${18: } }${19:vm_cpus=${20: } }${21:vm_memory=${22: } }${23:vm_name=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

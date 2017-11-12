@@ -17,7 +17,7 @@ ${1:#allocation_pool_end = From the subnet pool the last IP that should be assig
 #state = Indicate desired state of the resource
 #tenant_name = The name of the tenant for whom the subnet should be created
 }- name: ${2:Name for quantum_subnet module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   quantum_subnet: ${5:allocation_pool_end=${6: } }${7:allocation_pool_start=${8: } }${9:auth_url=${10: } }${11:cidr=${12: } }${13:dns_nameservers=${14: } }${15:enable_dhcp=${16: } }${17:gateway_ip=${18: } }${19:ip_version=${20: } }${21:login_password=${22: } }${23:login_tenant_name=${24: } }${25:login_username=${26: } }${27:name=${28: } }${29:network_name=${30: } }${31:region_name=${32: } }${33:state=${34: } }${35:tenant_name=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

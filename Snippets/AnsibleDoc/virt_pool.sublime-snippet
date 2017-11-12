@@ -8,7 +8,7 @@ ${1:#autostart = Specify if a given storage pool should be started automatically
 #uri = `libvirt' connection uri.
 #xml = XML document used with the define command.
 }- name: ${2:Name for virt_pool module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   virt_pool: ${5:autostart=${6: } }${7:command=${8: } }${9:mode=${10: } }${11:name=${12: } }${13:state=${14: } }${15:uri=${16: } }${17:xml=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

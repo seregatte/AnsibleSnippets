@@ -11,7 +11,7 @@ ${1:#collect_data = Type of maintenance. With data collection, or without.
 #server_url = Url of Zabbix server, with protocol (http or https). `url' is an alias for `server_url'.
 #state = Create or remove a maintenance window.
 }- name: ${2:Name for zabbix_maintenance module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   zabbix_maintenance: ${5:collect_data=${6: } }${7:desc=${8: } }${9:host_groups=${10: } }${11:host_names=${12: } }${13:login_password=${14: } }${15:login_user=${16: } }${17:minutes=${18: } }${19:name=${20: } }${21:server_url=${22: } }${23:state=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

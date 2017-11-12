@@ -7,7 +7,7 @@ ${1:#backing_device = Path to the underlying block device or file, or the UUID o
 #path = Path to file to use instead of `/etc/crypttab'. This might be useful in a chroot environment.
 #state = Use `present' to add a line to `/etc/crypttab' or update it's definition if already present. Use `absent' to
 }- name: ${2:Name for crypttab module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   crypttab: ${5:backing_device=${6: } }${7:name=${8: } }${9:opts=${10: } }${11:password=${12: } }${13:path=${14: } }${15:state=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

@@ -7,7 +7,7 @@ ${1:#hosts = A list of ZooKeeper servers (format '[server]:[port]').
 #timeout = The amount of time to wait for a node to appear.
 #value = The value assigned to the znode.
 }- name: ${2:Name for znode module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   znode: ${5:hosts=${6: } }${7:name=${8: } }${9:op=${10: } }${11:state=${12: } }${13:timeout=${14: } }${15:value=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

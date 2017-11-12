@@ -12,7 +12,7 @@ ${1:#cascade = when dropping a language, also delete object that depend on this 
 #state = The state of the language for the selected database
 #trust = make this language trusted for the selected db
 }- name: ${2:Name for postgresql_lang module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   postgresql_lang: ${5:cascade=${6: } }${7:db=${8: } }${9:fail_on_drop=${10: } }${11:force_trust=${12: } }${13:lang=${14: } }${15:login_host=${16: } }${17:login_password=${18: } }${19:login_user=${20: } }${21:port=${22: } }${23:state=${24: } }${25:trust=${26: } }
 ${27:  when: ${28: variable is defined}}
 ${29:  with_items: ${30: array}}

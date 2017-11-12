@@ -6,7 +6,7 @@ ${1:#creates = If this file or directory exists the specified src will not be ex
 #rm = Remove the zip file, after unzipping
 #src = File to be unzipped (provide absolute path)
 }- name: ${2:Name for win_unzip module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_unzip: ${5:creates=${6: } }${7:dest=${8: } }${9:recurse=${10: } }${11:rm=${12: } }${13:src=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

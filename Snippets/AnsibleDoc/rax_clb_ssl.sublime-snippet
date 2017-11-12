@@ -19,7 +19,7 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #wait = Wait for the balancer to be in state "running" before turning.
 #wait_timeout = How long before "wait" gives up, in seconds.
 }- name: ${2:Name for rax_clb_ssl module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax_clb_ssl: ${5:api_key=${6: } }${7:certificate=${8: } }${9:credentials=${10: } }${11:enabled=${12: } }${13:env=${14: } }${15:https=${16: } }${17:https_redirect=${18: } }${19:intermediate_certificate=${20: } }${21:loadbalancer=${22: } }${23:private_key=${24: } }${25:region=${26: } }${27:secure_port=${28: } }${29:secure_traffic_only=${30: } }${31:state=${32: } }${33:username=${34: } }${35:verify_ssl=${36: } }${37:wait=${38: } }${39:wait_timeout=${40: } }
 ${41:  when: ${42: variable is defined}}
 ${43:  with_items: ${44: array}}

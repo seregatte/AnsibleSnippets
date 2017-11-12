@@ -4,7 +4,7 @@ ${1:#description = Description of the group
 #name = Name of the group
 #state = Create or remove the group
 }- name: ${2:Name for win_group module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_group: ${5:description=${6: } }${7:name=${8: } }${9:state=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

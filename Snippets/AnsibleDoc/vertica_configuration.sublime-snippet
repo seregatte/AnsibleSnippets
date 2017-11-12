@@ -8,7 +8,7 @@ ${1:#cluster = Name of the Vertica cluster.
 #port = Vertica cluster port to connect to.
 #value = Value of the parameter to be set.
 }- name: ${2:Name for vertica_configuration module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vertica_configuration: ${5:cluster=${6: } }${7:db=${8: } }${9:login_password=${10: } }${11:login_user=${12: } }${13:name=${14: } }${15:port=${16: } }${17:value=${18: } }
 ${19:  when: ${20: variable is defined}}
 ${21:  with_items: ${22: array}}

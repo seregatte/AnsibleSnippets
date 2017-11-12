@@ -15,7 +15,7 @@ ${1:#collation = Collation mode (sorting). This only applies to new table/databa
 #state = The database state
 #target = Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (`.sql') as well
 }- name: ${2:Name for mysql_db module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mysql_db: ${5:collation=${6: } }${7:config_file=${8: } }${9:encoding=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_port=${16: } }${17:login_unix_socket=${18: } }${19:login_user=${20: } }${21:name=${22: } }${23:ssl_ca=${24: } }${25:ssl_cert=${26: } }${27:ssl_key=${28: } }${29:state=${30: } }${31:target=${32: } }
 ${33:  when: ${34: variable is defined}}
 ${35:  with_items: ${36: array}}

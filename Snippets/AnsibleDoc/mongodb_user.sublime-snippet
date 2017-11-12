@@ -14,7 +14,7 @@ ${1:#database = The name of the database to add/remove the user from
 #state = The database user state
 #update_password = `always' will update passwords if they differ.  `on_create' will only set the password for newly created users.
 }- name: ${2:Name for mongodb_user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mongodb_user: ${5:database=${6: } }${7:login_database=${8: } }${9:login_host=${10: } }${11:login_password=${12: } }${13:login_port=${14: } }${15:login_user=${16: } }${17:name=${18: } }${19:password=${20: } }${21:replica_set=${22: } }${23:roles=${24: } }${25:ssl=${26: } }${27:state=${28: } }${29:update_password=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

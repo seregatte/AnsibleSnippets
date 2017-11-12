@@ -49,7 +49,7 @@ ${1:#cap_add = Add capabilities for the container. Requires docker-py >= 0.5.0.
 #volumes = List of volumes to mount within the container using docker CLI-style syntax: `/host:/container[:mode]' where
 #volumes_from = List of names of containers to mount volumes from.
 }- name: ${2:Name for docker module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   docker: ${5:cap_add=${6: } }${7:cap_drop=${8: } }${9:command=${10: } }${11:count=${12: } }${13:cpu_set=${14: } }${15:detach=${16: } }${17:dns=${18: } }${19:docker_api_version=${20: } }${21:docker_url=${22: } }${23:docker_user=${24: } }${25:domainname=${26: } }${27:email=${28: } }${29:env=${30: } }${31:expose=${32: } }${33:extra_hosts=${34: } }${35:hostname=${36: } }${37:image=${38: } }${39:insecure_registry=${40: } }${41:links=${42: } }${43:log_driver=${44: } }${45:log_opt=${46: } }${47:lxc_conf=${48: } }${49:memory_limit=${50: } }${51:name=${52: } }${53:net=${54: } }${55:password=${56: } }${57:pid=${58: } }${59:ports=${60: } }${61:privileged=${62: } }${63:publish_all_ports=${64: } }${65:pull=${66: } }${67:read_only=${68: } }${69:registry=${70: } }${71:restart_policy=${72: } }${73:restart_policy_retry=${74: } }${75:signal=${76: } }${77:state=${78: } }${79:stdin_open=${80: } }${81:stop_timeout=${82: } }${83:tls_ca_cert=${84: } }${85:tls_client_cert=${86: } }${87:tls_client_key=${88: } }${89:tls_hostname=${90: } }${91:tty=${92: } }${93:use_tls=${94: } }${95:username=${96: } }${97:volumes=${98: } }${99:volumes_from=${100: } }
 ${101:  when: ${102: variable is defined}}
 ${103:  with_items: ${104: array}}

@@ -21,7 +21,7 @@ ${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCES
 #wait = wait for the AMI to be in state 'available' before returning.
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for ec2_ami module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_ami: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:delete_snapshot=${10: } }${11:description=${12: } }${13:device_mapping=${14: } }${15:ec2_url=${16: } }${17:image_id=${18: } }${19:instance_id=${20: } }${21:launch_permissions=${22: } }${23:name=${24: } }${25:no_reboot=${26: } }${27:profile=${28: } }${29:region=${30: } }${31:http=${32: } }${33:security_token=${34: } }${35:state=${36: } }${37:tags=${38: } }${39:validate_certs=${40: } }${41:wait=${42: } }${43:wait_timeout=${44: } }
 ${45:  when: ${46: variable is defined}}
 ${47:  with_items: ${48: array}}

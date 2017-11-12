@@ -14,7 +14,7 @@ ${1:#backup = Create a backup file including the timestamp information so you ca
 #src = Path of a Jinja2 formatted template on the local server. This can be a relative or absolute path.
 #validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s'
 }- name: ${2:Name for template module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   template: ${5:backup=${6: } }${7:dest=${8: } }${9:follow=${10: } }${11:force=${12: } }${13:group=${14: } }${15:mode=${16: } }${17:owner=${18: } }${19:selevel=${20: } }${21:serole=${22: } }${23:setype=${24: } }${25:seuser=${26: } }${27:src=${28: } }${29:validate=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

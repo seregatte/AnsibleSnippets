@@ -18,7 +18,7 @@ ${1:#api_key = Rackspace API key (overrides `credentials')
 #web_error = Sets an object to be presented as the HTTP error page when accessed by the CDN URL
 #web_index = Sets an object to be presented as the HTTP index page when accessed by the CDN URL
 }- name: ${2:Name for rax_files module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax_files: ${5:api_key=${6: } }${7:clear_meta=${8: } }${9:container=${10: } }${11:credentials=${12: } }${13:env=${14: } }${15:https=${16: } }${17:meta=${18: } }${19:private=${20: } }${21:public=${22: } }${23:region=${24: } }${25:state=${26: } }${27:ttl=${28: } }${29:type=${30: } }${31:username=${32: } }${33:verify_ssl=${34: } }${35:web_error=${36: } }${37:web_index=${38: } }
 ${39:  when: ${40: variable is defined}}
 ${41:  with_items: ${42: array}}

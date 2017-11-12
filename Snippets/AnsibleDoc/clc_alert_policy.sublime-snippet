@@ -9,7 +9,7 @@ ${1:#alert_recipients = A list of recipient email ids to notify the alert. This 
 #state = Whether to create or delete the policy.
 #threshold = The threshold that will trigger the alert when the metric equals or exceeds it. This is required for state
 }- name: ${2:Name for clc_alert_policy module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   clc_alert_policy: ${5:alert_recipients=${6: } }${7:alias=${8: } }${9:duration=${10: } }${11:id=${12: } }${13:metric=${14: } }${15:name=${16: } }${17:state=${18: } }${19:threshold=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

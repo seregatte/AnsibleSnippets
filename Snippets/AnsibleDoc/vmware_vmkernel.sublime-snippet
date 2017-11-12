@@ -14,7 +14,7 @@ ${1:#enable_ft = Enable the VMK interface for Fault Tolerance traffic
 #vland_id = The VLAN ID for the VMK interface
 #vswitch_name = The name of the vswitch where to add the VMK interface
 }- name: ${2:Name for vmware_vmkernel module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_vmkernel: ${5:enable_ft=${6: } }${7:enable_mgmt=${8: } }${9:enable_vmotion=${10: } }${11:enable_vsan=${12: } }${13:hostname=${14: } }${15:ip_address=${16: } }${17:mtu=${18: } }${19:password=${20: } }${21:portgroup_name=${22: } }${23:subnet_mask=${24: } }${25:username=${26: } }${27:vland_id=${28: } }${29:vswitch_name=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

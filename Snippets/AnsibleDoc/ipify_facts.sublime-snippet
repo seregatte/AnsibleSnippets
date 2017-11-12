@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:#api_url = URL of the ipify.org API service. `?format=json' will be appended per default.
 }- name: ${2:Name for ipify_facts module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ipify_facts: ${5:api_url=${6: } }
 ${7:  when: ${8: variable is defined}}
 ${9:  with_items: ${10: array}}

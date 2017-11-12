@@ -36,7 +36,7 @@ ${1:#ageingtime = This is only used with bridge - [ageing-time <0-1000000>] the 
 #vlandev = This is only used with VLAN - parent device this VLAN is on, can use ifname
 #vlanid = This is only used with VLAN - VLAN ID in range <0-4095>
 }- name: ${2:Name for nmcli module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   nmcli: ${5:ageingtime=${6: } }${7:arp_interval=${8: } }${9:arp_ip_target=${10: } }${11:autoconnect=${12: } }${13:conn_name=${14: } }${15:dns4=${16: } }${17:dns6=${18: } }${19:downdelay=${20: } }${21:egress=${22: } }${23:flags=${24: } }${25:forwarddelay=${26: } }${27:gw4=${28: } }${29:gw6=${30: } }${31:hairpin=${32: } }${33:hellotime=${34: } }${35:ifname=${36: } }${37:ingress=${38: } }${39:ip4=${40: } }${41:ip6=${42: } }${43:mac=${44: } }${45:master=${46: } }${47:maxage=${48: } }${49:miimon=${50: } }${51:mode=${52: } }${53:mtu=${54: } }${55:path_cost=${56: } }${57:primary=${58: } }${59:priority=${60: } }${61:slavepriority=${62: } }${63:state=${64: } }${65:stp=${66: } }${67:type=${68: } }${69:updelay=${70: } }${71:vlandev=${72: } }${73:vlanid=${74: } }
 ${75:  when: ${76: variable is defined}}
 ${77:  with_items: ${78: array}}

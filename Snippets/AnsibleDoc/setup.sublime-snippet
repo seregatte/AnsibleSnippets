@@ -3,7 +3,7 @@
 ${1:#fact_path = path used for local ansible facts (*.fact) - files in this dir will be run (if executable) and their results be
 #filter = if supplied, only return facts that match this shell-style (fnmatch) wildcard.
 }- name: ${2:Name for setup module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   setup: ${5:fact_path=${6: } }${7:filter=${8: } }
 ${9:  when: ${10: variable is defined}}
 ${11:  with_items: ${12: array}}

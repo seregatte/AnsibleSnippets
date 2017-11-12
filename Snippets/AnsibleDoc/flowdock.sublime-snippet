@@ -14,7 +14,7 @@ ${1:#external_user_name = (chat only - required) Name of the "user" sending the 
 #type = Whether to post to 'inbox' or 'chat'
 #validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for flowdock module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   flowdock: ${5:external_user_name=${6: } }${7:from_address=${8: } }${9:from_name=${10: } }${11:link=${12: } }${13:msg=${14: } }${15:project=${16: } }${17:reply_to=${18: } }${19:source=${20: } }${21:subject=${22: } }${23:tags=${24: } }${25:token=${26: } }${27:type=${28: } }${29:validate_certs=${30: } }
 ${31:  when: ${32: variable is defined}}
 ${33:  with_items: ${34: array}}

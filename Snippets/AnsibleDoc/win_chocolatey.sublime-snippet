@@ -7,7 +7,7 @@ ${1:#force = Forces install of the package (even if it already exists). Using Fo
 #upgrade = If package is already installed it, try to upgrade to the latest version or to the specified version
 #version = Specific version of the package to be installed Ignored when state == 'absent'
 }- name: ${2:Name for win_chocolatey module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_chocolatey: ${5:force=${6: } }${7:name=${8: } }${9:source=${10: } }${11:state=${12: } }${13:upgrade=${14: } }${15:version=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

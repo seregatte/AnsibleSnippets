@@ -29,7 +29,7 @@ ${1:#availability_zones = List of availability zone names in which to create the
 #wait_for_instances = Wait for the ASG instances to be in a ready state before exiting.  If instances are behind an ELB, it will wait
 #wait_timeout = how long before wait instances to become viable when replaced.  Used in concjunction with instance_ids option.
 }- name: ${2:Name for ec2_asg module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_asg: ${5:availability_zones=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:default_cooldown=${12: } }${13:desired_capacity=${14: } }${15:ec2_url=${16: } }${17:health_check_period=${18: } }${19:health_check_type=${20: } }${21:launch_config_name=${22: } }${23:lc_check=${24: } }${25:load_balancers=${26: } }${27:max_size=${28: } }${29:min_size=${30: } }${31:name=${32: } }${33:profile=${34: } }${35:region=${36: } }${37:http=${38: } }${39:replace_all_instances=${40: } }${41:replace_batch_size=${42: } }${43:replace_instances=${44: } }${45:security_token=${46: } }${47:state=${48: } }${49:tags=${50: } }${51:termination_policies=${52: } }${53:validate_certs=${54: } }${55:vpc_zone_identifier=${56: } }${57:wait_for_instances=${58: } }${59:wait_timeout=${60: } }
 ${61:  when: ${62: variable is defined}}
 ${63:  with_items: ${64: array}}

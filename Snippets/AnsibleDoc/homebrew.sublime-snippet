@@ -7,7 +7,7 @@ ${1:#install_options = options flags to install a package
 #update_homebrew = update homebrew itself first
 #upgrade_all = upgrade all homebrew packages
 }- name: ${2:Name for homebrew module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   homebrew: ${5:install_options=${6: } }${7:name=${8: } }${9:path=${10: } }${11:state=${12: } }${13:update_homebrew=${14: } }${15:upgrade_all=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

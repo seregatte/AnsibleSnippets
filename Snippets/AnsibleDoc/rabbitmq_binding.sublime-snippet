@@ -12,7 +12,7 @@ ${1:#arguments = extra arguments for exchange. If defined this argument is a key
 #state = Whether the exchange should be present or absent Only present implemented atm
 #vhost = rabbitMQ virtual host default vhost is /
 }- name: ${2:Name for rabbitmq_binding module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rabbitmq_binding: ${5:arguments=${6: } }${7:destination=${8: } }${9:destination_type=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_port=${16: } }${17:login_user=${18: } }${19:name=${20: } }${21:routing_key=${22: } }${23:state=${24: } }${25:vhost=${26: } }
 ${27:  when: ${28: variable is defined}}
 ${29:  with_items: ${30: array}}

@@ -5,7 +5,7 @@ ${1:#creates = Path to a file created by installing the MSI to prevent from atte
 #path = File system path to the MSI file to install
 #state = Whether the MSI file should be installed or uninstalled
 }- name: ${2:Name for win_msi module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_msi: ${5:creates=${6: } }${7:extra_args=${8: } }${9:path=${10: } }${11:state=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

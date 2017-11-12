@@ -9,7 +9,7 @@ ${1:#host = hostname or ip of your A10 Networks device
 #state = create, update or remove slb server
 #username = admin account of your A10 Networks device
 }- name: ${2:Name for a10_server module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   a10_server: ${5:host=${6: } }${7:password=${8: } }${9:server_ip=${10: } }${11:server_name=${12: } }${13:server_ports=${14: } }${15:server_status=${16: } }${17:state=${18: } }${19:username=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

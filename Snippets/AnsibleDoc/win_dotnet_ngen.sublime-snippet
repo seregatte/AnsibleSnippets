@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:}- name: ${2:Name for win_dotnet_ngen module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   win_dotnet_ngen: 
 ${5:  when: ${6: variable is defined}}
 ${7:  with_items: ${8: array}}

@@ -4,7 +4,7 @@ ${1:#depot = The source repository from which install or upgrade a package.
 #name = package name.
 #state = whether to install (`present', `latest'), or remove (`absent') a package.
 }- name: ${2:Name for swdepot module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   swdepot: ${5:depot=${6: } }${7:name=${8: } }${9:state=${10: } }
 ${11:  when: ${12: variable is defined}}
 ${13:  with_items: ${14: array}}

@@ -6,7 +6,7 @@ ${1:#dev = Target block device.
 #opts = List of options to be passed to mkfs command.
 #resizefs = If yes, if the block device and filessytem size differ, grow the filesystem into the space. Note, XFS Will only
 }- name: ${2:Name for filesystem module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   filesystem: ${5:dev=${6: } }${7:force=${8: } }${9:fstype=${10: } }${11:opts=${12: } }${13:resizefs=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

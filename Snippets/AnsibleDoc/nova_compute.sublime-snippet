@@ -27,7 +27,7 @@ ${1:#auth_url = The keystone url for authentication
 #wait = If the module should wait for the VM to be created.
 #wait_for = The amount of time the module should wait for the VM to get into active state
 }- name: ${2:Name for nova_compute module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   nova_compute: ${5:auth_url=${6: } }${7:auto_floating_ip=${8: } }${9:availability_zone=${10: } }${11:config_drive=${12: } }${13:flavor_id=${14: } }${15:flavor_include=${16: } }${17:flavor_ram=${18: } }${19:floating_ip_pools=${20: } }${21:floating_ips=${22: } }${23:image_exclude=${24: } }${25:image_id=${26: } }${27:image_name=${28: } }${29:key_name=${30: } }${31:login_password=${32: } }${33:login_tenant_name=${34: } }${35:login_username=${36: } }${37:meta=${38: } }${39:name=${40: } }${41:nics=${42: } }${43:region_name=${44: } }${45:scheduler_hints=${46: } }${47:security_groups=${48: } }${49:state=${50: } }${51:user_data=${52: } }${53:wait=${54: } }${55:wait_for=${56: } }
 ${57:  when: ${58: variable is defined}}
 ${59:  with_items: ${60: array}}

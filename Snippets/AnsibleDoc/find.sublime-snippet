@@ -13,7 +13,7 @@ ${1:#age = Select files whose age is equal to or greater than the specified time
 #size = Select files whose size is equal to or greater than the specified size. Use a negative size to find files equal
 #use_regex = If false the patterns are file globs (shell) if true they are python regexes
 }- name: ${2:Name for find module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   find: ${5:age=${6: } }${7:age_stamp=${8: } }${9:contains=${10: } }${11:file_type=${12: } }${13:follow=${14: } }${15:get_checksum=${16: } }${17:hidden=${18: } }${19:paths=${20: } }${21:patterns=${22: } }${23:recurse=${24: } }${25:size=${26: } }${27:use_regex=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

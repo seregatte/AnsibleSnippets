@@ -5,7 +5,7 @@ ${1:#msg = The message you wish to deliver as a notifcation
 #room_token = Room token provided to you by setting up the Ansible room integation on https://hall.com
 #title = The title of the message
 }- name: ${2:Name for hall module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   hall: ${5:msg=${6: } }${7:picture=${8: } }${9:room_token=${10: } }${11:title=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

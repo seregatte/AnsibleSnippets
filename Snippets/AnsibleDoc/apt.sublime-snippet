@@ -12,7 +12,7 @@ ${1:#cache_valid_time = If `update_cache' is specified and the last run is less 
 #update_cache = Run the equivalent of `apt-get update' before the operation. Can be run as part of the package installation or
 #upgrade = If yes or safe, performs an aptitude safe-upgrade. If full, performs an aptitude full-upgrade. If dist, performs
 }- name: ${2:Name for apt module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   apt: ${5:cache_valid_time=${6: } }${7:deb=${8: } }${9:default_release=${10: } }${11:dpkg_options=${12: } }${13:force=${14: } }${15:install_recommends=${16: } }${17:name=${18: } }${19:purge=${20: } }${21:state=${22: } }${23:update_cache=${24: } }${25:upgrade=${26: } }
 ${27:  when: ${28: variable is defined}}
 ${29:  with_items: ${30: array}}

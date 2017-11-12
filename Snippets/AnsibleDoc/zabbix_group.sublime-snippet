@@ -7,7 +7,7 @@ ${1:#host_groups = List of host groups to create or delete.
 #state = Create or delete host group.
 #timeout = The timeout of API request(seconds).
 }- name: ${2:Name for zabbix_group module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   zabbix_group: ${5:host_groups=${6: } }${7:login_password=${8: } }${9:login_user=${10: } }${11:server_url=${12: } }${13:state=${14: } }${15:timeout=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

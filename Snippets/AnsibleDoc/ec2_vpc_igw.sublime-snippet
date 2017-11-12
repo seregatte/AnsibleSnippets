@@ -11,7 +11,7 @@ ${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCES
 #validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
 #vpc_id = The VPC ID for the VPC in which to manage the Internet Gateway.
 }- name: ${2:Name for ec2_vpc_igw module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_vpc_igw: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:profile=${12: } }${13:region=${14: } }${15:http=${16: } }${17:security_token=${18: } }${19:state=${20: } }${21:validate_certs=${22: } }${23:vpc_id=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

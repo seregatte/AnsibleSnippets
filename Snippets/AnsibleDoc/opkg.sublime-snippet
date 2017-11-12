@@ -5,7 +5,7 @@ ${1:#force = opkg --force parameter used
 #state = state of the package
 #update_cache = update the package db first
 }- name: ${2:Name for opkg module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   opkg: ${5:force=${6: } }${7:name=${8: } }${9:state=${10: } }${11:update_cache=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

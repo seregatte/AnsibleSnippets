@@ -37,7 +37,7 @@ ${1:#apply_immediately = Used only when command=modify.  If enabled, the modific
 #wait_timeout = how long before wait gives up, in seconds
 #zone = availability zone in which to launch the instance. Used only when command=create, command=replicate or
 }- name: ${2:Name for rds module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rds: ${5:apply_immediately=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:backup_retention=${12: } }${13:backup_window=${14: } }${15:character_set_name=${16: } }${17:command=${18: } }${19:db_engine=${20: } }${21:db_name=${22: } }${23:engine_version=${24: } }${25:force_failover=${26: } }${27:instance_name=${28: } }${29:instance_type=${30: } }${31:iops=${32: } }${33:license_model=${34: } }${35:maint_window=${36: } }${37:multi_zone=${38: } }${39:new_instance_name=${40: } }${41:option_group=${42: } }${43:parameter_group=${44: } }${45:password=${46: } }${47:port=${48: } }${49:publicly_accessible=${50: } }${51:region=${52: } }${53:security_groups=${54: } }${55:size=${56: } }${57:snapshot=${58: } }${59:source_instance=${60: } }${61:subnet=${62: } }${63:tags=${64: } }${65:upgrade=${66: } }${67:username=${68: } }${69:vpc_security_groups=${70: } }${71:wait=${72: } }${73:wait_timeout=${74: } }${75:zone=${76: } }
 ${77:  when: ${78: variable is defined}}
 ${79:  with_items: ${80: array}}

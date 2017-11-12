@@ -5,7 +5,7 @@ ${1:#deploy_path = The location in the filesystem where the deployment scanner l
 #src = The remote path of the application ear or war to deploy
 #state = Whether the application should be deployed or undeployed
 }- name: ${2:Name for jboss module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   jboss: ${5:deploy_path=${6: } }${7:deployment=${8: } }${9:src=${10: } }${11:state=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

@@ -7,7 +7,7 @@ ${1:#command = A command to be executed in the future.
 #unique = If a matching job is present a new job will not be added.
 #units = The type of units in the future to execute the command or script file.
 }- name: ${2:Name for at module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   at: ${5:command=${6: } }${7:count=${8: } }${9:script_file=${10: } }${11:state=${12: } }${13:unique=${14: } }${15:units=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

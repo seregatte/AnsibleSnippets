@@ -5,7 +5,7 @@ ${1:#hostname = The hostname or IP address of the vSphere vCenter
 #target_id = The target id based on order of scsi device
 #username = The username of the vSphere vCenter
 }- name: ${2:Name for vmware_target_canonical_facts module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_target_canonical_facts: ${5:hostname=${6: } }${7:password=${8: } }${9:target_id=${10: } }${11:username=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

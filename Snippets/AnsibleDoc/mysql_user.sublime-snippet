@@ -19,7 +19,7 @@ ${1:#append_privs = Append the privileges defined by priv to the existing ones f
 #state = Whether the user should exist.  When `absent', removes the user.
 #update_password = `always' will update passwords if they differ.  `on_create' will only set the password for newly created users.
 }- name: ${2:Name for mysql_user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mysql_user: ${5:append_privs=${6: } }${7:check_implicit_admin=${8: } }${9:config_file=${10: } }${11:encrypted=${12: } }${13:host=${14: } }${15:login_host=${16: } }${17:login_password=${18: } }${19:login_port=${20: } }${21:login_unix_socket=${22: } }${23:login_user=${24: } }${25:name=${26: } }${27:password=${28: } }${29:priv=${30: } }${31:ssl_ca=${32: } }${33:ssl_cert=${34: } }${35:ssl_key=${36: } }${37:state=${38: } }${39:update_password=${40: } }
 ${41:  when: ${42: variable is defined}}
 ${43:  with_items: ${44: array}}

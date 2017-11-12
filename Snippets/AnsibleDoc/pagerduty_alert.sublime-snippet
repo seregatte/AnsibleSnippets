@@ -9,7 +9,7 @@ ${1:#api_key = The pagerduty API key (readonly access), generated on the pagerdu
 #service_key = The GUID of one of your "Generic API" services. This is the "service key" listed on a Generic API's service
 #state = Type of event to be sent.
 }- name: ${2:Name for pagerduty_alert module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pagerduty_alert: ${5:api_key=${6: } }${7:client=${8: } }${9:client_url=${10: } }${11:desc=${12: } }${13:incident_key=${14: } }${15:name=${16: } }${17:service_key=${18: } }${19:state=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

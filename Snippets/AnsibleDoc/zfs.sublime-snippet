@@ -40,7 +40,7 @@ ${1:#aclinherit = The aclinherit property.
 #xattr = The xattr property.
 #zoned = The zoned property.
 }- name: ${2:Name for zfs module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   zfs: ${5:aclinherit=${6: } }${7:aclmode=${8: } }${9:atime=${10: } }${11:canmount=${12: } }${13:casesensitivity=${14: } }${15:checksum=${16: } }${17:compression=${18: } }${19:copies=${20: } }${21:dedup=${22: } }${23:devices=${24: } }${25:exec=${26: } }${27:jailed=${28: } }${29:logbias=${30: } }${31:mountpoint=${32: } }${33:name=${34: } }${35:nbmand=${36: } }${37:normalization=${38: } }${39:origin=${40: } }${41:primarycache=${42: } }${43:quota=${44: } }${45:readonly=${46: } }${47:recordsize=${48: } }${49:refquota=${50: } }${51:refreservation=${52: } }${53:reservation=${54: } }${55:secondarycache=${56: } }${57:setuid=${58: } }${59:shareiscsi=${60: } }${61:sharenfs=${62: } }${63:sharesmb=${64: } }${65:snapdir=${66: } }${67:state=${68: } }${69:sync=${70: } }${71:utf8only=${72: } }${73:volblocksize=${74: } }${75:volsize=${76: } }${77:vscan=${78: } }${79:xattr=${80: } }${81:zoned=${82: } }
 ${83:  when: ${84: variable is defined}}
 ${85:  with_items: ${86: array}}

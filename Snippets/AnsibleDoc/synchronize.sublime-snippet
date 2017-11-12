@@ -25,7 +25,7 @@ ${1:#archive = Mirrors the rsync archive flag, enables recursive, links, perms, 
 #use_ssh_args = Use the ssh_args specified in ansible.cfg
 #verify_host = Verify destination host key.
 }- name: ${2:Name for synchronize module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   synchronize: ${5:archive=${6: } }${7:checksum=${8: } }${9:compress=${10: } }${11:copy_links=${12: } }${13:delete=${14: } }${15:dest=${16: } }${17:dest_port=${18: } }${19:dirs=${20: } }${21:existing_only=${22: } }${23:group=${24: } }${25:links=${26: } }${27:mode=${28: } }${29:owner=${30: } }${31:partial=${32: } }${33:perms=${34: } }${35:recursive=${36: } }${37:rsync_opts=${38: } }${39:rsync_path=${40: } }${41:rsync_timeout=${42: } }${43:set_remote_user=${44: } }${45:src=${46: } }${47:times=${48: } }${49:use_ssh_args=${50: } }${51:verify_host=${52: } }
 ${53:  when: ${54: variable is defined}}
 ${55:  with_items: ${56: array}}

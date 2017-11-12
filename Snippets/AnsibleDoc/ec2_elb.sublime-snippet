@@ -15,7 +15,7 @@ ${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCES
 #wait = Wait for instance registration or deregistration to complete successfully before returning.
 #wait_timeout = Number of seconds to wait for an instance to change state. If 0 then this module may return an error if a
 }- name: ${2:Name for ec2_elb module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   ec2_elb: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_elbs=${10: } }${11:ec2_url=${12: } }${13:enable_availability_zone=${14: } }${15:instance_id=${16: } }${17:profile=${18: } }${19:region=${20: } }${21:http=${22: } }${23:security_token=${24: } }${25:state=${26: } }${27:validate_certs=${28: } }${29:wait=${30: } }${31:wait_timeout=${32: } }
 ${33:  when: ${34: variable is defined}}
 ${35:  with_items: ${36: array}}

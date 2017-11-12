@@ -13,7 +13,7 @@ ${1:#attachment = Path to a file to be attached to the issue.
 #tags = A lists of tags to be assigned to the issue.
 #taiga_host = The hostname of the Taiga instance.
 }- name: ${2:Name for taiga_issue module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   taiga_issue: ${5:attachment=${6: } }${7:attachment_description=${8: } }${9:description=${10: } }${11:issue_type=${12: } }${13:priority=${14: } }${15:project=${16: } }${17:severity=${18: } }${19:state=${20: } }${21:status=${22: } }${23:subject=${24: } }${25:tags=${26: } }${27:taiga_host=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

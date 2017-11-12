@@ -17,7 +17,7 @@ ${1:#api_timeout = How long should the socket layer wait before timing out for A
 #validate_certs = Whether or not SSL API requests should be verified.
 #wait = Should ansible wait until the requested resource is complete.
 }- name: ${2:Name for os_user_group module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   os_user_group: ${5:api_timeout=${6: } }${7:auth=${8: } }${9:auth_type=${10: } }${11:availability_zone=${12: } }${13:cacert=${14: } }${15:cert=${16: } }${17:cloud=${18: } }${19:endpoint_type=${20: } }${21:group=${22: } }${23:key=${24: } }${25:region_name=${26: } }${27:state=${28: } }${29:timeout=${30: } }${31:user=${32: } }${33:validate_certs=${34: } }${35:wait=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

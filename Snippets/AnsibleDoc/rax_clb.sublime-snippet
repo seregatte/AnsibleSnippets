@@ -19,7 +19,7 @@ ${1:#algorithm = algorithm for the balancer being created
 #wait = wait for the balancer to be in state 'running' before returning
 #wait_timeout = how long before wait gives up, in seconds
 }- name: ${2:Name for rax_clb module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   rax_clb: ${5:algorithm=${6: } }${7:api_key=${8: } }${9:credentials=${10: } }${11:env=${12: } }${13:https=${14: } }${15:meta=${16: } }${17:name=${18: } }${19:port=${20: } }${21:protocol=${22: } }${23:region=${24: } }${25:state=${26: } }${27:timeout=${28: } }${29:type=${30: } }${31:username=${32: } }${33:verify_ssl=${34: } }${35:vip_id=${36: } }${37:wait=${38: } }${39:wait_timeout=${40: } }
 ${41:  when: ${42: variable is defined}}
 ${43:  with_items: ${44: array}}

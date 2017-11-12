@@ -28,7 +28,7 @@ ${1:#append = If `yes', will only add groups, not set them to just the list in `
 #uid = Optionally sets the `UID' of the user.
 #update_password = `always' will update passwords if they differ.  `on_create' will only set the password for newly created users.
 }- name: ${2:Name for user module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   user: ${5:append=${6: } }${7:comment=${8: } }${9:createhome=${10: } }${11:expires=${12: } }${13:force=${14: } }${15:generate_ssh_key=${16: } }${17:group=${18: } }${19:groups=${20: } }${21:home=${22: } }${23:login_class=${24: } }${25:move_home=${26: } }${27:name=${28: } }${29:non_unique=${30: } }${31:password=${32: } }${33:http=${34: } }${35:remove=${36: } }${37:shell=${38: } }${39:skeleton=${40: } }${41:ssh_key_bits=${42: } }${43:ssh_key_comment=${44: } }${45:ssh_key_file=${46: } }${47:ssh_key_passphrase=${48: } }${49:ssh_key_type=${50: } }${51:state=${52: } }${53:system=${54: } }${55:uid=${56: } }${57:update_password=${58: } }
 ${59:  when: ${60: variable is defined}}
 ${61:  with_items: ${62: array}}

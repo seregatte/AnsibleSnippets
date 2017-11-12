@@ -6,7 +6,7 @@ ${1:#bridge = Name of bridge to manage
 #state = Whether the bridge should exist
 #timeout = How long to wait for ovs-vswitchd to respond
 }- name: ${2:Name for openvswitch_bridge module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   openvswitch_bridge: ${5:bridge=${6: } }${7:external_ids=${8: } }${9:fail_mode=${10: } }${11:state=${12: } }${13:timeout=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}

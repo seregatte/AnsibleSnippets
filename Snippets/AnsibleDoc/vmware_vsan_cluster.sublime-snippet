@@ -5,7 +5,7 @@ ${1:#cluster_uuid = Desired cluster UUID
 #password = The password of ESXi Server
 #username = The username of the ESXi Server
 }- name: ${2:Name for vmware_vsan_cluster module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vmware_vsan_cluster: ${5:cluster_uuid=${6: } }${7:hostname=${8: } }${9:password=${10: } }${11:username=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

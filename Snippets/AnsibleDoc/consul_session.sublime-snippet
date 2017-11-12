@@ -9,7 +9,7 @@ ${1:#checks = a list of checks that will be used to verify the session health. I
 #port = the port on which the consul agent is running
 #state = whether the session should be present i.e. created if it doesn't exist, or absent, removed if present. If
 }- name: ${2:Name for consul_session module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   consul_session: ${5:checks=${6: } }${7:datacenter=${8: } }${9:delay=${10: } }${11:host=${12: } }${13:name=${14: } }${15:node=${16: } }${17:port=${18: } }${19:state=${20: } }
 ${21:  when: ${22: variable is defined}}
 ${23:  with_items: ${24: array}}

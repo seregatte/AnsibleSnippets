@@ -11,7 +11,7 @@ ${1:#app_name = (one of app_name or application_id are required) The value of ap
 #user = The name of the user/process that triggered this deployment
 #validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
 }- name: ${2:Name for newrelic_deployment module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   newrelic_deployment: ${5:app_name=${6: } }${7:application_id=${8: } }${9:appname=${10: } }${11:changelog=${12: } }${13:description=${14: } }${15:environment=${16: } }${17:revision=${18: } }${19:token=${20: } }${21:user=${22: } }${23:validate_certs=${24: } }
 ${25:  when: ${26: variable is defined}}
 ${27:  with_items: ${28: array}}

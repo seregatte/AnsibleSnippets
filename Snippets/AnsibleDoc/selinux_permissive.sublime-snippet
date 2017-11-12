@@ -5,7 +5,7 @@ ${1:#domain = the domain that will be added or removed from the list of permissi
 #permissive = indicate if the domain should or should not be set as permissive
 #store = name of the SELinux policy store to use
 }- name: ${2:Name for selinux_permissive module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   selinux_permissive: ${5:domain=${6: } }${7:no_reload=${8: } }${9:permissive=${10: } }${11:store=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

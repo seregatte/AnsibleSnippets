@@ -20,7 +20,7 @@ ${1:#backrefs = Used with `state=present'. If set, line can contain backreferenc
 #state = Whether the line should be there or not.
 #validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s'
 }- name: ${2:Name for lineinfile module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   lineinfile: ${5:backrefs=${6: } }${7:backup=${8: } }${9:create=${10: } }${11:dest=${12: } }${13:follow=${14: } }${15:group=${16: } }${17:insertafter=${18: } }${19:insertbefore=${20: } }${21:line=${22: } }${23:mode=${24: } }${25:others=${26: } }${27:owner=${28: } }${29:regexp=${30: } }${31:selevel=${32: } }${33:serole=${34: } }${35:setype=${36: } }${37:seuser=${38: } }${39:state=${40: } }${41:validate=${42: } }
 ${43:  when: ${44: variable is defined}}
 ${45:  with_items: ${46: array}}

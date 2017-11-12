@@ -15,7 +15,7 @@ ${1:#attach = A space-separated list of pathnames of files to attach to the mess
 #to = The email-address(es) the mail is being sent to. This is a comma-separated list, which may contain address and
 #username = If SMTP requires username
 }- name: ${2:Name for mail module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   mail: ${5:attach=${6: } }${7:bcc=${8: } }${9:body=${10: } }${11:cc=${12: } }${13:charset=${14: } }${15:from=${16: } }${17:headers=${18: } }${19:host=${20: } }${21:password=${22: } }${23:port=${24: } }${25:subject=${26: } }${27:subtype=${28: } }${29:to=${30: } }${31:username=${32: } }
 ${33:  when: ${34: variable is defined}}
 ${35:  with_items: ${36: array}}

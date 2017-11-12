@@ -13,7 +13,7 @@ ${1:#encoding = Encoding of the database
 #state = The database state
 #template = Template used to create the database
 }- name: ${2:Name for postgresql_db module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   postgresql_db: ${5:encoding=${6: } }${7:lc_collate=${8: } }${9:lc_ctype=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_unix_socket=${16: } }${17:login_user=${18: } }${19:name=${20: } }${21:owner=${22: } }${23:port=${24: } }${25:state=${26: } }${27:template=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

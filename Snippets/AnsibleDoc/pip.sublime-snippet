@@ -13,7 +13,7 @@ ${1:#chdir = cd into this directory before running the command
 #virtualenv_python = The Python executable used for creating the virtual environment. For example `python3.4', `python2.7'. When not
 #virtualenv_site_packages = Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if
 }- name: ${2:Name for pip module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pip: ${5:chdir=${6: } }${7:editable=${8: } }${9:executable=${10: } }${11:extra_args=${12: } }${13:name=${14: } }${15:requirements=${16: } }${17:state=${18: } }${19:version=${20: } }${21:virtualenv=${22: } }${23:virtualenv_command=${24: } }${25:virtualenv_python=${26: } }${27:virtualenv_site_packages=${28: } }
 ${29:  when: ${30: variable is defined}}
 ${31:  with_items: ${32: array}}

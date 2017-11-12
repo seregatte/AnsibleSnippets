@@ -7,7 +7,7 @@ ${1:#force = Force remove package, without any checks.
 #update_cache = Whether or not to refresh the master package lists. This can be run as part of a package installation or as a
 #upgrade = Whether or not to upgrade whole system
 }- name: ${2:Name for pacman module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   pacman: ${5:force=${6: } }${7:name=${8: } }${9:recurse=${10: } }${11:state=${12: } }${13:update_cache=${14: } }${15:upgrade=${16: } }
 ${17:  when: ${18: variable is defined}}
 ${19:  with_items: ${20: array}}

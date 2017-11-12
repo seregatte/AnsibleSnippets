@@ -17,7 +17,7 @@ ${1:#account = Account the VM snapshot is related to.
 #vm = Name of the virtual machine.
 #zone = Name of the zone in which the VM is in. If not set, default zone is used.
 }- name: ${2:Name for cs_vmsnapshot module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   cs_vmsnapshot: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:description=${20: } }${21:domain=${22: } }${23:name=${24: } }${25:poll_async=${26: } }${27:project=${28: } }${29:snapshot_memory=${30: } }${31:state=${32: } }${33:vm=${34: } }${35:zone=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

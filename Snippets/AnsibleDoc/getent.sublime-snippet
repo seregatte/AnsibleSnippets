@@ -5,7 +5,7 @@ ${1:#database = the name of a getent database supported by the target system (pa
 #key = key from which to return values from the specified database, otherwise the full contents are returned.
 #split = character used to split the database values into lists/arrays such as ':' or '  ', otherwise  it will try to
 }- name: ${2:Name for getent module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   getent: ${5:database=${6: } }${7:fail_key=${8: } }${9:key=${10: } }${11:split=${12: } }
 ${13:  when: ${14: variable is defined}}
 ${15:  with_items: ${16: array}}

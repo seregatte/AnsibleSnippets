@@ -17,7 +17,7 @@ ${1:#backup = Create a backup file including the timestamp information so you ca
 #src = Local path to a file to copy to the remote server; can be absolute or relative. If path is a directory, it is
 #validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s'
 }- name: ${2:Name for copy module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   copy: ${5:backup=${6: } }${7:content=${8: } }${9:dest=${10: } }${11:directory_mode=${12: } }${13:follow=${14: } }${15:force=${16: } }${17:group=${18: } }${19:mode=${20: } }${21:owner=${22: } }${23:remote_src=${24: } }${25:selevel=${26: } }${27:serole=${28: } }${29:setype=${30: } }${31:seuser=${32: } }${33:src=${34: } }${35:validate=${36: } }
 ${37:  when: ${38: variable is defined}}
 ${39:  with_items: ${40: array}}

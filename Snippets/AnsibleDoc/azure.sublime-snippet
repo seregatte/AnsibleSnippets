@@ -22,7 +22,7 @@ ${1:#auto_updates = Enable Auto Updates on Windows Machines
 #wait_timeout = how long before wait gives up, in seconds
 #wait_timeout_redirects = how long before wait gives up for redirects, in seconds
 }- name: ${2:Name for azure module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   azure: ${5:auto_updates=${6: } }${7:enable_winrm=${8: } }${9:endpoints=${10: } }${11:hostname=${12: } }${13:image=${14: } }${15:location=${16: } }${17:management_cert_path=${18: } }${19:name=${20: } }${21:os_type=${22: } }${23:password=${24: } }${25:reset_pass_atlogon=${26: } }${27:role_size=${28: } }${29:ssh_cert_path=${30: } }${31:state=${32: } }${33:storage_account=${34: } }${35:subscription_id=${36: } }${37:user=${38: } }${39:virtual_network_name=${40: } }${41:wait=${42: } }${43:wait_timeout=${44: } }${45:wait_timeout_redirects=${46: } }
 ${47:  when: ${48: variable is defined}}
 ${49:  with_items: ${50: array}}

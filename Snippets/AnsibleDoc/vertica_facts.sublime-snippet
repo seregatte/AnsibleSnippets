@@ -6,7 +6,7 @@ ${1:#cluster = Name of the cluster running the schema.
 #login_user = The username used to authenticate with.
 #port = D a t a b a s e   p o r t   t o   c o n n e c t   t o .
 }- name: ${2:Name for vertica_facts module.}
-${3:  sudo: ${4:yes}}
+${3:  become: ${4:yes}}
   vertica_facts: ${5:cluster=${6: } }${7:db=${8: } }${9:login_password=${10: } }${11:login_user=${12: } }${13:port=${14: } }
 ${15:  when: ${16: variable is defined}}
 ${17:  with_items: ${18: array}}
