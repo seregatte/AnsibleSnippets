@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# compare_export_policy: The export policy that the `compare_snapshot' is associated to. 
+# compare_snapshot: The name of the snapshot to compare with `snapshot'. 
+# description: The description for the Import Policy. 
+# export_policy: (required) The export policy that the `snapshot' is associated to. 
+# fail_on_decrypt: Determines if the APIC should fail the rollback if unable to decrypt secured data. The APIC defaults new 
+# hostname: (required) IP Address or hostname of APIC resolvable by Ansible control host. 
+# import_mode: Determines how the import should be handled by the APIC. The APIC defaults new Import Policies to 
+# import_policy: The name of the Import Policy to use for config rollback. 
+# import_type: Determines how the current and snapshot configuration should be compared for replacement. The APIC 
+# password: (required) The password to use for authentication. 
+# snapshot: (required) The name of the snapshot to rollback to, or the base snapshot to use for comparison. The 
+# state: Use `preview' for previewing the diff between two snapshots. Use `rollback' for reverting the 
+# timeout: The socket level timeout in seconds. 
+# use_proxy: If `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
+# use_ssl: If `no', an HTTP connection will be used instead of the default HTTPS connection. 
+# username: (required) The username to use for authentication. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only set to `no' used on personally 
+}- name: ${2:Name for aci_config_rollback module.}
+  aci_config_rollback:
+${3:   ${4:compare_export_policy}: ${5:"#"}}
+${6:   ${7:compare_snapshot}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:export_policy}: ${14:"#"}}
+${15:   ${16:fail_on_decrypt}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:import_mode}: ${23:"#"}}
+${24:   ${25:import_policy}: ${26:"#"}}
+${27:   ${28:import_type}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:snapshot}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:timeout}: ${41:"#"}}
+${42:   ${43:use_proxy}: ${44:"#"}}
+${45:   ${46:use_ssl}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>aci_config_rollback</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

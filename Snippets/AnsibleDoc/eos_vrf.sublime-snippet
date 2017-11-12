@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of VRFs definitions 
+# delay: Time in seconds to wait before checking for the operational state on remote device. This wait is 
+# interfaces: List of interfaces to check the VRF has been configured correctly. 
+# name: (required) Name of the VRF. 
+# purge: Purge VRFs not defined in the `aggregate' parameter. 
+# rd: Route distinguisher of the VRF 
+# state: State of the VRF configuration. 
+}- name: ${2:Name for eos_vrf module.}
+  eos_vrf:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:delay}: ${8:"#"}}
+${9:   ${10:interfaces}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:purge}: ${17:"#"}}
+${18:   ${19:rd}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>eos_vrf</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

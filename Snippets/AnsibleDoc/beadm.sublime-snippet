@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# description: Associate a description with a new boot environment. This option is available only on Solarish 
+# force: Specifies if the unmount should be forced. 
+# mountpoint: Path where to mount the ZFS boot environment 
+# name: (required) ZFS boot environment name. 
+# options: Create the datasets for new BE with specific ZFS properties. Multiple options can be specified. This 
+# snapshot: If specified, the new boot environment will be cloned from the given snapshot or inactive boot 
+# state: Create or delete ZFS boot environment. 
+}- name: ${2:Name for beadm module.}
+  beadm:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:mountpoint}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:options}: ${17:"#"}}
+${18:   ${19:snapshot}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>beadm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

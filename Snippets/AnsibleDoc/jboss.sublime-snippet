@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#deploy_path = The location in the filesystem where the deployment scanner listens
-#deployment = The name of the deployment
-#src = The remote path of the application ear or war to deploy
-#state = Whether the application should be deployed or undeployed
+${1:# deploy_path: The location in the filesystem where the deployment scanner listens 
+# deployment: (required) The name of the deployment 
+# src: The remote path of the application ear or war to deploy 
+# state: Whether the application should be deployed or undeployed 
 }- name: ${2:Name for jboss module.}
-${3:  become: ${4:yes}}
-  jboss: ${5:deploy_path=${6: } }${7:deployment=${8: } }${9:src=${10: } }${11:state=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  jboss:
+${3:   ${4:deploy_path}: ${5:"#"}}
+${6:   ${7:deployment}: ${8:"#"}}
+${9:   ${10:src}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>jboss</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

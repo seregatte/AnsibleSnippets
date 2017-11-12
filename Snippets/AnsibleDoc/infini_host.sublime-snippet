@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# name: (required) Host Name 
+# password: Infinibox User password. 
+# state: Creates/Modifies Host when present or removes when absent 
+# system: (required) Infinibox Hostname or IPv4 Address. 
+# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# volume: Volume name to map to the host 
+# wwns: List of wwns of the host 
+}- name: ${2:Name for infini_host module.}
+  infini_host:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:system}: ${14:"#"}}
+${15:   ${16:user}: ${17:"#"}}
+${18:   ${19:volume}: ${20:"#"}}
+${21:   ${22:wwns}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>infini_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

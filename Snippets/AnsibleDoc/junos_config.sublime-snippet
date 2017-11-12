@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
+# comment: The `comment' argument specifies a text string to be used when committing the configuration.  If the 
+# confirm: The `confirm' argument will configure a time out value for the commit to be confirmed before it is 
+# confirm_commit: This argument will execute commit operation on remote device. It can be used to confirm a previous 
+# lines: This argument takes a list of `set' or `delete' configuration lines to push into the remote device. 
+# provider: A dict object containing connection details. 
+# replace: The `replace' argument will instruct the remote device to replace the current configuration hierarchy 
+# rollback: The `rollback' argument instructs the module to rollback the current configuration to the identifier 
+# src: The `src' argument provides a path to the configuration file to load into the remote system. The path 
+# src_format: The `src_format' argument specifies the format of the configuration found int `src'.  If the 
+# update: This argument will decide how to load the configuration data particulary when the candidate 
+# zeroize: The `zeroize' argument is used to completely sanitize the remote device configuration back to initial 
+}- name: ${2:Name for junos_config module.}
+  junos_config:
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:comment}: ${8:"#"}}
+${9:   ${10:confirm}: ${11:"#"}}
+${12:   ${13:confirm_commit}: ${14:"#"}}
+${15:   ${16:lines}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:replace}: ${23:"#"}}
+${24:   ${25:rollback}: ${26:"#"}}
+${27:   ${28:src}: ${29:"#"}}
+${30:   ${31:src_format}: ${32:"#"}}
+${33:   ${34:update}: ${35:"#"}}
+${36:   ${37:zeroize}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>junos_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

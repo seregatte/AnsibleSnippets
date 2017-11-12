@@ -1,12 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:#executable = change the shell used to execute the command. Should be an absolute path to the executable.
-#free_form = the raw module takes a free form command to run
+${1:# executable: change the shell used to execute the command. Should be an absolute path to the executable. when using 
+# free_form: (required) the raw module takes a free form command to run. There is no parameter actually named 'free 
 }- name: ${2:Name for raw module.}
-${3:  become: ${4:yes}}
-  raw: ${5:executable=${6: } }${7:free_form=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  raw:
+${3:   ${4:executable}: ${5:"#"}}
+${6:   ${7:free_form}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
 ]]></content>
 	<tabTrigger>raw</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

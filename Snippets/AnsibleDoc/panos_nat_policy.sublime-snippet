@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# commit: commit if changed 
+# destination: list of destination addresses 
+# dnat_address: dnat translated address 
+# dnat_port: dnat translated port 
+# from_zone: (required) list of source zones 
+# ip_address: (required) IP address (or hostname) of PAN-OS device 
+# override: attempt to override rule if one with the same name already exists 
+# password: (required) password for authentication 
+# rule_name: (required) name of the SNAT rule 
+# service: service 
+# snat_address: snat translated address 
+# snat_bidirectional: bidirectional flag 
+# snat_interface: snat interface 
+# snat_interface_address: snat interface address 
+# snat_type: type of source translation 
+# source: list of source addresses 
+# to_zone: (required) destination zone 
+# username: username for authentication 
+}- name: ${2:Name for panos_nat_policy module.}
+  panos_nat_policy:
+${3:   ${4:commit}: ${5:"#"}}
+${6:   ${7:destination}: ${8:"#"}}
+${9:   ${10:dnat_address}: ${11:"#"}}
+${12:   ${13:dnat_port}: ${14:"#"}}
+${15:   ${16:from_zone}: ${17:"#"}}
+${18:   ${19:ip_address}: ${20:"#"}}
+${21:   ${22:override}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:rule_name}: ${29:"#"}}
+${30:   ${31:service}: ${32:"#"}}
+${33:   ${34:snat_address}: ${35:"#"}}
+${36:   ${37:snat_bidirectional}: ${38:"#"}}
+${39:   ${40:snat_interface}: ${41:"#"}}
+${42:   ${43:snat_interface_address}: ${44:"#"}}
+${45:   ${46:snat_type}: ${47:"#"}}
+${48:   ${49:source}: ${50:"#"}}
+${51:   ${52:to_zone}: ${53:"#"}}
+${54:   ${55:username}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>panos_nat_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

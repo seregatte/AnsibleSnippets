@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# credentials_file: The path to the JSON file associated with the service account email. 
+# overwrite: Whether an attempt to overwrite an existing record should succeed or fail. The behavior of this option 
+# pem_file: The path to the PEM file associated with the service account email. This option is deprecated and may be 
+# project_id: The Google Cloud Platform project ID to use. 
+# record: (required) The fully-qualified domain name of the resource record. 
+# record_data: The record_data to use for the resource record. `record_data' must be specified if `state' is `present' 
+# service_account_email: The e-mail address for a service account with access to Google Cloud DNS. 
+# state: Whether the given resource record should or should not be present. 
+# ttl: The amount of time in seconds that a resource record will remain cached by a caching resolver. 
+# type: (required) The type of resource record to add. 
+# zone: The DNS domain name of the zone (e.g., example.com). One of either `zone' or `zone_id' must be specified 
+# zone_id: The Google Cloud ID of the zone (e.g., example-com). One of either `zone' or `zone_id' must be specified 
+}- name: ${2:Name for gcdns_record module.}
+  gcdns_record:
+${3:   ${4:credentials_file}: ${5:"#"}}
+${6:   ${7:overwrite}: ${8:"#"}}
+${9:   ${10:pem_file}: ${11:"#"}}
+${12:   ${13:project_id}: ${14:"#"}}
+${15:   ${16:record}: ${17:"#"}}
+${18:   ${19:record_data}: ${20:"#"}}
+${21:   ${22:service_account_email}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:ttl}: ${29:"#"}}
+${30:   ${31:type}: ${32:"#"}}
+${33:   ${34:zone}: ${35:"#"}}
+${36:   ${37:zone_id}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>gcdns_record</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,22 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#account = Account the project is related to.
-#api_http_method = HTTP method used.
-#api_key = API key of the CloudStack API.
-#api_region = Name of the ini section in the `cloustack.ini' file.
-#api_secret = Secret key of the CloudStack API.
-#api_timeout = HTTP timeout.
-#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
-#display_text = Display text of the project. If not specified, `name' will be used as `display_text'.
-#domain = Domain the project is related to.
-#name = Name of the project.
-#poll_async = Poll async jobs until job has finished.
-#state = State of the project.
+${1:# account: Account the project is related to. 
+# api_http_method: HTTP method used. 
+# api_key: API key of the CloudStack API. 
+# api_region: Name of the ini section in the `cloustack.ini' file. 
+# api_secret: Secret key of the CloudStack API. 
+# api_timeout: HTTP timeout. 
+# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# display_text: Display text of the project. If not specified, `name' will be used as `display_text'. 
+# domain: Domain the project is related to. 
+# name: (required) Name of the project. 
+# poll_async: Poll async jobs until job has finished. 
+# state: State of the project. 
+# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. If you want to delete all 
 }- name: ${2:Name for cs_project module.}
-${3:  become: ${4:yes}}
-  cs_project: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:display_text=${20: } }${21:domain=${22: } }${23:name=${24: } }${25:poll_async=${26: } }${27:state=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  cs_project:
+${3:   ${4:account}: ${5:"#"}}
+${6:   ${7:api_http_method}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:api_region}: ${14:"#"}}
+${15:   ${16:api_secret}: ${17:"#"}}
+${18:   ${19:api_timeout}: ${20:"#"}}
+${21:   ${22:api_url}: ${23:"#"}}
+${24:   ${25:display_text}: ${26:"#"}}
+${27:   ${28:domain}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:poll_async}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:tags}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>cs_project</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

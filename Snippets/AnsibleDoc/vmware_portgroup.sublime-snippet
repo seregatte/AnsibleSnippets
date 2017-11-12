@@ -1,16 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#hostname = The hostname or IP address of the ESXi server
-#password = The password of the ESXi server
-#portgroup_name = Portgroup name to add
-#switch_name = vSwitch to modify
-#username = The username of the ESXi server
-#vlan_id = VLAN ID to assign to portgroup
+${1:# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# network_policy: Network policy specifies layer 2 security settings for a portgroup such as promiscuous mode, where guest 
+# password: (required) The password of the vSphere vCenter. 
+# portgroup_name: (required) Portgroup name to add 
+# switch_name: (required) vSwitch to modify 
+# username: (required) The username of the vSphere vCenter. 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
+# vlan_id: (required) VLAN ID to assign to portgroup 
 }- name: ${2:Name for vmware_portgroup module.}
-${3:  become: ${4:yes}}
-  vmware_portgroup: ${5:hostname=${6: } }${7:password=${8: } }${9:portgroup_name=${10: } }${11:switch_name=${12: } }${13:username=${14: } }${15:vlan_id=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  vmware_portgroup:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:network_policy}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:portgroup_name}: ${14:"#"}}
+${15:   ${16:switch_name}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:   ${25:vlan_id}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>vmware_portgroup</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

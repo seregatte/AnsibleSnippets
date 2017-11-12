@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# cn: (required) Role name. Can not be changed as it is the unique identifier. 
+# description: A description of this role-group. 
+# group: List of group names assign to this role. If an empty list is passed all assigned groups will be 
+# host: List of host names to assign. If an empty list is passed all assigned hosts will be unassigned from the 
+# hostgroup: List of host group names to assign. If an empty list is passed all assigned host groups will be removed 
+# ipa_host: IP or hostname of IPA server 
+# ipa_pass: (required) Password of administrative user 
+# ipa_port: Port of IPA server 
+# ipa_prot: Protocol used by IPA server 
+# ipa_user: Administrative account used on IPA server 
+# privilege: List of privileges granted to the role. If an empty list is passed all assigned privileges will be 
+# service: List of service names to assign. If an empty list is passed all assigned services will be removed from 
+# state: State to ensure 
+# user: List of user names to assign. If an empty list is passed all assigned users will be removed from the 
+# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
+}- name: ${2:Name for ipa_role module.}
+  ipa_role:
+${3:   ${4:cn}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:group}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:hostgroup}: ${17:"#"}}
+${18:   ${19:ipa_host}: ${20:"#"}}
+${21:   ${22:ipa_pass}: ${23:"#"}}
+${24:   ${25:ipa_port}: ${26:"#"}}
+${27:   ${28:ipa_prot}: ${29:"#"}}
+${30:   ${31:ipa_user}: ${32:"#"}}
+${33:   ${34:privilege}: ${35:"#"}}
+${36:   ${37:service}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:user}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>ipa_role</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

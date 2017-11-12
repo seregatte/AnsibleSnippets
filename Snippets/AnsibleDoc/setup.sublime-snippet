@@ -1,12 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#fact_path = path used for local ansible facts (*.fact) - files in this dir will be run (if executable) and their results be
-#filter = if supplied, only return facts that match this shell-style (fnmatch) wildcard.
+${1:# fact_path: path used for local ansible facts (*.fact) - files in this dir will be run (if executable) and their 
+# filter: if supplied, only return facts that match this shell-style (fnmatch) wildcard. 
+# gather_subset: if supplied, restrict the additional facts collected to the given subset. Possible values: all, min, 
+# gather_timeout: Set the default timeout in seconds for individual fact gathering 
 }- name: ${2:Name for setup module.}
-${3:  become: ${4:yes}}
-  setup: ${5:fact_path=${6: } }${7:filter=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  setup:
+${3:   ${4:fact_path}: ${5:"#"}}
+${6:   ${7:filter}: ${8:"#"}}
+${9:   ${10:gather_subset}: ${11:"#"}}
+${12:   ${13:gather_timeout}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>setup</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

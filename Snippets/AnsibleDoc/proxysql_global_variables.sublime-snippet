@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# config_file: Specify a config file from which login_user and login_password are to be read. 
+# load_to_runtime: Dynamically load mysql host config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin interface. 
+# login_password: The password used to authenticate to ProxySQL admin interface. 
+# login_port: The port used to connect to ProxySQL admin interface. 
+# login_user: The username used to authenticate to ProxySQL admin interface. 
+# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
+# value: Defines a value the variable specified using `variable' should be set to. 
+# variable: (required) Defines which variable should be returned, or if `value' is specified which variable should 
+}- name: ${2:Name for proxysql_global_variables module.}
+  proxysql_global_variables:
+${3:   ${4:config_file}: ${5:"#"}}
+${6:   ${7:load_to_runtime}: ${8:"#"}}
+${9:   ${10:login_host}: ${11:"#"}}
+${12:   ${13:login_password}: ${14:"#"}}
+${15:   ${16:login_port}: ${17:"#"}}
+${18:   ${19:login_user}: ${20:"#"}}
+${21:   ${22:save_to_disk}: ${23:"#"}}
+${24:   ${25:value}: ${26:"#"}}
+${27:   ${28:variable}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>proxysql_global_variables</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

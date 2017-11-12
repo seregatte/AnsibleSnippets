@@ -1,20 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#arguments = Composer arguments like required package, version and so on
-#command = Composer command like "install", "update" and so on
-#ignore_platform_reqs = Ignore php, hhvm, lib-* and ext-* requirements and force the installation even if the local machine does not
-#no_dev = Disables installation of require-dev packages ( see --no-dev )
-#no_plugins = Disables all plugins ( see --no-plugins )
-#no_scripts = Skips the execution of all scripts defined in composer.json ( see --no-scripts )
-#optimize_autoloader = Optimize autoloader during autoloader dump ( see --optimize-autoloader ). Convert PSR-0/4 autoloading to
-#prefer_dist = Forces installation from package dist even for dev versions ( see --prefer-dist )
-#prefer_source = Forces installation from package sources when possible ( see --prefer-source )
-#working_dir = Directory of your project ( see --working-dir )
+${1:# arguments: Composer arguments like required package, version and so on. 
+# command: Composer command like "install", "update" and so on. 
+# executable: Path to PHP Executable on the remote host, if PHP is not in PATH 
+# global_command: Runs the specified command globally. 
+# ignore_platform_reqs: Ignore php, hhvm, lib-* and ext-* requirements and force the installation even if the local machine does 
+# no_dev: Disables installation of require-dev packages (see --no-dev). 
+# no_plugins: Disables all plugins ( see --no-plugins ). 
+# no_scripts: Skips the execution of all scripts defined in composer.json (see --no-scripts). 
+# optimize_autoloader: Optimize autoloader during autoloader dump (see --optimize-autoloader). Convert PSR-0/4 autoloading to 
+# prefer_dist: Forces installation from package dist even for dev versions (see --prefer-dist). 
+# prefer_source: Forces installation from package sources when possible (see --prefer-source). 
+# working_dir: Directory of your project (see --working-dir). This is required when the command is not run globally. 
 }- name: ${2:Name for composer module.}
-${3:  become: ${4:yes}}
-  composer: ${5:arguments=${6: } }${7:command=${8: } }${9:ignore_platform_reqs=${10: } }${11:no_dev=${12: } }${13:no_plugins=${14: } }${15:no_scripts=${16: } }${17:optimize_autoloader=${18: } }${19:prefer_dist=${20: } }${21:prefer_source=${22: } }${23:working_dir=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  composer:
+${3:   ${4:arguments}: ${5:"#"}}
+${6:   ${7:command}: ${8:"#"}}
+${9:   ${10:executable}: ${11:"#"}}
+${12:   ${13:global_command}: ${14:"#"}}
+${15:   ${16:ignore_platform_reqs}: ${17:"#"}}
+${18:   ${19:no_dev}: ${20:"#"}}
+${21:   ${22:no_plugins}: ${23:"#"}}
+${24:   ${25:no_scripts}: ${26:"#"}}
+${27:   ${28:optimize_autoloader}: ${29:"#"}}
+${30:   ${31:prefer_dist}: ${32:"#"}}
+${33:   ${34:prefer_source}: ${35:"#"}}
+${36:   ${37:working_dir}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>composer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

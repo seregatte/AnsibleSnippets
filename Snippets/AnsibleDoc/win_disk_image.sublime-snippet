@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# image_path: (required) path to an ISO, VHD, or VHDX image on the target Windows host (the file cannot reside on a 
+# state: whether the image should be present as a drive-letter mount or not. 
+}- name: ${2:Name for win_disk_image module.}
+  win_disk_image:
+${3:   ${4:image_path}: ${5:"#"}}
+${6:   ${7:state}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>win_disk_image</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

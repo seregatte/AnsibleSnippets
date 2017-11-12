@@ -1,0 +1,78 @@
+<snippet>
+<content><![CDATA[
+${1:# conn_retry_time: ConnectRetry interval. The value is an integer ranging from 1 to 65535. 
+# connect_mode: The value can be Connect-only, Listen-only, or Both. 
+# conventional: If the value is true, the router has all extended capabilities. If the value is false, the router does 
+# description: Description of a peer, which can be letters or digits. The value is a string of 1 to 80 characters. 
+# dual_as: If the value is true, the EBGP peer can use either a fake AS number or the actual AS number. If the 
+# ebgp_max_hop: Maximum number of hops in an indirect EBGP connection. The value is an ranging from 1 to 255. 
+# fake_as: Fake AS number that is specified for a local peer. The value is a string of 1 to 11 characters. 
+# hold_time: Specify the Hold time of a peer or peer group. The value is 0 or an integer ranging from 3 to 65535. 
+# is_bfd_block: If the value is true, peers are enabled to inherit the BFD function from the peer group. If the value is 
+# is_bfd_enable: If the value is true, BFD is enabled. If the value is false, BFD is disabled. 
+# is_ignore: If the value is true, the session with a specified peer is torn down and all related routing entries are 
+# is_log_change: If the value is true, BGP is enabled to record peer session status and event information. If the value 
+# is_single_hop: If the value is true, the system is enabled to preferentially use the single-hop mode for BFD session 
+# keep_alive_time: Specify the Keepalive time of a peer or peer group. The value is an integer ranging from 0 to 21845. The 
+# key_chain_name: Specify the Keychain authentication name used when BGP peers establish a TCP connection. The value is a 
+# local_if_name: Name of a source interface that sends BGP packets. The value is a string of 1 to 63 characters. 
+# min_hold_time: Specify the Min hold time of a peer or peer group. 
+# mpls_local_ifnet_disable: If the value is true, peer create MPLS Local IFNET disable. If the value is false, peer create MPLS 
+# multiplier: Specify the detection multiplier. The default value is 3. The value is an integer ranging from 3 to 50. 
+# peer_addr: (required) Connection address of a peer, which can be an IPv4 or IPv6 address. 
+# prepend_fake_as: Add the Fake AS number to received Update packets. 
+# prepend_global_as: Add the global AS number to the Update packets to be advertised. 
+# pswd_cipher_text: The character string in a password identifies the contents of the password, spaces not supported. The 
+# pswd_type: Enable BGP peers to establish a TCP connection and perform the Message Digest 5 (MD5) authentication for 
+# remote_as: (required) AS number of a peer. The value is a string of 1 to 11 characters. 
+# route_refresh: If the value is true, BGP is enabled to advertise REFRESH packets. If the value is false, the route 
+# rx_interval: Specify the minimum interval at which BFD packets are received. The value is an integer ranging from 50 
+# state: Specify desired state of the resource. 
+# tcp_: Maximum TCP MSS value used for TCP connection establishment for a peer. The value is an integer ranging 
+# tx_interval: Specify the minimum interval at which BFD packets are sent. The value is an integer ranging from 50 to 
+# valid_ttl_hops: Enable GTSM on a peer or peer group. The valid-TTL-Value parameter is used to specify the number of TTL 
+# vrf_name: (required) Name of a BGP instance. The name is a case-sensitive string of characters. The BGP instance 
+}- name: ${2:Name for ce_bgp_neighbor module.}
+  ce_bgp_neighbor:
+${3:   ${4:conn_retry_time}: ${5:"#"}}
+${6:   ${7:connect_mode}: ${8:"#"}}
+${9:   ${10:conventional}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:dual_as}: ${17:"#"}}
+${18:   ${19:ebgp_max_hop}: ${20:"#"}}
+${21:   ${22:fake_as}: ${23:"#"}}
+${24:   ${25:hold_time}: ${26:"#"}}
+${27:   ${28:is_bfd_block}: ${29:"#"}}
+${30:   ${31:is_bfd_enable}: ${32:"#"}}
+${33:   ${34:is_ignore}: ${35:"#"}}
+${36:   ${37:is_log_change}: ${38:"#"}}
+${39:   ${40:is_single_hop}: ${41:"#"}}
+${42:   ${43:keep_alive_time}: ${44:"#"}}
+${45:   ${46:key_chain_name}: ${47:"#"}}
+${48:   ${49:local_if_name}: ${50:"#"}}
+${51:   ${52:min_hold_time}: ${53:"#"}}
+${54:   ${55:mpls_local_ifnet_disable}: ${56:"#"}}
+${57:   ${58:multiplier}: ${59:"#"}}
+${60:   ${61:peer_addr}: ${62:"#"}}
+${63:   ${64:prepend_fake_as}: ${65:"#"}}
+${66:   ${67:prepend_global_as}: ${68:"#"}}
+${69:   ${70:pswd_cipher_text}: ${71:"#"}}
+${72:   ${73:pswd_type}: ${74:"#"}}
+${75:   ${76:remote_as}: ${77:"#"}}
+${78:   ${79:route_refresh}: ${80:"#"}}
+${81:   ${82:rx_interval}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:tcp_}: ${89:"#"}}
+${90:   ${91:tx_interval}: ${92:"#"}}
+${93:   ${94:valid_ttl_hops}: ${95:"#"}}
+${96:   ${97:vrf_name}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
+]]></content>
+	<tabTrigger>ce_bgp_neighbor</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

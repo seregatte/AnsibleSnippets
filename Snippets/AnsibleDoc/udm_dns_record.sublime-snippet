@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# data: Additional data for this record, e.g. ['a': '192.0.2.1']. Required if `state=present'. 
+# name: (required) Name of the record, this is also the DNS record. E.g. www for www.example.com. 
+# state: Whether the dns record is present or not. 
+# type: (required) Define the record type. `host_record' is a A or AAAA record, `alias' is a CNAME, `ptr_record' 
+# zone: (required) Corresponding DNS zone for this record, e.g. example.com. 
+}- name: ${2:Name for udm_dns_record module.}
+  udm_dns_record:
+${3:   ${4:data}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:type}: ${14:"#"}}
+${15:   ${16:zone}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>udm_dns_record</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

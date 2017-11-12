@@ -1,0 +1,86 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# apic_configuration: Apicconfiguration settings for cloud. 
+# apic_mode: Boolean flag to set apic_mode. Default value when not specified in API or module is interpreted by Avi 
+# aws_configuration: Awsconfiguration settings for cloud. 
+# cloudstack_configuration: Cloudstackconfiguration settings for cloud. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# dhcp_enabled: Select the ip address management scheme. Default value when not specified in API or module is 
+# dns_provider_ref: Dns profile for the cloud. It is a reference to an object of type ipamdnsproviderprofile. 
+# docker_configuration: Dockerconfiguration settings for cloud. 
+# east_west_dns_provider_ref: Dns profile for east-west services. It is a reference to an object of type ipamdnsproviderprofile. 
+# east_west_ipam_provider_ref: Ipam profile for east-west services. Warning - please use virtual subnets in this ipam profile that do 
+# enable_vip_static_routes: Use static routes for vip side network resolution during virtualservice placement. Default value when 
+# ipam_provider_ref: Ipam profile for the cloud. It is a reference to an object of type ipamdnsproviderprofile. 
+# license_type: If no license type is specified then default license enforcement for the cloud type is chosen. The 
+# linuxserver_configuration: Linuxserverconfiguration settings for cloud. 
+# mesos_configuration: Mesosconfiguration settings for cloud. 
+# mtu: Mtu setting for the cloud. Default value when not specified in API or module is interpreted by Avi 
+# name: (required) Name of the object. 
+# nsx_configuration: Configuration parameters for nsx manager. Field introduced in 17.1.1. 
+# obj_name_prefix: Default prefix for all automatically created objects in this cloud. This prefix can be overridden by the 
+# openstack_configuration: Openstackconfiguration settings for cloud. 
+# oshiftk8s_configuration: Oshiftk8sconfiguration settings for cloud. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# prefer_static_routes: Prefer static routes over interface routes during virtualservice placement. Default value when not 
+# proxy_configuration: Proxyconfiguration settings for cloud. 
+# rancher_configuration: Rancherconfiguration settings for cloud. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Unique object identifier of the object. 
+# vca_configuration: Vcloudairconfiguration settings for cloud. 
+# vcenter_configuration: Vcenterconfiguration settings for cloud. 
+# vtype: (required) Cloud type. Enum options - CLOUD_NONE, CLOUD_VCENTER, CLOUD_OPENSTACK, CLOUD_AWS, CLOUD_VCA, 
+}- name: ${2:Name for avi_cloud module.}
+  avi_cloud:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:apic_configuration}: ${8:"#"}}
+${9:   ${10:apic_mode}: ${11:"#"}}
+${12:   ${13:aws_configuration}: ${14:"#"}}
+${15:   ${16:cloudstack_configuration}: ${17:"#"}}
+${18:   ${19:controller}: ${20:"#"}}
+${21:   ${22:dhcp_enabled}: ${23:"#"}}
+${24:   ${25:dns_provider_ref}: ${26:"#"}}
+${27:   ${28:docker_configuration}: ${29:"#"}}
+${30:   ${31:east_west_dns_provider_ref}: ${32:"#"}}
+${33:   ${34:east_west_ipam_provider_ref}: ${35:"#"}}
+${36:   ${37:enable_vip_static_routes}: ${38:"#"}}
+${39:   ${40:ipam_provider_ref}: ${41:"#"}}
+${42:   ${43:license_type}: ${44:"#"}}
+${45:   ${46:linuxserver_configuration}: ${47:"#"}}
+${48:   ${49:mesos_configuration}: ${50:"#"}}
+${51:   ${52:mtu}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:nsx_configuration}: ${59:"#"}}
+${60:   ${61:obj_name_prefix}: ${62:"#"}}
+${63:   ${64:openstack_configuration}: ${65:"#"}}
+${66:   ${67:oshiftk8s_configuration}: ${68:"#"}}
+${69:   ${70:password}: ${71:"#"}}
+${72:   ${73:prefer_static_routes}: ${74:"#"}}
+${75:   ${76:proxy_configuration}: ${77:"#"}}
+${78:   ${79:rancher_configuration}: ${80:"#"}}
+${81:   ${82:state}: ${83:"#"}}
+${84:   ${85:tenant}: ${86:"#"}}
+${87:   ${88:tenant_ref}: ${89:"#"}}
+${90:   ${91:tenant_uuid}: ${92:"#"}}
+${93:   ${94:url}: ${95:"#"}}
+${96:   ${97:username}: ${98:"#"}}
+${99:   ${100:uuid}: ${101:"#"}}
+${102:   ${103:vca_configuration}: ${104:"#"}}
+${105:   ${106:vcenter_configuration}: ${107:"#"}}
+${108:   ${109:vtype}: ${110:"#"}}
+${111:${112:   become: ${113:true}} 
+${114:   become_method: ${115:su}} 
+${116:   become_user: ${117:nobody}} 
+${118:   become_flags: ${119:"-s /bin/sh"}}} 
+${120:   when: ${121:variable is defined}} 
+${122:   with_items: ${123:array}} 
+]]></content>
+	<tabTrigger>avi_cloud</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

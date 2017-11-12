@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# datacenter: (required) Destination datacenter for the deploy operation 
+# description: Define an arbitrary description to attach to snapshot. 
+# folder: Destination folder, absolute or relative path to find an existing guest. This is required if name is 
+# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# memory_dump: If set to `true', memory dump of virtual machine is also included in snapshot. Note that memory 
+# name: Name of the VM to work with This is required if uuid is not supplied. 
+# name_match: If multiple VMs matching the name, use the first or last found 
+# password: (required) The password of the vSphere vCenter. 
+# quiesce: If set to `true' and virtual machine is powered on, it will quiesce the file system in virtual machine. 
+# remove_children: If set to `true' and state is set to `absent', then entire snapshot subtree is set for removal. 
+# snapshot_name: Sets the snapshot name to manage. This param is required only if state is not `remove_all' 
+# state: (required) Manage snapshots attached to a specific virtual machine. 
+# username: (required) The username of the vSphere vCenter. 
+# uuid: UUID of the instance to manage if known, this is VMware's unique identifier. This is required if name is 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
+}- name: ${2:Name for vmware_guest_snapshot module.}
+  vmware_guest_snapshot:
+${3:   ${4:datacenter}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:folder}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:memory_dump}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:name_match}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:quiesce}: ${29:"#"}}
+${30:   ${31:remove_children}: ${32:"#"}}
+${33:   ${34:snapshot_name}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:uuid}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>vmware_guest_snapshot</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

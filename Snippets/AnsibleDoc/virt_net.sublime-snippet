@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#autostart = Specify if a given storage pool should be started automatically on system boot.
-#command = in addition to state management, various non-idempotent commands are available. See examples.
-#name = name of the network being managed. Note that network must be previously defined with xml.
-#state = specify which state you want a network to be in. If 'active', network will be started. If 'present', ensure that
-#uri = libvirt connection uri.
-#xml = XML document used with the define command.
+${1:# autostart: Specify if a given storage pool should be started automatically on system boot. 
+# command: in addition to state management, various non-idempotent commands are available. See examples. Modify was 
+# name: (required) name of the network being managed. Note that network must be previously defined with xml. 
+# state: specify which state you want a network to be in. If 'active', network will be started. If 'present', 
+# uri: libvirt connection uri. 
+# xml: XML document used with the define command. 
 }- name: ${2:Name for virt_net module.}
-${3:  become: ${4:yes}}
-  virt_net: ${5:autostart=${6: } }${7:command=${8: } }${9:name=${10: } }${11:state=${12: } }${13:uri=${14: } }${15:xml=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  virt_net:
+${3:   ${4:autostart}: ${5:"#"}}
+${6:   ${7:command}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:uri}: ${17:"#"}}
+${18:   ${19:xml}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>virt_net</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

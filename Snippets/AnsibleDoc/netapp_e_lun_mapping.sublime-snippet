@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# api_password: The password used to authenticate against the API. This can optionally be set via an environment 
+# api_url: The full API url. Example: http://ENDPOINT:8080/devmgr/v2 This can optionally be set via an environment 
+# api_username: The username used to authenticate against the API. This can optionally be set via an environment 
+# lun: The LUN number you wish to give the mapping If the supplied `volume_name' is associated with a different 
+# ssid: The storage system array identifier. 
+# state: (required) Present will ensure the mapping exists, absent will remove the mapping. All parameters `lun', 
+# target: The name of host or hostgroup you wish to assign to the mapping If omitted, the default hostgroup is 
+# target_type: Whether the target is a host or group. Required if supplying an explicit target. 
+# validate_certs: Should https certificates be validated? 
+# volume_name: (required) The name of the volume you wish to include in the mapping. 
+}- name: ${2:Name for netapp_e_lun_mapping module.}
+  netapp_e_lun_mapping:
+${3:   ${4:api_password}: ${5:"#"}}
+${6:   ${7:api_url}: ${8:"#"}}
+${9:   ${10:api_username}: ${11:"#"}}
+${12:   ${13:lun}: ${14:"#"}}
+${15:   ${16:ssid}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:target}: ${23:"#"}}
+${24:   ${25:target_type}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:   ${31:volume_name}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>netapp_e_lun_mapping</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# entity: (required) The Foreman resource that the action will be performed on (e.g. organization, host) 
+# params: (required) Parameters associated to the entity resource to set or edit in dictionary format (e.g. name, 
+# password: (required) Password for user accessing Foreman server 
+# server_url: (required) URL of Foreman server 
+# username: (required) Username on Foreman server 
+}- name: ${2:Name for foreman module.}
+  foreman:
+${3:   ${4:entity}: ${5:"#"}}
+${6:   ${7:params}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:server_url}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>foreman</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

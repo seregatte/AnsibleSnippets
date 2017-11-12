@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#package_id = The package id of the blue print.
-#package_params = The dictionary of arguments required to deploy the blue print.
-#server_ids = A list of server Ids to deploy the blue print package.
-#state = Whether to install or un-install the package. Currently it supports only "present" for install action.
-#wait = Whether to wait for the tasks to finish before returning.
+${1:# package_id: (required) The package id of the blue print. 
+# package_params: The dictionary of arguments required to deploy the blue print. 
+# server_ids: (required) A list of server Ids to deploy the blue print package. 
+# state: Whether to install or un-install the package. Currently it supports only "present" for install action. 
+# wait: Whether to wait for the tasks to finish before returning. 
 }- name: ${2:Name for clc_blueprint_package module.}
-${3:  become: ${4:yes}}
-  clc_blueprint_package: ${5:package_id=${6: } }${7:package_params=${8: } }${9:server_ids=${10: } }${11:state=${12: } }${13:wait=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  clc_blueprint_package:
+${3:   ${4:package_id}: ${5:"#"}}
+${6:   ${7:package_params}: ${8:"#"}}
+${9:   ${10:server_ids}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:wait}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>clc_blueprint_package</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,16 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#hosts = A list of ZooKeeper servers (format '[server]:[port]').
-#name = The path of the znode.
-#op = An operation to perform. Mutually exclusive with state.
-#state = The state to enforce. Mutually exclusive with op.
-#timeout = The amount of time to wait for a node to appear.
-#value = The value assigned to the znode.
+${1:# hosts: (required) A list of ZooKeeper servers (format '[server]:[port]'). 
+# name: (required) The path of the znode. 
+# op: An operation to perform. Mutually exclusive with state. 
+# recursive: Recursively delete node and all its children. 
+# state: The state to enforce. Mutually exclusive with op. 
+# timeout: The amount of time to wait for a node to appear. 
+# value: The value assigned to the znode. 
 }- name: ${2:Name for znode module.}
-${3:  become: ${4:yes}}
-  znode: ${5:hosts=${6: } }${7:name=${8: } }${9:op=${10: } }${11:state=${12: } }${13:timeout=${14: } }${15:value=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  znode:
+${3:   ${4:hosts}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:op}: ${11:"#"}}
+${12:   ${13:recursive}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:timeout}: ${20:"#"}}
+${21:   ${22:value}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>znode</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

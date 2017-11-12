@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_code: (required) authcode to be applied 
+# force: whether to apply authcode even if device is already licensed 
+# ip_address: (required) IP address (or hostname) of PAN-OS device 
+# password: (required) password for authentication 
+# username: username for authentication 
+}- name: ${2:Name for panos_lic module.}
+  panos_lic:
+${3:   ${4:auth_code}: ${5:"#"}}
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:ip_address}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>panos_lic</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

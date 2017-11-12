@@ -1,22 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#api_key = Rackspace API key (overrides `credentials')
-#auth_endpoint = The URI of the authentication service
-#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
-#env = Environment as configured in ~/.pyrax.cfg, see
-#https = pyrax-
-#identity_type = Authentication machanism to use, such as rackspace or keystone
-#region = Region to create an instance in
-#state = Indicate desired state of the resource
-#tenant_id = The tenant ID used for authentication
-#tenant_name = The tenant name used for authentication
-#username = Rackspace username (overrides `credentials')
-#verify_ssl = Whether or not to require SSL validation of API endpoints
+${1:# api_key: Rackspace API key, overrides `credentials'. 
+# auth_endpoint: The URI of the authentication service. 
+# credentials: File to find the Rackspace credentials in. Ignored if `api_key' and `username' are provided. 
+# env: Environment as configured in `~/.pyrax.cfg', see 
+# : pyrax-configuration. 
+# identity_type: Authentication mechanism to use, such as rackspace or keystone. 
+# region: Region to create an instance in. 
+# state: Indicate desired state of the resource 
+# tenant_id: The tenant ID used for authentication. 
+# tenant_name: The tenant name used for authentication. 
+# username: Rackspace username, overrides `credentials'. 
+# verify_ssl: Whether or not to require SSL validation of API endpoints. 
 }- name: ${2:Name for rax_identity module.}
-${3:  become: ${4:yes}}
-  rax_identity: ${5:api_key=${6: } }${7:auth_endpoint=${8: } }${9:credentials=${10: } }${11:env=${12: } }${13:https=${14: } }${15:identity_type=${16: } }${17:region=${18: } }${19:state=${20: } }${21:tenant_id=${22: } }${23:tenant_name=${24: } }${25:username=${26: } }${27:verify_ssl=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  rax_identity:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:auth_endpoint}: ${8:"#"}}
+${9:   ${10:credentials}: ${11:"#"}}
+${12:   ${13:env}: ${14:"#"}}
+${15:   ${16:}: ${17:"#"}}
+${18:   ${19:identity_type}: ${20:"#"}}
+${21:   ${22:region}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:tenant_id}: ${29:"#"}}
+${30:   ${31:tenant_name}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:verify_ssl}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>rax_identity</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

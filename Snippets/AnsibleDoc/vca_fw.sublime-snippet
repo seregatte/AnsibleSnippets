@@ -1,22 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#api_version = The api version to be used with the vca
-#fw_rules = A list of firewall rules to be added to the gateway, Please see examples on valid entries
-#gateway_name = The name of the gateway of the vdc where the rule should be added
-#host = The authentication host to be used when service type  is vcd.
-#instance_id = The instance id in a vchs environment to be used for creating the vapp
-#org = The org to login to for creating vapp, mostly set when the service_type is vdc.
-#password = The vca password, if not set the environment variable VCA_PASS is checked for the password
-#service_type = The type of service we are authenticating against
-#state = if the object should be added or removed
-#username = The vca username or email address, if not set the environment variable VCA_USER is checked for the username.
-#vdc_name = The name of the vdc where the gateway is located.
-#verify_certs = If the certificates of the authentication is to be verified
+${1:# api_version: The api version to be used with the vca. 
+# fw_rules: (required) A list of firewall rules to be added to the gateway, Please see examples on valid entries 
+# gateway_name: The name of the gateway of the vdc where the rule should be added. 
+# host: The authentication host to be used when service type is vcd. 
+# instance_id: The instance id in a vchs environment to be used for creating the vapp. 
+# org: The org to login to for creating vapp. This option is required when the `service_type' is `vdc'. 
+# password: The vca password, if not set the environment variable `VCA_PASS' is checked for the password. 
+# service_type: The type of service we are authenticating against. 
+# state: If the object should be added or removed. 
+# username: The vca username or email address, if not set the environment variable `VCA_USER' is checked for the 
+# vdc_name: The name of the vdc where the gateway is located. 
+# verify_certs: If the certificates of the authentication is to be verified. 
 }- name: ${2:Name for vca_fw module.}
-${3:  become: ${4:yes}}
-  vca_fw: ${5:api_version=${6: } }${7:fw_rules=${8: } }${9:gateway_name=${10: } }${11:host=${12: } }${13:instance_id=${14: } }${15:org=${16: } }${17:password=${18: } }${19:service_type=${20: } }${21:state=${22: } }${23:username=${24: } }${25:vdc_name=${26: } }${27:verify_certs=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  vca_fw:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:fw_rules}: ${8:"#"}}
+${9:   ${10:gateway_name}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:instance_id}: ${17:"#"}}
+${18:   ${19:org}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:service_type}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:username}: ${32:"#"}}
+${33:   ${34:vdc_name}: ${35:"#"}}
+${36:   ${37:verify_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>vca_fw</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

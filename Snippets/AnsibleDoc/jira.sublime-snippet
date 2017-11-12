@@ -1,23 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:#assignee = Sets the assignee on create or transition operations. Note not all transitions will allow this.
-#comment = The comment text to add.
-#description = The issue description, where appropriate.
-#fields = This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA REST API
-#issue = An existing issue key to operate on.
-#issuetype = The issue type, for issue creation.
-#operation = The operation to perform.
-#password = The password to log-in with.
-#project = The project for this operation. Required for issue creation.
-#status = The desired status; only relevant for the transition operation.
-#summary = The issue summary, where appropriate.
-#uri = Base URI for the JIRA instance
-#username = The username to log-in with.
+${1:# assignee: Sets the assignee on create or transition operations. Note not all transitions will allow this. 
+# comment: The comment text to add. 
+# description: The issue description, where appropriate. 
+# fields: This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA 
+# inwardissue: Set issue from which link will be created. 
+# issue: An existing issue key to operate on. 
+# issuetype: The issue type, for issue creation. 
+# linktype: Set type of link, when action 'link' selected. 
+# operation: (required) The operation to perform. 
+# outwardissue: Set issue to which link will be created. 
+# password: (required) The password to log-in with. 
+# project: The project for this operation. Required for issue creation. 
+# status: The desired status; only relevant for the transition operation. 
+# summary: The issue summary, where appropriate. 
+# timeout: Set timeout, in seconds, on requests to JIRA API. 
+# uri: (required) Base URI for the JIRA instance. 
+# username: (required) The username to log-in with. 
 }- name: ${2:Name for jira module.}
-${3:  become: ${4:yes}}
-  jira: ${5:assignee=${6: } }${7:comment=${8: } }${9:description=${10: } }${11:fields=${12: } }${13:issue=${14: } }${15:issuetype=${16: } }${17:operation=${18: } }${19:password=${20: } }${21:project=${22: } }${23:status=${24: } }${25:summary=${26: } }${27:uri=${28: } }${29:username=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  jira:
+${3:   ${4:assignee}: ${5:"#"}}
+${6:   ${7:comment}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:fields}: ${14:"#"}}
+${15:   ${16:inwardissue}: ${17:"#"}}
+${18:   ${19:issue}: ${20:"#"}}
+${21:   ${22:issuetype}: ${23:"#"}}
+${24:   ${25:linktype}: ${26:"#"}}
+${27:   ${28:operation}: ${29:"#"}}
+${30:   ${31:outwardissue}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:project}: ${38:"#"}}
+${39:   ${40:status}: ${41:"#"}}
+${42:   ${43:summary}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
+${48:   ${49:uri}: ${50:"#"}}
+${51:   ${52:username}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>jira</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

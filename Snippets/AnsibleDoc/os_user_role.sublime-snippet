@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
+# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
+# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+# availability_zone: Ignored. Present for backwards compatibility 
+# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
+# cert: A path to a client certificate to use as part of the SSL transaction. 
+# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# domain: ID of the domain to scope the role association to. Valid only with keystone version 3, and required if 
+# endpoint_type: Endpoint URL type to fetch from the service catalog. 
+# group: Name or ID for the group. Valid only with keystone version 3. If `group' is not specified, then `user' 
+# key: A path to a client key to use as part of the SSL transaction. 
+# project: Name or ID of the project to scope the role association to. If you are using keystone version 2, then 
+# region_name: Name of the region. 
+# role: (required) Name or ID for the role. 
+# state: Should the roles be present or absent on the user. 
+# timeout: How long should ansible wait for the requested resource. 
+# user: Name or ID for the user. If `user' is not specified, then `group' is required. Both may not be 
+# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
+# wait: Should ansible wait until the requested resource is complete. 
+}- name: ${2:Name for os_user_role module.}
+  os_user_role:
+${3:   ${4:api_timeout}: ${5:"#"}}
+${6:   ${7:auth}: ${8:"#"}}
+${9:   ${10:auth_type}: ${11:"#"}}
+${12:   ${13:availability_zone}: ${14:"#"}}
+${15:   ${16:cacert}: ${17:"#"}}
+${18:   ${19:cert}: ${20:"#"}}
+${21:   ${22:cloud}: ${23:"#"}}
+${24:   ${25:domain}: ${26:"#"}}
+${27:   ${28:endpoint_type}: ${29:"#"}}
+${30:   ${31:group}: ${32:"#"}}
+${33:   ${34:key}: ${35:"#"}}
+${36:   ${37:project}: ${38:"#"}}
+${39:   ${40:region_name}: ${41:"#"}}
+${42:   ${43:role}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:timeout}: ${50:"#"}}
+${51:   ${52:user}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:   ${58:wait}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>os_user_role</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

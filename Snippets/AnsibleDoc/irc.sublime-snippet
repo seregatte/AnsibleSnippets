@@ -1,24 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:#channel = Channel name.  One of nick_to or channel needs to be set.  When both are set, the message will be sent to both
-#color = Text color for the message. ("none" is a valid option in 1.6 or later, in 1.6 and prior, the default color is
-#key = Channel key
-#msg = The message body.
-#nick = Nickname to send the message from. May be shortened, depending on server's NICKLEN setting.
-#nick_to = A list of nicknames to send the message to. One of nick_to or channel needs to be set.  When both are defined,
-#part = Designates whether user should part from channel after sending message or not. Useful for when using a faux bot
-#passwd = Server password
-#port = IRC server port number
-#server = IRC server name/address
-#style = Text style for the message. Note italic does not work on some clients
-#timeout = Timeout to use while waiting for successful registration and join messages, this is to prevent an endless loop
-#topic = Set the channel topic
-#use_ssl = Designates whether TLS/SSL should be used when connecting to the IRC server
+${1:# channel: (required) Channel name.  One of nick_to or channel needs to be set.  When both are set, the message 
+# color: Text color for the message. ("none" is a valid option in 1.6 or later, in 1.6 and prior, the default 
+# key: Channel key 
+# msg: (required) The message body. 
+# nick: Nickname to send the message from. May be shortened, depending on server's NICKLEN setting. 
+# nick_to: A list of nicknames to send the message to. One of nick_to or channel needs to be set.  When both are 
+# part: Designates whether user should part from channel after sending message or not. Useful for when using a 
+# passwd: Server password 
+# port: IRC server port number 
+# server: IRC server name/address 
+# style: Text style for the message. Note italic does not work on some clients 
+# timeout: Timeout to use while waiting for successful registration and join messages, this is to prevent an 
+# topic: Set the channel topic 
+# use_ssl: Designates whether TLS/SSL should be used when connecting to the IRC server 
 }- name: ${2:Name for irc module.}
-${3:  become: ${4:yes}}
-  irc: ${5:channel=${6: } }${7:color=${8: } }${9:key=${10: } }${11:msg=${12: } }${13:nick=${14: } }${15:nick_to=${16: } }${17:part=${18: } }${19:passwd=${20: } }${21:port=${22: } }${23:server=${24: } }${25:style=${26: } }${27:timeout=${28: } }${29:topic=${30: } }${31:use_ssl=${32: } }
-${33:  when: ${34: variable is defined}}
-${35:  with_items: ${36: array}}
+  irc:
+${3:   ${4:channel}: ${5:"#"}}
+${6:   ${7:color}: ${8:"#"}}
+${9:   ${10:key}: ${11:"#"}}
+${12:   ${13:msg}: ${14:"#"}}
+${15:   ${16:nick}: ${17:"#"}}
+${18:   ${19:nick_to}: ${20:"#"}}
+${21:   ${22:part}: ${23:"#"}}
+${24:   ${25:passwd}: ${26:"#"}}
+${27:   ${28:port}: ${29:"#"}}
+${30:   ${31:server}: ${32:"#"}}
+${33:   ${34:style}: ${35:"#"}}
+${36:   ${37:timeout}: ${38:"#"}}
+${39:   ${40:topic}: ${41:"#"}}
+${42:   ${43:use_ssl}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>irc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

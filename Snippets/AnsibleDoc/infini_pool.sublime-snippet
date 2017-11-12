@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# name: (required) Pool Name 
+# password: Infinibox User password. 
+# size: Pool Physical Capacity in MB, GB or TB units. If pool size is not set on pool creation, size will be 
+# ssd_cache: Enable/Disable SSD Cache on Pool 
+# state: Creates/Modifies Pool when present or removes when absent 
+# system: (required) Infinibox Hostname or IPv4 Address. 
+# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# vsize: Pool Virtual Capacity in MB, GB or TB units. If pool vsize is not set on pool creation, Virtual Capacity 
+}- name: ${2:Name for infini_pool module.}
+  infini_pool:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:size}: ${11:"#"}}
+${12:   ${13:ssd_cache}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:system}: ${20:"#"}}
+${21:   ${22:user}: ${23:"#"}}
+${24:   ${25:vsize}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>infini_pool</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

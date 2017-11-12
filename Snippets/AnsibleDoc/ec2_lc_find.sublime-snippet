@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# limit: How many results to show. Corresponds to Python slice notation like list[:limit]. 
+# name_regex: (required) A Launch Configuration to match It'll be compiled as regex 
+# region: (required) The AWS region to use. 
+# sort_order: Order in which to sort results. 
+}- name: ${2:Name for ec2_lc_find module.}
+  ec2_lc_find:
+${3:   ${4:limit}: ${5:"#"}}
+${6:   ${7:name_regex}: ${8:"#"}}
+${9:   ${10:region}: ${11:"#"}}
+${12:   ${13:sort_order}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>ec2_lc_find</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

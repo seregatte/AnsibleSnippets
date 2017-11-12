@@ -1,26 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:#account = Account the user will be created under. Required on `state=present'.
-#api_http_method = HTTP method used.
-#api_key = API key of the CloudStack API.
-#api_region = Name of the ini section in the `cloustack.ini' file.
-#api_secret = Secret key of the CloudStack API.
-#api_timeout = HTTP timeout.
-#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
-#domain = Domain the user is related to.
-#email = Email of the user. Required on `state=present'.
-#first_name = First name of the user. Required on `state=present'.
-#last_name = Last name of the user. Required on `state=present'.
-#password = Password of the user to be created. Required on `state=present'. Only considered on creation and will not be
-#poll_async = Poll async jobs until job has finished.
-#state = State of the user. `unlocked' is an alias for `enabled'.
-#timezone = Timezone of the user.
-#username = Username of the user.
+${1:# account: Account the user will be created under. Required on `state=present'. 
+# api_http_method: HTTP method used. 
+# api_key: API key of the CloudStack API. 
+# api_region: Name of the ini section in the `cloustack.ini' file. 
+# api_secret: Secret key of the CloudStack API. 
+# api_timeout: HTTP timeout. 
+# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# domain: Domain the user is related to. 
+# email: Email of the user. Required on `state=present'. 
+# first_name: First name of the user. Required on `state=present'. 
+# keys_registered: If API keys of the user should be generated. Note: Keys can not be removed by the API again. 
+# last_name: Last name of the user. Required on `state=present'. 
+# password: Password of the user to be created. Required on `state=present'. Only considered on creation and will 
+# poll_async: Poll async jobs until job has finished. 
+# state: State of the user. `unlocked' is an alias for `enabled'. 
+# timezone: Timezone of the user. 
+# username: (required) Username of the user. 
 }- name: ${2:Name for cs_user module.}
-${3:  become: ${4:yes}}
-  cs_user: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:domain=${20: } }${21:email=${22: } }${23:first_name=${24: } }${25:last_name=${26: } }${27:password=${28: } }${29:poll_async=${30: } }${31:state=${32: } }${33:timezone=${34: } }${35:username=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  cs_user:
+${3:   ${4:account}: ${5:"#"}}
+${6:   ${7:api_http_method}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:api_region}: ${14:"#"}}
+${15:   ${16:api_secret}: ${17:"#"}}
+${18:   ${19:api_timeout}: ${20:"#"}}
+${21:   ${22:api_url}: ${23:"#"}}
+${24:   ${25:domain}: ${26:"#"}}
+${27:   ${28:email}: ${29:"#"}}
+${30:   ${31:first_name}: ${32:"#"}}
+${33:   ${34:keys_registered}: ${35:"#"}}
+${36:   ${37:last_name}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:poll_async}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:timezone}: ${50:"#"}}
+${51:   ${52:username}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>cs_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

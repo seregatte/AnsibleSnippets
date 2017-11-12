@@ -1,16 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#change_hostname_to = The hostname that an ESXi host should be changed to.
-#dns_servers = The DNS servers that the host should be configured to use.
-#domainname = The domain the ESXi host should be apart of.
-#hostname = The hostname or IP address of the vSphere vCenter API server
-#password = The password of the vSphere vCenter
-#username = The username of the vSphere vCenter
+${1:# change_hostname_to: (required) The hostname that an ESXi host should be changed to. 
+# dns_servers: (required) The DNS servers that the host should be configured to use. 
+# domainname: (required) The domain the ESXi host should be apart of. 
+# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# password: (required) The password of the vSphere vCenter. 
+# username: (required) The username of the vSphere vCenter. 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
 }- name: ${2:Name for vmware_dns_config module.}
-${3:  become: ${4:yes}}
-  vmware_dns_config: ${5:change_hostname_to=${6: } }${7:dns_servers=${8: } }${9:domainname=${10: } }${11:hostname=${12: } }${13:password=${14: } }${15:username=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  vmware_dns_config:
+${3:   ${4:change_hostname_to}: ${5:"#"}}
+${6:   ${7:dns_servers}: ${8:"#"}}
+${9:   ${10:domainname}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>vmware_dns_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,16 @@
+<snippet>
+<content><![CDATA[
+${1:# free_form: (required) This module takes a free form command, as a string. There's not an actual option named "free 
+}- name: ${2:Name for meta module.}
+  meta:
+${3:   ${4:free_form}: ${5:"#"}}
+${6:${7:   become: ${8:true}} 
+${9:   become_method: ${10:su}} 
+${11:   become_user: ${12:nobody}} 
+${13:   become_flags: ${14:"-s /bin/sh"}}} 
+${15:   when: ${16:variable is defined}} 
+${17:   with_items: ${18:array}} 
+]]></content>
+	<tabTrigger>meta</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

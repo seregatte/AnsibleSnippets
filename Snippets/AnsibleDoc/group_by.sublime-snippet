@@ -1,11 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:#key = The variables whose values will be used as groups
+${1:# key: (required) The variables whose values will be used as groups 
+# parents: The list of the parent groups 
 }- name: ${2:Name for group_by module.}
-${3:  become: ${4:yes}}
-  group_by: ${5:key=${6: } }
-${7:  when: ${8: variable is defined}}
-${9:  with_items: ${10: array}}
+  group_by:
+${3:   ${4:key}: ${5:"#"}}
+${6:   ${7:parents}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
 ]]></content>
 	<tabTrigger>group_by</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

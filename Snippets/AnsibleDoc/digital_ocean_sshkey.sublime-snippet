@@ -1,16 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#api_key = DigitalOcean api key.
-#client_id = DigitalOcean manager id.
-#id = Numeric, the SSH key id you want to operate on.
-#name = String, this is the name of an SSH key to create or destroy.
-#ssh_pub_key = The public SSH key you want to add to your account.
-#state = Indicate desired state of the target.
+${1:# fingerprint: This is a unique identifier for the SSH key used to delete a key 
+# name: The name for the SSH key 
+# oauth_token: (required) DigitalOcean OAuth token. 
+# ssh_pub_key: The Public SSH key to add. 
+# state: Indicate desired state of the target. 
 }- name: ${2:Name for digital_ocean_sshkey module.}
-${3:  become: ${4:yes}}
-  digital_ocean_sshkey: ${5:api_key=${6: } }${7:client_id=${8: } }${9:id=${10: } }${11:name=${12: } }${13:ssh_pub_key=${14: } }${15:state=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  digital_ocean_sshkey:
+${3:   ${4:fingerprint}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:oauth_token}: ${11:"#"}}
+${12:   ${13:ssh_pub_key}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>digital_ocean_sshkey</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

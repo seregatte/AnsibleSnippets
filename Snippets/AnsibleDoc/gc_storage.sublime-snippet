@@ -1,21 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#bucket = Bucket name.
-#dest = The destination file path when downloading an object/key with a GET operation.
-#expiration = Time limit (in seconds) for the URL generated and returned by GCA when performing a mode=put or mode=get_url
-#force = Forces an overwrite either locally on the filesystem or remotely with the object/key. Used with PUT and GET
-#gcs_access_key = GCS access key. If not set then the value of the GCS_ACCESS_KEY environment variable is used.
-#gcs_secret_key = GCS secret key. If not set then the value of the GCS_SECRET_KEY environment variable is used.
-#headers = Headers to attach to object.
-#mode = Switches the module behaviour between upload, download, get_url (return download url) , get_str (download object
-#object = Keyname of the object inside the bucket. Can be also be used to create "virtual directories" (see examples).
-#permission = This option let's the user set the canned permissions on the object/bucket that are created. The permissions
-#src = The source file path when performing a PUT operation.
+${1:# bucket: (required) Bucket name. 
+# dest: The destination file path when downloading an object/key with a GET operation. 
+# expiration: Time limit (in seconds) for the URL generated and returned by GCA when performing a mode=put or 
+# force: Forces an overwrite either locally on the filesystem or remotely with the object/key. Used with PUT and 
+# gs_access_key: (required) GS access key. If not set then the value of the GS_ACCESS_KEY_ID environment variable is 
+# gs_secret_key: (required) GS secret key. If not set then the value of the GS_SECRET_ACCESS_KEY environment variable is 
+# headers: Headers to attach to object. 
+# mode: (required) Switches the module behaviour between upload, download, get_url (return download url) , 
+# object: Keyname of the object inside the bucket. Can be also be used to create "virtual directories" (see 
+# permission: This option let's the user set the canned permissions on the object/bucket that are created. The 
+# region: The gs region to use. If not defined then the value 'US' will be used. See 
+# src: The source file path when performing a PUT operation. 
+# versioning: Whether versioning is enabled or disabled (note that once versioning is enabled, it can only be 
 }- name: ${2:Name for gc_storage module.}
-${3:  become: ${4:yes}}
-  gc_storage: ${5:bucket=${6: } }${7:dest=${8: } }${9:expiration=${10: } }${11:force=${12: } }${13:gcs_access_key=${14: } }${15:gcs_secret_key=${16: } }${17:headers=${18: } }${19:mode=${20: } }${21:object=${22: } }${23:permission=${24: } }${25:src=${26: } }
-${27:  when: ${28: variable is defined}}
-${29:  with_items: ${30: array}}
+  gc_storage:
+${3:   ${4:bucket}: ${5:"#"}}
+${6:   ${7:dest}: ${8:"#"}}
+${9:   ${10:expiration}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:gs_access_key}: ${17:"#"}}
+${18:   ${19:gs_secret_key}: ${20:"#"}}
+${21:   ${22:headers}: ${23:"#"}}
+${24:   ${25:mode}: ${26:"#"}}
+${27:   ${28:object}: ${29:"#"}}
+${30:   ${31:permission}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:src}: ${38:"#"}}
+${39:   ${40:versioning}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>gc_storage</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

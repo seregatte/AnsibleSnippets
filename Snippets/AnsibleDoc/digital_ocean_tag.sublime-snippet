@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: DigitalOcean api token. 
+# name: (required) The name of the tag. The supported characters for names include alphanumeric characters, 
+# resource_id: The ID of the resource to operate on. 
+# resource_type: The type of resource to operate on. Currently, only tagging of droplets is supported. 
+# state: Whether the tag should be present or absent on the resource. 
+}- name: ${2:Name for digital_ocean_tag module.}
+  digital_ocean_tag:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:resource_id}: ${11:"#"}}
+${12:   ${13:resource_type}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>digital_ocean_tag</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

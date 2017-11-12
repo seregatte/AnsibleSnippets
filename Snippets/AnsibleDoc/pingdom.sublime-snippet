@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#checkid = Pingdom ID of the check.
-#key = Pingdom API key.
-#passwd = Pingdom user password.
-#state = Define whether or not the check should be running or paused.
-#uid = Pingdom user ID.
+${1:# checkid: (required) Pingdom ID of the check. 
+# key: (required) Pingdom API key. 
+# passwd: (required) Pingdom user password. 
+# state: (required) Define whether or not the check should be running or paused. 
+# uid: (required) Pingdom user ID. 
 }- name: ${2:Name for pingdom module.}
-${3:  become: ${4:yes}}
-  pingdom: ${5:checkid=${6: } }${7:key=${8: } }${9:passwd=${10: } }${11:state=${12: } }${13:uid=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  pingdom:
+${3:   ${4:checkid}: ${5:"#"}}
+${6:   ${7:key}: ${8:"#"}}
+${9:   ${10:passwd}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:uid}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>pingdom</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# description: The description for the route tag policy. 
+# hostname: (required) IP Address or hostname of APIC resolvable by Ansible control host. 
+# password: (required) The password to use for authentication. 
+# rtp: (required) The name of the route tag policy. 
+# state: Use `present' or `absent' for adding or removing. Use `query' for listing an object or multiple objects. 
+# tag: The value of the route tag (range 0-4294967295). 
+# tenant: (required) The name of the tenant. 
+# timeout: The socket level timeout in seconds. 
+# use_proxy: If `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
+# use_ssl: If `no', an HTTP connection will be used instead of the default HTTPS connection. 
+# username: (required) The username to use for authentication. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only set to `no' used on personally 
+}- name: ${2:Name for aci_l3out_route_tag_policy module.}
+  aci_l3out_route_tag_policy:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:rtp}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:tag}: ${20:"#"}}
+${21:   ${22:tenant}: ${23:"#"}}
+${24:   ${25:timeout}: ${26:"#"}}
+${27:   ${28:use_proxy}: ${29:"#"}}
+${30:   ${31:use_ssl}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>aci_l3out_route_tag_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

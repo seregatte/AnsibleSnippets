@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of link aggregation definitions. 
+# members: List of members of the link aggregation group. 
+# mode: Mode of the link aggregation group. 
+# name: (required) Name of the link aggregation group. 
+# state: State of the link aggregation group. 
+}- name: ${2:Name for vyos_linkagg module.}
+  vyos_linkagg:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:members}: ${8:"#"}}
+${9:   ${10:mode}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>vyos_linkagg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

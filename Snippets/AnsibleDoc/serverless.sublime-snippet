@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# deploy: Whether or not to deploy artifacts after building them. When this option is `false` all the functions 
+# functions: A list of specific functions to deploy. If this is not provided, all functions in the service will be 
+# region: AWS region to deploy the service to 
+# serverless_bin_path: The path of a serverless framework binary relative to the 'service_path' eg. node_module/.bin/serverless 
+# service_path: (required) The path to the root of the Serverless Service to be operated on. 
+# stage: The name of the serverless framework project stage to deploy to. This uses the serverless framework 
+# state: Goal state of given stage/project 
+}- name: ${2:Name for serverless module.}
+  serverless:
+${3:   ${4:deploy}: ${5:"#"}}
+${6:   ${7:functions}: ${8:"#"}}
+${9:   ${10:region}: ${11:"#"}}
+${12:   ${13:serverless_bin_path}: ${14:"#"}}
+${15:   ${16:service_path}: ${17:"#"}}
+${18:   ${19:stage}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>serverless</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

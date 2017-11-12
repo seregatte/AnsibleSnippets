@@ -1,24 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#ec2_elbs = List of ELB names, required for registration. The ec2_elbs fact should be used if there was a previous de-
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#enable_availability_zone = Whether to enable the availability zone of the instance on the target ELB if the availability zone has not
-#instance_id = EC2 Instance ID
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = register or deregister the instance
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
-#wait = Wait for instance registration or deregistration to complete successfully before returning.
-#wait_timeout = Number of seconds to wait for an instance to change state. If 0 then this module may return an error if a
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_elbs: List of ELB names, required for registration. The ec2_elbs fact should be used if there was a previous 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# enable_availability_zone: Whether to enable the availability zone of the instance on the target ELB if the availability zone has 
+# instance_id: (required) EC2 Instance ID 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: (required) register or deregister the instance 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# wait: Wait for instance registration or deregistration to complete successfully before returning. 
+# wait_timeout: Number of seconds to wait for an instance to change state. If 0 then this module may return an error if 
 }- name: ${2:Name for ec2_elb module.}
-${3:  become: ${4:yes}}
-  ec2_elb: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_elbs=${10: } }${11:ec2_url=${12: } }${13:enable_availability_zone=${14: } }${15:instance_id=${16: } }${17:profile=${18: } }${19:region=${20: } }${21:http=${22: } }${23:security_token=${24: } }${25:state=${26: } }${27:validate_certs=${28: } }${29:wait=${30: } }${31:wait_timeout=${32: } }
-${33:  when: ${34: variable is defined}}
-${35:  with_items: ${36: array}}
+  ec2_elb:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_elbs}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:enable_availability_zone}: ${17:"#"}}
+${18:   ${19:instance_id}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:http}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:wait}: ${41:"#"}}
+${42:   ${43:wait_timeout}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>ec2_elb</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#name = The name of the vhost to manage
-#node = erlang node name of the rabbit we wish to configure
-#state = The state of vhost
-#tracing = Enable/disable tracing for a vhost
+${1:# name: (required) The name of the vhost to manage 
+# node: erlang node name of the rabbit we wish to configure 
+# state: The state of vhost 
+# tracing: Enable/disable tracing for a vhost 
 }- name: ${2:Name for rabbitmq_vhost module.}
-${3:  become: ${4:yes}}
-  rabbitmq_vhost: ${5:name=${6: } }${7:node=${8: } }${9:state=${10: } }${11:tracing=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  rabbitmq_vhost:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:node}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:tracing}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>rabbitmq_vhost</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

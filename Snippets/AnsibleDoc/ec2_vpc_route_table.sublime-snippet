@@ -1,26 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#lookup = Look up route table by either tags or by route table ID. Non-unique tag lookup will fail. If no tags are
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#propagating_vgw_ids = Enable route propagation from virtual gateways specified by ID.
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#route_table_id = The ID of the route table to update or delete.
-#routes = List of routes in the route table. Routes are specified as dicts containing the keys 'dest' and one of
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = Create or destroy the VPC route table
-#subnets = An array of subnets to add to this route table. Subnets may be specified by either subnet ID, Name tag, or by a
-#tags = A dictionary of resource tags of the form: { tag1: value1, tag2: value2 }. Tags are used to uniquely identify
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
-#vpc_id = VPC ID of the VPC in which to create the route table.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# lookup: Look up route table by either tags or by route table ID. Non-unique tag lookup will fail. If no tags are 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# propagating_vgw_ids: Enable route propagation from virtual gateways specified by ID. 
+# purge_routes: Purge existing routes that are not found in routes. 
+# purge_subnets: Purge existing subnets that are not found in subnets. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# route_table_id: The ID of the route table to update or delete. 
+# routes: List of routes in the route table. Routes are specified as dicts containing the keys 'dest' and one of 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: Create or destroy the VPC route table 
+# subnets: An array of subnets to add to this route table. Subnets may be specified by either subnet ID, Name tag, 
+# tags: A dictionary of resource tags of the form: { tag1: value1, tag2: value2 }. Tags are used to uniquely 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# vpc_id: (required) VPC ID of the VPC in which to create the route table. 
 }- name: ${2:Name for ec2_vpc_route_table module.}
-${3:  become: ${4:yes}}
-  ec2_vpc_route_table: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:lookup=${12: } }${13:profile=${14: } }${15:propagating_vgw_ids=${16: } }${17:region=${18: } }${19:http=${20: } }${21:route_table_id=${22: } }${23:routes=${24: } }${25:security_token=${26: } }${27:state=${28: } }${29:subnets=${30: } }${31:tags=${32: } }${33:validate_certs=${34: } }${35:vpc_id=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  ec2_vpc_route_table:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:lookup}: ${14:"#"}}
+${15:   ${16:profile}: ${17:"#"}}
+${18:   ${19:propagating_vgw_ids}: ${20:"#"}}
+${21:   ${22:purge_routes}: ${23:"#"}}
+${24:   ${25:purge_subnets}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:http}: ${32:"#"}}
+${33:   ${34:route_table_id}: ${35:"#"}}
+${36:   ${37:routes}: ${38:"#"}}
+${39:   ${40:security_token}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:subnets}: ${47:"#"}}
+${48:   ${49:tags}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:   ${55:vpc_id}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_route_table</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

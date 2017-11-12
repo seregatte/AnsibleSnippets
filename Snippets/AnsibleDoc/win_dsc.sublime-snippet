@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# module_version: Can be used to configure the exact version of the dsc resource to be invoked. Useful if the target node 
+# resource_name: (required) The DSC Resource to use. Must be accessible to PowerShell using any of the default paths. 
+}- name: ${2:Name for win_dsc module.}
+  win_dsc:
+${3:   ${4:module_version}: ${5:"#"}}
+${6:   ${7:resource_name}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>win_dsc</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

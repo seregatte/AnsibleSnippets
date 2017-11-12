@@ -1,12 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#dest = Location to render the template to on the remote machine.
-#src = Path of a Jinja2 formatted template on the local server. This can be a relative or absolute path.
+${1:# block_end_string: The string marking the end of a block. 
+# block_start_string: The string marking the beginning of a block. 
+# dest: (required) Location to render the template to on the remote machine. 
+# force: the default is `yes', which will replace the remote file when contents are different than the source. 
+# newline_sequence: Specify the newline sequence to use for templating files. 
+# src: (required) Path of a Jinja2 formatted template on the local server. This can be a relative or absolute 
+# trim_blocks: If this is set to True the first newline after a block is removed (block, not variable tag!). 
+# variable_end_string: The string marking the end of a print statement. 
+# variable_start_string: The string marking the beginning of a print statement. 
 }- name: ${2:Name for win_template module.}
-${3:  become: ${4:yes}}
-  win_template: ${5:dest=${6: } }${7:src=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  win_template:
+${3:   ${4:block_end_string}: ${5:"#"}}
+${6:   ${7:block_start_string}: ${8:"#"}}
+${9:   ${10:dest}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:newline_sequence}: ${17:"#"}}
+${18:   ${19:src}: ${20:"#"}}
+${21:   ${22:trim_blocks}: ${23:"#"}}
+${24:   ${25:variable_end_string}: ${26:"#"}}
+${27:   ${28:variable_start_string}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>win_template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,36 @@
+<snippet>
+<content><![CDATA[
+${1:# accounting_mode: Accounting Mode. 
+# acct_scheme_name: Accounting scheme name. The value is a string of 1 to 32 characters. 
+# authen_scheme_name: Name of an authentication scheme. The value is a string of 1 to 32 characters. 
+# author_scheme_name: Name of an authorization scheme. The value is a string of 1 to 32 characters. 
+# domain_name: Name of a domain. The value is a string of 1 to 64 characters. 
+# first_authen_mode: Preferred authentication mode. 
+# first_author_mode: Preferred authorization mode. 
+# hwtacas_template: Name of a HWTACACS template. The value is a string of 1 to 32 case-insensitive characters. 
+# local_user_group: Name of the user group where the user belongs. The user inherits all the rights of the user group. The 
+# radius_server_group: RADIUS server group's name. The value is a string of 1 to 32 case-insensitive characters. 
+# state: Specify desired state of the resource. 
+}- name: ${2:Name for ce_aaa_server module.}
+  ce_aaa_server:
+${3:   ${4:accounting_mode}: ${5:"#"}}
+${6:   ${7:acct_scheme_name}: ${8:"#"}}
+${9:   ${10:authen_scheme_name}: ${11:"#"}}
+${12:   ${13:author_scheme_name}: ${14:"#"}}
+${15:   ${16:domain_name}: ${17:"#"}}
+${18:   ${19:first_authen_mode}: ${20:"#"}}
+${21:   ${22:first_author_mode}: ${23:"#"}}
+${24:   ${25:hwtacas_template}: ${26:"#"}}
+${27:   ${28:local_user_group}: ${29:"#"}}
+${30:   ${31:radius_server_group}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
+]]></content>
+	<tabTrigger>ce_aaa_server</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,116 @@
+<snippet>
+<content><![CDATA[
+${1:# allow_ip_forwarding: Field introduced in 17.1.1. Default value when not specified in API or module is interpreted by Avi 
+# allow_unauthenticated_apis: Allow unauthenticated access for special apis. Default value when not specified in API or module is 
+# allow_unauthenticated_nodes: Boolean flag to set allow_unauthenticated_nodes. Default value when not specified in API or module is 
+# api_idle_timeout: Allowed values are 0-1440. Default value when not specified in API or module is interpreted by Avi 
+# api_version: Avi API version of to use for Avi API and objects. 
+# appviewx_compat_mode: Export configuration in appviewx compatibility mode. Field introduced in 17.1.1. Default value when not 
+# attach_ip_retry_interval: Number of attach_ip_retry_interval. Default value when not specified in API or module is interpreted by 
+# attach_ip_retry_limit: Number of attach_ip_retry_limit. Default value when not specified in API or module is interpreted by Avi 
+# cluster_ip_gratuitous_arp_period: Number of cluster_ip_gratuitous_arp_period. Default value when not specified in API or module is 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# crashed_se_reboot: Number of crashed_se_reboot. Default value when not specified in API or module is interpreted by Avi 
+# dead_se_detection_timer: Number of dead_se_detection_timer. Default value when not specified in API or module is interpreted by 
+# dns_refresh_period: Number of dns_refresh_period. Default value when not specified in API or module is interpreted by Avi 
+# dummy: Number of dummy. 
+# fatal_error_lease_time: Number of fatal_error_lease_time. Default value when not specified in API or module is interpreted by 
+# max_dead_se_in_grp: Number of max_dead_se_in_grp. Default value when not specified in API or module is interpreted by Avi 
+# max_pcap_per_tenant: Maximum number of pcap files stored per tenant. Default value when not specified in API or module is 
+# max_seq_vnic_failures: Number of max_seq_vnic_failures. Default value when not specified in API or module is interpreted by Avi 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# persistence_key_rotate_period: Allowed values are 1-1051200. Special values are 0 - 'disabled'. Default value when not specified in API 
+# portal_token: Token used for uploading tech-support to portal. Field introduced in 16.4.6,17.1.2. 
+# query_host_fail: Number of query_host_fail. Default value when not specified in API or module is interpreted by Avi 
+# se_create_timeout: Number of se_create_timeout. Default value when not specified in API or module is interpreted by Avi 
+# se_failover_attempt_interval: Interval between attempting failovers to an se. Default value when not specified in API or module is 
+# se_offline_del: Number of se_offline_del. Default value when not specified in API or module is interpreted by Avi 
+# se_vnic_cooldown: Number of se_vnic_cooldown. Default value when not specified in API or module is interpreted by Avi 
+# secure_channel_cleanup_timeout: Number of secure_channel_cleanup_timeout. Default value when not specified in API or module is 
+# secure_channel_controller_token_timeout: Number of secure_channel_controller_token_timeout. Default value when not specified in API or module is 
+# secure_channel_se_token_timeout: Number of secure_channel_se_token_timeout. Default value when not specified in API or module is 
+# seupgrade_fabric_pool_size: Pool size used for all fabric commands during se upgrade. Default value when not specified in API or 
+# seupgrade_segroup_min_dead_timeout: Time to wait before marking segroup upgrade as stuck. Default value when not specified in API or module 
+# ssl_certificate_expiry_warning_days: Number of days for ssl certificate expiry warning. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# unresponsive_se_reboot: Number of unresponsive_se_reboot. Default value when not specified in API or module is interpreted by 
+# upgrade_dns_ttl: Time to account for dns ttl during upgrade. This is in addition to vs_scalein_timeout_for_upgrade in 
+# upgrade_lease_time: Number of upgrade_lease_time. Default value when not specified in API or module is interpreted by Avi 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Unique object identifier of the object. 
+# vnic_op_fail_time: Number of vnic_op_fail_time. Default value when not specified in API or module is interpreted by Avi 
+# vs_apic_scaleout_timeout: Time to wait for the scaled out se to become ready before marking the scaleout done, applies to apic 
+# vs_awaiting_se_timeout: Number of vs_awaiting_se_timeout. Default value when not specified in API or module is interpreted by 
+# vs_key_rotate_period: Allowed values are 1-1051200. Special values are 0 - 'disabled'. Default value when not specified in API 
+# vs_se_bootup_fail: Number of vs_se_bootup_fail. Default value when not specified in API or module is interpreted by Avi 
+# vs_se_create_fail: Number of vs_se_create_fail. Default value when not specified in API or module is interpreted by Avi 
+# vs_se_ping_fail: Number of vs_se_ping_fail. Default value when not specified in API or module is interpreted by Avi 
+# vs_se_vnic_fail: Number of vs_se_vnic_fail. Default value when not specified in API or module is interpreted by Avi 
+# vs_se_vnic_ip_fail: Number of vs_se_vnic_ip_fail. Default value when not specified in API or module is interpreted by Avi 
+# warmstart_se_reconnect_wait_time: Number of warmstart_se_reconnect_wait_time. Default value when not specified in API or module is 
+}- name: ${2:Name for avi_controllerproperties module.}
+  avi_controllerproperties:
+${3:   ${4:allow_ip_forwarding}: ${5:"#"}}
+${6:   ${7:allow_unauthenticated_apis}: ${8:"#"}}
+${9:   ${10:allow_unauthenticated_nodes}: ${11:"#"}}
+${12:   ${13:api_idle_timeout}: ${14:"#"}}
+${15:   ${16:api_version}: ${17:"#"}}
+${18:   ${19:appviewx_compat_mode}: ${20:"#"}}
+${21:   ${22:attach_ip_retry_interval}: ${23:"#"}}
+${24:   ${25:attach_ip_retry_limit}: ${26:"#"}}
+${27:   ${28:cluster_ip_gratuitous_arp_period}: ${29:"#"}}
+${30:   ${31:controller}: ${32:"#"}}
+${33:   ${34:crashed_se_reboot}: ${35:"#"}}
+${36:   ${37:dead_se_detection_timer}: ${38:"#"}}
+${39:   ${40:dns_refresh_period}: ${41:"#"}}
+${42:   ${43:dummy}: ${44:"#"}}
+${45:   ${46:fatal_error_lease_time}: ${47:"#"}}
+${48:   ${49:max_dead_se_in_grp}: ${50:"#"}}
+${51:   ${52:max_pcap_per_tenant}: ${53:"#"}}
+${54:   ${55:max_seq_vnic_failures}: ${56:"#"}}
+${57:   ${58:password}: ${59:"#"}}
+${60:   ${61:persistence_key_rotate_period}: ${62:"#"}}
+${63:   ${64:portal_token}: ${65:"#"}}
+${66:   ${67:query_host_fail}: ${68:"#"}}
+${69:   ${70:se_create_timeout}: ${71:"#"}}
+${72:   ${73:se_failover_attempt_interval}: ${74:"#"}}
+${75:   ${76:se_offline_del}: ${77:"#"}}
+${78:   ${79:se_vnic_cooldown}: ${80:"#"}}
+${81:   ${82:secure_channel_cleanup_timeout}: ${83:"#"}}
+${84:   ${85:secure_channel_controller_token_timeout}: ${86:"#"}}
+${87:   ${88:secure_channel_se_token_timeout}: ${89:"#"}}
+${90:   ${91:seupgrade_fabric_pool_size}: ${92:"#"}}
+${93:   ${94:seupgrade_segroup_min_dead_timeout}: ${95:"#"}}
+${96:   ${97:ssl_certificate_expiry_warning_days}: ${98:"#"}}
+${99:   ${100:state}: ${101:"#"}}
+${102:   ${103:tenant}: ${104:"#"}}
+${105:   ${106:tenant_uuid}: ${107:"#"}}
+${108:   ${109:unresponsive_se_reboot}: ${110:"#"}}
+${111:   ${112:upgrade_dns_ttl}: ${113:"#"}}
+${114:   ${115:upgrade_lease_time}: ${116:"#"}}
+${117:   ${118:url}: ${119:"#"}}
+${120:   ${121:username}: ${122:"#"}}
+${123:   ${124:uuid}: ${125:"#"}}
+${126:   ${127:vnic_op_fail_time}: ${128:"#"}}
+${129:   ${130:vs_apic_scaleout_timeout}: ${131:"#"}}
+${132:   ${133:vs_awaiting_se_timeout}: ${134:"#"}}
+${135:   ${136:vs_key_rotate_period}: ${137:"#"}}
+${138:   ${139:vs_se_bootup_fail}: ${140:"#"}}
+${141:   ${142:vs_se_create_fail}: ${143:"#"}}
+${144:   ${145:vs_se_ping_fail}: ${146:"#"}}
+${147:   ${148:vs_se_vnic_fail}: ${149:"#"}}
+${150:   ${151:vs_se_vnic_ip_fail}: ${152:"#"}}
+${153:   ${154:warmstart_se_reconnect_wait_time}: ${155:"#"}}
+${156:${157:   become: ${158:true}} 
+${159:   become_method: ${160:su}} 
+${161:   become_user: ${162:nobody}} 
+${163:   become_flags: ${164:"-s /bin/sh"}}} 
+${165:   when: ${166:variable is defined}} 
+${167:   with_items: ${168:array}} 
+]]></content>
+	<tabTrigger>avi_controllerproperties</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

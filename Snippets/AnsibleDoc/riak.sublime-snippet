@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#command = The command you would like to perform against the cluster.
-#config_dir = The path to the riak configuration directory
-#http_conn = The ip address and port that is listening for Riak HTTP queries
-#target_node = The target node for certain operations (join, ping)
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
-#wait_for_handoffs = Number of seconds to wait for handoffs to complete.
-#wait_for_ring = Number of seconds to wait for all nodes to agree on the ring.
-#wait_for_service = Waits for a riak service to come online before continuing.
+${1:# command: The command you would like to perform against the cluster. 
+# config_dir: The path to the riak configuration directory 
+# http_conn: The ip address and port that is listening for Riak HTTP queries 
+# target_node: The target node for certain operations (join, ping) 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# wait_for_handoffs: Number of seconds to wait for handoffs to complete. 
+# wait_for_ring: Number of seconds to wait for all nodes to agree on the ring. 
+# wait_for_service: Waits for a riak service to come online before continuing. 
 }- name: ${2:Name for riak module.}
-${3:  become: ${4:yes}}
-  riak: ${5:command=${6: } }${7:config_dir=${8: } }${9:http_conn=${10: } }${11:target_node=${12: } }${13:validate_certs=${14: } }${15:wait_for_handoffs=${16: } }${17:wait_for_ring=${18: } }${19:wait_for_service=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  riak:
+${3:   ${4:command}: ${5:"#"}}
+${6:   ${7:config_dir}: ${8:"#"}}
+${9:   ${10:http_conn}: ${11:"#"}}
+${12:   ${13:target_node}: ${14:"#"}}
+${15:   ${16:validate_certs}: ${17:"#"}}
+${18:   ${19:wait_for_handoffs}: ${20:"#"}}
+${21:   ${22:wait_for_ring}: ${23:"#"}}
+${24:   ${25:wait_for_service}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>riak</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

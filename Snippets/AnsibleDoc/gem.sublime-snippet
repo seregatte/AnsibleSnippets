@@ -1,21 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#build_flags = Allow adding build flags for gem compilation
-#executable = Override the path to the gem executable
-#gem_source = The path to a local gem used as installation source.
-#include_dependencies = Whether to include dependencies or not.
-#include_doc = Install with or without docs.
-#name = The name of the gem to be managed.
-#pre_release = Allow installation of pre-release versions of the gem.
-#repository = The repository from which the gem will be installed
-#state = The desired state of the gem. `latest' ensures that the latest version is installed.
-#user_install = Install gem in user's local gems cache or for all users
-#version = Version of the gem to be installed/removed.
+${1:# build_flags: Allow adding build flags for gem compilation 
+# env_shebang: Rewrite the shebang line on installed scripts to use /usr/bin/env. 
+# executable: Override the path to the gem executable 
+# gem_source: The path to a local gem used as installation source. 
+# include_dependencies: Whether to include dependencies or not. 
+# include_doc: Install with or without docs. 
+# name: (required) The name of the gem to be managed. 
+# pre_release: Allow installation of pre-release versions of the gem. 
+# repository: The repository from which the gem will be installed 
+# state: The desired state of the gem. `latest' ensures that the latest version is installed. 
+# user_install: Install gem in user's local gems cache or for all users 
+# version: Version of the gem to be installed/removed. 
 }- name: ${2:Name for gem module.}
-${3:  become: ${4:yes}}
-  gem: ${5:build_flags=${6: } }${7:executable=${8: } }${9:gem_source=${10: } }${11:include_dependencies=${12: } }${13:include_doc=${14: } }${15:name=${16: } }${17:pre_release=${18: } }${19:repository=${20: } }${21:state=${22: } }${23:user_install=${24: } }${25:version=${26: } }
-${27:  when: ${28: variable is defined}}
-${29:  with_items: ${30: array}}
+  gem:
+${3:   ${4:build_flags}: ${5:"#"}}
+${6:   ${7:env_shebang}: ${8:"#"}}
+${9:   ${10:executable}: ${11:"#"}}
+${12:   ${13:gem_source}: ${14:"#"}}
+${15:   ${16:include_dependencies}: ${17:"#"}}
+${18:   ${19:include_doc}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:pre_release}: ${26:"#"}}
+${27:   ${28:repository}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:user_install}: ${35:"#"}}
+${36:   ${37:version}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>gem</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

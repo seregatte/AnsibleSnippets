@@ -1,45 +1,83 @@
 <snippet>
 <content><![CDATA[
-${1:#ageingtime = This is only used with bridge - [ageing-time <0-1000000>] the Ethernet MAC address aging time, in seconds
-#arp_interval = This is only used with bond - ARP interval
-#arp_ip_target = This is only used with bond - ARP IP target
-#autoconnect = Whether the connection should start on boot. Whether the connection profile can be automatically activated
-#conn_name = Where conn_name will be the name used to call the connection. when not provided a default name is generated:
-#dns4 = A list of upto 3 dns servers, ipv4 format e.g. To add two IPv4 DNS server addresses: ["8.8.8.8 8.8.4.4"]
-#dns6 = A list of upto 3 dns servers, ipv6 format e.g. To add two IPv6 DNS server addresses: ["2001:4860:4860::8888
-#downdelay = This is only used with bond - downdelay
-#egress = This is only used with VLAN - VLAN egress priority mapping
-#flags = This is only used with VLAN - flags
-#forwarddelay = This is only used with bridge - [forward-delay <2-30>] STP forwarding delay, in seconds
-#gw4 = The IPv4 gateway for this interface using this format ie: "192.168.100.1"
-#gw6 = The IPv6 gateway for this interface using this format ie: "2001:db8::1"
-#hairpin = This is only used with 'bridge-slave' - 'hairpin mode' for the slave, which allows frames to be sent back out
-#hellotime = This is only used with bridge - [hello-time <1-10>] STP hello time, in seconds
-#ifname = Where IFNAME will be the what we call the interface name. interface to bind the connection to. The connection
-#ingress = This is only used with VLAN - VLAN ingress priority mapping
-#ip4 = The IPv4 address to this interface using this format ie: "192.168.1.24/24"
-#ip6 = The IPv6 address to this interface using this format ie: "abbe::cafe"
-#mac = This is only used with bridge - MAC address of the bridge (note: this requires a recent kernel feature,
-#master = master <master (ifname, or connection UUID or conn_name) of bridge, team, bond master connection profile.
-#maxage = This is only used with bridge - [max-age <6-42>] STP maximum message age, in seconds
-#miimon = This is only used with bond - miimon
-#mode = This is the type of device or network connection that you wish to create for a bond, team or bridge.
-#mtu = The connection MTU, e.g. 9000. This can't be applied when creating the interface and is done once the interface
-#path_cost = This is only used with 'bridge-slave' - [<1-65535>] - STP port cost for destinations via this slave
-#primary = This is only used with bond and is the primary interface name (for "active-backup" mode), this is the usually
-#priority = This is only used with 'bridge' - sets STP priority
-#slavepriority = This is only used with 'bridge-slave' - [<0-63>] - STP priority of this slave
-#state = Whether the device should exist or not, taking action if the state is different from what is stated.
-#stp = This is only used with bridge and controls whether Spanning Tree Protocol (STP) is enabled for this bridge
-#type = This is the type of device or network connection that you wish to create.
-#updelay = This is only used with bond - updelay
-#vlandev = This is only used with VLAN - parent device this VLAN is on, can use ifname
-#vlanid = This is only used with VLAN - VLAN ID in range <0-4095>
+${1:# ageingtime: This is only used with bridge - [ageing-time <0-1000000>] the Ethernet MAC address aging time, in 
+# arp_interval: This is only used with bond - ARP interval 
+# arp_ip_target: This is only used with bond - ARP IP target 
+# autoconnect: Whether the connection should start on boot. Whether the connection profile can be automatically 
+# conn_name: (required) Where conn_name will be the name used to call the connection. when not provided a default 
+# dns4: A list of upto 3 dns servers, ipv4 format e.g. To add two IPv4 DNS server addresses: "192.0.2.53 
+# dns6: A list of upto 3 dns servers, ipv6 format e.g. To add two IPv6 DNS server addresses: 
+# downdelay: This is only used with bond - downdelay 
+# egress: This is only used with VLAN - VLAN egress priority mapping 
+# flags: This is only used with VLAN - flags 
+# forwarddelay: This is only used with bridge - [forward-delay <2-30>] STP forwarding delay, in seconds 
+# gw4: The IPv4 gateway for this interface using this format ie: "192.0.2.1" 
+# gw6: The IPv6 gateway for this interface using this format ie: "2001:db8::1" 
+# hairpin: This is only used with 'bridge-slave' - 'hairpin mode' for the slave, which allows frames to be sent 
+# hellotime: This is only used with bridge - [hello-time <1-10>] STP hello time, in seconds 
+# ifname: Where IFNAME will be the what we call the interface name. interface to bind the connection to. The 
+# ingress: This is only used with VLAN - VLAN ingress priority mapping 
+# ip4: The IPv4 address to this interface using this format ie: "192.0.2.24/24" 
+# ip6: The IPv6 address to this interface using this format ie: "abbe::cafe" 
+# mac: This is only used with bridge - MAC address of the bridge (note: this requires a recent kernel feature, 
+# master: master <master (ifname, or connection UUID or conn_name) of bridge, team, bond master connection 
+# maxage: This is only used with bridge - [max-age <6-42>] STP maximum message age, in seconds 
+# miimon: This is only used with bond - miimon 
+# mode: This is the type of device or network connection that you wish to create for a bond, team or bridge. 
+# mtu: The connection MTU, e.g. 9000. This can't be applied when creating the interface and is done once the 
+# path_cost: This is only used with 'bridge-slave' - [<1-65535>] - STP port cost for destinations via this slave 
+# primary: This is only used with bond and is the primary interface name (for "active-backup" mode), this is the 
+# priority: This is only used with 'bridge' - sets STP priority 
+# slavepriority: This is only used with 'bridge-slave' - [<0-63>] - STP priority of this slave 
+# state: (required) Whether the device should exist or not, taking action if the state is different from what is 
+# stp: This is only used with bridge and controls whether Spanning Tree Protocol (STP) is enabled for this 
+# type: This is the type of device or network connection that you wish to create or modify. 
+# updelay: This is only used with bond - updelay 
+# vlandev: This is only used with VLAN - parent device this VLAN is on, can use ifname 
+# vlanid: This is only used with VLAN - VLAN ID in range <0-4095> 
 }- name: ${2:Name for nmcli module.}
-${3:  become: ${4:yes}}
-  nmcli: ${5:ageingtime=${6: } }${7:arp_interval=${8: } }${9:arp_ip_target=${10: } }${11:autoconnect=${12: } }${13:conn_name=${14: } }${15:dns4=${16: } }${17:dns6=${18: } }${19:downdelay=${20: } }${21:egress=${22: } }${23:flags=${24: } }${25:forwarddelay=${26: } }${27:gw4=${28: } }${29:gw6=${30: } }${31:hairpin=${32: } }${33:hellotime=${34: } }${35:ifname=${36: } }${37:ingress=${38: } }${39:ip4=${40: } }${41:ip6=${42: } }${43:mac=${44: } }${45:master=${46: } }${47:maxage=${48: } }${49:miimon=${50: } }${51:mode=${52: } }${53:mtu=${54: } }${55:path_cost=${56: } }${57:primary=${58: } }${59:priority=${60: } }${61:slavepriority=${62: } }${63:state=${64: } }${65:stp=${66: } }${67:type=${68: } }${69:updelay=${70: } }${71:vlandev=${72: } }${73:vlanid=${74: } }
-${75:  when: ${76: variable is defined}}
-${77:  with_items: ${78: array}}
+  nmcli:
+${3:   ${4:ageingtime}: ${5:"#"}}
+${6:   ${7:arp_interval}: ${8:"#"}}
+${9:   ${10:arp_ip_target}: ${11:"#"}}
+${12:   ${13:autoconnect}: ${14:"#"}}
+${15:   ${16:conn_name}: ${17:"#"}}
+${18:   ${19:dns4}: ${20:"#"}}
+${21:   ${22:dns6}: ${23:"#"}}
+${24:   ${25:downdelay}: ${26:"#"}}
+${27:   ${28:egress}: ${29:"#"}}
+${30:   ${31:flags}: ${32:"#"}}
+${33:   ${34:forwarddelay}: ${35:"#"}}
+${36:   ${37:gw4}: ${38:"#"}}
+${39:   ${40:gw6}: ${41:"#"}}
+${42:   ${43:hairpin}: ${44:"#"}}
+${45:   ${46:hellotime}: ${47:"#"}}
+${48:   ${49:ifname}: ${50:"#"}}
+${51:   ${52:ingress}: ${53:"#"}}
+${54:   ${55:ip4}: ${56:"#"}}
+${57:   ${58:ip6}: ${59:"#"}}
+${60:   ${61:mac}: ${62:"#"}}
+${63:   ${64:master}: ${65:"#"}}
+${66:   ${67:maxage}: ${68:"#"}}
+${69:   ${70:miimon}: ${71:"#"}}
+${72:   ${73:mode}: ${74:"#"}}
+${75:   ${76:mtu}: ${77:"#"}}
+${78:   ${79:path_cost}: ${80:"#"}}
+${81:   ${82:primary}: ${83:"#"}}
+${84:   ${85:priority}: ${86:"#"}}
+${87:   ${88:slavepriority}: ${89:"#"}}
+${90:   ${91:state}: ${92:"#"}}
+${93:   ${94:stp}: ${95:"#"}}
+${96:   ${97:type}: ${98:"#"}}
+${99:   ${100:updelay}: ${101:"#"}}
+${102:   ${103:vlandev}: ${104:"#"}}
+${105:   ${106:vlanid}: ${107:"#"}}
+${108:${109:   become: ${110:true}} 
+${111:   become_method: ${112:su}} 
+${113:   become_user: ${114:nobody}} 
+${115:   become_flags: ${116:"-s /bin/sh"}}} 
+${117:   when: ${118:variable is defined}} 
+${119:   with_items: ${120:array}} 
 ]]></content>
 	<tabTrigger>nmcli</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

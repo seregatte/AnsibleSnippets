@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# name: (required) IP interface name. 
+# state: Create or delete Solaris/illumos IP interfaces. 
+# temporary: Specifies that the IP interface is temporary. Temporary IP interfaces do not persist across reboots. 
+}- name: ${2:Name for ipadm_if module.}
+  ipadm_if:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:state}: ${8:"#"}}
+${9:   ${10:temporary}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>ipadm_if</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

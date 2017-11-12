@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# error_key: The object key name to use when a 4XX class error occurs. To remove an error key, set to None. 
+# name: (required) Name of the s3 bucket 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# redirect_all_requests: Describes the redirect behavior for every request to this s3 bucket website endpoint 
+# region: AWS region to create the bucket in. If not set then the value of the AWS_REGION and EC2_REGION 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: Add or remove s3 website configuration 
+# suffix: Suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+}- name: ${2:Name for s3_website module.}
+  s3_website:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:error_key}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:profile}: ${20:"#"}}
+${21:   ${22:redirect_all_requests}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:security_token}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:suffix}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>s3_website</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

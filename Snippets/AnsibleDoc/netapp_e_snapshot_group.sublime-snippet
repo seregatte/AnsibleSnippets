@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
+# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
+# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
+# base_volume_name: (required) The name of the base volume or thin volume to use as the base for the new snapshot group. If 
+# delete_limit: The automatic deletion indicator. If non-zero, the oldest snapshot image will be automatically deleted 
+# full_policy: The behavior on when the data repository becomes full. This value is overridden by consistency group 
+# name: (required) The name to give the snapshot group 
+# repo_pct: The size of the repository in relation to the size of the base volume 
+# rollback_priority: The importance of the rollback operation. This value is overridden by consistency group setting if this 
+# state: (required) Whether to ensure the group is present or absent. 
+# storage_pool_name: (required) The name of the storage pool on which to allocate the repository volume. 
+# validate_certs: Should https certificates be validated? 
+# warning_threshold: The repository utilization warning threshold, as a percentage of the repository volume capacity. 
+}- name: ${2:Name for netapp_e_snapshot_group module.}
+  netapp_e_snapshot_group:
+${3:   ${4:api_password}: ${5:"#"}}
+${6:   ${7:api_url}: ${8:"#"}}
+${9:   ${10:api_username}: ${11:"#"}}
+${12:   ${13:base_volume_name}: ${14:"#"}}
+${15:   ${16:delete_limit}: ${17:"#"}}
+${18:   ${19:full_policy}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:repo_pct}: ${26:"#"}}
+${27:   ${28:rollback_priority}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:storage_pool_name}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:warning_threshold}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>netapp_e_snapshot_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# flexvol_name: The name of the FlexVol the lun should exist on. Required when `state=present'. 
+# force_remove: If "true", override checks that prevent a LUN from being destroyed if it is online and mapped. If 
+# force_remove_fenced: If "true", override checks that prevent a LUN from being destroyed while it is fenced. If "false", 
+# force_resize: Forcibly reduce the size. This is required for reducing the size of the LUN to avoid accidentally 
+# hostname: (required) The hostname or IP address of the ONTAP instance. 
+# name: (required) The name of the lun to manage. 
+# password: (required) Password for the specified user. 
+# size: The size of the lun in `size_unit'. Required when `state=present'. 
+# size_unit: The unit used to interpret the size parameter. 
+# state: (required) Whether the specified lun should exist or not. 
+# username: (required) This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or 
+# vserver: (required) The name of the vserver to use. 
+}- name: ${2:Name for na_cdot_lun module.}
+  na_cdot_lun:
+${3:   ${4:flexvol_name}: ${5:"#"}}
+${6:   ${7:force_remove}: ${8:"#"}}
+${9:   ${10:force_remove_fenced}: ${11:"#"}}
+${12:   ${13:force_resize}: ${14:"#"}}
+${15:   ${16:hostname}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:size}: ${26:"#"}}
+${27:   ${28:size_unit}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:vserver}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>na_cdot_lun</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

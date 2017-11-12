@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# api_secret: (required) Api Secret from Api account page. 
+# api_token: (required) Api Token from Api account page. 
+# dest: (required) The phone number or numbers the message should be sent to (must be in E.164 format, like 
+# media: For MMS messages, a media url to the location of the media to be sent with the message. 
+# msg: (required) The contents of the text message (must be 2048 characters or less). 
+# src: (required) One of your catapult telephone numbers the message should come from (must be in E.164 format, 
+# user_id: (required) User Id from Api account page. 
+}- name: ${2:Name for catapult module.}
+  catapult:
+${3:   ${4:api_secret}: ${5:"#"}}
+${6:   ${7:api_token}: ${8:"#"}}
+${9:   ${10:dest}: ${11:"#"}}
+${12:   ${13:media}: ${14:"#"}}
+${15:   ${16:msg}: ${17:"#"}}
+${18:   ${19:src}: ${20:"#"}}
+${21:   ${22:user_id}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>catapult</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

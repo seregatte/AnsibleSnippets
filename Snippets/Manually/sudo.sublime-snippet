@@ -1,7 +1,0 @@
-<snippet>
-<content><![CDATA[
-sudo: ${1:yes}
-]]></content>
-	<tabTrigger>sudo</tabTrigger>
-	<scope>source.yaml,source.ansible</scope>
-</snippet>

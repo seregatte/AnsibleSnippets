@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#gid = Optional `GID' to set for the group.
-#name = Name of the group to manage.
-#state = Whether the group should be present or not on the remote host.
-#system = If `yes', indicates that the group created is a system group.
+${1:# gid: Optional `GID' to set for the group. 
+# name: (required) Name of the group to manage. 
+# state: Whether the group should be present or not on the remote host. 
+# system: If `yes', indicates that the group created is a system group. 
 }- name: ${2:Name for group module.}
-${3:  become: ${4:yes}}
-  group: ${5:gid=${6: } }${7:name=${8: } }${9:state=${10: } }${11:system=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  group:
+${3:   ${4:gid}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:system}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

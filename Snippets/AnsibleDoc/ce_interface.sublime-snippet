@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# admin_state: Specifies the interface management status. The value is an enumerated type. up, An interface is in the 
+# description: Specifies an interface description. The value is a string of 1 to 242 case-sensitive characters, spaces 
+# interface: Full name of interface, i.e. 40GE1/0/10, Tunnel1. 
+# interface_type: Interface type to be configured from the device. 
+# l2sub: Specifies whether the interface is a Layer 2 sub-interface. 
+# mode: Manage Layer 2 or Layer 3 state of the interface. 
+# state: (required) Specify desired state of the resource. 
+}- name: ${2:Name for ce_interface module.}
+  ce_interface:
+${3:   ${4:admin_state}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:interface}: ${11:"#"}}
+${12:   ${13:interface_type}: ${14:"#"}}
+${15:   ${16:l2sub}: ${17:"#"}}
+${18:   ${19:mode}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>ce_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

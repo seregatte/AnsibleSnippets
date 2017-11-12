@@ -1,0 +1,64 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# description: User defined description for the object. 
+# dns_monitor: Healthmonitordns settings for healthmonitor. 
+# external_monitor: Healthmonitorexternal settings for healthmonitor. 
+# failed_checks: Number of continuous failed health checks before the server is marked down. Allowed values are 1-50. 
+# http_monitor: Healthmonitorhttp settings for healthmonitor. 
+# https_monitor: Healthmonitorhttp settings for healthmonitor. 
+# is_federated: This field describes the object's replication scope. If the field is set to false, then the object is 
+# monitor_port: Use this port instead of the port defined for the server in the pool. If the monitor succeeds to this 
+# name: (required) A user friendly name for this health monitor. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# receive_timeout: A valid response from the server is expected within the receive timeout window. This timeout must be 
+# send_interval: Frequency, in seconds, that monitors are sent to a server. Allowed values are 1-3600. Default value when 
+# state: The state that should be applied on the entity. 
+# successful_checks: Number of continuous successful health checks before server is marked up. Allowed values are 1-50. 
+# tcp_monitor: Healthmonitortcp settings for healthmonitor. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# type: (required) Type of the health monitor. Enum options - HEALTH_MONITOR_PING, HEALTH_MONITOR_TCP, 
+# udp_monitor: Healthmonitorudp settings for healthmonitor. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Uuid of the health monitor. 
+}- name: ${2:Name for avi_healthmonitor module.}
+  avi_healthmonitor:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:controller}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:dns_monitor}: ${14:"#"}}
+${15:   ${16:external_monitor}: ${17:"#"}}
+${18:   ${19:failed_checks}: ${20:"#"}}
+${21:   ${22:http_monitor}: ${23:"#"}}
+${24:   ${25:https_monitor}: ${26:"#"}}
+${27:   ${28:is_federated}: ${29:"#"}}
+${30:   ${31:monitor_port}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:receive_timeout}: ${41:"#"}}
+${42:   ${43:send_interval}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:successful_checks}: ${50:"#"}}
+${51:   ${52:tcp_monitor}: ${53:"#"}}
+${54:   ${55:tenant}: ${56:"#"}}
+${57:   ${58:tenant_ref}: ${59:"#"}}
+${60:   ${61:tenant_uuid}: ${62:"#"}}
+${63:   ${64:type}: ${65:"#"}}
+${66:   ${67:udp_monitor}: ${68:"#"}}
+${69:   ${70:url}: ${71:"#"}}
+${72:   ${73:username}: ${74:"#"}}
+${75:   ${76:uuid}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
+]]></content>
+	<tabTrigger>avi_healthmonitor</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

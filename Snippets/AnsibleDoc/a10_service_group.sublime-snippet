@@ -1,19 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#host = hostname or ip of your A10 Networks device
-#password = admin password of your A10 Networks device
-#servers = A list of servers to add to the service group. Each list item should be a dictionary which specifies the
-#service_group = slb service-group name
-#service_group_method = slb service-group loadbalancing method
-#service_group_protocol = slb service-group protocol
-#username = admin account of your A10 Networks device
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled devices using
-#write_config = If `yes', any changes will cause a write of the running configuration to non-volatile memory. This will save
+${1:# host: (required) Hostname or IP of the A10 Networks device. 
+# partition: set active-partition 
+# password: (required) Password for the `username' account. 
+# servers: A list of servers to add to the service group. Each list item should be a dictionary which specifies the 
+# service_group: (required) The SLB (Server Load Balancing) service-group name 
+# service_group_method: The SLB service-group load balancing method, such as round-robin or weighted-rr. 
+# service_group_protocol: The SLB service-group protocol of TCP or UDP. 
+# username: (required) An account with administrator privileges. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled 
+# write_config: If `yes', any changes will cause a write of the running configuration to non-volatile memory. This will 
 }- name: ${2:Name for a10_service_group module.}
-${3:  become: ${4:yes}}
-  a10_service_group: ${5:host=${6: } }${7:password=${8: } }${9:servers=${10: } }${11:service_group=${12: } }${13:service_group_method=${14: } }${15:service_group_protocol=${16: } }${17:username=${18: } }${19:validate_certs=${20: } }${21:write_config=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  a10_service_group:
+${3:   ${4:host}: ${5:"#"}}
+${6:   ${7:partition}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:servers}: ${14:"#"}}
+${15:   ${16:service_group}: ${17:"#"}}
+${18:   ${19:service_group_method}: ${20:"#"}}
+${21:   ${22:service_group_protocol}: ${23:"#"}}
+${24:   ${25:username}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:   ${31:write_config}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>a10_service_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

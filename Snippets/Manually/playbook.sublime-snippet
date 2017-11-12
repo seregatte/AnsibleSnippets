@@ -20,13 +20,13 @@
   #} 
 - hosts: ${3:all}${4:
   ###########
-  # Playbook attribute: sudo
+  # Playbook attribute: become
   # Default: False
   # Required: no
   # Description:
-  #   If True, always use sudo to run this playbook, just like passing the
-  #   --sudo (or -s) flag to ansible or ansible-playbook.}
-  sudo: ${5:True}${6:
+  #   If True, always use become to run this playbook, just like passing the
+  #   --become (or -s) flag to ansible or ansible-playbook.}
+  become: ${5:True}${6:
   ###########
   # Playbook attribute:  user
   # Default: "root'

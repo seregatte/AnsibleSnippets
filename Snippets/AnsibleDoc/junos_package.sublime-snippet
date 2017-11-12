@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# force: (required) The `force' argument instructs the module to bypass the package version check and install the 
+# no_copy: The `no_copy' argument is responsible for instructing the remote device on where to install the package 
+# provider: A dict object containing connection details. 
+# reboot: (required) In order for a package to take effect, the remote device must be restarted.  When enabled, 
+# src: (required) The `src' argument specifies the path to the source package to be installed on the remote 
+# version: The `version' argument can be used to explicitly specify the version of the package that should be 
+}- name: ${2:Name for junos_package module.}
+  junos_package:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:no_copy}: ${8:"#"}}
+${9:   ${10:provider}: ${11:"#"}}
+${12:   ${13:reboot}: ${14:"#"}}
+${15:   ${16:src}: ${17:"#"}}
+${18:   ${19:version}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>junos_package</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

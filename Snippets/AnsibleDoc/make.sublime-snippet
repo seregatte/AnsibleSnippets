@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# chdir: (required) cd into this directory before running make 
+# params: Any extra parameters to pass to make 
+# target: The target to run 
+}- name: ${2:Name for make module.}
+  make:
+${3:   ${4:chdir}: ${5:"#"}}
+${6:   ${7:params}: ${8:"#"}}
+${9:   ${10:target}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>make</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

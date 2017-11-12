@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# command: The handler command to be executed. The event data is passed to the process via STDIN. NOTE: the command 
+# filter: The Sensu event filter (name) to use when filtering events for the handler. 
+# filters: An array of Sensu event filters (names) to use when filtering events for the handler. Each array item 
+# handle_flapping: If events in the flapping state should be handled. 
+# handle_silenced: If events matching one or more silence entries should be handled. 
+# handlers: (required) An array of Sensu event handlers (names) to use for events using the handler set. Each array 
+# mutator: The Sensu event mutator (name) to use to mutate event data for the handler. 
+# name: (required) A unique name for the handler. The name cannot contain special characters or spaces. 
+# pipe: The pipe definition scope, used to configure the Sensu transport pipe. NOTE: the pipe attribute is only 
+# severities: An array of check result severities the handler will handle. NOTE: event resolution bypasses this 
+# socket: The socket definition scope, used to configure the TCP/UDP handler socket. NOTE: the socket attribute is 
+# state: Whether the handler should be present or not 
+# timeout: The handler execution duration timeout in seconds (hard stop). Only used by pipe and tcp handler types. 
+# type: (required) The handler type 
+}- name: ${2:Name for sensu_handler module.}
+  sensu_handler:
+${3:   ${4:command}: ${5:"#"}}
+${6:   ${7:filter}: ${8:"#"}}
+${9:   ${10:filters}: ${11:"#"}}
+${12:   ${13:handle_flapping}: ${14:"#"}}
+${15:   ${16:handle_silenced}: ${17:"#"}}
+${18:   ${19:handlers}: ${20:"#"}}
+${21:   ${22:mutator}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:pipe}: ${29:"#"}}
+${30:   ${31:severities}: ${32:"#"}}
+${33:   ${34:socket}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:timeout}: ${41:"#"}}
+${42:   ${43:type}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>sensu_handler</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# ca_certs: List of certificate authorities (root and intermediate) trusted that is used for certificate validation. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# created_by: Creator name. 
+# crl_check: When enabled, avi will verify via crl checks that certificates in the trust chain have not been revoked. 
+# crls: Certificate revocation lists. 
+# ignore_peer_chain: When enabled, avi will not trust intermediate and root certs presented by a client. Instead, only the 
+# is_federated: This field describes the object's replication scope. If the field is set to false, then the object is 
+# name: (required) Name of the pki profile. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Unique object identifier of the object. 
+# validate_only_leaf_crl: When enabled, avi will only validate the revocation status of the leaf certificate using crl. To enable 
+}- name: ${2:Name for avi_pkiprofile module.}
+  avi_pkiprofile:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:ca_certs}: ${8:"#"}}
+${9:   ${10:controller}: ${11:"#"}}
+${12:   ${13:created_by}: ${14:"#"}}
+${15:   ${16:crl_check}: ${17:"#"}}
+${18:   ${19:crls}: ${20:"#"}}
+${21:   ${22:ignore_peer_chain}: ${23:"#"}}
+${24:   ${25:is_federated}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:tenant}: ${38:"#"}}
+${39:   ${40:tenant_ref}: ${41:"#"}}
+${42:   ${43:tenant_uuid}: ${44:"#"}}
+${45:   ${46:url}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:uuid}: ${53:"#"}}
+${54:   ${55:validate_only_leaf_crl}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>avi_pkiprofile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

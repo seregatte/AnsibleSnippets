@@ -1,22 +1,55 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#include_global_events = record API calls from global services such as IAM and STS?
-#name = name for given CloudTrail configuration. This is a primary key and is used to identify the configuration.
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
-#s3_bucket_prefix = bucket to place CloudTrail in. this bucket should exist and have the proper policy. See
-#s3_key_prefix = prefix to keys in bucket. A trailing slash is not necessary and will be removed.
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = add or remove CloudTrail configuration.
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# cloudwatch_logs_log_group_arn: A full ARN specifying a valid CloudWatch log group to which CloudTrail logs will be delivered. The log 
+# cloudwatch_logs_role_arn: Specifies a full ARN for an IAM role that assigns the proper permissions for CloudTrail to create and 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# enable_log_file_validation: Specifies whether log file integrity validation is enabled. CloudTrail will create a hash for every log 
+# enable_logging: Start or stop the CloudTrail logging. If stopped the trail will be paused and will not record events or 
+# include_global_events: Record API calls from global services such as IAM and STS. 
+# is_multi_region_trail: Specify whether the trail belongs only to one region or exists in all regions. 
+# kms_key_id: Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. This also has the effect of 
+# name: (required) Name for the CloudTrail. Names are unique per-region unless the CloudTrail is a mulit-region 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# s3_bucket_name: An existing S3 bucket where CloudTrail will deliver log files. This bucket should exist and have the 
+# s3_key_prefix: S3 Key prefix for delivered log files. A trailing slash is not necessary and will be removed. 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# sns_topic_name: SNS Topic name to send notifications to when a log file is delivered 
+# state: (required) Add or remove CloudTrail configuration. The following states have been preserved for 
+# tags: A hash/dictionary of tags to be applied to the CloudTrail resource. Remove completely or specify an 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
 }- name: ${2:Name for cloudtrail module.}
-${3:  become: ${4:yes}}
-  cloudtrail: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:include_global_events=${12: } }${13:name=${14: } }${15:profile=${16: } }${17:region=${18: } }${19:s3_bucket_prefix=${20: } }${21:s3_key_prefix=${22: } }${23:security_token=${24: } }${25:state=${26: } }${27:validate_certs=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  cloudtrail:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:cloudwatch_logs_log_group_arn}: ${11:"#"}}
+${12:   ${13:cloudwatch_logs_role_arn}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:enable_log_file_validation}: ${20:"#"}}
+${21:   ${22:enable_logging}: ${23:"#"}}
+${24:   ${25:include_global_events}: ${26:"#"}}
+${27:   ${28:is_multi_region_trail}: ${29:"#"}}
+${30:   ${31:kms_key_id}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:region}: ${41:"#"}}
+${42:   ${43:http}: ${44:"#"}}
+${45:   ${46:s3_bucket_name}: ${47:"#"}}
+${48:   ${49:s3_key_prefix}: ${50:"#"}}
+${51:   ${52:security_token}: ${53:"#"}}
+${54:   ${55:sns_topic_name}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:tags}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>cloudtrail</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

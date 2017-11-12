@@ -1,19 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#action = Action to take. servicegroup options were added in 2.0.
-#author = Author to leave downtime comments as. Only usable with the `downtime' action.
-#cmdfile = Path to the nagios `command file' (FIFO pipe). Only required if auto-detection fails.
-#command = The raw command to send to nagios, which should not include the submitted time header or the line-feed
-#comment = Comment for `downtime' action.
-#host = Host to operate on in Nagios.
-#minutes = Minutes to schedule downtime for. Only usable with the `downtime' action.
-#servicegroup = The Servicegroup we want to set downtimes/alerts for. *Required* option when using the
-#services = What to manage downtime/alerts for. Separate multiple services with commas. `service' is an alias for
+${1:# action: (required) Action to take. servicegroup options were added in 2.0. delete_downtime options were added in 
+# author: Author to leave downtime comments as. Only usable with the `downtime' action. 
+# cmdfile: Path to the nagios `command file' (FIFO pipe). Only required if auto-detection fails. 
+# command: (required) The raw command to send to nagios, which should not include the submitted time header or the 
+# comment: Comment for `downtime' action. 
+# host: Host to operate on in Nagios. 
+# minutes: Minutes to schedule downtime for. Only usable with the `downtime' action. 
+# servicegroup: The Servicegroup we want to set downtimes/alerts for. *Required* option when using the 
+# services: (required) What to manage downtime/alerts for. Separate multiple services with commas. `service' is an 
 }- name: ${2:Name for nagios module.}
-${3:  become: ${4:yes}}
-  nagios: ${5:action=${6: } }${7:author=${8: } }${9:cmdfile=${10: } }${11:command=${12: } }${13:comment=${14: } }${15:host=${16: } }${17:minutes=${18: } }${19:servicegroup=${20: } }${21:services=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  nagios:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:author}: ${8:"#"}}
+${9:   ${10:cmdfile}: ${11:"#"}}
+${12:   ${13:command}: ${14:"#"}}
+${15:   ${16:comment}: ${17:"#"}}
+${18:   ${19:host}: ${20:"#"}}
+${21:   ${22:minutes}: ${23:"#"}}
+${24:   ${25:servicegroup}: ${26:"#"}}
+${27:   ${28:services}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>nagios</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

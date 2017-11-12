@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: Auth parameters for the user. 
+# encrypt: Enables AES-128 bit encryption when using privacy password. 
+# group: (required) Group to which the user will belong to. 
+# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
+# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
+# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# privacy: Privacy password for the user. 
+# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# pwd: Auth password when using md5 or sha. 
+# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# state: Manage the state of the resource. 
+# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
+# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
+# user: (required) Name of the user. 
+# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for nxos_snmp_user module.}
+  nxos_snmp_user:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:encrypt}: ${8:"#"}}
+${9:   ${10:group}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:port}: ${20:"#"}}
+${21:   ${22:privacy}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:pwd}: ${29:"#"}}
+${30:   ${31:ssh_keyfile}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:timeout}: ${38:"#"}}
+${39:   ${40:transport}: ${41:"#"}}
+${42:   ${43:use_ssl}: ${44:"#"}}
+${45:   ${46:user}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>nxos_snmp_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

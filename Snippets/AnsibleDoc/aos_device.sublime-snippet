@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# approve: The approve argument instruct the module to convert a device in quarantine mode into approved mode. 
+# id: The AOS internal id for a device; i.e. uniquely identifies the device in the AOS system. Only one of 
+# location: When approving a device using the `approve' argument, it's possible define the location of the device. 
+# name: The device serial-number; i.e. uniquely identifies the device in the AOS system. Only one of `name' or 
+# session: (required) An existing AOS session as obtained by [aos_login] module. 
+# state: Define in which state the device should be. Currently only `normal' is supported but the goal is to add 
+}- name: ${2:Name for aos_device module.}
+  aos_device:
+${3:   ${4:approve}: ${5:"#"}}
+${6:   ${7:id}: ${8:"#"}}
+${9:   ${10:location}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:session}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>aos_device</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# attachments: Define a list of attachments. For more information, see https://github.com/bearyinnovative/bearychat- 
+# tutorial: attachments 
+# channel: Channel to send the message to. If absent, the message goes to the default channel selected by the 
+# markdown: If `yes', text will be parsed as markdown. 
+# text: Message to send. 
+# url: (required) BearyChat WebHook URL. This authenticates you to the bearychat service. It looks like 
+}- name: ${2:Name for bearychat module.}
+  bearychat:
+${3:   ${4:attachments}: ${5:"#"}}
+${6:   ${7:tutorial}: ${8:"#"}}
+${9:   ${10:channel}: ${11:"#"}}
+${12:   ${13:markdown}: ${14:"#"}}
+${15:   ${16:text}: ${17:"#"}}
+${18:   ${19:url}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>bearychat</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,13 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#attributes = Application Pool attributes from string where attributes are seperated by a pipe and attribute name/values by
-#name = Names of application pool
-#state = State of the binding
+${1:# attributes: As of Ansible 2.4, this field can take in dict entries to set the application pool attributes. These 
+# reference: 005, see the 
+# name: (required) Name of the application pool. 
+# state: The state of the application pool. If `present' will ensure the app pool is configured and exists. If 
 }- name: ${2:Name for win_iis_webapppool module.}
-${3:  become: ${4:yes}}
-  win_iis_webapppool: ${5:attributes=${6: } }${7:name=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  win_iis_webapppool:
+${3:   ${4:attributes}: ${5:"#"}}
+${6:   ${7:reference}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>win_iis_webapppool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

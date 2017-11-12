@@ -1,23 +1,71 @@
 <snippet>
 <content><![CDATA[
-${1:#api_key = Linode API key
-#datacenter = datacenter to create an instance in (Linode Datacenter)
-#distribution = distribution to use for the instance (Linode Distribution)
-#linode_id = Unique ID of a linode server
-#name = Name to give the instance (alphanumeric, dashes, underscore) To keep sanity on the Linode Web Console, name is
-#password = root password to apply to a new server (auto generated if missing)
-#payment_term = payment term to use for the instance (payment term in months)
-#plan = plan to use for the instance (Linode plan)
-#ssh_pub_key = SSH public key applied to root user
-#state = Indicate desired state of the resource
-#swap = swap size in MB
-#wait = wait for the instance to be in state 'running' before returning
-#wait_timeout = how long before wait gives up, in seconds
+${1:# additional_disks: List of dictionaries for creating additional disks that are added to the Linode configuration settings. 
+# alert_bwin_enabled: Set status of bandwidth in alerts. 
+# alert_bwin_threshold: Set threshold in MB of bandwidth in alerts. 
+# alert_bwout_enabled: Set status of bandwidth out alerts. 
+# alert_bwout_threshold: Set threshold in MB of bandwidth out alerts. 
+# alert_bwquota_enabled: Set status of bandwidth quota alerts as percentage of network transfer quota. 
+# alert_bwquota_threshold: Set threshold in MB of bandwidth quota alerts. 
+# alert_cpu_enabled: Set status of receiving CPU usage alerts. 
+# alert_cpu_threshold: Set percentage threshold for receiving CPU usage alerts. Each CPU core adds 100% to total. 
+# alert_diskio_enabled: Set status of receiving disk IO alerts. 
+# alert_diskio_threshold: Set threshold for average IO ops/sec over 2 hour period. 
+# api_key: Linode API key 
+# backupweeklyday: Integer value for what day of the week to store weekly backups. 
+# datacenter: datacenter to create an instance in (Linode Datacenter) 
+# displaygroup: Add the instance to a Display Group in Linode Manager 
+# distribution: distribution to use for the instance (Linode Distribution) 
+# kernel_id: kernel to use for the instance (Linode Kernel) 
+# linode_id: Unique ID of a linode server 
+# name: Name to give the instance (alphanumeric, dashes, underscore) To keep sanity on the Linode Web Console, 
+# password: root password to apply to a new server (auto generated if missing) 
+# payment_term: payment term to use for the instance (payment term in months) 
+# plan: plan to use for the instance (Linode plan) 
+# private_ip: Add private IPv4 address when Linode is created. 
+# ssh_pub_key: SSH public key applied to root user 
+# state: Indicate desired state of the resource 
+# swap: swap size in MB 
+# wait: wait for the instance to be in state 'running' before returning 
+# wait_timeout: how long before wait gives up, in seconds 
+# watchdog: Set status of Lassie watchdog. 
 }- name: ${2:Name for linode module.}
-${3:  become: ${4:yes}}
-  linode: ${5:api_key=${6: } }${7:datacenter=${8: } }${9:distribution=${10: } }${11:linode_id=${12: } }${13:name=${14: } }${15:password=${16: } }${17:payment_term=${18: } }${19:plan=${20: } }${21:ssh_pub_key=${22: } }${23:state=${24: } }${25:swap=${26: } }${27:wait=${28: } }${29:wait_timeout=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  linode:
+${3:   ${4:additional_disks}: ${5:"#"}}
+${6:   ${7:alert_bwin_enabled}: ${8:"#"}}
+${9:   ${10:alert_bwin_threshold}: ${11:"#"}}
+${12:   ${13:alert_bwout_enabled}: ${14:"#"}}
+${15:   ${16:alert_bwout_threshold}: ${17:"#"}}
+${18:   ${19:alert_bwquota_enabled}: ${20:"#"}}
+${21:   ${22:alert_bwquota_threshold}: ${23:"#"}}
+${24:   ${25:alert_cpu_enabled}: ${26:"#"}}
+${27:   ${28:alert_cpu_threshold}: ${29:"#"}}
+${30:   ${31:alert_diskio_enabled}: ${32:"#"}}
+${33:   ${34:alert_diskio_threshold}: ${35:"#"}}
+${36:   ${37:api_key}: ${38:"#"}}
+${39:   ${40:backupweeklyday}: ${41:"#"}}
+${42:   ${43:datacenter}: ${44:"#"}}
+${45:   ${46:displaygroup}: ${47:"#"}}
+${48:   ${49:distribution}: ${50:"#"}}
+${51:   ${52:kernel_id}: ${53:"#"}}
+${54:   ${55:linode_id}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:password}: ${62:"#"}}
+${63:   ${64:payment_term}: ${65:"#"}}
+${66:   ${67:plan}: ${68:"#"}}
+${69:   ${70:private_ip}: ${71:"#"}}
+${72:   ${73:ssh_pub_key}: ${74:"#"}}
+${75:   ${76:state}: ${77:"#"}}
+${78:   ${79:swap}: ${80:"#"}}
+${81:   ${82:wait}: ${83:"#"}}
+${84:   ${85:wait_timeout}: ${86:"#"}}
+${87:   ${88:watchdog}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>linode</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

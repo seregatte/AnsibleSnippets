@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# after: The ordered set of commands to append to the end of the command stack if a change needs to be made. 
+# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
+# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
+# before: The ordered set of commands to push on to the command stack if a change needs to be made.  This allows 
+# commit: This argument specifies the update method to use when applying the configuration changes to the remote 
+# config: The `config' argument allows the playbook designer to supply the base configuration to be used to 
+# context: Specifies which context to target if you are running in the ASA in multiple context mode. Defaults to 
+# defaults: This argument specifies whether or not to collect all defaults when getting the remote device running 
+# lines: The ordered set of commands that should be configured in the section.  The commands must be the exact 
+# match: Instructs the module on the way to perform the matching of the set of commands against the current 
+# parents: The ordered set of parents that uniquely identify the section the commands should be checked against. 
+# passwords: This argument specifies to include passwords in the config when retrieving the running-config from the 
+# provider: A dict object containing connection details. 
+# replace: Instructs the module on the way to perform the configuration on the device.  If the replace argument is 
+# save: The `save' argument instructs the module to save the running- config to the startup-config at the 
+# src: Specifies the source path to the file that contains the configuration or configuration template to load. 
+# update: The `update' argument controls how the configuration statements are processed on the remote device. 
+}- name: ${2:Name for asa_config module.}
+  asa_config:
+${3:   ${4:after}: ${5:"#"}}
+${6:   ${7:authorize}: ${8:"#"}}
+${9:   ${10:backup}: ${11:"#"}}
+${12:   ${13:before}: ${14:"#"}}
+${15:   ${16:commit}: ${17:"#"}}
+${18:   ${19:config}: ${20:"#"}}
+${21:   ${22:context}: ${23:"#"}}
+${24:   ${25:defaults}: ${26:"#"}}
+${27:   ${28:lines}: ${29:"#"}}
+${30:   ${31:match}: ${32:"#"}}
+${33:   ${34:parents}: ${35:"#"}}
+${36:   ${37:passwords}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:replace}: ${44:"#"}}
+${45:   ${46:save}: ${47:"#"}}
+${48:   ${49:src}: ${50:"#"}}
+${51:   ${52:update}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>asa_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

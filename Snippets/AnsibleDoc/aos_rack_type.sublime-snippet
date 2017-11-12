@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# content: Datastructure of the Rack Type to create. The data can be in YAML / JSON or directly a variable. It's 
+# id: AOS Id of the Rack Type to manage (can't be used to create a new Rack Type), Only one of `name', `id' or 
+# name: Name of the Rack Type to manage. Only one of `name', `id' or `content' can be set. 
+# session: (required) An existing AOS session as obtained by [aos_login] module. 
+# state: Indicate what is the expected state of the Rack Type (present or not). 
+}- name: ${2:Name for aos_rack_type module.}
+  aos_rack_type:
+${3:   ${4:content}: ${5:"#"}}
+${6:   ${7:id}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:session}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>aos_rack_type</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

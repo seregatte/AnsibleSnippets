@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# age: Select files or folders whose age is equal to or greater than the specified time. Use a negative age to 
+# age_stamp: Choose the file property against which we compare `age'. The default attribute we compare with is the 
+# checksum_algorithm: Algorithm to determine the checksum of a file. Will throw an error if the host is unable to use 
+# file_type: Type of file to search for 
+# follow: Set this to true to follow symlinks in the path. This needs to be used in conjunction with `recurse'. 
+# get_checksum: Whether to return a checksum of the file in the return info (default sha1), use `checksum_algorithm' to 
+# hidden: Set this to include hidden files or folders 
+# paths: (required) List of paths of directories to search for files or folders in. This can be supplied as a 
+# patterns: One or more (powershell or regex) patterns to compare filenames with. The type of pattern matching is 
+# recurse: Will recursively descend into the directory looking for files or folders 
+# size: Select files or folders whose size is equal to or greater than the specified size. Use a negative value 
+# use_regex: Will set patterns to run as a regex check if true 
+}- name: ${2:Name for win_find module.}
+  win_find:
+${3:   ${4:age}: ${5:"#"}}
+${6:   ${7:age_stamp}: ${8:"#"}}
+${9:   ${10:checksum_algorithm}: ${11:"#"}}
+${12:   ${13:file_type}: ${14:"#"}}
+${15:   ${16:follow}: ${17:"#"}}
+${18:   ${19:get_checksum}: ${20:"#"}}
+${21:   ${22:hidden}: ${23:"#"}}
+${24:   ${25:paths}: ${26:"#"}}
+${27:   ${28:patterns}: ${29:"#"}}
+${30:   ${31:recurse}: ${32:"#"}}
+${33:   ${34:size}: ${35:"#"}}
+${36:   ${37:use_regex}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>win_find</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

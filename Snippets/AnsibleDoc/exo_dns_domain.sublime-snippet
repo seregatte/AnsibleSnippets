@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: API key of the Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_KEY' is used as default, when 
+# api_region: Name of the ini section in the `cloustack.ini' file. Since 2.4, the ENV variable `CLOUDSTACK_REGION' is 
+# api_secret: Secret key of the Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_SECRET' is used as default, 
+# api_timeout: HTTP timeout to Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_TIMEOUT' is used as default, 
+# name: (required) Name of the record. 
+# state: State of the resource. 
+# validate_certs: Validate SSL certs of the Exoscale DNS API. 
+}- name: ${2:Name for exo_dns_domain module.}
+  exo_dns_domain:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:api_region}: ${8:"#"}}
+${9:   ${10:api_secret}: ${11:"#"}}
+${12:   ${13:api_timeout}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>exo_dns_domain</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

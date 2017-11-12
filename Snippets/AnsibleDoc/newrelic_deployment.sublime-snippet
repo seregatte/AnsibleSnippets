@@ -1,20 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#app_name = (one of app_name or application_id are required) The value of app_name in the newrelic.yml file used by the
-#application_id = (one of app_name or application_id are required) The application id, found in the URL when viewing the
-#appname = Name of the application
-#changelog = A list of changes for this deployment
-#description = Text annotation for the deployment - notes for you
-#environment = The environment for this deployment
-#revision = A revision number (e.g., git commit SHA)
-#token = API token, to place in the x-api-key header.
-#user = The name of the user/process that triggered this deployment
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
+${1:# app_name: (one of app_name or application_id are required) The value of app_name in the newrelic.yml file used by 
+# application_id: (one of app_name or application_id are required) The application id, found in the URL when viewing the 
+# appname: Name of the application 
+# changelog: A list of changes for this deployment 
+# description: Text annotation for the deployment - notes for you 
+# environment: The environment for this deployment 
+# revision: A revision number (e.g., git commit SHA) 
+# token: (required) API token, to place in the x-api-key header. 
+# user: The name of the user/process that triggered this deployment 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
 }- name: ${2:Name for newrelic_deployment module.}
-${3:  become: ${4:yes}}
-  newrelic_deployment: ${5:app_name=${6: } }${7:application_id=${8: } }${9:appname=${10: } }${11:changelog=${12: } }${13:description=${14: } }${15:environment=${16: } }${17:revision=${18: } }${19:token=${20: } }${21:user=${22: } }${23:validate_certs=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  newrelic_deployment:
+${3:   ${4:app_name}: ${5:"#"}}
+${6:   ${7:application_id}: ${8:"#"}}
+${9:   ${10:appname}: ${11:"#"}}
+${12:   ${13:changelog}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:environment}: ${20:"#"}}
+${21:   ${22:revision}: ${23:"#"}}
+${24:   ${25:token}: ${26:"#"}}
+${27:   ${28:user}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>newrelic_deployment</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

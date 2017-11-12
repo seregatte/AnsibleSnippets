@@ -1,0 +1,54 @@
+<snippet>
+<content><![CDATA[
+${1:# arp_flooding: Determines if the Bridge Domain should flood ARP traffic. The APIC defaults new Bridge Domains to `no'. 
+# bd: The name of the Bridge Domain. 
+# bd_type: The type of traffic on the Bridge Domain. The APIC defaults new Bridge Domains to `ethernet'. 
+# description: Description for the Bridge Domain. 
+# enable_multicast: Determines if PIM is enabled The APIC defaults new Bridge Domains to `no'. 
+# enable_routing: Determines if IP forwarding should be allowed. The APIC defaults new Bridge Domains to `yes'. 
+# endpoint_clear: Clears all End Points in all Leaves when `yes'. The APIC defaults new Bridge Domains to `no'. The value 
+# endpoint_move_detect: Determines if GARP should be enabled to detect when End Points move. The APIC defaults new Bridge 
+# endpoint_retention_action: Determines if the Bridge Domain should inherit or resolve the End Point Retention Policy. The APIC 
+# endpoint_retention_policy: The name of the End Point Retention Policy the Bridge Domain should use when overriding the default End 
+# igmp_snoop_policy: The name of the IGMP Snooping Policy the Bridge Domain should use when overriding the default IGMP 
+# ip_learning: Determines if the Bridge Domain should learn End Point IPs. The APIC defaults new Bridge Domains to 
+# ipv6_nd_policy: The name of the IPv6 Neighbor Discovery Policy the Bridge Domain should use when overridding the default 
+# l2_unknown_unicast: Determines what forwarding method to use for unknown l2 destinations. The APIC defaults new Bridge 
+# l3_unknown_multicast: Determines the forwarding method to use for unknown multicast destinations. The APCI defaults new Bridge 
+# limit_ip_learn: Determines if the BD should limit IP learning to only subnets owned by the Bridge Domain. The APIC 
+# multi_dest: Determines the forwarding method for L2 multicast, broadcast, and link layer traffic. The APIC defaults 
+# state: Use `present' or `absent' for adding or removing. Use `query' for listing an object or multiple objects. 
+# tenant: The name of the Tenant. 
+# vrf: The name of the VRF. 
+}- name: ${2:Name for aci_bd module.}
+  aci_bd:
+${3:   ${4:arp_flooding}: ${5:"#"}}
+${6:   ${7:bd}: ${8:"#"}}
+${9:   ${10:bd_type}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:enable_multicast}: ${17:"#"}}
+${18:   ${19:enable_routing}: ${20:"#"}}
+${21:   ${22:endpoint_clear}: ${23:"#"}}
+${24:   ${25:endpoint_move_detect}: ${26:"#"}}
+${27:   ${28:endpoint_retention_action}: ${29:"#"}}
+${30:   ${31:endpoint_retention_policy}: ${32:"#"}}
+${33:   ${34:igmp_snoop_policy}: ${35:"#"}}
+${36:   ${37:ip_learning}: ${38:"#"}}
+${39:   ${40:ipv6_nd_policy}: ${41:"#"}}
+${42:   ${43:l2_unknown_unicast}: ${44:"#"}}
+${45:   ${46:l3_unknown_multicast}: ${47:"#"}}
+${48:   ${49:limit_ip_learn}: ${50:"#"}}
+${51:   ${52:multi_dest}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:tenant}: ${59:"#"}}
+${60:   ${61:vrf}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
+]]></content>
+	<tabTrigger>aci_bd</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

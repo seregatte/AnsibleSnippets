@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: The set of username objects to be configured on the remote Arista EOS device.  The list entries can 
+# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
+# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
+# configured_password: The password to be configured on the remote Arista EOS device. The password needs to be provided in 
+# name: The username to be configured on the remote Arista EOS device.  This argument accepts a stringv value 
+# nopassword: Defines the username without assigning a password.  This will allow the user to login to the system 
+# privilege: The `privilege' argument configures the privilege level of the user when logged into the system.  This 
+# provider: A dict object containing connection details. 
+# purge: Instructs the module to consider the resource definition absolute.  It will remove any previously 
+# role: Configures the role for the username in the device running configuration.  The argument accepts a string 
+# sshkey: Specifies the SSH public key to configure for the given username.  This argument accepts a valid SSH key 
+# state: Configures the state of the username definition as it relates to the device operational configuration. 
+# update_password: Since passwords are encrypted in the device running config, this argument will instruct the module when 
+}- name: ${2:Name for eos_user module.}
+  eos_user:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:auth_pass}: ${8:"#"}}
+${9:   ${10:authorize}: ${11:"#"}}
+${12:   ${13:configured_password}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:nopassword}: ${20:"#"}}
+${21:   ${22:privilege}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:purge}: ${29:"#"}}
+${30:   ${31:role}: ${32:"#"}}
+${33:   ${34:sshkey}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:update_password}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>eos_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

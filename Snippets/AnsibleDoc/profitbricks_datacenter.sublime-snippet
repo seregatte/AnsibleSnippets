@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#description = The description of the virtual datacenter.
-#location = The datacenter location.
-#name = The name of the virtual datacenter.
-#state = create or terminate datacenters
-#subscription_password = THe ProfitBricks password. Overrides the PB_PASSWORD environement variable.
-#subscription_user = The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environement variable.
-#wait = wait for the datacenter to be created before returning
-#wait_timeout = how long before wait gives up, in seconds
+${1:# description: The description of the virtual datacenter. 
+# location: The datacenter location. 
+# name: (required) The name of the virtual datacenter. 
+# state: create or terminate datacenters 
+# subscription_password: THe ProfitBricks password. Overrides the PB_PASSWORD environment variable. 
+# subscription_user: The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable. 
+# wait: wait for the datacenter to be created before returning 
+# wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for profitbricks_datacenter module.}
-${3:  become: ${4:yes}}
-  profitbricks_datacenter: ${5:description=${6: } }${7:location=${8: } }${9:name=${10: } }${11:state=${12: } }${13:subscription_password=${14: } }${15:subscription_user=${16: } }${17:wait=${18: } }${19:wait_timeout=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  profitbricks_datacenter:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:location}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:subscription_password}: ${17:"#"}}
+${18:   ${19:subscription_user}: ${20:"#"}}
+${21:   ${22:wait}: ${23:"#"}}
+${24:   ${25:wait_timeout}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>profitbricks_datacenter</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

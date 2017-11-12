@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# gather_subset: When specified, this argument restricts the facts collected to a given subset.  Possible values for this 
+# provider: A dict object containing connection details. 
+}- name: ${2:Name for dellos6_facts module.}
+  dellos6_facts:
+${3:   ${4:gather_subset}: ${5:"#"}}
+${6:   ${7:provider}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>dellos6_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

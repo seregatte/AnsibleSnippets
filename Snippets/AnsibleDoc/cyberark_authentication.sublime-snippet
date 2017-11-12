@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# api_base_url: A string containing the base URL of the server hosting CyberArk's Privileged Account Security Web 
+# cyberark_session: Dictionary set by a CyberArk authentication containing the different values to perform actions on a 
+# new_password: The new password of the user. This parameter is optional, and enables you to change a password. 
+# password: The password of the user. 
+# state: Specifies if an authentication logon/logoff and a cyberark_session should be added/removed. 
+# use_radius_authentication: Whether or not users will be authenticated via a RADIUS server. Valid values are true/false. 
+# use_shared_logon_authentication: Whether or not Shared Logon Authentication will be used. 
+# username: The name of the user who will logon to the Vault. 
+# validate_certs: If `false', SSL certificates will not be validated.  This should only set to `false' used on personally 
+}- name: ${2:Name for cyberark_authentication module.}
+  cyberark_authentication:
+${3:   ${4:api_base_url}: ${5:"#"}}
+${6:   ${7:cyberark_session}: ${8:"#"}}
+${9:   ${10:new_password}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:use_radius_authentication}: ${20:"#"}}
+${21:   ${22:use_shared_logon_authentication}: ${23:"#"}}
+${24:   ${25:username}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>cyberark_authentication</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

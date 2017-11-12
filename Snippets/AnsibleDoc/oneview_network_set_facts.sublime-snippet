@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# config: Path to a .json configuration file containing the OneView client configuration. The configuration file 
+# name: Network Set name. 
+# options: List with options to gather facts about Network Set. Option allowed: `withoutEthernet'. The option 
+# params: List of params to delimit, filter and sort the list of resources. params allowed: - `start': The first 
+}- name: ${2:Name for oneview_network_set_facts module.}
+  oneview_network_set_facts:
+${3:   ${4:config}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:options}: ${11:"#"}}
+${12:   ${13:params}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>oneview_network_set_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

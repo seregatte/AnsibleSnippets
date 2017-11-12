@@ -1,15 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#force = Assume "yes" is the answer to any question urpmi has to ask. Corresponds to the `--force' option for `urpmi'.
-#no = Corresponds to the `--no-recommends' option for `urpmi'.
-#pkg = name of package to install, upgrade or remove.
-#state = Indicates the desired package state
-#update_cache = update the package database first `urpmi.update -a'.
+${1:# force: Assume "yes" is the answer to any question urpmi has to ask. Corresponds to the `--force' option for 
+# no: Corresponds to the `--no-recommends' option for `urpmi'. 
+# pkg: (required) name of package to install, upgrade or remove. 
+# root: Specifies an alternative install root, relative to which all packages will be installed. Corresponds to 
+# state: Indicates the desired package state 
+# update_cache: update the package database first `urpmi.update -a'. 
 }- name: ${2:Name for urpmi module.}
-${3:  become: ${4:yes}}
-  urpmi: ${5:force=${6: } }${7:no=${8: } }${9:pkg=${10: } }${11:state=${12: } }${13:update_cache=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  urpmi:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:no}: ${8:"#"}}
+${9:   ${10:pkg}: ${11:"#"}}
+${12:   ${13:root}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:update_cache}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>urpmi</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

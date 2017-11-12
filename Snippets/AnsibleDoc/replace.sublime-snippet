@@ -1,24 +1,55 @@
 <snippet>
 <content><![CDATA[
-${1:#backup = Create a backup file including the timestamp information so you can get the original file back if you somehow
-#dest = The file to modify.
-#follow = This flag indicates that filesystem links, if they exist, should be followed.
-#group = name of the group that should own the file/directory, as would be fed to `chown'
-#mode = mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are actually octal
-#others = All arguments accepted by the [file] module also work here.
-#owner = name of the user that should own the file/directory, as would be fed to `chown'
-#regexp = The regular expression to look for in the contents of the file. Uses Python regular expressions; see
-#replace = The string to replace regexp matches. May contain backreferences that will get expanded with the regexp capture
-#selevel = level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'.
-#serole = role part of SELinux file context, `_default' feature works as for `seuser'.
-#setype = type part of SELinux file context, `_default' feature works as for `seuser'.
-#seuser = user part of SELinux file context. Will default to system policy, if applicable. If set to `_default', it will
-#validate = The validation command to run before copying into place. The path to the file to validate is passed in via '%s'
+${1:# after: If specified, the line after the replace/remove will start. Can be used in combination with `before'. 
+# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
+# backup: Create a backup file including the timestamp information so you can get the original file back if you 
+# before: If specified, the line before the replace/remove will occur. Can be used in combination with `after'. 
+# encoding: The character encoding for reading and writing the file. 
+# follow: This flag indicates that filesystem links, if they exist, should be followed. 
+# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
+# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
+# others: All arguments accepted by the [file] module also work here. 
+# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
+# path: (required) The file to modify. Before 2.3 this option was only usable as `dest', `destfile' and `name'. 
+# regexp: (required) The regular expression to look for in the contents of the file. Uses Python regular 
+# character: ]' will also not match newlines. In order to 
+# exclude: \n]'. Note that, 
+# replace: The string to replace regexp matches. May contain backreferences that will get expanded with the regexp 
+# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
+# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
+# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
+# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
+# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
+# validate: The validation command to run before copying into place. The path to the file to validate is passed in 
 }- name: ${2:Name for replace module.}
-${3:  become: ${4:yes}}
-  replace: ${5:backup=${6: } }${7:dest=${8: } }${9:follow=${10: } }${11:group=${12: } }${13:mode=${14: } }${15:others=${16: } }${17:owner=${18: } }${19:regexp=${20: } }${21:replace=${22: } }${23:selevel=${24: } }${25:serole=${26: } }${27:setype=${28: } }${29:seuser=${30: } }${31:validate=${32: } }
-${33:  when: ${34: variable is defined}}
-${35:  with_items: ${36: array}}
+  replace:
+${3:   ${4:after}: ${5:"#"}}
+${6:   ${7:attributes}: ${8:"#"}}
+${9:   ${10:backup}: ${11:"#"}}
+${12:   ${13:before}: ${14:"#"}}
+${15:   ${16:encoding}: ${17:"#"}}
+${18:   ${19:follow}: ${20:"#"}}
+${21:   ${22:group}: ${23:"#"}}
+${24:   ${25:mode}: ${26:"#"}}
+${27:   ${28:others}: ${29:"#"}}
+${30:   ${31:owner}: ${32:"#"}}
+${33:   ${34:path}: ${35:"#"}}
+${36:   ${37:regexp}: ${38:"#"}}
+${39:   ${40:character}: ${41:"#"}}
+${42:   ${43:exclude}: ${44:"#"}}
+${45:   ${46:replace}: ${47:"#"}}
+${48:   ${49:selevel}: ${50:"#"}}
+${51:   ${52:serole}: ${53:"#"}}
+${54:   ${55:setype}: ${56:"#"}}
+${57:   ${58:seuser}: ${59:"#"}}
+${60:   ${61:unsafe_writes}: ${62:"#"}}
+${63:   ${64:validate}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>replace</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

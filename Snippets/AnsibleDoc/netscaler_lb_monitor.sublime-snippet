@@ -1,0 +1,226 @@
+<snippet>
+<content><![CDATA[
+${1:# : SNMP OID for `SNMP' monitors. Minimum length = 1 
+# acctapplicationid: List of Acct-Application-Id attribute value pairs (AVPs) for the Capabilities-Exchange-Request (CER) 
+# action: Action to perform when the response to an inline monitor (a monitor of type `HTTP-INLINE') indicates 
+# alertretries: Number of consecutive probe failures after which the appliance generates an SNMP trap called 
+# application: Name of the application used to determine the state of the service. Applicable to monitors of type 
+# attribute: Attribute to evaluate when the LDAP server responds to the query. Success or failure of the monitoring 
+# authapplicationid: List of Auth-Application-Id attribute value pairs (AVPs) for the Capabilities-Exchange-Request (CER) 
+# basedn: The base distinguished name of the LDAP service, from where the LDAP server can begin the search for the 
+# binddn: The distinguished name with which an LDAP monitor can perform the Bind operation on the LDAP server. 
+# customheaders: Custom header string to include in the monitoring probes. 
+# database: Name of the database to connect to during authentication. Minimum length = 1 
+# destip: IP address of the service to which to send probes. If the parameter is set to 0, the IP address of the 
+# destport: TCP or UDP port to which to send the probe. If the parameter is set to 0, the port number of the service 
+# deviation: Time value added to the learned average response time in dynamic response time monitoring (DRTM). When a 
+# dispatcherip: IP address of the dispatcher to which to send the probe. 
+# dispatcherport: Port number on which the dispatcher listens for the monitoring probe. 
+# domain: Domain in which the XenDesktop Desktop Delivery Controller (DDC) servers or Web Interface servers are 
+# downtime: Time duration for which to wait before probing a service that has been marked as DOWN. Expressed in 
+# evalrule: Default syntax expression that evaluates the database server's response to a MYSQL-ECV or MSSQL-ECV 
+# failureretries: Number of retries that must fail, out of the number specified for the Retries parameter, for a service 
+# filename: Name of a file on the FTP server. The appliance monitors the FTP service by periodically checking the 
+# filter: Filter criteria for the LDAP query. Optional. Minimum length = 1 
+# firmwarerevision: Firmware-Revision value for the Capabilities-Exchange-Request (CER) message to use for monitoring 
+# group: Name of a newsgroup available on the NNTP service that is to be monitored. The appliance periodically 
+# hostipaddress: Host-IP-Address value for the Capabilities-Exchange-Request (CER) message to use for monitoring Diameter 
+# hostname: Hostname in the FQDN format (Example: `porche.cars.org'). Applicable to `STOREFRONT' monitors. Minimum 
+# httprequest: HTTP request to send to the server (for example, `"HEAD /file.html"'). 
+# inbandsecurityid: Inband-Security-Id for the Capabilities-Exchange-Request (CER) message to use for monitoring Diameter 
+# interval: Time interval between two successive probes. Must be greater than the value of Response Time-out. 
+# ipaddress: Set of IP addresses expected in the monitoring response from the DNS server, if the record type is A or 
+# iptunnel: Send the monitoring probe to the service through an IP tunnel. A destination IP address must be 
+# kcdaccount: KCD Account used by `MSSQL' monitor. Minimum length = 1 Maximum length = 32 
+# lasversion: Version number of the Citrix Advanced Access Control Logon Agent. Required by the `CITRIX-AAC-LAS' 
+# logonpointname: Name of the logon point that is configured for the Citrix Access Gateway Advanced Access Control 
+# lrtm: Calculate the least response times for bound services. If this parameter is not enabled, the appliance 
+# maxforwards: Maximum number of hops that the SIP request used for monitoring can traverse to reach the server. 
+# metrictable: Metric table to which to bind metrics. Minimum length = 1 Maximum length = 99 
+# monitorname: Name for the monitor. Must begin with an ASCII alphanumeric or underscore `_' character, and must 
+# contain: ', period `.', space 
+# mssqlprotocolversion: Version of MSSQL server that is to be monitored. 
+# netprofile: Name of the network profile. Minimum length = 1 Maximum length = 127 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# oraclesid: Name of the service identifier that is used to connect to the Oracle database during authentication. 
+# originhost: Origin-Host value for the Capabilities-Exchange-Request (CER) message to use for monitoring Diameter 
+# originrealm: Origin-Realm value for the Capabilities-Exchange-Request (CER) message to use for monitoring Diameter 
+# password: Password that is required for logging on to the `RADIUS', `NNTP', `FTP', `FTP-EXTENDED', `MYSQL', 
+# productname: Product-Name value for the Capabilities-Exchange-Request (CER) message to use for monitoring Diameter 
+# query: Domain name to resolve as part of monitoring the DNS service (for example, `example.com'). 
+# querytype: Type of DNS record for which to send monitoring queries. Set to `Address' for querying A records, `AAAA' 
+# radaccountsession: Account Session ID to be used in Account Request Packet. Applicable to monitors of type 
+# radaccounttype: Account Type to be used in Account Request Packet. Applicable to monitors of type `RADIUS_ACCOUNTING'. 
+# radapn: Called Station Id to be used in Account Request Packet. Applicable to monitors of type 
+# radframedip: Source ip with which the packet will go out . Applicable to monitors of type `RADIUS_ACCOUNTING'. 
+# radkey: Authentication key (shared secret text string) for RADIUS clients and servers to exchange. Applicable to 
+# radmsisdn: Calling Stations Id to be used in Account Request Packet. Applicable to monitors of type 
+# radnasid: NAS-Identifier to send in the Access-Request packet. Applicable to monitors of type `RADIUS'. Minimum 
+# radnasip: Network Access Server (NAS) IP address to use as the source IP address when monitoring a RADIUS server. 
+# recv: String expected from the server for the service to be marked as UP. Applicable to `TCP-ECV', `HTTP-ECV', 
+# respcode: Response codes for which to mark the service as UP. For any other response code, the action performed 
+# resptimeout: Amount of time for which the appliance must wait before it marks a probe as FAILED. Must be less than 
+# resptimeoutthresh: Response time threshold, specified as a percentage of the Response Time-out parameter. If the response 
+# retries: Maximum number of probes to send to establish the state of a service for which a monitoring probe 
+# reverse: Mark a service as DOWN, instead of UP, when probe criteria are satisfied, and as UP instead of DOWN when 
+# rtsprequest: RTSP request to send to the server (for example, `"OPTIONS *"'). 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# scriptargs: String of arguments for the script. The string is copied verbatim into the request. 
+# scriptname: Path and name of the script to execute. The script must be available on the NetScaler appliance, in the 
+# secondarypassword: Secondary password that users might have to provide to log on to the Access Gateway server. Applicable 
+# secure: Use a secure SSL connection when monitoring a service. Applicable only to TCP based monitors. The secure 
+# send: String to send to the service. Applicable to `TCP-ECV', `HTTP-ECV', and `UDP-ECV' monitors. 
+# sipmethod: SIP method to use for the query. Applicable only to monitors of type `SIP-UDP'. 
+# sipreguri: SIP user to be registered. Applicable only if the monitor is of type `SIP-UDP' and the SIP Method 
+# sipuri: SIP URI string to send to the service (for example, `sip:sip.test'). Applicable only to monitors of type 
+# sitepath: URL of the logon page. For monitors of type `CITRIX-WEB-INTERFACE', to monitor a dynamic page under the 
+# snmpcommunity: Community name for `SNMP' monitors. Minimum length = 1 
+# snmpthreshold: Threshold for `SNMP' monitors. Minimum length = 1 
+# snmpversion: SNMP version to be used for `SNMP' monitors. 
+# sqlquery: SQL query for a `MYSQL-ECV' or `MSSQL-ECV' monitor. Sent to the database server after the server 
+# state: State of the monitor. The `disabled' setting disables not only the monitor being configured, but all 
+# storedb: Store the database list populated with the responses to monitor probes. Used in database specific load 
+# storefrontacctservice: Enable/Disable probing for Account Service. Applicable only to Store Front monitors. For multi-tenancy 
+# storefrontcheckbackendservices: This option will enable monitoring of services running on storefront server. Storefront services are 
+# storename: Store Name. For monitors of type `STOREFRONT', `storename' is an optional argument defining storefront 
+# successretries: Number of consecutive successful probes required to transition a service's state from DOWN to UP. 
+# supportedvendorids: List of Supported-Vendor-Id attribute value pairs (AVPs) for the Capabilities-Exchange-Request (CER) 
+# tos: Probe the service by encoding the destination IP address in the IP TOS (6) bits. 
+# tosid: The TOS ID of the specified destination IP. Applicable only when the TOS parameter is set. Minimum value 
+# transparent: The monitor is bound to a transparent device such as a firewall or router. The state of a transparent 
+# trofscode: Code expected when the server is under maintenance. 
+# trofsstring: String expected from the server for the service to be marked as trofs. Applicable to HTTP-ECV/TCP-ECV 
+# type: Type of monitor that you want to create. 
+# units1: Unit of measurement for the Deviation parameter. Cannot be changed after the monitor is created. 
+# units2: Unit of measurement for the Down Time parameter. Cannot be changed after the monitor is created. 
+# units3: monitor interval units. 
+# units4: monitor response timeout units. 
+# username: User name with which to probe the `RADIUS', `NNTP', `FTP', `FTP-EXTENDED', `MYSQL', `MSSQL', `POP3', 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validatecred: Validate the credentials of the Xen Desktop DDC server user. Applicable to monitors of type `CITRIX-XD- 
+# vendorid: Vendor-Id value for the Capabilities-Exchange-Request (CER) message to use for monitoring Diameter 
+# vendorspecificacctapplicationids: List of Vendor-Specific-Acct-Application-Id attribute value pairs (AVPs) to use for monitoring Diameter 
+# vendorspecificauthapplicationids: List of Vendor-Specific-Auth-Application-Id attribute value pairs (AVPs) for the Capabilities-Exchange- 
+# vendorspecificvendorid: Vendor-Id to use in the Vendor-Specific-Application-Id grouped attribute-value pair (AVP) in the 
+}- name: ${2:Name for netscaler_lb_monitor module.}
+  netscaler_lb_monitor:
+${3:   ${4:}: ${5:"#"}}
+${6:   ${7:acctapplicationid}: ${8:"#"}}
+${9:   ${10:action}: ${11:"#"}}
+${12:   ${13:alertretries}: ${14:"#"}}
+${15:   ${16:application}: ${17:"#"}}
+${18:   ${19:attribute}: ${20:"#"}}
+${21:   ${22:authapplicationid}: ${23:"#"}}
+${24:   ${25:basedn}: ${26:"#"}}
+${27:   ${28:binddn}: ${29:"#"}}
+${30:   ${31:customheaders}: ${32:"#"}}
+${33:   ${34:database}: ${35:"#"}}
+${36:   ${37:destip}: ${38:"#"}}
+${39:   ${40:destport}: ${41:"#"}}
+${42:   ${43:deviation}: ${44:"#"}}
+${45:   ${46:dispatcherip}: ${47:"#"}}
+${48:   ${49:dispatcherport}: ${50:"#"}}
+${51:   ${52:domain}: ${53:"#"}}
+${54:   ${55:downtime}: ${56:"#"}}
+${57:   ${58:evalrule}: ${59:"#"}}
+${60:   ${61:failureretries}: ${62:"#"}}
+${63:   ${64:filename}: ${65:"#"}}
+${66:   ${67:filter}: ${68:"#"}}
+${69:   ${70:firmwarerevision}: ${71:"#"}}
+${72:   ${73:group}: ${74:"#"}}
+${75:   ${76:hostipaddress}: ${77:"#"}}
+${78:   ${79:hostname}: ${80:"#"}}
+${81:   ${82:httprequest}: ${83:"#"}}
+${84:   ${85:inbandsecurityid}: ${86:"#"}}
+${87:   ${88:interval}: ${89:"#"}}
+${90:   ${91:ipaddress}: ${92:"#"}}
+${93:   ${94:iptunnel}: ${95:"#"}}
+${96:   ${97:kcdaccount}: ${98:"#"}}
+${99:   ${100:lasversion}: ${101:"#"}}
+${102:   ${103:logonpointname}: ${104:"#"}}
+${105:   ${106:lrtm}: ${107:"#"}}
+${108:   ${109:maxforwards}: ${110:"#"}}
+${111:   ${112:metrictable}: ${113:"#"}}
+${114:   ${115:monitorname}: ${116:"#"}}
+${117:   ${118:contain}: ${119:"#"}}
+${120:   ${121:mssqlprotocolversion}: ${122:"#"}}
+${123:   ${124:netprofile}: ${125:"#"}}
+${126:   ${127:nitro_pass}: ${128:"#"}}
+${129:   ${130:nitro_protocol}: ${131:"#"}}
+${132:   ${133:nitro_timeout}: ${134:"#"}}
+${135:   ${136:nitro_user}: ${137:"#"}}
+${138:   ${139:nsip}: ${140:"#"}}
+${141:   ${142:oraclesid}: ${143:"#"}}
+${144:   ${145:originhost}: ${146:"#"}}
+${147:   ${148:originrealm}: ${149:"#"}}
+${150:   ${151:password}: ${152:"#"}}
+${153:   ${154:productname}: ${155:"#"}}
+${156:   ${157:query}: ${158:"#"}}
+${159:   ${160:querytype}: ${161:"#"}}
+${162:   ${163:radaccountsession}: ${164:"#"}}
+${165:   ${166:radaccounttype}: ${167:"#"}}
+${168:   ${169:radapn}: ${170:"#"}}
+${171:   ${172:radframedip}: ${173:"#"}}
+${174:   ${175:radkey}: ${176:"#"}}
+${177:   ${178:radmsisdn}: ${179:"#"}}
+${180:   ${181:radnasid}: ${182:"#"}}
+${183:   ${184:radnasip}: ${185:"#"}}
+${186:   ${187:recv}: ${188:"#"}}
+${189:   ${190:respcode}: ${191:"#"}}
+${192:   ${193:resptimeout}: ${194:"#"}}
+${195:   ${196:resptimeoutthresh}: ${197:"#"}}
+${198:   ${199:retries}: ${200:"#"}}
+${201:   ${202:reverse}: ${203:"#"}}
+${204:   ${205:rtsprequest}: ${206:"#"}}
+${207:   ${208:save_config}: ${209:"#"}}
+${210:   ${211:scriptargs}: ${212:"#"}}
+${213:   ${214:scriptname}: ${215:"#"}}
+${216:   ${217:secondarypassword}: ${218:"#"}}
+${219:   ${220:secure}: ${221:"#"}}
+${222:   ${223:send}: ${224:"#"}}
+${225:   ${226:sipmethod}: ${227:"#"}}
+${228:   ${229:sipreguri}: ${230:"#"}}
+${231:   ${232:sipuri}: ${233:"#"}}
+${234:   ${235:sitepath}: ${236:"#"}}
+${237:   ${238:snmpcommunity}: ${239:"#"}}
+${240:   ${241:snmpthreshold}: ${242:"#"}}
+${243:   ${244:snmpversion}: ${245:"#"}}
+${246:   ${247:sqlquery}: ${248:"#"}}
+${249:   ${250:state}: ${251:"#"}}
+${252:   ${253:storedb}: ${254:"#"}}
+${255:   ${256:storefrontacctservice}: ${257:"#"}}
+${258:   ${259:storefrontcheckbackendservices}: ${260:"#"}}
+${261:   ${262:storename}: ${263:"#"}}
+${264:   ${265:successretries}: ${266:"#"}}
+${267:   ${268:supportedvendorids}: ${269:"#"}}
+${270:   ${271:tos}: ${272:"#"}}
+${273:   ${274:tosid}: ${275:"#"}}
+${276:   ${277:transparent}: ${278:"#"}}
+${279:   ${280:trofscode}: ${281:"#"}}
+${282:   ${283:trofsstring}: ${284:"#"}}
+${285:   ${286:type}: ${287:"#"}}
+${288:   ${289:units1}: ${290:"#"}}
+${291:   ${292:units2}: ${293:"#"}}
+${294:   ${295:units3}: ${296:"#"}}
+${297:   ${298:units4}: ${299:"#"}}
+${300:   ${301:username}: ${302:"#"}}
+${303:   ${304:validate_certs}: ${305:"#"}}
+${306:   ${307:validatecred}: ${308:"#"}}
+${309:   ${310:vendorid}: ${311:"#"}}
+${312:   ${313:vendorspecificacctapplicationids}: ${314:"#"}}
+${315:   ${316:vendorspecificauthapplicationids}: ${317:"#"}}
+${318:   ${319:vendorspecificvendorid}: ${320:"#"}}
+${321:${322:   become: ${323:true}} 
+${324:   become_method: ${325:su}} 
+${326:   become_user: ${327:nobody}} 
+${328:   become_flags: ${329:"-s /bin/sh"}}} 
+${330:   when: ${331:variable is defined}} 
+${332:   with_items: ${333:array}} 
+]]></content>
+	<tabTrigger>netscaler_lb_monitor</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

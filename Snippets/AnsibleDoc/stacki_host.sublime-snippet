@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# force_install: Set value to True to force node into install state if it already exists in stacki. 
+# name: (required) Name of the host to be added to Stacki. 
+# prim_intf: Name of the primary network interface. 
+# prim_intf_ip: IP Address for the primary network interface. 
+# prim_intf_mac: MAC Address for the primary PXE boot network interface. 
+# stacki_endpoint: (required) URL for the Stacki API Endpoint. 
+# stacki_password: (required) Password for authenticating with Stacki API, but if not specified, the environment variable 
+# stacki_user: (required) Username for authenticating with Stacki API, but if not specified, the environment variable 
+}- name: ${2:Name for stacki_host module.}
+  stacki_host:
+${3:   ${4:force_install}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:prim_intf}: ${11:"#"}}
+${12:   ${13:prim_intf_ip}: ${14:"#"}}
+${15:   ${16:prim_intf_mac}: ${17:"#"}}
+${18:   ${19:stacki_endpoint}: ${20:"#"}}
+${21:   ${22:stacki_password}: ${23:"#"}}
+${24:   ${25:stacki_user}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>stacki_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

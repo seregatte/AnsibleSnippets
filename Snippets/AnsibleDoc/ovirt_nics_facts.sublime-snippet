@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+# name: Name of the NIC, can be used as glob expression. 
+# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# vm: (required) Name of the VM where NIC is attached. 
+}- name: ${2:Name for ovirt_nics_facts module.}
+  ovirt_nics_facts:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:fetch_nested}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:nested_attributes}: ${14:"#"}}
+${15:   ${16:vm}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>ovirt_nics_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

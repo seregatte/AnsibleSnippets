@@ -1,11 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:#that = A string expression of the same form that can be passed to the 'when' statement Alternatively, a list of string
+${1:# msg: The customized message used for a failing assertion 
+# that: (required) A string expression of the same form that can be passed to the 'when' statement 
 }- name: ${2:Name for assert module.}
-${3:  become: ${4:yes}}
-  assert: ${5:that=${6: } }
-${7:  when: ${8: variable is defined}}
-${9:  with_items: ${10: array}}
+  assert:
+${3:   ${4:msg}: ${5:"#"}}
+${6:   ${7:that}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
 ]]></content>
 	<tabTrigger>assert</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,28 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:#account_type = Type of the account.
-#api_http_method = HTTP method used.
-#api_key = API key of the CloudStack API.
-#api_region = Name of the ini section in the `cloustack.ini' file.
-#api_secret = Secret key of the CloudStack API.
-#api_timeout = HTTP timeout.
-#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
-#domain = Domain the account is related to.
-#email = Email of the user to be created if account did not exist. Required on `state=present'.
-#first_name = First name of the user to be created if account did not exist. Required on `state=present'.
-#last_name = Last name of the user to be created if account did not exist. Required on `state=present'.
-#name = Name of account.
-#network_domain = Network domain of the account.
-#password = Password of the user to be created if account did not exist. Required on `state=present'.
-#poll_async = Poll async jobs until job has finished.
-#state = State of the account. `unlocked' is an alias for `enabled'.
-#timezone = Timezone of the user to be created if account did not exist.
-#username = Username of the user to be created if account did not exist. Required on `state=present'.
+${1:# account_type: Type of the account. 
+# api_http_method: HTTP method used. 
+# api_key: API key of the CloudStack API. 
+# api_region: Name of the ini section in the `cloustack.ini' file. 
+# api_secret: Secret key of the CloudStack API. 
+# api_timeout: HTTP timeout. 
+# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# domain: Domain the account is related to. 
+# email: Email of the user to be created if account did not exist. Required on `state=present'. 
+# first_name: First name of the user to be created if account did not exist. Required on `state=present'. 
+# last_name: Last name of the user to be created if account did not exist. Required on `state=present'. 
+# name: (required) Name of account. 
+# network_domain: Network domain of the account. 
+# password: Password of the user to be created if account did not exist. Required on `state=present'. 
+# poll_async: Poll async jobs until job has finished. 
+# state: State of the account. `unlocked' is an alias for `enabled'. 
+# timezone: Timezone of the user to be created if account did not exist. 
+# username: Username of the user to be created if account did not exist. Required on `state=present'. 
 }- name: ${2:Name for cs_account module.}
-${3:  become: ${4:yes}}
-  cs_account: ${5:account_type=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:domain=${20: } }${21:email=${22: } }${23:first_name=${24: } }${25:last_name=${26: } }${27:name=${28: } }${29:network_domain=${30: } }${31:password=${32: } }${33:poll_async=${34: } }${35:state=${36: } }${37:timezone=${38: } }${39:username=${40: } }
-${41:  when: ${42: variable is defined}}
-${43:  with_items: ${44: array}}
+  cs_account:
+${3:   ${4:account_type}: ${5:"#"}}
+${6:   ${7:api_http_method}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:api_region}: ${14:"#"}}
+${15:   ${16:api_secret}: ${17:"#"}}
+${18:   ${19:api_timeout}: ${20:"#"}}
+${21:   ${22:api_url}: ${23:"#"}}
+${24:   ${25:domain}: ${26:"#"}}
+${27:   ${28:email}: ${29:"#"}}
+${30:   ${31:first_name}: ${32:"#"}}
+${33:   ${34:last_name}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:network_domain}: ${41:"#"}}
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:poll_async}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:timezone}: ${53:"#"}}
+${54:   ${55:username}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>cs_account</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

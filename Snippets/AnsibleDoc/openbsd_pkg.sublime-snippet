@@ -1,12 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#name = Name of the package.
-#state = `present' will make sure the package is installed. `latest' will make sure the latest version of the package is
+${1:# build: Build the package from source instead of downloading and installing a binary. Requires that the port 
+# clean: When updating or removing packages, delete the extra configuration file(s) in the old packages which are 
+# name: (required) Name of the package. 
+# ports_dir: When used in combination with the `build' option, allows overriding the default ports source directory. 
+# quick: Replace or delete packages quickly; do not bother with checksums before removing normal files. 
+# state: `present' will make sure the package is installed. `latest' will make sure the latest version of the 
 }- name: ${2:Name for openbsd_pkg module.}
-${3:  become: ${4:yes}}
-  openbsd_pkg: ${5:name=${6: } }${7:state=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  openbsd_pkg:
+${3:   ${4:build}: ${5:"#"}}
+${6:   ${7:clean}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:ports_dir}: ${14:"#"}}
+${15:   ${16:quick}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>openbsd_pkg</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of logging definitions. 
+# dest: Destination of the logs. 
+# facility: Set logging facility. 
+# level: Set logging severity levels. 
+# name: If value of `dest' is `host' `name' should be specified, which indicates hostname or IP address. 
+# size: Size of buffer. The acceptable value is in range from 10 to 2147483647 bytes. 
+# state: State of the logging configuration. 
+}- name: ${2:Name for eos_logging module.}
+  eos_logging:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:dest}: ${8:"#"}}
+${9:   ${10:facility}: ${11:"#"}}
+${12:   ${13:level}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:size}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>eos_logging</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

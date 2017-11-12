@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# alerts: Alerts endpoint connection information. 
+# manageiq_connection: (required) ManageIQ connection configuration information. 
+# metrics: Metrics endpoint connection information. 
+# name: (required) The provider's name. 
+# provider: Default endpoint connection information, required if state is true. 
+# provider_region: The provider region name to connect to (e.g. AWS region for Amazon). 
+# state: absent - provider should not exist, present - provider should be, valid - provider authentication should 
+# type: (required) The provider's type. 
+# zone: The ManageIQ zone name that will manage the provider. 
+}- name: ${2:Name for manageiq_provider module.}
+  manageiq_provider:
+${3:   ${4:alerts}: ${5:"#"}}
+${6:   ${7:manageiq_connection}: ${8:"#"}}
+${9:   ${10:metrics}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:provider_region}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:type}: ${26:"#"}}
+${27:   ${28:zone}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>manageiq_provider</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

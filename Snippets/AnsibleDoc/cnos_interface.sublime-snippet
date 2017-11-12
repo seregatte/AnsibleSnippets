@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# device: (required) This specifies the type of device where the method is executed. The choices 
+# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
+# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
+# interface: (required) This is an overloaded interface first argument. Usage of this argument can be found is the 
+# interface: This is an overloaded interface second argument. Usage of this argument can be found is the User Guide 
+# interface: This is an overloaded interface third argument. Usage of this argument can be found is the User Guide 
+# interface: This is an overloaded interface fourth argument. Usage of this argument can be found is the User Guide 
+# interface: This is an overloaded interface fifth argument. Usage of this argument can be found is the User Guide 
+# interface: This is an overloaded interface sixth argument. Usage of this argument can be found is the User Guide 
+# interface: This is an overloaded interface seventh argument. Usage of this argument can be found is the User Guide 
+# interface: (required) This specifies the attribute you specify subsequent to interface command 
+# interface: (required) This specifies the interface range in which the port aggregation is envisaged 
+# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
+# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
+# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
+}- name: ${2:Name for cnos_interface module.}
+  cnos_interface:
+${3:   ${4:device}: ${5:"#"}}
+${6:   ${7:enable}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:interface}: ${14:"#"}}
+${15:   ${16:interface}: ${17:"#"}}
+${18:   ${19:interface}: ${20:"#"}}
+${21:   ${22:interface}: ${23:"#"}}
+${24:   ${25:interface}: ${26:"#"}}
+${27:   ${28:interface}: ${29:"#"}}
+${30:   ${31:interface}: ${32:"#"}}
+${33:   ${34:interface}: ${35:"#"}}
+${36:   ${37:interface}: ${38:"#"}}
+${39:   ${40:outputfile}: ${41:"#"}}
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>cnos_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

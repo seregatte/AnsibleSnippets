@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# description: An optional human-readable string describing purpose of the new Snapshot. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# encrypted: Whether or not the destination Snapshot should be encrypted. 
+# kms_key_id: KMS key id used to encrypt snapshot. If not specified, defaults to EBS Customer Master Key (CMK) for 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# source_region: (required) The source region the Snapshot should be copied from. 
+# source_snapshot_id: (required) The ID of the Snapshot in source region that should be copied. 
+# tags: A hash/dictionary of tags to add to the new Snapshot; '{"key":"value"}' and 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# wait: Wait for the copied Snapshot to be in 'Available' state before returning. 
+}- name: ${2:Name for ec2_snapshot_copy module.}
+  ec2_snapshot_copy:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:encrypted}: ${17:"#"}}
+${18:   ${19:kms_key_id}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:http}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:source_region}: ${35:"#"}}
+${36:   ${37:source_snapshot_id}: ${38:"#"}}
+${39:   ${40:tags}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:wait}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>ec2_snapshot_copy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

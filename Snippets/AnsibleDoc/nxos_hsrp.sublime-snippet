@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_string: Authentication string. 
+# auth_type: Authentication type. 
+# group: (required) HSRP group number. 
+# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
+# interface: (required) Full name of interface that is being managed for HSRP. 
+# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
+# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# priority: HSRP priority. 
+# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# state: Specify desired state of the resource. 
+# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
+# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
+# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# version: HSRP version. 
+# vip: HSRP virtual IP address. 
+}- name: ${2:Name for nxos_hsrp module.}
+  nxos_hsrp:
+${3:   ${4:auth_string}: ${5:"#"}}
+${6:   ${7:auth_type}: ${8:"#"}}
+${9:   ${10:group}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:interface}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:priority}: ${26:"#"}}
+${27:   ${28:provider}: ${29:"#"}}
+${30:   ${31:ssh_keyfile}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:timeout}: ${38:"#"}}
+${39:   ${40:transport}: ${41:"#"}}
+${42:   ${43:use_ssl}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:version}: ${53:"#"}}
+${54:   ${55:vip}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>nxos_hsrp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

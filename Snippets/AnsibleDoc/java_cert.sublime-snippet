@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# cert_alias: Imported certificate alias. 
+# cert_path: Local path to load certificate from. One of cert_url or cert_path is required to load certificate. 
+# cert_port: Port to connect to URL. This will be used to create server URL:PORT 
+# cert_url: Basic URL to fetch SSL certificate from. One of cert_url or cert_path is required to load certificate. 
+# executable: Path to keytool binary if not used we search in PATH for it. 
+# keystore_create: Create keystore if it doesn't exist 
+# keystore_pass: (required) Keystore password. 
+# keystore_path: Path to keystore. 
+# pkcs12_alias: Alias in the PKCS12 keystore. 
+# pkcs12_password: Password for importing from PKCS12 keystore. 
+# pkcs12_path: Local path to load PKCS12 keystore from. 
+# state: Defines action which can be either certificate import or removal. 
+}- name: ${2:Name for java_cert module.}
+  java_cert:
+${3:   ${4:cert_alias}: ${5:"#"}}
+${6:   ${7:cert_path}: ${8:"#"}}
+${9:   ${10:cert_port}: ${11:"#"}}
+${12:   ${13:cert_url}: ${14:"#"}}
+${15:   ${16:executable}: ${17:"#"}}
+${18:   ${19:keystore_create}: ${20:"#"}}
+${21:   ${22:keystore_pass}: ${23:"#"}}
+${24:   ${25:keystore_path}: ${26:"#"}}
+${27:   ${28:pkcs12_alias}: ${29:"#"}}
+${30:   ${31:pkcs12_password}: ${32:"#"}}
+${33:   ${34:pkcs12_path}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>java_cert</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,14 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#key = The SSH public host key, as a string (required if state=present, optional when state=absent, in which case all
-#name = The host to add or remove (must match a host specified in key)
-#path = The known_hosts file to edit
-#state = `present' to add the host, `absent' to remove it.
+${1:# hash_host: Hash the hostname in the known_hosts file 
+# key: The SSH public host key, as a string (required if state=present, optional when state=absent, in which 
+# name: (required) The host to add or remove (must match a host specified in key). It will be converted to 
+# path: The known_hosts file to edit 
+# state: `present' to add the host key, `absent' to remove it. 
 }- name: ${2:Name for known_hosts module.}
-${3:  become: ${4:yes}}
-  known_hosts: ${5:key=${6: } }${7:name=${8: } }${9:path=${10: } }${11:state=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  known_hosts:
+${3:   ${4:hash_host}: ${5:"#"}}
+${6:   ${7:key}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:path}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>known_hosts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

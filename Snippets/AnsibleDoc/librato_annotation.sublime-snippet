@@ -1,19 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#api_key = Librato account api key
-#description = The description contains extra meta-data about a particular annotation The description should contain specifics
-#end_time = The unix timestamp indicating the the time at which the event referenced by this annotation ended For events
-#links = See examples
-#name = The annotation stream name If the annotation stream does not exist, it will be created automatically
-#source = A string which describes the originating source of an annotation when that annotation is tracked across multiple
-#start_time = The unix timestamp indicating the the time at which the event referenced by this annotation started
-#title = The title of an annotation is a string and may contain spaces The title should be a short, high-level summary of
-#user = Librato account username
+${1:# api_key: (required) Librato account api key 
+# description: The description contains extra meta-data about a particular annotation The description should contain 
+# end_time: The unix timestamp indicating the time at which the event referenced by this annotation ended For events 
+# links: (required) See examples 
+# name: The annotation stream name If the annotation stream does not exist, it will be created automatically 
+# source: A string which describes the originating source of an annotation when that annotation is tracked across 
+# start_time: The unix timestamp indicating the time at which the event referenced by this annotation started 
+# title: (required) The title of an annotation is a string and may contain spaces The title should be a short, 
+# user: (required) Librato account username 
 }- name: ${2:Name for librato_annotation module.}
-${3:  become: ${4:yes}}
-  librato_annotation: ${5:api_key=${6: } }${7:description=${8: } }${9:end_time=${10: } }${11:links=${12: } }${13:name=${14: } }${15:source=${16: } }${17:start_time=${18: } }${19:title=${20: } }${21:user=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  librato_annotation:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:end_time}: ${11:"#"}}
+${12:   ${13:links}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:source}: ${20:"#"}}
+${21:   ${22:start_time}: ${23:"#"}}
+${24:   ${25:title}: ${26:"#"}}
+${27:   ${28:user}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>librato_annotation</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

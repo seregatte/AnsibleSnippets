@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# anti_affinity_with: UUID of another server to create an anti-affinity group with 
+# api_token: cloudscale.ch API token. This can also be passed in the CLOUDSCALE_API_TOKEN environment variable. 
+# bulk_volume_size_gb: Size of the bulk storage volume in GB 
+# flavor: Flavor of the server 
+# image: Image used to create the server 
+# name: Name of the Server Either `name' or `uuid' are required. These options are mutually exclusive. 
+# ssh_keys: List of SSH public keys Use the full content of your .pub file here. 
+# state: State of the server 
+# use_ipv6: Enable IPv6 on the public network interface 
+# use_private_network: Attach a private network interface to the server 
+# use_public_network: Attach a public network interface to the server 
+# user_data: Cloud-init configuration (cloud-config) data to use for the server. 
+# uuid: UUID of the server Either `name' or `uuid' are required. These options are mutually exclusive. 
+# volume_size_gb: Size of the root volume in GB 
+}- name: ${2:Name for cloudscale_server module.}
+  cloudscale_server:
+${3:   ${4:anti_affinity_with}: ${5:"#"}}
+${6:   ${7:api_token}: ${8:"#"}}
+${9:   ${10:bulk_volume_size_gb}: ${11:"#"}}
+${12:   ${13:flavor}: ${14:"#"}}
+${15:   ${16:image}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:ssh_keys}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:use_ipv6}: ${29:"#"}}
+${30:   ${31:use_private_network}: ${32:"#"}}
+${33:   ${34:use_public_network}: ${35:"#"}}
+${36:   ${37:user_data}: ${38:"#"}}
+${39:   ${40:uuid}: ${41:"#"}}
+${42:   ${43:volume_size_gb}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>cloudscale_server</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

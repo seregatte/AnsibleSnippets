@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# clicommand: (required) This specifies the CLI command as an attribute to this method. The command is passed using 
+# condition: (required) If you specify condition=false in the inventory file against any device, the command 
+# device: (required) This specifies the type of device where the method is executed. The choices 
+# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
+# flag: (required) If a task needs to be executed, you have to set the flag the same as it is specified in the 
+# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
+# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
+# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
+# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
+}- name: ${2:Name for cnos_conditional_command module.}
+  cnos_conditional_command:
+${3:   ${4:clicommand}: ${5:"#"}}
+${6:   ${7:condition}: ${8:"#"}}
+${9:   ${10:device}: ${11:"#"}}
+${12:   ${13:enable}: ${14:"#"}}
+${15:   ${16:flag}: ${17:"#"}}
+${18:   ${19:host}: ${20:"#"}}
+${21:   ${22:outputfile}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:username}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>cnos_conditional_command</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,204 @@
+<snippet>
+<content><![CDATA[
+${1:# appflowlog: Apply AppFlow logging to the virtual server. 
+# authentication: Enable or disable user authentication. 
+# authenticationhost: Fully qualified domain name (FQDN) of the authentication virtual server to which the user must be 
+# authn401: Enable or disable user authentication with HTTP 401 responses. 
+# authnprofile: Name of the authentication profile to be used when authentication is turned on. 
+# authnvsname: Name of an authentication virtual server with which to authenticate users. Minimum length = 1 Maximum 
+# backuplbmethod: Backup load balancing method. Becomes operational if the primary load balancing me thod fails or cannot 
+# backuppersistencetimeout: Time period for which backup persistence is in effect. Minimum value = `2' Maximum value = `1440' 
+# bypassaaaa: If this option is enabled while resolving DNS64 query AAAA queries are not sent to back end dns server. 
+# cacheable: Route cacheable requests to a cache redirection virtual server. The load balancing virtual server can 
+# clttimeout: Idle time, in seconds, after which a client connection is terminated. Minimum value = `0' Maximum value 
+# comment: Any comments that you might want to associate with the virtual server. 
+# connfailover: Mode in which the connection failover feature must operate for the virtual server. After a failover, 
+# cookiename: Use this parameter to specify the cookie name for `COOKIE' peristence type. It specifies the name of 
+# datalength: Length of the token to be extracted from the data segment of an incoming packet, for use in the token 
+# dataoffset: Offset to be considered when extracting a token from the TCP payload. Applicable to virtual servers, of 
+# dbprofilename: Name of the DB profile whose settings are to be applied to the virtual server. Minimum length = 1 
+# dbslb: Enable database specific load balancing for MySQL and MSSQL service types. 
+# disabled: When set to `yes' the lb vserver will be disabled. When set to `no' the lb vserver will be enabled. Note 
+# disableprimaryondown: If the primary virtual server goes down, do not allow it to return to primary status until manually 
+# dns64: This argument is for enabling/disabling the `dns64' on lbvserver. 
+# dnsprofilename: Name of the DNS profile to be associated with the VServer. DNS profile properties will be applied to the 
+# downstateflush: Flush all active transactions associated with a virtual server whose state transitions from UP to DOWN. 
+# hashlength: Number of bytes to consider for the hash value used in the URLHASH and DOMAINHASH load balancing 
+# healththreshold: Threshold in percent of active services below which vserver state is made down. If this threshold is 0, 
+# httpprofilename: Name of the HTTP profile whose settings are to be applied to the virtual server. Minimum length = 1 
+# icmpvsrresponse: How the NetScaler appliance responds to ping requests received for an IP address that is common to one 
+# insertvserveripport: Insert an HTTP header, whose value is the IP address and port number of the virtual server, before 
+# ipmask: IP mask, in dotted decimal notation, for the IP Pattern parameter. Can have leading or trailing non-zero 
+# ippattern: IP address pattern, in dotted decimal notation, for identifying packets to be accepted by the virtual 
+# ipv46: IPv4 or IPv6 address to assign to the virtual server. 
+# l2conn: Use Layer 2 parameters (channel number, MAC address, and VLAN ID) in addition to the 4-tuple (<source 
+# lbmethod: Load balancing method. The available settings function as follows: * `ROUNDROBIN' - Distribute requests 
+# listenpolicy: Default syntax expression identifying traffic accepted by the virtual server. Can be either an 
+# listenpriority: Integer specifying the priority of the listen policy. A higher number specifies a lower priority. If a 
+# m: Redirection mode for load balancing. Available settings function as follows: * `IP' - Before forwarding 
+# macmoderetainvlan: This option is used to retain vlan information of incoming packet when macmode is enabled. 
+# maxautoscalemembers: Maximum number of members expected to be present when vserver is used in Autoscale. Minimum value = `0' 
+# minautoscalemembers: Minimum number of members expected to be present when vserver is used in Autoscale. Minimum value = `0' 
+# mssqlserverversion: For a load balancing virtual server of type `MSSQL', the Microsoft SQL Server version. Set this 
+# mysqlcharacterset: Character set that the virtual server advertises to clients. 
+# mysqlprotocolversion: MySQL protocol version that the virtual server advertises to clients. 
+# mysqlservercapabilities: Server capabilities that the virtual server advertises to clients. 
+# mysqlserverversion: MySQL server version string that the virtual server advertises to clients. Minimum length = 1 Maximum 
+# name: Name for the virtual server. Must begin with an ASCII alphanumeric or underscore `_' character, and must 
+# contain: ', period `.', space 
+# netmask: IPv4 subnet mask to apply to the destination IP address or source IP address when the load balancing 
+# netprofile: Name of the network profile to associate with the virtual server. If you set this parameter, the virtual 
+# newservicerequest: Number of requests, or percentage of the load on existing services, by which to increase the load on a 
+# newservicerequestincrementinterval: Interval, in seconds, between successive increments in the load on a new service or a service whose 
+# newservicerequestunit: Units in which to increment load at each interval in slow-start mode. 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# oracleserverversion: Oracle server version. 
+# persistavpno: Persist AVP number for Diameter Persistency. In case this AVP is not defined in Base RFC 3588 and it is 
+# persistencebackup: Backup persistence type for the virtual server. Becomes operational if the primary persistence mechanism 
+# persistencetype: Type of persistence for the virtual server. Available settings function as follows: * `SOURCEIP' - 
+# persistmask: Persistence mask for IP based persistence types, for IPv4 virtual servers. Minimum length = 1 
+# port: Port number for the virtual server. Range `1' - `65535' * in CLI is represented as `65535' in NITRO API 
+# processlocal: By turning on this option packets destined to a vserver in a cluster will not under go any steering. 
+# push: Process traffic with the push virtual server that is bound to this load balancing virtual server. 
+# pushlabel: Expression for extracting a label from the server's response. Can be either an expression or the name of 
+# pushmulticlients: Allow multiple Web 2.0 connections from the same client to connect to the virtual server and expect 
+# pushvserver: Name of the load balancing virtual server, of type PUSH or SSL_PUSH, to which the server pushes updates 
+# range: Number of IP addresses that the appliance must generate and assign to the virtual server. The virtual 
+# recursionavailable: When set to YES, this option causes the DNS replies from this vserver to have the RA bit turned on. 
+# redirectportrewrite: Rewrite the port and change the protocol to ensure successful HTTP redirects from services. 
+# redirurl: URL to which to redirect traffic if the virtual server becomes unavailable. WARNING! Make sure that the 
+# resrule: Default syntax expression specifying which part of a server's response to use for creating rule based 
+# rhistate: Route Health Injection (RHI) functionality of the NetSaler appliance for advertising the route of the 
+# rtspnat: Use network address translation (NAT) for RTSP data connections. 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# servicebindings: List of services along with the weights that are load balanced. The following suboptions are available. 
+# servicegroupbindings: List of service groups along with the weights that are load balanced. The following suboptions are 
+# servicetype: Protocol used by the service (also called the service type). 
+# sessionless: Perform load balancing on a per-packet basis, without establishing sessions. Recommended for load 
+# skippersistency: This argument decides the behavior incase the service which is selected from an existing persistence 
+# sobackupaction: Action to be performed if spillover is to take effect, but no backup chain to spillover is usable or 
+# somethod: Type of threshold that, when exceeded, triggers spillover. Available settings function as follows: * 
+# sopersistence: If spillover occurs, maintain source IP address based persistence for both primary and backup virtual 
+# sopersistencetimeout: Timeout for spillover persistence, in minutes. Minimum value = `2' Maximum value = `1440' 
+# sothreshold: Threshold at which spillover occurs. Specify an integer for the `CONNECTION' spillover method, a 
+# ssl_certkey: The name of the ssl certificate that is bound to this service. The ssl certificate must already exist. 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# tcpprofilename: Name of the TCP profile whose settings are to be applied to the virtual server. Minimum length = 1 
+# td: Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If 
+# timeout: Time period for which a persistence session is in effect. Minimum value = `0' Maximum value = `1440' 
+# tosid: TOS ID of the virtual server. Applicable only when the load balancing redirection mode is set to TOS. 
+# v6netmasklen: Number of bits to consider in an IPv6 destination or source IP address, for creating the hash that is 
+# v6persistmasklen: Persistence mask for IP based persistence types, for IPv6 virtual servers. Minimum value = `1' Maximum 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# vipheader: Name for the inserted header. The default name is vip-header. Minimum length = 1 
+}- name: ${2:Name for netscaler_lb_vserver module.}
+  netscaler_lb_vserver:
+${3:   ${4:appflowlog}: ${5:"#"}}
+${6:   ${7:authentication}: ${8:"#"}}
+${9:   ${10:authenticationhost}: ${11:"#"}}
+${12:   ${13:authn401}: ${14:"#"}}
+${15:   ${16:authnprofile}: ${17:"#"}}
+${18:   ${19:authnvsname}: ${20:"#"}}
+${21:   ${22:backuplbmethod}: ${23:"#"}}
+${24:   ${25:backuppersistencetimeout}: ${26:"#"}}
+${27:   ${28:bypassaaaa}: ${29:"#"}}
+${30:   ${31:cacheable}: ${32:"#"}}
+${33:   ${34:clttimeout}: ${35:"#"}}
+${36:   ${37:comment}: ${38:"#"}}
+${39:   ${40:connfailover}: ${41:"#"}}
+${42:   ${43:cookiename}: ${44:"#"}}
+${45:   ${46:datalength}: ${47:"#"}}
+${48:   ${49:dataoffset}: ${50:"#"}}
+${51:   ${52:dbprofilename}: ${53:"#"}}
+${54:   ${55:dbslb}: ${56:"#"}}
+${57:   ${58:disabled}: ${59:"#"}}
+${60:   ${61:disableprimaryondown}: ${62:"#"}}
+${63:   ${64:dns64}: ${65:"#"}}
+${66:   ${67:dnsprofilename}: ${68:"#"}}
+${69:   ${70:downstateflush}: ${71:"#"}}
+${72:   ${73:hashlength}: ${74:"#"}}
+${75:   ${76:healththreshold}: ${77:"#"}}
+${78:   ${79:httpprofilename}: ${80:"#"}}
+${81:   ${82:icmpvsrresponse}: ${83:"#"}}
+${84:   ${85:insertvserveripport}: ${86:"#"}}
+${87:   ${88:ipmask}: ${89:"#"}}
+${90:   ${91:ippattern}: ${92:"#"}}
+${93:   ${94:ipv46}: ${95:"#"}}
+${96:   ${97:l2conn}: ${98:"#"}}
+${99:   ${100:lbmethod}: ${101:"#"}}
+${102:   ${103:listenpolicy}: ${104:"#"}}
+${105:   ${106:listenpriority}: ${107:"#"}}
+${108:   ${109:m}: ${110:"#"}}
+${111:   ${112:macmoderetainvlan}: ${113:"#"}}
+${114:   ${115:maxautoscalemembers}: ${116:"#"}}
+${117:   ${118:minautoscalemembers}: ${119:"#"}}
+${120:   ${121:mssqlserverversion}: ${122:"#"}}
+${123:   ${124:mysqlcharacterset}: ${125:"#"}}
+${126:   ${127:mysqlprotocolversion}: ${128:"#"}}
+${129:   ${130:mysqlservercapabilities}: ${131:"#"}}
+${132:   ${133:mysqlserverversion}: ${134:"#"}}
+${135:   ${136:name}: ${137:"#"}}
+${138:   ${139:contain}: ${140:"#"}}
+${141:   ${142:netmask}: ${143:"#"}}
+${144:   ${145:netprofile}: ${146:"#"}}
+${147:   ${148:newservicerequest}: ${149:"#"}}
+${150:   ${151:newservicerequestincrementinterval}: ${152:"#"}}
+${153:   ${154:newservicerequestunit}: ${155:"#"}}
+${156:   ${157:nitro_pass}: ${158:"#"}}
+${159:   ${160:nitro_protocol}: ${161:"#"}}
+${162:   ${163:nitro_timeout}: ${164:"#"}}
+${165:   ${166:nitro_user}: ${167:"#"}}
+${168:   ${169:nsip}: ${170:"#"}}
+${171:   ${172:oracleserverversion}: ${173:"#"}}
+${174:   ${175:persistavpno}: ${176:"#"}}
+${177:   ${178:persistencebackup}: ${179:"#"}}
+${180:   ${181:persistencetype}: ${182:"#"}}
+${183:   ${184:persistmask}: ${185:"#"}}
+${186:   ${187:port}: ${188:"#"}}
+${189:   ${190:processlocal}: ${191:"#"}}
+${192:   ${193:push}: ${194:"#"}}
+${195:   ${196:pushlabel}: ${197:"#"}}
+${198:   ${199:pushmulticlients}: ${200:"#"}}
+${201:   ${202:pushvserver}: ${203:"#"}}
+${204:   ${205:range}: ${206:"#"}}
+${207:   ${208:recursionavailable}: ${209:"#"}}
+${210:   ${211:redirectportrewrite}: ${212:"#"}}
+${213:   ${214:redirurl}: ${215:"#"}}
+${216:   ${217:resrule}: ${218:"#"}}
+${219:   ${220:rhistate}: ${221:"#"}}
+${222:   ${223:rtspnat}: ${224:"#"}}
+${225:   ${226:save_config}: ${227:"#"}}
+${228:   ${229:servicebindings}: ${230:"#"}}
+${231:   ${232:servicegroupbindings}: ${233:"#"}}
+${234:   ${235:servicetype}: ${236:"#"}}
+${237:   ${238:sessionless}: ${239:"#"}}
+${240:   ${241:skippersistency}: ${242:"#"}}
+${243:   ${244:sobackupaction}: ${245:"#"}}
+${246:   ${247:somethod}: ${248:"#"}}
+${249:   ${250:sopersistence}: ${251:"#"}}
+${252:   ${253:sopersistencetimeout}: ${254:"#"}}
+${255:   ${256:sothreshold}: ${257:"#"}}
+${258:   ${259:ssl_certkey}: ${260:"#"}}
+${261:   ${262:state}: ${263:"#"}}
+${264:   ${265:tcpprofilename}: ${266:"#"}}
+${267:   ${268:td}: ${269:"#"}}
+${270:   ${271:timeout}: ${272:"#"}}
+${273:   ${274:tosid}: ${275:"#"}}
+${276:   ${277:v6netmasklen}: ${278:"#"}}
+${279:   ${280:v6persistmasklen}: ${281:"#"}}
+${282:   ${283:validate_certs}: ${284:"#"}}
+${285:   ${286:vipheader}: ${287:"#"}}
+${288:${289:   become: ${290:true}} 
+${291:   become_method: ${292:su}} 
+${293:   become_user: ${294:nobody}} 
+${295:   become_flags: ${296:"-s /bin/sh"}}} 
+${297:   when: ${298:variable is defined}} 
+${299:   with_items: ${300:array}} 
+]]></content>
+	<tabTrigger>netscaler_lb_vserver</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

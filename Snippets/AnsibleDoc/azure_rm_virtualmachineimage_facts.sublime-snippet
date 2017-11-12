@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# location: (required) Azure location value (ie. westus, eastus, eastus2, northcentralus, etc.). Supplying only a 
+# name: Only show results for a specific security group. 
+# offer: Name of an image offering. Combine with sku to see a list of available image versions. 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# profile: Security profile found in ~/.azure/credentials file. 
+# publisher: Name of an image publisher. List image offerings associated with a particular publisher. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# sku: Image offering SKU. Combine with offer to see a list of available versions. 
+# subscription_id: Your Azure subscription Id. 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+# version: Specific version number of an image. 
+}- name: ${2:Name for azure_rm_virtualmachineimage_facts module.}
+  azure_rm_virtualmachineimage_facts:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:client_id}: ${8:"#"}}
+${9:   ${10:cloud_environment}: ${11:"#"}}
+${12:   ${13:location}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:offer}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:publisher}: ${29:"#"}}
+${30:   ${31:secret}: ${32:"#"}}
+${33:   ${34:sku}: ${35:"#"}}
+${36:   ${37:subscription_id}: ${38:"#"}}
+${39:   ${40:tenant}: ${41:"#"}}
+${42:   ${43:version}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>azure_rm_virtualmachineimage_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

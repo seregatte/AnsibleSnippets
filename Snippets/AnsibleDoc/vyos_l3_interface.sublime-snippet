@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of L3 interfaces definitions 
+# ipv4: IPv4 of the L3 interface. 
+# ipv6: IPv6 of the L3 interface. 
+# name: Name of the L3 interface. 
+# state: State of the L3 interface configuration. 
+}- name: ${2:Name for vyos_l3_interface module.}
+  vyos_l3_interface:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:ipv4}: ${8:"#"}}
+${9:   ${10:ipv6}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>vyos_l3_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

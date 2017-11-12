@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# hotfix_identifier: The name of the hotfix as shown in DISM, see examples for details. This or `hotfix_kb' MUST be set when 
+# hotfix_kb: The name of the KB the hotfix relates to, see examples for details. This of `hotfix_identifier' MUST be 
+# source: The path to the downloaded hotfix .msu file. This MUST be set if `state=present' and MUST be a .msu 
+# state: Whether to install or uninstall the hotfix. When `present', `source' MUST be set. When `absent', 
+}- name: ${2:Name for win_hotfix module.}
+  win_hotfix:
+${3:   ${4:hotfix_identifier}: ${5:"#"}}
+${6:   ${7:hotfix_kb}: ${8:"#"}}
+${9:   ${10:source}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>win_hotfix</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

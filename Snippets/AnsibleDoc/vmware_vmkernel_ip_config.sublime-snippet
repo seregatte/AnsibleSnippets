@@ -1,16 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#hostname = The hostname or IP address of the ESXi server
-#ip_address = IP address to assign to VMkernel interface
-#password = The password of the ESXi server
-#subnet_mask = Subnet Mask to assign to VMkernel interface
-#username = The username of the ESXi server
-#vmk_name = VMkernel interface name
+${1:# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# ip_address: (required) IP address to assign to VMkernel interface 
+# password: (required) The password of the vSphere vCenter. 
+# subnet_mask: (required) Subnet Mask to assign to VMkernel interface 
+# username: (required) The username of the vSphere vCenter. 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
+# vmk_name: (required) VMkernel interface name 
 }- name: ${2:Name for vmware_vmkernel_ip_config module.}
-${3:  become: ${4:yes}}
-  vmware_vmkernel_ip_config: ${5:hostname=${6: } }${7:ip_address=${8: } }${9:password=${10: } }${11:subnet_mask=${12: } }${13:username=${14: } }${15:vmk_name=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  vmware_vmkernel_ip_config:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:ip_address}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:subnet_mask}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:   ${19:validate_certs}: ${20:"#"}}
+${21:   ${22:vmk_name}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>vmware_vmkernel_ip_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

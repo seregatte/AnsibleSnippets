@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# chat_id: (required) Telegram group or user chat_id 
+# msg: (required) What message you wish to send. 
+# msg_format: Message format. Formatting options `markdown` and `html` described in Telegram API docs 
+# : formatting-options). If option 
+# token: (required) Token identifying your telegram bot. 
+}- name: ${2:Name for telegram module.}
+  telegram:
+${3:   ${4:chat_id}: ${5:"#"}}
+${6:   ${7:msg}: ${8:"#"}}
+${9:   ${10:msg_format}: ${11:"#"}}
+${12:   ${13:}: ${14:"#"}}
+${15:   ${16:token}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>telegram</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

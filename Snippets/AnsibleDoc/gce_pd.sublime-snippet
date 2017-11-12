@@ -1,23 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:#detach_only = do not destroy the disk, merely detach it from an instance
-#disk_type = type of disk provisioned
-#image = the source image to use for the disk
-#instance_name = instance name if you wish to attach or detach the disk
-#mode = GCE mount mode of disk, READ_ONLY (default) or READ_WRITE
-#name = name of the disk
-#pem_file = path to the pem file associated with the service account email
-#project_id = your GCE project ID
-#service_account_email = service account email
-#size_gb = whole integer size of disk (in GB) to create, default is 10 GB
-#snapshot = the source snapshot to use for the disk
-#state = desired state of the persistent disk
-#zone = zone in which to create the disk
+${1:# credentials_file: path to the JSON file associated with the service account email 
+# delete_on_termination: If yes, deletes the volume when instance is terminated 
+# detach_only: do not destroy the disk, merely detach it from an instance 
+# disk_type: type of disk provisioned 
+# image: the source image to use for the disk 
+# instance_name: instance name if you wish to attach or detach the disk 
+# mode: GCE mount mode of disk, READ_ONLY (default) or READ_WRITE 
+# name: (required) name of the disk 
+# pem_file: path to the pem file associated with the service account email This option is deprecated. Use 
+# project_id: your GCE project ID 
+# service_account_email: service account email 
+# size_gb: whole integer size of disk (in GB) to create, default is 10 GB 
+# snapshot: the source snapshot to use for the disk 
+# state: desired state of the persistent disk 
+# zone: zone in which to create the disk 
 }- name: ${2:Name for gce_pd module.}
-${3:  become: ${4:yes}}
-  gce_pd: ${5:detach_only=${6: } }${7:disk_type=${8: } }${9:image=${10: } }${11:instance_name=${12: } }${13:mode=${14: } }${15:name=${16: } }${17:pem_file=${18: } }${19:project_id=${20: } }${21:service_account_email=${22: } }${23:size_gb=${24: } }${25:snapshot=${26: } }${27:state=${28: } }${29:zone=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  gce_pd:
+${3:   ${4:credentials_file}: ${5:"#"}}
+${6:   ${7:delete_on_termination}: ${8:"#"}}
+${9:   ${10:detach_only}: ${11:"#"}}
+${12:   ${13:disk_type}: ${14:"#"}}
+${15:   ${16:image}: ${17:"#"}}
+${18:   ${19:instance_name}: ${20:"#"}}
+${21:   ${22:mode}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:pem_file}: ${29:"#"}}
+${30:   ${31:project_id}: ${32:"#"}}
+${33:   ${34:service_account_email}: ${35:"#"}}
+${36:   ${37:size_gb}: ${38:"#"}}
+${39:   ${40:snapshot}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:zone}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>gce_pd</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

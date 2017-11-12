@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# feature: (required) Name of feature. 
+# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
+# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
+# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# state: Desired state of the feature. 
+# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
+# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
+# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for nxos_feature module.}
+  nxos_feature:
+${3:   ${4:feature}: ${5:"#"}}
+${6:   ${7:host}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:port}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:ssh_keyfile}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:timeout}: ${26:"#"}}
+${27:   ${28:transport}: ${29:"#"}}
+${30:   ${31:use_ssl}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>nxos_feature</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,16 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#chdir = cd into this directory before running the command
-#creates = a filename, when it already exists, this step will *not* be run.
-#executable = change the shell used to execute the command. Should be an absolute path to the executable.
-#free_form = The shell module takes a free form command to run, as a string.  There's not an actual option named "free form".
-#removes = a filename, when it does not exist, this step will *not* be run.
-#warn = if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false.
+${1:# chdir: cd into this directory before running the command 
+# creates: a filename, when it already exists, this step will *not* be run. 
+# executable: change the shell used to execute the command. Should be an absolute path to the executable. 
+# free_form: (required) The shell module takes a free form command to run, as a string.  There's not an actual option 
+# removes: a filename, when it does not exist, this step will *not* be run. 
+# stdin: Set the stdin of the command directly to the specified value. 
+# warn: if command warnings are on in ansible.cfg, do not warn about this particular line if set to no/false. 
 }- name: ${2:Name for shell module.}
-${3:  become: ${4:yes}}
-  shell: ${5:chdir=${6: } }${7:creates=${8: } }${9:executable=${10: } }${11:free_form=${12: } }${13:removes=${14: } }${15:warn=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  shell:
+${3:   ${4:chdir}: ${5:"#"}}
+${6:   ${7:creates}: ${8:"#"}}
+${9:   ${10:executable}: ${11:"#"}}
+${12:   ${13:free_form}: ${14:"#"}}
+${15:   ${16:removes}: ${17:"#"}}
+${18:   ${19:stdin}: ${20:"#"}}
+${21:   ${22:warn}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>shell</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

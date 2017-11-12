@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# address: IPv4 or named IP address. Must be of the same scope (regional, global). Reserved addresses can (and 
+# forwarding_rule_name: (required) Name of the Forwarding_Rule. 
+# port_range: For global forwarding rules, must be set to 80 or 8080 for TargetHttpProxy, and 443 for TargetHttpsProxy 
+# protocol: For global forwarding rules, TCP, UDP, ESP, AH, SCTP or ICMP. Default is TCP. 
+# region: The region for this forwarding rule. Currently, only 'global' is supported. 
+# state: (required) The state of the Forwarding Rule. 'present' or 'absent' 
+# target: Target resource for forwarding rule. For global proxy, this is a Global TargetProxy resource. Required 
+}- name: ${2:Name for gcp_forwarding_rule module.}
+  gcp_forwarding_rule:
+${3:   ${4:address}: ${5:"#"}}
+${6:   ${7:forwarding_rule_name}: ${8:"#"}}
+${9:   ${10:port_range}: ${11:"#"}}
+${12:   ${13:protocol}: ${14:"#"}}
+${15:   ${16:region}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:target}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>gcp_forwarding_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,19 +1,35 @@
 <snippet>
 <content><![CDATA[
-${1:#backend = Name of the HAProxy backend pool.
-#host = Name of the backend host to change.
-#shutdown_sessions = When disabling a server, immediately terminate all the sessions attached to the specified server. This can be
-#socket = Path to the HAProxy socket file.
-#state = Desired state of the provided backend host.
-#wait = Wait until the server reports a status of 'UP' when `state=enabled`, or status of 'MAINT' when `state=disabled`.
-#wait_interval = Number of seconds to wait between retries.
-#wait_retries = Number of times to check for status after changing the state.
-#weight = The value passed in argument. If the value ends with the `%` sign, then the new weight will be relative to the
+${1:# backend: Name of the HAProxy backend pool. 
+# drain: Wait until the server has no active connections or until the timeout determined by wait_interval and 
+# fail_on_not_found: Fail whenever trying to enable/disable a backend host that does not exist 
+# host: (required) Name of the backend host to change. 
+# shutdown_sessions: When disabling a server, immediately terminate all the sessions attached to the specified server. This 
+# socket: Path to the HAProxy socket file. 
+# state: (required) Desired state of the provided backend host. Note that `drain' state was added in version 2.4. 
+# wait: Wait until the server reports a status of 'UP' when `state=enabled`, status of 'MAINT' when 
+# wait_interval: Number of seconds to wait between retries. 
+# wait_retries: Number of times to check for status after changing the state. 
+# weight: The value passed in argument. If the value ends with the `%` sign, then the new weight will be relative 
 }- name: ${2:Name for haproxy module.}
-${3:  become: ${4:yes}}
-  haproxy: ${5:backend=${6: } }${7:host=${8: } }${9:shutdown_sessions=${10: } }${11:socket=${12: } }${13:state=${14: } }${15:wait=${16: } }${17:wait_interval=${18: } }${19:wait_retries=${20: } }${21:weight=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  haproxy:
+${3:   ${4:backend}: ${5:"#"}}
+${6:   ${7:drain}: ${8:"#"}}
+${9:   ${10:fail_on_not_found}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:shutdown_sessions}: ${17:"#"}}
+${18:   ${19:socket}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:wait}: ${26:"#"}}
+${27:   ${28:wait_interval}: ${29:"#"}}
+${30:   ${31:wait_retries}: ${32:"#"}}
+${33:   ${34:weight}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
 ]]></content>
 	<tabTrigger>haproxy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

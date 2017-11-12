@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# bucket: (required) Bucket name. 
+# cache_control: This is a string. Cache-Control header set on uploaded objects. Directives are separated by commmas. 
+# delete: Remove remote files that exist in bucket but are not present in the file root. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# exclude: Shell pattern-style file matching. Used after include to remove files (for instance, skip "*.txt") For 
+# file_change_strategy: Difference determination method to allow changes-only syncing. Unlike rsync, files are not patched- they 
+# file_root: (required) File/directory path for synchronization. This is a local path. This root path is scrubbed 
+# include: Shell pattern-style file matching. Used before exclude to determine eligible files (for instance, only 
+# key_prefix: In addition to file path, prepend s3 path with this prefix. Module will add slash at end of prefix if 
+# mime_map: Dict entry from extension to MIME type. This will override any default/sniffed MIME type. For example 
+# mode: (required) sync direction. 
+# permission: Canned ACL to apply to synced files. Changing this ACL only changes newly synced files, it does not 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+}- name: ${2:Name for s3_sync module.}
+  s3_sync:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:bucket}: ${11:"#"}}
+${12:   ${13:cache_control}: ${14:"#"}}
+${15:   ${16:delete}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:exclude}: ${23:"#"}}
+${24:   ${25:file_change_strategy}: ${26:"#"}}
+${27:   ${28:file_root}: ${29:"#"}}
+${30:   ${31:include}: ${32:"#"}}
+${33:   ${34:key_prefix}: ${35:"#"}}
+${36:   ${37:mime_map}: ${38:"#"}}
+${39:   ${40:mode}: ${41:"#"}}
+${42:   ${43:permission}: ${44:"#"}}
+${45:   ${46:profile}: ${47:"#"}}
+${48:   ${49:region}: ${50:"#"}}
+${51:   ${52:http}: ${53:"#"}}
+${54:   ${55:security_token}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>s3_sync</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

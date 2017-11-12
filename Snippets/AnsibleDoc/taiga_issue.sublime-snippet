@@ -1,22 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#attachment = Path to a file to be attached to the issue.
-#attachment_description = A string describing the file to be attached to the issue.
-#description = The issue description.
-#issue_type = The issue type. Must exist previously.
-#priority = The issue priority. Must exist previously.
-#project = Name of the project containing the issue. Must exist previously.
-#severity = The issue severity. Must exist previously.
-#state = Whether the issue should be present or not.
-#status = The issue status. Must exist previously.
-#subject = The issue subject.
-#tags = A lists of tags to be assigned to the issue.
-#taiga_host = The hostname of the Taiga instance.
+${1:# attachment: Path to a file to be attached to the issue. 
+# attachment_description: A string describing the file to be attached to the issue. 
+# description: The issue description. 
+# issue_type: (required) The issue type. Must exist previously. 
+# priority: The issue priority. Must exist previously. 
+# project: (required) Name of the project containing the issue. Must exist previously. 
+# severity: The issue severity. Must exist previously. 
+# state: Whether the issue should be present or not. 
+# status: The issue status. Must exist previously. 
+# subject: (required) The issue subject. 
+# tags: A lists of tags to be assigned to the issue. 
+# taiga_host: The hostname of the Taiga instance. 
 }- name: ${2:Name for taiga_issue module.}
-${3:  become: ${4:yes}}
-  taiga_issue: ${5:attachment=${6: } }${7:attachment_description=${8: } }${9:description=${10: } }${11:issue_type=${12: } }${13:priority=${14: } }${15:project=${16: } }${17:severity=${18: } }${19:state=${20: } }${21:status=${22: } }${23:subject=${24: } }${25:tags=${26: } }${27:taiga_host=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  taiga_issue:
+${3:   ${4:attachment}: ${5:"#"}}
+${6:   ${7:attachment_description}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:issue_type}: ${14:"#"}}
+${15:   ${16:priority}: ${17:"#"}}
+${18:   ${19:project}: ${20:"#"}}
+${21:   ${22:severity}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:status}: ${29:"#"}}
+${30:   ${31:subject}: ${32:"#"}}
+${33:   ${34:tags}: ${35:"#"}}
+${36:   ${37:taiga_host}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>taiga_issue</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# bd: The name of the Bridge Domain. 
+# l3out: The name of the l3out to associate with th Bridge Domain. 
+# state: Use `present' or `absent' for adding or removing. Use `query' for listing an object or multiple objects. 
+# tenant: The name of the Tenant. 
+}- name: ${2:Name for aci_bd_to_l3out module.}
+  aci_bd_to_l3out:
+${3:   ${4:bd}: ${5:"#"}}
+${6:   ${7:l3out}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:tenant}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>aci_bd_to_l3out</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

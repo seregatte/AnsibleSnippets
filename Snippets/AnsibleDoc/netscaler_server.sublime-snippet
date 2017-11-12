@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# comment: Any information about the server. 
+# disabled: When set to `true' the server state will be set to `disabled'. When set to `false' the server state will 
+# domain: Domain name of the server. For a domain based configuration, you must create the server first. Minimum 
+# domainresolveretry: Time, in seconds, for which the NetScaler appliance must wait, after DNS resolution fails, before 
+# ipaddress: IPv4 or IPv6 address of the server. If you create an IP address based server, you can specify the name 
+# ipv6address: Support IPv6 addressing mode. If you configure a server with the IPv6 addressing mode, you cannot use 
+# name: Name for the server. Must begin with an ASCII alphabetic or underscore `_' character, and must contain 
+# only: ', period `.', space ` ', 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# td: Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If 
+# translationip: IP address used to transform the server's DNS-resolved IP address. 
+# translationmask: The netmask of the translation ip. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for netscaler_server module.}
+  netscaler_server:
+${3:   ${4:comment}: ${5:"#"}}
+${6:   ${7:disabled}: ${8:"#"}}
+${9:   ${10:domain}: ${11:"#"}}
+${12:   ${13:domainresolveretry}: ${14:"#"}}
+${15:   ${16:ipaddress}: ${17:"#"}}
+${18:   ${19:ipv6address}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:only}: ${26:"#"}}
+${27:   ${28:nitro_pass}: ${29:"#"}}
+${30:   ${31:nitro_protocol}: ${32:"#"}}
+${33:   ${34:nitro_timeout}: ${35:"#"}}
+${36:   ${37:nitro_user}: ${38:"#"}}
+${39:   ${40:nsip}: ${41:"#"}}
+${42:   ${43:save_config}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:td}: ${50:"#"}}
+${51:   ${52:translationip}: ${53:"#"}}
+${54:   ${55:translationmask}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>netscaler_server</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

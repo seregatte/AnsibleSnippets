@@ -1,15 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#dvportgroup_name = Name of the portgroup to migrate to the virtual machine to
-#hostname = The hostname or IP address of the vSphere vCenter API server
-#password = The password of the vSphere vCenter
-#username = The username of the vSphere vCenter
-#vm_name = Name of the virtual machine to migrate to a dvSwitch
+${1:# dvportgroup_name: (required) Name of the portgroup to migrate to the virtual machine to 
+# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# password: (required) The password of the vSphere vCenter. 
+# username: (required) The username of the vSphere vCenter. 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
+# vm_name: (required) Name of the virtual machine to migrate to a dvSwitch 
 }- name: ${2:Name for vmware_vm_vss_dvs_migrate module.}
-${3:  become: ${4:yes}}
-  vmware_vm_vss_dvs_migrate: ${5:dvportgroup_name=${6: } }${7:hostname=${8: } }${9:password=${10: } }${11:username=${12: } }${13:vm_name=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  vmware_vm_vss_dvs_migrate:
+${3:   ${4:dvportgroup_name}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:username}: ${14:"#"}}
+${15:   ${16:validate_certs}: ${17:"#"}}
+${18:   ${19:vm_name}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>vmware_vm_vss_dvs_migrate</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

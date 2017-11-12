@@ -1,19 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#alert_policy_id = The alert policy id to be associated to the server. This is mutually exclusive with 'alert_policy_name'
-#alert_policy_name = The alert policy name to be associated to the server. This is mutually exclusive with 'alert_policy_id'
-#anti_affinity_policy_id = The anti affinity policy id to be set for a hyper scale server. This is mutually exclusive with
-#anti_affinity_policy_name = The anti affinity policy name to be set for a hyper scale server. This is mutually exclusive with
-#cpu = How many CPUs to update on the server
-#memory = Memory (in GB) to set to the server.
-#server_ids = A list of server Ids to modify.
-#state = The state to insure that the provided resources are in.
-#wait = Whether to wait for the provisioning tasks to finish before returning.
+${1:# alert_policy_id: The alert policy id to be associated to the server. This is mutually exclusive with 'alert_policy_name' 
+# alert_policy_name: The alert policy name to be associated to the server. This is mutually exclusive with 'alert_policy_id' 
+# anti_affinity_policy_id: The anti affinity policy id to be set for a hyper scale server. This is mutually exclusive with 
+# anti_affinity_policy_name: The anti affinity policy name to be set for a hyper scale server. This is mutually exclusive with 
+# cpu: How many CPUs to update on the server 
+# memory: Memory (in GB) to set to the server. 
+# server_ids: (required) A list of server Ids to modify. 
+# state: The state to insure that the provided resources are in. 
+# wait: Whether to wait for the provisioning tasks to finish before returning. 
 }- name: ${2:Name for clc_modify_server module.}
-${3:  become: ${4:yes}}
-  clc_modify_server: ${5:alert_policy_id=${6: } }${7:alert_policy_name=${8: } }${9:anti_affinity_policy_id=${10: } }${11:anti_affinity_policy_name=${12: } }${13:cpu=${14: } }${15:memory=${16: } }${17:server_ids=${18: } }${19:state=${20: } }${21:wait=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  clc_modify_server:
+${3:   ${4:alert_policy_id}: ${5:"#"}}
+${6:   ${7:alert_policy_name}: ${8:"#"}}
+${9:   ${10:anti_affinity_policy_id}: ${11:"#"}}
+${12:   ${13:anti_affinity_policy_name}: ${14:"#"}}
+${15:   ${16:cpu}: ${17:"#"}}
+${18:   ${19:memory}: ${20:"#"}}
+${21:   ${22:server_ids}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:wait}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>clc_modify_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

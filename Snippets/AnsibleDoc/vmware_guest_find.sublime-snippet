@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# datacenter: (required) Destination datacenter for the find operation. 
+# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# name: Name of the VM to work with. This is required if uuid is not supplied. 
+# password: (required) The password of the vSphere vCenter. 
+# username: (required) The username of the vSphere vCenter. 
+# uuid: UUID of the instance to manage if known, this is VMware's BIOS UUID. This is required if name is not 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
+}- name: ${2:Name for vmware_guest_find module.}
+  vmware_guest_find:
+${3:   ${4:datacenter}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:   ${19:uuid}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>vmware_guest_find</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

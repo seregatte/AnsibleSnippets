@@ -1,20 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#alias = The alias of your CLC Account
-#description = A description for the loadbalancer
-#location = The location of the datacenter where the load balancer resides in
-#method = - T h e   b a l a n c i n g   m e t h o d   f o r   t h e   l o a d   b a l a n c e r   p o o l
-#name = The name of the loadbalancer
-#nodes = A list of nodes that needs to be added to the load balancer pool
-#persistence = The persistence method for the load balancer
-#port = Port to configure on the public-facing side of the load balancer pool
-#state = Whether to create or delete the load balancer pool
-#status = The status of the loadbalancer
+${1:# alias: (required) The alias of your CLC Account 
+# description: A description for the loadbalancer 
+# location: (required) The location of the datacenter where the load balancer resides in 
+# method: -The balancing method for the load balancer pool 
+# name: (required) The name of the loadbalancer 
+# nodes: A list of nodes that needs to be added to the load balancer pool 
+# persistence: The persistence method for the load balancer 
+# port: Port to configure on the public-facing side of the load balancer pool 
+# state: Whether to create or delete the load balancer pool 
+# status: The status of the loadbalancer 
 }- name: ${2:Name for clc_loadbalancer module.}
-${3:  become: ${4:yes}}
-  clc_loadbalancer: ${5:alias=${6: } }${7:description=${8: } }${9:location=${10: } }${11:method=${12: } }${13:name=${14: } }${15:nodes=${16: } }${17:persistence=${18: } }${19:port=${20: } }${21:state=${22: } }${23:status=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  clc_loadbalancer:
+${3:   ${4:alias}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:location}: ${11:"#"}}
+${12:   ${13:method}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:nodes}: ${20:"#"}}
+${21:   ${22:persistence}: ${23:"#"}}
+${24:   ${25:port}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:status}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>clc_loadbalancer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

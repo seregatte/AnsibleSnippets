@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#description = A description of the Server Group
-#location = Datacenter to create the group in. If location is not provided, the group gets created in the default datacenter
-#name = The name of the Server Group
-#parent = The parent group of the server group. If parent is not provided, it creates the group at top level.
-#state = Whether to create or delete the group
-#wait = Whether to wait for the tasks to finish before returning.
+${1:# description: A description of the Server Group 
+# location: Datacenter to create the group in. If location is not provided, the group gets created in the default 
+# name: (required) The name of the Server Group 
+# parent: The parent group of the server group. If parent is not provided, it creates the group at top level. 
+# state: Whether to create or delete the group 
+# wait: Whether to wait for the tasks to finish before returning. 
 }- name: ${2:Name for clc_group module.}
-${3:  become: ${4:yes}}
-  clc_group: ${5:description=${6: } }${7:location=${8: } }${9:name=${10: } }${11:parent=${12: } }${13:state=${14: } }${15:wait=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  clc_group:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:location}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:parent}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:wait}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>clc_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

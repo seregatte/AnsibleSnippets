@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# description: The description for the VRF. 
+# hostname: (required) IP Address or hostname of APIC resolvable by Ansible control host. 
+# password: (required) The password to use for authentication. 
+# policy_control_direction: Determines if the policy should be enforced by the fabric on ingress or egress. 
+# policy_control_preference: Determines if the Fabric should enforce Contrac Policies. 
+# state: Use `present' or `absent' for adding or removing. Use `query' for listing an object or multiple objects. 
+# tenant: The name of the Tenant the VRF should belong to. 
+# timeout: The socket level timeout in seconds. 
+# use_proxy: If `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
+# use_ssl: If `no', an HTTP connection will be used instead of the default HTTPS connection. 
+# username: (required) The username to use for authentication. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only set to `no' used on personally 
+# vrf: The name of the VRF. 
+}- name: ${2:Name for aci_vrf module.}
+  aci_vrf:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:policy_control_direction}: ${14:"#"}}
+${15:   ${16:policy_control_preference}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:tenant}: ${23:"#"}}
+${24:   ${25:timeout}: ${26:"#"}}
+${27:   ${28:use_proxy}: ${29:"#"}}
+${30:   ${31:use_ssl}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:vrf}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>aci_vrf</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

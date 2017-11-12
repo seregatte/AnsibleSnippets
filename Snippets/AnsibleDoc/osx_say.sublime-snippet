@@ -1,12 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:#msg = W h a t   t o   s a y
-#voice = W h a t   v o i c e   t o   u s e
+${1:# msg: (required) What to say 
+# voice: What voice to use 
 }- name: ${2:Name for osx_say module.}
-${3:  become: ${4:yes}}
-  osx_say: ${5:msg=${6: } }${7:voice=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  osx_say:
+${3:   ${4:msg}: ${5:"#"}}
+${6:   ${7:voice}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
 ]]></content>
 	<tabTrigger>osx_say</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

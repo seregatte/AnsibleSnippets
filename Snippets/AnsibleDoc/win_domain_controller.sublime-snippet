@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# dns_domain_name: when `state' is `domain_controller', the DNS name of the domain for which the targeted Windows host 
+# domain_admin_password: (required) password for the specified `domain_admin_user' 
+# domain_admin_user: (required) username of a domain admin for the target domain (necessary to promote or demote a domain 
+# local_admin_password: password to be assigned to the local `Administrator' user (required when `state' is `member_server') 
+# safe_mode_password: safe mode password for the domain controller (required when `state' is `domain_controller') 
+# state: whether the target host should be a domain controller or a member server 
+}- name: ${2:Name for win_domain_controller module.}
+  win_domain_controller:
+${3:   ${4:dns_domain_name}: ${5:"#"}}
+${6:   ${7:domain_admin_password}: ${8:"#"}}
+${9:   ${10:domain_admin_user}: ${11:"#"}}
+${12:   ${13:local_admin_password}: ${14:"#"}}
+${15:   ${16:safe_mode_password}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>win_domain_controller</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

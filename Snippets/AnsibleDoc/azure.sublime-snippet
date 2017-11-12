@@ -1,31 +1,53 @@
 <snippet>
 <content><![CDATA[
-${1:#auto_updates = Enable Auto Updates on Windows Machines
-#enable_winrm = Enable winrm on Windows Machines
-#endpoints = a comma-separated list of TCP ports to expose on the virtual machine (e.g., "22,80")
-#hostname = hostname to write /etc/hostname. Defaults to <name>.cloudapp.net.
-#image = system image for creating the virtual machine (e.g., b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu_DAILY_BUILD-
-#location = the azure location to use (e.g. 'East US')
-#management_cert_path = path to an azure management certificate associated with the subscription id. Overrides the AZURE_CERT_PATH
-#name = name of the virtual machine and associated cloud service.
-#os_type = The type of the os that is gettings provisioned
-#password = the unix password for the new virtual machine.
-#reset_pass_atlogon = Reset the admin password on first logon for windows hosts
-#role_size = azure role size for the new virtual machine (e.g., Small, ExtraLarge, A6). You have to pay attention to the fact
-#ssh_cert_path = path to an X509 certificate containing the public ssh key to install in the virtual machine. See
-#state = create or terminate instances
-#storage_account = the azure storage account in which to store the data disks.
-#subscription_id = azure subscription id. Overrides the AZURE_SUBSCRIPTION_ID environment variable.
-#user = the unix username for the new virtual machine.
-#virtual_network_name = Name of virtual network.
-#wait = wait for the instance to be in state 'running' before returning
-#wait_timeout = how long before wait gives up, in seconds
-#wait_timeout_redirects = how long before wait gives up for redirects, in seconds
+${1:# auto_updates: Enable Auto Updates on Windows Machines 
+# enable_winrm: Enable winrm on Windows Machines 
+# endpoints: a comma-separated list of TCP ports to expose on the virtual machine (e.g., "22,80") 
+# hostname: hostname to write /etc/hostname. Defaults to <name>.cloudapp.net. 
+# image: (required) system image for creating the virtual machine (e.g., 
+# location: (required) the azure location to use (e.g. 'East US') 
+# management_cert_path: path to an azure management certificate associated with the subscription id. Overrides the 
+# name: (required) name of the virtual machine and associated cloud service. 
+# os_type: The type of the os that is gettings provisioned 
+# password: the unix password for the new virtual machine. 
+# role_size: azure role size for the new virtual machine (e.g., Small, ExtraLarge, A6). You have to pay attention to 
+# ssh_cert_path: path to an X509 certificate containing the public ssh key to install in the virtual machine. See 
+# state: create or terminate instances 
+# storage_account: (required) the azure storage account in which to store the data disks. 
+# subscription_id: azure subscription id. Overrides the AZURE_SUBSCRIPTION_ID environment variable. 
+# user: the unix username for the new virtual machine. 
+# virtual_network_name: Name of virtual network. 
+# wait: wait for the instance to be in state 'running' before returning 
+# wait_timeout: how long before wait gives up, in seconds 
+# wait_timeout_redirects: how long before wait gives up for redirects, in seconds 
 }- name: ${2:Name for azure module.}
-${3:  become: ${4:yes}}
-  azure: ${5:auto_updates=${6: } }${7:enable_winrm=${8: } }${9:endpoints=${10: } }${11:hostname=${12: } }${13:image=${14: } }${15:location=${16: } }${17:management_cert_path=${18: } }${19:name=${20: } }${21:os_type=${22: } }${23:password=${24: } }${25:reset_pass_atlogon=${26: } }${27:role_size=${28: } }${29:ssh_cert_path=${30: } }${31:state=${32: } }${33:storage_account=${34: } }${35:subscription_id=${36: } }${37:user=${38: } }${39:virtual_network_name=${40: } }${41:wait=${42: } }${43:wait_timeout=${44: } }${45:wait_timeout_redirects=${46: } }
-${47:  when: ${48: variable is defined}}
-${49:  with_items: ${50: array}}
+  azure:
+${3:   ${4:auto_updates}: ${5:"#"}}
+${6:   ${7:enable_winrm}: ${8:"#"}}
+${9:   ${10:endpoints}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:image}: ${17:"#"}}
+${18:   ${19:location}: ${20:"#"}}
+${21:   ${22:management_cert_path}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:os_type}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:role_size}: ${35:"#"}}
+${36:   ${37:ssh_cert_path}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:storage_account}: ${44:"#"}}
+${45:   ${46:subscription_id}: ${47:"#"}}
+${48:   ${49:user}: ${50:"#"}}
+${51:   ${52:virtual_network_name}: ${53:"#"}}
+${54:   ${55:wait}: ${56:"#"}}
+${57:   ${58:wait_timeout}: ${59:"#"}}
+${60:   ${61:wait_timeout_redirects}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>azure</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,20 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#auto_node_startup = whether the target node should be automatically connected at startup
-#discover = whether the list of target nodes on the portal should be (re)discovered and added to the persistent iscsi
-#login = whether the target node should be connected
-#node_auth = discovery.sendtargets.auth.authmethod
-#node_pass = discovery.sendtargets.auth.password
-#node_user = discovery.sendtargets.auth.username
-#port = the port on which the iscsi target process listens
-#portal = the ip address of the iscsi target
-#show_nodes = whether the list of nodes in the persistent iscsi database should be returned by the module
-#target = the iscsi target name
+${1:# auto_node_startup: whether the target node should be automatically connected at startup 
+# discover: whether the list of target nodes on the portal should be (re)discovered and added to the persistent 
+# login: whether the target node should be connected 
+# node_auth: discovery.sendtargets.auth.authmethod 
+# node_pass: discovery.sendtargets.auth.password 
+# node_user: discovery.sendtargets.auth.username 
+# port: the port on which the iscsi target process listens 
+# portal: the ip address of the iscsi target 
+# show_nodes: whether the list of nodes in the persistent iscsi database should be returned by the module 
+# target: the iscsi target name 
 }- name: ${2:Name for open_iscsi module.}
-${3:  become: ${4:yes}}
-  open_iscsi: ${5:auto_node_startup=${6: } }${7:discover=${8: } }${9:login=${10: } }${11:node_auth=${12: } }${13:node_pass=${14: } }${15:node_user=${16: } }${17:port=${18: } }${19:portal=${20: } }${21:show_nodes=${22: } }${23:target=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  open_iscsi:
+${3:   ${4:auto_node_startup}: ${5:"#"}}
+${6:   ${7:discover}: ${8:"#"}}
+${9:   ${10:login}: ${11:"#"}}
+${12:   ${13:node_auth}: ${14:"#"}}
+${15:   ${16:node_pass}: ${17:"#"}}
+${18:   ${19:node_user}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:portal}: ${26:"#"}}
+${27:   ${28:show_nodes}: ${29:"#"}}
+${30:   ${31:target}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>open_iscsi</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

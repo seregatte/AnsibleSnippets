@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# expire: How long in seconds before the notification expires. 
+# group: Which notification group to add the notification to. 
+# msg: The message to appear inside the notification.  May include \n to format the message to appear within 
+# popup: If false, the notification will not pop up and will only appear in the Action Center. 
+# tag: The tag to add to the notification. 
+# title: The notification title, which appears in the pop up.. 
+}- name: ${2:Name for win_toast module.}
+  win_toast:
+${3:   ${4:expire}: ${5:"#"}}
+${6:   ${7:group}: ${8:"#"}}
+${9:   ${10:msg}: ${11:"#"}}
+${12:   ${13:popup}: ${14:"#"}}
+${15:   ${16:tag}: ${17:"#"}}
+${18:   ${19:title}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>win_toast</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

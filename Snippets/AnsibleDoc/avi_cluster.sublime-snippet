@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# name: (required) Name of the object. 
+# nodes: List of clusternode. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# rejoin_nodes_automatically: Re-join cluster nodes automatically in the event one of the node is reset to factory. Default value when 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Unique object identifier of the object. 
+# virtual_ip: A virtual ip address. This ip address will be dynamically reconfigured so that it always is the ip of 
+}- name: ${2:Name for avi_cluster module.}
+  avi_cluster:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:controller}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:nodes}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:rejoin_nodes_automatically}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:tenant}: ${26:"#"}}
+${27:   ${28:tenant_ref}: ${29:"#"}}
+${30:   ${31:tenant_uuid}: ${32:"#"}}
+${33:   ${34:url}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:uuid}: ${41:"#"}}
+${42:   ${43:virtual_ip}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>avi_cluster</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

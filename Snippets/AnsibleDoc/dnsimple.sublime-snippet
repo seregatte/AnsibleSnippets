@@ -1,22 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#account_api_token = Account API token. See `account_email' for info.
-#account_email = Account email. If omitted, the env variables DNSIMPLE_EMAIL and DNSIMPLE_API_TOKEN will be looked for. If those
-#https = getting-started
-#domain = Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the domain in DNSimple.
-#priority = Record priority
-#record = Record to add, if blank a record for the domain will be created, supports the wildcard (*)
-#record_ids = List of records to ensure they either exist or don't exist
-#solo = Whether the record should be the only one for that record type and record name. Only use with state=present on a
-#state = whether the record should exist or not
-#ttl = The TTL to give the new record
-#type = The type of DNS record to create
-#value = Record value Must be specified when trying to ensure a record exists
+${1:# account_api_token: Account API token. See `account_email' for info. 
+# account_email: Account email. If omitted, the env variables DNSIMPLE_EMAIL and DNSIMPLE_API_TOKEN will be looked for. 
+# https: getting-started 
+# domain: Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the domain in 
+# priority: Record priority 
+# record: Record to add, if blank a record for the domain will be created, supports the wildcard (*) 
+# record_ids: List of records to ensure they either exist or don't exist 
+# solo: Whether the record should be the only one for that record type and record name. Only use with 
+# state: whether the record should exist or not 
+# ttl: The TTL to give the new record 
+# type: The type of DNS record to create 
+# value: Record value Must be specified when trying to ensure a record exists 
 }- name: ${2:Name for dnsimple module.}
-${3:  become: ${4:yes}}
-  dnsimple: ${5:account_api_token=${6: } }${7:account_email=${8: } }${9:https=${10: } }${11:domain=${12: } }${13:priority=${14: } }${15:record=${16: } }${17:record_ids=${18: } }${19:solo=${20: } }${21:state=${22: } }${23:ttl=${24: } }${25:type=${26: } }${27:value=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  dnsimple:
+${3:   ${4:account_api_token}: ${5:"#"}}
+${6:   ${7:account_email}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:domain}: ${14:"#"}}
+${15:   ${16:priority}: ${17:"#"}}
+${18:   ${19:record}: ${20:"#"}}
+${21:   ${22:record_ids}: ${23:"#"}}
+${24:   ${25:solo}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:ttl}: ${32:"#"}}
+${33:   ${34:type}: ${35:"#"}}
+${36:   ${37:value}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>dnsimple</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

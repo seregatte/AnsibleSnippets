@@ -1,22 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#age = Select files whose age is equal to or greater than the specified time. Use a negative age to find files equal to
-#age_stamp = Choose the file property against which we compare age. Default is mtime.
-#contains = One or more re patterns which should be matched against the file content
-#file_type = Type of file to select
-#follow = Set this to true to follow symlinks in path for systems with python 2.6+
-#get_checksum = Set this to true to retrieve a file's sha1 checksum
-#hidden = Set this to true to include hidden files, otherwise they'll be ignored.
-#paths = List of paths to the file or directory to search. All paths must be fully qualified.
-#patterns = One or more (shell or regex) patterns, which type is controled by `use_regex' option. The patterns restrict the
-#recurse = If target is a directory, recursively descend into the directory looking for files.
-#size = Select files whose size is equal to or greater than the specified size. Use a negative size to find files equal
-#use_regex = If false the patterns are file globs (shell) if true they are python regexes
+${1:# age: Select files whose age is equal to or greater than the specified time. Use a negative age to find files 
+# age_stamp: Choose the file property against which we compare age. 
+# contains: One or more regex patterns which should be matched against the file content. 
+# file_type: Type of file to select. The 'link' and 'any' choices were added in version 2.3. 
+# follow: Set this to true to follow symlinks in path for systems with python 2.6+. 
+# get_checksum: Set this to true to retrieve a file's sha1 checksum. 
+# hidden: Set this to true to include hidden files, otherwise they'll be ignored. 
+# paths: (required) List of paths of directories to search. All paths must be fully qualified. 
+# patterns: One or more (shell or regex) patterns, which type is controlled by `use_regex' option. The patterns 
+# recurse: If target is a directory, recursively descend into the directory looking for files. 
+# size: Select files whose size is equal to or greater than the specified size. Use a negative size to find 
+# use_regex: If false the patterns are file globs (shell) if true they are python regexes. 
 }- name: ${2:Name for find module.}
-${3:  become: ${4:yes}}
-  find: ${5:age=${6: } }${7:age_stamp=${8: } }${9:contains=${10: } }${11:file_type=${12: } }${13:follow=${14: } }${15:get_checksum=${16: } }${17:hidden=${18: } }${19:paths=${20: } }${21:patterns=${22: } }${23:recurse=${24: } }${25:size=${26: } }${27:use_regex=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  find:
+${3:   ${4:age}: ${5:"#"}}
+${6:   ${7:age_stamp}: ${8:"#"}}
+${9:   ${10:contains}: ${11:"#"}}
+${12:   ${13:file_type}: ${14:"#"}}
+${15:   ${16:follow}: ${17:"#"}}
+${18:   ${19:get_checksum}: ${20:"#"}}
+${21:   ${22:hidden}: ${23:"#"}}
+${24:   ${25:paths}: ${26:"#"}}
+${27:   ${28:patterns}: ${29:"#"}}
+${30:   ${31:recurse}: ${32:"#"}}
+${33:   ${34:size}: ${35:"#"}}
+${36:   ${37:use_regex}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>find</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

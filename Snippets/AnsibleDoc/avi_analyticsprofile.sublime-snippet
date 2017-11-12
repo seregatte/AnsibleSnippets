@@ -1,0 +1,164 @@
+<snippet>
+<content><![CDATA[
+${1:# apdex_response_threshold: If a client receives an http response in less than the satisfactory latency threshold, the request is 
+# apdex_response_tolerated_factor: Client tolerated response latency factor. Client must receive a response within this factor times the 
+# apdex_rtt_threshold: Satisfactory client to avi round trip time(rtt). Allowed values are 1-2000. Default value when not 
+# apdex_rtt_tolerated_factor: Tolerated client to avi round trip time(rtt) factor. It is a multiple of apdex_rtt_tolerated_factor. 
+# apdex_rum_threshold: If a client is able to load a page in less than the satisfactory latency threshold, the pageload is 
+# apdex_rum_tolerated_factor: Virtual service threshold factor for tolerated page load time (plt) as multiple of apdex_rum_threshold. 
+# apdex_server_response_threshold: A server http response is considered satisfied if latency is less than the satisfactory latency 
+# apdex_server_response_tolerated_factor: Server tolerated response latency factor. Servermust response within this factor times the satisfactory 
+# apdex_server_rtt_threshold: Satisfactory client to avi round trip time(rtt). Allowed values are 1-2000. Default value when not 
+# apdex_server_rtt_tolerated_factor: Tolerated client to avi round trip time(rtt) factor. It is a multiple of apdex_rtt_tolerated_factor. 
+# api_version: Avi API version of to use for Avi API and objects. 
+# client_log_config: Configure which logs are sent to the avi controller from ses and how they are processed. 
+# client_log_streaming_config: Configure to stream logs to an external server. Field introduced in 17.1.1. 
+# conn_lossy_ooo_threshold: A connection between client and avi is considered lossy when more than this percentage of out of order 
+# conn_lossy_timeo_rexmt_threshold: A connection between client and avi is considered lossy when more than this percentage of packets are 
+# conn_lossy_total_rexmt_threshold: A connection between client and avi is considered lossy when more than this percentage of packets are 
+# conn_lossy_zero_win_size_event_threshold: A client connection is considered lossy when percentage of times a packet could not be trasmitted due to 
+# conn_server_lossy_ooo_threshold: A connection between avi and server is considered lossy when more than this percentage of out of order 
+# conn_server_lossy_timeo_rexmt_threshold: A connection between avi and server is considered lossy when more than this percentage of packets are 
+# conn_server_lossy_total_rexmt_threshold: A connection between avi and server is considered lossy when more than this percentage of packets are 
+# conn_server_lossy_zero_win_size_event_threshold: A server connection is considered lossy when percentage of times a packet could not be trasmitted due to 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# description: User defined description for the object. 
+# disable_se_analytics: Disable node (service engine) level analytics forvs metrics. Default value when not specified in API or 
+# disable_server_analytics: Disable analytics on backend servers. This may be desired in container environment when there are large 
+# exclude_client_close_before_request_as_error: Exclude client closed connection before an http request could be completed from being classified as an 
+# exclude_gs_down_as_error: Exclude queries to gslb services that are operationally down from the list of errors. Default value when 
+# exclude_http_error_codes: List of http status codes to be excluded from being classified as an error. Error connections or 
+# exclude_invalid_dns_domain_as_error: Exclude dns queries to domains outside the domains configured in the dns application profile from the 
+# exclude_invalid_dns_query_as_error: Exclude invalid dns queries from the list of errors. Default value when not specified in API or module 
+# exclude_no_dns_record_as_error: Exclude queries to domains that did not have configured services/records from the list of errors. 
+# exclude_no_valid_gs_member_as_error: Exclude queries to gslb services that have no available members from the list of errors. Default value 
+# exclude_persistence_change_as_error: Exclude persistence server changed while load balancing' from the list of errors. Default value when not 
+# exclude_server_dns_error_as_error: Exclude server dns error response from the list of errors. Default value when not specified in API or 
+# exclude_server_tcp_reset_as_error: Exclude server tcp reset from errors. It is common for applications like ms exchange. Default value when 
+# exclude_syn_retransmit_as_error: Exclude 'server unanswered syns' from the list of errors. Default value when not specified in API or 
+# exclude_tcp_reset_as_error: Exclude tcp resets by client from the list of potential errors. Default value when not specified in API 
+# exclude_unsupported_dns_query_as_error: Exclude unsupported dns queries from the list of errors. Default value when not specified in API or 
+# hs_event_throttle_window: Time window (in secs) within which only unique health change events should occur. Default value when not 
+# hs_max_anomaly_penalty: Maximum penalty that may be deducted from health score for anomalies. Allowed values are 0-100. Default 
+# hs_max_resources_penalty: Maximum penalty that may be deducted from health score for high resource utilization. Allowed values are 
+# hs_max_security_penalty: Maximum penalty that may be deducted from health score based on security assessment. Allowed values are 
+# hs_min_dos_rate: Dos connection rate below which the dos security assessment will not kick in. Default value when not 
+# hs_performance_boost: Adds free performance score credits to health score. It can be used for compensating health score for 
+# hs_pscore_traffic_threshold_l4_client: Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network 
+# hs_pscore_traffic_threshold_l4_server: Threshold number of connections in 5min, below which apdexr, apdexc, rum_apdex, and other network 
+# hs_security_certscore_expired: Score assigned when the certificate has expired. Allowed values are 0-5. Default value when not 
+# hs_security_certscore_gt30d: Score assigned when the certificate expires in more than 30 days. Allowed values are 0-5. Default value 
+# hs_security_certscore_le07d: Score assigned when the certificate expires in less than or equal to 7 days. Allowed values are 0-5. 
+# hs_security_certscore_le30d: Score assigned when the certificate expires in less than or equal to 30 days. Allowed values are 0-5. 
+# hs_security_chain_invalidity_penalty: Penalty for allowing certificates with invalid chain. Allowed values are 0-5. Default value when not 
+# hs_security_cipherscore_eq000b: Score assigned when the minimum cipher strength is 0 bits. Allowed values are 0-5. Default value when 
+# hs_security_cipherscore_ge128b: Score assigned when the minimum cipher strength is greater than equal to 128 bits. Allowed values are 
+# hs_security_cipherscore_lt128b: Score assigned when the minimum cipher strength is less than 128 bits. Allowed values are 0-5. Default 
+# hs_security_encalgo_score_none: Score assigned when no algorithm is used for encryption. Allowed values are 0-5. Default value when not 
+# hs_security_encalgo_score_rc4: Score assigned when rc4 algorithm is used for encryption. Allowed values are 0-5. Default value when not 
+# hs_security_hsts_penalty: Penalty for not enabling hsts. Allowed values are 0-5. Default value when not specified in API or module 
+# hs_security_nonpfs_penalty: Penalty for allowing non-pfs handshakes. Allowed values are 0-5. Default value when not specified in API 
+# hs_security_selfsignedcert_penalty: Deprecated. Allowed values are 0-5. Default value when not specified in API or module is interpreted by 
+# hs_security_ssl30_score: Score assigned when supporting ssl3.0 encryption protocol. Allowed values are 0-5. Default value when 
+# hs_security_tls10_score: Score assigned when supporting tls1.0 encryption protocol. Allowed values are 0-5. Default value when 
+# hs_security_tls11_score: Score assigned when supporting tls1.1 encryption protocol. Allowed values are 0-5. Default value when 
+# hs_security_tls12_score: Score assigned when supporting tls1.2 encryption protocol. Allowed values are 0-5. Default value when 
+# hs_security_weak_signature_algo_penalty: Penalty for allowing weak signature algorithm(s). Allowed values are 0-5. Default value when not 
+# name: (required) The name of the analytics profile. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# ranges: List of http status code ranges to be excluded from being classified as an error. 
+# resp_code_block: Block of http response codes to be excluded from being classified as an error. Enum options - 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Uuid of the analytics profile. 
+}- name: ${2:Name for avi_analyticsprofile module.}
+  avi_analyticsprofile:
+${3:   ${4:apdex_response_threshold}: ${5:"#"}}
+${6:   ${7:apdex_response_tolerated_factor}: ${8:"#"}}
+${9:   ${10:apdex_rtt_threshold}: ${11:"#"}}
+${12:   ${13:apdex_rtt_tolerated_factor}: ${14:"#"}}
+${15:   ${16:apdex_rum_threshold}: ${17:"#"}}
+${18:   ${19:apdex_rum_tolerated_factor}: ${20:"#"}}
+${21:   ${22:apdex_server_response_threshold}: ${23:"#"}}
+${24:   ${25:apdex_server_response_tolerated_factor}: ${26:"#"}}
+${27:   ${28:apdex_server_rtt_threshold}: ${29:"#"}}
+${30:   ${31:apdex_server_rtt_tolerated_factor}: ${32:"#"}}
+${33:   ${34:api_version}: ${35:"#"}}
+${36:   ${37:client_log_config}: ${38:"#"}}
+${39:   ${40:client_log_streaming_config}: ${41:"#"}}
+${42:   ${43:conn_lossy_ooo_threshold}: ${44:"#"}}
+${45:   ${46:conn_lossy_timeo_rexmt_threshold}: ${47:"#"}}
+${48:   ${49:conn_lossy_total_rexmt_threshold}: ${50:"#"}}
+${51:   ${52:conn_lossy_zero_win_size_event_threshold}: ${53:"#"}}
+${54:   ${55:conn_server_lossy_ooo_threshold}: ${56:"#"}}
+${57:   ${58:conn_server_lossy_timeo_rexmt_threshold}: ${59:"#"}}
+${60:   ${61:conn_server_lossy_total_rexmt_threshold}: ${62:"#"}}
+${63:   ${64:conn_server_lossy_zero_win_size_event_threshold}: ${65:"#"}}
+${66:   ${67:controller}: ${68:"#"}}
+${69:   ${70:description}: ${71:"#"}}
+${72:   ${73:disable_se_analytics}: ${74:"#"}}
+${75:   ${76:disable_server_analytics}: ${77:"#"}}
+${78:   ${79:exclude_client_close_before_request_as_error}: ${80:"#"}}
+${81:   ${82:exclude_gs_down_as_error}: ${83:"#"}}
+${84:   ${85:exclude_http_error_codes}: ${86:"#"}}
+${87:   ${88:exclude_invalid_dns_domain_as_error}: ${89:"#"}}
+${90:   ${91:exclude_invalid_dns_query_as_error}: ${92:"#"}}
+${93:   ${94:exclude_no_dns_record_as_error}: ${95:"#"}}
+${96:   ${97:exclude_no_valid_gs_member_as_error}: ${98:"#"}}
+${99:   ${100:exclude_persistence_change_as_error}: ${101:"#"}}
+${102:   ${103:exclude_server_dns_error_as_error}: ${104:"#"}}
+${105:   ${106:exclude_server_tcp_reset_as_error}: ${107:"#"}}
+${108:   ${109:exclude_syn_retransmit_as_error}: ${110:"#"}}
+${111:   ${112:exclude_tcp_reset_as_error}: ${113:"#"}}
+${114:   ${115:exclude_unsupported_dns_query_as_error}: ${116:"#"}}
+${117:   ${118:hs_event_throttle_window}: ${119:"#"}}
+${120:   ${121:hs_max_anomaly_penalty}: ${122:"#"}}
+${123:   ${124:hs_max_resources_penalty}: ${125:"#"}}
+${126:   ${127:hs_max_security_penalty}: ${128:"#"}}
+${129:   ${130:hs_min_dos_rate}: ${131:"#"}}
+${132:   ${133:hs_performance_boost}: ${134:"#"}}
+${135:   ${136:hs_pscore_traffic_threshold_l4_client}: ${137:"#"}}
+${138:   ${139:hs_pscore_traffic_threshold_l4_server}: ${140:"#"}}
+${141:   ${142:hs_security_certscore_expired}: ${143:"#"}}
+${144:   ${145:hs_security_certscore_gt30d}: ${146:"#"}}
+${147:   ${148:hs_security_certscore_le07d}: ${149:"#"}}
+${150:   ${151:hs_security_certscore_le30d}: ${152:"#"}}
+${153:   ${154:hs_security_chain_invalidity_penalty}: ${155:"#"}}
+${156:   ${157:hs_security_cipherscore_eq000b}: ${158:"#"}}
+${159:   ${160:hs_security_cipherscore_ge128b}: ${161:"#"}}
+${162:   ${163:hs_security_cipherscore_lt128b}: ${164:"#"}}
+${165:   ${166:hs_security_encalgo_score_none}: ${167:"#"}}
+${168:   ${169:hs_security_encalgo_score_rc4}: ${170:"#"}}
+${171:   ${172:hs_security_hsts_penalty}: ${173:"#"}}
+${174:   ${175:hs_security_nonpfs_penalty}: ${176:"#"}}
+${177:   ${178:hs_security_selfsignedcert_penalty}: ${179:"#"}}
+${180:   ${181:hs_security_ssl30_score}: ${182:"#"}}
+${183:   ${184:hs_security_tls10_score}: ${185:"#"}}
+${186:   ${187:hs_security_tls11_score}: ${188:"#"}}
+${189:   ${190:hs_security_tls12_score}: ${191:"#"}}
+${192:   ${193:hs_security_weak_signature_algo_penalty}: ${194:"#"}}
+${195:   ${196:name}: ${197:"#"}}
+${198:   ${199:password}: ${200:"#"}}
+${201:   ${202:ranges}: ${203:"#"}}
+${204:   ${205:resp_code_block}: ${206:"#"}}
+${207:   ${208:state}: ${209:"#"}}
+${210:   ${211:tenant}: ${212:"#"}}
+${213:   ${214:tenant_ref}: ${215:"#"}}
+${216:   ${217:tenant_uuid}: ${218:"#"}}
+${219:   ${220:url}: ${221:"#"}}
+${222:   ${223:username}: ${224:"#"}}
+${225:   ${226:uuid}: ${227:"#"}}
+${228:${229:   become: ${230:true}} 
+${231:   become_method: ${232:su}} 
+${233:   become_user: ${234:nobody}} 
+${235:   become_flags: ${236:"-s /bin/sh"}}} 
+${237:   when: ${238:variable is defined}} 
+${239:   with_items: ${240:array}} 
+]]></content>
+	<tabTrigger>avi_analyticsprofile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

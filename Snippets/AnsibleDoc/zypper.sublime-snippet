@@ -1,15 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#disable_gpg_check = Whether to disable to GPG signature checking of the package signature being installed. Has an effect only if
-#disable_recommends = Corresponds to the `--no-recommends' option for `zypper'. Default behavior (`yes') modifies zypper's default
-#name = package name or package specifier with version `name' or `name-1.0'. You can also pass a url or a local path to
-#state = `present' will make sure the package is installed. `latest'  will make sure the latest version of the package is
-#type = The type of package to be operated on.
+${1:# disable_gpg_check: Whether to disable to GPG signature checking of the package signature being installed. Has an effect 
+# disable_recommends: Corresponds to the `--no-recommends' option for `zypper'. Default behavior (`yes') modifies zypper's 
+# extra_args: Add additional options to `zypper' command. Options should be supplied in a single line as if given in 
+# force: Adds `--force' option to `zypper'. Allows to downgrade packages and change vendor or architecture. 
+# name: (required) Package name `name' or package specifier. Can include a version like `name=1.0', `name>3.4' 
+# oldpackage: Adds `--oldpackage' option to `zypper'. Allows to downgrade packages with less side-effects than force. 
+# state: `present' will make sure the package is installed. `latest'  will make sure the latest version of the 
+# type: The type of package to be operated on. 
+# update_cache: Run the equivalent of `zypper refresh' before the operation. Disabled in check mode. 
 }- name: ${2:Name for zypper module.}
-${3:  become: ${4:yes}}
-  zypper: ${5:disable_gpg_check=${6: } }${7:disable_recommends=${8: } }${9:name=${10: } }${11:state=${12: } }${13:type=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  zypper:
+${3:   ${4:disable_gpg_check}: ${5:"#"}}
+${6:   ${7:disable_recommends}: ${8:"#"}}
+${9:   ${10:extra_args}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:oldpackage}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:type}: ${26:"#"}}
+${27:   ${28:update_cache}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>zypper</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

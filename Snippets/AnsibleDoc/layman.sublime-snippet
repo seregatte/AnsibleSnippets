@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#list_url = An URL of the alternative overlays list that defines the overlay to install. This list will be fetched and saved
-#name = The overlay id to install, synchronize, or uninstall. Use 'ALL' to sync all of the installed overlays (can be
-#state = Whether to install (`present'), sync (`updated'), or uninstall (`absent') the overlay.
-#validate_certs = If `no', SSL certificates will not be validated. This should only be set to `no' when no other option exists.
+${1:# list_url: An URL of the alternative overlays list that defines the overlay to install. This list will be fetched 
+# name: (required) The overlay id to install, synchronize, or uninstall. Use 'ALL' to sync all of the installed 
+# state: Whether to install (`present'), sync (`updated'), or uninstall (`absent') the overlay. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be set to `no' when no other option 
 }- name: ${2:Name for layman module.}
-${3:  become: ${4:yes}}
-  layman: ${5:list_url=${6: } }${7:name=${8: } }${9:state=${10: } }${11:validate_certs=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  layman:
+${3:   ${4:list_url}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:validate_certs}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>layman</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,11 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#api_url = URL of the ipify.org API service. `?format=json' will be appended per default.
+${1:# api_url: URL of the ipify.org API service. `?format=json' will be appended per default. 
+# timeout: HTTP connection timeout in seconds. 
+# validate_certs: When set to `NO', SSL certificates will not be validated. 
 }- name: ${2:Name for ipify_facts module.}
-${3:  become: ${4:yes}}
-  ipify_facts: ${5:api_url=${6: } }
-${7:  when: ${8: variable is defined}}
-${9:  with_items: ${10: array}}
+  ipify_facts:
+${3:   ${4:api_url}: ${5:"#"}}
+${6:   ${7:timeout}: ${8:"#"}}
+${9:   ${10:validate_certs}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>ipify_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

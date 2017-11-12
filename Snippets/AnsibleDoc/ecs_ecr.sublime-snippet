@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# delete_policy: if yes, remove the policy from the repository 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# force_set_policy: if no, prevents setting a policy that would prevent you from setting another policy in the future. 
+# name: (required) the name of the repository 
+# policy: JSON or dict that represents the new policy 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# registry_id: AWS account id associated with the registry. If not specified, the default registry is assumed. 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: create or destroy the repository 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+}- name: ${2:Name for ecs_ecr module.}
+  ecs_ecr:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:delete_policy}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:force_set_policy}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:policy}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:registry_id}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>ecs_ecr</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

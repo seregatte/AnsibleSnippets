@@ -1,0 +1,72 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# append_tags: Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not 
+# backend_port: Backend port that will be exposed for the load balancer. 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# frontend_port: Frontend port that will be exposed for the load balancer. 
+# idle_timeout: Timeout for TCP idle connection in minutes. 
+# load_distribution: The type of load distribution that the load balancer will employ. 
+# location: Valid azure location. Defaults to location of the resource group. 
+# name: (required) Name of the load balancer. 
+# natpool_backend_port: Backend port used by the NAT pool. 
+# natpool_frontend_port_end: End of the port range for a NAT pool. 
+# natpool_frontend_port_start: Start of the port range for a NAT pool. 
+# natpool_protocol: The protocol for the NAT pool. 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# probe_fail_count: The amount of probe failures for the load balancer to make a health determination. 
+# probe_interval: How much time (in seconds) to probe the endpoint for health. 
+# probe_port: The port that the health probe will use. 
+# probe_protocol: The protocol to use for the health probe. 
+# probe_request_path: The URL that an HTTP probe will use (only relevant if probe_protocol is set to Http). 
+# profile: Security profile found in ~/.azure/credentials file. 
+# protocol: The protocol (TCP or UDP) that the load balancer will use. 
+# public_ip_address_name: Name of an existing public IP address object to associate with the security group. 
+# resource_group: (required) Name of a resource group where the load balancer exists or will be created. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# state: Assert the state of the load balancer. Use 'present' to create or update a load balancer and 'absent' to 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+}- name: ${2:Name for azure_rm_loadbalancer module.}
+  azure_rm_loadbalancer:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:append_tags}: ${8:"#"}}
+${9:   ${10:backend_port}: ${11:"#"}}
+${12:   ${13:client_id}: ${14:"#"}}
+${15:   ${16:cloud_environment}: ${17:"#"}}
+${18:   ${19:frontend_port}: ${20:"#"}}
+${21:   ${22:idle_timeout}: ${23:"#"}}
+${24:   ${25:load_distribution}: ${26:"#"}}
+${27:   ${28:location}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:natpool_backend_port}: ${35:"#"}}
+${36:   ${37:natpool_frontend_port_end}: ${38:"#"}}
+${39:   ${40:natpool_frontend_port_start}: ${41:"#"}}
+${42:   ${43:natpool_protocol}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:probe_fail_count}: ${50:"#"}}
+${51:   ${52:probe_interval}: ${53:"#"}}
+${54:   ${55:probe_port}: ${56:"#"}}
+${57:   ${58:probe_protocol}: ${59:"#"}}
+${60:   ${61:probe_request_path}: ${62:"#"}}
+${63:   ${64:profile}: ${65:"#"}}
+${66:   ${67:protocol}: ${68:"#"}}
+${69:   ${70:public_ip_address_name}: ${71:"#"}}
+${72:   ${73:resource_group}: ${74:"#"}}
+${75:   ${76:secret}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:subscription_id}: ${83:"#"}}
+${84:   ${85:tags}: ${86:"#"}}
+${87:   ${88:tenant}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
+]]></content>
+	<tabTrigger>azure_rm_loadbalancer</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

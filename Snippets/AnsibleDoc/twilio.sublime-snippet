@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#account_sid = u s e r ' s   T w i l i o   a c c o u n t   t o k e n   f o u n d   o n   t h e   a c c o u n t   p a g e
-#auth_token = u s e r ' s   T w i l i o   a u t h e n t i c a t i o n   t o k e n
-#from_number = t h e   T w i l i o   n u m b e r   t o   s e n d   t h e   t e x t   m e s s a g e   f r o m ,   f o r m a t
-#media_url = a   U R L   w i t h   a   p i c t u r e ,   v i d e o   o r   s o u n d   c l i p   t o   s e n d   w i t h   a
-#msg = t h e   b o d y   o f   t h e   t e x t   m e s s a g e
-#to_number = o n e   o r   m o r e   p h o n e   n u m b e r s   t o   s e n d   t h e   t e x t   m e s s a g e   t o ,   f
+${1:# account_sid: (required) user's Twilio account token found on the account page 
+# auth_token: (required) user's Twilio authentication token 
+# from_number: (required) the Twilio number to send the text message from, format +15551112222 
+# media_url: a URL with a picture, video or sound clip to send with an MMS (multimedia message) instead of a plain 
+# msg: (required) the body of the text message 
+# to_number: (required) one or more phone numbers to send the text message to, format +15551112222 
 }- name: ${2:Name for twilio module.}
-${3:  become: ${4:yes}}
-  twilio: ${5:account_sid=${6: } }${7:auth_token=${8: } }${9:from_number=${10: } }${11:media_url=${12: } }${13:msg=${14: } }${15:to_number=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  twilio:
+${3:   ${4:account_sid}: ${5:"#"}}
+${6:   ${7:auth_token}: ${8:"#"}}
+${9:   ${10:from_number}: ${11:"#"}}
+${12:   ${13:media_url}: ${14:"#"}}
+${15:   ${16:msg}: ${17:"#"}}
+${18:   ${19:to_number}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>twilio</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

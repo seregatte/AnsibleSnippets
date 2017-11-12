@@ -1,10 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:}- name: ${2:Name for webfaction_app module.}
-${3:  become: ${4:yes}}
-  webfaction_app: 
-${5:  when: ${6: variable is defined}}
-${7:  with_items: ${8: array}}
+${1:# autostart: Whether the app should restart with an autostart.cgi script 
+# extra_info: Any extra parameters required by the app 
+# login_name: (required) The webfaction account to use 
+# login_password: (required) The webfaction password to use 
+# machine: The machine name to use (optional for accounts with only one machine) 
+# name: (required) The name of the application 
+# port_open: IF the port should be opened 
+# state: Whether the application should exist 
+# type: (required) The type of application to create. See the Webfaction docs at http://docs.webfaction.com 
+}- name: ${2:Name for webfaction_app module.}
+  webfaction_app:
+${3:   ${4:autostart}: ${5:"#"}}
+${6:   ${7:extra_info}: ${8:"#"}}
+${9:   ${10:login_name}: ${11:"#"}}
+${12:   ${13:login_password}: ${14:"#"}}
+${15:   ${16:machine}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:port_open}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:type}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>webfaction_app</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

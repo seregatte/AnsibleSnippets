@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# force: Force the change of the cluster state 
+# node: Specify which node of the cluster you want to manage. None == the cluster status itself, 'all' == check 
+# state: (required) Indicate desired state of the cluster 
+# timeout: Timeout when the module should considered that the action has failed 
+}- name: ${2:Name for pacemaker_cluster module.}
+  pacemaker_cluster:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:node}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:timeout}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>pacemaker_cluster</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

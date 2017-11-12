@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# add_children: Add additional child-element(s) to a selected element for a given `xpath'. Child elements must be given 
+# attribute: The attribute to select when using parameter `value'. This is a string, not prepended with `@'. 
+# backup: Create a backup file including the timestamp information so you can get the original file back if you 
+# content: Search for a given `xpath' and get content. This parameter requires `xpath' to be set. 
+# count: Search for a given `xpath' and provide the count of any matches. This parameter requires `xpath' to be 
+# input_type: Type of input for `add_children' and `set_children'. 
+# namespaces: The namespace `prefix:uri' mapping for the XPath expression. Needs to be a `dict', not a `list' of 
+# path: (required) Path to the file to operate on. File must exist ahead of time. This parameter is required, 
+# pretty_print: Pretty print XML output. 
+# print_match: Search for a given `xpath' and print out any matches. This parameter requires `xpath' to be set. 
+# set_children: Set the child-element(s) of a selected element for a given `xpath'. Removes any existing children. Child 
+# state: Set or remove an xpath selection (node(s), attribute(s)). 
+# value: Desired state of the selected attribute. Either a string, or to unset a value, the Python `None' keyword 
+# xmlstring: (required) A string containing XML on which to operate. This parameter is required, unless `path' is 
+# xpath: A valid XPath expression describing the item(s) you want to manipulate. Operates on the document root, 
+}- name: ${2:Name for xml module.}
+  xml:
+${3:   ${4:add_children}: ${5:"#"}}
+${6:   ${7:attribute}: ${8:"#"}}
+${9:   ${10:backup}: ${11:"#"}}
+${12:   ${13:content}: ${14:"#"}}
+${15:   ${16:count}: ${17:"#"}}
+${18:   ${19:input_type}: ${20:"#"}}
+${21:   ${22:namespaces}: ${23:"#"}}
+${24:   ${25:path}: ${26:"#"}}
+${27:   ${28:pretty_print}: ${29:"#"}}
+${30:   ${31:print_match}: ${32:"#"}}
+${33:   ${34:set_children}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:value}: ${41:"#"}}
+${42:   ${43:xmlstring}: ${44:"#"}}
+${45:   ${46:xpath}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>xml</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

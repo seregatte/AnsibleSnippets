@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# action: (required) Action what the init has to do with this entry. 
+# command: (required) What command has to run. 
+# insertafter: After which inittabline should the new entry inserted. 
+# name: (required) Name of the inittab entry. 
+# runlevel: (required) Runlevel of the entry. 
+# state: Whether the entry should be present or absent in the inittab file 
+}- name: ${2:Name for aix_inittab module.}
+  aix_inittab:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:command}: ${8:"#"}}
+${9:   ${10:insertafter}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:runlevel}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>aix_inittab</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

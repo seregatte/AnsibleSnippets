@@ -1,21 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:#argument = Arguments to provide scheduled task action
-#days_of_week = Days of the week to run a weekly task, not idempotent
-#description = The description for the scheduled task
-#enabled = Enable/disable the task
-#execute = Command the scheduled task should execute
-#frequency = The frequency of the command, not idempotent
-#name = Name of the scheduled task
-#path = Folder path of scheduled task
-#state = State that the task should become
-#time = Time to execute scheduled task, not idempotent
-#user = User to run scheduled task as
+${1:# arguments: Arguments to provide scheduled task action 
+# days_of_week: Days of the week to run a weekly task, not idempotent 
+# description: The description for the scheduled task 
+# enabled: Enable/disable the task 
+# executable: Command the scheduled task should execute 
+# frequency: The frequency of the command, not idempotent 
+# name: (required) Name of the scheduled task 
+# password: Password for the user account to run the scheduled task as.  This is required for running a task without 
+# path: Task folder in which this task will be stored - creates a non-existent path when `state' is `present', 
+# runlevel: The level of user rights used to run the task 
+# state: (required) State that the task should become 
+# store_password: Store the password for the user running the task.  If `false', the task will only have access to local 
+# time: Time to execute scheduled task, not idempotent 
+# user: User to run the scheduled task as; defaults to the current user 
 }- name: ${2:Name for win_scheduled_task module.}
-${3:  become: ${4:yes}}
-  win_scheduled_task: ${5:argument=${6: } }${7:days_of_week=${8: } }${9:description=${10: } }${11:enabled=${12: } }${13:execute=${14: } }${15:frequency=${16: } }${17:name=${18: } }${19:path=${20: } }${21:state=${22: } }${23:time=${24: } }${25:user=${26: } }
-${27:  when: ${28: variable is defined}}
-${29:  with_items: ${30: array}}
+  win_scheduled_task:
+${3:   ${4:arguments}: ${5:"#"}}
+${6:   ${7:days_of_week}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:enabled}: ${14:"#"}}
+${15:   ${16:executable}: ${17:"#"}}
+${18:   ${19:frequency}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:path}: ${29:"#"}}
+${30:   ${31:runlevel}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:store_password}: ${38:"#"}}
+${39:   ${40:time}: ${41:"#"}}
+${42:   ${43:user}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>win_scheduled_task</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

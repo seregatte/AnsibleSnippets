@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#dest = Absolute path of where the branch should be cloned to.
-#executable = Path to bzr executable to use. If not supplied, the normal mechanism for resolving binary paths will be used.
-#force = If `yes', any modified files in the working tree will be discarded.  Before 1.9 the default value was "yes".
-#name = SSH or HTTP protocol address of the parent branch.
-#version = What version of the branch to clone.  This can be the bzr revno or revid.
+${1:# dest: (required) Absolute path of where the branch should be cloned to. 
+# executable: Path to bzr executable to use. If not supplied, the normal mechanism for resolving binary paths will be 
+# force: If `yes', any modified files in the working tree will be discarded.  Before 1.9 the default value was 
+# name: (required) SSH or HTTP protocol address of the parent branch. 
+# version: What version of the branch to clone.  This can be the bzr revno or revid. 
 }- name: ${2:Name for bzr module.}
-${3:  become: ${4:yes}}
-  bzr: ${5:dest=${6: } }${7:executable=${8: } }${9:force=${10: } }${11:name=${12: } }${13:version=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  bzr:
+${3:   ${4:dest}: ${5:"#"}}
+${6:   ${7:executable}: ${8:"#"}}
+${9:   ${10:force}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:version}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>bzr</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

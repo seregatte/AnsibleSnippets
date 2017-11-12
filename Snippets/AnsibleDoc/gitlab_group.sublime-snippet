@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# login_password: Gitlab password for login_user 
+# login_token: Gitlab token for logging in. 
+# login_user: Gitlab user name. 
+# name: (required) Name of the group you want to create. 
+# path: The path of the group you want to create, this will be server_url/group_path If not supplied, the 
+# server_url: (required) Url of Gitlab server, with protocol (http or https). 
+# state: create or delete group. Possible values are present and absent. 
+# validate_certs: When using https if SSL certificate needs to be verified. 
+}- name: ${2:Name for gitlab_group module.}
+  gitlab_group:
+${3:   ${4:login_password}: ${5:"#"}}
+${6:   ${7:login_token}: ${8:"#"}}
+${9:   ${10:login_user}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:server_url}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>gitlab_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

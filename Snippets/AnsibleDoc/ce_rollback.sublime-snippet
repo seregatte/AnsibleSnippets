@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# action: (required) The operation of configuration rollback. 
+# commit_id: Specifies the label of the configuration rollback point to which system configurations are expected to 
+# filename: Specifies a configuration file for configuration rollback. The value is a string of 5 to 64 case- 
+# label: Specifies a user label for a configuration rollback point. The value is a string of 1 to 256 case- 
+# last: Specifies the number of configuration rollback points. The value is an integer that ranges from 1 to 80. 
+# oldest: Specifies the number of configuration rollback points. The value is an integer that ranges from 1 to 80. 
+}- name: ${2:Name for ce_rollback module.}
+  ce_rollback:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:commit_id}: ${8:"#"}}
+${9:   ${10:filename}: ${11:"#"}}
+${12:   ${13:label}: ${14:"#"}}
+${15:   ${16:last}: ${17:"#"}}
+${18:   ${19:oldest}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ce_rollback</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

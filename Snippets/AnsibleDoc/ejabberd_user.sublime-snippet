@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#host = the ejabberd host associated with this username
-#logging = enables or disables the local syslog facility for this module
-#password = the password to assign to the username
-#state = describe the desired state of the user to be managed
-#username = the name of the user to manage
+${1:# host: (required) the ejabberd host associated with this username 
+# logging: enables or disables the local syslog facility for this module 
+# password: the password to assign to the username 
+# state: describe the desired state of the user to be managed 
+# username: (required) the name of the user to manage 
 }- name: ${2:Name for ejabberd_user module.}
-${3:  become: ${4:yes}}
-  ejabberd_user: ${5:host=${6: } }${7:logging=${8: } }${9:password=${10: } }${11:state=${12: } }${13:username=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  ejabberd_user:
+${3:   ${4:host}: ${5:"#"}}
+${6:   ${7:logging}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>ejabberd_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

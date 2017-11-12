@@ -1,13 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#key = Key that will be modified. Can be a url, a file, or a keyid if the key already exists in the database.
-#state = Wheather the key will be imported or removed from the rpm db.
-#validate_certs = If `no' and the `key' is a url starting with https, SSL certificates will not be validated. This should only be
+${1:# key: (required) Key that will be modified. Can be a url, a file, or a keyid if the key already exists in the 
+# state: If the key will be imported or removed from the rpm db. 
+# validate_certs: If `no' and the `key' is a url starting with https, SSL certificates will not be validated. This should 
 }- name: ${2:Name for rpm_key module.}
-${3:  become: ${4:yes}}
-  rpm_key: ${5:key=${6: } }${7:state=${8: } }${9:validate_certs=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  rpm_key:
+${3:   ${4:key}: ${5:"#"}}
+${6:   ${7:state}: ${8:"#"}}
+${9:   ${10:validate_certs}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>rpm_key</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

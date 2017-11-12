@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# allow_clobber: If yes imports all commands, even if they have the same names as commands that already exists. Available 
+# name: (required) Name of the powershell module that has to be installed. 
+# repository: Name of the custom repository to register. 
+# state: If present a new module is installed. If absent a module is removed. 
+# url: Url of the custom repository. 
+}- name: ${2:Name for win_psmodule module.}
+  win_psmodule:
+${3:   ${4:allow_clobber}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:repository}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:url}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>win_psmodule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

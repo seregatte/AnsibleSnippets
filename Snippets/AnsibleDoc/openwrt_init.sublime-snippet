@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# enabled: Whether the service should start on boot. *At least one of state and enabled are required.* 
+# name: (required) Name of the service. 
+# pattern: If the service does not respond to the 'running' command, name a substring to look for as would be found 
+# state: `started'/`stopped' are idempotent actions that will not run commands unless necessary. `restarted' will 
+}- name: ${2:Name for openwrt_init module.}
+  openwrt_init:
+${3:   ${4:enabled}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:pattern}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>openwrt_init</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

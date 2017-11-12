@@ -1,24 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:#bricks = Brick paths on servers. Multiple brick paths can be separated by commas
-#cluster = List of hosts to use for probing and brick setup
-#directory = Directory for limit-usage
-#force = If brick is being created in the root partition, module will fail. Set force to true to override this behaviour
-#host = Override local hostname (for peer probing purposes)
-#name = The volume name
-#options = A dictionary/hash with options/settings for the volume
-#quota = Quota value for limit-usage (be sure to use 10.0MB instead of 10MB, see quota list)
-#rebalance = Controls whether the cluster is rebalanced after changes
-#replicas = Replica count for volume
-#start_on_create = Controls whether the volume is started after creation or not, defaults to yes
-#state = Use present/absent ensure if a volume exists or not, use started/stopped to control it's availability.
-#stripes = Stripe count for volume
-#transport = Transport type for volume
+${1:# arbiter: Arbiter count for volume 
+# bricks: Brick paths on servers. Multiple brick paths can be separated by commas. 
+# cluster: List of hosts to use for probing and brick setup 
+# directory: Directory for limit-usage 
+# disperses: Disperse count for volume 
+# force: If brick is being created in the root partition, module will fail. Set force to true to override this 
+# host: Override local hostname (for peer probing purposes) 
+# name: (required) The volume name 
+# options: A dictionary/hash with options/settings for the volume 
+# quota: Quota value for limit-usage (be sure to use 10.0MB instead of 10MB, see quota list) 
+# rebalance: Controls whether the cluster is rebalanced after changes 
+# redundancies: Redundancy count for volume 
+# replicas: Replica count for volume 
+# start_on_create: Controls whether the volume is started after creation or not 
+# state: (required) Use present/absent ensure if a volume exists or not. Use started/stopped to control its 
+# stripes: Stripe count for volume 
+# transport: Transport type for volume 
 }- name: ${2:Name for gluster_volume module.}
-${3:  become: ${4:yes}}
-  gluster_volume: ${5:bricks=${6: } }${7:cluster=${8: } }${9:directory=${10: } }${11:force=${12: } }${13:host=${14: } }${15:name=${16: } }${17:options=${18: } }${19:quota=${20: } }${21:rebalance=${22: } }${23:replicas=${24: } }${25:start_on_create=${26: } }${27:state=${28: } }${29:stripes=${30: } }${31:transport=${32: } }
-${33:  when: ${34: variable is defined}}
-${35:  with_items: ${36: array}}
+  gluster_volume:
+${3:   ${4:arbiter}: ${5:"#"}}
+${6:   ${7:bricks}: ${8:"#"}}
+${9:   ${10:cluster}: ${11:"#"}}
+${12:   ${13:directory}: ${14:"#"}}
+${15:   ${16:disperses}: ${17:"#"}}
+${18:   ${19:force}: ${20:"#"}}
+${21:   ${22:host}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:options}: ${29:"#"}}
+${30:   ${31:quota}: ${32:"#"}}
+${33:   ${34:rebalance}: ${35:"#"}}
+${36:   ${37:redundancies}: ${38:"#"}}
+${39:   ${40:replicas}: ${41:"#"}}
+${42:   ${43:start_on_create}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:stripes}: ${50:"#"}}
+${51:   ${52:transport}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>gluster_volume</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

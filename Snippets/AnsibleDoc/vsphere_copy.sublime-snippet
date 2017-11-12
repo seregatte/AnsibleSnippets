@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#datacenter = The datacenter on the vCenter server that holds the datastore.
-#datastore = The datastore on the vCenter server to push files to.
-#host = The vCenter server on which the datastore is available.
-#login = The login name to authenticate on the vCenter server.
-#password = The password to authenticate on the vCenter server.
-#path = The file to push to the datastore on the vCenter server.
-#src = The file to push to vCenter
-#validate_certs = If `no', SSL certificates will not be validated. This should only be set to `no' when no other option exists.
+${1:# datacenter: (required) The datacenter on the vCenter server that holds the datastore. 
+# datastore: (required) The datastore on the vCenter server to push files to. 
+# host: (required) The vCenter server on which the datastore is available. 
+# login: (required) The login name to authenticate on the vCenter server. 
+# password: (required) The password to authenticate on the vCenter server. 
+# path: (required) The file to push to the datastore on the vCenter server. 
+# src: (required) The file to push to vCenter 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be set to `no' when no other option 
 }- name: ${2:Name for vsphere_copy module.}
-${3:  become: ${4:yes}}
-  vsphere_copy: ${5:datacenter=${6: } }${7:datastore=${8: } }${9:host=${10: } }${11:login=${12: } }${13:password=${14: } }${15:path=${16: } }${17:src=${18: } }${19:validate_certs=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  vsphere_copy:
+${3:   ${4:datacenter}: ${5:"#"}}
+${6:   ${7:datastore}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:login}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:path}: ${20:"#"}}
+${21:   ${22:src}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>vsphere_copy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

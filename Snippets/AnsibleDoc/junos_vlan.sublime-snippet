@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# active: Specifies whether or not the configuration is active or deactivated 
+# aggregate: List of VLANs definitions. 
+# description: Text description of VLANs. 
+# interfaces: List of interfaces to check the VLAN has been configured correctly. 
+# name: (required) Name of the VLAN. 
+# state: State of the VLAN configuration. 
+# vlan_id: (required) ID of the VLAN. 
+}- name: ${2:Name for junos_vlan module.}
+  junos_vlan:
+${3:   ${4:active}: ${5:"#"}}
+${6:   ${7:aggregate}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:interfaces}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:vlan_id}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>junos_vlan</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

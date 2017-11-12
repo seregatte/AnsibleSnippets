@@ -1,23 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#cluster = Name of the Vertica cluster.
-#db = Name of the Vertica database.
-#expired = Sets the user's password expiration.
-#ldap = Set to true if users are authenticated via LDAP. The user will be created with password expired and set to
-#login_password = The password used to authenticate with.
-#login_user = The username used to authenticate with.
-#name = Name of the user to add or remove.
-#password = The user's password encrypted by the MD5 algorithm. The password must be generated with the format `"md5" +
-#port = Vertica cluster port to connect to.
-#profile = Sets the user's profile.
-#resource_pool = Sets the user's resource pool.
-#roles = Comma separated list of roles to assign to the user.
-#state = Whether to create `present', drop `absent' or lock `locked' a user.
+${1:# cluster: Name of the Vertica cluster. 
+# db: Name of the Vertica database. 
+# expired: Sets the user's password expiration. 
+# ldap: Set to true if users are authenticated via LDAP. The user will be created with password expired and set 
+# login_password: The password used to authenticate with. 
+# login_user: The username used to authenticate with. 
+# name: (required) Name of the user to add or remove. 
+# password: The user's password encrypted by the MD5 algorithm. The password must be generated with the format 
+# port: Vertica cluster port to connect to. 
+# profile: Sets the user's profile. 
+# resource_pool: Sets the user's resource pool. 
+# roles: Comma separated list of roles to assign to the user. 
+# state: Whether to create `present', drop `absent' or lock `locked' a user. 
 }- name: ${2:Name for vertica_user module.}
-${3:  become: ${4:yes}}
-  vertica_user: ${5:cluster=${6: } }${7:db=${8: } }${9:expired=${10: } }${11:ldap=${12: } }${13:login_password=${14: } }${15:login_user=${16: } }${17:name=${18: } }${19:password=${20: } }${21:port=${22: } }${23:profile=${24: } }${25:resource_pool=${26: } }${27:roles=${28: } }${29:state=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  vertica_user:
+${3:   ${4:cluster}: ${5:"#"}}
+${6:   ${7:db}: ${8:"#"}}
+${9:   ${10:expired}: ${11:"#"}}
+${12:   ${13:ldap}: ${14:"#"}}
+${15:   ${16:login_password}: ${17:"#"}}
+${18:   ${19:login_user}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:port}: ${29:"#"}}
+${30:   ${31:profile}: ${32:"#"}}
+${33:   ${34:resource_pool}: ${35:"#"}}
+${36:   ${37:roles}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>vertica_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

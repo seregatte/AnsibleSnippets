@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# activate: Activate the new firewall rules. Can be run with other steps or on it's own. 
+# name: A policy name, like `foo', or multiple policies, like `foo, bar'. 
+# state: The policy(ies) will be `enabled' The policy(ies) will be `disabled' 
+}- name: ${2:Name for awall module.}
+  awall:
+${3:   ${4:activate}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>awall</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

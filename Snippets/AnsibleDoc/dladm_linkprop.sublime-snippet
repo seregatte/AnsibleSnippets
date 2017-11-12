@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# link: (required) Link interface name. 
+# property: (required) Specifies the name of the property we want to manage. 
+# state: Set or reset the property value. 
+# temporary: Specifies that lin property configuration is temporary. Temporary link property configuration does not 
+# value: Specifies the value we want to set for the link property. 
+}- name: ${2:Name for dladm_linkprop module.}
+  dladm_linkprop:
+${3:   ${4:link}: ${5:"#"}}
+${6:   ${7:property}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:temporary}: ${14:"#"}}
+${15:   ${16:value}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>dladm_linkprop</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

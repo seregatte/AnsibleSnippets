@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
+# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
+# peer_link: Set to true/false for peer link config on associated portchannel. 
+# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# portchannel: (required) Group number of the portchannel that will be configured. 
+# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# state: (required) Manages desired state of the resource. 
+# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
+# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
+# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# vpc: VPC group/id that will be configured on associated portchannel. 
+}- name: ${2:Name for nxos_vpc_interface module.}
+  nxos_vpc_interface:
+${3:   ${4:host}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:peer_link}: ${11:"#"}}
+${12:   ${13:port}: ${14:"#"}}
+${15:   ${16:portchannel}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:ssh_keyfile}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:timeout}: ${29:"#"}}
+${30:   ${31:transport}: ${32:"#"}}
+${33:   ${34:use_ssl}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vpc}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>nxos_vpc_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

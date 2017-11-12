@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# path: Location where temporary file or directory should be created. If path is not specified default system 
+# prefix: Prefix of file/directory name created by module. 
+# state: Whether to create file or directory. 
+# suffix: Suffix of file/directory name created by module. 
+}- name: ${2:Name for tempfile module.}
+  tempfile:
+${3:   ${4:path}: ${5:"#"}}
+${6:   ${7:prefix}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:suffix}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>tempfile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

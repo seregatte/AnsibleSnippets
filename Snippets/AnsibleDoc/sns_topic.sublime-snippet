@@ -1,23 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#delivery_policy = Delivery policy to apply to the SNS topic
-#display_name = Display name of the topic
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#name = The name or ARN of the SNS topic to converge
-#policy = Policy to apply to the SNS topic
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#purge_subscriptions = Whether to purge any subscriptions not listed here. NOTE: AWS does not allow you to purge any
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = Whether to create or destroy an SNS topic
-#subscriptions = List of subscriptions to apply to the topic. Note that AWS requires subscriptions to be confirmed, so you will
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# delivery_policy: Delivery policy to apply to the SNS topic 
+# display_name: Display name of the topic 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# name: (required) The name or ARN of the SNS topic to converge 
+# policy: Policy to apply to the SNS topic 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# purge_subscriptions: Whether to purge any subscriptions not listed here. NOTE: AWS does not allow you to purge any 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: Whether to create or destroy an SNS topic 
+# subscriptions: List of subscriptions to apply to the topic. Note that AWS requires subscriptions to be confirmed, so 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
 }- name: ${2:Name for sns_topic module.}
-${3:  become: ${4:yes}}
-  sns_topic: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:delivery_policy=${10: } }${11:display_name=${12: } }${13:ec2_url=${14: } }${15:name=${16: } }${17:policy=${18: } }${19:profile=${20: } }${21:purge_subscriptions=${22: } }${23:security_token=${24: } }${25:state=${26: } }${27:subscriptions=${28: } }${29:validate_certs=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  sns_topic:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:delivery_policy}: ${11:"#"}}
+${12:   ${13:display_name}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:policy}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:purge_subscriptions}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:subscriptions}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>sns_topic</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

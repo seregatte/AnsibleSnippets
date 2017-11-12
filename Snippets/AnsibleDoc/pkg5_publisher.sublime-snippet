@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#enabled = Is the repository enabled or disabled?
-#mirror = A path or URL to the repository mirror. Multiple values may be provided.
-#name = The publisher's name.
-#origin = A path or URL to the repository. Multiple values may be provided.
-#state = Whether to ensure that a publisher is present or absent.
-#sticky = Packages installed from a sticky repository can only receive updates from that repository.
+${1:# enabled: Is the repository enabled or disabled? 
+# mirror: A path or URL to the repository mirror. Multiple values may be provided. 
+# name: (required) The publisher's name. 
+# origin: A path or URL to the repository. Multiple values may be provided. 
+# state: Whether to ensure that a publisher is present or absent. 
+# sticky: Packages installed from a sticky repository can only receive updates from that repository. 
 }- name: ${2:Name for pkg5_publisher module.}
-${3:  become: ${4:yes}}
-  pkg5_publisher: ${5:enabled=${6: } }${7:mirror=${8: } }${9:name=${10: } }${11:origin=${12: } }${13:state=${14: } }${15:sticky=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  pkg5_publisher:
+${3:   ${4:enabled}: ${5:"#"}}
+${6:   ${7:mirror}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:origin}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:sticky}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>pkg5_publisher</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,26 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:#check_id = an ID for the service check, defaults to the check name, ignored if part of a service definition.
-#check_name = a name for the service check, defaults to the check id. required if standalone, ignored if part of service
-#host = host of the consul agent defaults to localhost
-#http = checks can be registered with an http endpoint. This means that consul will check that the http endpoint returns
-#interval = the interval at which the service check will be run. This is a number with a s or m suffix to signify the units
-#notes = Notes to attach to check when registering it.
-#port = the port on which the consul agent is running
-#script = the script/command that will be run periodically to check the health of the service. Scripts require an interval
-#service_id = the ID for the service, must be unique per node, defaults to the service name if the service name is supplied
-#service_name = Unique name for the service on a node, must be unique per node, required if registering a service. May be
-#service_port = the port on which the service is listening required for registration of a service, i.e. if service_name or
-#state = register or deregister the consul service, defaults to present
-#tags = a list of tags that will be attached to the service registration.
-#timeout = A custom HTTP check timeout. The consul default is 10 seconds. Similar to the interval this is a number with a s
-#token = the token key indentifying an ACL rule set. May be required to register services.
-#ttl = checks can be registered with a ttl instead of a script and interval this means that the service will check in
+${1:# check_id: an ID for the service check, defaults to the check name, ignored if part of a service definition. 
+# check_name: a name for the service check, defaults to the check id. required if standalone, ignored if part of 
+# host: host of the consul agent defaults to localhost 
+# http: checks can be registered with an http endpoint. This means that consul will check that the http endpoint 
+# interval: the interval at which the service check will be run. This is a number with a s or m suffix to signify 
+# notes: Notes to attach to check when registering it. 
+# port: the port on which the consul agent is running 
+# scheme: the protocol scheme on which the consul agent is running 
+# script: the script/command that will be run periodically to check the health of the service. Scripts require an 
+# service_address: the address to advertise that the service will be listening on. This value will be passed as the 
+# service_id: the ID for the service, must be unique per node, defaults to the service name if the service name is 
+# service_name: Unique name for the service on a node, must be unique per node, required if registering a service. May 
+# service_port: the port on which the service is listening. Can optionally be supplied for registration of a service, 
+# state: (required) register or deregister the consul service, defaults to present 
+# tags: a list of tags that will be attached to the service registration. 
+# timeout: A custom HTTP check timeout. The consul default is 10 seconds. Similar to the interval this is a number 
+# token: the token key indentifying an ACL rule set. May be required to register services. 
+# ttl: checks can be registered with a ttl instead of a script and interval this means that the service will 
+# validate_certs: whether to verify the tls certificate of the consul agent 
 }- name: ${2:Name for consul module.}
-${3:  become: ${4:yes}}
-  consul: ${5:check_id=${6: } }${7:check_name=${8: } }${9:host=${10: } }${11:http=${12: } }${13:interval=${14: } }${15:notes=${16: } }${17:port=${18: } }${19:script=${20: } }${21:service_id=${22: } }${23:service_name=${24: } }${25:service_port=${26: } }${27:state=${28: } }${29:tags=${30: } }${31:timeout=${32: } }${33:token=${34: } }${35:ttl=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  consul:
+${3:   ${4:check_id}: ${5:"#"}}
+${6:   ${7:check_name}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:http}: ${14:"#"}}
+${15:   ${16:interval}: ${17:"#"}}
+${18:   ${19:notes}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:scheme}: ${26:"#"}}
+${27:   ${28:script}: ${29:"#"}}
+${30:   ${31:service_address}: ${32:"#"}}
+${33:   ${34:service_id}: ${35:"#"}}
+${36:   ${37:service_name}: ${38:"#"}}
+${39:   ${40:service_port}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:tags}: ${47:"#"}}
+${48:   ${49:timeout}: ${50:"#"}}
+${51:   ${52:token}: ${53:"#"}}
+${54:   ${55:ttl}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>consul</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

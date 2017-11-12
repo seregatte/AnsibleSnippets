@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of link aggregation definitions. 
+# members: (required) List of members interfaces of the link aggregation group. The value can be single interface 
+# min_links: Minimum members that should be up before bringing up the link aggregation group. 
+# mode: Mode of the link aggregation group. A value of `on' will enable LACP. `active' configures the link to 
+# name: (required) Name of the link aggregation group. 
+# purge: Purge link aggregation groups not defined in the `aggregate' parameter. 
+# state: State of the link aggregation group. 
+}- name: ${2:Name for net_linkagg module.}
+  net_linkagg:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:members}: ${8:"#"}}
+${9:   ${10:min_links}: ${11:"#"}}
+${12:   ${13:mode}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:purge}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>net_linkagg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

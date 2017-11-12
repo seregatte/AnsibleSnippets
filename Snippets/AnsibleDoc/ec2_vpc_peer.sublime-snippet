@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# peer_owner_id: The AWS account number for cross account peering. 
+# peer_vpc_id: VPC id of the accepting VPC. 
+# peering_id: Peering connection id. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: Create, delete, accept, reject a peering connection. 
+# tags: Dictionary of tags to look for and apply when creating a Peering Connection. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# vpc_id: VPC id of the requesting VPC. 
+}- name: ${2:Name for ec2_vpc_peer module.}
+  ec2_vpc_peer:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:peer_owner_id}: ${14:"#"}}
+${15:   ${16:peer_vpc_id}: ${17:"#"}}
+${18:   ${19:peering_id}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:security_token}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:tags}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:vpc_id}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>ec2_vpc_peer</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

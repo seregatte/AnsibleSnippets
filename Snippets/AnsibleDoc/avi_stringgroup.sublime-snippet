@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# description: User defined description for the object. 
+# kv: Configure key value in the string group. 
+# name: (required) Name of the string group. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# type: (required) Type of stringgroup. Enum options - SG_TYPE_STRING, SG_TYPE_KEYVAL. Default value when not 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Uuid of the string group. 
+}- name: ${2:Name for avi_stringgroup module.}
+  avi_stringgroup:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:controller}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:kv}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:tenant}: ${26:"#"}}
+${27:   ${28:tenant_ref}: ${29:"#"}}
+${30:   ${31:tenant_uuid}: ${32:"#"}}
+${33:   ${34:type}: ${35:"#"}}
+${36:   ${37:url}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:uuid}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>avi_stringgroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

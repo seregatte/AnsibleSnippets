@@ -1,23 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#api_version = The api version to be used with the vca
-#gateway_name = The name of the gateway of the vdc where the rule should be added
-#host = The authentication host to be used when service type  is vcd.
-#instance_id = The instance id in a vchs environment to be used for creating the vapp
-#nat_rules = A list of rules to be added to the gateway, Please see examples on valid entries
-#org = The org to login to for creating vapp, mostly set when the service_type is vdc.
-#password = The vca password, if not set the environment variable VCA_PASS is checked for the password
-#purge_rules = If set to true, it will delete all rules in the gateway that are not given as paramter to this module.
-#service_type = The type of service we are authenticating against
-#state = if the object should be added or removed
-#username = The vca username or email address, if not set the environment variable VCA_USER is checked for the username.
-#vdc_name = The name of the vdc where the gateway is located.
-#verify_certs = If the certificates of the authentication is to be verified
+${1:# api_version: The api version to be used with the vca. 
+# gateway_name: The name of the gateway of the vdc where the rule should be added. 
+# host: The authentication host to be used when service type is vcd. 
+# instance_id: The instance id in a vchs environment to be used for creating the vapp. 
+# nat_rules: (required) A list of rules to be added to the gateway, Please see examples on valid entries 
+# org: The org to login to for creating vapp. This option is required when the `service_type' is `vdc'. 
+# password: The vca password, if not set the environment variable `VCA_PASS' is checked for the password. 
+# purge_rules: If set to true, it will delete all rules in the gateway that are not given as parameter to this module. 
+# service_type: The type of service we are authenticating against. 
+# state: If the object should be added or removed. 
+# username: The vca username or email address, if not set the environment variable `VCA_USER' is checked for the 
+# vdc_name: The name of the vdc where the gateway is located. 
+# verify_certs: If the certificates of the authentication is to be verified. 
 }- name: ${2:Name for vca_nat module.}
-${3:  become: ${4:yes}}
-  vca_nat: ${5:api_version=${6: } }${7:gateway_name=${8: } }${9:host=${10: } }${11:instance_id=${12: } }${13:nat_rules=${14: } }${15:org=${16: } }${17:password=${18: } }${19:purge_rules=${20: } }${21:service_type=${22: } }${23:state=${24: } }${25:username=${26: } }${27:vdc_name=${28: } }${29:verify_certs=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  vca_nat:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:gateway_name}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:instance_id}: ${14:"#"}}
+${15:   ${16:nat_rules}: ${17:"#"}}
+${18:   ${19:org}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:purge_rules}: ${26:"#"}}
+${27:   ${28:service_type}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:vdc_name}: ${38:"#"}}
+${39:   ${40:verify_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>vca_nat</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

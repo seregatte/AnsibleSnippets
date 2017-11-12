@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# connect_timeout: Maximum seconds to wait for a single successful TCP connection to the WinRM endpoint before trying again 
+# msg: Message to display to users 
+# post_reboot_delay: Seconds to wait after the reboot was successful and the connection was re-established This is useful if 
+# pre_reboot_delay: Seconds for shutdown to wait before requesting reboot 
+# reboot_timeout: Maximum seconds to wait for machine to re-appear on the network and respond to a test command This 
+# shutdown_timeout: Maximum seconds to wait for shutdown to occur Increase this timeout for very slow hardware, large update 
+# test_command: Command to expect success for to determine the machine is ready for management 
+}- name: ${2:Name for win_reboot module.}
+  win_reboot:
+${3:   ${4:connect_timeout}: ${5:"#"}}
+${6:   ${7:msg}: ${8:"#"}}
+${9:   ${10:post_reboot_delay}: ${11:"#"}}
+${12:   ${13:pre_reboot_delay}: ${14:"#"}}
+${15:   ${16:reboot_timeout}: ${17:"#"}}
+${18:   ${19:shutdown_timeout}: ${20:"#"}}
+${21:   ${22:test_command}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>win_reboot</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

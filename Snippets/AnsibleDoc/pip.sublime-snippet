@@ -1,22 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#chdir = cd into this directory before running the command
-#editable = Pass the editable flag for versioning URLs.
-#executable = The explicit executable or a pathname to the executable to be used to run pip for a specific version of Python
-#extra_args = Extra arguments passed to pip.
-#name = The name of a Python library to install or the url of the remote package.
-#requirements = The path to a pip requirements file
-#state = The state of module
-#version = The version number to install of the Python library specified in the `name' parameter
-#virtualenv = An optional path to a `virtualenv' directory to install into
-#virtualenv_command = The command or a pathname to the command to create the virtual environment with. For example `pyvenv',
-#virtualenv_python = The Python executable used for creating the virtual environment. For example `python3.4', `python2.7'. When not
-#virtualenv_site_packages = Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if
+${1:# chdir: cd into this directory before running the command 
+# editable: Pass the editable flag. 
+# executable: The explicit executable or a pathname to the executable to be used to run pip for a specific version of 
+# extra_args: Extra arguments passed to pip. 
+# name: The name of a Python library to install or the url of the remote package. As of 2.2 you can supply a 
+# requirements: The path to a pip requirements file, which should be local to the remote system. File can be specified 
+# state: The state of module The 'forcereinstall' option is only available in Ansible 2.1 and above. 
+# umask: The system umask to apply before installing the pip package. This is useful, for example, when 
+# version: The version number to install of the Python library specified in the `name' parameter 
+# virtualenv: An optional path to a `virtualenv' directory to install into. It cannot be specified together with the 
+# virtualenv_command: The command or a pathname to the command to create the virtual environment with. For example `pyvenv', 
+# virtualenv_python: The Python executable used for creating the virtual environment. For example `python3.5', `python2.7'. 
+# virtualenv_site_packages: Whether the virtual environment will inherit packages from the global site-packages directory.  Note 
 }- name: ${2:Name for pip module.}
-${3:  become: ${4:yes}}
-  pip: ${5:chdir=${6: } }${7:editable=${8: } }${9:executable=${10: } }${11:extra_args=${12: } }${13:name=${14: } }${15:requirements=${16: } }${17:state=${18: } }${19:version=${20: } }${21:virtualenv=${22: } }${23:virtualenv_command=${24: } }${25:virtualenv_python=${26: } }${27:virtualenv_site_packages=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  pip:
+${3:   ${4:chdir}: ${5:"#"}}
+${6:   ${7:editable}: ${8:"#"}}
+${9:   ${10:executable}: ${11:"#"}}
+${12:   ${13:extra_args}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:requirements}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:umask}: ${26:"#"}}
+${27:   ${28:version}: ${29:"#"}}
+${30:   ${31:virtualenv}: ${32:"#"}}
+${33:   ${34:virtualenv_command}: ${35:"#"}}
+${36:   ${37:virtualenv_python}: ${38:"#"}}
+${39:   ${40:virtualenv_site_packages}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>pip</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

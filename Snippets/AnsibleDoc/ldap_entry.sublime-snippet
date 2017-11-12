@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# attributes: If `state=present', attributes necessary to create an entry. Existing entries are never modified. To 
+# bind_dn: A DN to bind with. If this is omitted, we'll try a SASL bind with the EXTERNAL mechanism. If this is 
+# bind_pw: The password to use with `bind_dn'. 
+# dn: (required) The DN of the entry to add or remove. 
+# object: If `state=present', value or list of values to use when creating the entry. It can either be a string or 
+# params: List of options which allows to overwrite any of the task or the `attributes' options. To remove an 
+# server_uri: A URI to the LDAP server. The default value lets the underlying LDAP client library look for a UNIX 
+# start_tls: If true, we'll use the START_TLS LDAP extension. 
+# state: The target state of the entry. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on sites using self-signed 
+}- name: ${2:Name for ldap_entry module.}
+  ldap_entry:
+${3:   ${4:attributes}: ${5:"#"}}
+${6:   ${7:bind_dn}: ${8:"#"}}
+${9:   ${10:bind_pw}: ${11:"#"}}
+${12:   ${13:dn}: ${14:"#"}}
+${15:   ${16:object}: ${17:"#"}}
+${18:   ${19:params}: ${20:"#"}}
+${21:   ${22:server_uri}: ${23:"#"}}
+${24:   ${25:start_tls}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>ldap_entry</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

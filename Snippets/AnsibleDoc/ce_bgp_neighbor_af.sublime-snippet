@@ -1,0 +1,118 @@
+<snippet>
+<content><![CDATA[
+${1:# add_path_mode: null, Null. receive, Support receiving Add-Path routes. send, Support sending Add-Path routes. both, 
+# adv_add_path_num: The number of addPath advertise route. The value is an integer ranging from 2 to 64. 
+# advertise_arp: If the value is true, advertised ARP routes are distinguished. If the value is false, advertised ARP 
+# advertise_community: If the value is true, the community attribute is advertised to peers. If the value is false, the 
+# advertise_ext_community: If the value is true, the extended community attribute is advertised to peers. If the value is false, 
+# advertise_irb: If the value is true, advertised IRB routes are distinguished. If the value is false, advertised IRB 
+# advertise_remote_nexthop: If the value is true, the remote next-hop attribute is advertised to peers. If the value is false, the 
+# af_type: (required) Address family type of a BGP instance. 
+# allow_as_loop_enable: If the value is true, repetitive local AS numbers are allowed. If the value is false, repetitive local 
+# allow_as_loop_limit: Set the maximum number of repetitive local AS number. The value is an integer ranging from 1 to 10. 
+# default_rt_adv_enable: If the value is true, the function to advertise default routes to peers is enabled. If the value is 
+# default_rt_adv_policy: Specify the name of a used policy. The value is a string. The value is a string of 1 to 40 characters. 
+# default_rt_match_mode: null, Null. matchall, Advertise the default route if all matching conditions are met. matchany, 
+# discard_ext_community: If the value is true, the extended community attribute in the peer route information is discarded. If 
+# export_acl_name_or_num: Apply an IPv4 ACL-based filtering policy to the routes to be advertised to a specified peer. The value 
+# export_as_path_filter: Apply an AS_Path-based filtering policy to the routes to be advertised to a specified peer. The value is 
+# export_as_path_name_or_num: Application of a AS path list based filtering policy to the routing of a specified peer. 
+# export_pref_filt_name: Specify the IPv4 filtering policy applied to the routes to be advertised to a specified peer. The value 
+# export_rt_policy_name: Specify the filtering policy applied to the routes to be advertised to a peer. The value is a string of 
+# import_acl_name_or_num: Apply an IPv4 ACL-based filtering policy to the routes received from a specified peer. The value is a 
+# import_as_path_filter: Apply an AS_Path-based filtering policy to the routes received from a specified peer. The value is an 
+# import_as_path_name_or_num: A routing strategy based on the AS path list for routing received by a designated peer. 
+# import_pref_filt_name: Specify the IPv4 filtering policy applied to the routes received from a specified peer. The value is a 
+# import_rt_policy_name: Specify the filtering policy applied to the routes learned from a peer. The value is a string of 1 to 40 
+# ipprefix_orf_enable: If the value is true, the address prefix-based Outbound Route Filter (ORF) capability is enabled for 
+# is_nonstd_ipprefix_mod: If the value is true, Non-standard capability codes are used during capability negotiation. If the value 
+# keep_all_routes: If the value is true, the system stores all route update messages received from all peers (groups) after 
+# nexthop_configure: null, The next hop is not changed. local, The next hop is changed to the local IP address. invariable, 
+# orf_mode: ORF mode. null, Default value. receive, ORF for incoming packets. send, ORF for outgoing packets. both, 
+# orftype: ORF Type. The value is an integer ranging from 0 to 65535. 
+# origin_as_valid: If the value is true, Application results of route announcement. If the value is false, Routing 
+# preferred_value: Assign a preferred value for the routes learned from a specified peer. The value is an integer ranging 
+# public_as_only: If the value is true, sent BGP update messages carry only the public AS number but do not carry private 
+# public_as_only_force: If the value is true, sent BGP update messages carry only the public AS number but do not carry private 
+# public_as_only_limited: Limited use public as number. 
+# public_as_only_replace: Private as replaced by public as number. 
+# public_as_only_skip_peer_as: Public as only skip peer as. 
+# redirect_ip: Redirect ip. 
+# redirect_ip_vaildation: Redirect ip vaildation. 
+# reflect_client: If the value is true, the local device functions as the route reflector and a peer functions as a client 
+# remote_address: (required) IPv4 or IPv6 peer connection address. 
+# route_limit: Configure the maximum number of routes that can be accepted from a peer. The value is an integer ranging 
+# route_limit_idle_timeout: Specify the value of the idle-timeout timer to automatically reestablish the connections after they are 
+# route_limit_percent: Specify the percentage of routes when a router starts to generate an alarm. The value is an integer 
+# route_limit_type: Noparameter, After the number of received routes exceeds the threshold and the timeout timer expires,no 
+# rt_updt_interval: Specify the minimum interval at which Update packets are sent. The value is an integer, in seconds. The 
+# soostring: Configure the Site-of-Origin (SoO) extended community attribute. The value is a string of 3 to 21 
+# substitute_as_enable: If the value is true, the function to replace a specified peer's AS number in the AS-Path attribute with 
+# update_pkt_standard_compatible: If the value is true, When the vpnv4 multicast neighbor receives and updates the message, the message 
+# vpls_ad_disable: If the value is true, enable vpls-ad. If the value is false, disable vpls-ad. 
+# vpls_enable: If the value is true, vpls enable. If the value is false, vpls disable. 
+# vrf_name: (required) Name of a BGP instance. The name is a case-sensitive string of characters. The BGP instance 
+}- name: ${2:Name for ce_bgp_neighbor_af module.}
+  ce_bgp_neighbor_af:
+${3:   ${4:add_path_mode}: ${5:"#"}}
+${6:   ${7:adv_add_path_num}: ${8:"#"}}
+${9:   ${10:advertise_arp}: ${11:"#"}}
+${12:   ${13:advertise_community}: ${14:"#"}}
+${15:   ${16:advertise_ext_community}: ${17:"#"}}
+${18:   ${19:advertise_irb}: ${20:"#"}}
+${21:   ${22:advertise_remote_nexthop}: ${23:"#"}}
+${24:   ${25:af_type}: ${26:"#"}}
+${27:   ${28:allow_as_loop_enable}: ${29:"#"}}
+${30:   ${31:allow_as_loop_limit}: ${32:"#"}}
+${33:   ${34:default_rt_adv_enable}: ${35:"#"}}
+${36:   ${37:default_rt_adv_policy}: ${38:"#"}}
+${39:   ${40:default_rt_match_mode}: ${41:"#"}}
+${42:   ${43:discard_ext_community}: ${44:"#"}}
+${45:   ${46:export_acl_name_or_num}: ${47:"#"}}
+${48:   ${49:export_as_path_filter}: ${50:"#"}}
+${51:   ${52:export_as_path_name_or_num}: ${53:"#"}}
+${54:   ${55:export_pref_filt_name}: ${56:"#"}}
+${57:   ${58:export_rt_policy_name}: ${59:"#"}}
+${60:   ${61:import_acl_name_or_num}: ${62:"#"}}
+${63:   ${64:import_as_path_filter}: ${65:"#"}}
+${66:   ${67:import_as_path_name_or_num}: ${68:"#"}}
+${69:   ${70:import_pref_filt_name}: ${71:"#"}}
+${72:   ${73:import_rt_policy_name}: ${74:"#"}}
+${75:   ${76:ipprefix_orf_enable}: ${77:"#"}}
+${78:   ${79:is_nonstd_ipprefix_mod}: ${80:"#"}}
+${81:   ${82:keep_all_routes}: ${83:"#"}}
+${84:   ${85:nexthop_configure}: ${86:"#"}}
+${87:   ${88:orf_mode}: ${89:"#"}}
+${90:   ${91:orftype}: ${92:"#"}}
+${93:   ${94:origin_as_valid}: ${95:"#"}}
+${96:   ${97:preferred_value}: ${98:"#"}}
+${99:   ${100:public_as_only}: ${101:"#"}}
+${102:   ${103:public_as_only_force}: ${104:"#"}}
+${105:   ${106:public_as_only_limited}: ${107:"#"}}
+${108:   ${109:public_as_only_replace}: ${110:"#"}}
+${111:   ${112:public_as_only_skip_peer_as}: ${113:"#"}}
+${114:   ${115:redirect_ip}: ${116:"#"}}
+${117:   ${118:redirect_ip_vaildation}: ${119:"#"}}
+${120:   ${121:reflect_client}: ${122:"#"}}
+${123:   ${124:remote_address}: ${125:"#"}}
+${126:   ${127:route_limit}: ${128:"#"}}
+${129:   ${130:route_limit_idle_timeout}: ${131:"#"}}
+${132:   ${133:route_limit_percent}: ${134:"#"}}
+${135:   ${136:route_limit_type}: ${137:"#"}}
+${138:   ${139:rt_updt_interval}: ${140:"#"}}
+${141:   ${142:soostring}: ${143:"#"}}
+${144:   ${145:substitute_as_enable}: ${146:"#"}}
+${147:   ${148:update_pkt_standard_compatible}: ${149:"#"}}
+${150:   ${151:vpls_ad_disable}: ${152:"#"}}
+${153:   ${154:vpls_enable}: ${155:"#"}}
+${156:   ${157:vrf_name}: ${158:"#"}}
+${159:${160:   become: ${161:true}} 
+${162:   become_method: ${163:su}} 
+${164:   become_user: ${165:nobody}} 
+${166:   become_flags: ${167:"-s /bin/sh"}}} 
+${168:   when: ${169:variable is defined}} 
+${170:   with_items: ${171:array}} 
+]]></content>
+	<tabTrigger>ce_bgp_neighbor_af</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

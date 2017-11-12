@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# addr: Specifies the address of the network segment where the interface resides. The value is in dotted decimal 
+# area: Specifies the area ID. The area with the area-id being 0 is a backbone area. Valid values are a string, 
+# auth_key_id: Authentication key id when `auth_mode' is 'hmac-sha256', 'md5' or 'hmac-md5. Valid value is an integer 
+# auth_mode: Specifies the authentication type. 
+# auth_text_md5: Specifies a password for MD5, HMAC-MD5, or HMAC-SHA256 authentication. The value is a string of 1 to 255 
+# auth_text_simple: Specifies a password for simple authentication. The value is a string of 1 to 8 characters. 
+# mask: IP network wildcard bits in decimal format between 0 and 32. 
+# max_load_balance: The maximum number of paths for forward packets over multiple paths. Valid value is an integer in the 
+# nexthop_addr: IPv4 address for configure next-hop address's weight. Valid values are a string, formatted as an IP 
+# nexthop_weight: Indicates the weight of the next hop. The smaller the value is, the higher the preference of the route 
+# process_id: (required) Specifies a process ID. The value is an integer ranging from 1 to 4294967295. 
+# state: Determines whether the config should be present or not on the device. 
+}- name: ${2:Name for ce_ospf module.}
+  ce_ospf:
+${3:   ${4:addr}: ${5:"#"}}
+${6:   ${7:area}: ${8:"#"}}
+${9:   ${10:auth_key_id}: ${11:"#"}}
+${12:   ${13:auth_mode}: ${14:"#"}}
+${15:   ${16:auth_text_md5}: ${17:"#"}}
+${18:   ${19:auth_text_simple}: ${20:"#"}}
+${21:   ${22:mask}: ${23:"#"}}
+${24:   ${25:max_load_balance}: ${26:"#"}}
+${27:   ${28:nexthop_addr}: ${29:"#"}}
+${30:   ${31:nexthop_weight}: ${32:"#"}}
+${33:   ${34:process_id}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>ce_ospf</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

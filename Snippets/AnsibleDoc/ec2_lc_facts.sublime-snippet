@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# name: A name or a list of name to match. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# sort: Optional attribute which with to sort the results. 
+# sort_end: Which result to end with (when sorting). Corresponds to Python slice notation. 
+# sort_order: Order in which to sort results. Only used when the 'sort' parameter is specified. 
+# sort_start: Which result to start with (when sorting). Corresponds to Python slice notation. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+}- name: ${2:Name for ec2_lc_facts module.}
+  ec2_lc_facts:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:profile}: ${17:"#"}}
+${18:   ${19:region}: ${20:"#"}}
+${21:   ${22:http}: ${23:"#"}}
+${24:   ${25:security_token}: ${26:"#"}}
+${27:   ${28:sort}: ${29:"#"}}
+${30:   ${31:sort_end}: ${32:"#"}}
+${33:   ${34:sort_order}: ${35:"#"}}
+${36:   ${37:sort_start}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>ec2_lc_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

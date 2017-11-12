@@ -1,0 +1,100 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+# ballooning: If `True' enable memory balloon optimization. Memory balloon is used to re-distribute / reclaim the host 
+# comment: Comment of the cluster. 
+# compatibility_version: The compatibility version of the cluster. All hosts in this cluster must support at least this 
+# cpu_arch: CPU architecture of cluster. 
+# cpu_type: CPU codename. For example `Intel SandyBridge Family'. 
+# data_center: Datacenter name where cluster reside. 
+# description: Description of the cluster. 
+# fence_connectivity_threshold: The threshold used by `fence_skip_if_connectivity_broken'. 
+# fence_enabled: If `True' enables fencing on the cluster. Fencing is enabled by default. 
+# fence_skip_if_connectivity_broken: If `True' fencing will be temporarily disabled if the percentage of hosts in the cluster that are 
+# fence_skip_if_sd_active: If `True' any hosts in the cluster that are Non Responsive and still connected to storage will not be 
+# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+# gluster: If `True', hosts in this cluster will be used as Gluster Storage server nodes, and not for running 
+# ha_reservation: If `True' enable the oVirt/RHV to monitor cluster capacity for highly available virtual machines. 
+# host_reason: If `True' enable an optional reason field when a host is placed into maintenance mode from the Manager, 
+# ksm: I `True' MoM enables to run Kernel Same-page Merging `KSM' when necessary and when it can yield a memory 
+# ksm_numa: If `True' enables KSM `ksm' for best berformance inside NUMA nodes. 
+# mac_pool: MAC pool to be used by this cluster. `Note:' This is supported since oVirt version 4.1. 
+# memory_policy: `disabled' - Disables memory page sharing. `server' - Sets the memory page sharing threshold to 150% of 
+# migration_auto_converge: If `True' auto-convergence is used during live migration of virtual machines. Used only when 
+# migration_bandwidth: The bandwidth settings define the maximum bandwidth of both outgoing and incoming migrations per host. 
+# migration_bandwidth_limit: Set the `custom' migration bandwidth limit. This parameter is used only when `migration_bandwidth' is 
+# migration_compressed: If `True' compression is used during live migration of the virtual machine. Used only when 
+# migration_policy: A migration policy defines the conditions for live migrating virtual machines in the event of host 
+# name: (required) Name of the cluster to manage. 
+# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# network: Management network of cluster to access cluster hosts. 
+# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
+# resilience_policy: The resilience policy defines how the virtual machines are prioritized in the migration. Following 
+# rng_sources: List that specify the random number generator devices that all hosts in the cluster will use. Supported 
+# scheduling_policy: Name of the scheduling policy to be used for cluster. 
+# serial_policy: Specify a serial number policy for the virtual machines in the cluster. Following options are supported: 
+# serial_policy_value: Allows you to specify a custom serial number. This parameter is used only when `serial_policy' is 
+# spice_proxy: The proxy by which the SPICE client will connect to virtual machines. The address must be in the 
+# state: Should the cluster be present or absent 
+# switch_type: Type of switch to be used by all networks in given cluster. Either `legacy' which is using linux brigde 
+# threads_as_cores: If `True' the exposed host threads would be treated as cores which can be utilized by virtual machines. 
+# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
+# trusted_service: If (True) enable integration with an OpenAttestation server. 
+# virt: If `True', hosts in this cluster will be used to run virtual machines. 
+# vm_reason: If `True' enable an optional reason field when a virtual machine is shut down from the Manager, allowing 
+# wait: `True' if the module should wait for the entity to get into desired state. 
+}- name: ${2:Name for ovirt_cluster module.}
+  ovirt_cluster:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:ballooning}: ${8:"#"}}
+${9:   ${10:comment}: ${11:"#"}}
+${12:   ${13:compatibility_version}: ${14:"#"}}
+${15:   ${16:cpu_arch}: ${17:"#"}}
+${18:   ${19:cpu_type}: ${20:"#"}}
+${21:   ${22:data_center}: ${23:"#"}}
+${24:   ${25:description}: ${26:"#"}}
+${27:   ${28:fence_connectivity_threshold}: ${29:"#"}}
+${30:   ${31:fence_enabled}: ${32:"#"}}
+${33:   ${34:fence_skip_if_connectivity_broken}: ${35:"#"}}
+${36:   ${37:fence_skip_if_sd_active}: ${38:"#"}}
+${39:   ${40:fetch_nested}: ${41:"#"}}
+${42:   ${43:gluster}: ${44:"#"}}
+${45:   ${46:ha_reservation}: ${47:"#"}}
+${48:   ${49:host_reason}: ${50:"#"}}
+${51:   ${52:ksm}: ${53:"#"}}
+${54:   ${55:ksm_numa}: ${56:"#"}}
+${57:   ${58:mac_pool}: ${59:"#"}}
+${60:   ${61:memory_policy}: ${62:"#"}}
+${63:   ${64:migration_auto_converge}: ${65:"#"}}
+${66:   ${67:migration_bandwidth}: ${68:"#"}}
+${69:   ${70:migration_bandwidth_limit}: ${71:"#"}}
+${72:   ${73:migration_compressed}: ${74:"#"}}
+${75:   ${76:migration_policy}: ${77:"#"}}
+${78:   ${79:name}: ${80:"#"}}
+${81:   ${82:nested_attributes}: ${83:"#"}}
+${84:   ${85:network}: ${86:"#"}}
+${87:   ${88:poll_interval}: ${89:"#"}}
+${90:   ${91:resilience_policy}: ${92:"#"}}
+${93:   ${94:rng_sources}: ${95:"#"}}
+${96:   ${97:scheduling_policy}: ${98:"#"}}
+${99:   ${100:serial_policy}: ${101:"#"}}
+${102:   ${103:serial_policy_value}: ${104:"#"}}
+${105:   ${106:spice_proxy}: ${107:"#"}}
+${108:   ${109:state}: ${110:"#"}}
+${111:   ${112:switch_type}: ${113:"#"}}
+${114:   ${115:threads_as_cores}: ${116:"#"}}
+${117:   ${118:timeout}: ${119:"#"}}
+${120:   ${121:trusted_service}: ${122:"#"}}
+${123:   ${124:virt}: ${125:"#"}}
+${126:   ${127:vm_reason}: ${128:"#"}}
+${129:   ${130:wait}: ${131:"#"}}
+${132:${133:   become: ${134:true}} 
+${135:   become_method: ${136:su}} 
+${137:   become_user: ${138:nobody}} 
+${139:   become_flags: ${140:"-s /bin/sh"}}} 
+${141:   when: ${142:variable is defined}} 
+${143:   with_items: ${144:array}} 
+]]></content>
+	<tabTrigger>ovirt_cluster</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

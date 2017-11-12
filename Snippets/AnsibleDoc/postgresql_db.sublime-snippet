@@ -1,22 +1,45 @@
 <snippet>
 <content><![CDATA[
-${1:#encoding = Encoding of the database
-#lc_collate = Collation order (LC_COLLATE) to use in the database. Must match collation order of template database unless
-#lc_ctype = Character classification (LC_CTYPE) to use in the database (e.g. lower, upper, ...) Must match LC_CTYPE of
-#login_host = Host running the database
-#login_password = The password used to authenticate with
-#login_unix_socket = Path to a Unix domain socket for local connections
-#login_user = The username used to authenticate with
-#name = name of the database to add or remove
-#owner = Name of the role to set as owner of the database
-#port = Database port to connect to.
-#state = The database state
-#template = Template used to create the database
+${1:# encoding: Encoding of the database 
+# lc_collate: Collation order (LC_COLLATE) to use in the database. Must match collation order of template database 
+# lc_ctype: Character classification (LC_CTYPE) to use in the database (e.g. lower, upper, ...) Must match LC_CTYPE 
+# login_host: Host running the database 
+# login_password: The password used to authenticate with 
+# login_unix_socket: Path to a Unix domain socket for local connections 
+# login_user: The username used to authenticate with 
+# name: (required) name of the database to add or remove 
+# owner: Name of the role to set as owner of the database 
+# port: Database port to connect to. 
+# ssl_mode: Determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the 
+# ssl_rootcert: Specifies the name of a file containing SSL certificate authority (CA) certificate(s). If the file 
+# state: The database state. present implies that the database should be created if necessary. absent implies 
+# target: File to back up or restore from. Used when state is "dump" or "restore" 
+# target_opts: Further arguments for pg_dump or pg_restore. Used when state is "dump" or "restore" 
+# template: Template used to create the database 
 }- name: ${2:Name for postgresql_db module.}
-${3:  become: ${4:yes}}
-  postgresql_db: ${5:encoding=${6: } }${7:lc_collate=${8: } }${9:lc_ctype=${10: } }${11:login_host=${12: } }${13:login_password=${14: } }${15:login_unix_socket=${16: } }${17:login_user=${18: } }${19:name=${20: } }${21:owner=${22: } }${23:port=${24: } }${25:state=${26: } }${27:template=${28: } }
-${29:  when: ${30: variable is defined}}
-${31:  with_items: ${32: array}}
+  postgresql_db:
+${3:   ${4:encoding}: ${5:"#"}}
+${6:   ${7:lc_collate}: ${8:"#"}}
+${9:   ${10:lc_ctype}: ${11:"#"}}
+${12:   ${13:login_host}: ${14:"#"}}
+${15:   ${16:login_password}: ${17:"#"}}
+${18:   ${19:login_unix_socket}: ${20:"#"}}
+${21:   ${22:login_user}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:owner}: ${29:"#"}}
+${30:   ${31:port}: ${32:"#"}}
+${33:   ${34:ssl_mode}: ${35:"#"}}
+${36:   ${37:ssl_rootcert}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:target}: ${44:"#"}}
+${45:   ${46:target_opts}: ${47:"#"}}
+${48:   ${49:template}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>postgresql_db</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

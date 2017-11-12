@@ -1,15 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#from_address = the address in the "from" field for the email
-#password = password that corresponds to the username
-#subject = the desired subject for the email
-#to_addresses = a list with one or more recipient email addresses
-#username = username for logging into the SendGrid account
+${1:# api_key: sendgrid API key to use instead of username/password 
+# attachments: a list of relative or explicit paths of files you want to attach (7MB limit as per SendGrid docs) 
+# bcc: a list of email addresses to bcc 
+# cc: a list of email addresses to cc 
+# from_address: (required) the address in the "from" field for the email 
+# from_name: the name you want to appear in the from field, i.e 'John Doe' 
+# headers: a dict to pass on as headers 
+# html_body: whether the body is html content that should be rendered 
+# password: password that corresponds to the username Since 2.2 it is only required if api_key is not supplied. 
+# subject: (required) the desired subject for the email 
+# to_addresses: (required) a list with one or more recipient email addresses 
+# username: username for logging into the SendGrid account. Since 2.2 it is only required if api_key is not 
 }- name: ${2:Name for sendgrid module.}
-${3:  become: ${4:yes}}
-  sendgrid: ${5:from_address=${6: } }${7:password=${8: } }${9:subject=${10: } }${11:to_addresses=${12: } }${13:username=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  sendgrid:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:attachments}: ${8:"#"}}
+${9:   ${10:bcc}: ${11:"#"}}
+${12:   ${13:cc}: ${14:"#"}}
+${15:   ${16:from_address}: ${17:"#"}}
+${18:   ${19:from_name}: ${20:"#"}}
+${21:   ${22:headers}: ${23:"#"}}
+${24:   ${25:html_body}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:subject}: ${32:"#"}}
+${33:   ${34:to_addresses}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>sendgrid</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

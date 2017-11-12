@@ -1,11 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#free = The file name from which variables should be loaded, if called from a role it will look for the file in vars/
+${1:# depth: When using `dir', this module will, by default, recursively go through each sub directory and load up 
+# dir: The directory name from which the variables should be loaded. If the path is relative, it will look for 
+# extensions: List of file extensions to read when using `dir'. 
+# file: The file name from which variables should be loaded. If the path is relative, it will look for the file 
+# files_matching: Limit the files that are loaded within any directory to this regular expression. 
+# free: This module allows you to specify the 'file' option directly w/o any other options. There is no 'free- 
+# ignore_files: List of file names to ignore. 
+# name: The name of a variable into which assign the included vars, if omitted (null) they will be made top 
 }- name: ${2:Name for include_vars module.}
-${3:  become: ${4:yes}}
-  include_vars: ${5:free=${6: } }
-${7:  when: ${8: variable is defined}}
-${9:  with_items: ${10: array}}
+  include_vars:
+${3:   ${4:depth}: ${5:"#"}}
+${6:   ${7:dir}: ${8:"#"}}
+${9:   ${10:extensions}: ${11:"#"}}
+${12:   ${13:file}: ${14:"#"}}
+${15:   ${16:files_matching}: ${17:"#"}}
+${18:   ${19:free}: ${20:"#"}}
+${21:   ${22:ignore_files}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>include_vars</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

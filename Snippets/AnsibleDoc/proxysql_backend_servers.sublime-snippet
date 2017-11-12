@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# comment: Text field that can be used for any purposed defined by the user. Could be a description of what the 
+# compression: If the value of `compression' is greater than 0, new connections to that server will use compression. If 
+# config_file: Specify a config file from which login_user and login_password are to be read. 
+# hostgroup_id: The hostgroup in which this mysqld instance is included. An instance can be part of one or more 
+# hostname: (required) The ip address at which the mysqld instance can be contacted. 
+# load_to_runtime: Dynamically load mysql host config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin interface. 
+# login_password: The password used to authenticate to ProxySQL admin interface. 
+# login_port: The port used to connect to ProxySQL admin interface. 
+# login_user: The username used to authenticate to ProxySQL admin interface. 
+# max_connections: The maximum number of connections ProxySQL will open to this backend server. If omitted the proxysql 
+# max_latency_ms: Ping time is monitored regularly. If a host has a ping time greater than `max_latency_ms' it is excluded 
+# max_replication_lag: If greater than 0, ProxySQL will reguarly monitor replication lag. If replication lag goes above 
+# port: The port at which the mysqld instance can be contacted. 
+# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
+# state: When `present' - adds the host, when `absent' - removes the host. 
+# status: ONLINE - Backend server is fully operational. OFFLINE_SOFT - When a server is put into `OFFLINE_SOFT' 
+# use_ssl: If `use_ssl' is set to `True', connections to this server will be made using SSL connections. If omitted 
+# weight: The bigger the weight of a server relative to other weights, the higher the probability of the server 
+}- name: ${2:Name for proxysql_backend_servers module.}
+  proxysql_backend_servers:
+${3:   ${4:comment}: ${5:"#"}}
+${6:   ${7:compression}: ${8:"#"}}
+${9:   ${10:config_file}: ${11:"#"}}
+${12:   ${13:hostgroup_id}: ${14:"#"}}
+${15:   ${16:hostname}: ${17:"#"}}
+${18:   ${19:load_to_runtime}: ${20:"#"}}
+${21:   ${22:login_host}: ${23:"#"}}
+${24:   ${25:login_password}: ${26:"#"}}
+${27:   ${28:login_port}: ${29:"#"}}
+${30:   ${31:login_user}: ${32:"#"}}
+${33:   ${34:max_connections}: ${35:"#"}}
+${36:   ${37:max_latency_ms}: ${38:"#"}}
+${39:   ${40:max_replication_lag}: ${41:"#"}}
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:save_to_disk}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:status}: ${53:"#"}}
+${54:   ${55:use_ssl}: ${56:"#"}}
+${57:   ${58:weight}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>proxysql_backend_servers</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

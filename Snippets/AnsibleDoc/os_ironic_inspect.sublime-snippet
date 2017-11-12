@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
+# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
+# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+# availability_zone: Ignored. Present for backwards compatibility 
+# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
+# cert: A path to a client certificate to use as part of the SSL transaction. 
+# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# endpoint_type: Endpoint URL type to fetch from the service catalog. 
+# ironic_url: If noauth mode is utilized, this is required to be set to the endpoint URL for the Ironic API. Use with 
+# key: A path to a client key to use as part of the SSL transaction. 
+# mac: unique mac address that is used to attempt to identify the host. 
+# name: unique name identifier to identify the host in Ironic. 
+# region_name: Name of the region. 
+# timeout: A timeout in seconds to tell the role to wait for the node to complete introspection if wait is set to 
+# uuid: globally unique identifier (UUID) to identify the host. 
+# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
+# wait: Should ansible wait until the requested resource is complete. 
+}- name: ${2:Name for os_ironic_inspect module.}
+  os_ironic_inspect:
+${3:   ${4:api_timeout}: ${5:"#"}}
+${6:   ${7:auth}: ${8:"#"}}
+${9:   ${10:auth_type}: ${11:"#"}}
+${12:   ${13:availability_zone}: ${14:"#"}}
+${15:   ${16:cacert}: ${17:"#"}}
+${18:   ${19:cert}: ${20:"#"}}
+${21:   ${22:cloud}: ${23:"#"}}
+${24:   ${25:endpoint_type}: ${26:"#"}}
+${27:   ${28:ironic_url}: ${29:"#"}}
+${30:   ${31:key}: ${32:"#"}}
+${33:   ${34:mac}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:region_name}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:uuid}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:wait}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>os_ironic_inspect</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

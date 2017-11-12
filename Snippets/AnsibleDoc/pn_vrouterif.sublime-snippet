@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_alias: Specify an alias for the interface. 
+# pn_assignment: Specify the DHCP method for IP address assignment. 
+# pn_clipassword: Provide login password if user is not root. 
+# pn_cliswitch: Target switch to run the cli on. 
+# pn_cliusername: Provide login username if user is not root. 
+# pn_exclusive: Specify if the interface is exclusive to the configuration. Exclusive means that other configurations 
+# pn_interface: Specify if the interface is management, data or span interface. 
+# pn_interface_ip: Specify the IP address of the interface in x.x.x.x/n format. 
+# pn_l3port: Specify a Layer 3 port for the interface. 
+# pn_nic_enable: Specify if the NIC is enabled or not 
+# pn_nic_str: Specify the type of NIC. Used for vrouter-interface remove/modify. 
+# pn_secondary_macs: Specify a secondary MAC address for the interface. 
+# pn_vlan: Specify the VLAN identifier. This is a value between 1 and 4092. 
+# pn_vrouter_name: (required) Specify the name of the vRouter interface. 
+# pn_vrrp_adv_int: Specify a VRRP advertisement interval in milliseconds. The range is from 30 to 40950 with a default 
+# pn_vrrp_id: Specify the ID for the VRRP interface. The IDs on both vRouters must be the same IS number. 
+# pn_vrrp_priority: Specify the priority for the VRRP interface. This is a value between 1 (lowest) and 255 (highest). 
+# pn_vxlan: Specify the VXLAN identifier. This is a value between 1 and 16777215. 
+# state: (required) State the action to perform. Use 'present' to add vrouter interface, 'absent' to remove 
+}- name: ${2:Name for pn_vrouterif module.}
+  pn_vrouterif:
+${3:   ${4:pn_alias}: ${5:"#"}}
+${6:   ${7:pn_assignment}: ${8:"#"}}
+${9:   ${10:pn_clipassword}: ${11:"#"}}
+${12:   ${13:pn_cliswitch}: ${14:"#"}}
+${15:   ${16:pn_cliusername}: ${17:"#"}}
+${18:   ${19:pn_exclusive}: ${20:"#"}}
+${21:   ${22:pn_interface}: ${23:"#"}}
+${24:   ${25:pn_interface_ip}: ${26:"#"}}
+${27:   ${28:pn_l3port}: ${29:"#"}}
+${30:   ${31:pn_nic_enable}: ${32:"#"}}
+${33:   ${34:pn_nic_str}: ${35:"#"}}
+${36:   ${37:pn_secondary_macs}: ${38:"#"}}
+${39:   ${40:pn_vlan}: ${41:"#"}}
+${42:   ${43:pn_vrouter_name}: ${44:"#"}}
+${45:   ${46:pn_vrrp_adv_int}: ${47:"#"}}
+${48:   ${49:pn_vrrp_id}: ${50:"#"}}
+${51:   ${52:pn_vrrp_priority}: ${53:"#"}}
+${54:   ${55:pn_vxlan}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>pn_vrouterif</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

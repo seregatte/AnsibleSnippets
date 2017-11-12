@@ -1,17 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#name = Name of the plugin to install
-#plugin_bin = Location of the plugin binary
-#plugin_dir = Your configured plugin directory specified in Elasticsearch
-#state = Desired state of a plugin.
-#timeout = Timeout setting: 30s, 1m, 1h...
-#url = Set exact URL to download the plugin from
-#version = Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated
+${1:# name: (required) Name of the plugin to install. In Eleasticsearch >= 2.0, the name can be an URL or file 
+# plugin_bin: Location of the plugin binary. If this file is not found, the default plugin binaries will be used. The 
+# plugin_dir: Your configured plugin directory specified in Elasticsearch 
+# proxy_host: Proxy host to use during plugin installation 
+# proxy_port: Proxy port to use during plugin installation 
+# state: Desired state of a plugin. 
+# timeout: Timeout setting: 30s, 1m, 1h... Only valid for Elasticsearch < 5.0. This option is ignored for 
+# url: Set exact URL to download the plugin from (Only works for ES 1.x) 
+# version: Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated 
 }- name: ${2:Name for elasticsearch_plugin module.}
-${3:  become: ${4:yes}}
-  elasticsearch_plugin: ${5:name=${6: } }${7:plugin_bin=${8: } }${9:plugin_dir=${10: } }${11:state=${12: } }${13:timeout=${14: } }${15:url=${16: } }${17:version=${18: } }
-${19:  when: ${20: variable is defined}}
-${21:  with_items: ${22: array}}
+  elasticsearch_plugin:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:plugin_bin}: ${8:"#"}}
+${9:   ${10:plugin_dir}: ${11:"#"}}
+${12:   ${13:proxy_host}: ${14:"#"}}
+${15:   ${16:proxy_port}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:timeout}: ${23:"#"}}
+${24:   ${25:url}: ${26:"#"}}
+${27:   ${28:version}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>elasticsearch_plugin</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

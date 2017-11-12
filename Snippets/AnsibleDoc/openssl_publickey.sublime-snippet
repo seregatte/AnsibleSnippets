@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# force: Should the key be regenerated even it it already exists 
+# format: The format of the public key. 
+# path: (required) Name of the file in which the generated TLS/SSL public key will be written. 
+# privatekey_passphrase: The passphrase for the privatekey. 
+# privatekey_path: (required) Path to the TLS/SSL private key from which to generate the public key. 
+# state: Whether the public key should exist or not, taking action if the state is different from what is stated. 
+}- name: ${2:Name for openssl_publickey module.}
+  openssl_publickey:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:format}: ${8:"#"}}
+${9:   ${10:path}: ${11:"#"}}
+${12:   ${13:privatekey_passphrase}: ${14:"#"}}
+${15:   ${16:privatekey_path}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>openssl_publickey</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

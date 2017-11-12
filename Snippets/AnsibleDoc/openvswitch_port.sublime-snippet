@@ -1,16 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#bridge = Name of bridge to manage
-#external_ids = Dictionary of external_ids applied to a port.
-#port = Name of port to manage on the bridge
-#set = Set a single property on a port.
-#state = Whether the port should exist
-#timeout = How long to wait for ovs-vswitchd to respond
+${1:# bridge: (required) Name of bridge to manage 
+# external_ids: Dictionary of external_ids applied to a port. 
+# port: (required) Name of port to manage on the bridge 
+# set: Set a single property on a port. 
+# state: Whether the port should exist 
+# tag: VLAN tag for this port. Must be a value between 0 and 4095. 
+# timeout: How long to wait for ovs-vswitchd to respond 
 }- name: ${2:Name for openvswitch_port module.}
-${3:  become: ${4:yes}}
-  openvswitch_port: ${5:bridge=${6: } }${7:external_ids=${8: } }${9:port=${10: } }${11:set=${12: } }${13:state=${14: } }${15:timeout=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  openvswitch_port:
+${3:   ${4:bridge}: ${5:"#"}}
+${6:   ${7:external_ids}: ${8:"#"}}
+${9:   ${10:port}: ${11:"#"}}
+${12:   ${13:set}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:tag}: ${20:"#"}}
+${21:   ${22:timeout}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>openvswitch_port</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

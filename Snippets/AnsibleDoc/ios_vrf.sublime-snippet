@@ -1,0 +1,36 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
+# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
+# delay: Time in seconds to wait before checking for the operational state on remote device. 
+# description: Provides a short description of the VRF definition in the current active configuration.  The VRF 
+# interfaces: Identifies the set of interfaces that should be configured in the VRF.  Interfaces must be routed 
+# name: The name of the VRF definition to be managed on the remote IOS device.  The VRF definition name is an 
+# provider: A dict object containing connection details. 
+# purge: Instructs the module to consider the VRF definition absolute.  It will remove any previously configured 
+# rd: The router-distinguisher value uniquely identifies the VRF to routing processes on the remote IOS 
+# state: Configures the state of the VRF definition as it relates to the device operational configuration.  When 
+# vrfs: The set of VRF definition objects to be configured on the remote IOS device.  Ths list entries can 
+}- name: ${2:Name for ios_vrf module.}
+  ios_vrf:
+${3:   ${4:auth_pass}: ${5:"#"}}
+${6:   ${7:authorize}: ${8:"#"}}
+${9:   ${10:delay}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:interfaces}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:provider}: ${23:"#"}}
+${24:   ${25:purge}: ${26:"#"}}
+${27:   ${28:rd}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:vrfs}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
+]]></content>
+	<tabTrigger>ios_vrf</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,30 +1,77 @@
 <snippet>
 <content><![CDATA[
-${1:#chain = Chain to operate on. This option can either be the name of a user defined chain or any of the builtin chains:
-#comment = This specifies a comment that will be added to the rule
-#ctstate = ctstate is a list of the connection states to match in the conntrack module. Possible states are: 'INVALID',
-#destination = Destination specification. Address can be either a network name, a hostname, a network IP address (with /mask),
-#destination_port = Destination port or port range specification. This can either be a service name or a port number. An inclusive
-#fragment = This means that the rule only refers to second and further fragments of fragmented packets. Since there is no
-#goto = This specifies that the processing should continue in a user specified chain. Unlike the jump argument return
-#in_interface = Name of an interface via which a packet was received (only for packets entering the INPUT, FORWARD and
-#ip_version = Which version of the IP protocol this rule should apply to.
-#jump = This specifies the target of the rule; i.e., what to do if the packet matches it. The target can be a user-
-#limit = Specifies the maximum average number of matches to allow per second. The number can specify units explicitly,
-#match = Specifies a match to use, that is, an extension module that tests for a specific property. The set of matches
-#out_interface = Name of an interface via which a packet is going to be sent (for packets entering the FORWARD, OUTPUT and
-#protocol = The protocol of the rule or of the packet to check. The specified protocol can be one of tcp, udp, udplite,
-#set_counters = This enables the administrator to initialize the packet and byte counters of a rule (during INSERT, APPEND,
-#source = Source specification. Address can be either a network name, a hostname, a network IP address (with /mask), or a
-#source_port = Source port or port range specification. This can either be a service name or a port number. An inclusive range
-#state = Whether the rule should be absent or present.
-#table = This option specifies the packet matching table which the command should operate on. If the kernel is configured
-#to_ports = This specifies a destination port or range of ports to use: without this, the destination port is never altered.
+${1:# action: Whether the rule should be appended at the bottom or inserted at the top. If the rule already exists the 
+# chain: Chain to operate on. This option can either be the name of a user defined chain or any of the builtin 
+# comment: This specifies a comment that will be added to the rule 
+# ctstate: ctstate is a list of the connection states to match in the conntrack module. Possible states are: 
+# destination: Destination specification. Address can be either a network name, a hostname, a network IP address (with 
+# destination_port: Destination port or port range specification. This can either be a service name or a port number. An 
+# flush: Flushes the specified table and chain of all rules. If no chain is specified then the entire table is 
+# fragment: This means that the rule only refers to second and further fragments of fragmented packets. Since there 
+# goto: This specifies that the processing should continue in a user specified chain. Unlike the jump argument 
+# icmp_type: This allows specification of the ICMP type, which can be a numeric ICMP type, type/code pair, or one of 
+# in_interface: Name of an interface via which a packet was received (only for packets entering the INPUT, FORWARD and 
+# ip_version: Which version of the IP protocol this rule should apply to. 
+# jump: This specifies the target of the rule; i.e., what to do if the packet matches it. The target can be a 
+# limit: Specifies the maximum average number of matches to allow per second. The number can specify units 
+# limit_burst: Specifies the maximum burst before the above limit kicks in. 
+# match: Specifies a match to use, that is, an extension module that tests for a specific property. The set of 
+# out_interface: Name of an interface via which a packet is going to be sent (for packets entering the FORWARD, OUTPUT 
+# policy: Set the policy for the chain to the given target. Valid targets are ACCEPT, DROP, QUEUE, RETURN. Only 
+# protocol: The protocol of the rule or of the packet to check. The specified protocol can be one of tcp, udp, 
+# reject_with: Specifies the error packet type to return while rejecting. 
+# set_counters: This enables the administrator to initialize the packet and byte counters of a rule (during INSERT, 
+# set_dscp_mark: This allows specifying a DSCP mark to be added to packets. It takes either an integer or hex value. 
+# set_dscp_mark_class: This allows specifying a predefined DiffServ class which will be translated to the corresponding DSCP 
+# source: Source specification. Address can be either a network name, a hostname, a network IP address (with 
+# source_port: Source port or port range specification. This can either be a service name or a port number. An 
+# state: Whether the rule should be absent or present. 
+# table: This option specifies the packet matching table which the command should operate on. If the kernel is 
+# tcp_flags: TCP flags specification. tcp_flags expects a dict with the two keys "flags" and "flags_set". The "flags" 
+# to_destination: This specifies a destination address to use with DNAT: without this, the destination address is never 
+# to_ports: This specifies a destination port or range of ports to use: without this, the destination port is never 
+# to_source: This specifies a source address to use with SNAT: without this, the source address is never altered. 
+# uid_owner: Specifies the UID or username to use in match by owner rule. 
 }- name: ${2:Name for iptables module.}
-${3:  become: ${4:yes}}
-  iptables: ${5:chain=${6: } }${7:comment=${8: } }${9:ctstate=${10: } }${11:destination=${12: } }${13:destination_port=${14: } }${15:fragment=${16: } }${17:goto=${18: } }${19:in_interface=${20: } }${21:ip_version=${22: } }${23:jump=${24: } }${25:limit=${26: } }${27:match=${28: } }${29:out_interface=${30: } }${31:protocol=${32: } }${33:set_counters=${34: } }${35:source=${36: } }${37:source_port=${38: } }${39:state=${40: } }${41:table=${42: } }${43:to_ports=${44: } }
-${45:  when: ${46: variable is defined}}
-${47:  with_items: ${48: array}}
+  iptables:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:chain}: ${8:"#"}}
+${9:   ${10:comment}: ${11:"#"}}
+${12:   ${13:ctstate}: ${14:"#"}}
+${15:   ${16:destination}: ${17:"#"}}
+${18:   ${19:destination_port}: ${20:"#"}}
+${21:   ${22:flush}: ${23:"#"}}
+${24:   ${25:fragment}: ${26:"#"}}
+${27:   ${28:goto}: ${29:"#"}}
+${30:   ${31:icmp_type}: ${32:"#"}}
+${33:   ${34:in_interface}: ${35:"#"}}
+${36:   ${37:ip_version}: ${38:"#"}}
+${39:   ${40:jump}: ${41:"#"}}
+${42:   ${43:limit}: ${44:"#"}}
+${45:   ${46:limit_burst}: ${47:"#"}}
+${48:   ${49:match}: ${50:"#"}}
+${51:   ${52:out_interface}: ${53:"#"}}
+${54:   ${55:policy}: ${56:"#"}}
+${57:   ${58:protocol}: ${59:"#"}}
+${60:   ${61:reject_with}: ${62:"#"}}
+${63:   ${64:set_counters}: ${65:"#"}}
+${66:   ${67:set_dscp_mark}: ${68:"#"}}
+${69:   ${70:set_dscp_mark_class}: ${71:"#"}}
+${72:   ${73:source}: ${74:"#"}}
+${75:   ${76:source_port}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:table}: ${83:"#"}}
+${84:   ${85:tcp_flags}: ${86:"#"}}
+${87:   ${88:to_destination}: ${89:"#"}}
+${90:   ${91:to_ports}: ${92:"#"}}
+${93:   ${94:to_source}: ${95:"#"}}
+${96:   ${97:uid_owner}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>iptables</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# hwtacacs_is_public_net: Set the public-net. 
+# hwtacacs_is_secondary_server: Whether the server is secondary. 
+# hwtacacs_server_host_name: Hwtacacs server host name. 
+# hwtacacs_server_ip: Server IPv4 address. Must be a valid unicast IP address. The value is a string of 0 to 255 characters, 
+# hwtacacs_server_ipv6: Server IPv6 address. Must be a valid unicast IP address. The total length is 128 bits. 
+# hwtacacs_server_type: Hwtacacs server type. 
+# hwtacacs_template: Name of a HWTACACS template. The value is a string of 1 to 32 case-insensitive characters. 
+# hwtacacs_vpn_name: VPN instance name. 
+# local_ftp_dir: FTP user directory. The value is a string of 1 to 255 characters. 
+# local_password: Login password of a user. The password can contain letters, numbers, and special characters. The value 
+# local_service_type: The type of local user login through, such as ftp ssh snmp telnet. 
+# local_user_group: Name of the user group where the user belongs. The user inherits all the rights of the user group. The 
+# local_user_level: Login level of a local user. The value is an integer ranging from 0 to 15. 
+# local_user_name: Name of a local user. The value is a string of 1 to 253 characters. 
+# radius_group_name: RADIUS server group's name. The value is a string of 1 to 32 case-insensitive characters. 
+# radius_server_ip: IPv4 address of configured server. The value is a string of 0 to 255 characters, in dotted decimal 
+# radius_server_ipv6: IPv6 address of configured server. The total length is 128 bits. 
+# radius_server_mode: Configured primary or secondary server for a particular server. 
+# radius_server_name: Hostname of configured server. The value is a string of 0 to 255 case-sensitive characters. 
+# radius_server_port: Configured server port for a particular server. The value is an integer ranging from 1 to 65535. 
+# radius_server_type: Type of Radius Server. 
+# radius_vpn_name: Set VPN instance. The value is a string of 1 to 31 case-sensitive characters. 
+# state: Specify desired state of the resource. 
+}- name: ${2:Name for ce_aaa_server_host module.}
+  ce_aaa_server_host:
+${3:   ${4:hwtacacs_is_public_net}: ${5:"#"}}
+${6:   ${7:hwtacacs_is_secondary_server}: ${8:"#"}}
+${9:   ${10:hwtacacs_server_host_name}: ${11:"#"}}
+${12:   ${13:hwtacacs_server_ip}: ${14:"#"}}
+${15:   ${16:hwtacacs_server_ipv6}: ${17:"#"}}
+${18:   ${19:hwtacacs_server_type}: ${20:"#"}}
+${21:   ${22:hwtacacs_template}: ${23:"#"}}
+${24:   ${25:hwtacacs_vpn_name}: ${26:"#"}}
+${27:   ${28:local_ftp_dir}: ${29:"#"}}
+${30:   ${31:local_password}: ${32:"#"}}
+${33:   ${34:local_service_type}: ${35:"#"}}
+${36:   ${37:local_user_group}: ${38:"#"}}
+${39:   ${40:local_user_level}: ${41:"#"}}
+${42:   ${43:local_user_name}: ${44:"#"}}
+${45:   ${46:radius_group_name}: ${47:"#"}}
+${48:   ${49:radius_server_ip}: ${50:"#"}}
+${51:   ${52:radius_server_ipv6}: ${53:"#"}}
+${54:   ${55:radius_server_mode}: ${56:"#"}}
+${57:   ${58:radius_server_name}: ${59:"#"}}
+${60:   ${61:radius_server_port}: ${62:"#"}}
+${63:   ${64:radius_server_type}: ${65:"#"}}
+${66:   ${67:radius_vpn_name}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>ce_aaa_server_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

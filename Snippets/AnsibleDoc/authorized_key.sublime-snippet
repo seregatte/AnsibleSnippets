@@ -1,17 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#exclusive = Whether to remove all other non-specified keys from the authorized_keys file. Multiple keys can be specified in
-#key = The SSH public key(s), as a string or (since 1.9) url (https://github.com/username.keys)
-#key_options = A string of ssh key options to be prepended to the key in the authorized_keys file
-#manage_dir = Whether this module should manage the directory of the authorized key file.  If set, the module will create the
-#path = Alternate path to the authorized_keys file
-#state = Whether the given key (with the given key_options) should or should not be in the file
-#user = The username on the remote host whose authorized_keys file will be modified
+${1:# comment: Change the comment on the public key. Rewriting the comment is useful in cases such as fetching it from 
+# exclusive: Whether to remove all other non-specified keys from the authorized_keys file. Multiple keys can be 
+# key: (required) The SSH public key(s), as a string or (since 1.9) url (https://github.com/username.keys) 
+# key_options: A string of ssh key options to be prepended to the key in the authorized_keys file 
+# manage_dir: Whether this module should manage the directory of the authorized key file.  If set, the module will 
+# path: Alternate path to the authorized_keys file 
+# state: Whether the given key (with the given key_options) should or should not be in the file 
+# user: (required) The username on the remote host whose authorized_keys file will be modified 
+# validate_certs: This only applies if using a https url as the source of the keys. If set to `no', the SSL certificates 
 }- name: ${2:Name for authorized_key module.}
-${3:  become: ${4:yes}}
-  authorized_key: ${5:exclusive=${6: } }${7:key=${8: } }${9:key_options=${10: } }${11:manage_dir=${12: } }${13:path=${14: } }${15:state=${16: } }${17:user=${18: } }
-${19:  when: ${20: variable is defined}}
-${21:  with_items: ${22: array}}
+  authorized_key:
+${3:   ${4:comment}: ${5:"#"}}
+${6:   ${7:exclusive}: ${8:"#"}}
+${9:   ${10:key}: ${11:"#"}}
+${12:   ${13:key_options}: ${14:"#"}}
+${15:   ${16:manage_dir}: ${17:"#"}}
+${18:   ${19:path}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:user}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>authorized_key</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

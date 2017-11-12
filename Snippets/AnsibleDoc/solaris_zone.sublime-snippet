@@ -1,20 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#attach_options = Extra options to the zoneadm attach command. For example, this can be used to specify whether a minimum or full
-#config = The zonecfg configuration commands for this zone. See zonecfg(1M) for the valid options and syntax. Typically
-#create_options = Extra options to the zonecfg(1M) create command.
-#install_options = Extra options to the zoneadm(1M) install command. To automate Solaris 11 zone creation, use this to specify the
-#name = Zone name.
-#path = The path where the zone will be created. This is required when the zone is created, but not used otherwise.
-#root_password = The password hash for the root account. If not specified, the zone's root account will not have a password.
-#sparse = Whether to create a sparse (`true') or whole root (`false') zone.
-#state = `present', configure and install the zone. `installed', synonym for `present'. `running', if the zone already
-#timeout = Timeout, in seconds, for zone to boot.
+${1:# attach_options: Extra options to the zoneadm attach command. For example, this can be used to specify whether a minimum 
+# config: The zonecfg configuration commands for this zone. See zonecfg(1M) for the valid options and syntax. 
+# create_options: Extra options to the zonecfg(1M) create command. 
+# install_options: Extra options to the zoneadm(1M) install command. To automate Solaris 11 zone creation, use this to 
+# name: (required) Zone name. 
+# path: The path where the zone will be created. This is required when the zone is created, but not used 
+# root_password: The password hash for the root account. If not specified, the zone's root account will not have a 
+# sparse: Whether to create a sparse (`true') or whole root (`false') zone. 
+# state: (required) `present', configure and install the zone. `installed', synonym for `present'. `running', if 
+# timeout: Timeout, in seconds, for zone to boot. 
 }- name: ${2:Name for solaris_zone module.}
-${3:  become: ${4:yes}}
-  solaris_zone: ${5:attach_options=${6: } }${7:config=${8: } }${9:create_options=${10: } }${11:install_options=${12: } }${13:name=${14: } }${15:path=${16: } }${17:root_password=${18: } }${19:sparse=${20: } }${21:state=${22: } }${23:timeout=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  solaris_zone:
+${3:   ${4:attach_options}: ${5:"#"}}
+${6:   ${7:config}: ${8:"#"}}
+${9:   ${10:create_options}: ${11:"#"}}
+${12:   ${13:install_options}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:path}: ${20:"#"}}
+${21:   ${22:root_password}: ${23:"#"}}
+${24:   ${25:sparse}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>solaris_zone</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

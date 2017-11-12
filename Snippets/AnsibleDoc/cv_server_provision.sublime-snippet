@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# action: The action for the module to take. The actions are add, which applies the specified template config to 
+# auto_run: Flag that determines whether or not the module will execute the CVP task spawned as a result of changes 
+# host: (required) The hostname or IP address of the CVP node being connected to. 
+# password: (required) The password of the user that will be used to connect to CVP for API calls. 
+# port: The port number to use when making API calls to the CVP node. This will default to the default port for 
+# port_vlan: The vlan that should be applied to the port for this server. This parameter is dependent on a proper 
+# protocol: The protocol to use when making API calls to CVP. CVP defaults to https and newer versions of CVP no 
+# server_name: (required) The hostname or identifier for the server that is having it's switch port provisioned. 
+# switch_name: (required) The hostname of the switch is being configured for the server being provisioned. 
+# switch_port: (required) The physical port number on the switch that the new server is connected to. 
+# template: (required) A path to a Jinja formatted template file that contains the configuration block that will be 
+# username: (required) The user that will be used to connect to CVP for making API calls. 
+}- name: ${2:Name for cv_server_provision module.}
+  cv_server_provision:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:auto_run}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:port}: ${17:"#"}}
+${18:   ${19:port_vlan}: ${20:"#"}}
+${21:   ${22:protocol}: ${23:"#"}}
+${24:   ${25:server_name}: ${26:"#"}}
+${27:   ${28:switch_name}: ${29:"#"}}
+${30:   ${31:switch_port}: ${32:"#"}}
+${33:   ${34:template}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>cv_server_provision</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

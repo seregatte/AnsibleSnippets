@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# ipv6: The listener daemon on the remote host will bind to the ipv6 localhost socket if this parameter is set 
+# minutes: The `accelerate' listener daemon is started on nodes and will stay around for this number of minutes 
+# multi_key: When enabled, the daemon will open a local socket file which can be used by future daemon executions to 
+# port: TCP port for the socket connection 
+# timeout: The number of seconds the socket will wait for data. If none is received when the timeout value is 
+}- name: ${2:Name for accelerate module.}
+  accelerate:
+${3:   ${4:ipv6}: ${5:"#"}}
+${6:   ${7:minutes}: ${8:"#"}}
+${9:   ${10:multi_key}: ${11:"#"}}
+${12:   ${13:port}: ${14:"#"}}
+${15:   ${16:timeout}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>accelerate</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# compare_key: The parent key to use when comparing the contents of the registry to the contents of the file.  Needs to 
+# path: (required) The full path including file name to the registry file on the remote machine to be merged 
+}- name: ${2:Name for win_regmerge module.}
+  win_regmerge:
+${3:   ${4:compare_key}: ${5:"#"}}
+${6:   ${7:path}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>win_regmerge</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

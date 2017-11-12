@@ -1,0 +1,66 @@
+<snippet>
+<content><![CDATA[
+${1:# as_number: Local AS number. The value is a string of 1 to 11 characters. 
+# as_path_limit: Maximum number of AS numbers in the AS_Path attribute. The default value is 255. 
+# bgp_rid_auto_sel: The function to automatically select router IDs for all VPN BGP instances is enabled. 
+# check_first_as: Check the first AS in the AS_Path of the update messages from EBGP peers. 
+# clear_interval: Clear interval. 
+# confed_id_number: Confederation ID. The value is a string of 1 to 11 characters. 
+# confed_nonstanded: Configure the device to be compatible with devices in a nonstandard confederation. 
+# confed_peer_as_num: Confederation AS number, in two-byte or four-byte format. The value is a string of 1 to 11 characters. 
+# conn_retry_time: ConnectRetry interval. The value is an integer, in seconds. The default value is 32s. 
+# default_af_type: Type of a created address family, which can be IPv4 unicast or IPv6 unicast. The default type is IPv4 
+# ebgp_if_sensitive: If the value is true, After the fast EBGP interface awareness function is enabled, EBGP sessions on an 
+# gr_peer_reset: Peer disconnection through GR. 
+# graceful_restart: Enable GR of the BGP speaker in the specified address family, peer address, or peer group. 
+# hold_interval: Hold interval. 
+# hold_time: Hold time, in seconds. The value of the hold time can be 0 or range from 3 to 65535. 
+# is_shutdown: Interrupt BGP all neighbor. 
+# keep_all_routes: If the value is true, the system stores all route update messages received from all peers (groups) after 
+# keepalive_time: If the value of a timer changes, the BGP peer relationship between the routers is disconnected. The 
+# memory_limit: Support BGP RIB memory protection. 
+# min_hold_time: Min hold time, in seconds. The value of the hold time can be 0 or range from 20 to 65535. 
+# router_id: ID of a router that is in IPv4 address format. 
+# state: Specify desired state of the resource. 
+# suppress_interval: Suppress interval. 
+# time_wait_for_rib: Period of waiting for the End-Of-RIB flag. The value is an integer ranging from 3 to 3000. The default 
+# vrf_name: Name of a BGP instance. The name is a case-sensitive string of characters. 
+# vrf_rid_auto_sel: If the value is true, VPN BGP instances are enabled to automatically select router IDs. If the value is 
+}- name: ${2:Name for ce_bgp module.}
+  ce_bgp:
+${3:   ${4:as_number}: ${5:"#"}}
+${6:   ${7:as_path_limit}: ${8:"#"}}
+${9:   ${10:bgp_rid_auto_sel}: ${11:"#"}}
+${12:   ${13:check_first_as}: ${14:"#"}}
+${15:   ${16:clear_interval}: ${17:"#"}}
+${18:   ${19:confed_id_number}: ${20:"#"}}
+${21:   ${22:confed_nonstanded}: ${23:"#"}}
+${24:   ${25:confed_peer_as_num}: ${26:"#"}}
+${27:   ${28:conn_retry_time}: ${29:"#"}}
+${30:   ${31:default_af_type}: ${32:"#"}}
+${33:   ${34:ebgp_if_sensitive}: ${35:"#"}}
+${36:   ${37:gr_peer_reset}: ${38:"#"}}
+${39:   ${40:graceful_restart}: ${41:"#"}}
+${42:   ${43:hold_interval}: ${44:"#"}}
+${45:   ${46:hold_time}: ${47:"#"}}
+${48:   ${49:is_shutdown}: ${50:"#"}}
+${51:   ${52:keep_all_routes}: ${53:"#"}}
+${54:   ${55:keepalive_time}: ${56:"#"}}
+${57:   ${58:memory_limit}: ${59:"#"}}
+${60:   ${61:min_hold_time}: ${62:"#"}}
+${63:   ${64:router_id}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:suppress_interval}: ${71:"#"}}
+${72:   ${73:time_wait_for_rib}: ${74:"#"}}
+${75:   ${76:vrf_name}: ${77:"#"}}
+${78:   ${79:vrf_rid_auto_sel}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
+]]></content>
+	<tabTrigger>ce_bgp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

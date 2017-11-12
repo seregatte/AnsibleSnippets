@@ -1,13 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#conf = path to the SELinux configuration file, if non-standard
-#policy = name of the SELinux policy to use (example: `targeted') will be required if state is not `disabled'
-#state = The SELinux mode
+${1:# conf: path to the SELinux configuration file, if non-standard 
+# policy: name of the SELinux policy to use (example: `targeted') will be required if state is not `disabled' 
+# state: (required) The SELinux mode 
 }- name: ${2:Name for selinux module.}
-${3:  become: ${4:yes}}
-  selinux: ${5:conf=${6: } }${7:policy=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  selinux:
+${3:   ${4:conf}: ${5:"#"}}
+${6:   ${7:policy}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>selinux</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

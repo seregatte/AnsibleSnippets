@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# key: (required) The ini key of the section or policy name to modify. The module will return an error if this 
+# section: (required) The ini section the key exists in. If the section does not exist then the module will return 
+# value: (required) The value for the ini key or policy name. If the key takes in a boolean value then 0 = False 
+}- name: ${2:Name for win_security_policy module.}
+  win_security_policy:
+${3:   ${4:key}: ${5:"#"}}
+${6:   ${7:section}: ${8:"#"}}
+${9:   ${10:value}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>win_security_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

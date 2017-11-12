@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# category: Category of file uploaded. The default is software. 
+# file: Location of the file to import into device. 
+# ip_address: (required) IP address (or hostname) of PAN-OS device. 
+# password: (required) Password for device authentication. 
+# url: URL of the file that will be imported to device. 
+# username: Username for device authentication. 
+}- name: ${2:Name for panos_import module.}
+  panos_import:
+${3:   ${4:category}: ${5:"#"}}
+${6:   ${7:file}: ${8:"#"}}
+${9:   ${10:ip_address}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:url}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>panos_import</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

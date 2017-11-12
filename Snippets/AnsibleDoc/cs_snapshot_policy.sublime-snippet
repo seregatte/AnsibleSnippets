@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# account: Account the volume is related to. 
+# api_http_method: HTTP method used. 
+# api_key: API key of the CloudStack API. 
+# api_region: Name of the ini section in the `cloustack.ini' file. 
+# api_secret: Secret key of the CloudStack API. 
+# api_timeout: HTTP timeout. 
+# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# device_id: ID of the device on a VM the volume is attached to. This will only be considered if VM has multiple 
+# domain: Domain the volume is related to. 
+# interval_type: Interval of the snapshot. 
+# max_snaps: Max number of snapshots. 
+# project: Name of the project the volume is related to. 
+# schedule: Time the snapshot is scheduled. Required if `state=present'. Format for `interval_type=HOURLY': `MM' 
+# state: State of the snapshot policy. 
+# time_zone: Specifies a timezone for this command. 
+# vm: Name of the instance to select the volume from. Use `volume_type' if VM has a DATADISK and ROOT volume. 
+# volume: Name of the volume. Either `volume' or `vm' is required. 
+# volume_type: Type of the volume. 
+# vpc: Name of the vpc the instance is deployed in. 
+}- name: ${2:Name for cs_snapshot_policy module.}
+  cs_snapshot_policy:
+${3:   ${4:account}: ${5:"#"}}
+${6:   ${7:api_http_method}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:api_region}: ${14:"#"}}
+${15:   ${16:api_secret}: ${17:"#"}}
+${18:   ${19:api_timeout}: ${20:"#"}}
+${21:   ${22:api_url}: ${23:"#"}}
+${24:   ${25:device_id}: ${26:"#"}}
+${27:   ${28:domain}: ${29:"#"}}
+${30:   ${31:interval_type}: ${32:"#"}}
+${33:   ${34:max_snaps}: ${35:"#"}}
+${36:   ${37:project}: ${38:"#"}}
+${39:   ${40:schedule}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:time_zone}: ${47:"#"}}
+${48:   ${49:vm}: ${50:"#"}}
+${51:   ${52:volume}: ${53:"#"}}
+${54:   ${55:volume_type}: ${56:"#"}}
+${57:   ${58:vpc}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>cs_snapshot_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

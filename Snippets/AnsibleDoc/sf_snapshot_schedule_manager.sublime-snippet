@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the SolidFire cluster. 
+# name: (required) Name for the snapshot schedule. 
+# password: (required) Password for the specified user. 
+# paused: Pause / Resume a schedule. 
+# recurring: Should the schedule recur? 
+# retention: Retention period for the snapshot. Format is 'HH:mm:ss'. 
+# schedule_id: The schedule ID for the schedule that you want to update or delete. 
+# snapshot_name: Name for the created snapshots. 
+# starting_date: Starting date for the schedule. Required when `state=present'. Please use two '-' in the above format, 
+# state: (required) Whether the specified schedule should exist or not. 
+# time_interval_days: Time interval in days. 
+# time_interval_hours: Time interval in hours. 
+# time_interval_minutes: Time interval in minutes. 
+# username: (required) Please ensure that the user has the adequate permissions. For more information, please read 
+# volumes: Volume IDs that you want to set the snapshot schedule for. At least 1 volume ID is required for creating 
+}- name: ${2:Name for sf_snapshot_schedule_manager module.}
+  sf_snapshot_schedule_manager:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:paused}: ${14:"#"}}
+${15:   ${16:recurring}: ${17:"#"}}
+${18:   ${19:retention}: ${20:"#"}}
+${21:   ${22:schedule_id}: ${23:"#"}}
+${24:   ${25:snapshot_name}: ${26:"#"}}
+${27:   ${28:starting_date}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:time_interval_days}: ${35:"#"}}
+${36:   ${37:time_interval_hours}: ${38:"#"}}
+${39:   ${40:time_interval_minutes}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:   ${46:volumes}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>sf_snapshot_schedule_manager</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

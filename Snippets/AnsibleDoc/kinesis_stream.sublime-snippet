@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# name: (required) The name of the Kinesis Stream you are managing. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# retention_period: The default retention period is 24 hours and can not be less than 24 hours. The retention period can be 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# shards: The number of shards you want to have with this stream. This is required when state == present 
+# state: Create or Delete the Kinesis Stream. 
+# tags: A dictionary of resource tags of the form: { tag1: value1, tag2: value2 }. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# wait: Wait for operation to complete before returning. 
+# wait_timeout: How many seconds to wait for an operation to complete before timing out. 
+}- name: ${2:Name for kinesis_stream module.}
+  kinesis_stream:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:profile}: ${17:"#"}}
+${18:   ${19:region}: ${20:"#"}}
+${21:   ${22:http}: ${23:"#"}}
+${24:   ${25:retention_period}: ${26:"#"}}
+${27:   ${28:security_token}: ${29:"#"}}
+${30:   ${31:shards}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:tags}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:wait}: ${44:"#"}}
+${45:   ${46:wait_timeout}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>kinesis_stream</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

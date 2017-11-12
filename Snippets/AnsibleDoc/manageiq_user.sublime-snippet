@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# email: The users' E-mail address. 
+# group: The name of the group to which the user belongs. 
+# manageiq_connection: (required) ManageIQ connection configuration information. 
+# name: The users' full name. 
+# password: The users' password. 
+# state: absent - user should not exist, present - user should be. 
+# userid: (required) The unique userid in manageiq, often mentioned as username. 
+}- name: ${2:Name for manageiq_user module.}
+  manageiq_user:
+${3:   ${4:email}: ${5:"#"}}
+${6:   ${7:group}: ${8:"#"}}
+${9:   ${10:manageiq_connection}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:userid}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>manageiq_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

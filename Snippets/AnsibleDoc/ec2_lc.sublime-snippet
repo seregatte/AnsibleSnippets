@@ -1,35 +1,71 @@
 <snippet>
 <content><![CDATA[
-${1:#assign_public_ip = Used for Auto Scaling groups that launch instances into an Amazon Virtual Private Cloud. Specifies whether to
-#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#classic_link_vpc_id = Id of ClassicLink enabled VPC
-#classic_link_vpc_security_groups = A list of security group id's with which to associate the ClassicLink VPC instances.
-#ebs_optimized = Specifies whether the instance is optimized for EBS I/O (true) or not (false).
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#image_id = The AMI unique identifier to be used for the group
-#instance_monitoring = whether instances in group are launched with detailed monitoring.
-#instance_profile_name = The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the
-#instance_type = instance type to use for the instance
-#kernel_id = Kernel id for the EC2 instance
-#key_name = The SSH key name to be used for access to managed instances
-#name = Unique name for configuration
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#ramdisk_id = A RAM disk id for the instances.
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#security_groups = A list of security groups into which instances should be found
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#spot_price = The spot price you are bidding. Only applies for an autoscaling group with spot instances.
-#state = register or deregister the instance
-#user_data = opaque blob of data which is made available to the ec2 instance
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
-#volumes = a list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and type
+${1:# assign_public_ip: Used for Auto Scaling groups that launch instances into an Amazon Virtual Private Cloud. Specifies 
+# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# classic_link_vpc_id: Id of ClassicLink enabled VPC 
+# classic_link_vpc_security_groups: A list of security group IDs with which to associate the ClassicLink VPC instances. 
+# ebs_optimized: Specifies whether the instance is optimized for EBS I/O (true) or not (false). 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# image_id: The AMI unique identifier to be used for the group 
+# instance_id: The Id of a running instance to use as a basis for a launch configuration. Can be used in place of 
+# instance_monitoring: Specifies whether instances are launched with detailed monitoring. 
+# instance_profile_name: The name or the Amazon Resource Name (ARN) of the instance profile associated with the IAM role for the 
+# instance_type: (required) Instance type to use for the instance 
+# kernel_id: Kernel id for the EC2 instance 
+# key_name: The SSH key name to be used for access to managed instances 
+# name: (required) Unique name for configuration 
+# placement_tenancy: Determines whether the instance runs on single-tenant harware or not. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# ramdisk_id: A RAM disk id for the instances. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_groups: A list of security groups to apply to the instances. Since version 2.4 you can specify either security 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# spot_price: The spot price you are bidding. Only applies for an autoscaling group with spot instances. 
+# state: (required) Register or deregister the instance 
+# user_data: Opaque blob of data which is made available to the ec2 instance. Mutually exclusive with 
+# user_data_path: Path to the file that contains userdata for the ec2 instances. Mutually exclusive with `user_data'. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# volumes: A list of volume dicts, each containing device name and optionally ephemeral id or snapshot id. Size and 
+# vpc_id: VPC ID, used when resolving security group names to IDs. 
 }- name: ${2:Name for ec2_lc module.}
-${3:  become: ${4:yes}}
-  ec2_lc: ${5:assign_public_ip=${6: } }${7:aws_access_key=${8: } }${9:aws_secret_key=${10: } }${11:classic_link_vpc_id=${12: } }${13:classic_link_vpc_security_groups=${14: } }${15:ebs_optimized=${16: } }${17:ec2_url=${18: } }${19:image_id=${20: } }${21:instance_monitoring=${22: } }${23:instance_profile_name=${24: } }${25:instance_type=${26: } }${27:kernel_id=${28: } }${29:key_name=${30: } }${31:name=${32: } }${33:profile=${34: } }${35:ramdisk_id=${36: } }${37:region=${38: } }${39:http=${40: } }${41:security_groups=${42: } }${43:security_token=${44: } }${45:spot_price=${46: } }${47:state=${48: } }${49:user_data=${50: } }${51:validate_certs=${52: } }${53:volumes=${54: } }
-${55:  when: ${56: variable is defined}}
-${57:  with_items: ${58: array}}
+  ec2_lc:
+${3:   ${4:assign_public_ip}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:classic_link_vpc_id}: ${14:"#"}}
+${15:   ${16:classic_link_vpc_security_groups}: ${17:"#"}}
+${18:   ${19:ebs_optimized}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:image_id}: ${26:"#"}}
+${27:   ${28:instance_id}: ${29:"#"}}
+${30:   ${31:instance_monitoring}: ${32:"#"}}
+${33:   ${34:instance_profile_name}: ${35:"#"}}
+${36:   ${37:instance_type}: ${38:"#"}}
+${39:   ${40:kernel_id}: ${41:"#"}}
+${42:   ${43:key_name}: ${44:"#"}}
+${45:   ${46:name}: ${47:"#"}}
+${48:   ${49:placement_tenancy}: ${50:"#"}}
+${51:   ${52:profile}: ${53:"#"}}
+${54:   ${55:ramdisk_id}: ${56:"#"}}
+${57:   ${58:region}: ${59:"#"}}
+${60:   ${61:http}: ${62:"#"}}
+${63:   ${64:security_groups}: ${65:"#"}}
+${66:   ${67:security_token}: ${68:"#"}}
+${69:   ${70:spot_price}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:user_data}: ${77:"#"}}
+${78:   ${79:user_data_path}: ${80:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
+${84:   ${85:volumes}: ${86:"#"}}
+${87:   ${88:vpc_id}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>ec2_lc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

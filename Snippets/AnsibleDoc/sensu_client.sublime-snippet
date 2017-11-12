@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# address: An address to help identify and reach the client. This is only informational, usually an IP address or 
+# chef: The chef definition scope, used to configure the Sensu Enterprise Chef integration (Sensu Enterprise 
+# deregister: If a deregistration event should be created upon Sensu client process stop. 
+# deregistration: The deregistration definition scope, used to configure automated Sensu client de-registration. 
+# ec2: The ec2 definition scope, used to configure the Sensu Enterprise AWS EC2 integration (Sensu Enterprise 
+# keepalive: The keepalive definition scope, used to configure Sensu client keepalives behavior (e.g. keepalive 
+# keepalives: If Sensu should monitor keepalives for this client. 
+# name: A unique name for the client. The name cannot contain special characters or spaces. 
+# puppet: The puppet definition scope, used to configure the Sensu Enterprise Puppet integration (Sensu Enterprise 
+# redact: Client definition attributes to redact (values) when logging and sending client keepalives. 
+# registration: The registration definition scope, used to configure Sensu registration event handlers. 
+# safe_mode: If safe mode is enabled for the client. Safe mode requires local check definitions in order to accept a 
+# servicenow: The servicenow definition scope, used to configure the Sensu Enterprise ServiceNow integration (Sensu 
+# socket: The socket definition scope, used to configure the Sensu client socket. 
+# state: Whether the client should be present or not 
+# subscriptions: (required) An array of client subscriptions, a list of roles and/or responsibilities assigned to the 
+}- name: ${2:Name for sensu_client module.}
+  sensu_client:
+${3:   ${4:address}: ${5:"#"}}
+${6:   ${7:chef}: ${8:"#"}}
+${9:   ${10:deregister}: ${11:"#"}}
+${12:   ${13:deregistration}: ${14:"#"}}
+${15:   ${16:ec2}: ${17:"#"}}
+${18:   ${19:keepalive}: ${20:"#"}}
+${21:   ${22:keepalives}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:puppet}: ${29:"#"}}
+${30:   ${31:redact}: ${32:"#"}}
+${33:   ${34:registration}: ${35:"#"}}
+${36:   ${37:safe_mode}: ${38:"#"}}
+${39:   ${40:servicenow}: ${41:"#"}}
+${42:   ${43:socket}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:subscriptions}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>sensu_client</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

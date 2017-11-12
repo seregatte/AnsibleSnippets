@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# address: Specifiies an IP address to configure in CIDR notation. 
+# addrobj: (required) Specifies an unique IP address on the system. 
+# addrtype: Specifiies a type of IP address to configure. 
+# state: Create/delete/enable/disable an IP address on the network interface. 
+# temporary: Specifies that the configured IP address is temporary. Temporary IP addresses do not persist across 
+# wait: Specifies the time in seconds we wait for obtaining address via DHCP. 
+}- name: ${2:Name for ipadm_addr module.}
+  ipadm_addr:
+${3:   ${4:address}: ${5:"#"}}
+${6:   ${7:addrobj}: ${8:"#"}}
+${9:   ${10:addrtype}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:temporary}: ${17:"#"}}
+${18:   ${19:wait}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ipadm_addr</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

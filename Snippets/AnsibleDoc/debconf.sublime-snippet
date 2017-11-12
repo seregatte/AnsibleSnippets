@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#name = Name of package to configure.
-#question = A debconf configuration setting
-#unseen = Do not set 'seen' flag when pre-seeding
-#value = Value to set the configuration to
-#vtype = The type of the value supplied
+${1:# name: (required) Name of package to configure. 
+# question: A debconf configuration setting 
+# unseen: Do not set 'seen' flag when pre-seeding 
+# value: Value to set the configuration to 
+# vtype: The type of the value supplied. `seen' was added in 2.2. 
 }- name: ${2:Name for debconf module.}
-${3:  become: ${4:yes}}
-  debconf: ${5:name=${6: } }${7:question=${8: } }${9:unseen=${10: } }${11:value=${12: } }${13:vtype=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  debconf:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:question}: ${8:"#"}}
+${9:   ${10:unseen}: ${11:"#"}}
+${12:   ${13:value}: ${14:"#"}}
+${15:   ${16:vtype}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>debconf</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

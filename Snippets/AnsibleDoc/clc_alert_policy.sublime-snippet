@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#alert_recipients = A list of recipient email ids to notify the alert. This is required for state 'present'
-#alias = The alias of your CLC Account
-#duration = The length of time in minutes that the condition must exceed the threshold. This is required for state 'present'
-#id = The alert policy id. This is mutually exclusive with name
-#metric = The metric on which to measure the condition that will trigger the alert. This is required for state 'present'
-#name = The name of the alert policy. This is mutually exclusive with id
-#state = Whether to create or delete the policy.
-#threshold = The threshold that will trigger the alert when the metric equals or exceeds it. This is required for state
+${1:# alert_recipients: A list of recipient email ids to notify the alert. This is required for state 'present' 
+# alias: (required) The alias of your CLC Account 
+# duration: The length of time in minutes that the condition must exceed the threshold. This is required for state 
+# id: The alert policy id. This is mutually exclusive with name 
+# metric: The metric on which to measure the condition that will trigger the alert. This is required for state 
+# name: The name of the alert policy. This is mutually exclusive with id 
+# state: Whether to create or delete the policy. 
+# threshold: The threshold that will trigger the alert when the metric equals or exceeds it. This is required for 
 }- name: ${2:Name for clc_alert_policy module.}
-${3:  become: ${4:yes}}
-  clc_alert_policy: ${5:alert_recipients=${6: } }${7:alias=${8: } }${9:duration=${10: } }${11:id=${12: } }${13:metric=${14: } }${15:name=${16: } }${17:state=${18: } }${19:threshold=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  clc_alert_policy:
+${3:   ${4:alert_recipients}: ${5:"#"}}
+${6:   ${7:alias}: ${8:"#"}}
+${9:   ${10:duration}: ${11:"#"}}
+${12:   ${13:id}: ${14:"#"}}
+${15:   ${16:metric}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:threshold}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>clc_alert_policy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

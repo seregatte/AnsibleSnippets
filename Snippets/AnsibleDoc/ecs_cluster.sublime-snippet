@@ -1,16 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#delay = Number of seconds to wait
-#name = The cluster name
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#repeat = The number of times to wait for the cluster to have an instance
-#state = The desired state of the cluster
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# delay: Number of seconds to wait 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# name: (required) The cluster name 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# repeat: The number of times to wait for the cluster to have an instance 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: (required) The desired state of the cluster 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
 }- name: ${2:Name for ecs_cluster module.}
-${3:  become: ${4:yes}}
-  ecs_cluster: ${5:delay=${6: } }${7:name=${8: } }${9:region=${10: } }${11:http=${12: } }${13:repeat=${14: } }${15:state=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  ecs_cluster:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:delay}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:profile}: ${20:"#"}}
+${21:   ${22:region}: ${23:"#"}}
+${24:   ${25:http}: ${26:"#"}}
+${27:   ${28:repeat}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>ecs_cluster</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

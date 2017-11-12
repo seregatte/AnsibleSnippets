@@ -1,26 +1,45 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#iam_name = Name of IAM resource you wish to target for policy actions. In other words, the user name, group name or role
-#iam_type = Type of IAM resource
-#policy_document = The path to the properly json formatted policy file (mutually exclusive with `policy_json')
-#policy_json = A properly json formatted policy as string (mutually exclusive with `policy_document', see
-#https = issuecomment-42894813 on how to
-#policy_name = The name label for the policy to create or remove.
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#skip_duplicates = By default the module looks for any policies that match the document you pass in, if there is a match it will
-#state = Whether to create or delete the IAM policy.
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# iam_name: (required) Name of IAM resource you wish to target for policy actions. In other words, the user name, 
+# iam_type: (required) Type of IAM resource 
+# policy_document: The path to the properly json formatted policy file (mutually exclusive with `policy_json') 
+# policy_json: A properly json formatted policy as string (mutually exclusive with `policy_document', see 
+# https: issuecomment-42894813 on 
+# policy_name: (required) The name label for the policy to create or remove. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# skip_duplicates: By default the module looks for any policies that match the document you pass in, if there is a match it 
+# state: (required) Whether to create or delete the IAM policy. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
 }- name: ${2:Name for iam_policy module.}
-${3:  become: ${4:yes}}
-  iam_policy: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:iam_name=${12: } }${13:iam_type=${14: } }${15:policy_document=${16: } }${17:policy_json=${18: } }${19:https=${20: } }${21:policy_name=${22: } }${23:profile=${24: } }${25:region=${26: } }${27:http=${28: } }${29:security_token=${30: } }${31:skip_duplicates=${32: } }${33:state=${34: } }${35:validate_certs=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  iam_policy:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:iam_name}: ${14:"#"}}
+${15:   ${16:iam_type}: ${17:"#"}}
+${18:   ${19:policy_document}: ${20:"#"}}
+${21:   ${22:policy_json}: ${23:"#"}}
+${24:   ${25:https}: ${26:"#"}}
+${27:   ${28:policy_name}: ${29:"#"}}
+${30:   ${31:profile}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:http}: ${38:"#"}}
+${39:   ${40:security_token}: ${41:"#"}}
+${42:   ${43:skip_duplicates}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>iam_policy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

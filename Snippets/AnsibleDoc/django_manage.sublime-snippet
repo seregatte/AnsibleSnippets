@@ -1,23 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#app_path = The path to the root of the Django application where *manage.py* lives.
-#apps = A list of space-delimited apps to target. Used by the 'test' command.
-#cache_table = The name of the table used for database-backed caching. Used by the 'createcachetable' command.
-#command = The name of the Django management command to run. Built in commands are cleanup, collectstatic, flush, loaddata,
-#database = The database to target. Used by the 'createcachetable', 'flush', 'loaddata', and 'syncdb' commands.
-#failfast = Fail the command immediately if a test fails. Used by the 'test' command.
-#fixtures = A space-delimited list of fixture file names to load in the database. *Required* by the 'loaddata' command.
-#link = Will create links to the files instead of copying them, you can only use this parameter with 'collectstatic'
-#merge = Will run out-of-order or missing migrations as they are not rollback migrations, you can only use this parameter
-#pythonpath = A directory to add to the Python path. Typically used to include the settings module if it is located external
-#settings = The Python path to the application's settings module, such as 'myapp.settings'.
-#skip = Will skip over out-of-order missing migrations, you can only use this parameter with `migrate'
-#virtualenv = An optional path to a `virtualenv' installation to use while running the manage application.
+${1:# app_path: (required) The path to the root of the Django application where *manage.py* lives. 
+# apps: A list of space-delimited apps to target. Used by the 'test' command. 
+# cache_table: The name of the table used for database-backed caching. Used by the 'createcachetable' command. 
+# command: (required) The name of the Django management command to run. Built in commands are cleanup, 
+# database: The database to target. Used by the 'createcachetable', 'flush', 'loaddata', and 'syncdb' commands. 
+# failfast: Fail the command immediately if a test fails. Used by the 'test' command. 
+# fixtures: A space-delimited list of fixture file names to load in the database. *Required* by the 'loaddata' 
+# link: Will create links to the files instead of copying them, you can only use this parameter with 
+# merge: Will run out-of-order or missing migrations as they are not rollback migrations, you can only use this 
+# pythonpath: A directory to add to the Python path. Typically used to include the settings module if it is located 
+# settings: The Python path to the application's settings module, such as 'myapp.settings'. 
+# skip: Will skip over out-of-order missing migrations, you can only use this parameter with `migrate' 
+# virtualenv: An optional path to a `virtualenv' installation to use while running the manage application. 
 }- name: ${2:Name for django_manage module.}
-${3:  become: ${4:yes}}
-  django_manage: ${5:app_path=${6: } }${7:apps=${8: } }${9:cache_table=${10: } }${11:command=${12: } }${13:database=${14: } }${15:failfast=${16: } }${17:fixtures=${18: } }${19:link=${20: } }${21:merge=${22: } }${23:pythonpath=${24: } }${25:settings=${26: } }${27:skip=${28: } }${29:virtualenv=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  django_manage:
+${3:   ${4:app_path}: ${5:"#"}}
+${6:   ${7:apps}: ${8:"#"}}
+${9:   ${10:cache_table}: ${11:"#"}}
+${12:   ${13:command}: ${14:"#"}}
+${15:   ${16:database}: ${17:"#"}}
+${18:   ${19:failfast}: ${20:"#"}}
+${21:   ${22:fixtures}: ${23:"#"}}
+${24:   ${25:link}: ${26:"#"}}
+${27:   ${28:merge}: ${29:"#"}}
+${30:   ${31:pythonpath}: ${32:"#"}}
+${33:   ${34:settings}: ${35:"#"}}
+${36:   ${37:skip}: ${38:"#"}}
+${39:   ${40:virtualenv}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>django_manage</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

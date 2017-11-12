@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# labels: The optional labels of the license key to manage in vSphere vCenter. This is dictionary with key/value 
+# license: (required) The license key to manage in vSphere vCenter. 
+# password: (required) The password to log into to the vSphere vCenter. 
+# state: Whether to add (`present') or remove (`absent') the license key. 
+# username: (required) The username to log into the vSphere vCenter. 
+}- name: ${2:Name for vcenter_license module.}
+  vcenter_license:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:labels}: ${8:"#"}}
+${9:   ${10:license}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>vcenter_license</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,28 +1,65 @@
 <snippet>
 <content><![CDATA[
-${1:#disk_auto_delete = if set boot disk will be removed after instance destruction
-#disks = a list of persistent disks to attach to the instance; a string value gives the name of the disk; alternatively,
-#external_ip = type of external ip, ephemeral by default
-#image = image string to use for the instance
-#instance_names = a comma-separated list of instance names to create or destroy
-#ip_forward = set to true if the instance can forward ip packets (useful for gateways)
-#machine_type = machine type to use for the instance, use 'n1-standard-1' by default
-#metadata = a hash/dictionary of custom data for the instance; '{"key":"value",...}'
-#name = identifier when working with a single instance
-#network = name of the network, 'default' will be used if not specified
-#pem_file = path to the pem file associated with the service account email
-#persistent_boot_disk = if set, create the instance with a persistent boot disk
-#project_id = your GCE project ID
-#service_account_email = service account email
-#service_account_permissions = service account permissions (see https://cloud.google.com/sdk/gcloud/reference/compute/instances/create,
-#state = desired state of the resource
-#tags = a comma-separated list of tags to associate with the instance
-#zone = the GCE zone to use
+${1:# credentials_file: path to the JSON file associated with the service account email 
+# disk_auto_delete: if set boot disk will be removed after instance destruction 
+# disk_size: The size of the boot disk created for this instance (in GB) 
+# disks: a list of persistent disks to attach to the instance; a string value gives the name of the disk; 
+# external_ip: type of external ip, ephemeral by default; alternatively, a fixed gce ip or ip name can be given. 
+# external_projects: A list of other projects (accessible with the provisioning credentials) to be searched for the image. 
+# image: image string to use for the instance (default will follow latest stable debian image) 
+# image_family: image family from which to select the image.  The most recent non-deprecated image in the family will be 
+# instance_names: a comma-separated list of instance names to create or destroy 
+# ip_forward: set to true if the instance can forward ip packets (useful for gateways) 
+# machine_type: machine type to use for the instance, use 'n1-standard-1' by default 
+# metadata: a hash/dictionary of custom data for the instance; '{"key":"value", ...}' 
+# name: either a name of a single instance or when used with 'num_instances', the base name of a cluster of 
+# network: name of the network, 'default' will be used if not specified 
+# num_instances: can be used with 'name', specifies the number of nodes to provision using 'name' as a base name 
+# pem_file: path to the pem file associated with the service account email This option is deprecated. Use 
+# persistent_boot_disk: if set, create the instance with a persistent boot disk 
+# preemptible: if set to true, instances will be preemptible and time-limited. (requires libcloud >= 0.20.0) 
+# project_id: your GCE project ID 
+# service_account_email: service account email 
+# service_account_permissions: service account permissions (see https://cloud.google.com/sdk/gcloud/reference/compute/instances/create, 
+# state: desired state of the resource 
+# subnetwork: name of the subnetwork in which the instance should be created 
+# tags: a comma-separated list of tags to associate with the instance 
+# zone: (required) the GCE zone to use. The list of available zones is at https://cloud.google.com/compute/docs 
+# : available. 
 }- name: ${2:Name for gce module.}
-${3:  become: ${4:yes}}
-  gce: ${5:disk_auto_delete=${6: } }${7:disks=${8: } }${9:external_ip=${10: } }${11:image=${12: } }${13:instance_names=${14: } }${15:ip_forward=${16: } }${17:machine_type=${18: } }${19:metadata=${20: } }${21:name=${22: } }${23:network=${24: } }${25:pem_file=${26: } }${27:persistent_boot_disk=${28: } }${29:project_id=${30: } }${31:service_account_email=${32: } }${33:service_account_permissions=${34: } }${35:state=${36: } }${37:tags=${38: } }${39:zone=${40: } }
-${41:  when: ${42: variable is defined}}
-${43:  with_items: ${44: array}}
+  gce:
+${3:   ${4:credentials_file}: ${5:"#"}}
+${6:   ${7:disk_auto_delete}: ${8:"#"}}
+${9:   ${10:disk_size}: ${11:"#"}}
+${12:   ${13:disks}: ${14:"#"}}
+${15:   ${16:external_ip}: ${17:"#"}}
+${18:   ${19:external_projects}: ${20:"#"}}
+${21:   ${22:image}: ${23:"#"}}
+${24:   ${25:image_family}: ${26:"#"}}
+${27:   ${28:instance_names}: ${29:"#"}}
+${30:   ${31:ip_forward}: ${32:"#"}}
+${33:   ${34:machine_type}: ${35:"#"}}
+${36:   ${37:metadata}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:network}: ${44:"#"}}
+${45:   ${46:num_instances}: ${47:"#"}}
+${48:   ${49:pem_file}: ${50:"#"}}
+${51:   ${52:persistent_boot_disk}: ${53:"#"}}
+${54:   ${55:preemptible}: ${56:"#"}}
+${57:   ${58:project_id}: ${59:"#"}}
+${60:   ${61:service_account_email}: ${62:"#"}}
+${63:   ${64:service_account_permissions}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:subnetwork}: ${71:"#"}}
+${72:   ${73:tags}: ${74:"#"}}
+${75:   ${76:zone}: ${77:"#"}}
+${78:   ${79:}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>gce</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

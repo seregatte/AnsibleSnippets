@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_mode: Specifies authentication algorithm of DLDP. 
+# auth_pwd: Specifies authentication password. The value is a string of 1 to 16 case-sensitive plaintexts or 
+# enable: Set global DLDP enable state. 
+# reset: Specify whether reset DLDP state of disabled interfaces. 
+# time_internal: Specifies the interval for sending Advertisement packets. The value is an integer ranging from 1 to 100, 
+# work_mode: Set global DLDP work-mode. 
+}- name: ${2:Name for ce_dldp module.}
+  ce_dldp:
+${3:   ${4:auth_mode}: ${5:"#"}}
+${6:   ${7:auth_pwd}: ${8:"#"}}
+${9:   ${10:enable}: ${11:"#"}}
+${12:   ${13:reset}: ${14:"#"}}
+${15:   ${16:time_internal}: ${17:"#"}}
+${18:   ${19:work_mode}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ce_dldp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

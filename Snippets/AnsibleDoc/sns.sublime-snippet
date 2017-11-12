@@ -1,21 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used.
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used.
-#email = Message to send to email-only subscription
-#http = Message to send to HTTP-only subscription
-#https = Message to send to HTTPS-only subscription
-#msg = Default message to send.
-#region = The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, is used.
-#sms = Message to send to SMS-only subscription
-#sqs = Message to send to SQS-only subscription
-#subject = Subject line for email delivery.
-#topic = The topic you want to publish to.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used. 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used. 
+# email: Message to send to email-only subscription 
+# http: Message to send to HTTP-only subscription 
+# https: Message to send to HTTPS-only subscription 
+# message_attributes: Dictionary of message attributes. These are optional structured data entries to be sent along to the 
+# message_structure: (required) The payload format to use for the message. This must be 'json' to support non-default 
+# msg: (required) Default message to send. 
+# region: The AWS region to use. If not specified then the value of the EC2_REGION environment variable, if any, 
+# sms: Message to send to SMS-only subscription 
+# sqs: Message to send to SQS-only subscription 
+# subject: Subject line for email delivery. 
+# topic: (required) The topic you want to publish to. 
 }- name: ${2:Name for sns module.}
-${3:  become: ${4:yes}}
-  sns: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:email=${10: } }${11:http=${12: } }${13:https=${14: } }${15:msg=${16: } }${17:region=${18: } }${19:sms=${20: } }${21:sqs=${22: } }${23:subject=${24: } }${25:topic=${26: } }
-${27:  when: ${28: variable is defined}}
-${29:  with_items: ${30: array}}
+  sns:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:email}: ${11:"#"}}
+${12:   ${13:http}: ${14:"#"}}
+${15:   ${16:https}: ${17:"#"}}
+${18:   ${19:message_attributes}: ${20:"#"}}
+${21:   ${22:message_structure}: ${23:"#"}}
+${24:   ${25:msg}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:sms}: ${32:"#"}}
+${33:   ${34:sqs}: ${35:"#"}}
+${36:   ${37:subject}: ${38:"#"}}
+${39:   ${40:topic}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>sns</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

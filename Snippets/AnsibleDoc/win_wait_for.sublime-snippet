@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# connect_timeout: The maximum number of seconds to wait for a connection to happen before closing and retrying. 
+# delay: The number of seconds to wait before starting to poll. 
+# exclude_hosts: The list of hosts or IPs to ignore when looking for active TCP connections when `state=drained'. 
+# host: A resolvable hostname or IP address to wait for. If `state=drained' then it will only check for 
+# path: The path to a file on the filesystem to check. If `state' is present or started then it will wait until 
+# port: The port number to poll on `host'. 
+# search_regex: Can be used to match a string in a file. If `state' is present or started then it will wait until the 
+# sleep: Number of seconds to sleep between checks. 
+# state: When checking a port, `started' will ensure the port is open, `stopped' will check that is it closed and 
+# timeout: The maximum number of seconds to wait for. 
+}- name: ${2:Name for win_wait_for module.}
+  win_wait_for:
+${3:   ${4:connect_timeout}: ${5:"#"}}
+${6:   ${7:delay}: ${8:"#"}}
+${9:   ${10:exclude_hosts}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:port}: ${20:"#"}}
+${21:   ${22:search_regex}: ${23:"#"}}
+${24:   ${25:sleep}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>win_wait_for</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

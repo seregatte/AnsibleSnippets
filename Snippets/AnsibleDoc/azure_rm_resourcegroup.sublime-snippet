@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# append_tags: Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# force: Remove a resource group and all associated resources. Use with state 'absent' to delete a resource group 
+# location: Azure location for the resource group. Required when creating a new resource group. Cannot be changed 
+# name: (required) Name of the resource group. 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# profile: Security profile found in ~/.azure/credentials file. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# state: Assert the state of the resource group. Use 'present' to create or update and 'absent' to delete. When 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+}- name: ${2:Name for azure_rm_resourcegroup module.}
+  azure_rm_resourcegroup:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:append_tags}: ${8:"#"}}
+${9:   ${10:client_id}: ${11:"#"}}
+${12:   ${13:cloud_environment}: ${14:"#"}}
+${15:   ${16:force}: ${17:"#"}}
+${18:   ${19:location}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:profile}: ${29:"#"}}
+${30:   ${31:secret}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:subscription_id}: ${38:"#"}}
+${39:   ${40:tags}: ${41:"#"}}
+${42:   ${43:tenant}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>azure_rm_resourcegroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

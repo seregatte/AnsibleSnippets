@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#app_token = P u s h o v e r   i s s u e d   t o k e n   i d e n t i f y i n g   y o u r   p u s h o v e r   a p p .
-#msg = W h a t   m e s s a g e   y o u   w i s h   t o   s e n d .
-#pri = M e s s a g e   p r i o r i t y   ( s e e   u ( h t t p s : / / p u s h o v e r . n e t )   f o r   d e t a i l
-#user_key = P u s h o v e r   i s s u e d   a u t h e n t i c a t i o n   k e y   f o r   y o u r   u s e r .
+${1:# app_token: (required) Pushover issued token identifying your pushover app. 
+# msg: (required) What message you wish to send. 
+# pri: Message priority (see https://pushover.net for details.) 
+# user_key: (required) Pushover issued authentication key for your user. 
 }- name: ${2:Name for pushover module.}
-${3:  become: ${4:yes}}
-  pushover: ${5:app_token=${6: } }${7:msg=${8: } }${9:pri=${10: } }${11:user_key=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  pushover:
+${3:   ${4:app_token}: ${5:"#"}}
+${6:   ${7:msg}: ${8:"#"}}
+${9:   ${10:pri}: ${11:"#"}}
+${12:   ${13:user_key}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>pushover</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

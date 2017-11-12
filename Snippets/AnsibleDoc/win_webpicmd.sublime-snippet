@@ -1,11 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:#name = Name of the package to be installed
+${1:# name: (required) Name of the package to be installed 
 }- name: ${2:Name for win_webpicmd module.}
-${3:  become: ${4:yes}}
-  win_webpicmd: ${5:name=${6: } }
-${7:  when: ${8: variable is defined}}
-${9:  with_items: ${10: array}}
+  win_webpicmd:
+${3:   ${4:name}: ${5:"#"}}
+${6:${7:   become: ${8:true}} 
+${9:   become_method: ${10:su}} 
+${11:   become_user: ${12:nobody}} 
+${13:   become_flags: ${14:"-s /bin/sh"}}} 
+${15:   when: ${16:variable is defined}} 
+${17:   with_items: ${18:array}} 
 ]]></content>
 	<tabTrigger>win_webpicmd</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

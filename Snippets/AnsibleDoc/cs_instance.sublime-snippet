@@ -1,46 +1,87 @@
 <snippet>
 <content><![CDATA[
-${1:#account = Account the instance is related to.
-#affinity_groups = Affinity groups names to be applied to the new instance.
-#api_http_method = HTTP method used.
-#api_key = API key of the CloudStack API.
-#api_region = Name of the ini section in the `cloustack.ini' file.
-#api_secret = Secret key of the CloudStack API.
-#api_timeout = HTTP timeout.
-#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
-#cpu = The number of CPUs to allocate to the instance, used with custom service offerings
-#cpu_speed = The clock speed/shares allocated to the instance, used with custom service offerings
-#disk_offering = Name of the disk offering to be used.
-#disk_size = Disk size in GByte required if deploying instance from ISO.
-#display_name = Custom display name of the instances. Display name will be set to `name' if not specified. Either `name' or
-#domain = Domain the instance is related to.
-#force = Force stop/start the instance if required to apply changes, otherwise a running instance will not be changed.
-#group = Group in where the new instance should be in.
-#hypervisor = Name the hypervisor to be used for creating the new instance. Relevant when using `state=present', but only
-#ip6_address = IPv6 address for default instance's network.
-#ip_address = IPv4 address for default instance's network during creation.
-#ip_to_networks = List of mappings in the form {'network': NetworkName, 'ip': 1.2.3.4} Mutually exclusive with `networks' option.
-#iso = Name or id of the ISO to be used for creating the new instance. Required when using `state=present'. Mutually
-#keyboard = Keyboard device type for the instance.
-#memory = The memory allocated to the instance, used with custom service offerings
-#name = Host name of the instance. `name' can only contain ASCII letters. Name will be generated (UUID) by CloudStack if
-#networks = List of networks to use for the new instance.
-#poll_async = Poll async jobs until job has finished.
-#project = Name of the project the instance to be deployed in.
-#root_disk_size = Root disk size in GByte required if deploying instance with KVM hypervisor and want resize the root disk size at
-#security_groups = List of security groups the instance to be applied to.
-#service_offering = Name or id of the service offering of the new instance. If not set, first found service offering is used.
-#ssh_key = Name of the SSH key to be deployed on the new instance.
-#state = State of the instance.
-#tags = List of tags. Tags are a list of dictionaries having keys `key' and `value'. If you want to delete all tags, set
-#template = Name or id of the template to be used for creating the new instance. Required when using `state=present'.
-#user_data = Optional data (ASCII) that can be sent to the instance upon a successful deployment. The data will be
-#zone = Name of the zone in which the instance shoud be deployed. If not set, default zone is used.
+${1:# account: Account the instance is related to. 
+# affinity_groups: Affinity groups names to be applied to the new instance. 
+# api_http_method: HTTP method used. 
+# api_key: API key of the CloudStack API. 
+# api_region: Name of the ini section in the `cloustack.ini' file. 
+# api_secret: Secret key of the CloudStack API. 
+# api_timeout: HTTP timeout. 
+# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# cpu: The number of CPUs to allocate to the instance, used with custom service offerings 
+# cpu_speed: The clock speed/shares allocated to the instance, used with custom service offerings 
+# disk_offering: Name of the disk offering to be used. 
+# disk_size: Disk size in GByte required if deploying instance from ISO. 
+# display_name: Custom display name of the instances. Display name will be set to `name' if not specified. Either `name' 
+# domain: Domain the instance is related to. 
+# force: Force stop/start the instance if required to apply changes, otherwise a running instance will not be 
+# group: Group in where the new instance should be in. 
+# hypervisor: Name the hypervisor to be used for creating the new instance. Relevant when using `state=present', but 
+# ip6_address: IPv6 address for default instance's network. 
+# ip_address: IPv4 address for default instance's network during creation. 
+# ip_to_networks: List of mappings in the form {'network': NetworkName, 'ip': 1.2.3.4} Mutually exclusive with `networks' 
+# iso: Name or id of the ISO to be used for creating the new instance. Required when using `state=present'. 
+# keyboard: Keyboard device type for the instance. 
+# memory: The memory allocated to the instance, used with custom service offerings 
+# name: Host name of the instance. `name' can only contain ASCII letters. Name will be generated (UUID) by 
+# networks: List of networks to use for the new instance. 
+# poll_async: Poll async jobs until job has finished. 
+# project: Name of the project the instance to be deployed in. 
+# root_disk_size: Root disk size in GByte required if deploying instance with KVM hypervisor and want resize the root disk 
+# security_groups: List of security groups the instance to be applied to. 
+# service_offering: Name or id of the service offering of the new instance. If not set, first found service offering is 
+# ssh_key: Name of the SSH key to be deployed on the new instance. 
+# state: State of the instance. 
+# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. If you want to delete all 
+# template: Name or id of the template to be used for creating the new instance. Required when using 
+# template_filter: Name of the filter used to search for the template or iso. Used for params `iso' or `template' on 
+# user_data: Optional data (ASCII) that can be sent to the instance upon a successful deployment. The data will be 
+# zone: Name of the zone in which the instance should be deployed. If not set, default zone is used. 
 }- name: ${2:Name for cs_instance module.}
-${3:  become: ${4:yes}}
-  cs_instance: ${5:account=${6: } }${7:affinity_groups=${8: } }${9:api_http_method=${10: } }${11:api_key=${12: } }${13:api_region=${14: } }${15:api_secret=${16: } }${17:api_timeout=${18: } }${19:api_url=${20: } }${21:cpu=${22: } }${23:cpu_speed=${24: } }${25:disk_offering=${26: } }${27:disk_size=${28: } }${29:display_name=${30: } }${31:domain=${32: } }${33:force=${34: } }${35:group=${36: } }${37:hypervisor=${38: } }${39:ip6_address=${40: } }${41:ip_address=${42: } }${43:ip_to_networks=${44: } }${45:iso=${46: } }${47:keyboard=${48: } }${49:memory=${50: } }${51:name=${52: } }${53:networks=${54: } }${55:poll_async=${56: } }${57:project=${58: } }${59:root_disk_size=${60: } }${61:security_groups=${62: } }${63:service_offering=${64: } }${65:ssh_key=${66: } }${67:state=${68: } }${69:tags=${70: } }${71:template=${72: } }${73:user_data=${74: } }${75:zone=${76: } }
-${77:  when: ${78: variable is defined}}
-${79:  with_items: ${80: array}}
+  cs_instance:
+${3:   ${4:account}: ${5:"#"}}
+${6:   ${7:affinity_groups}: ${8:"#"}}
+${9:   ${10:api_http_method}: ${11:"#"}}
+${12:   ${13:api_key}: ${14:"#"}}
+${15:   ${16:api_region}: ${17:"#"}}
+${18:   ${19:api_secret}: ${20:"#"}}
+${21:   ${22:api_timeout}: ${23:"#"}}
+${24:   ${25:api_url}: ${26:"#"}}
+${27:   ${28:cpu}: ${29:"#"}}
+${30:   ${31:cpu_speed}: ${32:"#"}}
+${33:   ${34:disk_offering}: ${35:"#"}}
+${36:   ${37:disk_size}: ${38:"#"}}
+${39:   ${40:display_name}: ${41:"#"}}
+${42:   ${43:domain}: ${44:"#"}}
+${45:   ${46:force}: ${47:"#"}}
+${48:   ${49:group}: ${50:"#"}}
+${51:   ${52:hypervisor}: ${53:"#"}}
+${54:   ${55:ip6_address}: ${56:"#"}}
+${57:   ${58:ip_address}: ${59:"#"}}
+${60:   ${61:ip_to_networks}: ${62:"#"}}
+${63:   ${64:iso}: ${65:"#"}}
+${66:   ${67:keyboard}: ${68:"#"}}
+${69:   ${70:memory}: ${71:"#"}}
+${72:   ${73:name}: ${74:"#"}}
+${75:   ${76:networks}: ${77:"#"}}
+${78:   ${79:poll_async}: ${80:"#"}}
+${81:   ${82:project}: ${83:"#"}}
+${84:   ${85:root_disk_size}: ${86:"#"}}
+${87:   ${88:security_groups}: ${89:"#"}}
+${90:   ${91:service_offering}: ${92:"#"}}
+${93:   ${94:ssh_key}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:   ${100:tags}: ${101:"#"}}
+${102:   ${103:template}: ${104:"#"}}
+${105:   ${106:template_filter}: ${107:"#"}}
+${108:   ${109:user_data}: ${110:"#"}}
+${111:   ${112:zone}: ${113:"#"}}
+${114:${115:   become: ${116:true}} 
+${117:   become_method: ${118:su}} 
+${119:   become_user: ${120:nobody}} 
+${121:   become_flags: ${122:"-s /bin/sh"}}} 
+${123:   when: ${124:variable is defined}} 
+${125:   with_items: ${126:array}} 
 ]]></content>
 	<tabTrigger>cs_instance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

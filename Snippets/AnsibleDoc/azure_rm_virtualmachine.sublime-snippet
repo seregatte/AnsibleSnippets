@@ -1,0 +1,90 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# admin_password: Password for the admin username. Not required if the os_type is Linux and SSH password authentication is 
+# admin_username: Admin username used to access the host after it is created. Required when creating a VM. 
+# allocated: Toggle that controls if the machine is allocated/deallocated, only useful with state='present'. 
+# append_tags: Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# data_disks: Describes list of data disks. 
+# image: (required) A dictionary describing the Marketplace image used to build the VM. Will contain keys: 
+# location: Valid Azure location. Defaults to location of the resource group. 
+# managed_disk_type: Managed OS disk type 
+# name: (required) Name of the virtual machine. 
+# network_interface_names: List of existing network interface names to add to the VM. If a network interface name is not provided 
+# open_ports: If a network interface is created when creating the VM, a security group will be created as well. For 
+# os_disk_caching: Type of OS disk caching. 
+# os_type: Base type of operating system. 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# profile: Security profile found in ~/.azure/credentials file. 
+# public_ip_allocation_method: If a public IP address is created when creating the VM (because a Network Interface was not provided), 
+# remove_on_absent: When removing a VM using state 'absent', also remove associated resources It can be 'all' or a list with 
+# resource_group: (required) Name of the resource group containing the virtual machine. 
+# restarted: Use with state 'present' to restart a running VM. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# short_hostname: Name assigned internally to the host. On a linux VM this is the name returned by the `hostname` command. 
+# ssh_password_enabled: When the os_type is Linux, setting ssh_password_enabled to false will disable SSH password 
+# ssh_public_keys: For os_type Linux provide a list of SSH keys. Each item in the list should be a dictionary where the 
+# started: Use with state 'present' to start the machine. Set to false to have the machine be 'stopped'. 
+# state: Assert the state of the virtual machine. State 'present' will check that the machine exists with the 
+# storage_account_name: Name of an existing storage account that supports creation of VHD blobs. If not specified for a new VM, 
+# storage_blob_name: Name fo the storage blob used to hold the VM's OS disk image. If no name is provided, defaults to the VM 
+# storage_container_name: Name of the container to use within the storage account to store VHD blobs. If no name is specified a 
+# subnet_name: When creating a virtual machine, if a network interface name is not provided, one will be created. The 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+# virtual_network_name: When creating a virtual machine, if a network interface name is not provided, one will be created. The 
+# virtual_network_resource_group: When creating a virtual machine, if a specific virtual network from another resource group should be 
+# vm_size: A valid Azure VM size value. For example, 'Standard_D4'. The list of choices varies depending on the 
+}- name: ${2:Name for azure_rm_virtualmachine module.}
+  azure_rm_virtualmachine:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:admin_password}: ${8:"#"}}
+${9:   ${10:admin_username}: ${11:"#"}}
+${12:   ${13:allocated}: ${14:"#"}}
+${15:   ${16:append_tags}: ${17:"#"}}
+${18:   ${19:client_id}: ${20:"#"}}
+${21:   ${22:cloud_environment}: ${23:"#"}}
+${24:   ${25:data_disks}: ${26:"#"}}
+${27:   ${28:image}: ${29:"#"}}
+${30:   ${31:location}: ${32:"#"}}
+${33:   ${34:managed_disk_type}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:network_interface_names}: ${41:"#"}}
+${42:   ${43:open_ports}: ${44:"#"}}
+${45:   ${46:os_disk_caching}: ${47:"#"}}
+${48:   ${49:os_type}: ${50:"#"}}
+${51:   ${52:password}: ${53:"#"}}
+${54:   ${55:profile}: ${56:"#"}}
+${57:   ${58:public_ip_allocation_method}: ${59:"#"}}
+${60:   ${61:remove_on_absent}: ${62:"#"}}
+${63:   ${64:resource_group}: ${65:"#"}}
+${66:   ${67:restarted}: ${68:"#"}}
+${69:   ${70:secret}: ${71:"#"}}
+${72:   ${73:short_hostname}: ${74:"#"}}
+${75:   ${76:ssh_password_enabled}: ${77:"#"}}
+${78:   ${79:ssh_public_keys}: ${80:"#"}}
+${81:   ${82:started}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:storage_account_name}: ${89:"#"}}
+${90:   ${91:storage_blob_name}: ${92:"#"}}
+${93:   ${94:storage_container_name}: ${95:"#"}}
+${96:   ${97:subnet_name}: ${98:"#"}}
+${99:   ${100:subscription_id}: ${101:"#"}}
+${102:   ${103:tags}: ${104:"#"}}
+${105:   ${106:tenant}: ${107:"#"}}
+${108:   ${109:virtual_network_name}: ${110:"#"}}
+${111:   ${112:virtual_network_resource_group}: ${113:"#"}}
+${114:   ${115:vm_size}: ${116:"#"}}
+${117:${118:   become: ${119:true}} 
+${120:   become_method: ${121:su}} 
+${122:   become_user: ${123:nobody}} 
+${124:   become_flags: ${125:"-s /bin/sh"}}} 
+${126:   when: ${127:variable is defined}} 
+${128:   with_items: ${129:array}} 
+]]></content>
+	<tabTrigger>azure_rm_virtualmachine</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

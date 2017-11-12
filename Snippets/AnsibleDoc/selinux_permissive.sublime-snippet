@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#domain = the domain that will be added or removed from the list of permissive domains
-#no_reload = automatically reload the policy after a change default is set to 'false' as that's what most people would want
-#permissive = indicate if the domain should or should not be set as permissive
-#store = name of the SELinux policy store to use
+${1:# domain: (required) the domain that will be added or removed from the list of permissive domains 
+# no_reload: automatically reload the policy after a change default is set to 'false' as that's what most people 
+# permissive: (required) indicate if the domain should or should not be set as permissive 
+# store: name of the SELinux policy store to use 
 }- name: ${2:Name for selinux_permissive module.}
-${3:  become: ${4:yes}}
-  selinux_permissive: ${5:domain=${6: } }${7:no_reload=${8: } }${9:permissive=${10: } }${11:store=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  selinux_permissive:
+${3:   ${4:domain}: ${5:"#"}}
+${6:   ${7:no_reload}: ${8:"#"}}
+${9:   ${10:permissive}: ${11:"#"}}
+${12:   ${13:store}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>selinux_permissive</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

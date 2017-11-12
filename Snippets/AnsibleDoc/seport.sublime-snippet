@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#ports = Ports or port ranges, separated by a comma
-#proto = Protocol for the specified port.
-#reload = Reload SELinux policy after commit.
-#setype = SELinux type for the specified port.
-#state = Desired boolean value.
+${1:# ports: (required) Ports or port ranges, separated by a comma 
+# proto: (required) Protocol for the specified port. 
+# reload: Reload SELinux policy after commit. 
+# setype: (required) SELinux type for the specified port. 
+# state: (required) Desired boolean value. 
 }- name: ${2:Name for seport module.}
-${3:  become: ${4:yes}}
-  seport: ${5:ports=${6: } }${7:proto=${8: } }${9:reload=${10: } }${11:setype=${12: } }${13:state=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  seport:
+${3:   ${4:ports}: ${5:"#"}}
+${6:   ${7:proto}: ${8:"#"}}
+${9:   ${10:reload}: ${11:"#"}}
+${12:   ${13:setype}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>seport</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

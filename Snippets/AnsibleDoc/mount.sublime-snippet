@@ -1,18 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#dump = dump (see fstab(8)), Note that if nulled, `state=present' will cease to work and duplicate entries will be made
-#fstab = file to use instead of `/etc/fstab'. You shouldn't use that option unless you really know what you are doing.
-#fstype = file-system type
-#name = path to the mount point, eg: `/mnt/files'
-#opts = mount options (see fstab(8))
-#passno = passno (see fstab(8)), Note that if nulled, `state=present' will cease to work and duplicate entries will be
-#src = device to be mounted on `name'.
-#state = If `mounted' or `unmounted', the device will be actively mounted or unmounted as needed and appropriately
+${1:# boot: Determines if the filesystem should be mounted on boot. Only applies to Solaris systems. 
+# dump: Dump (see fstab(5)). Note that if set to `null' and `state' set to `present', it will cease to work and 
+# fstab: File to use instead of `/etc/fstab'. You shouldn't use this option unless you really know what you are 
+# fstype: Filesystem type. Required when `state' is `present' or `mounted'. 
+# opts: Mount options (see fstab(5), or vfstab(4) on Solaris). 
+# passno: Passno (see fstab(5)). Note that if set to `null' and `state' set to `present', it will cease to work 
+# path: (required) Path to the mount point (e.g. `/mnt/files'). Before 2.3 this option was only usable as 
+# src: Device to be mounted on `path'. Required when `state' set to `present' or `mounted'. 
+# state: (required) If `mounted', the device will be actively mounted and appropriately configured in `fstab'. If 
 }- name: ${2:Name for mount module.}
-${3:  become: ${4:yes}}
-  mount: ${5:dump=${6: } }${7:fstab=${8: } }${9:fstype=${10: } }${11:name=${12: } }${13:opts=${14: } }${15:passno=${16: } }${17:src=${18: } }${19:state=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  mount:
+${3:   ${4:boot}: ${5:"#"}}
+${6:   ${7:dump}: ${8:"#"}}
+${9:   ${10:fstab}: ${11:"#"}}
+${12:   ${13:fstype}: ${14:"#"}}
+${15:   ${16:opts}: ${17:"#"}}
+${18:   ${19:passno}: ${20:"#"}}
+${21:   ${22:path}: ${23:"#"}}
+${24:   ${25:src}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>mount</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

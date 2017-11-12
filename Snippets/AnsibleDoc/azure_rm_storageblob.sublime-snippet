@@ -1,0 +1,64 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# append_tags: Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not 
+# blob: Name of a blob object within the container. 
+# cache_control: Set the blob cache-control header. 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# container: (required) Name of a blob container within the storage account. 
+# content_disposition: Set the blob content-disposition header. 
+# content_encoding: Set the blob encoding header. 
+# content_language: Set the blob content-language header. 
+# content_md5: Set the blob md5 hash value. 
+# content_type: Set the blob content-type header. For example, 'image/png'. 
+# dest: Destination file path. Use with state 'present' to download a blob. 
+# force: Overwrite existing blob or file when uploading or downloading. Force deletion of a container that 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# profile: Security profile found in ~/.azure/credentials file. 
+# public_access: Determine a container's level of public access. By default containers are private. Can only be set at 
+# resource_group: (required) Name of the resource group to use. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# src: Source file path. Use with state 'present' to upload a blob. 
+# state: Assert the state of a container or blob. Use state 'absent' with a container value only to delete a 
+# storage_account_name: (required) Name of the storage account to use. 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+}- name: ${2:Name for azure_rm_storageblob module.}
+  azure_rm_storageblob:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:append_tags}: ${8:"#"}}
+${9:   ${10:blob}: ${11:"#"}}
+${12:   ${13:cache_control}: ${14:"#"}}
+${15:   ${16:client_id}: ${17:"#"}}
+${18:   ${19:cloud_environment}: ${20:"#"}}
+${21:   ${22:container}: ${23:"#"}}
+${24:   ${25:content_disposition}: ${26:"#"}}
+${27:   ${28:content_encoding}: ${29:"#"}}
+${30:   ${31:content_language}: ${32:"#"}}
+${33:   ${34:content_md5}: ${35:"#"}}
+${36:   ${37:content_type}: ${38:"#"}}
+${39:   ${40:dest}: ${41:"#"}}
+${42:   ${43:force}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:profile}: ${50:"#"}}
+${51:   ${52:public_access}: ${53:"#"}}
+${54:   ${55:resource_group}: ${56:"#"}}
+${57:   ${58:secret}: ${59:"#"}}
+${60:   ${61:src}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:storage_account_name}: ${68:"#"}}
+${69:   ${70:subscription_id}: ${71:"#"}}
+${72:   ${73:tags}: ${74:"#"}}
+${75:   ${76:tenant}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
+]]></content>
+	<tabTrigger>azure_rm_storageblob</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

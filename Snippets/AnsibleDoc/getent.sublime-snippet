@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#database = the name of a getent database supported by the target system (passwd, group, hosts, etc).
-#fail_key = If a supplied key is missing this will make the task fail if True
-#key = key from which to return values from the specified database, otherwise the full contents are returned.
-#split = character used to split the database values into lists/arrays such as ':' or '  ', otherwise  it will try to
+${1:# database: (required) the name of a getent database supported by the target system (passwd, group, hosts, etc). 
+# fail_key: If a supplied key is missing this will make the task fail if True 
+# key: key from which to return values from the specified database, otherwise the full contents are returned. 
+# split: character used to split the database values into lists/arrays such as ':' or '  ', otherwise  it will 
 }- name: ${2:Name for getent module.}
-${3:  become: ${4:yes}}
-  getent: ${5:database=${6: } }${7:fail_key=${8: } }${9:key=${10: } }${11:split=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  getent:
+${3:   ${4:database}: ${5:"#"}}
+${6:   ${7:fail_key}: ${8:"#"}}
+${9:   ${10:key}: ${11:"#"}}
+${12:   ${13:split}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>getent</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

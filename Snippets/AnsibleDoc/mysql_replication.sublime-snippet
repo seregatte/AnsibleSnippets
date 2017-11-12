@@ -1,36 +1,67 @@
 <snippet>
 <content><![CDATA[
-${1:#config_file = Specify a config file from which user and password are to be read
-#login_host = Host running the database
-#login_password = The password used to authenticate with
-#login_port = Port of the MySQL server. Requires login_host be defined as other then localhost if login_port is used
-#login_unix_socket = The path to a Unix domain socket for local connections
-#login_user = The username used to authenticate with
-#master_auto_position = does the host uses GTID based replication or not
-#master_connect_retry = same as mysql variable
-#master_host = same as mysql variable
-#master_log_file = same as mysql variable
-#master_log_pos = same as mysql variable
-#master_password = same as mysql variable
-#master_port = same as mysql variable
-#master_ssl = same as mysql variable
-#master_ssl_ca = same as mysql variable
-#master_ssl_capath = same as mysql variable
-#master_ssl_cert = same as mysql variable
-#master_ssl_cipher = same as mysql variable
-#master_ssl_key = same as mysql variable
-#master_user = same as mysql variable
-#mode = module operating mode. Could be getslave (SHOW SLAVE STATUS), getmaster (SHOW MASTER STATUS), changemaster
-#relay_log_file = same as mysql variable
-#relay_log_pos = same as mysql variable
-#ssl_ca = The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same certificate as
-#ssl_cert = The path to a client public key certificate.
-#ssl_key = The path to the client private key.
+${1:# config_file: Specify a config file from which user and password are to be read. 
+# connect_timeout: The connection timeout when connecting to the MySQL server. 
+# login_host: Host running the database. 
+# login_password: The password used to authenticate with. 
+# login_port: Port of the MySQL server. Requires `login_host' be defined as other then localhost if login_port is 
+# login_unix_socket: The path to a Unix domain socket for local connections. 
+# login_user: The username used to authenticate with. 
+# master_auto_position: does the host uses GTID based replication or not 
+# master_connect_retry: same as mysql variable 
+# master_host: same as mysql variable 
+# master_log_file: same as mysql variable 
+# master_log_pos: same as mysql variable 
+# master_password: same as mysql variable 
+# master_port: same as mysql variable 
+# master_ssl: same as mysql variable 
+# master_ssl_ca: same as mysql variable 
+# master_ssl_capath: same as mysql variable 
+# master_ssl_cert: same as mysql variable 
+# master_ssl_cipher: same as mysql variable 
+# master_ssl_key: same as mysql variable 
+# master_user: same as mysql variable 
+# mode: module operating mode. Could be getslave (SHOW SLAVE STATUS), getmaster (SHOW MASTER STATUS), 
+# relay_log_file: same as mysql variable 
+# relay_log_pos: same as mysql variable 
+# ssl_ca: The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same 
+# ssl_cert: The path to a client public key certificate. 
+# ssl_key: The path to the client private key. 
 }- name: ${2:Name for mysql_replication module.}
-${3:  become: ${4:yes}}
-  mysql_replication: ${5:config_file=${6: } }${7:login_host=${8: } }${9:login_password=${10: } }${11:login_port=${12: } }${13:login_unix_socket=${14: } }${15:login_user=${16: } }${17:master_auto_position=${18: } }${19:master_connect_retry=${20: } }${21:master_host=${22: } }${23:master_log_file=${24: } }${25:master_log_pos=${26: } }${27:master_password=${28: } }${29:master_port=${30: } }${31:master_ssl=${32: } }${33:master_ssl_ca=${34: } }${35:master_ssl_capath=${36: } }${37:master_ssl_cert=${38: } }${39:master_ssl_cipher=${40: } }${41:master_ssl_key=${42: } }${43:master_user=${44: } }${45:mode=${46: } }${47:relay_log_file=${48: } }${49:relay_log_pos=${50: } }${51:ssl_ca=${52: } }${53:ssl_cert=${54: } }${55:ssl_key=${56: } }
-${57:  when: ${58: variable is defined}}
-${59:  with_items: ${60: array}}
+  mysql_replication:
+${3:   ${4:config_file}: ${5:"#"}}
+${6:   ${7:connect_timeout}: ${8:"#"}}
+${9:   ${10:login_host}: ${11:"#"}}
+${12:   ${13:login_password}: ${14:"#"}}
+${15:   ${16:login_port}: ${17:"#"}}
+${18:   ${19:login_unix_socket}: ${20:"#"}}
+${21:   ${22:login_user}: ${23:"#"}}
+${24:   ${25:master_auto_position}: ${26:"#"}}
+${27:   ${28:master_connect_retry}: ${29:"#"}}
+${30:   ${31:master_host}: ${32:"#"}}
+${33:   ${34:master_log_file}: ${35:"#"}}
+${36:   ${37:master_log_pos}: ${38:"#"}}
+${39:   ${40:master_password}: ${41:"#"}}
+${42:   ${43:master_port}: ${44:"#"}}
+${45:   ${46:master_ssl}: ${47:"#"}}
+${48:   ${49:master_ssl_ca}: ${50:"#"}}
+${51:   ${52:master_ssl_capath}: ${53:"#"}}
+${54:   ${55:master_ssl_cert}: ${56:"#"}}
+${57:   ${58:master_ssl_cipher}: ${59:"#"}}
+${60:   ${61:master_ssl_key}: ${62:"#"}}
+${63:   ${64:master_user}: ${65:"#"}}
+${66:   ${67:mode}: ${68:"#"}}
+${69:   ${70:relay_log_file}: ${71:"#"}}
+${72:   ${73:relay_log_pos}: ${74:"#"}}
+${75:   ${76:ssl_ca}: ${77:"#"}}
+${78:   ${79:ssl_cert}: ${80:"#"}}
+${81:   ${82:ssl_key}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>mysql_replication</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

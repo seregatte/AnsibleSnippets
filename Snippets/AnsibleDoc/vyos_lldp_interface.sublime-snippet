@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of interfaces LLDP should be configured on. 
+# name: Name of the interface LLDP should be configured on. 
+# state: State of the LLDP configuration. 
+}- name: ${2:Name for vyos_lldp_interface module.}
+  vyos_lldp_interface:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>vyos_lldp_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

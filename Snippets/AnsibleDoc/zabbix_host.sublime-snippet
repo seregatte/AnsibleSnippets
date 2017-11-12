@@ -1,23 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:#force = Overwrite the host configuration, even if already present
-#host_groups = List of host groups the host is part of.
-#host_name = Name of the host in Zabbix. host_name is the unique identifier used and cannot be updated using this module.
-#interfaces = List of interfaces to be created for the host (see example below). Available values are: dns, ip, main, port,
-# = host_interface
-#link_templates = List of templates linked to the host.
-#login_password = Zabbix user password.
-#login_user = Zabbix user name, used to authenticate against the server.
-#proxy = The name of the Zabbix Proxy to be used
-#server_url = Url of Zabbix server, with protocol (http or https).
-#state = State of the host. On `present', it will create if host does not exist or update the host if the associated data
-#status = Monitoring status of the host.
-#timeout = The timeout of API request (seconds).
+${1:# force: Overwrite the host configuration, even if already present 
+# host_groups: List of host groups the host is part of. 
+# host_name: (required) Name of the host in Zabbix. host_name is the unique identifier used and cannot be updated 
+# http_login_password: Basic Auth password 
+# http_login_user: Basic Auth login 
+# interfaces: List of interfaces to be created for the host (see example below). Available values are: dns, ip, main, 
+# ion: host_interface 
+# inventory_mode: Configure the inventory mode. 
+# link_templates: List of templates linked to the host. 
+# login_password: (required) Zabbix user password. 
+# login_user: (required) Zabbix user name, used to authenticate against the server. 
+# proxy: The name of the Zabbix Proxy to be used 
+# server_url: (required) Url of Zabbix server, with protocol (http or https). 
+# state: State of the host. On `present', it will create if host does not exist or update the host if the 
+# status: Monitoring status of the host. 
+# timeout: The timeout of API request (seconds). 
+# visible_name: Visible name of the host in Zabbix. 
 }- name: ${2:Name for zabbix_host module.}
-${3:  become: ${4:yes}}
-  zabbix_host: ${5:force=${6: } }${7:host_groups=${8: } }${9:host_name=${10: } }${11:interfaces=${12: } }${13:=${14: } }${15:link_templates=${16: } }${17:login_password=${18: } }${19:login_user=${20: } }${21:proxy=${22: } }${23:server_url=${24: } }${25:state=${26: } }${27:status=${28: } }${29:timeout=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  zabbix_host:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:host_groups}: ${8:"#"}}
+${9:   ${10:host_name}: ${11:"#"}}
+${12:   ${13:http_login_password}: ${14:"#"}}
+${15:   ${16:http_login_user}: ${17:"#"}}
+${18:   ${19:interfaces}: ${20:"#"}}
+${21:   ${22:ion}: ${23:"#"}}
+${24:   ${25:inventory_mode}: ${26:"#"}}
+${27:   ${28:link_templates}: ${29:"#"}}
+${30:   ${31:login_password}: ${32:"#"}}
+${33:   ${34:login_user}: ${35:"#"}}
+${36:   ${37:proxy}: ${38:"#"}}
+${39:   ${40:server_url}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:status}: ${47:"#"}}
+${48:   ${49:timeout}: ${50:"#"}}
+${51:   ${52:visible_name}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>zabbix_host</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

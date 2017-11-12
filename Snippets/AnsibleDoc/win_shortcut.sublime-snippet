@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# args: Additional arguments for the executable defined in `src'. 
+# description: Description for the shortcut. This is usually shown when hoovering the icon. 
+# dest: (required) Destination file for the shortcuting file. File name should have a `.lnk' or `.url' 
+# directory: Working directory for executable defined in `src'. 
+# hotkey: Key combination for the shortcut. 
+# icon: Icon used for the shortcut. File name should have a `.ico' extension. The file name is followed by a 
+# src: Executable or URL the shortcut points to. The executable needs to be in your PATH, or has to be an 
+# state: When `present', creates or updates the shortcut.  When `absent', removes the shortcut if it exists. 
+# windowstyle: Influences how the application is displayed when it is launched. 
+}- name: ${2:Name for win_shortcut module.}
+  win_shortcut:
+${3:   ${4:args}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:dest}: ${11:"#"}}
+${12:   ${13:directory}: ${14:"#"}}
+${15:   ${16:hotkey}: ${17:"#"}}
+${18:   ${19:icon}: ${20:"#"}}
+${21:   ${22:src}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:windowstyle}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>win_shortcut</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

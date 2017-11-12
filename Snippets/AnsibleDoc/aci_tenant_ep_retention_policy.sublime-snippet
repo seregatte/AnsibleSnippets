@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# bounce_age: Bounce Entry Aging Interval (range 150secs - 65535secs) 0 is used for infinite. 
+# bounce_trigger: Determines if the bounce entries are installed by RARP Flood or COOP Protocol. The APIC defaults new End 
+# description: Description for the End point rentention policy. 
+# epr_policy: The name of the end point retention policy. 
+# hold_interval: Hold Interval (range 5secs - 65535secs). 
+# hostname: (required) IP Address or hostname of APIC resolvable by Ansible control host. 
+# local_ep_interval: Local end point Aging Interval (range 120secs - 65535secs). 0 is used for infinite. 
+# move_frequency: Move frequency per second (range 0secs - 65535secs). 0 is used for none. 
+# password: (required) The password to use for authentication. 
+# remote_ep_interval: Remote end point Aging Interval (range 120secs - 65535secs). O is used for infinite. 
+# state: Use `present' or `absent' for adding or removing. Use `query' for listing an object or multiple objects. 
+# tenant: The name of an existing tenant. 
+# timeout: The socket level timeout in seconds. 
+# use_proxy: If `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
+# use_ssl: If `no', an HTTP connection will be used instead of the default HTTPS connection. 
+# username: (required) The username to use for authentication. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only set to `no' used on personally 
+}- name: ${2:Name for aci_tenant_ep_retention_policy module.}
+  aci_tenant_ep_retention_policy:
+${3:   ${4:bounce_age}: ${5:"#"}}
+${6:   ${7:bounce_trigger}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:epr_policy}: ${14:"#"}}
+${15:   ${16:hold_interval}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:local_ep_interval}: ${23:"#"}}
+${24:   ${25:move_frequency}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:remote_ep_interval}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:tenant}: ${38:"#"}}
+${39:   ${40:timeout}: ${41:"#"}}
+${42:   ${43:use_proxy}: ${44:"#"}}
+${45:   ${46:use_ssl}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>aci_tenant_ep_retention_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

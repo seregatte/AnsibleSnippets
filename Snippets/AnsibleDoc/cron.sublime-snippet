@@ -1,24 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:#backup = If set, create a backup of the crontab before it is modified. The location of the backup is returned in the
-#cron_file = If specified, uses this file in cron.d instead of an individual user's crontab. To use the `cron_file' parameter
-#day = Day of the month the job should run ( 1-31, *, */2, etc )
-#disabled = If the job should be disabled (commented out) in the crontab. Only has effect if state=present
-#hour = Hour when the job should run ( 0-23, *, */2, etc )
-#job = The command to execute. Required if state=present.
-#minute = Minute when the job should run ( 0-59, *, */2, etc )
-#month = Month of the year the job should run ( 1-12, *, */2, etc )
-#name = Description of a crontab entry.
-#reboot = If the job should be run at reboot. This option is deprecated. Users should use special_time.
-#special_time = Special time specification nickname.
-#state = Whether to ensure the job is present or absent.
-#user = The specific user whose crontab should be modified.
-#weekday = Day of the week that the job should run ( 0-6 for Sunday-Saturday, *, etc )
+${1:# backup: If set, create a backup of the crontab before it is modified. The location of the backup is returned in 
+# cron_file: If specified, uses this file instead of an individual user's crontab. If this is a relative path, it is 
+# day: Day of the month the job should run ( 1-31, *, */2, etc ) 
+# disabled: If the job should be disabled (commented out) in the crontab. Only has effect if state=present 
+# env: If set, manages a crontab's environment variable. New variables are added on top of crontab. "name" and 
+# hour: Hour when the job should run ( 0-23, *, */2, etc ) 
+# insertafter: Used with `state=present' and `env'. If specified, the environment variable will be inserted after the 
+# insertbefore: Used with `state=present' and `env'. If specified, the environment variable will be inserted before the 
+# job: The command to execute or, if env is set, the value of environment variable. The command should not 
+# minute: Minute when the job should run ( 0-59, *, */2, etc ) 
+# month: Month of the year the job should run ( 1-12, *, */2, etc ) 
+# name: Description of a crontab entry or, if env is set, the name of environment variable. Required if 
+# reboot: If the job should be run at reboot. This option is deprecated. Users should use special_time. 
+# special_time: Special time specification nickname. 
+# state: Whether to ensure the job or environment variable is present or absent. 
+# user: The specific user whose crontab should be modified. 
+# weekday: Day of the week that the job should run ( 0-6 for Sunday-Saturday, *, etc ) 
 }- name: ${2:Name for cron module.}
-${3:  become: ${4:yes}}
-  cron: ${5:backup=${6: } }${7:cron_file=${8: } }${9:day=${10: } }${11:disabled=${12: } }${13:hour=${14: } }${15:job=${16: } }${17:minute=${18: } }${19:month=${20: } }${21:name=${22: } }${23:reboot=${24: } }${25:special_time=${26: } }${27:state=${28: } }${29:user=${30: } }${31:weekday=${32: } }
-${33:  when: ${34: variable is defined}}
-${35:  with_items: ${36: array}}
+  cron:
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:cron_file}: ${8:"#"}}
+${9:   ${10:day}: ${11:"#"}}
+${12:   ${13:disabled}: ${14:"#"}}
+${15:   ${16:env}: ${17:"#"}}
+${18:   ${19:hour}: ${20:"#"}}
+${21:   ${22:insertafter}: ${23:"#"}}
+${24:   ${25:insertbefore}: ${26:"#"}}
+${27:   ${28:job}: ${29:"#"}}
+${30:   ${31:minute}: ${32:"#"}}
+${33:   ${34:month}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:reboot}: ${41:"#"}}
+${42:   ${43:special_time}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:user}: ${50:"#"}}
+${51:   ${52:weekday}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>cron</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

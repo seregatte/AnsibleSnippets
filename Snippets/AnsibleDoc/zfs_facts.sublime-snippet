@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# depth: Specifiies recurion depth. 
+# name: (required) ZFS dataset name. 
+# parsable: Specifies if property values should be displayed in machine friendly format. 
+# properties: Specifies which dataset properties should be queried in comma-separated format. For more information 
+# recurse: Specifies if properties for any children should be recursively displayed. 
+# type: Specifies which datasets types to display. Multiple values have to be provided in comma-separated form. 
+}- name: ${2:Name for zfs_facts module.}
+  zfs_facts:
+${3:   ${4:depth}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:parsable}: ${11:"#"}}
+${12:   ${13:properties}: ${14:"#"}}
+${15:   ${16:recurse}: ${17:"#"}}
+${18:   ${19:type}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>zfs_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

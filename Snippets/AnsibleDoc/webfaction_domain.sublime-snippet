@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#login_name = The webfaction account to use
-#login_password = The webfaction password to use
-#name = The name of the domain
-#state = Whether the domain should exist
-#subdomains = Any subdomains to create.
+${1:# login_name: (required) The webfaction account to use 
+# login_password: (required) The webfaction password to use 
+# name: (required) The name of the domain 
+# state: Whether the domain should exist 
+# subdomains: Any subdomains to create. 
 }- name: ${2:Name for webfaction_domain module.}
-${3:  become: ${4:yes}}
-  webfaction_domain: ${5:login_name=${6: } }${7:login_password=${8: } }${9:name=${10: } }${11:state=${12: } }${13:subdomains=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  webfaction_domain:
+${3:   ${4:login_name}: ${5:"#"}}
+${6:   ${7:login_password}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:subdomains}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>webfaction_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

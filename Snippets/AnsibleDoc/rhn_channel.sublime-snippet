@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#name = name of the software channel
-#password = the user's password
-#state = whether the channel should be present or not
-#sysname = name of the system as it is known in RHN/Satellite
-#url = The full url to the RHN/Satellite api
-#user = RHN/Satellite user
+${1:# name: (required) Name of the software channel. 
+# password: (required) RHN/Satellite password 
+# state: Whether the channel should be present or not, taking action if the state is different from what is 
+# sysname: (required) Name of the system as it is known in RHN/Satellite. 
+# url: (required) The full URL to the RHN/Satellite API. 
+# user: (required) RHN/Satellite login 
 }- name: ${2:Name for rhn_channel module.}
-${3:  become: ${4:yes}}
-  rhn_channel: ${5:name=${6: } }${7:password=${8: } }${9:state=${10: } }${11:sysname=${12: } }${13:url=${14: } }${15:user=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  rhn_channel:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:sysname}: ${14:"#"}}
+${15:   ${16:url}: ${17:"#"}}
+${18:   ${19:user}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>rhn_channel</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

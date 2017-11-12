@@ -1,18 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#from_path = The local directory from where to install
-#installdeps = Only install dependencies
-#locallib = Specify the install base to install modules
-#mirror = Specifies the base URL for the CPAN mirror to use
-#mirror_only = Use the mirror's index file instead of the CPAN Meta DB
-#name = The name of the Perl library to install. You may use the "full distribution path", e.g.
-#notest = Do not run unit tests
-#system_lib = Use this if you want to install modules to the system perl include path. You must be root or have "passwordless"
+${1:# executable: Override the path to the cpanm executable 
+# from_path: The local directory from where to install 
+# installdeps: Only install dependencies 
+# locallib: Specify the install base to install modules 
+# mirror: Specifies the base URL for the CPAN mirror to use 
+# mirror_only: Use the mirror's index file instead of the CPAN Meta DB 
+# name: The name of the Perl library to install. You may use the "full distribution path", e.g. 
+# notest: Do not run unit tests 
+# system_lib: Use this if you want to install modules to the system perl include path. You must be root or have 
+# version: minimum version of perl module to consider acceptable 
 }- name: ${2:Name for cpanm module.}
-${3:  become: ${4:yes}}
-  cpanm: ${5:from_path=${6: } }${7:installdeps=${8: } }${9:locallib=${10: } }${11:mirror=${12: } }${13:mirror_only=${14: } }${15:name=${16: } }${17:notest=${18: } }${19:system_lib=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  cpanm:
+${3:   ${4:executable}: ${5:"#"}}
+${6:   ${7:from_path}: ${8:"#"}}
+${9:   ${10:installdeps}: ${11:"#"}}
+${12:   ${13:locallib}: ${14:"#"}}
+${15:   ${16:mirror}: ${17:"#"}}
+${18:   ${19:mirror_only}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:notest}: ${26:"#"}}
+${27:   ${28:system_lib}: ${29:"#"}}
+${30:   ${31:version}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>cpanm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,18 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#host_name = Name of the host.
-#login_password = Zabbix user password.
-#login_user = Zabbix user name.
-#macro_name = Name of the host macro.
-#macro_value = Value of the host macro.
-#server_url = Url of Zabbix server, with protocol (http or https).
-#state = State of the macro. On `present', it will create if macro does not exist or update the macro if the associated
-#timeout = The timeout of API request (seconds).
+${1:# host_name: (required) Name of the host. 
+# http_login_password: Basic Auth password 
+# http_login_user: Basic Auth login 
+# login_password: (required) Zabbix user password. 
+# login_user: (required) Zabbix user name. 
+# macro_name: (required) Name of the host macro. 
+# macro_value: (required) Value of the host macro. 
+# server_url: (required) Url of Zabbix server, with protocol (http or https). 
+# state: State of the macro. On `present', it will create if macro does not exist or update the macro if the 
+# timeout: The timeout of API request (seconds). 
 }- name: ${2:Name for zabbix_hostmacro module.}
-${3:  become: ${4:yes}}
-  zabbix_hostmacro: ${5:host_name=${6: } }${7:login_password=${8: } }${9:login_user=${10: } }${11:macro_name=${12: } }${13:macro_value=${14: } }${15:server_url=${16: } }${17:state=${18: } }${19:timeout=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  zabbix_hostmacro:
+${3:   ${4:host_name}: ${5:"#"}}
+${6:   ${7:http_login_password}: ${8:"#"}}
+${9:   ${10:http_login_user}: ${11:"#"}}
+${12:   ${13:login_password}: ${14:"#"}}
+${15:   ${16:login_user}: ${17:"#"}}
+${18:   ${19:macro_name}: ${20:"#"}}
+${21:   ${22:macro_value}: ${23:"#"}}
+${24:   ${25:server_url}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>zabbix_hostmacro</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

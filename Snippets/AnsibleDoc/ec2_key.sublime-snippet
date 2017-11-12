@@ -1,23 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#key_material = Public key material.
-#name = Name of the key pair.
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = create or delete keypair
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
-#wait = Wait for the specified action to complete before returning.
-#wait_timeout = How long before wait gives up, in seconds
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# force: Force overwrite of already existing key pair if key has changed. 
+# key_material: Public key material. 
+# name: (required) Name of the key pair. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: create or delete keypair 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# wait: Wait for the specified action to complete before returning. 
+# wait_timeout: How long before wait gives up, in seconds 
 }- name: ${2:Name for ec2_key module.}
-${3:  become: ${4:yes}}
-  ec2_key: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:key_material=${12: } }${13:name=${14: } }${15:profile=${16: } }${17:region=${18: } }${19:http=${20: } }${21:security_token=${22: } }${23:state=${24: } }${25:validate_certs=${26: } }${27:wait=${28: } }${29:wait_timeout=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  ec2_key:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:key_material}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:http}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:wait}: ${41:"#"}}
+${42:   ${43:wait_timeout}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>ec2_key</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

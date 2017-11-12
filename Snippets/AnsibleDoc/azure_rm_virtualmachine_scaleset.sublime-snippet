@@ -1,0 +1,74 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# admin_password: Password for the admin username. Not required if the os_type is Linux and SSH password authentication is 
+# admin_username: Admin username used to access the host after it is created. Required when creating a VM. 
+# append_tags: Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not 
+# capacity: (required) Capacity of VMSS 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# data_disks: Describes list of data disks. 
+# image: (required) A dictionary describing the Marketplace image used to build the VM. Will contain keys: 
+# location: Valid Azure location. Defaults to location of the resource group. 
+# managed_disk_type: Managed disk type 
+# name: (required) Name of the virtual machine. 
+# os_disk_caching: Type of OS disk caching. 
+# os_type: Base type of operating system. 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# profile: Security profile found in ~/.azure/credentials file. 
+# remove_on_absent: When removing a VM using state 'absent', also remove associated resources It can be 'all' or a list with 
+# resource_group: (required) Name of the resource group containing the virtual machine scale set. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# ssh_password_enabled: When the os_type is Linux, setting ssh_password_enabled to false will disable SSH password 
+# ssh_public_keys: For os_type Linux provide a list of SSH keys. Each item in the list should be a dictionary where the 
+# state: Assert the state of the virtual machine scale set. State 'present' will check that the machine exists 
+# subnet_name: Subnet name 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+# tier: SKU Tier 
+# upgrade_policy: Upgrade policy 
+# virtual_network_name: Virtual Network name 
+# vm_size: (required) A valid Azure VM size value. For example, 'Standard_D4'. The list of choices varies depending 
+}- name: ${2:Name for azure_rm_virtualmachine_scaleset module.}
+  azure_rm_virtualmachine_scaleset:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:admin_password}: ${8:"#"}}
+${9:   ${10:admin_username}: ${11:"#"}}
+${12:   ${13:append_tags}: ${14:"#"}}
+${15:   ${16:capacity}: ${17:"#"}}
+${18:   ${19:client_id}: ${20:"#"}}
+${21:   ${22:cloud_environment}: ${23:"#"}}
+${24:   ${25:data_disks}: ${26:"#"}}
+${27:   ${28:image}: ${29:"#"}}
+${30:   ${31:location}: ${32:"#"}}
+${33:   ${34:managed_disk_type}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:os_disk_caching}: ${41:"#"}}
+${42:   ${43:os_type}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:profile}: ${50:"#"}}
+${51:   ${52:remove_on_absent}: ${53:"#"}}
+${54:   ${55:resource_group}: ${56:"#"}}
+${57:   ${58:secret}: ${59:"#"}}
+${60:   ${61:ssh_password_enabled}: ${62:"#"}}
+${63:   ${64:ssh_public_keys}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:subnet_name}: ${71:"#"}}
+${72:   ${73:subscription_id}: ${74:"#"}}
+${75:   ${76:tags}: ${77:"#"}}
+${78:   ${79:tenant}: ${80:"#"}}
+${81:   ${82:tier}: ${83:"#"}}
+${84:   ${85:upgrade_policy}: ${86:"#"}}
+${87:   ${88:virtual_network_name}: ${89:"#"}}
+${90:   ${91:vm_size}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
+]]></content>
+	<tabTrigger>azure_rm_virtualmachine_scaleset</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

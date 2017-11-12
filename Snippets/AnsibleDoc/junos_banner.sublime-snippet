@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# active: Specifies whether or not the configuration is active or deactivated 
+# banner: (required) Specifies which banner that should be configured on the remote device. Value `login' 
+# state: Specifies whether or not the configuration is present in the current devices active running 
+# text: The banner text that should be present in the remote device running configuration.  This argument 
+}- name: ${2:Name for junos_banner module.}
+  junos_banner:
+${3:   ${4:active}: ${5:"#"}}
+${6:   ${7:banner}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:text}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>junos_banner</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

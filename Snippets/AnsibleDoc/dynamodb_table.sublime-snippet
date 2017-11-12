@@ -1,26 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#hash_key_name = Name of the hash key. Required when `state=present'.
-#hash_key_type = Type of the hash key.
-#name = Name of the table.
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#range_key_name = Name of the range key.
-#range_key_type = Type of the range key.
-#read_capacity = Read throughput capacity (units) to provision.
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = Create or delete the table
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
-#write_capacity = Write throughput capacity (units) to provision.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# hash_key_name: Name of the hash key. Required when `state=present'. 
+# hash_key_type: Type of the hash key. 
+# indexes: list of dictionaries describing indexes to add to the table. global indexes can be updated. local 
+# name: (required) Name of the table. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# range_key_name: Name of the range key. 
+# range_key_type: Type of the range key. 
+# read_capacity: Read throughput capacity (units) to provision. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: Create or delete the table 
+# tags: a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# wait_for_active_timeout: how long before wait gives up, in seconds. only used when tags is set 
+# write_capacity: Write throughput capacity (units) to provision. 
 }- name: ${2:Name for dynamodb_table module.}
-${3:  become: ${4:yes}}
-  dynamodb_table: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:ec2_url=${10: } }${11:hash_key_name=${12: } }${13:hash_key_type=${14: } }${15:name=${16: } }${17:profile=${18: } }${19:range_key_name=${20: } }${21:range_key_type=${22: } }${23:read_capacity=${24: } }${25:region=${26: } }${27:http=${28: } }${29:security_token=${30: } }${31:state=${32: } }${33:validate_certs=${34: } }${35:write_capacity=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  dynamodb_table:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:hash_key_name}: ${14:"#"}}
+${15:   ${16:hash_key_type}: ${17:"#"}}
+${18:   ${19:indexes}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:range_key_name}: ${29:"#"}}
+${30:   ${31:range_key_type}: ${32:"#"}}
+${33:   ${34:read_capacity}: ${35:"#"}}
+${36:   ${37:region}: ${38:"#"}}
+${39:   ${40:http}: ${41:"#"}}
+${42:   ${43:security_token}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:tags}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:   ${55:wait_for_active_timeout}: ${56:"#"}}
+${57:   ${58:write_capacity}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>dynamodb_table</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

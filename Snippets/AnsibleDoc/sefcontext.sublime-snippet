@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# ftype: File type. 
+# reload: Reload SELinux policy after commit. 
+# selevel: SELinux range for the specified target. 
+# setype: (required) SELinux type for the specified target. 
+# seuser: SELinux user for the specified target. 
+# state: Desired boolean value. 
+# target: (required) Target path (expression). 
+}- name: ${2:Name for sefcontext module.}
+  sefcontext:
+${3:   ${4:ftype}: ${5:"#"}}
+${6:   ${7:reload}: ${8:"#"}}
+${9:   ${10:selevel}: ${11:"#"}}
+${12:   ${13:setype}: ${14:"#"}}
+${15:   ${16:seuser}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:target}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>sefcontext</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

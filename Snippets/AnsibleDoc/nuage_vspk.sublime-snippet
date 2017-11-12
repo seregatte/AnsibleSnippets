@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dict with the authentication information required to connect to a Nuage VSP environment. 
+# children: Can be used to specify a set of child entities. A mandatory property of each child is the `type'. 
+# command: Specifies a command to be executed. With `command=find', if `parent_id' and `parent_type' are defined, 
+# id: The ID of the entity you want to work on. In combination with `command=find', it will only return the 
+# match_filter: A filter used when looking (both in `command' and `state' for entities, in the format the Nuage VSP API 
+# parent_id: The ID of the parent of the entity you want to work on. When `state' is specified, the entity will be 
+# parent_type: The type of parent the ID is specified for (example Enterprise). This should match the objects CamelCase 
+# properties: Properties are the key, value pairs of the different properties an entity has. If no `id' and no 
+# state: Specifies the desired state of the entity. If `state=present', in case the entity already exists, will 
+# type: (required) The type of entity you want to work on (example Enterprise). This should match the objects 
+}- name: ${2:Name for nuage_vspk module.}
+  nuage_vspk:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:children}: ${8:"#"}}
+${9:   ${10:command}: ${11:"#"}}
+${12:   ${13:id}: ${14:"#"}}
+${15:   ${16:match_filter}: ${17:"#"}}
+${18:   ${19:parent_id}: ${20:"#"}}
+${21:   ${22:parent_type}: ${23:"#"}}
+${24:   ${25:properties}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:type}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>nuage_vspk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# admin_auth_configuration: Adminauthconfiguration settings for systemconfiguration. 
+# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# dns_configuration: Dnsconfiguration settings for systemconfiguration. 
+# dns_virtualservice_refs: Dns virtualservices hosting fqdn records for applications across avi vantage. If no virtualservices are 
+# docker_mode: Boolean flag to set docker_mode. Default value when not specified in API or module is interpreted by Avi 
+# email_configuration: Emailconfiguration settings for systemconfiguration. 
+# global_tenant_config: Tenantconfiguration settings for systemconfiguration. 
+# linux_configuration: Linuxconfiguration settings for systemconfiguration. 
+# mgmt_ip_access_control: Configure ip access control for controller to restrict open access. 
+# ntp_configuration: Ntpconfiguration settings for systemconfiguration. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# portal_configuration: Portalconfiguration settings for systemconfiguration. 
+# proxy_configuration: Proxyconfiguration settings for systemconfiguration. 
+# snmp_configuration: Snmpconfiguration settings for systemconfiguration. 
+# ssh_ciphers: Allowed ciphers list for ssh to the management interface on the controller and service engines. If this 
+# ssh_hmacs: Allowed hmac list for ssh to the management interface on the controller and service engines. If this is 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Unique object identifier of the object. 
+}- name: ${2:Name for avi_systemconfiguration module.}
+  avi_systemconfiguration:
+${3:   ${4:admin_auth_configuration}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:controller}: ${11:"#"}}
+${12:   ${13:dns_configuration}: ${14:"#"}}
+${15:   ${16:dns_virtualservice_refs}: ${17:"#"}}
+${18:   ${19:docker_mode}: ${20:"#"}}
+${21:   ${22:email_configuration}: ${23:"#"}}
+${24:   ${25:global_tenant_config}: ${26:"#"}}
+${27:   ${28:linux_configuration}: ${29:"#"}}
+${30:   ${31:mgmt_ip_access_control}: ${32:"#"}}
+${33:   ${34:ntp_configuration}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:portal_configuration}: ${41:"#"}}
+${42:   ${43:proxy_configuration}: ${44:"#"}}
+${45:   ${46:snmp_configuration}: ${47:"#"}}
+${48:   ${49:ssh_ciphers}: ${50:"#"}}
+${51:   ${52:ssh_hmacs}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:tenant}: ${59:"#"}}
+${60:   ${61:tenant_uuid}: ${62:"#"}}
+${63:   ${64:url}: ${65:"#"}}
+${66:   ${67:username}: ${68:"#"}}
+${69:   ${70:uuid}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>avi_systemconfiguration</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

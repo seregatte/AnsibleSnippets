@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# address: (required) Virtual address. This value cannot be modified after it is set. 
+# advertise_route: Specifies what routes of the virtual address the system advertises. When `when_any_available', 
+# arp_state: Specifies whether the system accepts ARP requests. When (disabled), specifies that the system does not 
+# auto_delete: Specifies whether the system automatically deletes the virtual address with the deletion of the last 
+# connection_limit: Specifies the number of concurrent connections that the system allows on this virtual address. 
+# icmp_echo: Specifies how the systems sends responses to (ICMP) echo requests on a per-virtual address basis for 
+# netmask: Netmask of the provided virtual address. This value cannot be modified after it is set. 
+# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
+# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
+# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
+# state: The virtual address state. If `absent', an attempt to delete the virtual address will be made. This will 
+# use_route_advertisement: Specifies whether the system uses route advertisement for this virtual address. When disabled, the 
+# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for bigip_virtual_address module.}
+  bigip_virtual_address:
+${3:   ${4:address}: ${5:"#"}}
+${6:   ${7:advertise_route}: ${8:"#"}}
+${9:   ${10:arp_state}: ${11:"#"}}
+${12:   ${13:auto_delete}: ${14:"#"}}
+${15:   ${16:connection_limit}: ${17:"#"}}
+${18:   ${19:icmp_echo}: ${20:"#"}}
+${21:   ${22:netmask}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:server}: ${29:"#"}}
+${30:   ${31:server_port}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:use_route_advertisement}: ${38:"#"}}
+${39:   ${40:user}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>bigip_virtual_address</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

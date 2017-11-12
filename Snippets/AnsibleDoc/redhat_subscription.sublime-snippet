@@ -1,20 +1,53 @@
 <snippet>
 <content><![CDATA[
-${1:#activationkey = supply an activation key for use with registration
-#autosubscribe = Upon successful registration, auto-consume available subscriptions
-#org_id = Organisation ID to use in conjunction with activationkey
-#password = Red Hat Network password
-#pool = Specify a subscription pool name to consume.  Regular expressions accepted.
-#rhsm_baseurl = Specify CDN baseurl
-#server_hostname = Specify an alternative Red Hat Network server
-#server_insecure = Allow traffic over insecure http
-#state = whether to register and subscribe (`present'), or unregister (`absent') a system
-#username = Red Hat Network username
+${1:# activationkey: supply an activation key for use with registration 
+# autosubscribe: Upon successful registration, auto-consume available subscriptions 
+# consumer_id: References an existing consumer ID to resume using a previous registration for this system. If the 
+# consumer_name: Name of the system to register, defaults to the hostname 
+# consumer_type: The type of unit to register, defaults to system 
+# environment: Register with a specific environment in the destination org. Used with Red Hat Satellite 6.x or Katello 
+# force_register: Register the system even if it is already registered 
+# org_id: Organization ID to use in conjunction with activationkey 
+# password: access.redhat.com or Sat6 password 
+# pool: Specify a subscription pool name to consume.  Regular expressions accepted. Use `pool_ids' instead if 
+# pool_ids: Specify subscription pool IDs to consume. Prefer over `pool' when possible as it is much faster. A pool 
+# rhsm_baseurl: Specify CDN baseurl 
+# server_hostname: Specify an alternative Red Hat Subscription Management or Sat6 server 
+# server_insecure: Enable or disable https server certificate verification when connecting to `server_hostname' 
+# server_proxy_hostname: Specify a HTTP proxy hostname 
+# server_proxy_password: Specify a password for HTTP proxy with basic authentication 
+# server_proxy_port: Specify a HTTP proxy port 
+# server_proxy_user: Specify a user for HTTP proxy with basic authentication 
+# state: whether to register and subscribe (`present'), or unregister (`absent') a system 
+# username: access.redhat.com or Sat6  username 
 }- name: ${2:Name for redhat_subscription module.}
-${3:  become: ${4:yes}}
-  redhat_subscription: ${5:activationkey=${6: } }${7:autosubscribe=${8: } }${9:org_id=${10: } }${11:password=${12: } }${13:pool=${14: } }${15:rhsm_baseurl=${16: } }${17:server_hostname=${18: } }${19:server_insecure=${20: } }${21:state=${22: } }${23:username=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  redhat_subscription:
+${3:   ${4:activationkey}: ${5:"#"}}
+${6:   ${7:autosubscribe}: ${8:"#"}}
+${9:   ${10:consumer_id}: ${11:"#"}}
+${12:   ${13:consumer_name}: ${14:"#"}}
+${15:   ${16:consumer_type}: ${17:"#"}}
+${18:   ${19:environment}: ${20:"#"}}
+${21:   ${22:force_register}: ${23:"#"}}
+${24:   ${25:org_id}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:pool}: ${32:"#"}}
+${33:   ${34:pool_ids}: ${35:"#"}}
+${36:   ${37:rhsm_baseurl}: ${38:"#"}}
+${39:   ${40:server_hostname}: ${41:"#"}}
+${42:   ${43:server_insecure}: ${44:"#"}}
+${45:   ${46:server_proxy_hostname}: ${47:"#"}}
+${48:   ${49:server_proxy_password}: ${50:"#"}}
+${51:   ${52:server_proxy_port}: ${53:"#"}}
+${54:   ${55:server_proxy_user}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:username}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>redhat_subscription</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

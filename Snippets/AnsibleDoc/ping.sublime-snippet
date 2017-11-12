@@ -1,10 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:}- name: ${2:Name for ping module.}
-${3:  become: ${4:yes}}
-  ping: 
-${5:  when: ${6: variable is defined}}
-${7:  with_items: ${8: array}}
+${1:# data: Data to return for the `ping' return value. If this parameter is set to `crash', the module will cause 
+}- name: ${2:Name for ping module.}
+  ping:
+${3:   ${4:data}: ${5:"#"}}
+${6:${7:   become: ${8:true}} 
+${9:   become_method: ${10:su}} 
+${11:   become_user: ${12:nobody}} 
+${13:   become_flags: ${14:"-s /bin/sh"}}} 
+${15:   when: ${16:variable is defined}} 
+${17:   with_items: ${18:array}} 
 ]]></content>
 	<tabTrigger>ping</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

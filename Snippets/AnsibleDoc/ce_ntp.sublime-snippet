@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# is_preferred: Makes given NTP server or peer the preferred NTP server or peer for the device. 
+# key_id: Authentication key identifier to use with given NTP server or peer. 
+# peer: Network address of NTP peer. 
+# server: Network address of NTP server. 
+# source_int: Local source interface from which NTP messages are sent. Must be fully qualified interface name, i.e. 
+# state: Manage the state of the resource. 
+# vpn_name: Makes the device communicate with the given NTP server or peer over a specific vpn. 
+}- name: ${2:Name for ce_ntp module.}
+  ce_ntp:
+${3:   ${4:is_preferred}: ${5:"#"}}
+${6:   ${7:key_id}: ${8:"#"}}
+${9:   ${10:peer}: ${11:"#"}}
+${12:   ${13:server}: ${14:"#"}}
+${15:   ${16:source_int}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:vpn_name}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>ce_ntp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

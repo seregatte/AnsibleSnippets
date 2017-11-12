@@ -1,15 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#datacenter_name = The name of the datacenter the cluster will be created in.
-#hostname = The hostname or IP address of the vSphere vCenter API server
-#password = The password of the vSphere vCenter
-#state = If the datacenter should be present or absent
-#username = The username of the vSphere vCenter
+${1:# datacenter_name: (required) The name of the datacenter the cluster will be created in. 
+# hostname: (required) The hostname or IP address of the vSphere vCenter API server 
+# password: (required) The password of the vSphere vCenter 
+# state: If the datacenter should be present or absent 
+# username: (required) The username of the vSphere vCenter 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
 }- name: ${2:Name for vmware_datacenter module.}
-${3:  become: ${4:yes}}
-  vmware_datacenter: ${5:datacenter_name=${6: } }${7:hostname=${8: } }${9:password=${10: } }${11:state=${12: } }${13:username=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  vmware_datacenter:
+${3:   ${4:datacenter_name}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:   ${19:validate_certs}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>vmware_datacenter</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

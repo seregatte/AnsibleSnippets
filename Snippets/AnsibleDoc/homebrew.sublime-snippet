@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#install_options = options flags to install a package
-#name = name of package to install/remove
-#path = ':' separated list of paths to search for 'brew' executable. Since A package (`formula' in homebrew parlance)
-#state = state of the package
-#update_homebrew = update homebrew itself first
-#upgrade_all = upgrade all homebrew packages
+${1:# install_options: options flags to install a package 
+# name: name of package to install/remove 
+# path: ':' separated list of paths to search for 'brew' executable. Since A package (`formula' in homebrew 
+# state: state of the package 
+# update_homebrew: update homebrew itself first 
+# upgrade_all: upgrade all homebrew packages 
 }- name: ${2:Name for homebrew module.}
-${3:  become: ${4:yes}}
-  homebrew: ${5:install_options=${6: } }${7:name=${8: } }${9:path=${10: } }${11:state=${12: } }${13:update_homebrew=${14: } }${15:upgrade_all=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  homebrew:
+${3:   ${4:install_options}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:path}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:update_homebrew}: ${17:"#"}}
+${18:   ${19:upgrade_all}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>homebrew</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# abort: Boolean. When true, perform a 'net abort' before the block. This cleans out any uncommitted changes in 
+# atomic: When true, equivalent to both `commit' and `abort' being true. Mutually exclusive with `commit' and 
+# commands: A list of strings containing the net commands to run. Mutually exclusive with `template'. 
+# commit: When true, performs a 'net commit' at the end of the block. Mutually exclusive with `atomic'. 
+# description: Commit description that will be recorded to the commit log if `commit' or `atomic' are true. 
+# template: A single, multi-line string with jinja2 formatting. This string will be broken by lines, and each line 
+}- name: ${2:Name for nclu module.}
+  nclu:
+${3:   ${4:abort}: ${5:"#"}}
+${6:   ${7:atomic}: ${8:"#"}}
+${9:   ${10:commands}: ${11:"#"}}
+${12:   ${13:commit}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:template}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>nclu</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

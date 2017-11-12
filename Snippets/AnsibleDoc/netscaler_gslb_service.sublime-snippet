@@ -1,0 +1,80 @@
+<snippet>
+<content><![CDATA[
+${1:# appflowlog: Enable logging appflow flow information. 
+# cip: In the request that is forwarded to the GSLB service, insert a header that stores the client's IP 
+# cipheader: Name for the HTTP header that stores the client's IP address. Used with the Client IP option. If client 
+# clttimeout: Idle time, in seconds, after which a client connection is terminated. Applicable if connection proxy 
+# cnameentry: Canonical name of the GSLB service. Used in CNAME-based GSLB. Minimum length = 1 
+# comment: Any comments that you might want to associate with the GSLB service. 
+# downstateflush: Flush all active transactions associated with the GSLB service when its state transitions from UP to 
+# hashid: Unique hash identifier for the GSLB service, used by hash based load balancing methods. Minimum value = 
+# healthmonitor: Monitor the health of the GSLB service. 
+# ipaddress: IP address for the GSLB service. Should represent a load balancing, content switching, or VPN virtual 
+# maxaaausers: Maximum number of SSL VPN users that can be logged on concurrently to the VPN virtual server that is 
+# maxbandwidth: Integer specifying the maximum bandwidth allowed for the service. A GSLB service whose bandwidth reaches 
+# maxclient: The maximum number of open connections that the service can support at any given time. A GSLB service 
+# monitor_bindings: Bind monitors to this gslb service 
+# monthreshold: Monitoring threshold value for the GSLB service. If the sum of the weights of the monitors that are 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# port: Port on which the load balancing entity represented by this GSLB service listens. Minimum value = 1 
+# publicip: The public IP address that a NAT device translates to the GSLB service's private IP address. Optional. 
+# publicport: The public port associated with the GSLB service's public IP address. The port is mapped to the 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# servername: Name of the server hosting the GSLB service. Minimum length = 1 
+# servicename: Name for the GSLB service. Must begin with an ASCII alphanumeric or underscore `_' character, and must 
+# contain: ', period `.', 
+# servicetype: Type of service to create. 
+# sitename: Name of the GSLB site to which the service belongs. Minimum length = 1 
+# sitepersistence: Use cookie-based site persistence. Applicable only to `HTTP' and `SSL' GSLB services. 
+# siteprefix: The site's prefix string. When the service is bound to a GSLB virtual server, a GSLB site domain is 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for netscaler_gslb_service module.}
+  netscaler_gslb_service:
+${3:   ${4:appflowlog}: ${5:"#"}}
+${6:   ${7:cip}: ${8:"#"}}
+${9:   ${10:cipheader}: ${11:"#"}}
+${12:   ${13:clttimeout}: ${14:"#"}}
+${15:   ${16:cnameentry}: ${17:"#"}}
+${18:   ${19:comment}: ${20:"#"}}
+${21:   ${22:downstateflush}: ${23:"#"}}
+${24:   ${25:hashid}: ${26:"#"}}
+${27:   ${28:healthmonitor}: ${29:"#"}}
+${30:   ${31:ipaddress}: ${32:"#"}}
+${33:   ${34:maxaaausers}: ${35:"#"}}
+${36:   ${37:maxbandwidth}: ${38:"#"}}
+${39:   ${40:maxclient}: ${41:"#"}}
+${42:   ${43:monitor_bindings}: ${44:"#"}}
+${45:   ${46:monthreshold}: ${47:"#"}}
+${48:   ${49:nitro_pass}: ${50:"#"}}
+${51:   ${52:nitro_protocol}: ${53:"#"}}
+${54:   ${55:nitro_timeout}: ${56:"#"}}
+${57:   ${58:nitro_user}: ${59:"#"}}
+${60:   ${61:nsip}: ${62:"#"}}
+${63:   ${64:port}: ${65:"#"}}
+${66:   ${67:publicip}: ${68:"#"}}
+${69:   ${70:publicport}: ${71:"#"}}
+${72:   ${73:save_config}: ${74:"#"}}
+${75:   ${76:servername}: ${77:"#"}}
+${78:   ${79:servicename}: ${80:"#"}}
+${81:   ${82:contain}: ${83:"#"}}
+${84:   ${85:servicetype}: ${86:"#"}}
+${87:   ${88:sitename}: ${89:"#"}}
+${90:   ${91:sitepersistence}: ${92:"#"}}
+${93:   ${94:siteprefix}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:   ${100:validate_certs}: ${101:"#"}}
+${102:${103:   become: ${104:true}} 
+${105:   become_method: ${106:su}} 
+${107:   become_user: ${108:nobody}} 
+${109:   become_flags: ${110:"-s /bin/sh"}}} 
+${111:   when: ${112:variable is defined}} 
+${113:   with_items: ${114:array}} 
+]]></content>
+	<tabTrigger>netscaler_gslb_service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

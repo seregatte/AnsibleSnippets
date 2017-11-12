@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# ack_deadline: Subfield of subscription. Not required. Default deadline for subscriptions to ACK the message before it 
+# name: Subfield of subscription. Required if subscription is specified. See examples. 
+# publish: List of dictionaries describing messages and attributes to be published.  Dictionary is in 
+# pull: Subfield of subscription. Not required. If specified, messages will be retrieved from topic via the 
+# push_endpoint: Subfield of subscription.  Not required.  If specified, message will be sent to an endpoint. See 
+# https: push_endpoints for more 
+# state: State of the topic or queue (absent, present). Applies to the most granular resource. Remove the most 
+# subscription: Dictionary containing a subscripton name associated with a topic (required), along with optional 
+# topic: (required) GCP pubsub topic name.  Only the name, not the full path, is required. 
+}- name: ${2:Name for gcpubsub module.}
+  gcpubsub:
+${3:   ${4:ack_deadline}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:publish}: ${11:"#"}}
+${12:   ${13:pull}: ${14:"#"}}
+${15:   ${16:push_endpoint}: ${17:"#"}}
+${18:   ${19:https}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:subscription}: ${26:"#"}}
+${27:   ${28:topic}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>gcpubsub</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

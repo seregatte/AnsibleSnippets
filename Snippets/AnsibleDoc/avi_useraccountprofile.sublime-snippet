@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# account_lock_timeout: Lock timeout period (in minutes). Default is 30 minutes. Default value when not specified in API or 
+# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# credentials_timeout_threshold: The time period after which credentials expire. Default is 180 days. Default value when not specified in 
+# max_concurrent_sessions: Maximum number of concurrent sessions allowed. There are unlimited sessions by default. Default value 
+# max_login_failure_count: Number of login attempts before lockout. Default is 3 attempts. Default value when not specified in API 
+# max_password_history_count: Maximum number of passwords to be maintained in the password history. Default is 4 passwords. Default 
+# name: (required) Name of the object. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Unique object identifier of the object. 
+}- name: ${2:Name for avi_useraccountprofile module.}
+  avi_useraccountprofile:
+${3:   ${4:account_lock_timeout}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:controller}: ${11:"#"}}
+${12:   ${13:credentials_timeout_threshold}: ${14:"#"}}
+${15:   ${16:max_concurrent_sessions}: ${17:"#"}}
+${18:   ${19:max_login_failure_count}: ${20:"#"}}
+${21:   ${22:max_password_history_count}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:tenant}: ${35:"#"}}
+${36:   ${37:tenant_uuid}: ${38:"#"}}
+${39:   ${40:url}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:   ${46:uuid}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>avi_useraccountprofile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

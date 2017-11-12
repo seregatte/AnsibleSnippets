@@ -1,0 +1,66 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_broadcast_level: Specify a broadcast level in percent. The default value is 100%. 
+# pn_clipassword: Provide login password if user is not root. 
+# pn_cliswitch: Target switch(es) to run the cli on. 
+# pn_cliusername: Provide login username if user is not root. 
+# pn_description: Specify a description for the trunk configuration. 
+# pn_edge_switch: Specify if the switch is an edge switch. 
+# pn_egress_rate_limit: Specify an egress port data rate limit for the configuration. 
+# pn_host: Host facing port control setting. 
+# pn_jumbo: Specify if the port can receive jumbo frames. 
+# pn_lacp_fallback: Specify the LACP fallback mode as bundles or individual. 
+# pn_lacp_fallback_timeout: Specify the LACP fallback timeout in seconds. The range is between 30 and 60 seconds with a default 
+# pn_lacp_mode: Specify the LACP mode for the configuration. 
+# pn_lacp_priority: Specify the LACP priority. This is a number between 1 and 65535 with a default value of 32768. 
+# pn_lacp_timeout: Specify the LACP time out as slow (30 seconds) or fast (4seconds). The default value is slow. 
+# pn_loopback: Specify loopback if you want to use loopback. 
+# pn_loopvlans: Specify a list of looping vlans. 
+# pn_mirror_receive: Specify if the configuration receives mirrored traffic. 
+# pn_name: (required) Specify the name for the trunk configuration. 
+# pn_pause: Specify if pause frames are sent. 
+# pn_port_macaddr: Specify the MAC address of the port. 
+# pn_ports: Specify the port number(s) for the link(s) to aggregate into the trunk. Required for trunk-create. 
+# pn_routing: Specify if the port participates in routing on the network. 
+# pn_speed: Specify the port speed or disable the port. 
+# pn_unknown_mcast_level: Specify an unknown multicast level in percent. The default value is 100%. 
+# pn_unknown_ucast_level: Specify an unknown unicast level in percent. The default value is 100%. 
+# state: (required) State the action to perform. Use 'present' to create trunk, 'absent' to delete trunk and 
+}- name: ${2:Name for pn_trunk module.}
+  pn_trunk:
+${3:   ${4:pn_broadcast_level}: ${5:"#"}}
+${6:   ${7:pn_clipassword}: ${8:"#"}}
+${9:   ${10:pn_cliswitch}: ${11:"#"}}
+${12:   ${13:pn_cliusername}: ${14:"#"}}
+${15:   ${16:pn_description}: ${17:"#"}}
+${18:   ${19:pn_edge_switch}: ${20:"#"}}
+${21:   ${22:pn_egress_rate_limit}: ${23:"#"}}
+${24:   ${25:pn_host}: ${26:"#"}}
+${27:   ${28:pn_jumbo}: ${29:"#"}}
+${30:   ${31:pn_lacp_fallback}: ${32:"#"}}
+${33:   ${34:pn_lacp_fallback_timeout}: ${35:"#"}}
+${36:   ${37:pn_lacp_mode}: ${38:"#"}}
+${39:   ${40:pn_lacp_priority}: ${41:"#"}}
+${42:   ${43:pn_lacp_timeout}: ${44:"#"}}
+${45:   ${46:pn_loopback}: ${47:"#"}}
+${48:   ${49:pn_loopvlans}: ${50:"#"}}
+${51:   ${52:pn_mirror_receive}: ${53:"#"}}
+${54:   ${55:pn_name}: ${56:"#"}}
+${57:   ${58:pn_pause}: ${59:"#"}}
+${60:   ${61:pn_port_macaddr}: ${62:"#"}}
+${63:   ${64:pn_ports}: ${65:"#"}}
+${66:   ${67:pn_routing}: ${68:"#"}}
+${69:   ${70:pn_speed}: ${71:"#"}}
+${72:   ${73:pn_unknown_mcast_level}: ${74:"#"}}
+${75:   ${76:pn_unknown_ucast_level}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
+]]></content>
+	<tabTrigger>pn_trunk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

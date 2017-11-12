@@ -1,20 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:#cluster = Name of the Vertica cluster.
-#create_roles = Comma separated list of roles to create and grant usage and create access to the schema.
-#db = Name of the Vertica database.
-#login_password = The password used to authenticate with.
-#login_user = The username used to authenticate with.
-#name = Name of the schema to add or remove.
-#owner = Name of the user to set as owner of the schema.
-#port = Vertica cluster port to connect to.
-#state = Whether to create `present', or drop `absent' a schema.
-#usage_roles = Comma separated list of roles to create and grant usage access to the schema.
+${1:# cluster: Name of the Vertica cluster. 
+# create_roles: Comma separated list of roles to create and grant usage and create access to the schema. 
+# db: Name of the Vertica database. 
+# login_password: The password used to authenticate with. 
+# login_user: The username used to authenticate with. 
+# name: (required) Name of the schema to add or remove. 
+# owner: Name of the user to set as owner of the schema. 
+# port: Vertica cluster port to connect to. 
+# state: Whether to create `present', or drop `absent' a schema. 
+# usage_roles: Comma separated list of roles to create and grant usage access to the schema. 
 }- name: ${2:Name for vertica_schema module.}
-${3:  become: ${4:yes}}
-  vertica_schema: ${5:cluster=${6: } }${7:create_roles=${8: } }${9:db=${10: } }${11:login_password=${12: } }${13:login_user=${14: } }${15:name=${16: } }${17:owner=${18: } }${19:port=${20: } }${21:state=${22: } }${23:usage_roles=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  vertica_schema:
+${3:   ${4:cluster}: ${5:"#"}}
+${6:   ${7:create_roles}: ${8:"#"}}
+${9:   ${10:db}: ${11:"#"}}
+${12:   ${13:login_password}: ${14:"#"}}
+${15:   ${16:login_user}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:owner}: ${23:"#"}}
+${24:   ${25:port}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:usage_roles}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>vertica_schema</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,21 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:#description = Node description.
-#host = Node IP. Required when state=present and node does not exist. Error when state=absent.
-#monitor_state = Set monitor availability status for node
-#name = Node name
-#partition = Partition
-#password = BIG-IP password
-#server = BIG-IP host
-#session_state = Set new session availability status for node
-#state = Pool member state
-#user = BIG-IP username
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites.  Prior
+${1:# description: Node description. 
+# host: (required) Node IP. Required when state=present and node does not exist. Error when state=absent. 
+# monitor_state: Set monitor availability status for node 
+# monitor_type: Monitor rule type when monitors > 1 
+# monitors: Monitor template name list. Always use the full path to the monitor. 
+# name: Node name 
+# partition: Partition 
+# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
+# quorum: Monitor quorum value when monitor_type is m_of_n 
+# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
+# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
+# session_state: Set new session availability status for node 
+# state: (required) Pool member state 
+# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
 }- name: ${2:Name for bigip_node module.}
-${3:  become: ${4:yes}}
-  bigip_node: ${5:description=${6: } }${7:host=${8: } }${9:monitor_state=${10: } }${11:name=${12: } }${13:partition=${14: } }${15:password=${16: } }${17:server=${18: } }${19:session_state=${20: } }${21:state=${22: } }${23:user=${24: } }${25:validate_certs=${26: } }
-${27:  when: ${28: variable is defined}}
-${29:  with_items: ${30: array}}
+  bigip_node:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:host}: ${8:"#"}}
+${9:   ${10:monitor_state}: ${11:"#"}}
+${12:   ${13:monitor_type}: ${14:"#"}}
+${15:   ${16:monitors}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:partition}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:quorum}: ${29:"#"}}
+${30:   ${31:server}: ${32:"#"}}
+${33:   ${34:server_port}: ${35:"#"}}
+${36:   ${37:session_state}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:user}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>bigip_node</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

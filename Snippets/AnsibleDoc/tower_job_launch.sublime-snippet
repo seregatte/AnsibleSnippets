@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# credential: Credential to use for job, only used if prompt for credential is set. 
+# extra_vars: Extra_vars to use for the job_template. Prepend '@' if a file. 
+# inventory: Inventory to use for the job, only used if prompt for inventory is set. 
+# job_explanation: Job explanation field. 
+# job_template: (required) Name of the job_template to use. 
+# job_type: Job_type to use for the job, only used if prompt for job_type is set. 
+# limit: Limit to use for the job_template. 
+# tags: Specific tags to use for from playbook. 
+# tower_config_file: Path to the Tower config file. See notes. 
+# tower_host: URL to your Tower instance. 
+# tower_password: Password for your Tower instance. 
+# tower_username: Username for your Tower instance. 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# use_job_endpoint: Disable launching jobs from job template. 
+}- name: ${2:Name for tower_job_launch module.}
+  tower_job_launch:
+${3:   ${4:credential}: ${5:"#"}}
+${6:   ${7:extra_vars}: ${8:"#"}}
+${9:   ${10:inventory}: ${11:"#"}}
+${12:   ${13:job_explanation}: ${14:"#"}}
+${15:   ${16:job_template}: ${17:"#"}}
+${18:   ${19:job_type}: ${20:"#"}}
+${21:   ${22:limit}: ${23:"#"}}
+${24:   ${25:tags}: ${26:"#"}}
+${27:   ${28:tower_config_file}: ${29:"#"}}
+${30:   ${31:tower_host}: ${32:"#"}}
+${33:   ${34:tower_password}: ${35:"#"}}
+${36:   ${37:tower_username}: ${38:"#"}}
+${39:   ${40:tower_verify_ssl}: ${41:"#"}}
+${42:   ${43:use_job_endpoint}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>tower_job_launch</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

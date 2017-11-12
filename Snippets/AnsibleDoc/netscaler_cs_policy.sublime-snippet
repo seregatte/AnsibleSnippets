@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# action: Content switching action that names the target load balancing virtual server to which the traffic is 
+# domain: The domain name. The string value can range to 63 characters. Minimum length = 1 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# policyname: Name for the content switching policy. Must begin with an ASCII alphanumeric or underscore `_' 
+# : ', period `.', space ` ', colon `:', at sign `@', equal sign `=', and 
+# rule: Expression, or name of a named expression, against which traffic is evaluated. Written in the classic or 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# url: URL string that is matched with the URL of a request. Can contain a wildcard character. Specify the 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for netscaler_cs_policy module.}
+  netscaler_cs_policy:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:domain}: ${8:"#"}}
+${9:   ${10:nitro_pass}: ${11:"#"}}
+${12:   ${13:nitro_protocol}: ${14:"#"}}
+${15:   ${16:nitro_timeout}: ${17:"#"}}
+${18:   ${19:nitro_user}: ${20:"#"}}
+${21:   ${22:nsip}: ${23:"#"}}
+${24:   ${25:policyname}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:rule}: ${32:"#"}}
+${33:   ${34:save_config}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:url}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>netscaler_cs_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

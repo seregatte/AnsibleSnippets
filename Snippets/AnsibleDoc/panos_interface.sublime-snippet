@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# commit: Commit if changed 
+# create_default_route: Whether or not to add default route with router learned via DHCP. 
+# if_name: (required) Name of the interface to configure. 
+# ip_address: (required) IP address (or hostname) of PAN-OS device being configured. 
+# password: (required) Password credentials to use for auth. 
+# username: Username credentials to use for auth. 
+# zone_name: (required) Name of the zone for the interface. If the zone does not exist it is created but if the zone 
+}- name: ${2:Name for panos_interface module.}
+  panos_interface:
+${3:   ${4:commit}: ${5:"#"}}
+${6:   ${7:create_default_route}: ${8:"#"}}
+${9:   ${10:if_name}: ${11:"#"}}
+${12:   ${13:ip_address}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:   ${22:zone_name}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>panos_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# dest: (required) The destination directory to extract files to. 
+# executable: The path to the `7z' executable to use for extracting files from the ISO. 
+# files: (required) A list of files to extract from the image. Extracting directories does not work. 
+# force: If `yes', which will replace the remote file when contents are different than the source. If `no', the 
+# image: (required) The ISO image to extract files from. 
+}- name: ${2:Name for iso_extract module.}
+  iso_extract:
+${3:   ${4:dest}: ${5:"#"}}
+${6:   ${7:executable}: ${8:"#"}}
+${9:   ${10:files}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:image}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>iso_extract</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

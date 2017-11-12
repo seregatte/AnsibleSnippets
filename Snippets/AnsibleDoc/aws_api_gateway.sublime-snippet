@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# api_id: The ID of the API you want to manage. 
+# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# deploy_desc: Description of the deployment - recorded and visible in the AWS console. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# stage: The name of the stage the API should be deployed to. 
+# state: NOT IMPLEMENTED Create or delete API - currently we always create. 
+# swagger_dict: Swagger definitions API ansible dictionary which will be converted to JSON and uploaded. 
+# swagger_file: JSON or YAML file containing swagger definitions for API. Exactly one of swagger_file, swagger_text or 
+# swagger_text: Swagger definitions for API in JSON or YAML as a string direct from playbook. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+}- name: ${2:Name for aws_api_gateway module.}
+  aws_api_gateway:
+${3:   ${4:api_id}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:deploy_desc}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:profile}: ${20:"#"}}
+${21:   ${22:security_token}: ${23:"#"}}
+${24:   ${25:stage}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:swagger_dict}: ${32:"#"}}
+${33:   ${34:swagger_file}: ${35:"#"}}
+${36:   ${37:swagger_text}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>aws_api_gateway</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

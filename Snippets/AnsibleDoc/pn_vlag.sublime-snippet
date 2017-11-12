@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_clipassword: Provide login password if user is not root. 
+# pn_cliswitch: Target switch(es) to run this command on. 
+# pn_cliusername: Provide login username if user is not root. 
+# pn_failover_action: Specify the failover action as move or ignore. 
+# pn_lacp_fallback: Specify the LACP fallback mode as bundles or individual. 
+# pn_lacp_fallback_timeout: Specify the LACP fallback timeout in seconds. The range is between 30 and 60 seconds with a default 
+# pn_lacp_mode: Specify the LACP mode. 
+# pn_lacp_timeout: Specify the LACP timeout as slow(30 seconds) or fast(4 seconds). 
+# pn_mode: Specify the mode for the VLAG. Active-standby indicates one side is active and the other side is in 
+# pn_name: (required) The `pn_name' takes a valid name for vlag configuration. 
+# pn_peer_port: Specify the peer VLAG port. Required for vlag-create. 
+# pn_peer_switch: Specify the fabric-name of the peer switch. 
+# pn_port: Specify the local VLAG port. Required for vlag-create. 
+# state: (required) State the action to perform. Use 'present' to create vlag, 'absent' to delete vlag and 
+}- name: ${2:Name for pn_vlag module.}
+  pn_vlag:
+${3:   ${4:pn_clipassword}: ${5:"#"}}
+${6:   ${7:pn_cliswitch}: ${8:"#"}}
+${9:   ${10:pn_cliusername}: ${11:"#"}}
+${12:   ${13:pn_failover_action}: ${14:"#"}}
+${15:   ${16:pn_lacp_fallback}: ${17:"#"}}
+${18:   ${19:pn_lacp_fallback_timeout}: ${20:"#"}}
+${21:   ${22:pn_lacp_mode}: ${23:"#"}}
+${24:   ${25:pn_lacp_timeout}: ${26:"#"}}
+${27:   ${28:pn_mode}: ${29:"#"}}
+${30:   ${31:pn_name}: ${32:"#"}}
+${33:   ${34:pn_peer_port}: ${35:"#"}}
+${36:   ${37:pn_peer_switch}: ${38:"#"}}
+${39:   ${40:pn_port}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>pn_vlag</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

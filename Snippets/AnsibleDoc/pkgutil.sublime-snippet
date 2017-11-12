@@ -1,13 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#name = Package name, e.g. (`CSWnrpe')
-#site = Specifies the repository path to install the package from. Its global definition is done in
-#state = Whether to install (`present'), or remove (`absent') a package. The upgrade (`latest') operation will
+${1:# name: (required) Package name, e.g. (`CSWnrpe') 
+# site: Specifies the repository path to install the package from. Its global definition is done in 
+# state: (required) Whether to install (`present'), or remove (`absent') a package. The upgrade (`latest') 
+# update_catalog: If you want to refresh your catalog from the mirror, set this to (`yes'). 
 }- name: ${2:Name for pkgutil module.}
-${3:  become: ${4:yes}}
-  pkgutil: ${5:name=${6: } }${7:site=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  pkgutil:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:site}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:update_catalog}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>pkgutil</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

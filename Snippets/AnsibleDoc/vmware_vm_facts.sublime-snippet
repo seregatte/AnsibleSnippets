@@ -1,13 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#hostname = The hostname or IP address of the vSphere vCenter API server
-#password = The password of the vSphere vCenter
-#username = The username of the vSphere vCenter
+${1:# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# password: (required) The password of the vSphere vCenter. 
+# username: (required) The username of the vSphere vCenter. 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
 }- name: ${2:Name for vmware_vm_facts module.}
-${3:  become: ${4:yes}}
-  vmware_vm_facts: ${5:hostname=${6: } }${7:password=${8: } }${9:username=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  vmware_vm_facts:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:username}: ${11:"#"}}
+${12:   ${13:validate_certs}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>vmware_vm_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

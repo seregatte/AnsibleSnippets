@@ -1,14 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#hostname = The hostname or IP address of the vSphere vCenter
-#password = The password of the vSphere vCenter
-#target_id = The target id based on order of scsi device
-#username = The username of the vSphere vCenter
+${1:# hostname: (required) The hostname or IP address of the vSphere vCenter. 
+# password: (required) The password of the vSphere vCenter. 
+# target_id: (required) The target id based on order of scsi device 
+# username: (required) The username of the vSphere vCenter. 
+# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
 }- name: ${2:Name for vmware_target_canonical_facts module.}
-${3:  become: ${4:yes}}
-  vmware_target_canonical_facts: ${5:hostname=${6: } }${7:password=${8: } }${9:target_id=${10: } }${11:username=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  vmware_target_canonical_facts:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:target_id}: ${11:"#"}}
+${12:   ${13:username}: ${14:"#"}}
+${15:   ${16:validate_certs}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>vmware_target_canonical_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# enable: Set interface DLDP enable state. 
+# interface: (required) Must be fully qualified interface name, i.e. GE1/0/1, 10GE1/0/1, 40GE1/0/22, 100GE1/0/1. 
+# local_mac: Set the source MAC address for DLDP packets sent in the DLDP-compatible mode. The value of MAC address 
+# mode_enable: Set DLDP compatible-mode enable state. 
+# reset: Specify whether reseting interface DLDP state. 
+# state: Manage the state of the resource. 
+}- name: ${2:Name for ce_dldp_interface module.}
+  ce_dldp_interface:
+${3:   ${4:enable}: ${5:"#"}}
+${6:   ${7:interface}: ${8:"#"}}
+${9:   ${10:local_mac}: ${11:"#"}}
+${12:   ${13:mode_enable}: ${14:"#"}}
+${15:   ${16:reset}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ce_dldp_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

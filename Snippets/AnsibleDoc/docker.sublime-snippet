@@ -1,58 +1,123 @@
 <snippet>
 <content><![CDATA[
-${1:#cap_add = Add capabilities for the container. Requires docker-py >= 0.5.0.
-#cap_drop = Drop capabilities for the container. Requires docker-py >= 0.5.0.
-#command = Command used to match and launch containers.
-#count = Number of matching containers that should be in the desired state.
-#cpu_set = CPUs in which to allow execution. Requires docker-py >= 0.6.0.
-#detach = Enable detached mode to leave the container running in background. If disabled, fail unless the process exits
-#dns = List of custom DNS servers for the container.
-#docker_api_version = Remote API version to use. This defaults to the current default as specified by docker-py.
-#docker_url = URL of the host running the docker daemon. This will default to the env var DOCKER_HOST if unspecified.
-#docker_user = Username or UID to use within the container
-#domainname = Container domain name.
-#email = Remote API email.
-#env = Pass a dict of environment variables to the container.
-#expose = List of additional container ports to expose for port mappings or links. If the port is already exposed using
-#extra_hosts = Dict of custom host-to-IP mappings to be defined in the container
-#hostname = Container hostname.
-#image = Container image used to match and launch containers.
-#insecure_registry = Use insecure private registry by HTTP instead of HTTPS. Needed for docker-py >= 0.5.0.
-#links = List of other containers to link within this container with an optional alias. Use docker CLI-style syntax:
-#log_driver = You can specify a different logging driver for the container than for the daemon. "json-file" Default logging
-#log_opt = Additional options to pass to the logging driver selected above. See Docker `log-driver
-#lxc_conf = LXC configuration parameters, such as `lxc.aa_profile:unconfined'.
-#memory_limit = RAM allocated to the container as a number of bytes or as a human-readable string like "512MB". Leave as "0" to
-#name = Name used to match and uniquely name launched containers. Explicit names are used to uniquely identify a single
-#net = Network mode for the launched container: bridge, none, container:<name|id> or host. Requires docker >= 0.11.
-#password = Remote API password.
-#pid = Set the PID namespace mode for the container (currently only supports 'host'). Requires docker-py >= 1.0.0 and
-#ports = List containing private to public port mapping specification. Use docker 'CLI-style syntax: `8000', `9000:8000',
-#privileged = Whether the container should run in privileged mode or not.
-#publish_all_ports = Publish all exposed ports to the host interfaces.
-#pull = Control when container images are updated from the `docker_url' registry. If "missing," images will be pulled
-#read_only = Mount the container's root filesystem as read only
-#registry = Remote registry URL to pull images from.
-#restart_policy = Container restart policy.
-#restart_policy_retry = Maximum number of times to restart a container. Leave as "0" for unlimited retries.
-#signal = With the state "killed", you can alter the signal sent to the container.
-#state = Assert the container's desired state. "present" only asserts that the matching containers exist. "started"
-#stdin_open = Keep stdin open after a container is launched.
-#stop_timeout = How many seconds to wait for the container to stop before killing it.
-#tls_ca_cert = Path to a PEM-encoded certificate authority to secure the Docker connection. This has no effect if use_tls is
-#tls_client_cert = Path to the PEM-encoded certificate used to authenticate docker client. If specified tls_client_key must be
-#tls_client_key = Path to the PEM-encoded key used to authenticate docker client. If specified tls_client_cert must be valid
-#tls_hostname = A hostname to check matches what's supplied in the docker server's certificate.  If unspecified, the hostname is
-#tty = Allocate a pseudo-tty within the container.
-#use_tls = Whether to use tls to connect to the docker server.  "no" means not to use tls (and ignore any other tls related
-#username = Remote API username.
-#volumes = List of volumes to mount within the container using docker CLI-style syntax: `/host:/container[:mode]' where
-#volumes_from = List of names of containers to mount volumes from.
+${1:# cap_add: Add capabilities for the container. Requires docker-py >= 0.5.0. 
+# cap_drop: Drop capabilities for the container. Requires docker-py >= 0.5.0. 
+# command: Command used to match and launch containers. 
+# count: Number of matching containers that should be in the desired state. 
+# cpu_set: CPUs in which to allow execution. Requires docker-py >= 0.6.0. 
+# cpu_shares: CPU shares (relative weight). Requires docker-py >= 0.6.0. 
+# detach: Enable detached mode to leave the container running in background. If disabled, fail unless the process 
+# devices: List of host devices to expose to container 
+# dns: List of custom DNS servers for the container. 
+# docker_api_version: Remote API version to use. This defaults to the current default as specified by docker-py. 
+# docker_url: URL of the host running the docker daemon. This will default to the env var DOCKER_HOST if unspecified. 
+# docker_user: Username or UID to use within the container 
+# domainname: Container domain name. 
+# email: Remote API email. 
+# entrypoint: Corresponds to ``--entrypoint`` option of ``docker run`` command and ``ENTRYPOINT`` directive of 
+# env: Pass a dict of environment variables to the container. 
+# env_file: Pass in a path to a file with environment variable (FOO=BAR). If a key value is present in both 
+# expose: List of additional container ports to expose for port mappings or links. If the port is already exposed 
+# extra_hosts: Dict of custom host-to-IP mappings to be defined in the container 
+# hostname: Container hostname. 
+# image: (required) Container image used to match and launch containers. 
+# insecure_registry: Use insecure private registry by HTTP instead of HTTPS. Needed for docker-py >= 0.5.0. 
+# labels: Set container labels. Requires docker >= 1.6 and docker-py >= 1.2.0. 
+# links: List of other containers to link within this container with an optional alias. Use docker CLI-style 
+# log_driver: You can specify a different logging driver for the container than for the daemon. "json-file" Default 
+# log_opt: Additional options to pass to the logging driver selected above. See Docker `log-driver 
+# lxc_conf: LXC configuration parameters, such as `lxc.aa_profile:unconfined'. 
+# memory_limit: RAM allocated to the container as a number of bytes or as a human-readable string like "512MB". Leave as 
+# name: Name used to match and uniquely name launched containers. Explicit names are used to uniquely identify a 
+# net: Network mode for the launched container: bridge, none, container:<name|id> or host. Requires docker >= 
+# password: Remote API password. 
+# pid: Set the PID namespace mode for the container (currently only supports 'host'). Requires docker-py >= 
+# ports: List containing private to public port mapping specification. Use docker 'CLI-style syntax: `8000', 
+# privileged: Whether the container should run in privileged mode or not. 
+# publish_all_ports: Publish all exposed ports to the host interfaces. 
+# pull: Control when container images are updated from the `docker_url' registry. If "missing," images will be 
+# read_only: Mount the container's root filesystem as read only 
+# registry: Remote registry URL to pull images from. 
+# restart_policy: Container restart policy. The 'unless-stopped' choice is only available starting in Ansible 2.1 and for 
+# restart_policy_retry: Maximum number of times to restart a container. Leave as "0" for unlimited retries. 
+# signal: With the state "killed", you can alter the signal sent to the container. 
+# state: Assert the container's desired state. "present" only asserts that the matching containers exist. 
+# stdin_open: Keep stdin open after a container is launched. 
+# stop_timeout: How many seconds to wait for the container to stop before killing it. 
+# timeout: Docker daemon response timeout in seconds. 
+# tls_ca_cert: Path to a PEM-encoded certificate authority to secure the Docker connection. This has no effect if 
+# tls_client_cert: Path to the PEM-encoded certificate used to authenticate docker client. If specified tls_client_key must 
+# tls_client_key: Path to the PEM-encoded key used to authenticate docker client. If specified tls_client_cert must be 
+# tls_hostname: A hostname to check matches what's supplied in the docker server's certificate.  If unspecified, the 
+# tty: Allocate a pseudo-tty within the container. 
+# ulimits: ulimits, list ulimits with name, soft and optionally hard limit separated by colons. e.g. 
+# use_tls: Whether to use tls to connect to the docker server.  "no" means not to use tls (and ignore any other tls 
+# username: Remote API username. 
+# volumes: List of volumes to mount within the container Use docker CLI-style syntax: `/host:/container[:mode]' You 
+# volumes_from: List of names of containers to mount volumes from. 
 }- name: ${2:Name for docker module.}
-${3:  become: ${4:yes}}
-  docker: ${5:cap_add=${6: } }${7:cap_drop=${8: } }${9:command=${10: } }${11:count=${12: } }${13:cpu_set=${14: } }${15:detach=${16: } }${17:dns=${18: } }${19:docker_api_version=${20: } }${21:docker_url=${22: } }${23:docker_user=${24: } }${25:domainname=${26: } }${27:email=${28: } }${29:env=${30: } }${31:expose=${32: } }${33:extra_hosts=${34: } }${35:hostname=${36: } }${37:image=${38: } }${39:insecure_registry=${40: } }${41:links=${42: } }${43:log_driver=${44: } }${45:log_opt=${46: } }${47:lxc_conf=${48: } }${49:memory_limit=${50: } }${51:name=${52: } }${53:net=${54: } }${55:password=${56: } }${57:pid=${58: } }${59:ports=${60: } }${61:privileged=${62: } }${63:publish_all_ports=${64: } }${65:pull=${66: } }${67:read_only=${68: } }${69:registry=${70: } }${71:restart_policy=${72: } }${73:restart_policy_retry=${74: } }${75:signal=${76: } }${77:state=${78: } }${79:stdin_open=${80: } }${81:stop_timeout=${82: } }${83:tls_ca_cert=${84: } }${85:tls_client_cert=${86: } }${87:tls_client_key=${88: } }${89:tls_hostname=${90: } }${91:tty=${92: } }${93:use_tls=${94: } }${95:username=${96: } }${97:volumes=${98: } }${99:volumes_from=${100: } }
-${101:  when: ${102: variable is defined}}
-${103:  with_items: ${104: array}}
+  docker:
+${3:   ${4:cap_add}: ${5:"#"}}
+${6:   ${7:cap_drop}: ${8:"#"}}
+${9:   ${10:command}: ${11:"#"}}
+${12:   ${13:count}: ${14:"#"}}
+${15:   ${16:cpu_set}: ${17:"#"}}
+${18:   ${19:cpu_shares}: ${20:"#"}}
+${21:   ${22:detach}: ${23:"#"}}
+${24:   ${25:devices}: ${26:"#"}}
+${27:   ${28:dns}: ${29:"#"}}
+${30:   ${31:docker_api_version}: ${32:"#"}}
+${33:   ${34:docker_url}: ${35:"#"}}
+${36:   ${37:docker_user}: ${38:"#"}}
+${39:   ${40:domainname}: ${41:"#"}}
+${42:   ${43:email}: ${44:"#"}}
+${45:   ${46:entrypoint}: ${47:"#"}}
+${48:   ${49:env}: ${50:"#"}}
+${51:   ${52:env_file}: ${53:"#"}}
+${54:   ${55:expose}: ${56:"#"}}
+${57:   ${58:extra_hosts}: ${59:"#"}}
+${60:   ${61:hostname}: ${62:"#"}}
+${63:   ${64:image}: ${65:"#"}}
+${66:   ${67:insecure_registry}: ${68:"#"}}
+${69:   ${70:labels}: ${71:"#"}}
+${72:   ${73:links}: ${74:"#"}}
+${75:   ${76:log_driver}: ${77:"#"}}
+${78:   ${79:log_opt}: ${80:"#"}}
+${81:   ${82:lxc_conf}: ${83:"#"}}
+${84:   ${85:memory_limit}: ${86:"#"}}
+${87:   ${88:name}: ${89:"#"}}
+${90:   ${91:net}: ${92:"#"}}
+${93:   ${94:password}: ${95:"#"}}
+${96:   ${97:pid}: ${98:"#"}}
+${99:   ${100:ports}: ${101:"#"}}
+${102:   ${103:privileged}: ${104:"#"}}
+${105:   ${106:publish_all_ports}: ${107:"#"}}
+${108:   ${109:pull}: ${110:"#"}}
+${111:   ${112:read_only}: ${113:"#"}}
+${114:   ${115:registry}: ${116:"#"}}
+${117:   ${118:restart_policy}: ${119:"#"}}
+${120:   ${121:restart_policy_retry}: ${122:"#"}}
+${123:   ${124:signal}: ${125:"#"}}
+${126:   ${127:state}: ${128:"#"}}
+${129:   ${130:stdin_open}: ${131:"#"}}
+${132:   ${133:stop_timeout}: ${134:"#"}}
+${135:   ${136:timeout}: ${137:"#"}}
+${138:   ${139:tls_ca_cert}: ${140:"#"}}
+${141:   ${142:tls_client_cert}: ${143:"#"}}
+${144:   ${145:tls_client_key}: ${146:"#"}}
+${147:   ${148:tls_hostname}: ${149:"#"}}
+${150:   ${151:tty}: ${152:"#"}}
+${153:   ${154:ulimits}: ${155:"#"}}
+${156:   ${157:use_tls}: ${158:"#"}}
+${159:   ${160:username}: ${161:"#"}}
+${162:   ${163:volumes}: ${164:"#"}}
+${165:   ${166:volumes_from}: ${167:"#"}}
+${168:${169:   become: ${170:true}} 
+${171:   become_method: ${172:su}} 
+${173:   become_user: ${174:nobody}} 
+${175:   become_flags: ${176:"-s /bin/sh"}}} 
+${177:   when: ${178:variable is defined}} 
+${179:   with_items: ${180:array}} 
 ]]></content>
 	<tabTrigger>docker</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

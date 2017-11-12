@@ -1,12 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#name = name of the module to enable/disable
-#state = indicate the desired state of the resource
+${1:# force: force disabling of default modules and override Debian warnings 
+# ignore_configcheck: Ignore configuration checks about inconsistent module configuration. Especially for mpm_* modules. 
+# name: (required) name of the module to enable/disable 
+# state: indicate the desired state of the resource 
 }- name: ${2:Name for apache2_module module.}
-${3:  become: ${4:yes}}
-  apache2_module: ${5:name=${6: } }${7:state=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  apache2_module:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:ignore_configcheck}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>apache2_module</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

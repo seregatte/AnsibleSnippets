@@ -1,13 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#depot = The source repository from which install or upgrade a package.
-#name = package name.
-#state = whether to install (`present', `latest'), or remove (`absent') a package.
+${1:# depot: The source repository from which install or upgrade a package. 
+# name: (required) package name. 
+# state: (required) whether to install (`present', `latest'), or remove (`absent') a package. 
 }- name: ${2:Name for swdepot module.}
-${3:  become: ${4:yes}}
-  swdepot: ${5:depot=${6: } }${7:name=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  swdepot:
+${3:   ${4:depot}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>swdepot</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

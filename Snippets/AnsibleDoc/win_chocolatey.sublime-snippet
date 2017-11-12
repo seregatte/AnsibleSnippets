@@ -1,16 +1,45 @@
 <snippet>
 <content><![CDATA[
-${1:#force = Forces install of the package (even if it already exists). Using Force will cause ansible to always report that
-#name = Name of the package to be installed
-#source = Specify source rather than using default chocolatey repository
-#state = State of the package on the system
-#upgrade = If package is already installed it, try to upgrade to the latest version or to the specified version
-#version = Specific version of the package to be installed Ignored when state == 'absent'
+${1:# allow_empty_checksums: Allow empty checksums to be used. 
+# force: Forces install of the package (even if it already exists). Using `force' will cause ansible to always 
+# ignore_checksums: Ignore checksums altogether. 
+# ignore_dependencies: Ignore dependencies, only install/upgrade the package itself. 
+# install_args: Arguments to pass to the native installer. 
+# name: (required) Name of the package to be installed. This must be a single package name. 
+# params: Parameters to pass to the package 
+# proxy_password: Proxy password used to install chocolatey and the package. See notes in `proxy_username' when dealing 
+# proxy_url: Proxy url used to install chocolatey and the package. 
+# proxy_username: Proxy username used to install chocolatey and the package. When dealing with a username with double 
+# skip_scripts: Do not run `chocolateyInstall.ps1' or `chocolateyUninstall.ps1' scripts. 
+# source: Specify source rather than using default chocolatey repository. 
+# state: State of the package on the system. 
+# timeout: The time to allow chocolatey to finish before timing out. 
+# upgrade: If package is already installed it, try to upgrade to the latest version or to the specified version. As 
+# version: Specific version of the package to be installed. Ignored when `state' is set to `absent'. 
 }- name: ${2:Name for win_chocolatey module.}
-${3:  become: ${4:yes}}
-  win_chocolatey: ${5:force=${6: } }${7:name=${8: } }${9:source=${10: } }${11:state=${12: } }${13:upgrade=${14: } }${15:version=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  win_chocolatey:
+${3:   ${4:allow_empty_checksums}: ${5:"#"}}
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:ignore_checksums}: ${11:"#"}}
+${12:   ${13:ignore_dependencies}: ${14:"#"}}
+${15:   ${16:install_args}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:params}: ${23:"#"}}
+${24:   ${25:proxy_password}: ${26:"#"}}
+${27:   ${28:proxy_url}: ${29:"#"}}
+${30:   ${31:proxy_username}: ${32:"#"}}
+${33:   ${34:skip_scripts}: ${35:"#"}}
+${36:   ${37:source}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:upgrade}: ${47:"#"}}
+${48:   ${49:version}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>win_chocolatey</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

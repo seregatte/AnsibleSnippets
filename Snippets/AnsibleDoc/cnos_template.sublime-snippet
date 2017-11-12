@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# commandfile: (required) This specifies the path to the CNOS command file which needs to be applied. This usually 
+# device: (required) This specifies the type of device where the method is executed. The choices 
+# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
+# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
+# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
+# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
+# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
+}- name: ${2:Name for cnos_template module.}
+  cnos_template:
+${3:   ${4:commandfile}: ${5:"#"}}
+${6:   ${7:device}: ${8:"#"}}
+${9:   ${10:enable}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:outputfile}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>cnos_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

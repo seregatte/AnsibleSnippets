@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# cache_valid_time: Time in seconds to invalidate grimoire collection on update especially useful for SCM and rsync 
+# depends: Comma-separated list of _optional_ dependencies to build a spell (or make sure it is built) with; use 
+# name: Name of the spell multiple names can be given, separated by commas special value '*' in conjunction with 
+# state: Whether to cast, dispel or rebuild a package state `cast' is an equivalent of `present', not `latest' 
+# update: Whether or not to update sorcery scripts at the very first stage 
+# update_cache: Whether or not to update grimoire collection before casting spells 
+}- name: ${2:Name for sorcery module.}
+  sorcery:
+${3:   ${4:cache_valid_time}: ${5:"#"}}
+${6:   ${7:depends}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:update}: ${17:"#"}}
+${18:   ${19:update_cache}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>sorcery</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

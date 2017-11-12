@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when authenticating with an Active Directory user rather than service 
+# allocation_method: Control whether the assigned Public IP remains permanently assigned to the object. If not set to 
+# append_tags: Use to control if tags field is canonical or just appends to existing tags. When canonical, any tags not 
+# client_id: Azure client ID. Use when authenticating with a Service Principal. 
+# cloud_environment: For cloud environments other than the US public cloud, the environment name (as defined by Azure Python 
+# domain_name_label: The customizable portion of the FQDN assigned to public IP address. This is an explicit setting. If no 
+# location: Valid azure location. Defaults to location of the resource group. 
+# name: (required) Name of the Public IP. 
+# password: Active Directory user password. Use when authenticating with an Active Directory user rather than 
+# profile: Security profile found in ~/.azure/credentials file. 
+# resource_group: (required) Name of resource group with which the Public IP is associated. 
+# secret: Azure client secret. Use when authenticating with a Service Principal. 
+# state: Assert the state of the Public IP. Use 'present' to create or update a and 'absent' to delete. 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as metadata to the object. Metadata tags on the object will 
+# tenant: Azure tenant ID. Use when authenticating with a Service Principal. 
+}- name: ${2:Name for azure_rm_publicipaddress module.}
+  azure_rm_publicipaddress:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:allocation_method}: ${8:"#"}}
+${9:   ${10:append_tags}: ${11:"#"}}
+${12:   ${13:client_id}: ${14:"#"}}
+${15:   ${16:cloud_environment}: ${17:"#"}}
+${18:   ${19:domain_name_label}: ${20:"#"}}
+${21:   ${22:location}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:profile}: ${32:"#"}}
+${33:   ${34:resource_group}: ${35:"#"}}
+${36:   ${37:secret}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:subscription_id}: ${44:"#"}}
+${45:   ${46:tags}: ${47:"#"}}
+${48:   ${49:tenant}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>azure_rm_publicipaddress</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,13 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#link = The path to the symbolic link that should point to the real executable. This option is required on RHEL-based
-#name = The generic name of the link.
-#path = The path to the real executable that the link should point to.
+${1:# link: The path to the symbolic link that should point to the real executable. This option is always required 
+# name: (required) The generic name of the link. 
+# path: (required) The path to the real executable that the link should point to. 
+# priority: The priority of the alternative 
 }- name: ${2:Name for alternatives module.}
-${3:  become: ${4:yes}}
-  alternatives: ${5:link=${6: } }${7:name=${8: } }${9:path=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  alternatives:
+${3:   ${4:link}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:path}: ${11:"#"}}
+${12:   ${13:priority}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>alternatives</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

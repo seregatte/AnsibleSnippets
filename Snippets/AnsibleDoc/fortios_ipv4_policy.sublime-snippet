@@ -1,0 +1,78 @@
+<snippet>
+<content><![CDATA[
+${1:# application_list: Specifies Application Control name. 
+# av_profile: Specifies Antivirus profile name. 
+# backup: This argument will cause the module to create a backup of the current `running-config' from the remote 
+# backup_filename: Specifies the backup filename. If omitted filename will be formatted like HOST_config.YYYY-MM- 
+# backup_path: Specifies where to store backup files. Required if `backup=yes'. 
+# comment: free text to describe policy. 
+# config_file: Path to configuration file. Required when `file_mode' is True. 
+# dst_addr: Specifies destination address (or group) object name(s). Required when `state=present'. 
+# dst_addr_negate: Negate destination address param. 
+# dst_intf: Specifies destination interface name. 
+# file_mode: Don't connect to any device, only use `config_file' as input and Output. 
+# fixedport: Use fixed port for nat. 
+# host: Specifies the DNS hostname or IP address for connecting to the remote fortios device. Required when 
+# id: (required) Policy ID. Warning: policy ID number is different than Policy sequence number. The policy ID 
+# ips_sensor: Specifies IPS Sensor profile name. 
+# logtraffic: Logs sessions that matched policy. 
+# logtraffic_start: Logs beginning of session as well. 
+# nat: Enable or disable Nat. 
+# password: Specifies the password used to authenticate to the remote device. Required when `file_mode' is True. 
+# policy_action: Specifies accept or deny action policy. Required when `state=present'. 
+# poolname: Specifies NAT pool name. 
+# schedule: defines policy schedule. 
+# service: Specifies policy service(s), could be a list (ex: ['MAIL','DNS']). Required when `state=present'. 
+# service_negate: Negate policy service(s) defined in service value. 
+# src_addr: Specifies source address (or group) object name(s). Required when `state=present'. 
+# src_addr_negate: Negate source address param. 
+# src_intf: Specifies source interface name. 
+# state: Specifies if policy `id' need to be added or deleted. 
+# timeout: Timeout in seconds for connecting to the remote device. 
+# username: Configures the username used to authenticate to the remote device. Required when `file_mode' is True. 
+# vdom: Specifies on which vdom to apply configuration 
+# webfilter_profile: Specifies Webfilter profile name. 
+}- name: ${2:Name for fortios_ipv4_policy module.}
+  fortios_ipv4_policy:
+${3:   ${4:application_list}: ${5:"#"}}
+${6:   ${7:av_profile}: ${8:"#"}}
+${9:   ${10:backup}: ${11:"#"}}
+${12:   ${13:backup_filename}: ${14:"#"}}
+${15:   ${16:backup_path}: ${17:"#"}}
+${18:   ${19:comment}: ${20:"#"}}
+${21:   ${22:config_file}: ${23:"#"}}
+${24:   ${25:dst_addr}: ${26:"#"}}
+${27:   ${28:dst_addr_negate}: ${29:"#"}}
+${30:   ${31:dst_intf}: ${32:"#"}}
+${33:   ${34:file_mode}: ${35:"#"}}
+${36:   ${37:fixedport}: ${38:"#"}}
+${39:   ${40:host}: ${41:"#"}}
+${42:   ${43:id}: ${44:"#"}}
+${45:   ${46:ips_sensor}: ${47:"#"}}
+${48:   ${49:logtraffic}: ${50:"#"}}
+${51:   ${52:logtraffic_start}: ${53:"#"}}
+${54:   ${55:nat}: ${56:"#"}}
+${57:   ${58:password}: ${59:"#"}}
+${60:   ${61:policy_action}: ${62:"#"}}
+${63:   ${64:poolname}: ${65:"#"}}
+${66:   ${67:schedule}: ${68:"#"}}
+${69:   ${70:service}: ${71:"#"}}
+${72:   ${73:service_negate}: ${74:"#"}}
+${75:   ${76:src_addr}: ${77:"#"}}
+${78:   ${79:src_addr_negate}: ${80:"#"}}
+${81:   ${82:src_intf}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:timeout}: ${89:"#"}}
+${90:   ${91:username}: ${92:"#"}}
+${93:   ${94:vdom}: ${95:"#"}}
+${96:   ${97:webfilter_profile}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
+]]></content>
+	<tabTrigger>fortios_ipv4_policy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

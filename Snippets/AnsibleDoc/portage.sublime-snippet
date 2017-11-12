@@ -1,26 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:#changed_use = Include installed packages where USE flags have changed, except when flags that the user has not enabled are
-#deep = Consider the entire dependency tree of packages (--deep)
-#depclean = Remove packages not needed by explicitly merged packages (--depclean) If no package is specified, clean up the
-#getbinpkg = Prefer packages specified at PORTAGE_BINHOST in make.conf
-#newuse = Include installed packages where USE flags have changed (--newuse)
-#nodeps = Only merge packages but not their dependencies (--nodeps)
-#noreplace = Do not re-emerge installed packages (--noreplace)
-#oneshot = Do not add the packages to the world file (--oneshot)
-#onlydeps = Only merge packages' dependencies but not the packages (--onlydeps)
-#package = Package atom or set, e.g. `sys-apps/foo' or `>foo-2.13' or `@world'
-#quiet = Run emerge in quiet mode (--quiet)
-#state = State of the package atom
-#sync = Sync package repositories first If yes, perform "emerge --sync" If web, perform "emerge-webrsync"
-#update = Update packages to the best version available (--update)
-#usepkgonly = Merge only binaries (no compiling). This sets getbinpkg=yes.
-#verbose = Run emerge in verbose mode (--verbose)
+${1:# changed_use: Include installed packages where USE flags have changed, except when flags that the user has not enabled 
+# deep: Consider the entire dependency tree of packages (--deep) 
+# depclean: Remove packages not needed by explicitly merged packages (--depclean) If no package is specified, clean 
+# getbinpkg: Prefer packages specified at PORTAGE_BINHOST in make.conf 
+# jobs: Specifies the number of packages to build simultaneously. 
+# keepgoing: Continue as much as possible after an error. 
+# loadavg: Specifies that no new builds should be started if there are other builds running and the load average is 
+# newuse: Include installed packages where USE flags have changed (--newuse) 
+# nodeps: Only merge packages but not their dependencies (--nodeps) 
+# noreplace: Do not re-emerge installed packages (--noreplace) 
+# oneshot: Do not add the packages to the world file (--oneshot) 
+# onlydeps: Only merge packages' dependencies but not the packages (--onlydeps) 
+# package: Package atom or set, e.g. `sys-apps/foo' or `>foo-2.13' or `@world' 
+# quiet: Run emerge in quiet mode (--quiet) 
+# state: State of the package atom 
+# sync: Sync package repositories first If yes, perform "emerge --sync" If web, perform "emerge-webrsync" 
+# update: Update packages to the best version available (--update) 
+# usepkgonly: Merge only binaries (no compiling). This sets getbinpkg=yes. 
+# verbose: Run emerge in verbose mode (--verbose) 
 }- name: ${2:Name for portage module.}
-${3:  become: ${4:yes}}
-  portage: ${5:changed_use=${6: } }${7:deep=${8: } }${9:depclean=${10: } }${11:getbinpkg=${12: } }${13:newuse=${14: } }${15:nodeps=${16: } }${17:noreplace=${18: } }${19:oneshot=${20: } }${21:onlydeps=${22: } }${23:package=${24: } }${25:quiet=${26: } }${27:state=${28: } }${29:sync=${30: } }${31:update=${32: } }${33:usepkgonly=${34: } }${35:verbose=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  portage:
+${3:   ${4:changed_use}: ${5:"#"}}
+${6:   ${7:deep}: ${8:"#"}}
+${9:   ${10:depclean}: ${11:"#"}}
+${12:   ${13:getbinpkg}: ${14:"#"}}
+${15:   ${16:jobs}: ${17:"#"}}
+${18:   ${19:keepgoing}: ${20:"#"}}
+${21:   ${22:loadavg}: ${23:"#"}}
+${24:   ${25:newuse}: ${26:"#"}}
+${27:   ${28:nodeps}: ${29:"#"}}
+${30:   ${31:noreplace}: ${32:"#"}}
+${33:   ${34:oneshot}: ${35:"#"}}
+${36:   ${37:onlydeps}: ${38:"#"}}
+${39:   ${40:package}: ${41:"#"}}
+${42:   ${43:quiet}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:sync}: ${50:"#"}}
+${51:   ${52:update}: ${53:"#"}}
+${54:   ${55:usepkgonly}: ${56:"#"}}
+${57:   ${58:verbose}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>portage</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

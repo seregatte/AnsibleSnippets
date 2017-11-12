@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# letter: (required) The letter of the network path to map to. This letter must not already be in use with 
+# password: The password for `username'. 
+# path: The UNC path to map the drive to. This is required if `state=present'. If `state=absent' and path is not 
+# state: If `state=present' will ensure the mapped drive exists. If `state=absent' will ensure the mapped drive 
+# username: Credentials to map the drive with. The username MUST include the domain or servername like SERVER\user, 
+}- name: ${2:Name for win_mapped_drive module.}
+  win_mapped_drive:
+${3:   ${4:letter}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:path}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>win_mapped_drive</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

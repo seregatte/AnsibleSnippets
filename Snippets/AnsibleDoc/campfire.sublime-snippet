@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#msg = The message body.
-#notify = Send a notification sound before the message.
-#room = Room number to which the message should be sent.
-#subscription = The subscription name to use.
-#token = API token.
+${1:# msg: (required) The message body. 
+# notify: Send a notification sound before the message. 
+# room: (required) Room number to which the message should be sent. 
+# subscription: (required) The subscription name to use. 
+# token: (required) API token. 
 }- name: ${2:Name for campfire module.}
-${3:  become: ${4:yes}}
-  campfire: ${5:msg=${6: } }${7:notify=${8: } }${9:room=${10: } }${11:subscription=${12: } }${13:token=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  campfire:
+${3:   ${4:msg}: ${5:"#"}}
+${6:   ${7:notify}: ${8:"#"}}
+${9:   ${10:room}: ${11:"#"}}
+${12:   ${13:subscription}: ${14:"#"}}
+${15:   ${16:token}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>campfire</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

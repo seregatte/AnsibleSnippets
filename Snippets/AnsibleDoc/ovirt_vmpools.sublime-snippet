@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+# cluster: Name of the cluster, where VM pool should be created. 
+# description: Description of the VM pool. 
+# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+# name: (required) Name of the VM pool to manage. 
+# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
+# prestarted: Number of pre-started VMs defines the number of VMs in run state, that are waiting to be attached to 
+# state: Should the VM pool be present/absent. Note that when `state' is `absent' all VMs in VM pool are stopped 
+# template: Name of the template, which will be used to create VM pool. 
+# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
+# type: Type of the VM pool. Either manual or automatic. `manual' - The administrator is responsible for 
+# vm_count: Number of VMs in the pool. Default value is set by engine. 
+# vm_per_user: Maximum number of VMs a single user can attach to from this pool. Default value is set by engine. 
+# wait: `True' if the module should wait for the entity to get into desired state. 
+}- name: ${2:Name for ovirt_vmpools module.}
+  ovirt_vmpools:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:cluster}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:fetch_nested}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:nested_attributes}: ${20:"#"}}
+${21:   ${22:poll_interval}: ${23:"#"}}
+${24:   ${25:prestarted}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:template}: ${32:"#"}}
+${33:   ${34:timeout}: ${35:"#"}}
+${36:   ${37:type}: ${38:"#"}}
+${39:   ${40:vm_count}: ${41:"#"}}
+${42:   ${43:vm_per_user}: ${44:"#"}}
+${45:   ${46:wait}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>ovirt_vmpools</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

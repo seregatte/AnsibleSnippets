@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# connect_timeout: Maximum number of seconds to wait for a connection to happen before closing and retrying. 
+# delay: Number of seconds to wait before starting to poll. 
+# sleep: Number of seconds to sleep between checks. 
+# timeout: Maximum number of seconds to wait for. 
+}- name: ${2:Name for wait_for_connection module.}
+  wait_for_connection:
+${3:   ${4:connect_timeout}: ${5:"#"}}
+${6:   ${7:delay}: ${8:"#"}}
+${9:   ${10:sleep}: ${11:"#"}}
+${12:   ${13:timeout}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>wait_for_connection</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

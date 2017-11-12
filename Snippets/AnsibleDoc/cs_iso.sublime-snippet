@@ -1,31 +1,63 @@
 <snippet>
 <content><![CDATA[
-${1:#account = Account the ISO is related to.
-#api_http_method = HTTP method used.
-#api_key = API key of the CloudStack API.
-#api_region = Name of the ini section in the `cloustack.ini' file.
-#api_secret = Secret key of the CloudStack API.
-#api_timeout = HTTP timeout.
-#api_url = URL of the CloudStack API e.g. https://cloud.example.com/client/api.
-#bootable = Register the ISO to be bootable. Only used if `state' is present.
-#checksum = The MD5 checksum value of this ISO. If set, we search by checksum instead of name.
-#domain = Domain the ISO is related to.
-#is_dynamically_scalable = Register the ISO having XS/VMWare tools installed inorder to support dynamic scaling of VM cpu/memory. Only used
-#is_featured = Register the ISO to be featured. Only used if `state' is present.
-#is_public = Register the ISO to be publicly available to all users. Only used if `state' is present.
-#is_ready = This flag is used for searching existing ISOs. If set to `true', it will only list ISO ready for deployment e.g.
-#iso_filter = Name of the filter used to search for the ISO.
-#name = Name of the ISO.
-#os_type = Name of the OS that best represents the OS of this ISO. If the iso is bootable this parameter needs to be
-#project = Name of the project the ISO to be registered in.
-#state = State of the ISO.
-#url = URL where the ISO can be downloaded from. Required if `state' is present.
-#zone = Name of the zone you wish the ISO to be registered or deleted from. If not specified, first zone found will be
+${1:# account: Account the ISO is related to. 
+# api_http_method: HTTP method used. 
+# api_key: API key of the CloudStack API. 
+# api_region: Name of the ini section in the `cloustack.ini' file. 
+# api_secret: Secret key of the CloudStack API. 
+# api_timeout: HTTP timeout. 
+# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# bootable: Register the ISO to be bootable. Only used if `state' is present. 
+# checksum: The MD5 checksum value of this ISO. If set, we search by checksum instead of name. 
+# cross_zones: Whether the ISO should be synced or removed across zones. Mutually exclusive with `zone'. 
+# display_text: Display text of the ISO. If not specified, `name' will be used. 
+# domain: Domain the ISO is related to. 
+# is_dynamically_scalable: Register the ISO having XS/VMWare tools installed inorder to support dynamic scaling of VM cpu/memory. 
+# is_featured: Register the ISO to be featured. Only used if `state' is present. 
+# is_public: Register the ISO to be publicly available to all users. Only used if `state' is present. 
+# is_ready: This flag is used for searching existing ISOs. If set to `true', it will only list ISO ready for 
+# iso_filter: Name of the filter used to search for the ISO. 
+# name: (required) Name of the ISO. 
+# os_type: Name of the OS that best represents the OS of this ISO. If the iso is bootable this parameter needs to 
+# poll_async: Poll async jobs until job has finished. 
+# project: Name of the project the ISO to be registered in. 
+# state: State of the ISO. 
+# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. To delete all tags, set a 
+# url: URL where the ISO can be downloaded from. Required if `state' is present. 
+# zone: Name of the zone you wish the ISO to be registered or deleted from. If not specified, first zone found 
 }- name: ${2:Name for cs_iso module.}
-${3:  become: ${4:yes}}
-  cs_iso: ${5:account=${6: } }${7:api_http_method=${8: } }${9:api_key=${10: } }${11:api_region=${12: } }${13:api_secret=${14: } }${15:api_timeout=${16: } }${17:api_url=${18: } }${19:bootable=${20: } }${21:checksum=${22: } }${23:domain=${24: } }${25:is_dynamically_scalable=${26: } }${27:is_featured=${28: } }${29:is_public=${30: } }${31:is_ready=${32: } }${33:iso_filter=${34: } }${35:name=${36: } }${37:os_type=${38: } }${39:project=${40: } }${41:state=${42: } }${43:url=${44: } }${45:zone=${46: } }
-${47:  when: ${48: variable is defined}}
-${49:  with_items: ${50: array}}
+  cs_iso:
+${3:   ${4:account}: ${5:"#"}}
+${6:   ${7:api_http_method}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:api_region}: ${14:"#"}}
+${15:   ${16:api_secret}: ${17:"#"}}
+${18:   ${19:api_timeout}: ${20:"#"}}
+${21:   ${22:api_url}: ${23:"#"}}
+${24:   ${25:bootable}: ${26:"#"}}
+${27:   ${28:checksum}: ${29:"#"}}
+${30:   ${31:cross_zones}: ${32:"#"}}
+${33:   ${34:display_text}: ${35:"#"}}
+${36:   ${37:domain}: ${38:"#"}}
+${39:   ${40:is_dynamically_scalable}: ${41:"#"}}
+${42:   ${43:is_featured}: ${44:"#"}}
+${45:   ${46:is_public}: ${47:"#"}}
+${48:   ${49:is_ready}: ${50:"#"}}
+${51:   ${52:iso_filter}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:os_type}: ${59:"#"}}
+${60:   ${61:poll_async}: ${62:"#"}}
+${63:   ${64:project}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:tags}: ${71:"#"}}
+${72:   ${73:url}: ${74:"#"}}
+${75:   ${76:zone}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>cs_iso</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

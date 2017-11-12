@@ -1,15 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#checksum_algorithm = Algorithm to determine checksum of file. Will throw an error if the host is unable to use specified algorithm.
-#follow = Whether to follow symlinks
-#get_checksum = Whether to return a checksum of the file (default sha1)
-#get_md5 = Whether to return the md5 sum of the file.  Will return None if we're unable to use md5 (Common for FIPS-140
-#path = The full path of the file/object to get the facts of
+${1:# checksum_algorithm: Algorithm to determine checksum of file. Will throw an error if the host is unable to use specified 
+# follow: Whether to follow symlinks. 
+# get_attributes: Get file attributes using lsattr tool if present. 
+# get_checksum: Whether to return a checksum of the file (default sha1). 
+# get_md5: Whether to return the md5 sum of the file. Will return None if not a regular file or if we're unable to 
+# get_mime: Use file magic and return data about the nature of the file. this uses the 'file' utility found on most 
+# path: (required) The full path of the file/object to get the facts of. 
 }- name: ${2:Name for stat module.}
-${3:  become: ${4:yes}}
-  stat: ${5:checksum_algorithm=${6: } }${7:follow=${8: } }${9:get_checksum=${10: } }${11:get_md5=${12: } }${13:path=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  stat:
+${3:   ${4:checksum_algorithm}: ${5:"#"}}
+${6:   ${7:follow}: ${8:"#"}}
+${9:   ${10:get_attributes}: ${11:"#"}}
+${12:   ${13:get_checksum}: ${14:"#"}}
+${15:   ${16:get_md5}: ${17:"#"}}
+${18:   ${19:get_mime}: ${20:"#"}}
+${21:   ${22:path}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>stat</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

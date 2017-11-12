@@ -1,16 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:#executable = The explicit executable or a pathname to the executable to be used to run easy_install for a specific version of
-#name = A Python library name
-#state = The desired state of the library. `latest' ensures that the latest version is installed.
-#virtualenv = an optional `virtualenv' directory path to install into. If the `virtualenv' does not exist, it is created
-#virtualenv_command = The command to create the virtual environment with. For example `pyvenv', `virtualenv', `virtualenv2'.
-#virtualenv_site_packages = Whether the virtual environment will inherit packages from the global site-packages directory.  Note that if
+${1:# executable: The explicit executable or a pathname to the executable to be used to run easy_install for a specific 
+# name: (required) A Python library name 
+# state: The desired state of the library. `latest' ensures that the latest version is installed. 
+# virtualenv: an optional `virtualenv' directory path to install into. If the `virtualenv' does not exist, it is 
+# virtualenv_command: The command to create the virtual environment with. For example `pyvenv', `virtualenv', `virtualenv2'. 
+# virtualenv_site_packages: Whether the virtual environment will inherit packages from the global site-packages directory.  Note 
 }- name: ${2:Name for easy_install module.}
-${3:  become: ${4:yes}}
-  easy_install: ${5:executable=${6: } }${7:name=${8: } }${9:state=${10: } }${11:virtualenv=${12: } }${13:virtualenv_command=${14: } }${15:virtualenv_site_packages=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  easy_install:
+${3:   ${4:executable}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:virtualenv}: ${14:"#"}}
+${15:   ${16:virtualenv_command}: ${17:"#"}}
+${18:   ${19:virtualenv_site_packages}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>easy_install</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

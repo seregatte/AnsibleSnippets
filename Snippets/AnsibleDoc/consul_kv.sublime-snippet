@@ -1,20 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:#cas = used when acquiring a lock with a session. If the cas is 0, then Consul will only put the key if it does not
-#flags = opaque integer value that can be passed when setting a value.
-#host = host of the consul agent defaults to localhost
-#key = the key at which the value should be stored.
-#port = the port on which the consul agent is running
-#recurse = if the key represents a prefix, each entry with the prefix can be retrieved by setting this to true.
-#session = the session that should be used to acquire or release a lock associated with a key/value pair
-#state = the action to take with the supplied key and value. If the state is 'present', the key contents will be set to
-#token = the token key indentifying an ACL rule set that controls access to the key value pair
-#value = the value should be associated with the given key, required if state is present
+${1:# cas: used when acquiring a lock with a session. If the cas is 0, then Consul will only put the key if it does 
+# flags: opaque integer value that can be passed when setting a value. 
+# host: host of the consul agent defaults to localhost 
+# key: (required) the key at which the value should be stored. 
+# port: the port on which the consul agent is running 
+# recurse: if the key represents a prefix, each entry with the prefix can be retrieved by setting this to true. 
+# scheme: the protocol scheme on which the consul agent is running 
+# session: the session that should be used to acquire or release a lock associated with a key/value pair 
+# state: the action to take with the supplied key and value. If the state is 'present', the key contents will be 
+# token: the token key indentifying an ACL rule set that controls access to the key value pair 
+# validate_certs: whether to verify the tls certificate of the consul agent 
+# value: (required) the value should be associated with the given key, required if state is present 
 }- name: ${2:Name for consul_kv module.}
-${3:  become: ${4:yes}}
-  consul_kv: ${5:cas=${6: } }${7:flags=${8: } }${9:host=${10: } }${11:key=${12: } }${13:port=${14: } }${15:recurse=${16: } }${17:session=${18: } }${19:state=${20: } }${21:token=${22: } }${23:value=${24: } }
-${25:  when: ${26: variable is defined}}
-${27:  with_items: ${28: array}}
+  consul_kv:
+${3:   ${4:cas}: ${5:"#"}}
+${6:   ${7:flags}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:key}: ${14:"#"}}
+${15:   ${16:port}: ${17:"#"}}
+${18:   ${19:recurse}: ${20:"#"}}
+${21:   ${22:scheme}: ${23:"#"}}
+${24:   ${25:session}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:token}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:value}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>consul_kv</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

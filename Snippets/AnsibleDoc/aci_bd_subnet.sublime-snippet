@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# bd: The name of the Bridge Domain. 
+# description: The description for the Subnet. 
+# enable_vip: Determines if the Subnet should be treated as a VIP; used when the BD is extended to multiple sites. The 
+# gateway: The IPv4 or IPv6 gateway address for the Subnet. 
+# mask: The subnet mask for the Subnet. This is the number assocated with CIDR notation. 
+# nd_prefix_policy: The IPv6 Neighbor Discovery Prefix Policy to associate with the Subnet. 
+# preferred: Determines if the Subnet is preferred over all available Subnets. Only one Subnet per Address Family 
+# route_profile: The Route Profile to the associate with the Subnet. 
+# route_profile_l3_out: The L3 Out that contains the assocated Route Profile. 
+# scope: Determines if scope of the Subnet. The private option only allows communication with hosts in the same 
+# subnet_control: Determines the Subnet's Control State. The querier_ip option is used to treat the gateway_ip as an IGMP 
+# subnet_name: The name of the Subnet. 
+# tenant: The name of the Tenant. 
+}- name: ${2:Name for aci_bd_subnet module.}
+  aci_bd_subnet:
+${3:   ${4:bd}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:enable_vip}: ${11:"#"}}
+${12:   ${13:gateway}: ${14:"#"}}
+${15:   ${16:mask}: ${17:"#"}}
+${18:   ${19:nd_prefix_policy}: ${20:"#"}}
+${21:   ${22:preferred}: ${23:"#"}}
+${24:   ${25:route_profile}: ${26:"#"}}
+${27:   ${28:route_profile_l3_out}: ${29:"#"}}
+${30:   ${31:scope}: ${32:"#"}}
+${33:   ${34:subnet_control}: ${35:"#"}}
+${36:   ${37:subnet_name}: ${38:"#"}}
+${39:   ${40:tenant}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>aci_bd_subnet</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

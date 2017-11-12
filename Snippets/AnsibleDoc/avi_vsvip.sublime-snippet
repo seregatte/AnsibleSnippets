@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# cloud_ref: It is a reference to an object of type cloud. Field introduced in 17.1.1. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# dns_info: Service discovery specific data including fully qualified domain name, type and time-to-live of the dns 
+# east_west_placement: Force placement on all service engines in the service engine group (container clouds only). Field 
+# name: (required) Name for the vsvip object. Field introduced in 17.1.1. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. Field introduced in 17.1.1. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Uuid of the vsvip object. Field introduced in 17.1.1. 
+# vip: List of virtual service ips and other shareable entities. Field introduced in 17.1.1. 
+# vrf_context_ref: Virtual routing context that the virtual service is bound to. This is used to provide the isolation of 
+}- name: ${2:Name for avi_vsvip module.}
+  avi_vsvip:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:cloud_ref}: ${8:"#"}}
+${9:   ${10:controller}: ${11:"#"}}
+${12:   ${13:dns_info}: ${14:"#"}}
+${15:   ${16:east_west_placement}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:tenant}: ${29:"#"}}
+${30:   ${31:tenant_ref}: ${32:"#"}}
+${33:   ${34:tenant_uuid}: ${35:"#"}}
+${36:   ${37:url}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:uuid}: ${44:"#"}}
+${45:   ${46:vip}: ${47:"#"}}
+${48:   ${49:vrf_context_ref}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>avi_vsvip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

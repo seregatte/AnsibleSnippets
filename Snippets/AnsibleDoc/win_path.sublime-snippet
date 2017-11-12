@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# elements: (required) A single path element, or a list of path elements (ie, directories) to add or remove. When 
+# name: Target path environment variable name 
+# scope: The level at which the environment variable specified by `name' should be managed (either for the 
+# state: Whether the path elements specified in `elements' should be present or absent. 
+}- name: ${2:Name for win_path module.}
+  win_path:
+${3:   ${4:elements}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:scope}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>win_path</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

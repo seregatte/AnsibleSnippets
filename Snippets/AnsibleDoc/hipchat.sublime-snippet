@@ -1,19 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:#api = API url if using a self-hosted hipchat server. For hipchat api version 2 use `/v2' path in URI
-#color = Background color for the message. Default is yellow.
-#from = Name the message will appear be sent from. max 15 characters. Over 15, will be shorten.
-#msg = The message body.
-#msg_format = message format. html or text. Default is text.
-#notify = notify or not (change the tab color, play a sound, etc)
-#room = ID or name of the room.
-#token = API token.
-#validate_certs = If `no', SSL certificates will not be validated. This should only be used on personally controlled sites using
+${1:# api: API url if using a self-hosted hipchat server. For Hipchat API version 2 use the default URI with `/v2' 
+# color: Background color for the message. 
+# from: Name the message will appear to be sent from. Max length is 15 characters - above this it will be 
+# msg: (required) The message body. 
+# msg_format: Message format. 
+# notify: If true, a notification will be triggered for users in the room. 
+# room: (required) ID or name of the room. 
+# token: (required) API token. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
 }- name: ${2:Name for hipchat module.}
-${3:  become: ${4:yes}}
-  hipchat: ${5:api=${6: } }${7:color=${8: } }${9:from=${10: } }${11:msg=${12: } }${13:msg_format=${14: } }${15:notify=${16: } }${17:room=${18: } }${19:token=${20: } }${21:validate_certs=${22: } }
-${23:  when: ${24: variable is defined}}
-${25:  with_items: ${26: array}}
+  hipchat:
+${3:   ${4:api}: ${5:"#"}}
+${6:   ${7:color}: ${8:"#"}}
+${9:   ${10:from}: ${11:"#"}}
+${12:   ${13:msg}: ${14:"#"}}
+${15:   ${16:msg_format}: ${17:"#"}}
+${18:   ${19:notify}: ${20:"#"}}
+${21:   ${22:room}: ${23:"#"}}
+${24:   ${25:token}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>hipchat</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

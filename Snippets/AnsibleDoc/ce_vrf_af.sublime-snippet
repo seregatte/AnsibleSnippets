@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# evpn: Is extend vpn or normal vpn. 
+# route_distinguisher: VPN instance route distinguisher,the RD used to distinguish same route prefix from different vpn. The RD 
+# state: Manage the state of the af. 
+# vpn_target_state: Manage the state of the vpn target. 
+# vpn_target_type: VPN instance vpn target type. 
+# vpn_target_value: VPN instance target value. Such as X.X.X.X:number<0-65535> or number<0-65535>:number<0-4294967295> or 
+# vrf: (required) VPN instance. 
+# vrf_aftype: VPN instance address family. 
+}- name: ${2:Name for ce_vrf_af module.}
+  ce_vrf_af:
+${3:   ${4:evpn}: ${5:"#"}}
+${6:   ${7:route_distinguisher}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:vpn_target_state}: ${14:"#"}}
+${15:   ${16:vpn_target_type}: ${17:"#"}}
+${18:   ${19:vpn_target_value}: ${20:"#"}}
+${21:   ${22:vrf}: ${23:"#"}}
+${24:   ${25:vrf_aftype}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>ce_vrf_af</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

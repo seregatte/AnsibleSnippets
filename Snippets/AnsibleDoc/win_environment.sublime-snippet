@@ -1,14 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#level = The level at which to set the environment variable. Use 'machine' to set for all users. Use 'user' to set for
-#name = The name of the environment variable
-#state = present to ensure environment variable is set, or absent to ensure it is removed
-#value = The value to store in the environment variable. Can be omitted for state=absent
+${1:# level: (required) The level at which to set the environment variable. Use 'machine' to set for all users. Use 
+# name: (required) The name of the environment variable 
+# state: present to ensure environment variable is set, or absent to ensure it is removed 
+# value: The value to store in the environment variable. Can be omitted for state=absent 
 }- name: ${2:Name for win_environment module.}
-${3:  become: ${4:yes}}
-  win_environment: ${5:level=${6: } }${7:name=${8: } }${9:state=${10: } }${11:value=${12: } }
-${13:  when: ${14: variable is defined}}
-${15:  with_items: ${16: array}}
+  win_environment:
+${3:   ${4:level}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:value}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>win_environment</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

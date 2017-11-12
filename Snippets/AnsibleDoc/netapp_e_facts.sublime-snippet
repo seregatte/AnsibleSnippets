@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
+# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
+# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
+# ssid: (required) The ID of the array to manage. This value must be unique for each array. 
+# validate_certs: Should https certificates be validated? 
+}- name: ${2:Name for netapp_e_facts module.}
+  netapp_e_facts:
+${3:   ${4:api_password}: ${5:"#"}}
+${6:   ${7:api_url}: ${8:"#"}}
+${9:   ${10:api_username}: ${11:"#"}}
+${12:   ${13:ssid}: ${14:"#"}}
+${15:   ${16:validate_certs}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>netapp_e_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

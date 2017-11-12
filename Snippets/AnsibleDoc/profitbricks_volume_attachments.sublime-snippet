@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#datacenter = The datacenter in which to operate.
-#server = The name of the server you wish to detach or attach the volume.
-#state = Indicate desired state of the resource
-#subscription_password = THe ProfitBricks password. Overrides the PB_PASSWORD environement variable.
-#subscription_user = The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environement variable.
-#volume = The volume name or ID.
-#wait = wait for the operation to complete before returning
-#wait_timeout = how long before wait gives up, in seconds
+${1:# datacenter: (required) The datacenter in which to operate. 
+# server: (required) The name of the server you wish to detach or attach the volume. 
+# state: Indicate desired state of the resource 
+# subscription_password: THe ProfitBricks password. Overrides the PB_PASSWORD environment variable. 
+# subscription_user: The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable. 
+# volume: (required) The volume name or ID. 
+# wait: wait for the operation to complete before returning 
+# wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for profitbricks_volume_attachments module.}
-${3:  become: ${4:yes}}
-  profitbricks_volume_attachments: ${5:datacenter=${6: } }${7:server=${8: } }${9:state=${10: } }${11:subscription_password=${12: } }${13:subscription_user=${14: } }${15:volume=${16: } }${17:wait=${18: } }${19:wait_timeout=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  profitbricks_volume_attachments:
+${3:   ${4:datacenter}: ${5:"#"}}
+${6:   ${7:server}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:subscription_password}: ${14:"#"}}
+${15:   ${16:subscription_user}: ${17:"#"}}
+${18:   ${19:volume}: ${20:"#"}}
+${21:   ${22:wait}: ${23:"#"}}
+${24:   ${25:wait_timeout}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>profitbricks_volume_attachments</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

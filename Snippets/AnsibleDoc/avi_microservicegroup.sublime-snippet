@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# created_by: Creator name. 
+# description: User defined description for the object. 
+# name: (required) Name of the microservice group. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# service_refs: Configure microservice(es). It is a reference to an object of type microservice. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Uuid of the microservice group. 
+}- name: ${2:Name for avi_microservicegroup module.}
+  avi_microservicegroup:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:controller}: ${8:"#"}}
+${9:   ${10:created_by}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:service_refs}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:tenant}: ${29:"#"}}
+${30:   ${31:tenant_ref}: ${32:"#"}}
+${33:   ${34:tenant_uuid}: ${35:"#"}}
+${36:   ${37:url}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:uuid}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>avi_microservicegroup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

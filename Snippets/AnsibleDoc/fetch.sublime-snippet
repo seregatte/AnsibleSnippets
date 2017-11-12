@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#dest = A directory to save the file into. For example, if the `dest' directory is `/backup' a `src' file named
-#fail_on_missing = Makes it fails when the source file is missing.
-#flat = Allows you to override the default behavior of appending hostname/path/to/file to the destination.  If dest ends
-#src = The file on the remote system to fetch. This `must' be a file, not a directory. Recursive fetching may be
-#validate_checksum = Verify that the source and destination checksums match after the files are fetched.
+${1:# dest: (required) A directory to save the file into. For example, if the `dest' directory is `/backup' a `src' 
+# fail_on_missing: When set to 'yes', the task will fail if the remote file cannot be read for any reason.  Prior to 
+# flat: Allows you to override the default behavior of appending hostname/path/to/file to the destination.  If 
+# src: (required) The file on the remote system to fetch. This `must' be a file, not a directory. Recursive 
+# validate_checksum: Verify that the source and destination checksums match after the files are fetched. 
 }- name: ${2:Name for fetch module.}
-${3:  become: ${4:yes}}
-  fetch: ${5:dest=${6: } }${7:fail_on_missing=${8: } }${9:flat=${10: } }${11:src=${12: } }${13:validate_checksum=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  fetch:
+${3:   ${4:dest}: ${5:"#"}}
+${6:   ${7:fail_on_missing}: ${8:"#"}}
+${9:   ${10:flat}: ${11:"#"}}
+${12:   ${13:src}: ${14:"#"}}
+${15:   ${16:validate_checksum}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>fetch</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

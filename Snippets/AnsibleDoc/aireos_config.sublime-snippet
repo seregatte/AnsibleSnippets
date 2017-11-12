@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# after: The ordered set of commands to append to the end of the command stack if a change needs to be made. 
+# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
+# before: The ordered set of commands to push on to the command stack if a change needs to be made.  This allows 
+# diff_against: When using the `ansible-playbook --diff' command line argument the module can generate diffs against 
+# diff_ignore_lines: Use this argument to specify one or more lines that should be ignored during the diff.  This is used for 
+# intended_config: The `intended_config' provides the master configuration that the node should conform to and is used to 
+# lines: The ordered set of commands that should be configured. The commands must be the exact same commands as 
+# match: Instructs the module on the way to perform the matching of the set of commands against the current 
+# provider: A dict object containing connection details. 
+# running_config: The module, by default, will connect to the remote device and retrieve the current running-config to use 
+# save: The `save' argument instructs the module to save the running- config to the startup-config at the 
+# src: Specifies the source path to the file that contains the configuration or configuration template to load. 
+}- name: ${2:Name for aireos_config module.}
+  aireos_config:
+${3:   ${4:after}: ${5:"#"}}
+${6:   ${7:backup}: ${8:"#"}}
+${9:   ${10:before}: ${11:"#"}}
+${12:   ${13:diff_against}: ${14:"#"}}
+${15:   ${16:diff_ignore_lines}: ${17:"#"}}
+${18:   ${19:intended_config}: ${20:"#"}}
+${21:   ${22:lines}: ${23:"#"}}
+${24:   ${25:match}: ${26:"#"}}
+${27:   ${28:provider}: ${29:"#"}}
+${30:   ${31:running_config}: ${32:"#"}}
+${33:   ${34:save}: ${35:"#"}}
+${36:   ${37:src}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>aireos_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

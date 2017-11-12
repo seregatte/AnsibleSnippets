@@ -1,0 +1,56 @@
+<snippet>
+<content><![CDATA[
+${1:# clip: Cluster IP address. Specify this parameter to connect to the remote cluster site for GSLB auto-sync. 
+# metricexchange: Exchange metrics with other sites. Metrics are exchanged by using Metric Exchange Protocol (MEP). The 
+# naptrreplacementsuffix: The naptr replacement suffix configured here will be used to construct the naptr replacement field in 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# nwmetricexchange: Exchange, with other GSLB sites, network metrics such as round-trip time (RTT), learned from 
+# parentsite: Parent site of the GSLB site, in a parent-child topology. 
+# publicclip: IP address to be used to globally access the remote cluster when it is deployed behind a NAT. It can be 
+# publicip: Public IP address for the local site. Required only if the appliance is deployed in a private address 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# sessionexchange: Exchange persistent session entries with other GSLB sites every five seconds. 
+# siteipaddress: IP address for the GSLB site. The GSLB site uses this IP address to communicate with other GSLB sites. 
+# sitename: Name for the GSLB site. Must begin with an ASCII alphanumeric or underscore `_' character, and must 
+# contain: ', period `.', 
+# sitetype: Type of site to create. If the type is not specified, the appliance automatically detects and sets the 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# triggermonitor: Specify the conditions under which the GSLB service must be monitored by a monitor, if one is bound. 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for netscaler_gslb_site module.}
+  netscaler_gslb_site:
+${3:   ${4:clip}: ${5:"#"}}
+${6:   ${7:metricexchange}: ${8:"#"}}
+${9:   ${10:naptrreplacementsuffix}: ${11:"#"}}
+${12:   ${13:nitro_pass}: ${14:"#"}}
+${15:   ${16:nitro_protocol}: ${17:"#"}}
+${18:   ${19:nitro_timeout}: ${20:"#"}}
+${21:   ${22:nitro_user}: ${23:"#"}}
+${24:   ${25:nsip}: ${26:"#"}}
+${27:   ${28:nwmetricexchange}: ${29:"#"}}
+${30:   ${31:parentsite}: ${32:"#"}}
+${33:   ${34:publicclip}: ${35:"#"}}
+${36:   ${37:publicip}: ${38:"#"}}
+${39:   ${40:save_config}: ${41:"#"}}
+${42:   ${43:sessionexchange}: ${44:"#"}}
+${45:   ${46:siteipaddress}: ${47:"#"}}
+${48:   ${49:sitename}: ${50:"#"}}
+${51:   ${52:contain}: ${53:"#"}}
+${54:   ${55:sitetype}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:triggermonitor}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
+]]></content>
+	<tabTrigger>netscaler_gslb_site</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

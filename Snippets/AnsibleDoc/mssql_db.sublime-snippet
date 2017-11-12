@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# autocommit: Automatically commit the change only if the import succeed. Sometimes it is necessary to use 
+# login_host: Host running the database 
+# login_password: The password used to authenticate with 
+# login_port: Port of the MSSQL server. Requires login_host be defined as other then localhost if login_port is used 
+# login_user: The username used to authenticate with 
+# name: (required) name of the database to add or remove 
+# state: The database state 
+# target: Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (`.sql') 
+}- name: ${2:Name for mssql_db module.}
+  mssql_db:
+${3:   ${4:autocommit}: ${5:"#"}}
+${6:   ${7:login_host}: ${8:"#"}}
+${9:   ${10:login_password}: ${11:"#"}}
+${12:   ${13:login_port}: ${14:"#"}}
+${15:   ${16:login_user}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:target}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>mssql_db</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

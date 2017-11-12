@@ -1,23 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:#database = The name of the database to add/remove the user from
-#login_database = The database where login credentials are stored
-#login_host = The host running the database
-#login_password = The password used to authenticate with
-#login_port = The port to connect to
-#login_user = The username used to authenticate with
-#name = The name of the user to add or remove
-#password = The password to use for the user
-#replica_set = Replica set to connect to (automatically connects to primary for writes)
-#roles = The database user roles valid values are one or more of the following: read, 'readWrite', 'dbAdmin',
-#ssl = Whether to use an SSL connection when connecting to the database
-#state = The database user state
-#update_password = `always' will update passwords if they differ.  `on_create' will only set the password for newly created users.
+${1:# database: (required) The name of the database to add/remove the user from 
+# login_database: The database where login credentials are stored 
+# login_host: The host running the database 
+# login_password: The password used to authenticate with 
+# login_port: The port to connect to 
+# login_user: The username used to authenticate with 
+# name: (required) The name of the user to add or remove 
+# password: The password to use for the user 
+# replica_set: Replica set to connect to (automatically connects to primary for writes) 
+# roles: The database user roles valid values could either be one or more of the following strings: 'read', 
+# ssl: Whether to use an SSL connection when connecting to the database 
+# ssl_cert_reqs: Specifies whether a certificate is required from the other side of the connection, and whether it will 
+# state: The database user state 
+# update_password: `always' will update passwords if they differ.  `on_create' will only set the password for newly created 
 }- name: ${2:Name for mongodb_user module.}
-${3:  become: ${4:yes}}
-  mongodb_user: ${5:database=${6: } }${7:login_database=${8: } }${9:login_host=${10: } }${11:login_password=${12: } }${13:login_port=${14: } }${15:login_user=${16: } }${17:name=${18: } }${19:password=${20: } }${21:replica_set=${22: } }${23:roles=${24: } }${25:ssl=${26: } }${27:state=${28: } }${29:update_password=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  mongodb_user:
+${3:   ${4:database}: ${5:"#"}}
+${6:   ${7:login_database}: ${8:"#"}}
+${9:   ${10:login_host}: ${11:"#"}}
+${12:   ${13:login_password}: ${14:"#"}}
+${15:   ${16:login_port}: ${17:"#"}}
+${18:   ${19:login_user}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:replica_set}: ${29:"#"}}
+${30:   ${31:roles}: ${32:"#"}}
+${33:   ${34:ssl}: ${35:"#"}}
+${36:   ${37:ssl_cert_reqs}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:update_password}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>mongodb_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

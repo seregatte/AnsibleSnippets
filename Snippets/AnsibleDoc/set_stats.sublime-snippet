@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: boolean that indicates if the provided value is aggregated to the existing stat `yes' or will replace it 
+# data: (required) A dictionary of which each key represents a stat (or variable) you want to keep track of 
+# per_host: boolean that indicates if the stats is per host or for all hosts in the run. 
+}- name: ${2:Name for set_stats module.}
+  set_stats:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:data}: ${8:"#"}}
+${9:   ${10:per_host}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>set_stats</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

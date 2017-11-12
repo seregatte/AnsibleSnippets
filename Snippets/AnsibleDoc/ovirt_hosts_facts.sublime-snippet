@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# pattern: Search term which is accepted by oVirt/RHV search backend. For example to search host X from datacenter 
+}- name: ${2:Name for ovirt_hosts_facts module.}
+  ovirt_hosts_facts:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:fetch_nested}: ${8:"#"}}
+${9:   ${10:nested_attributes}: ${11:"#"}}
+${12:   ${13:pattern}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>ovirt_hosts_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

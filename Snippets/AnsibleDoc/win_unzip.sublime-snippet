@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#creates = If this file or directory exists the specified src will not be extracted.
-#dest = Destination of zip file (provide absolute path of directory). If it does not exist, the directory will be
-#recurse = Recursively expand zipped files within the src file.
-#rm = Remove the zip file, after unzipping
-#src = File to be unzipped (provide absolute path)
+${1:# creates: If this file or directory exists the specified src will not be extracted. 
+# delete_archive: Remove the zip file, after unzipping. 
+# dest: (required) Destination of zip file (provide absolute path of directory). If it does not exist, the 
+# recurse: Recursively expand zipped files within the src file. 
+# src: (required) File to be unzipped (provide absolute path). 
 }- name: ${2:Name for win_unzip module.}
-${3:  become: ${4:yes}}
-  win_unzip: ${5:creates=${6: } }${7:dest=${8: } }${9:recurse=${10: } }${11:rm=${12: } }${13:src=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  win_unzip:
+${3:   ${4:creates}: ${5:"#"}}
+${6:   ${7:delete_archive}: ${8:"#"}}
+${9:   ${10:dest}: ${11:"#"}}
+${12:   ${13:recurse}: ${14:"#"}}
+${15:   ${16:src}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>win_unzip</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

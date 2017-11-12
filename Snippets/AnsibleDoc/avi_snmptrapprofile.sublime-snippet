@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# api_version: Avi API version of to use for Avi API and objects. 
+# controller: IP address or hostname of the controller. The default value is the environment variable 
+# name: (required) A user-friendly name of the snmp trap configuration. 
+# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# trap_servers: The ip address or hostname of the snmp trap destination server. 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The default value is the environment variable 
+# uuid: Uuid of the snmp trap profile object. 
+}- name: ${2:Name for avi_snmptrapprofile module.}
+  avi_snmptrapprofile:
+${3:   ${4:api_version}: ${5:"#"}}
+${6:   ${7:controller}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:tenant}: ${20:"#"}}
+${21:   ${22:tenant_ref}: ${23:"#"}}
+${24:   ${25:tenant_uuid}: ${26:"#"}}
+${27:   ${28:trap_servers}: ${29:"#"}}
+${30:   ${31:url}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:uuid}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>avi_snmptrapprofile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

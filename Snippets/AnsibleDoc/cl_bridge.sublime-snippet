@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# addr_method: Configures the port to use DHCP. To enable this feature use the option `dhcp'. 
+# alias_name: Description of the port. 
+# ipv4: List of IPv4 addresses to configure on the interface. In the form `X.X.X.X/YY'. 
+# ipv6: List of IPv6 addresses to configure on the interface. In the form `X:X:X::X/YYY'. 
+# location: Interface directory location. 
+# mstpctl_treeprio: Set spanning tree root priority. Must be a multiple of 4096. 
+# mtu: Set MTU. Configure Jumbo Frame by setting MTU to `9000'. 
+# name: (required) Name of the interface. 
+# ports: (required) List of bridge members. 
+# pvid: In vlan-aware mode, defines vlan that is the untagged vlan. 
+# stp: Enables spanning tree Protocol. As of Cumulus Linux 2.5 the default bridging mode, only per vlan RSTP or 
+# vids: In vlan-aware mode, lists VLANs defined under the interface. 
+# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux VRR feature. 
+# virtual_mac: Define Ethernet mac associated with Cumulus Linux VRR feature. 
+# vlan_aware: Enables vlan-aware mode. 
+}- name: ${2:Name for cl_bridge module.}
+  cl_bridge:
+${3:   ${4:addr_method}: ${5:"#"}}
+${6:   ${7:alias_name}: ${8:"#"}}
+${9:   ${10:ipv4}: ${11:"#"}}
+${12:   ${13:ipv6}: ${14:"#"}}
+${15:   ${16:location}: ${17:"#"}}
+${18:   ${19:mstpctl_treeprio}: ${20:"#"}}
+${21:   ${22:mtu}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:ports}: ${29:"#"}}
+${30:   ${31:pvid}: ${32:"#"}}
+${33:   ${34:stp}: ${35:"#"}}
+${36:   ${37:vids}: ${38:"#"}}
+${39:   ${40:virtual_ip}: ${41:"#"}}
+${42:   ${43:virtual_mac}: ${44:"#"}}
+${45:   ${46:vlan_aware}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>cl_bridge</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# bpdu_filter: Specify a port as a BPDU filter port. 
+# bpdu_protection: Configure BPDU protection on an edge port. This function prevents network flapping caused by attack 
+# cost: Set the path cost of the current port. The default instance is 0. 
+# edged_port: Set the current port as an edge port. 
+# interface: Interface name. If the value is `all', will apply configuration to all interfaces. if the value is a 
+# loop_protection: Enable loop protection on the current port. 
+# root_protection: Enable root protection on the current port. 
+# state: Specify desired state of the resource. 
+# stp_converge: STP convergence mode. Fast means set STP aging mode to Fast. Normal means set STP aging mode to Normal. 
+# stp_enable: Enable or disable STP on a switch. 
+# stp_mode: Set an operation mode for the current MSTP process. The mode can be STP, RSTP, or MSTP. 
+# tc_protection: Configure the TC BPDU protection function for an MSTP process. 
+# tc_protection_interval: Set the time the MSTP device takes to handle the maximum number of TC BPDUs and immediately refresh 
+# tc_protection_threshold: Set the maximum number of TC BPDUs that the MSTP can handle. The value is an integer ranging from 1 to 
+}- name: ${2:Name for ce_stp module.}
+  ce_stp:
+${3:   ${4:bpdu_filter}: ${5:"#"}}
+${6:   ${7:bpdu_protection}: ${8:"#"}}
+${9:   ${10:cost}: ${11:"#"}}
+${12:   ${13:edged_port}: ${14:"#"}}
+${15:   ${16:interface}: ${17:"#"}}
+${18:   ${19:loop_protection}: ${20:"#"}}
+${21:   ${22:root_protection}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:stp_converge}: ${29:"#"}}
+${30:   ${31:stp_enable}: ${32:"#"}}
+${33:   ${34:stp_mode}: ${35:"#"}}
+${36:   ${37:tc_protection}: ${38:"#"}}
+${39:   ${40:tc_protection_interval}: ${41:"#"}}
+${42:   ${43:tc_protection_threshold}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>ce_stp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

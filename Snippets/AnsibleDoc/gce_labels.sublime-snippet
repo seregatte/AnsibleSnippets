@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# labels: A list of labels (key/value pairs) to add or remove for the resource. 
+# resource_location: The location of resource (global, us-central1-f, etc.) 
+# resource_name: The name of resource. 
+# resource_type: The type of resource (instances, disks, snapshots, images) 
+# resource_url: The 'self_link' for the resource (instance, disk, snapshot, etc) 
+}- name: ${2:Name for gce_labels module.}
+  gce_labels:
+${3:   ${4:labels}: ${5:"#"}}
+${6:   ${7:resource_location}: ${8:"#"}}
+${9:   ${10:resource_name}: ${11:"#"}}
+${12:   ${13:resource_type}: ${14:"#"}}
+${15:   ${16:resource_url}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>gce_labels</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

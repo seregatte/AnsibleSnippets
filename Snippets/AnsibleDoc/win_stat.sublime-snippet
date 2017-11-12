@@ -1,12 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:#get_md5 = Whether to return the md5 sum of the file
-#path = The full path of the file/object to get the facts of; both forward and back slashes are accepted.
+${1:# checksum_algorithm: Algorithm to determine checksum of file. Will throw an error if the host is unable to use specified 
+# get_checksum: Whether to return a checksum of the file (default sha1) 
+# get_md5: Whether to return the checksum sum of the file. Between Ansible 1.9 and 2.2 this is no longer an MD5, 
+# path: (required) The full path of the file/object to get the facts of; both forward and back slashes are 
 }- name: ${2:Name for win_stat module.}
-${3:  become: ${4:yes}}
-  win_stat: ${5:get_md5=${6: } }${7:path=${8: } }
-${9:  when: ${10: variable is defined}}
-${11:  with_items: ${12: array}}
+  win_stat:
+${3:   ${4:checksum_algorithm}: ${5:"#"}}
+${6:   ${7:get_checksum}: ${8:"#"}}
+${9:   ${10:get_md5}: ${11:"#"}}
+${12:   ${13:path}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>win_stat</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

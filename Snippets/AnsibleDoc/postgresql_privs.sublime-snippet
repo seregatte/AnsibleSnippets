@@ -1,23 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:#database = Name of database to connect to. Alias: `db'
-#grant_option = Whether `role' may grant/revoke the specified privileges/group memberships to others. Set to `no' to revoke
-#host = Database host address. If unspecified, connect via Unix socket. Alias: `login_host'
-#login = The username to authenticate with. Alias: `login_user'
-#objs = Comma separated list of database objects to set privileges on. If `type' is `table' or `sequence', the special
-#password = The password to authenticate with. Alias: `login_password')
-#port = Database port to connect to.
-#privs = Comma separated list of privileges to grant/revoke. Alias: `priv'
-#roles = Comma separated list of role (user/group) names to set permissions for. The special value `PUBLIC' can be
-#schema = Schema that contains the database objects specified via `objs'. May only be provided if `type' is `table',
-#state = If `present', the specified privileges are granted, if `absent' they are revoked.
-#type = Type of database object to set privileges on.
-#unix_socket = Path to a Unix domain socket for local connections. Alias: `login_unix_socket'
+${1:# database: (required) Name of database to connect to. Alias: `db' 
+# grant_option: Whether `role' may grant/revoke the specified privileges/group memberships to others. Set to `no' to 
+# host: Database host address. If unspecified, connect via Unix socket. Alias: `login_host' 
+# login: The username to authenticate with. Alias: `login_user' 
+# objs: Comma separated list of database objects to set privileges on. If `type' is `table' or `sequence', the 
+# password: The password to authenticate with. Alias: `login_password') 
+# port: Database port to connect to. 
+# privs: Comma separated list of privileges to grant/revoke. Alias: `priv' 
+# roles: (required) Comma separated list of role (user/group) names to set permissions for. The special value 
+# schema: Schema that contains the database objects specified via `objs'. May only be provided if `type' is 
+# ssl_mode: Determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the 
+# ssl_rootcert: Specifies the name of a file containing SSL certificate authority (CA) certificate(s). If the file 
+# state: If `present', the specified privileges are granted, if `absent' they are revoked. 
+# type: Type of database object to set privileges on. 
+# unix_socket: Path to a Unix domain socket for local connections. Alias: `login_unix_socket' 
 }- name: ${2:Name for postgresql_privs module.}
-${3:  become: ${4:yes}}
-  postgresql_privs: ${5:database=${6: } }${7:grant_option=${8: } }${9:host=${10: } }${11:login=${12: } }${13:objs=${14: } }${15:password=${16: } }${17:port=${18: } }${19:privs=${20: } }${21:roles=${22: } }${23:schema=${24: } }${25:state=${26: } }${27:type=${28: } }${29:unix_socket=${30: } }
-${31:  when: ${32: variable is defined}}
-${33:  with_items: ${34: array}}
+  postgresql_privs:
+${3:   ${4:database}: ${5:"#"}}
+${6:   ${7:grant_option}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:login}: ${14:"#"}}
+${15:   ${16:objs}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:privs}: ${26:"#"}}
+${27:   ${28:roles}: ${29:"#"}}
+${30:   ${31:schema}: ${32:"#"}}
+${33:   ${34:ssl_mode}: ${35:"#"}}
+${36:   ${37:ssl_rootcert}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:type}: ${44:"#"}}
+${45:   ${46:unix_socket}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>postgresql_privs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

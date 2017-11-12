@@ -1,47 +1,87 @@
 <snippet>
 <content><![CDATA[
-${1:#add_public_ip = Whether to add a public ip to the server
-#additional_disks = The list of additional disks for the server
-#alert_policy_id = The alert policy to assign to the server. This is mutually exclusive with 'alert_policy_name'.
-#alert_policy_name = The alert policy to assign to the server. This is mutually exclusive with 'alert_policy_id'.
-#alias = The account alias to provision the servers under.
-#anti_affinity_policy_id = The anti-affinity policy to assign to the server. This is mutually exclusive with 'anti_affinity_policy_name'.
-#anti_affinity_policy_name = The anti-affinity policy to assign to the server. This is mutually exclusive with 'anti_affinity_policy_id'.
-#configuration_id = Only required for bare metal servers. Specifies the identifier for the specific configuration type of bare metal
-#count = The number of servers to build (mutually exclusive with exact_count)
-#count_group = Required when exact_count is specified.  The Server Group use to determine how many severs to deploy.
-#cpu = How many CPUs to provision on the server
-#cpu_autoscale_policy_id = The autoscale policy to assign to the server.
-#custom_fields = The list of custom fields to set on the server.
-#description = The description to set for the server.
-#exact_count = Run in idempotent mode.  Will insure that this exact number of servers are running in the provided group,
-#group = The Server Group to create servers under.
-#ip_address = The IP Address for the server. One is assigned if not provided.
-#location = The Datacenter to create servers in.
-#managed_os = Whether to create the server as 'Managed' or not.
-#memory = Memory in GB.
-#name = A 1 to 6 character identifier to use for the server. This is required when state is 'present'
-#network_id = The network UUID on which to create servers.
-#os_type = Only required for bare metal servers. Specifies the OS to provision with the bare metal server.
-#packages = The list of blue print packages to run on the server after its created.
-#password = Password for the administrator / root user
-#primary_dns = Primary DNS used by the server.
-#public_ip_ports = A list of ports to allow on the firewall to the servers public ip, if add_public_ip is set to True.
-#public_ip_protocol = The protocol to use for the public ip if add_public_ip is set to True.
-#secondary_dns = Secondary DNS used by the server.
-#server_ids = Required for started, stopped, and absent states. A list of server Ids to insure are started, stopped, or
-#source_server_password = The password for the source server if a clone is specified.
-#state = The state to insure that the provided resources are in.
-#storage_type = The type of storage to attach to the server.
-#template = The template to use for server creation.  Will search for a template if a partial string is provided. This is
-#ttl = The time to live for the server in seconds.  The server will be deleted when this time expires.
-#type = The type of server to create.
-#wait = Whether to wait for the provisioning tasks to finish before returning.
+${1:# add_public_ip: Whether to add a public ip to the server 
+# additional_disks: The list of additional disks for the server 
+# alert_policy_id: The alert policy to assign to the server. This is mutually exclusive with 'alert_policy_name'. 
+# alert_policy_name: The alert policy to assign to the server. This is mutually exclusive with 'alert_policy_id'. 
+# alias: The account alias to provision the servers under. 
+# anti_affinity_policy_id: The anti-affinity policy to assign to the server. This is mutually exclusive with 
+# anti_affinity_policy_name: The anti-affinity policy to assign to the server. This is mutually exclusive with 
+# configuration_id: Only required for bare metal servers. Specifies the identifier for the specific configuration type of 
+# count: The number of servers to build (mutually exclusive with exact_count) 
+# count_group: Required when exact_count is specified.  The Server Group use to determine how many severs to deploy. 
+# cpu: How many CPUs to provision on the server 
+# cpu_autoscale_policy_id: The autoscale policy to assign to the server. 
+# custom_fields: The list of custom fields to set on the server. 
+# description: The description to set for the server. 
+# exact_count: Run in idempotent mode.  Will insure that this exact number of servers are running in the provided 
+# group: The Server Group to create servers under. 
+# ip_address: The IP Address for the server. One is assigned if not provided. 
+# location: The Datacenter to create servers in. 
+# managed_os: Whether to create the server as 'Managed' or not. 
+# memory: Memory in GB. 
+# name: A 1 to 6 character identifier to use for the server. This is required when state is 'present' 
+# network_id: The network UUID on which to create servers. 
+# os_type: Only required for bare metal servers. Specifies the OS to provision with the bare metal server. 
+# packages: The list of blue print packages to run on the server after its created. 
+# password: Password for the administrator / root user 
+# primary_dns: Primary DNS used by the server. 
+# public_ip_ports: A list of ports to allow on the firewall to the servers public ip, if add_public_ip is set to True. 
+# public_ip_protocol: The protocol to use for the public ip if add_public_ip is set to True. 
+# secondary_dns: Secondary DNS used by the server. 
+# server_ids: Required for started, stopped, and absent states. A list of server Ids to insure are started, stopped, 
+# source_server_password: The password for the source server if a clone is specified. 
+# state: The state to insure that the provided resources are in. 
+# storage_type: The type of storage to attach to the server. 
+# template: The template to use for server creation.  Will search for a template if a partial string is provided. 
+# ttl: The time to live for the server in seconds.  The server will be deleted when this time expires. 
+# type: The type of server to create. 
+# wait: Whether to wait for the provisioning tasks to finish before returning. 
 }- name: ${2:Name for clc_server module.}
-${3:  become: ${4:yes}}
-  clc_server: ${5:add_public_ip=${6: } }${7:additional_disks=${8: } }${9:alert_policy_id=${10: } }${11:alert_policy_name=${12: } }${13:alias=${14: } }${15:anti_affinity_policy_id=${16: } }${17:anti_affinity_policy_name=${18: } }${19:configuration_id=${20: } }${21:count=${22: } }${23:count_group=${24: } }${25:cpu=${26: } }${27:cpu_autoscale_policy_id=${28: } }${29:custom_fields=${30: } }${31:description=${32: } }${33:exact_count=${34: } }${35:group=${36: } }${37:ip_address=${38: } }${39:location=${40: } }${41:managed_os=${42: } }${43:memory=${44: } }${45:name=${46: } }${47:network_id=${48: } }${49:os_type=${50: } }${51:packages=${52: } }${53:password=${54: } }${55:primary_dns=${56: } }${57:public_ip_ports=${58: } }${59:public_ip_protocol=${60: } }${61:secondary_dns=${62: } }${63:server_ids=${64: } }${65:source_server_password=${66: } }${67:state=${68: } }${69:storage_type=${70: } }${71:template=${72: } }${73:ttl=${74: } }${75:type=${76: } }${77:wait=${78: } }
-${79:  when: ${80: variable is defined}}
-${81:  with_items: ${82: array}}
+  clc_server:
+${3:   ${4:add_public_ip}: ${5:"#"}}
+${6:   ${7:additional_disks}: ${8:"#"}}
+${9:   ${10:alert_policy_id}: ${11:"#"}}
+${12:   ${13:alert_policy_name}: ${14:"#"}}
+${15:   ${16:alias}: ${17:"#"}}
+${18:   ${19:anti_affinity_policy_id}: ${20:"#"}}
+${21:   ${22:anti_affinity_policy_name}: ${23:"#"}}
+${24:   ${25:configuration_id}: ${26:"#"}}
+${27:   ${28:count}: ${29:"#"}}
+${30:   ${31:count_group}: ${32:"#"}}
+${33:   ${34:cpu}: ${35:"#"}}
+${36:   ${37:cpu_autoscale_policy_id}: ${38:"#"}}
+${39:   ${40:custom_fields}: ${41:"#"}}
+${42:   ${43:description}: ${44:"#"}}
+${45:   ${46:exact_count}: ${47:"#"}}
+${48:   ${49:group}: ${50:"#"}}
+${51:   ${52:ip_address}: ${53:"#"}}
+${54:   ${55:location}: ${56:"#"}}
+${57:   ${58:managed_os}: ${59:"#"}}
+${60:   ${61:memory}: ${62:"#"}}
+${63:   ${64:name}: ${65:"#"}}
+${66:   ${67:network_id}: ${68:"#"}}
+${69:   ${70:os_type}: ${71:"#"}}
+${72:   ${73:packages}: ${74:"#"}}
+${75:   ${76:password}: ${77:"#"}}
+${78:   ${79:primary_dns}: ${80:"#"}}
+${81:   ${82:public_ip_ports}: ${83:"#"}}
+${84:   ${85:public_ip_protocol}: ${86:"#"}}
+${87:   ${88:secondary_dns}: ${89:"#"}}
+${90:   ${91:server_ids}: ${92:"#"}}
+${93:   ${94:source_server_password}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:   ${100:storage_type}: ${101:"#"}}
+${102:   ${103:template}: ${104:"#"}}
+${105:   ${106:ttl}: ${107:"#"}}
+${108:   ${109:type}: ${110:"#"}}
+${111:   ${112:wait}: ${113:"#"}}
+${114:${115:   become: ${116:true}} 
+${117:   become_method: ${118:su}} 
+${119:   become_user: ${120:nobody}} 
+${121:   become_flags: ${122:"-s /bin/sh"}}} 
+${123:   when: ${124:variable is defined}} 
+${125:   with_items: ${126:array}} 
 ]]></content>
 	<tabTrigger>clc_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

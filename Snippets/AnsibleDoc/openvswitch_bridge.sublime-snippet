@@ -1,15 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#bridge = Name of bridge to manage
-#external_ids = A dictionary of external-ids. Omitting this parameter is a No-op. To  clear all external-ids pass an empty
-#fail_mode = Set bridge fail-mode. The default value (None) is a No-op.
-#state = Whether the bridge should exist
-#timeout = How long to wait for ovs-vswitchd to respond
+${1:# bridge: (required) Name of bridge or fake bridge to manage 
+# external_ids: A dictionary of external-ids. Omitting this parameter is a No-op. To  clear all external-ids pass an 
+# fail_mode: Set bridge fail-mode. The default value (None) is a No-op. 
+# parent: Bridge parent of the fake bridge to manage 
+# set: Run set command after bridge configuration. This parameter is non-idempotent, play will always return 
+# state: Whether the bridge should exist 
+# timeout: How long to wait for ovs-vswitchd to respond 
+# vlan: The VLAN id of the fake bridge to manage (must be between 0 and 4095). This parameter is required if 
 }- name: ${2:Name for openvswitch_bridge module.}
-${3:  become: ${4:yes}}
-  openvswitch_bridge: ${5:bridge=${6: } }${7:external_ids=${8: } }${9:fail_mode=${10: } }${11:state=${12: } }${13:timeout=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  openvswitch_bridge:
+${3:   ${4:bridge}: ${5:"#"}}
+${6:   ${7:external_ids}: ${8:"#"}}
+${9:   ${10:fail_mode}: ${11:"#"}}
+${12:   ${13:parent}: ${14:"#"}}
+${15:   ${16:set}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:timeout}: ${23:"#"}}
+${24:   ${25:vlan}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>openvswitch_bridge</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

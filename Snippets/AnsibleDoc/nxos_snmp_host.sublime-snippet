@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# community: Community string or v3 username. 
+# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
+# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
+# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# snmp_host: (required) IP address of hostname of target host. 
+# src_intf: Source interface. 
+# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# state: (required) Manage the state of the resource. 
+# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
+# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# type: type of message to send to host. 
+# udp: UDP port number (0-65535). 
+# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
+# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# version: SNMP version. 
+# vrf: VRF to use to source traffic to source. 
+# vrf_filter: Name of VRF to filter. 
+}- name: ${2:Name for nxos_snmp_host module.}
+  nxos_snmp_host:
+${3:   ${4:community}: ${5:"#"}}
+${6:   ${7:host}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:port}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:snmp_host}: ${20:"#"}}
+${21:   ${22:src_intf}: ${23:"#"}}
+${24:   ${25:ssh_keyfile}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:   ${34:transport}: ${35:"#"}}
+${36:   ${37:type}: ${38:"#"}}
+${39:   ${40:udp}: ${41:"#"}}
+${42:   ${43:use_ssl}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:version}: ${53:"#"}}
+${54:   ${55:vrf}: ${56:"#"}}
+${57:   ${58:vrf_filter}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>nxos_snmp_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

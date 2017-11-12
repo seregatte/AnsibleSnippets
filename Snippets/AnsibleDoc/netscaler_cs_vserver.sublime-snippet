@@ -1,0 +1,154 @@
+<snippet>
+<content><![CDATA[
+${1:# appflowlog: Enable logging appflow flow information. 
+# authentication: Authenticate users who request a connection to the content switching virtual server. 
+# authenticationhost: FQDN of the authentication virtual server. The service type of the virtual server should be either 
+# authn401: Enable HTTP 401-response based authentication. 
+# authnprofile: Name of the authentication profile to be used when authentication is turned on. 
+# authnvsname: Name of authentication virtual server that authenticates the incoming user requests to this content 
+# backupip: . Minimum length = 1 
+# backupvserver: Name of the backup virtual server that you are configuring. Must begin with an ASCII alphanumeric or 
+# underscore: ', period `.', space ` ', colon `:', at sign `@', 
+# cacheable: Use this option to specify whether a virtual server, used for load balancing or content switching, 
+# casesensitive: Consider case in URLs (for policies that use URLs instead of RULES). For example, with the `on' setting, 
+# clttimeout: Idle time, in seconds, after which the client connection is terminated. The default values are: Minimum 
+# comment: Information about this virtual server. 
+# cookiedomain: . Minimum length = 1 
+# cookietimeout: . Minimum value = `0' Maximum value = `1440' 
+# dbprofilename: Name of the DB profile. Minimum length = 1 Maximum length = 127 
+# disabled: When set to `yes' the cs vserver will be disabled. When set to `no' the cs vserver will be enabled. Note 
+# disableprimaryondown: Continue forwarding the traffic to backup virtual server even after the primary server comes UP from the 
+# dnsprofilename: Name of the DNS profile to be associated with the VServer. DNS profile properties will applied to the 
+# domainname: Domain name for which to change the time to live (TTL) and/or backup service IP address. Minimum length 
+# downstateflush: Flush all active transactions associated with a virtual server whose state transitions from UP to DOWN. 
+# httpprofilename: Name of the HTTP profile containing HTTP configuration settings for the virtual server. The service type 
+# icmpvsrresponse: Can be active or passive. 
+# insertvserveripport: Insert the virtual server's VIP address and port number in the request header. Available values function 
+# ipmask: IP mask, in dotted decimal notation, for the IP Pattern parameter. Can have leading or trailing non-zero 
+# ippattern: IP address pattern, in dotted decimal notation, for identifying packets to be accepted by the virtual 
+# ipv46: IP address of the content switching virtual server. Minimum length = 1 
+# l2conn: Use L2 Parameters to identify a connection. 
+# listenpolicy: String specifying the listen policy for the content switching virtual server. Can be either the name of 
+# mssqlserverversion: The version of the MSSQL server. 
+# mysqlcharacterset: The character set returned by the mysql vserver. 
+# mysqlprotocolversion: The protocol version returned by the mysql vserver. 
+# mysqlservercapabilities: The server capabilities returned by the mysql vserver. 
+# mysqlserverversion: The server version string returned by the mysql vserver. Minimum length = 1 Maximum length = 31 
+# name: Name for the content switching virtual server. Must begin with an ASCII alphanumeric or underscore `_' 
+# : ', period `.', space, colon `:', at sign `@', equal sign `=', and 
+# netprofile: The name of the network profile. Minimum length = 1 Maximum length = 127 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# oracleserverversion: Oracle server version. 
+# port: Port number for content switching virtual server. Minimum value = 1 Range `1' - `65535' * in CLI is 
+# precedence: Type of precedence to use for both RULE-based and URL-based policies on the content switching virtual 
+# push: Process traffic with the push virtual server that is bound to this content switching virtual server 
+# pushlabel: Expression for extracting the label from the response received from server. This string can be either an 
+# pushmulticlients: Allow multiple Web 2.0 connections from the same client to connect to the virtual server and expect 
+# pushvserver: Name of the load balancing virtual server, of type `PUSH' or `SSL_PUSH', to which the server pushes 
+# range: Number of consecutive IP addresses, starting with the address specified by the IP Address parameter, to 
+# redirectportrewrite: State of port rewrite while performing HTTP redirect. 
+# redirecturl: URL to which traffic is redirected if the virtual server becomes unavailable. The service type of the 
+# rhistate: A host route is injected according to the setting on the virtual servers * If set to `PASSIVE' on all 
+# rtspnat: Enable network address translation (NAT) for real-time streaming protocol (RTSP) connections. 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# servicetype: Protocol used by the virtual server. 
+# sitedomainttl: . Minimum value = `1' 
+# sobackupaction: Action to be performed if spillover is to take effect, but no backup chain to spillover is usable or 
+# somethod: Type of spillover used to divert traffic to the backup virtual server when the primary virtual server 
+# sopersistence: Maintain source-IP based persistence on primary and backup virtual servers. 
+# sopersistencetimeout: Time-out value, in minutes, for spillover persistence. Minimum value = `2' Maximum value = `1440' 
+# sothreshold: Depending on the spillover method, the maximum number of connections or the maximum total bandwidth 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# stateupdate: Enable state updates for a specific content switching virtual server. By default, the Content Switching 
+# targettype: Virtual server target type. 
+# tcpprofilename: Name of the TCP profile containing TCP configuration settings for the virtual server. Minimum length = 1 
+# td: Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If 
+# ttl: . Minimum value = `1' 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# vipheader: Name of virtual server IP and port header, for use with the VServer IP Port Insertion parameter. Minimum 
+}- name: ${2:Name for netscaler_cs_vserver module.}
+  netscaler_cs_vserver:
+${3:   ${4:appflowlog}: ${5:"#"}}
+${6:   ${7:authentication}: ${8:"#"}}
+${9:   ${10:authenticationhost}: ${11:"#"}}
+${12:   ${13:authn401}: ${14:"#"}}
+${15:   ${16:authnprofile}: ${17:"#"}}
+${18:   ${19:authnvsname}: ${20:"#"}}
+${21:   ${22:backupip}: ${23:"#"}}
+${24:   ${25:backupvserver}: ${26:"#"}}
+${27:   ${28:underscore}: ${29:"#"}}
+${30:   ${31:cacheable}: ${32:"#"}}
+${33:   ${34:casesensitive}: ${35:"#"}}
+${36:   ${37:clttimeout}: ${38:"#"}}
+${39:   ${40:comment}: ${41:"#"}}
+${42:   ${43:cookiedomain}: ${44:"#"}}
+${45:   ${46:cookietimeout}: ${47:"#"}}
+${48:   ${49:dbprofilename}: ${50:"#"}}
+${51:   ${52:disabled}: ${53:"#"}}
+${54:   ${55:disableprimaryondown}: ${56:"#"}}
+${57:   ${58:dnsprofilename}: ${59:"#"}}
+${60:   ${61:domainname}: ${62:"#"}}
+${63:   ${64:downstateflush}: ${65:"#"}}
+${66:   ${67:httpprofilename}: ${68:"#"}}
+${69:   ${70:icmpvsrresponse}: ${71:"#"}}
+${72:   ${73:insertvserveripport}: ${74:"#"}}
+${75:   ${76:ipmask}: ${77:"#"}}
+${78:   ${79:ippattern}: ${80:"#"}}
+${81:   ${82:ipv46}: ${83:"#"}}
+${84:   ${85:l2conn}: ${86:"#"}}
+${87:   ${88:listenpolicy}: ${89:"#"}}
+${90:   ${91:mssqlserverversion}: ${92:"#"}}
+${93:   ${94:mysqlcharacterset}: ${95:"#"}}
+${96:   ${97:mysqlprotocolversion}: ${98:"#"}}
+${99:   ${100:mysqlservercapabilities}: ${101:"#"}}
+${102:   ${103:mysqlserverversion}: ${104:"#"}}
+${105:   ${106:name}: ${107:"#"}}
+${108:   ${109:}: ${110:"#"}}
+${111:   ${112:netprofile}: ${113:"#"}}
+${114:   ${115:nitro_pass}: ${116:"#"}}
+${117:   ${118:nitro_protocol}: ${119:"#"}}
+${120:   ${121:nitro_timeout}: ${122:"#"}}
+${123:   ${124:nitro_user}: ${125:"#"}}
+${126:   ${127:nsip}: ${128:"#"}}
+${129:   ${130:oracleserverversion}: ${131:"#"}}
+${132:   ${133:port}: ${134:"#"}}
+${135:   ${136:precedence}: ${137:"#"}}
+${138:   ${139:push}: ${140:"#"}}
+${141:   ${142:pushlabel}: ${143:"#"}}
+${144:   ${145:pushmulticlients}: ${146:"#"}}
+${147:   ${148:pushvserver}: ${149:"#"}}
+${150:   ${151:range}: ${152:"#"}}
+${153:   ${154:redirectportrewrite}: ${155:"#"}}
+${156:   ${157:redirecturl}: ${158:"#"}}
+${159:   ${160:rhistate}: ${161:"#"}}
+${162:   ${163:rtspnat}: ${164:"#"}}
+${165:   ${166:save_config}: ${167:"#"}}
+${168:   ${169:servicetype}: ${170:"#"}}
+${171:   ${172:sitedomainttl}: ${173:"#"}}
+${174:   ${175:sobackupaction}: ${176:"#"}}
+${177:   ${178:somethod}: ${179:"#"}}
+${180:   ${181:sopersistence}: ${182:"#"}}
+${183:   ${184:sopersistencetimeout}: ${185:"#"}}
+${186:   ${187:sothreshold}: ${188:"#"}}
+${189:   ${190:state}: ${191:"#"}}
+${192:   ${193:stateupdate}: ${194:"#"}}
+${195:   ${196:targettype}: ${197:"#"}}
+${198:   ${199:tcpprofilename}: ${200:"#"}}
+${201:   ${202:td}: ${203:"#"}}
+${204:   ${205:ttl}: ${206:"#"}}
+${207:   ${208:validate_certs}: ${209:"#"}}
+${210:   ${211:vipheader}: ${212:"#"}}
+${213:${214:   become: ${215:true}} 
+${216:   become_method: ${217:su}} 
+${218:   become_user: ${219:nobody}} 
+${220:   become_flags: ${221:"-s /bin/sh"}}} 
+${222:   when: ${223:variable is defined}} 
+${224:   with_items: ${225:array}} 
+]]></content>
+	<tabTrigger>netscaler_cs_vserver</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

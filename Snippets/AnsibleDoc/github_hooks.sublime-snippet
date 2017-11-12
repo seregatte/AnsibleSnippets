@@ -1,17 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#action = This tells the githooks module what you want it to do.
-#content_type = Content type to use for requests made to the webhook
-#hookurl = When creating a new hook, this is the url that you want github to post to. It is only required when creating a
-#oauthkey = The oauth key provided by github. It can be found/generated on github under "Edit Your Profile" >>
-#repo = This is the API url for the repository you want to manage hooks for. It should be in the form of:
-#user = Github username.
-#validate_certs = If `no', SSL certificates for the target repo will not be validated. This should only be used on personally
+${1:# action: (required) This tells the githooks module what you want it to do. 
+# content_type: Content type to use for requests made to the webhook 
+# hookurl: When creating a new hook, this is the url that you want GitHub to post to. It is only required when 
+# oauthkey: (required) The oauth key provided by GitHub. It can be found/generated on GitHub under "Edit Your 
+# repo: (required) This is the API url for the repository you want to manage hooks for. It should be in the form 
+# user: (required) Github username. 
+# validate_certs: If `no', SSL certificates for the target repo will not be validated. This should only be used on 
 }- name: ${2:Name for github_hooks module.}
-${3:  become: ${4:yes}}
-  github_hooks: ${5:action=${6: } }${7:content_type=${8: } }${9:hookurl=${10: } }${11:oauthkey=${12: } }${13:repo=${14: } }${15:user=${16: } }${17:validate_certs=${18: } }
-${19:  when: ${20: variable is defined}}
-${21:  with_items: ${22: array}}
+  github_hooks:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:content_type}: ${8:"#"}}
+${9:   ${10:hookurl}: ${11:"#"}}
+${12:   ${13:oauthkey}: ${14:"#"}}
+${15:   ${16:repo}: ${17:"#"}}
+${18:   ${19:user}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>github_hooks</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

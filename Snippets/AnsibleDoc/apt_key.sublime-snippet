@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#data = keyfile contents
-#file = keyfile path
-#id = identifier of key. Including this allows check mode to correctly report the changed state.
-#keyring = path to specific keyring file in /etc/apt/trusted.gpg.d
-#keyserver = keyserver to retrieve key from.
-#state = used to specify if key is being added or revoked
-#url = url to retrieve key from.
-#validate_certs = If `no', SSL certificates for the target url will not be validated. This should only be used on personally
+${1:# data: The keyfile contents to add to the keyring. 
+# file: The path to a keyfile on the remote server to add to the keyring. 
+# id: The identifier of the key. Including this allows check mode to correctly report the changed state. If 
+# keyring: -The path to specific keyring file in /etc/apt/trusted.gpg.d/ 
+# keyserver: The keyserver to retrieve key from. 
+# state: Ensures that the key is present (added) or absent (revoked). 
+# url: The URL to retrieve key from. 
+# validate_certs: If `no', SSL certificates for the target url will not be validated. This should only be used on 
 }- name: ${2:Name for apt_key module.}
-${3:  become: ${4:yes}}
-  apt_key: ${5:data=${6: } }${7:file=${8: } }${9:id=${10: } }${11:keyring=${12: } }${13:keyserver=${14: } }${15:state=${16: } }${17:url=${18: } }${19:validate_certs=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  apt_key:
+${3:   ${4:data}: ${5:"#"}}
+${6:   ${7:file}: ${8:"#"}}
+${9:   ${10:id}: ${11:"#"}}
+${12:   ${13:keyring}: ${14:"#"}}
+${15:   ${16:keyserver}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:url}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>apt_key</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

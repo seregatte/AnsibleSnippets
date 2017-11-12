@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#api_token = DigitalOcean api token.
-#id = Numeric, the droplet id you want to operate on.
-#ip = The IP address to point a domain at.
-#name = String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key, or the
-#state = Indicate desired state of the target.
+${1:# api_token: DigitalOcean api token. 
+# id: Numeric, the droplet id you want to operate on. 
+# ip: The IP address to point a domain at. 
+# name: String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key, 
+# state: Indicate desired state of the target. 
 }- name: ${2:Name for digital_ocean_domain module.}
-${3:  become: ${4:yes}}
-  digital_ocean_domain: ${5:api_token=${6: } }${7:id=${8: } }${9:ip=${10: } }${11:name=${12: } }${13:state=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  digital_ocean_domain:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:id}: ${8:"#"}}
+${9:   ${10:ip}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>digital_ocean_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,26 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:#aws_access_key = AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY environment
-#aws_secret_key = AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or EC2_SECRET_KEY
-#description = Description of the security group.
-#ec2_url = Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints).  Ignored
-#name = Name of the security group.
-#profile = uses a boto profile. Only works with boto >= 2.24.0
-#purge_rules = Purge existing rules on security group that are not found in rules
-#purge_rules_egress = Purge existing rules_egress on security group that are not found in rules_egress
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#rules = List of firewall inbound rules to enforce in this group (see example). If none are supplied, a default all-out
-#rules_egress = List of firewall outbound rules to enforce in this group (see example). If none are supplied, a default all-out
-#security_token = AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN environment
-#state = Create or delete a security group
-#validate_certs = When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0.
-#vpc_id = ID of the VPC to create the group in.
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# description: Description of the security group. Required when `state' is `present'. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# group_id: Id of group to delete (works only with absent). One of and only one of `name' or `group_id' is required. 
+# name: Name of the security group. One of and only one of `name' or `group_id' is required. Required if 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# purge_rules: Purge existing rules on security group that are not found in rules 
+# purge_rules_egress: Purge existing rules_egress on security group that are not found in rules_egress 
+# purge_tags: If yes, existing tags will be purged from the resource to match exactly what is defined by `tags' 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# rules: List of firewall inbound rules to enforce in this group (see example). If none are supplied, no inbound 
+# rules_egress: List of firewall outbound rules to enforce in this group (see example). If none are supplied, a default 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: Create or delete a security group 
+# tags: A dictionary of one or more tags to assign to the security group. 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# vpc_id: ID of the VPC to create the group in. 
 }- name: ${2:Name for ec2_group module.}
-${3:  become: ${4:yes}}
-  ec2_group: ${5:aws_access_key=${6: } }${7:aws_secret_key=${8: } }${9:description=${10: } }${11:ec2_url=${12: } }${13:name=${14: } }${15:profile=${16: } }${17:purge_rules=${18: } }${19:purge_rules_egress=${20: } }${21:region=${22: } }${23:http=${24: } }${25:rules=${26: } }${27:rules_egress=${28: } }${29:security_token=${30: } }${31:state=${32: } }${33:validate_certs=${34: } }${35:vpc_id=${36: } }
-${37:  when: ${38: variable is defined}}
-${39:  with_items: ${40: array}}
+  ec2_group:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:group_id}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:purge_rules}: ${26:"#"}}
+${27:   ${28:purge_rules_egress}: ${29:"#"}}
+${30:   ${31:purge_tags}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:http}: ${38:"#"}}
+${39:   ${40:rules}: ${41:"#"}}
+${42:   ${43:rules_egress}: ${44:"#"}}
+${45:   ${46:security_token}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:tags}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:   ${58:vpc_id}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>ec2_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# facility: Set the log facility 
+# log_pid: Log the pid in brackets 
+# msg: (required) This is the message to place in syslog 
+# priority: Set the log priority 
+}- name: ${2:Name for syslogger module.}
+  syslogger:
+${3:   ${4:facility}: ${5:"#"}}
+${6:   ${7:log_pid}: ${8:"#"}}
+${9:   ${10:msg}: ${11:"#"}}
+${12:   ${13:priority}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>syslogger</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

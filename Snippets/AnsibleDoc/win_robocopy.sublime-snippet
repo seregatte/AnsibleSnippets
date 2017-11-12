@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# dest: (required) Destination file/directory to sync (Will receive contents of src). 
+# flags: Directly supply Robocopy flags. If set, `purge' and `recurse' will be ignored. 
+# purge: Deletes any files/directories found in the destination that do not exist in the source. Toggles the 
+# recurse: Includes all subdirectories (Toggles the `/e' flag to RoboCopy). If `flags' is set, this will be 
+# src: (required) Source file/directory to sync. 
+}- name: ${2:Name for win_robocopy module.}
+  win_robocopy:
+${3:   ${4:dest}: ${5:"#"}}
+${6:   ${7:flags}: ${8:"#"}}
+${9:   ${10:purge}: ${11:"#"}}
+${12:   ${13:recurse}: ${14:"#"}}
+${15:   ${16:src}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>win_robocopy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

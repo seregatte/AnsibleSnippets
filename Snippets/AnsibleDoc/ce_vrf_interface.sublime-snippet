@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# state: Manage the state of the resource. 
+# vpn_interface: (required) An interface that can binding VPN instance, i.e. 40GE1/0/22, Vlanif10. Must be fully 
+# vrf: (required) VPN instance, the length of vrf name is 1 ~ 31, i.e. "test", but can not be `_public_'. 
+}- name: ${2:Name for ce_vrf_interface module.}
+  ce_vrf_interface:
+${3:   ${4:state}: ${5:"#"}}
+${6:   ${7:vpn_interface}: ${8:"#"}}
+${9:   ${10:vrf}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>ce_vrf_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

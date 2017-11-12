@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#dev = Target block device.
-#force = If yes, allows to create new filesystem on devices that already has filesystem.
-#fstype = File System type to be created.
-#opts = List of options to be passed to mkfs command.
-#resizefs = If yes, if the block device and filessytem size differ, grow the filesystem into the space. Note, XFS Will only
+${1:# dev: (required) Target block device. 
+# force: If yes, allows to create new filesystem on devices that already has filesystem. 
+# fstype: (required) File System type to be created. reiserfs support was added in 2.2. 
+# opts: List of options to be passed to mkfs command. 
+# resizefs: If yes, if the block device and filessytem size differ, grow the filesystem into the space. Note, XFS 
 }- name: ${2:Name for filesystem module.}
-${3:  become: ${4:yes}}
-  filesystem: ${5:dev=${6: } }${7:force=${8: } }${9:fstype=${10: } }${11:opts=${12: } }${13:resizefs=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  filesystem:
+${3:   ${4:dev}: ${5:"#"}}
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:fstype}: ${11:"#"}}
+${12:   ${13:opts}: ${14:"#"}}
+${15:   ${16:resizefs}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>filesystem</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,17 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#backup = passes --backup --version-control=numbered to patch, producing numbered backup copies
-#basedir = Path of a base directory in which the patch file will be applied. May be ommitted when `dest' option is
-#binary = Setting to true will disable patch's heuristic for transforming CRLF line endings into LF. Line endings of src
-#dest = Path of the file on the remote machine to be patched. The names of the files to be patched are usually taken
-#remote_src = If False, it will search for src at originating/master machine, if True it will go to the remote/target machine
-#src = Path of the patch file as accepted by the GNU patch tool. If `remote_src' is False, the patch source file is
-#strip = Number that indicates the smallest prefix containing leading slashes that will be stripped from each file name
+${1:# backup: Passes `--backup --version-control=numbered' to patch, producing numbered backup copies. 
+# basedir: Path of a base directory in which the patch file will be applied. May be omitted when `dest' option is 
+# binary: Setting to `yes' will disable patch's heuristic for transforming CRLF line endings into LF. Line endings 
+# dest: Path of the file on the remote machine to be patched. The names of the files to be patched are usually 
+# remote_src: If `no', it will search for src at originating/master machine, if `yes' it will go to the remote/target 
+# src: (required) Path of the patch file as accepted by the GNU patch tool. If `remote_src' is 'no', the patch 
+# strip: Number that indicates the smallest prefix containing leading slashes that will be stripped from each 
 }- name: ${2:Name for patch module.}
-${3:  become: ${4:yes}}
-  patch: ${5:backup=${6: } }${7:basedir=${8: } }${9:binary=${10: } }${11:dest=${12: } }${13:remote_src=${14: } }${15:src=${16: } }${17:strip=${18: } }
-${19:  when: ${20: variable is defined}}
-${21:  with_items: ${22: array}}
+  patch:
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:basedir}: ${8:"#"}}
+${9:   ${10:binary}: ${11:"#"}}
+${12:   ${13:dest}: ${14:"#"}}
+${15:   ${16:remote_src}: ${17:"#"}}
+${18:   ${19:src}: ${20:"#"}}
+${21:   ${22:strip}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>patch</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

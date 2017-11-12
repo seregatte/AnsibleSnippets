@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# blueprint: (required) Blueprint Name or Id as defined in AOS. 
+# get_param_list: Get the complete list of supported parameters for this blueprint and the description of those 
+# name: Name of blueprint parameter, as defined by AOS design template. You can use the option `get_param_list' 
+# param_map: Defines the aos-pyez collection that will is used to map the user-defined item name into the AOS unique 
+# session: (required) An existing AOS session as obtained by [aos_login] module. 
+# state: Indicate what is the expected state of the Blueprint Parameter (present or not). 
+# value: Blueprint parameter value.  This value may be transformed by using the `param_map' field; used when the 
+}- name: ${2:Name for aos_blueprint_param module.}
+  aos_blueprint_param:
+${3:   ${4:blueprint}: ${5:"#"}}
+${6:   ${7:get_param_list}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:param_map}: ${14:"#"}}
+${15:   ${16:session}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:value}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>aos_blueprint_param</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

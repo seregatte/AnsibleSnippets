@@ -1,0 +1,158 @@
+<snippet>
+<content><![CDATA[
+${1:# acpi: Specify if ACPI should be enables/disabled. 
+# agent: Specify if the QEMU GuestAgent should be enabled/disabled. 
+# api_host: (required) Specify the target host of the Proxmox VE cluster. 
+# api_password: Specify the password to authenticate with. You can use `PROXMOX_PASSWORD' environment variable. 
+# api_user: (required) Specify the user to authenticate with. 
+# args: Pass arbitrary arguments to kvm. This option is for experts only! 
+# autostart: Specify, if the VM should be automatically restarted after crash (currently ignored in PVE API). 
+# balloon: Specify the amount of RAM for the VM in MB. Using zero disables the balloon driver. 
+# bios: Specify the BIOS implementation. 
+# boot: Specify the boot order -> boot on floppy `a', hard disk `c', CD-ROM `d', or network `n'. You can combine 
+# bootdisk: Enable booting from specified disk. `(ide|sata|scsi|virtio'\d+) 
+# clone: Name of VM to be cloned. If `vmid' is setted, `clone' can take arbitrary value but required for 
+# cores: Specify number of cores per socket. 
+# cpu: Specify emulated CPU type. 
+# cpulimit: Specify if CPU usage will be limited. Value 0 indicates no CPU limit. If the computer has 2 CPUs, it has 
+# cpuunits: Specify CPU weight for a VM. You can disable fair-scheduler configuration by setting this to 0 
+# delete: Specify a list of settings you want to delete. 
+# description: Specify the description for the VM. Only used on the configuration web interface. This is saved as 
+# digest: Specify if to prevent changes if current configuration file has different SHA1 digest. This can be used 
+# force: Allow to force stop VM. Can be used only with states `stopped', `restarted'. 
+# format: Target drive's backing file's data format. Used only with clone 
+# freeze: Specify if PVE should freeze CPU at startup (use 'c' monitor command to start execution). 
+# full: Create a full copy of all disk. This is always done when you clone a normal VM. For VM templates, we try 
+# hostpci: Specify a hash/dictionary of map host pci devices into guest. `hostpci='{"key":"value", 
+# hotplug: Selectively enable hotplug features. This is a comma separated list of hotplug features `'network', 
+# hugepages: Enable/disable hugepages memory. 
+# ide: A hash/dictionary of volume used as IDE hard disk or CD-ROM. `ide='{"key":"value", "key":"value"}''. 
+# keyboard: Sets the keyboard layout for VNC server. 
+# kvm: Enable/disable KVM hardware virtualization. 
+# localtime: Sets the real time clock to local time. This is enabled by default if ostype indicates a Microsoft OS. 
+# lock: Lock/unlock the VM. 
+# machine: Specifies the Qemu machine type. type => 
+# memory: Memory size in MB for instance. 
+# migrate_downtime: Sets maximum tolerated downtime (in seconds) for migrations. 
+# migrate_speed: Sets maximum speed (in MB/s) for migrations. A value of 0 is no limit. 
+# name: Specifies the VM name. Only used on the configuration web interface. Required only for `state=present'. 
+# net: A hash/dictionary of network interfaces for the VM. `net='{"key":"value", "key":"value"}''. Keys allowed 
+# newid: VMID for the clone. Used only with clone. If newid is not set, the next available VM ID will be fetched 
+# node: Proxmox VE node, where the new VM will be created. Only required for `state=present'. For other states, 
+# numa: A hash/dictionaries of NUMA topology. `numa='{"key":"value", "key":"value"}''. Keys allowed are - 
+# onboot: Specifies whether a VM will be started during system bootup. 
+# ostype: Specifies guest operating system. This is used to enable special optimization/features for specific 
+# parallel: A hash/dictionary of map host parallel devices. `parallel='{"key":"value", "key":"value"}''. Keys 
+# pool: Add the new VM to the specified pool. 
+# protection: Enable/disable the protection flag of the VM. This will enable/disable the remove VM and remove disk 
+# reboot: Allow reboot. If set to yes, the VM exit on reboot. 
+# revert: Revert a pending change. 
+# sata: A hash/dictionary of volume used as sata hard disk or CD-ROM. `sata='{"key":"value", "key":"value"}''. 
+# scsi: A hash/dictionary of volume used as SCSI hard disk or CD-ROM. `scsi='{"key":"value", "key":"value"}''. 
+# scsihw: Specifies the SCSI controller model. 
+# serial: A hash/dictionary of serial device to create inside the VM. `'{"key":"value", "key":"value"}''. Keys 
+# shares: Rets amount of memory shares for auto-ballooning. (0 - 50000). The larger the number is, the more memory 
+# skiplock: Ignore locks Only root is allowed to use this option. 
+# smbios: Specifies SMBIOS type 1 fields. 
+# snapname: The name of the snapshot. Used only with clone. 
+# sockets: Sets the number of CPU sockets. (1 - N). 
+# startdate: Sets the initial date of the real time clock. Valid format for date are `'now'' or 
+# startup: Startup and shutdown behavior. `[[order=]\d+] [,up=\d+] [,down=\d+]'. Order is a non-negative number 
+# state: Indicates desired state of the instance. If `current', the current state of the VM will be fecthed. You 
+# storage: Target storage for full clone. 
+# tablet: Enables/disables the USB tablet device. 
+# target: Target node. Only allowed if the original VM is on shared storage. Used only with clone 
+# tdf: Enables/disables time drift fix. 
+# template: Enables/disables the template. 
+# timeout: Timeout for operations. 
+# update: If `yes', the VM will be update with new value. Cause of the operations of the API and security reasons, 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# vcpus: Sets number of hotplugged vcpus. 
+# vga: Select VGA type. If you want to use high resolution modes (>= 1280x1024x16) then you should use option 
+# virtio: A hash/dictionary of volume used as VIRTIO hard disk. `virtio='{"key":"value", "key":"value"}''. Keys 
+# vmid: Specifies the VM ID. Instead use `name' parameter. If vmid is not set, the next available VM ID will be 
+# watchdog: Creates a virtual hardware watchdog device. 
+}- name: ${2:Name for proxmox_kvm module.}
+  proxmox_kvm:
+${3:   ${4:acpi}: ${5:"#"}}
+${6:   ${7:agent}: ${8:"#"}}
+${9:   ${10:api_host}: ${11:"#"}}
+${12:   ${13:api_password}: ${14:"#"}}
+${15:   ${16:api_user}: ${17:"#"}}
+${18:   ${19:args}: ${20:"#"}}
+${21:   ${22:autostart}: ${23:"#"}}
+${24:   ${25:balloon}: ${26:"#"}}
+${27:   ${28:bios}: ${29:"#"}}
+${30:   ${31:boot}: ${32:"#"}}
+${33:   ${34:bootdisk}: ${35:"#"}}
+${36:   ${37:clone}: ${38:"#"}}
+${39:   ${40:cores}: ${41:"#"}}
+${42:   ${43:cpu}: ${44:"#"}}
+${45:   ${46:cpulimit}: ${47:"#"}}
+${48:   ${49:cpuunits}: ${50:"#"}}
+${51:   ${52:delete}: ${53:"#"}}
+${54:   ${55:description}: ${56:"#"}}
+${57:   ${58:digest}: ${59:"#"}}
+${60:   ${61:force}: ${62:"#"}}
+${63:   ${64:format}: ${65:"#"}}
+${66:   ${67:freeze}: ${68:"#"}}
+${69:   ${70:full}: ${71:"#"}}
+${72:   ${73:hostpci}: ${74:"#"}}
+${75:   ${76:hotplug}: ${77:"#"}}
+${78:   ${79:hugepages}: ${80:"#"}}
+${81:   ${82:ide}: ${83:"#"}}
+${84:   ${85:keyboard}: ${86:"#"}}
+${87:   ${88:kvm}: ${89:"#"}}
+${90:   ${91:localtime}: ${92:"#"}}
+${93:   ${94:lock}: ${95:"#"}}
+${96:   ${97:machine}: ${98:"#"}}
+${99:   ${100:memory}: ${101:"#"}}
+${102:   ${103:migrate_downtime}: ${104:"#"}}
+${105:   ${106:migrate_speed}: ${107:"#"}}
+${108:   ${109:name}: ${110:"#"}}
+${111:   ${112:net}: ${113:"#"}}
+${114:   ${115:newid}: ${116:"#"}}
+${117:   ${118:node}: ${119:"#"}}
+${120:   ${121:numa}: ${122:"#"}}
+${123:   ${124:onboot}: ${125:"#"}}
+${126:   ${127:ostype}: ${128:"#"}}
+${129:   ${130:parallel}: ${131:"#"}}
+${132:   ${133:pool}: ${134:"#"}}
+${135:   ${136:protection}: ${137:"#"}}
+${138:   ${139:reboot}: ${140:"#"}}
+${141:   ${142:revert}: ${143:"#"}}
+${144:   ${145:sata}: ${146:"#"}}
+${147:   ${148:scsi}: ${149:"#"}}
+${150:   ${151:scsihw}: ${152:"#"}}
+${153:   ${154:serial}: ${155:"#"}}
+${156:   ${157:shares}: ${158:"#"}}
+${159:   ${160:skiplock}: ${161:"#"}}
+${162:   ${163:smbios}: ${164:"#"}}
+${165:   ${166:snapname}: ${167:"#"}}
+${168:   ${169:sockets}: ${170:"#"}}
+${171:   ${172:startdate}: ${173:"#"}}
+${174:   ${175:startup}: ${176:"#"}}
+${177:   ${178:state}: ${179:"#"}}
+${180:   ${181:storage}: ${182:"#"}}
+${183:   ${184:tablet}: ${185:"#"}}
+${186:   ${187:target}: ${188:"#"}}
+${189:   ${190:tdf}: ${191:"#"}}
+${192:   ${193:template}: ${194:"#"}}
+${195:   ${196:timeout}: ${197:"#"}}
+${198:   ${199:update}: ${200:"#"}}
+${201:   ${202:validate_certs}: ${203:"#"}}
+${204:   ${205:vcpus}: ${206:"#"}}
+${207:   ${208:vga}: ${209:"#"}}
+${210:   ${211:virtio}: ${212:"#"}}
+${213:   ${214:vmid}: ${215:"#"}}
+${216:   ${217:watchdog}: ${218:"#"}}
+${219:${220:   become: ${221:true}} 
+${222:   become_method: ${223:su}} 
+${224:   become_user: ${225:nobody}} 
+${226:   become_flags: ${227:"-s /bin/sh"}}} 
+${228:   when: ${229:variable is defined}} 
+${230:   with_items: ${231:array}} 
+]]></content>
+	<tabTrigger>proxmox_kvm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

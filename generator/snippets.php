@@ -15,26 +15,29 @@ foreach ($modules as $module) {
 }
 
 foreach($snippets as $name => $options){
-	$tpl  = '<snippet>'. PHP_EOL;
-	$tpl .= '<content><![CDATA['. PHP_EOL;
-	$tpl .= '${1:';
+	$c = 0;
+	echo sprintf("Generating snippets for a %s module...%s", $name, PHP_EOL);
+	$tpl  = sprintf('<snippet>%s', PHP_EOL);
+	$tpl .= sprintf('<content><![CDATA[%s', PHP_EOL);
+	$tpl .= sprintf('${%d:', ++$c);
 	foreach ($options as $value) {
-		$tpl .= '#' . $value[0] . ' = ' . $value [1] . PHP_EOL;
+		$tpl .= sprintf('# %s: %s %s', $value[0], $value[1], PHP_EOL);
 	}
-	$tpl .= '}';
-	$tpl .= '- name: ${2:Name for ' . $name . ' module.}' . PHP_EOL;
-	$tpl .= '${3:  sudo: ${4:yes}}' . PHP_EOL;
-	$tpl .= '  '. $name .': ';
-	$c = 4;
+	$tpl .= sprintf('}');
+	$tpl .= sprintf('- name: ${%d:Name for %s module.}%s', ++$c, $name, PHP_EOL);
+	$tpl .= sprintf("  %s:%s", $name, PHP_EOL);
 	foreach ($options as $value) {
-		$tpl .= '${'. ++$c . ':'. $value[0] . '=${' . ++$c . ': } }';
+		$tpl .= sprintf('${%d:   ${%d:%s}: ${%d:"#%s"}}%s', ++$c, ++$c, $value[0], ++$c, '', PHP_EOL);
 	}
-	$tpl .= PHP_EOL;
-	$tpl .= '${' . ++$c . ':  when: ${' . ++$c . ': variable is defined}}' . PHP_EOL;
-	$tpl .= '${' . ++$c . ':  with_items: ${' . ++$c . ': array}}' . PHP_EOL;
-	$tpl .= ']]></content>' . PHP_EOL;
-	$tpl .= '	<tabTrigger>' . $name . '</tabTrigger>'. PHP_EOL;
-	$tpl .= '	<scope>source.yaml,source.ansible</scope>'. PHP_EOL;
-	$tpl .= '</snippet>'. PHP_EOL;
+	$tpl .= sprintf('${%d:${%d:   %s: ${%d:%s}} %s', ++$c, ++$c, 'become', ++$c, 'true', PHP_EOL);
+	$tpl .= sprintf('${%d:   %s: ${%d:%s}} %s', ++$c, 'become_method', ++$c, 'su', PHP_EOL);
+	$tpl .= sprintf('${%d:   %s: ${%d:%s}} %s', ++$c, 'become_user', ++$c, 'nobody', PHP_EOL);
+	$tpl .= sprintf('${%d:   %s: ${%d:%s}}} %s', ++$c, 'become_flags', ++$c, '"-s /bin/sh"', PHP_EOL);
+	$tpl .= sprintf('${%d:   %s: ${%d:%s}} %s', ++$c, 'when', ++$c, 'variable is defined', PHP_EOL);
+	$tpl .= sprintf('${%d:   %s: ${%d:%s}} %s', ++$c, 'with_items', ++$c, 'array', PHP_EOL);
+	$tpl .= sprintf(']]></content>%s', PHP_EOL);
+	$tpl .= sprintf('	<tabTrigger>%s</tabTrigger>%s', $name, PHP_EOL);
+	$tpl .= sprintf('	<scope>source.yaml,source.ansible</scope>%s', PHP_EOL);
+	$tpl .= sprintf('</snippet>%s', PHP_EOL);
 	file_put_contents(dirname(__DIR__) . '/Snippets/AnsibleDoc/' . $name . '.sublime-snippet' , $tpl);
 }

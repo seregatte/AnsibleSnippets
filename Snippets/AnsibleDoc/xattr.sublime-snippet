@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:#follow = if yes, dereferences symlinks and sets/gets attributes on symlink target, otherwise acts on symlink itself.
-#key = The name of a specific Extended attribute key to set/retrieve
-#name = The full path of the file/object to get the facts of
-#state = defines which state you want to do. `read' retrieves the current value for a `key' (default) `present' sets
-#value = The value to set the named name/key to, it automatically sets the `state' to 'set'
+${1:# follow: if yes, dereferences symlinks and sets/gets attributes on symlink target, otherwise acts on symlink 
+# key: The name of a specific Extended attribute key to set/retrieve 
+# path: (required) The full path of the file/object to get the facts of. Before 2.3 this option was only usable 
+# state: defines which state you want to do. `read' retrieves the current value for a `key' (default) `present' 
+# value: The value to set the named name/key to, it automatically sets the `state' to 'set' 
 }- name: ${2:Name for xattr module.}
-${3:  become: ${4:yes}}
-  xattr: ${5:follow=${6: } }${7:key=${8: } }${9:name=${10: } }${11:state=${12: } }${13:value=${14: } }
-${15:  when: ${16: variable is defined}}
-${17:  with_items: ${18: array}}
+  xattr:
+${3:   ${4:follow}: ${5:"#"}}
+${6:   ${7:key}: ${8:"#"}}
+${9:   ${10:path}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:value}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>xattr</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

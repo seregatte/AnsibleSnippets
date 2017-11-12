@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# addr: IPv4 or IPv6 Address. 
+# allow_secondary: Allow to configure IPv4 secondary addresses on interface. 
+# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
+# interface: (required) Full name of interface, i.e. Ethernet1/1, vlan10. 
+# mask: Subnet mask for IPv4 or IPv6 Address in decimal format. 
+# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
+# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# state: Specify desired state of the resource. 
+# tag: Route tag for IPv4 or IPv6 Address in integer format. 
+# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
+# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
+# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for nxos_ip_interface module.}
+  nxos_ip_interface:
+${3:   ${4:addr}: ${5:"#"}}
+${6:   ${7:allow_secondary}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:interface}: ${14:"#"}}
+${15:   ${16:mask}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:ssh_keyfile}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:tag}: ${35:"#"}}
+${36:   ${37:timeout}: ${38:"#"}}
+${39:   ${40:transport}: ${41:"#"}}
+${42:   ${43:use_ssl}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>nxos_ip_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,16 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:#array_add = Add new elements to the array for a key which has an array as its value.
-#domain = The domain is a domain name of the form com.companyname.appname.
-#key = The key of the user preference
-#state = The state of the user defaults
-#type = The type of value to write.
-#value = The value to write. Only required when state = present.
+${1:# array_add: Add new elements to the array for a key which has an array as its value. 
+# domain: The domain is a domain name of the form com.companyname.appname. 
+# host: The host on which the preference should apply. The special value "currentHost" corresponds to the 
+# key: (required) The key of the user preference 
+# state: The state of the user defaults 
+# type: The type of value to write. 
+# value: The value to write. Only required when state = present. 
 }- name: ${2:Name for osx_defaults module.}
-${3:  become: ${4:yes}}
-  osx_defaults: ${5:array_add=${6: } }${7:domain=${8: } }${9:key=${10: } }${11:state=${12: } }${13:type=${14: } }${15:value=${16: } }
-${17:  when: ${18: variable is defined}}
-${19:  with_items: ${20: array}}
+  osx_defaults:
+${3:   ${4:array_add}: ${5:"#"}}
+${6:   ${7:domain}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:key}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:type}: ${20:"#"}}
+${21:   ${22:value}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>osx_defaults</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

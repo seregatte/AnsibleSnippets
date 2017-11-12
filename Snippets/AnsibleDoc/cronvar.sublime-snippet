@@ -1,18 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:#backup = If set, create a backup of the crontab before it is modified. The location of the backup is returned in the
-#cron_file = If specified, uses this file in cron.d instead of an individual user's crontab.
-#insertafter = Used with `state=present'. If specified, the variable will be inserted after the variable specified.
-#insertbefore = Used with `state=present'. If specified, the variable will be inserted just before the variable specified.
-#name = Name of the crontab variable.
-#state = Whether to ensure that the variable is present or absent.
-#user = The specific user whose crontab should be modified.
-#value = The value to set this variable to.  Required if state=present.
+${1:# backup: If set, create a backup of the crontab before it is modified. The location of the backup is returned in 
+# cron_file: If specified, uses this file instead of an individual user's crontab. Without a leading /, this is 
+# insertafter: Used with `state=present'. If specified, the variable will be inserted after the variable specified. 
+# insertbefore: Used with `state=present'. If specified, the variable will be inserted just before the variable 
+# name: (required) Name of the crontab variable. 
+# state: Whether to ensure that the variable is present or absent. 
+# user: The specific user whose crontab should be modified. 
+# value: The value to set this variable to.  Required if state=present. 
 }- name: ${2:Name for cronvar module.}
-${3:  become: ${4:yes}}
-  cronvar: ${5:backup=${6: } }${7:cron_file=${8: } }${9:insertafter=${10: } }${11:insertbefore=${12: } }${13:name=${14: } }${15:state=${16: } }${17:user=${18: } }${19:value=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  cronvar:
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:cron_file}: ${8:"#"}}
+${9:   ${10:insertafter}: ${11:"#"}}
+${12:   ${13:insertbefore}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:user}: ${23:"#"}}
+${24:   ${25:value}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>cronvar</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

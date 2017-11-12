@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# merge_content: Loads the specified configuration that you want to merge into the running configuration. This is 
+# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
+# reset: Loads the default configuration on the device. If this option is specified, the default configuration 
+# save: The `save' argument instructs the module to save the running-config to startup-config. This operation is 
+# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
+# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
+# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# verify: Validates the specified configuration to see whether they are valid to replace the running 
+}- name: ${2:Name for bigip_config module.}
+  bigip_config:
+${3:   ${4:merge_content}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:reset}: ${11:"#"}}
+${12:   ${13:save}: ${14:"#"}}
+${15:   ${16:server}: ${17:"#"}}
+${18:   ${19:server_port}: ${20:"#"}}
+${21:   ${22:user}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:   ${28:verify}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>bigip_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

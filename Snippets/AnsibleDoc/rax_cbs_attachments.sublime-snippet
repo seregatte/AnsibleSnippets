@@ -1,27 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:#api_key = Rackspace API key (overrides `credentials')
-#auth_endpoint = The URI of the authentication service
-#credentials = File to find the Rackspace credentials in (ignored if `api_key' and `username' are provided)
-#device = The device path to attach the volume to, e.g. /dev/xvde
-#env = Environment as configured in ~/.pyrax.cfg, see
-#https = pyrax-
-#identity_type = Authentication machanism to use, such as rackspace or keystone
-#region = Region to create an instance in
-#server = Name or id of the server to attach/detach
-#state = Indicate desired state of the resource
-#tenant_id = The tenant ID used for authentication
-#tenant_name = The tenant name used for authentication
-#username = Rackspace username (overrides `credentials')
-#verify_ssl = Whether or not to require SSL validation of API endpoints
-#volume = Name or id of the volume to attach/detach
-#wait = wait for the volume to be in 'in-use'/'available' state before returning
-#wait_timeout = how long before wait gives up, in seconds
+${1:# api_key: Rackspace API key, overrides `credentials'. 
+# auth_endpoint: The URI of the authentication service. 
+# credentials: File to find the Rackspace credentials in. Ignored if `api_key' and `username' are provided. 
+# device: The device path to attach the volume to, e.g. /dev/xvde. Before 2.4 this was a required field. Now it 
+# env: Environment as configured in `~/.pyrax.cfg', see 
+# : pyrax-configuration. 
+# identity_type: Authentication mechanism to use, such as rackspace or keystone. 
+# region: Region to create an instance in. 
+# server: (required) Name or id of the server to attach/detach 
+# state: (required) Indicate desired state of the resource 
+# tenant_id: The tenant ID used for authentication. 
+# tenant_name: The tenant name used for authentication. 
+# username: Rackspace username, overrides `credentials'. 
+# verify_ssl: Whether or not to require SSL validation of API endpoints. 
+# volume: (required) Name or id of the volume to attach/detach 
+# wait: wait for the volume to be in 'in-use'/'available' state before returning 
+# wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for rax_cbs_attachments module.}
-${3:  become: ${4:yes}}
-  rax_cbs_attachments: ${5:api_key=${6: } }${7:auth_endpoint=${8: } }${9:credentials=${10: } }${11:device=${12: } }${13:env=${14: } }${15:https=${16: } }${17:identity_type=${18: } }${19:region=${20: } }${21:server=${22: } }${23:state=${24: } }${25:tenant_id=${26: } }${27:tenant_name=${28: } }${29:username=${30: } }${31:verify_ssl=${32: } }${33:volume=${34: } }${35:wait=${36: } }${37:wait_timeout=${38: } }
-${39:  when: ${40: variable is defined}}
-${41:  with_items: ${42: array}}
+  rax_cbs_attachments:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:auth_endpoint}: ${8:"#"}}
+${9:   ${10:credentials}: ${11:"#"}}
+${12:   ${13:device}: ${14:"#"}}
+${15:   ${16:env}: ${17:"#"}}
+${18:   ${19:}: ${20:"#"}}
+${21:   ${22:identity_type}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:server}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:tenant_id}: ${35:"#"}}
+${36:   ${37:tenant_name}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:verify_ssl}: ${44:"#"}}
+${45:   ${46:volume}: ${47:"#"}}
+${48:   ${49:wait}: ${50:"#"}}
+${51:   ${52:wait_timeout}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>rax_cbs_attachments</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

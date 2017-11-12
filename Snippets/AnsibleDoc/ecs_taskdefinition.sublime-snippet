@@ -1,18 +1,45 @@
 <snippet>
 <content><![CDATA[
-${1:#arn = The arn of the task description to delete
-#containers = A list of containers definitions
-#family = A Name that would be given to the task definition
-#region = The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment variable, if
-#http = ec2_region
-#revision = A revision number for the task definition
-#state = State whether the task definition should exist or be deleted
-#volumes = A list of names of volumes to be attached
+${1:# arn: The arn of the task description to delete 
+# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# containers: A list of containers definitions 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# family: A Name that would be given to the task definition 
+# network_mode: The Docker networking mode to use for the containers in the task. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
+# http: ec2_region 
+# revision: A revision number for the task definition 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# state: (required) State whether the task definition should exist or be deleted 
+# task_role_arn: The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# volumes: A list of names of volumes to be attached 
 }- name: ${2:Name for ecs_taskdefinition module.}
-${3:  become: ${4:yes}}
-  ecs_taskdefinition: ${5:arn=${6: } }${7:containers=${8: } }${9:family=${10: } }${11:region=${12: } }${13:http=${14: } }${15:revision=${16: } }${17:state=${18: } }${19:volumes=${20: } }
-${21:  when: ${22: variable is defined}}
-${23:  with_items: ${24: array}}
+  ecs_taskdefinition:
+${3:   ${4:arn}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:containers}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:family}: ${20:"#"}}
+${21:   ${22:network_mode}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:http}: ${32:"#"}}
+${33:   ${34:revision}: ${35:"#"}}
+${36:   ${37:security_token}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:task_role_arn}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:   ${49:volumes}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>ecs_taskdefinition</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

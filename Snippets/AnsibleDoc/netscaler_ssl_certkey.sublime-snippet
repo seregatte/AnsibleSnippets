@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# cert: Name of and, optionally, path to the X509 certificate file that is used to form the certificate-key 
+# certkey: Name for the certificate and private-key pair. Must begin with an ASCII alphanumeric or underscore `_' 
+# : ', period `.', space ` ', colon `:', at `@', equals `=', and hyphen `-' 
+# expirymonitor: Issue an alert when the certificate is about to expire. 
+# inform: Input format of the certificate and the private-key files. The three formats supported by the appliance 
+# key: Name of and, optionally, path to the private-key file that is used to form the certificate-key pair. The 
+# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
+# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
+# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
+# nitro_user: (required) The username with which to authenticate to the netscaler node. 
+# notificationperiod: Time, in number of days, before certificate expiration, at which to generate an alert that the 
+# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# passplain: Pass phrase used to encrypt the private-key. Required when adding an encrypted private-key in PEM 
+# password: Passphrase that was used to encrypt the private-key. Use this option to load encrypted private-keys in 
+# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
+# state: The state of the resource being configured by the module on the netscaler node. When present the 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for netscaler_ssl_certkey module.}
+  netscaler_ssl_certkey:
+${3:   ${4:cert}: ${5:"#"}}
+${6:   ${7:certkey}: ${8:"#"}}
+${9:   ${10:}: ${11:"#"}}
+${12:   ${13:expirymonitor}: ${14:"#"}}
+${15:   ${16:inform}: ${17:"#"}}
+${18:   ${19:key}: ${20:"#"}}
+${21:   ${22:nitro_pass}: ${23:"#"}}
+${24:   ${25:nitro_protocol}: ${26:"#"}}
+${27:   ${28:nitro_timeout}: ${29:"#"}}
+${30:   ${31:nitro_user}: ${32:"#"}}
+${33:   ${34:notificationperiod}: ${35:"#"}}
+${36:   ${37:nsip}: ${38:"#"}}
+${39:   ${40:passplain}: ${41:"#"}}
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:save_config}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>netscaler_ssl_certkey</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

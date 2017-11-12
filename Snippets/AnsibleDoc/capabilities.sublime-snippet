@@ -1,13 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#capability = Desired capability to set (with operator and flags, if state is `present') or remove (if state is `absent')
-#path = Specifies the path to the file to be managed.
-#state = Whether the entry should be present or absent in the file's capabilities.
+${1:# capability: (required) Desired capability to set (with operator and flags, if state is `present') or remove (if 
+# path: (required) Specifies the path to the file to be managed. 
+# state: Whether the entry should be present or absent in the file's capabilities. 
 }- name: ${2:Name for capabilities module.}
-${3:  become: ${4:yes}}
-  capabilities: ${5:capability=${6: } }${7:path=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  capabilities:
+${3:   ${4:capability}: ${5:"#"}}
+${6:   ${7:path}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>capabilities</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

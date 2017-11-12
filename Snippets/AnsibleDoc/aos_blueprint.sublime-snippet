@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# id: AOS Id of the IP Pool to manage (can't be used to create a new IP Pool). Only one of `name' or `id' can 
+# name: Name of the Blueprint to manage. Only one of `name' or `id' can be set. 
+# reference_arch: When creating a blueprint, this value identifies a known AOS reference architecture value. `Refer to 
+# session: (required) An existing AOS session as obtained by [aos_login] module. 
+# state: Indicate what is the expected state of the Blueprint. 
+# template: When creating a blueprint, this value identifies, by name, an existing engineering design template 
+# timeout: When `state=build-ready', this timeout identifies timeout in seconds to wait before declaring a failure. 
+}- name: ${2:Name for aos_blueprint module.}
+  aos_blueprint:
+${3:   ${4:id}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:reference_arch}: ${11:"#"}}
+${12:   ${13:session}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:template}: ${20:"#"}}
+${21:   ${22:timeout}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>aos_blueprint</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

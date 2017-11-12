@@ -1,0 +1,36 @@
+<snippet>
+<content><![CDATA[
+${1:# dsfield: - Identifies the 8-bit differentiated services field (as defined in RFC 2474). The optional dsfield_mask 
+# link: Specifiies a link to configure flow on. 
+# local_ip: Identifies a network flow by the local IP address. 
+# local_port: Identifies a service specified by the local port. 
+# maxbw: - Sets the full duplex bandwidth for the flow. The bandwidth is specified as an integer with one of the 
+# name: (required) - A flow is defined as a set of attributes based on Layer 3 and Layer 4 headers, which can be 
+# priority: Sets the relative priority for the flow. 
+# remove_ip: Identifies a network flow by the remote IP address. 
+# state: Create/delete/enable/disable an IP address on the network interface. 
+# temporary: Specifies that the configured flow is temporary. Temporary flows do not persist across reboots. 
+# transport: - Specifies a Layer 4 protocol to be used. It is typically used in combination with `local_port' to 
+}- name: ${2:Name for flowadm module.}
+  flowadm:
+${3:   ${4:dsfield}: ${5:"#"}}
+${6:   ${7:link}: ${8:"#"}}
+${9:   ${10:local_ip}: ${11:"#"}}
+${12:   ${13:local_port}: ${14:"#"}}
+${15:   ${16:maxbw}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:priority}: ${23:"#"}}
+${24:   ${25:remove_ip}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:temporary}: ${32:"#"}}
+${33:   ${34:transport}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
+]]></content>
+	<tabTrigger>flowadm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

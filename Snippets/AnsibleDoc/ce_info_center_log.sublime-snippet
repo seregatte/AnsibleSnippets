@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# channel_id: Specifies a channel ID. The value is an integer ranging from 0 to 9. 
+# log_buff_enable: Enables the Switch to send logs to the log buffer. 
+# log_buff_size: Specifies the maximum number of logs in the log buffer. The value is an integer that ranges from 0 to 
+# log_enable: Indicates whether log filtering is enabled. 
+# log_level: Specifies a log severity. 
+# log_time_stamp: Sets the timestamp format of logs. 
+# module_name: Specifies the name of a module. The value is a module name in registration logs. 
+# state: Determines whether the config should be present or not on the device. 
+}- name: ${2:Name for ce_info_center_log module.}
+  ce_info_center_log:
+${3:   ${4:channel_id}: ${5:"#"}}
+${6:   ${7:log_buff_enable}: ${8:"#"}}
+${9:   ${10:log_buff_size}: ${11:"#"}}
+${12:   ${13:log_enable}: ${14:"#"}}
+${15:   ${16:log_level}: ${17:"#"}}
+${18:   ${19:log_time_stamp}: ${20:"#"}}
+${21:   ${22:module_name}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>ce_info_center_log</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

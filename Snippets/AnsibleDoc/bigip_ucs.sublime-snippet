@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# force: If `yes' will upload the file every time and replace the file on the device. If `no', the file will only 
+# include_chassis_level_config: During restore of the UCS file, include chassis level configuration that is shared among boot volume 
+# no_license: Performs a full restore of the UCS file and all the files it contains, with the exception of the license 
+# no_platform_check: Bypasses the platform check and allows a UCS that was created using a different platform to be 
+# passphrase: Specifies the passphrase that is necessary to load the specified UCS file. 
+# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
+# reset_trust: When specified, the device and trust domain certs and keys are not loaded from the UCS. Instead, a new 
+# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
+# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
+# state: When `installed', ensures that the UCS is uploaded and installed, on the system. When `present', ensures 
+# ucs: The path to the UCS file to install. The parameter must be provided if the `state' is either `installed' 
+# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
+# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+}- name: ${2:Name for bigip_ucs module.}
+  bigip_ucs:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:include_chassis_level_config}: ${8:"#"}}
+${9:   ${10:no_license}: ${11:"#"}}
+${12:   ${13:no_platform_check}: ${14:"#"}}
+${15:   ${16:passphrase}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:reset_trust}: ${23:"#"}}
+${24:   ${25:server}: ${26:"#"}}
+${27:   ${28:server_port}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:ucs}: ${35:"#"}}
+${36:   ${37:user}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>bigip_ucs</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

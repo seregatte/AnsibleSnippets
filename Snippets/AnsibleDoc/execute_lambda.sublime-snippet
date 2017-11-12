@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
+# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# dry_run: Do not *actually* invoke the function. A `DryRun' call will check that the caller has permissions to 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# function_arn: The name of the function to be invoked 
+# name: The name of the function to be invoked. This can only be used for invocations within the calling 
+# payload: A dictionary in any form to be provided as input to the Lambda function. 
+# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# tail_log: If `tail_log=true', the result of the task will include the last 4 KB of the CloudWatch log for the 
+# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# version_qualifier: Which version/alias of the function to run. This defaults to the `LATEST' revision, but can be set to 
+# wait: Whether to wait for the function results or not. If `wait' is false, the task will not return any 
+}- name: ${2:Name for execute_lambda module.}
+  execute_lambda:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:dry_run}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:function_arn}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:payload}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:security_token}: ${29:"#"}}
+${30:   ${31:tail_log}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:version_qualifier}: ${38:"#"}}
+${39:   ${40:wait}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>execute_lambda</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

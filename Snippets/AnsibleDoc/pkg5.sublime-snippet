@@ -1,13 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:#accept_licenses = Accept any licences.
-#name = An FRMI of the package(s) to be installed/removed/updated. Multiple packages may be specified, separated by `,'.
-#state = Whether to install (`present', `latest'), or remove (`absent') a package.
+${1:# accept_licenses: Accept any licences. 
+# name: (required) An FRMI of the package(s) to be installed/removed/updated. Multiple packages may be 
+# state: Whether to install (`present', `latest'), or remove (`absent') a package. 
 }- name: ${2:Name for pkg5 module.}
-${3:  become: ${4:yes}}
-  pkg5: ${5:accept_licenses=${6: } }${7:name=${8: } }${9:state=${10: } }
-${11:  when: ${12: variable is defined}}
-${13:  with_items: ${14: array}}
+  pkg5:
+${3:   ${4:accept_licenses}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>pkg5</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>
