@@ -10,37 +10,12 @@ branches:
 services:
   - docker
 
-stages:
-  - name: "Build on CI"
-    if: branch = develop
-    before_install:
-      - sudo apt-get update > /dev/null
-      - sudo apt-get install git-core --no-install-recommends --no-install-suggests -y
-      - git config --global user.email "seregatte@gmail.com"
-      - git config --global user.name "João Paulo Seregatte Costa"
+jobs:
+  include:
+    - stage: "Build on CI"
+      if: branch = develop
+      script: .travis/develop.sh
 
-    install:
-      - docker build generator/ -t builder:latest
-      - export ANSIBLE_VERSION=`docker run --rm -it builder:latest ansible --version | head -1 | cut -d' ' -f2`
-    before_script:
-      - docker run --rm -it -v `pwd`:/var/www/html builder:latest make
-    script:
-      - export CI_BRANCH=`date +%Y-%m-%d`-ci
-      - "git checkout -b  ${CI_BRANCH} || git checkout ${CI_BRANCH}"
-      - git add . *.sublime-snippet
-      - "git commit --message \"Travis build: ${TRAVIS_BUILD_NUMBER} for ${ANSIBLE_VERSION}\"
-      - "git remote add origin-ci https://${GITHUB_TOKEN}@github.com/seregatte/AnsibleSnippets.git > /dev/null 2>&1"
-      - git push --quiet --set-upstream origin-ci `date +%Y-%m-%d`-ci
-  - name: "Release a version"
-    if: branch = master
-    before_script:
-      - sudo apt-get update > /dev/null
-      - sudo apt-get install git-core --no-install-recommends --no-install-suggests -y
-      - git config --global user.email "seregatte@gmail.com"
-      - git config --global user.name "João Paulo Seregatte Costa"
-
-    script:
-      - "git tag -a $(printf '%s.%0d' `git tag -l | tail -1 | cut -d'.' -f1-2` $((`git tag -l | tail -1 | cut -d'.' -f3`+1))) -m \"${TRAVIS_COMMIT_MESSAGE}\""
-      - "git commit --message \"Travis build: ${TRAVIS_BUILD_NUMBER} for ${ANSIBLE_VERSION}\"
-      - "git remote add origin-ci https://${GITHUB_TOKEN}@github.com/seregatte/AnsibleSnippets.git > /dev/null 2>&1"
-      - git push --quiet --set-upstream origin-ci --tags
+    - stage: "Release a version"
+      if: branch = master
+      script: .travis/master.sh
