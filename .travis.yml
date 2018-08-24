@@ -2,6 +2,11 @@ sudo: required
 
 language: generic
 
+branches:
+  only:
+  - master
+  - develop
+
 services:
   - docker
 
@@ -20,6 +25,6 @@ script:
   - export CI_BRANCH=`date +%Y-%m-%d`-ci
   - "git checkout -b  ${CI_BRANCH} || git checkout ${CI_BRANCH}"
   - git add . *.sublime-snippet
-  - "git commit --message 'Travis build: ${TRAVIS_BUILD_NUMBER} for ${ANSIBLE_VERSION}'"
+  - "git commit --message \"Travis build: ${TRAVIS_BUILD_NUMBER} for ${ANSIBLE_VERSION}\""
   - "git remote add origin-ci https://${GITHUB_TOKEN}@github.com/seregatte/AnsibleSnippets.git > /dev/null 2>&1"
   - git push --quiet --set-upstream origin-ci `date +%Y-%m-%d`-ci
