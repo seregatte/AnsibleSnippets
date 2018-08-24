@@ -7,7 +7,7 @@ services:
 
 before_install:
   - sudo apt-get update > /dev/null
-  - apt-get install git-core --no-install-recommends --no-install-suggests -y
+  - sudo apt-get install git-core --no-install-recommends --no-install-suggests -y
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "Travis CI"
 
