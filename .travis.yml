@@ -13,11 +13,13 @@ before_install:
 
 install:
   - docker build generator/ -t builder:latest
+  - export ANSIBLE_VERSION=`docker run --rm -it builder:latest ansible --version | head -1 | cut -d' ' -f2`
 before_script:
   - docker run --rm -it -v `pwd`:/var/www/html builder:latest make
 script:
-  - git checkout -b `date +%Y-%m-%d`-ci
+  - export CI_BRANCH=`date +%Y-%m-%d`-ci
+  - "git checkout -b  ${CI_BRANCH} || git checkout ${CI_BRANCH}"
   - git add . *.sublime-snippet
-  - git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+  - "git commit --message 'Travis build: ${TRAVIS_BUILD_NUMBER} for ${ANSIBLE_VERSION}'"
   - "git remote add origin-ci https://${GITHUB_TOKEN}@github.com/seregatte/AnsibleSnippets.git > /dev/null 2>&1"
   - git push --quiet --set-upstream origin-ci `date +%Y-%m-%d`-ci
