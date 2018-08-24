@@ -9,6 +9,7 @@ export ANSIBLE_VERSION=`docker run --rm -it builder:latest ansible --version | h
 export CI_BRANCH=`date +%Y-%m-%d`-ci
 export CI_NEXT_TAG=$(printf '%s.%0d' `git tag -l | tail -1 | cut -d'.' -f1-2` $((`git tag -l | tail -1 | cut -d'.' -f3`+1)))
 git checkout -b ${CI_BRANCH} || git checkout ${CI_BRANCH}
+git pull --rebase origin ${CI_BRANCH} && true
 docker run --rm -it -v `pwd`:/var/www/html builder:latest make
 git add . *.sublime-snippet
 sed -Ei -- "s%(Ansible\ Snippets).*%\1 $CI_NEXT_TAG%" README.md
