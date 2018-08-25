@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# hash_host: Hash the hostname in the known_hosts file 
-# key: The SSH public host key, as a string (required if state=present, optional when state=absent, in which 
-# name: (required) The host to add or remove (must match a host specified in key). It will be converted to 
+# key: The SSH public host key, as a string (required 
+# name: (required) The host to add or remove (must match 
 # path: The known_hosts file to edit 
-# state: `present' to add the host key, `absent' to remove it. 
+# state: `present' to add the host key, `absent' to 
 }- name: ${2:Name for known_hosts module.}
   known_hosts:
 ${3:   ${4:hash_host}: ${5:"#"}}

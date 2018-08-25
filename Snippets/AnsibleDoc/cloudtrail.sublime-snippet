@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# cloudwatch_logs_log_group_arn: A full ARN specifying a valid CloudWatch log group to which CloudTrail logs will be delivered. The log 
-# cloudwatch_logs_role_arn: Specifies a full ARN for an IAM role that assigns the proper permissions for CloudTrail to create and 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# enable_log_file_validation: Specifies whether log file integrity validation is enabled. CloudTrail will create a hash for every log 
-# enable_logging: Start or stop the CloudTrail logging. If stopped the trail will be paused and will not record events or 
-# include_global_events: Record API calls from global services such as IAM and STS. 
-# is_multi_region_trail: Specify whether the trail belongs only to one region or exists in all regions. 
-# kms_key_id: Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. This also has the effect of 
-# name: (required) Name for the CloudTrail. Names are unique per-region unless the CloudTrail is a mulit-region 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# s3_bucket_name: An existing S3 bucket where CloudTrail will deliver log files. This bucket should exist and have the 
-# s3_key_prefix: S3 Key prefix for delivered log files. A trailing slash is not necessary and will be removed. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# sns_topic_name: SNS Topic name to send notifications to when a log file is delivered 
-# state: (required) Add or remove CloudTrail configuration. The following states have been preserved for 
-# tags: A hash/dictionary of tags to be applied to the CloudTrail resource. Remove completely or specify an 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cloudwatch_logs_log_group_arn: A full ARN specifying a valid CloudWatch log 
+# cloudwatch_logs_role_arn: Specifies a full ARN for an IAM role that 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# enable_log_file_validation: Specifies whether log file integrity validation 
+# enable_logging: Start or stop the CloudTrail logging. If stopped 
+# include_global_events: Record API calls from global services such as 
+# is_multi_region_trail: Specify whether the trail belongs only to one 
+# kms_key_id: Specifies the KMS key ID to use to encrypt the 
+# name: (required) Name for the CloudTrail. Names are 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# s3_bucket_name: An existing S3 bucket where CloudTrail will 
+# s3_key_prefix: S3 Key prefix for delivered log files. A 
+# security_token: AWS STS security token. If not set then the 
+# sns_topic_name: SNS Topic name to send notifications to when a 
+# state: (required) Add or remove CloudTrail 
+# tags: A hash/dictionary of tags to be applied to the 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for cloudtrail module.}
   cloudtrail:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -36,7 +36,7 @@ ${30:   ${31:kms_key_id}: ${32:"#"}}
 ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:profile}: ${38:"#"}}
 ${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:http}: ${44:"#"}}
+${42:   ${43:}: ${44:"#"}}
 ${45:   ${46:s3_bucket_name}: ${47:"#"}}
 ${48:   ${49:s3_key_prefix}: ${50:"#"}}
 ${51:   ${52:security_token}: ${53:"#"}}

@@ -2,11 +2,11 @@
 <content><![CDATA[
 ${1:# aggregate: List of logging definitions. 
 # dest: Destination of the logs. 
-# dest_level: Set logging severity levels. `alias level'. 
+# dest_level: Set logging severity levels. 
 # facility: Facility name for logging. 
-# facility_level: Set logging serverity levels for facility based log messages. 
-# name: If value of `dest' is `logfile' it indicates file-name. 
-# purge: Purge logging not defined in the aggregate parameter. 
+# facility_level: Set logging serverity levels for facility based 
+# name: If value of `dest' is `logfile' it indicates 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: State of the logging configuration. 
 }- name: ${2:Name for nxos_logging module.}
   nxos_logging:
@@ -16,7 +16,7 @@ ${9:   ${10:dest_level}: ${11:"#"}}
 ${12:   ${13:facility}: ${14:"#"}}
 ${15:   ${16:facility_level}: ${17:"#"}}
 ${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:purge}: ${23:"#"}}
+${21:   ${22:provider}: ${23:"#"}}
 ${24:   ${25:state}: ${26:"#"}}
 ${27:${28:   become: ${29:true}} 
 ${30:   become_method: ${31:su}} 

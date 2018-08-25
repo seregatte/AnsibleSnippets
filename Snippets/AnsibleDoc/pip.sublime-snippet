@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# chdir: cd into this directory before running the command 
+${1:# chdir: cd into this directory before running the 
 # editable: Pass the editable flag. 
-# executable: The explicit executable or a pathname to the executable to be used to run pip for a specific version of 
+# executable: The explicit executable or a pathname to the 
 # extra_args: Extra arguments passed to pip. 
-# name: The name of a Python library to install or the url of the remote package. As of 2.2 you can supply a 
-# requirements: The path to a pip requirements file, which should be local to the remote system. File can be specified 
-# state: The state of module The 'forcereinstall' option is only available in Ansible 2.1 and above. 
-# umask: The system umask to apply before installing the pip package. This is useful, for example, when 
-# version: The version number to install of the Python library specified in the `name' parameter 
-# virtualenv: An optional path to a `virtualenv' directory to install into. It cannot be specified together with the 
-# virtualenv_command: The command or a pathname to the command to create the virtual environment with. For example `pyvenv', 
-# virtualenv_python: The Python executable used for creating the virtual environment. For example `python3.5', `python2.7'. 
-# virtualenv_site_packages: Whether the virtual environment will inherit packages from the global site-packages directory.  Note 
+# name: The name of a Python library to install or the 
+# requirements: The path to a pip requirements file, which 
+# state: The state of module The 'forcereinstall' option 
+# umask: The system umask to apply before installing the 
+# version: The version number to install of the Python 
+# virtualenv: An optional path to a `virtualenv' directory to 
+# virtualenv_command: The command or a pathname to the command to 
+# virtualenv_python: The Python executable used for creating the 
+# virtualenv_site_packages: Whether the virtual environment will inherit 
 }- name: ${2:Name for pip module.}
   pip:
 ${3:   ${4:chdir}: ${5:"#"}}

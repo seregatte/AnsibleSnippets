@@ -1,25 +1,27 @@
 <snippet>
 <content><![CDATA[
 ${1:# domain_name: The new domain name to apply to the device. 
-# domain_search: A list of domain names to search. Mutually exclusive with `name_server' 
-# hostname: Configure the device hostname parameter. This option takes an ASCII string value. 
-# name_server: A list of name servers to use with the device. Mutually exclusive with `domain_search' 
-# provider: A dict object containing connection details. 
-# state: Whether to apply (`present') or remove (`absent') the settings. 
+# domain_search: A list of domain names to search. Mutually 
+# host_name: Configure the device hostname parameter. This 
+# name_servers: A list of name servers to use with the device. 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# : multiple- 
+# state: Whether to apply (`present') or remove 
 }- name: ${2:Name for vyos_system module.}
   vyos_system:
 ${3:   ${4:domain_name}: ${5:"#"}}
 ${6:   ${7:domain_search}: ${8:"#"}}
-${9:   ${10:hostname}: ${11:"#"}}
-${12:   ${13:name_server}: ${14:"#"}}
+${9:   ${10:host_name}: ${11:"#"}}
+${12:   ${13:name_servers}: ${14:"#"}}
 ${15:   ${16:provider}: ${17:"#"}}
-${18:   ${19:state}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${18:   ${19:}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>vyos_system</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -2,9 +2,9 @@
 <content><![CDATA[
 ${1:# aaa_local_user: Unique name to identify the local user. 
 # acl_number: Access control list number. 
-# auth_key: The authentication password. Password length, 8-255 characters. 
+# auth_key: The authentication password. Password length, 
 # auth_protocol: Authentication protocol. 
-# priv_key: The encryption password. Password length 8-255 characters. 
+# priv_key: The encryption password. Password length 8-255 
 # priv_protocol: Encryption protocol. 
 # remote_engine_id: Remote engine id of the USM user. 
 # user_group: Name of the group where user belongs to. 

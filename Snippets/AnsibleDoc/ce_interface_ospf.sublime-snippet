@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# area: (required) Ospf area associated with this ospf process. Valid values are a string, formatted as an IP 
-# auth_key_id: Authentication key id when `auth_mode' is 'hmac-sha256', 'md5' or 'hmac-md5. Valid value is an integer 
+${1:# area: (required) Ospf area associated with this ospf 
+# auth_key_id: Authentication key id when `auth_mode' is 'hmac- 
 # auth_mode: Specifies the authentication type. 
-# auth_text_md5: Specifies a password for MD5, HMAC-MD5, or HMAC-SHA256 authentication. The value is a string of 1 to 255 
-# auth_text_simple: Specifies a password for simple authentication. The value is a string of 1 to 8 characters. 
-# cost: The cost associated with this interface. Valid values are an integer in the range from 1 to 65535. 
-# dead_interval: Time interval an ospf neighbor waits for a hello packet before tearing down adjacencies. Valid values 
-# hello_interval: Time between sending successive hello packets. Valid values are an integer in the range from 1 to 65535. 
-# interface: (required) Full name of interface, i.e. 40GE1/0/10. 
-# process_id: (required) Specifies a process ID. The value is an integer ranging from 1 to 4294967295. 
-# silent_interface: Setting to true will prevent this interface from receiving HELLO packets. Valid values are 'true' and 
-# state: Determines whether the config should be present or not on the device. 
+# auth_text_md5: Specifies a password for MD5, HMAC-MD5, or HMAC- 
+# auth_text_simple: Specifies a password for simple authentication. 
+# cost: The cost associated with this interface. Valid 
+# dead_interval: Time interval an ospf neighbor waits for a hello 
+# hello_interval: Time between sending successive hello packets. 
+# interface: (required) Full name of interface, i.e. 
+# process_id: (required) Specifies a process ID. The value is 
+# silent_interface: Setting to true will prevent this interface from 
+# state: Determines whether the config should be present 
 }- name: ${2:Name for ce_interface_ospf module.}
   ce_interface_ospf:
 ${3:   ${4:area}: ${5:"#"}}

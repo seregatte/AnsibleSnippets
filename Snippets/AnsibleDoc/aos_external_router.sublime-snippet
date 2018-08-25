@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# asn: ASN id of the external_router. 
-# content: Datastructure of the External Router to create. The format is defined by the `content_format' parameter. 
-# id: AOS Id of the External Router to manage (can't be used to create a new External Router), Only one of 
-# loopback: IP address of the Loopback interface of the external_router. 
-# name: Name of the External Router to manage. Only one of `name', `id' or `content' can be set. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the External Router (present or not). 
+# content: Datastructure of the External Router to create. 
+# id: AOS Id of the External Router to manage (can't 
+# loopback: IP address of the Loopback interface of the 
+# name: Name of the External Router to manage. Only one 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
 }- name: ${2:Name for aos_external_router module.}
   aos_external_router:
 ${3:   ${4:asn}: ${5:"#"}}

@@ -5,7 +5,7 @@ ${1:# encoding: message encoding
 # msg: (required) The message body. 
 # password: (required) password for user to connect 
 # port: port to connect to, overrides default 
-# to: (required) user ID or name of the room, when using room use a slash to indicate your nick. 
+# to: (required) user ID or name of the room, when 
 # user: (required) User as which to connect 
 }- name: ${2:Name for jabber module.}
   jabber:

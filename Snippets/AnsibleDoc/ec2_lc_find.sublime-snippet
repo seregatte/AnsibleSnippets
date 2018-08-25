@@ -1,21 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:# limit: How many results to show. Corresponds to Python slice notation like list[:limit]. 
-# name_regex: (required) A Launch Configuration to match It'll be compiled as regex 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# limit: How many results to show. Corresponds to Python 
+# name_regex: (required) A Launch Configuration to match It'll 
+# profile: Uses a boto profile. Only works with boto >= 
 # region: (required) The AWS region to use. 
+# security_token: AWS STS security token. If not set then the 
 # sort_order: Order in which to sort results. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ec2_lc_find module.}
   ec2_lc_find:
-${3:   ${4:limit}: ${5:"#"}}
-${6:   ${7:name_regex}: ${8:"#"}}
-${9:   ${10:region}: ${11:"#"}}
-${12:   ${13:sort_order}: ${14:"#"}}
-${15:${16:   become: ${17:true}} 
-${18:   become_method: ${19:su}} 
-${20:   become_user: ${21:nobody}} 
-${22:   become_flags: ${23:"-s /bin/sh"}}} 
-${24:   when: ${25:variable is defined}} 
-${26:   with_items: ${27:array}} 
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:limit}: ${14:"#"}}
+${15:   ${16:name_regex}: ${17:"#"}}
+${18:   ${19:profile}: ${20:"#"}}
+${21:   ${22:region}: ${23:"#"}}
+${24:   ${25:security_token}: ${26:"#"}}
+${27:   ${28:sort_order}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>ec2_lc_find</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

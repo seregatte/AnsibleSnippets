@@ -1,39 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:# active: A rule with `active' set to `False' will be tracked in the database, but will be never loaded in the in- 
-# apply: Used in combination with `flagIN' and `flagOUT' to create chains of rules. Setting apply to True 
-# cache_ttl: The number of milliseconds for which to cache the result of the query. Note in ProxySQL 1.1 `cache_ttl' 
+${1:# active: A rule with `active' set to `False' will be 
+# apply: Used in combination with `flagIN' and `flagOUT' 
+# cache_ttl: The number of milliseconds for which to cache 
 # client_addr: Match traffic from a specific source. 
-# comment: Free form text field, usable for a descriptive comment of the query rule. 
-# config_file: Specify a config file from which login_user and login_password are to be read. 
-# delay: Number of milliseconds to delay the execution of the query. This is essentially a throttling mechanism 
-# destination_hostgroup: Route matched queries to this hostgroup. This happens unless there is a started transaction and the 
-# digest: Match queries with a specific digest, as returned by stats_mysql_query_digest.digest. 
-# error_msg: Query will be blocked, and the specified error_msg will be returned to the client. 
-# flag: Used in combination with `flagOUT' and `apply' to create chains of rules. 
-# flag: Used in combination with `flagIN' and apply to create chains of rules. When set, `flagOUT' signifies the 
-# force_delete: By default we avoid deleting more than one schedule in a single batch, however if you need this 
-# load_to_runtime: Dynamically load mysql host config to runtime memory. 
+# comment: Free form text field, usable for a descriptive 
+# config_file: Specify a config file from which `login_user' 
+# delay: Number of milliseconds to delay the execution of 
+# destination_hostgroup: Route matched queries to this hostgroup. This 
+# digest: Match queries with a specific digest, as 
+# error_msg: Query will be blocked, and the specified 
+# flag: Used in combination with `flagOUT' and `apply' 
+# flag: Used in combination with `flagIN' and apply to 
+# force_delete: By default we avoid deleting more than one 
+# load_to_runtime: Dynamically load config to runtime memory. 
 # log: Query will be logged. 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
-# match_digest: Regular expression that matches the query digest. The dialect of regular expressions used is that of re2 
-# match_pattern: Regular expression that matches the query text. The dialect of regular expressions used is that of re2 - 
-# mirror_flag: Enables query mirroring. If set `mirror_flagOUT' can be used to evaluates the mirrored query against the 
-# mirror_hostgroup: Enables query mirroring. If set `mirror_hostgroup' can be used to mirror queries to the same or 
-# negate_match_pattern: If `negate_match_pattern' is set to `True', only queries not matching the query text will be considered 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
+# match_digest: Regular expression that matches the query 
+# match_pattern: Regular expression that matches the query text. 
+# mirror_flag: Enables query mirroring. If set `mirror_flagOUT' 
+# mirror_hostgroup: Enables query mirroring. If set 
+# negate_match_pattern: If `negate_match_pattern' is set to `True', only 
 # proxy_addr: Match incoming traffic on a specific local IP. 
 # proxy_port: Match incoming traffic on a specific local port. 
-# replace_pattern: This is the pattern with which to replace the matched pattern. Note that this is optional, and when 
-# retries: The maximum number of times a query needs to be re-executed in case of detected failure during the 
-# rule_id: The unique id of the rule. Rules are processed in rule_id order. 
-# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
-# schemaname: Filtering criteria matching schemaname. If `schemaname' is non-NULL, a query will match only if the 
-# state: When `present' - adds the rule, when `absent' - removes the rule. 
-# timeout: The maximum timeout in milliseconds with which the matched or rewritten query should be executed. If a 
-# username: Filtering criteria matching username.  If `username' is non-NULL, a query will match only if the 
+# replace_pattern: This is the pattern with which to replace the 
+# retries: The maximum number of times a query needs to be 
+# rule_id: The unique id of the rule. Rules are processed 
+# save_to_disk: Save config to sqlite db on disk to persist the 
+# schemaname: Filtering criteria matching schemaname. If 
+# state: When `present' - adds the rule, when `absent' - 
+# timeout: The maximum timeout in milliseconds with which 
+# username: Filtering criteria matching username.  If 
 }- name: ${2:Name for proxysql_query_rules module.}
   proxysql_query_rules:
 ${3:   ${4:active}: ${5:"#"}}

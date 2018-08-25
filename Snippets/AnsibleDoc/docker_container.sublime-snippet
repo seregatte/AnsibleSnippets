@@ -1,84 +1,89 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: The version of the Docker API running on the Docker Host. Defaults to the latest version of the API 
-# auto_remove: enable auto-removal of the container on daemon side when the container's process exits 
+${1:# api_version: The version of the Docker API running on the 
+# auto_remove: enable auto-removal of the container on daemon 
 # blkio_weight: Block IO (relative weight), between 10 and 1000. 
-# cacert_path: Use a CA certificate when performing server verification by providing the path to a CA certificate file. 
+# cacert_path: Use a CA certificate when performing server 
 # capabilities: List of capabilities to add to the container. 
 # cert_path: Path to the client's TLS certificate file. 
-# cleanup: Use with `detach' to remove the container after successful execution. 
-# command: Command to execute when the container starts. A command may be either a string or a list. Prior to 
+# cleanup: Use with `detach=false' to remove the container 
+# command: Command to execute when the container starts. A 
 # cpu_period: Limit CPU CFS (Completely Fair Scheduler) period 
 # cpu_quota: Limit CPU CFS (Completely Fair Scheduler) quota 
 # cpu_shares: CPU shares (relative weight). 
 # cpuset_cpus: CPUs in which to allow execution `1,3' or `1-3'. 
-# cpuset_mems: Memory nodes (MEMs) in which to allow execution `0-3' or `0,1' 
-# detach: Enable detached mode to leave the container running in background. If disabled, the task will reflect 
-# devices: List of host device bindings to add to the container. Each binding is a mapping expressed in the format: 
+# cpuset_mems: Memory nodes (MEMs) in which to allow execution 
+# debug: Debug mode 
+# detach: Enable detached mode to leave the container 
+# devices: List of host device bindings to add to the 
+# dns_opts: list of DNS options 
 # dns_search_domains: List of custom DNS search domains. 
 # dns_servers: List of custom DNS servers. 
-# docker_host: The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the 
-# entrypoint: Command that overwrites the default ENTRYPOINT of the image. 
+# docker_host: The URL or Unix socket path used to connect to 
+# domainname: Container domainname. 
+# entrypoint: Command that overwrites the default ENTRYPOINT 
 # env: Dictionary of key,value pairs. 
-# env_file: Path to a file containing environment variables `FOO=BAR'. If variable also present in `env', then `env' 
-# etc_hosts: Dict of host-to-IP mappings, where each host name is a key in the dictionary. Each host name will be 
-# exposed_ports: List of additional container ports which informs Docker that the container listens on the specified 
-# force_kill: Use the kill command when stopping a running container. 
-# groups: List of additional group names and/or IDs that the container process will run as. 
+# env_file: Path to a file containing environment variables 
+# etc_hosts: Dict of host-to-IP mappings, where each host 
+# exposed_ports: List of additional container ports which informs 
+# force_kill: Use the kill command when stopping a running 
+# groups: List of additional group names and/or IDs that 
 # hostname: Container hostname. 
-# ignore_image: When `state' is `present' or `started' the module compares the configuration of an existing container to 
-# image: Repository path and tag used to create the container. If an image is not found or pull is true, the 
-# interactive: Keep stdin open after a container is launched, even if not attached. 
-# ipc_mode: Set the IPC mode for the container. Can be one of 'container:<name|id>' to reuse another container's IPC 
-# keep_volumes: Retain volumes associated with a removed container. 
-# kernel_memory: Kernel memory limit (format: <number>[<unit>]). Number is a positive integer. Unit can be one of b, k, 
+# ignore_image: When `state' is `present' or `started' the 
+# image: Repository path and tag used to create the 
+# init: Run an init inside the container that forwards 
+# interactive: Keep stdin open after a container is launched, 
+# ipc_mode: Set the IPC mode for the container. Can be one 
+# keep_volumes: Retain volumes associated with a removed 
+# kernel_memory: Kernel memory limit (format: <number>[<unit>]). 
 # key_path: Path to the client's TLS key file. 
-# kill_signal: Override default signal used to kill a running container. 
+# kill_signal: Override default signal used to kill a running 
 # labels: Dictionary of key value pairs. 
-# links: List of name aliases for linked containers in the format `container_name:alias' 
-# log_driver: Specify the logging driver. Docker uses json-file by default. 
-# log_options: Dictionary of options specific to the chosen log_driver. See 
+# links: List of name aliases for linked containers in 
+# log_driver: Specify the logging driver. Docker uses json- 
+# log_options: Dictionary of options specific to the chosen 
 # mac_address: Container MAC address (e.g. 92:d0:c6:0a:29:33) 
-# memory: Memory limit (format: <number>[<unit>]). Number is a positive integer. Unit can be one of b, k, m, or g 
-# memory_reservation: Memory soft limit (format: <number>[<unit>]). Number is a positive integer. Unit can be one of b, k, m, 
-# memory_swap: Total memory limit (memory + swap, format:<number>[<unit>]). Number is a positive integer. Unit can be 
-# memory_swappiness: Tune a container's memory swappiness behavior. Accepts an integer between 0 and 100. 
-# name: (required) Assign a name to a new container or match an existing container. When identifying an existing 
-# network_mode: Connect the container to a network. 
-# networks: List of networks the container belongs to. Each network is a dict with keys `name', `ipv4_address', 
-# oom_killer: Whether or not to disable OOM Killer for the container. 
-# oom_score_adj: An integer value containing the score given to the container in order to tune OOM killer preferences. 
-# paused: Use with the started state to pause running processes inside the container. 
-# pid_mode: Set the PID namespace mode for the container. Currently only supports 'host'. 
+# memory: Memory limit (format: <number>[<unit>]). Number 
+# memory_reservation: Memory soft limit (format: <number>[<unit>]). 
+# memory_swap: Total memory limit (memory + swap, 
+# memory_swappiness: Tune a container's memory swappiness behavior. 
+# name: (required) Assign a name to a new container or 
+# network_mode: Connect the container to a network. Choices are 
+# networks: List of networks the container belongs to. Each 
+# oom_killer: Whether or not to disable OOM Killer for the 
+# oom_score_adj: An integer value containing the score given to 
+# paused: Use with the started state to pause running 
+# pid_mode: Set the PID namespace mode for the container. 
 # privileged: Give extended privileges to the container. 
-# published_ports: List of ports to publish from the container to the host. Use docker CLI syntax: `8000', `9000:8000', or 
-# pull: If true, always pull the latest version of an image. Otherwise, will only pull an image when missing. 
-# purge_networks: Remove the container from ALL networks not included in `networks' parameter. Any default networks such 
-# read_only: Mount the container's root file system as read-only. 
-# recreate: Use with present and started states to force the re-creation of an existing container. 
-# restart: Use with started state to force a matching container to be stopped and restarted. 
-# restart_policy: Container restart policy. Place quotes around `no' option. 
-# restart_retries: Use with restart policy to control maximum number of restart attempts. 
-# security_opts: List of security options in the form of `"label:user:User"' 
-# shm_size: Size of `/dev/shm`. The format is `<number><unit>`. `number` must be greater than `0`. Unit is optional 
-# ssl_version: Provide a valid SSL version number. Default value determined by docker-py, currently 1.0. 
-# state: `absent' - A container matching the specified name will be stopped and removed. Use force_kill to kill 
-# stop_signal: Override default signal used to stop the container. 
-# stop_timeout: Number of seconds to wait for the container to stop before sending SIGKILL. 
+# published_ports: List of ports to publish from the container to 
+# pull: If true, always pull the latest version of an 
+# purge_networks: Remove the container from ALL networks not 
+# read_only: Mount the container's root file system as read- 
+# recreate: Use with present and started states to force the 
+# restart: Use with started state to force a matching 
+# restart_policy: Container restart policy. Place quotes around 
+# restart_retries: Use with restart policy to control maximum 
+# security_opts: List of security options in the form of 
+# shm_size: Size of `/dev/shm`. The format is 
+# ssl_version: Provide a valid SSL version number. Default 
+# state: `absent' - A container matching the specified 
+# stop_signal: Override default signal used to stop the 
+# stop_timeout: Number of seconds to wait for the container to 
 # sysctls: Dictionary of key,value pairs. 
-# timeout: The maximum amount of time in seconds to wait on a response from the API. 
-# tls: Secure the connection to the API by using TLS without verifying the authenticity of the Docker host 
-# tls_hostname: When verifying the authenticity of the Docker Host server, provide the expected name of the server. 
-# tls_verify: Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server. 
+# timeout: The maximum amount of time in seconds to wait on 
+# tls: Secure the connection to the API by using TLS 
+# tls_hostname: When verifying the authenticity of the Docker 
+# tls_verify: Secure the connection to the API by using TLS 
 # tmpfs: Mount a tmpfs directory 
-# trust_image_content: If true, skip image verification. 
+# trust_image_content: If `yes', skip image verification. 
 # tty: Allocate a pseudo-TTY. 
-# ulimits: List of ulimit options. A ulimit is specified as `nofile:262144:262144' 
-# user: Sets the username or UID used and optionally the groupname or GID for the specified command. Can be [ 
+# ulimits: List of ulimit options. A ulimit is specified as 
+# user: Sets the username or UID used and optionally the 
+# userns_mode: User namespace to use 
 # uts: Set the UTS namespace mode for the container. 
 # volume_driver: The container volume driver. 
-# volumes: List of volumes to mount within the container. Use docker CLI-style syntax: `/host:/container[:mode]' 
-# volumes_from: List of container names or Ids to get volumes from. 
+# volumes: List of volumes to mount within the container. 
+# volumes_from: List of container names or Ids to get volumes 
 # working_dir: Path to the working directory. 
 }- name: ${2:Name for docker_container module.}
   docker_container:
@@ -95,79 +100,84 @@ ${30:   ${31:cpu_quota}: ${32:"#"}}
 ${33:   ${34:cpu_shares}: ${35:"#"}}
 ${36:   ${37:cpuset_cpus}: ${38:"#"}}
 ${39:   ${40:cpuset_mems}: ${41:"#"}}
-${42:   ${43:detach}: ${44:"#"}}
-${45:   ${46:devices}: ${47:"#"}}
-${48:   ${49:dns_search_domains}: ${50:"#"}}
-${51:   ${52:dns_servers}: ${53:"#"}}
-${54:   ${55:docker_host}: ${56:"#"}}
-${57:   ${58:entrypoint}: ${59:"#"}}
-${60:   ${61:env}: ${62:"#"}}
-${63:   ${64:env_file}: ${65:"#"}}
-${66:   ${67:etc_hosts}: ${68:"#"}}
-${69:   ${70:exposed_ports}: ${71:"#"}}
-${72:   ${73:force_kill}: ${74:"#"}}
-${75:   ${76:groups}: ${77:"#"}}
-${78:   ${79:hostname}: ${80:"#"}}
-${81:   ${82:ignore_image}: ${83:"#"}}
-${84:   ${85:image}: ${86:"#"}}
-${87:   ${88:interactive}: ${89:"#"}}
-${90:   ${91:ipc_mode}: ${92:"#"}}
-${93:   ${94:keep_volumes}: ${95:"#"}}
-${96:   ${97:kernel_memory}: ${98:"#"}}
-${99:   ${100:key_path}: ${101:"#"}}
-${102:   ${103:kill_signal}: ${104:"#"}}
-${105:   ${106:labels}: ${107:"#"}}
-${108:   ${109:links}: ${110:"#"}}
-${111:   ${112:log_driver}: ${113:"#"}}
-${114:   ${115:log_options}: ${116:"#"}}
-${117:   ${118:mac_address}: ${119:"#"}}
-${120:   ${121:memory}: ${122:"#"}}
-${123:   ${124:memory_reservation}: ${125:"#"}}
-${126:   ${127:memory_swap}: ${128:"#"}}
-${129:   ${130:memory_swappiness}: ${131:"#"}}
-${132:   ${133:name}: ${134:"#"}}
-${135:   ${136:network_mode}: ${137:"#"}}
-${138:   ${139:networks}: ${140:"#"}}
-${141:   ${142:oom_killer}: ${143:"#"}}
-${144:   ${145:oom_score_adj}: ${146:"#"}}
-${147:   ${148:paused}: ${149:"#"}}
-${150:   ${151:pid_mode}: ${152:"#"}}
-${153:   ${154:privileged}: ${155:"#"}}
-${156:   ${157:published_ports}: ${158:"#"}}
-${159:   ${160:pull}: ${161:"#"}}
-${162:   ${163:purge_networks}: ${164:"#"}}
-${165:   ${166:read_only}: ${167:"#"}}
-${168:   ${169:recreate}: ${170:"#"}}
-${171:   ${172:restart}: ${173:"#"}}
-${174:   ${175:restart_policy}: ${176:"#"}}
-${177:   ${178:restart_retries}: ${179:"#"}}
-${180:   ${181:security_opts}: ${182:"#"}}
-${183:   ${184:shm_size}: ${185:"#"}}
-${186:   ${187:ssl_version}: ${188:"#"}}
-${189:   ${190:state}: ${191:"#"}}
-${192:   ${193:stop_signal}: ${194:"#"}}
-${195:   ${196:stop_timeout}: ${197:"#"}}
-${198:   ${199:sysctls}: ${200:"#"}}
-${201:   ${202:timeout}: ${203:"#"}}
-${204:   ${205:tls}: ${206:"#"}}
-${207:   ${208:tls_hostname}: ${209:"#"}}
-${210:   ${211:tls_verify}: ${212:"#"}}
-${213:   ${214:tmpfs}: ${215:"#"}}
-${216:   ${217:trust_image_content}: ${218:"#"}}
-${219:   ${220:tty}: ${221:"#"}}
-${222:   ${223:ulimits}: ${224:"#"}}
-${225:   ${226:user}: ${227:"#"}}
-${228:   ${229:uts}: ${230:"#"}}
-${231:   ${232:volume_driver}: ${233:"#"}}
-${234:   ${235:volumes}: ${236:"#"}}
-${237:   ${238:volumes_from}: ${239:"#"}}
-${240:   ${241:working_dir}: ${242:"#"}}
-${243:${244:   become: ${245:true}} 
-${246:   become_method: ${247:su}} 
-${248:   become_user: ${249:nobody}} 
-${250:   become_flags: ${251:"-s /bin/sh"}}} 
-${252:   when: ${253:variable is defined}} 
-${254:   with_items: ${255:array}} 
+${42:   ${43:debug}: ${44:"#"}}
+${45:   ${46:detach}: ${47:"#"}}
+${48:   ${49:devices}: ${50:"#"}}
+${51:   ${52:dns_opts}: ${53:"#"}}
+${54:   ${55:dns_search_domains}: ${56:"#"}}
+${57:   ${58:dns_servers}: ${59:"#"}}
+${60:   ${61:docker_host}: ${62:"#"}}
+${63:   ${64:domainname}: ${65:"#"}}
+${66:   ${67:entrypoint}: ${68:"#"}}
+${69:   ${70:env}: ${71:"#"}}
+${72:   ${73:env_file}: ${74:"#"}}
+${75:   ${76:etc_hosts}: ${77:"#"}}
+${78:   ${79:exposed_ports}: ${80:"#"}}
+${81:   ${82:force_kill}: ${83:"#"}}
+${84:   ${85:groups}: ${86:"#"}}
+${87:   ${88:hostname}: ${89:"#"}}
+${90:   ${91:ignore_image}: ${92:"#"}}
+${93:   ${94:image}: ${95:"#"}}
+${96:   ${97:init}: ${98:"#"}}
+${99:   ${100:interactive}: ${101:"#"}}
+${102:   ${103:ipc_mode}: ${104:"#"}}
+${105:   ${106:keep_volumes}: ${107:"#"}}
+${108:   ${109:kernel_memory}: ${110:"#"}}
+${111:   ${112:key_path}: ${113:"#"}}
+${114:   ${115:kill_signal}: ${116:"#"}}
+${117:   ${118:labels}: ${119:"#"}}
+${120:   ${121:links}: ${122:"#"}}
+${123:   ${124:log_driver}: ${125:"#"}}
+${126:   ${127:log_options}: ${128:"#"}}
+${129:   ${130:mac_address}: ${131:"#"}}
+${132:   ${133:memory}: ${134:"#"}}
+${135:   ${136:memory_reservation}: ${137:"#"}}
+${138:   ${139:memory_swap}: ${140:"#"}}
+${141:   ${142:memory_swappiness}: ${143:"#"}}
+${144:   ${145:name}: ${146:"#"}}
+${147:   ${148:network_mode}: ${149:"#"}}
+${150:   ${151:networks}: ${152:"#"}}
+${153:   ${154:oom_killer}: ${155:"#"}}
+${156:   ${157:oom_score_adj}: ${158:"#"}}
+${159:   ${160:paused}: ${161:"#"}}
+${162:   ${163:pid_mode}: ${164:"#"}}
+${165:   ${166:privileged}: ${167:"#"}}
+${168:   ${169:published_ports}: ${170:"#"}}
+${171:   ${172:pull}: ${173:"#"}}
+${174:   ${175:purge_networks}: ${176:"#"}}
+${177:   ${178:read_only}: ${179:"#"}}
+${180:   ${181:recreate}: ${182:"#"}}
+${183:   ${184:restart}: ${185:"#"}}
+${186:   ${187:restart_policy}: ${188:"#"}}
+${189:   ${190:restart_retries}: ${191:"#"}}
+${192:   ${193:security_opts}: ${194:"#"}}
+${195:   ${196:shm_size}: ${197:"#"}}
+${198:   ${199:ssl_version}: ${200:"#"}}
+${201:   ${202:state}: ${203:"#"}}
+${204:   ${205:stop_signal}: ${206:"#"}}
+${207:   ${208:stop_timeout}: ${209:"#"}}
+${210:   ${211:sysctls}: ${212:"#"}}
+${213:   ${214:timeout}: ${215:"#"}}
+${216:   ${217:tls}: ${218:"#"}}
+${219:   ${220:tls_hostname}: ${221:"#"}}
+${222:   ${223:tls_verify}: ${224:"#"}}
+${225:   ${226:tmpfs}: ${227:"#"}}
+${228:   ${229:trust_image_content}: ${230:"#"}}
+${231:   ${232:tty}: ${233:"#"}}
+${234:   ${235:ulimits}: ${236:"#"}}
+${237:   ${238:user}: ${239:"#"}}
+${240:   ${241:userns_mode}: ${242:"#"}}
+${243:   ${244:uts}: ${245:"#"}}
+${246:   ${247:volume_driver}: ${248:"#"}}
+${249:   ${250:volumes}: ${251:"#"}}
+${252:   ${253:volumes_from}: ${254:"#"}}
+${255:   ${256:working_dir}: ${257:"#"}}
+${258:${259:   become: ${260:true}} 
+${261:   become_method: ${262:su}} 
+${263:   become_user: ${264:nobody}} 
+${265:   become_flags: ${266:"-s /bin/sh"}}} 
+${267:   when: ${268:variable is defined}} 
+${269:   with_items: ${270:array}} 
 ]]></content>
 	<tabTrigger>docker_container</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

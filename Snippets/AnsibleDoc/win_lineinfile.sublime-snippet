@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# backrefs: Used with `state=present'. If set, line can contain backreferences (both positional and named) that will 
-# backup: Create a backup file including the timestamp information so you can get the original file back if you 
-# create: Used with `state=present'. If specified, the file will be created if it does not already exist. By 
-# encoding: Specifies the encoding of the source text file to operate on (and thus what the output encoding will 
-# insertafter: Used with `state=present'. If specified, the line will be inserted after the last match of specified 
-# insertbefore: Used with `state=present'. If specified, the line will be inserted before the last match of specified 
-# line: Required for `state=present'. The line to insert/replace into the file. If `backrefs' is set, may 
-# newline: Specifies the line separator style to use for the modified file. This defaults to the windows line 
-# path: (required) The path of the file to modify. Note that the Windows path delimiter `\' must be escaped as 
-# regexp: The regular expression to look for in every line of the file. For `state=present', the pattern to 
+${1:# backrefs: Used with `state=present'. If set, line can 
+# backup: Create a backup file including the timestamp 
+# create: Used with `state=present'. If specified, the 
+# encoding: Specifies the encoding of the source text file 
+# insertafter: Used with `state=present'. If specified, the 
+# insertbefore: Used with `state=present'. If specified, the 
+# line: Required for `state=present'. The line to 
+# newline: Specifies the line separator style to use for 
+# path: (required) The path of the file to modify. Note 
+# regexp: The regular expression to look for in every line 
 # state: Whether the line should be there or not. 
-# validate: Validation to run before copying into place. Use %s in the command to indicate the current file to 
+# validate: Validation to run before copying into place. Use 
 }- name: ${2:Name for win_lineinfile module.}
   win_lineinfile:
 ${3:   ${4:backrefs}: ${5:"#"}}

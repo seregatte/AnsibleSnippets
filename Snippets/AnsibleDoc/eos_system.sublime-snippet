@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# domain_name: Configure the IP domain name on the remote device to the provided value. Value should be in the dotted 
-# domain_search: Provides the list of domain suffixes to append to the hostname for the purpose of doing name resolution. 
-# hostname: Configure the device hostname parameter. This option takes an ASCII string value. 
-# lookup_source: Provides one or more source interfaces to use for performing DNS lookups.  The interface provided in 
-# name_servers: List of DNS name servers by IP address to use to perform name resolution lookups.  This argument accepts 
-# provider: A dict object containing connection details. 
-# state: State of the configuration values in the device's current active configuration.  When set to `present', 
+${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# domain_name: Configure the IP domain name on the remote 
+# domain_search: Provides the list of domain suffixes to append 
+# hostname: Configure the device hostname parameter. This 
+# lookup_source: Provides one or more source interfaces to use 
+# name_servers: List of DNS name servers by IP address to use to 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# state: State of the configuration values in the 
 }- name: ${2:Name for eos_system module.}
   eos_system:
 ${3:   ${4:auth_pass}: ${5:"#"}}

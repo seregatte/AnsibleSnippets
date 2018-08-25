@@ -1,38 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:# availability_zones: List of availability zone names in which to create the group.  Defaults to all the availability zones in 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# default_cooldown: The number of seconds after a scaling activity completes before another can begin. 
-# desired_capacity: Desired number of instances in group, if unspecified then the current group value will be used. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# health_check_period: Length of time in seconds after a new EC2 instance comes into service that Auto Scaling starts checking 
-# health_check_type: The service you want the health status from, Amazon EC2 or Elastic Load Balancer. 
-# launch_config_name: (required) Name of the Launch configuration to use for the group. See the ec2_lc module for managing 
-# lc_check: Check to make sure instances that are being replaced with replace_instances do not already have the 
-# load_balancers: List of ELB names to use for the group 
-# max_size: Maximum number of instances in group, if unspecified then the current group value will be used. 
-# min_size: Minimum number of instances in group, if unspecified then the current group value will be used. 
-# name: (required) Unique name for group to be created or deleted 
-# notification_topic: A SNS topic ARN to send auto scaling notifications to. 
-# notification_types: A list of auto scaling events to trigger notifications on. 
-# placement_group: Physical location of your cluster placement group created in Amazon EC2. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# replace_all_instances: In a rolling fashion, replace all instances with an old launch configuration with one from the current 
-# replace_batch_size: Number of instances you'd like to replace at a time.  Used with replace_all_instances. 
-# replace_instances: List of instance_ids belonging to the named ASG that you would like to terminate and be replaced with 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# availability_zones: List of availability zone names in which to 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# default_cooldown: The number of seconds after a scaling activity 
+# desired_capacity: Desired number of instances in group, if 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# health_check_period: Length of time in seconds after a new EC2 
+# health_check_type: The service you want the health status from, 
+# launch_config_name: (required) Name of the Launch configuration to 
+# lc_check: Check to make sure instances that are being 
+# load_balancers: List of ELB names to use for the group. Use for 
+# max_size: Maximum number of instances in group, if 
+# metrics_collection: Enable ASG metrics collection 
+# metrics_granularity: When metrics_collection is enabled this will 
+# metrics_list: List of autoscaling metrics to collect when 
+# min_size: Minimum number of instances in group, if 
+# name: (required) Unique name for group to be created 
+# notification_topic: A SNS topic ARN to send auto scaling 
+# notification_types: A list of auto scaling events to trigger 
+# placement_group: Physical location of your cluster placement 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# replace_all_instances: In a rolling fashion, replace all instances with 
+# replace_batch_size: Number of instances you'd like to replace at a 
+# replace_instances: List of instance_ids belonging to the named ASG 
+# security_token: AWS STS security token. If not set then the 
 # state: register or deregister the instance 
 # suspend_processes: A list of scaling processes to suspend. 
-# tags: A list of tags to add to the Auto Scale Group. Optional key is 'propagate_at_launch', which defaults to 
-# target_group_arns: List of target group ARNs to use for the group 
-# termination_policies: An ordered list of criteria used for selecting instances to be removed from the Auto Scaling group when 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# tags: A list of tags to add to the Auto Scale Group. 
+# target_group_arns: List of target group ARNs to use for the group. 
+# termination_policies: An ordered list of criteria used for selecting 
+# validate_certs: When set to "no", SSL certificates will not be 
 # vpc_zone_identifier: List of VPC subnets to use 
-# wait_for_instances: Wait for the ASG instances to be in a ready state before exiting.  If instances are behind an ELB, it 
-# wait_timeout: how long before wait instances to become viable when replaced.  Used in conjunction with instance_ids 
+# wait_for_instances: Wait for the ASG instances to be in a ready 
+# wait_timeout: How long to wait for instances to become viable 
 }- name: ${2:Name for ec2_asg module.}
   ec2_asg:
 ${3:   ${4:availability_zones}: ${5:"#"}}
@@ -47,33 +50,36 @@ ${27:   ${28:launch_config_name}: ${29:"#"}}
 ${30:   ${31:lc_check}: ${32:"#"}}
 ${33:   ${34:load_balancers}: ${35:"#"}}
 ${36:   ${37:max_size}: ${38:"#"}}
-${39:   ${40:min_size}: ${41:"#"}}
-${42:   ${43:name}: ${44:"#"}}
-${45:   ${46:notification_topic}: ${47:"#"}}
-${48:   ${49:notification_types}: ${50:"#"}}
-${51:   ${52:placement_group}: ${53:"#"}}
-${54:   ${55:profile}: ${56:"#"}}
-${57:   ${58:region}: ${59:"#"}}
-${60:   ${61:http}: ${62:"#"}}
-${63:   ${64:replace_all_instances}: ${65:"#"}}
-${66:   ${67:replace_batch_size}: ${68:"#"}}
-${69:   ${70:replace_instances}: ${71:"#"}}
-${72:   ${73:security_token}: ${74:"#"}}
-${75:   ${76:state}: ${77:"#"}}
-${78:   ${79:suspend_processes}: ${80:"#"}}
-${81:   ${82:tags}: ${83:"#"}}
-${84:   ${85:target_group_arns}: ${86:"#"}}
-${87:   ${88:termination_policies}: ${89:"#"}}
-${90:   ${91:validate_certs}: ${92:"#"}}
-${93:   ${94:vpc_zone_identifier}: ${95:"#"}}
-${96:   ${97:wait_for_instances}: ${98:"#"}}
-${99:   ${100:wait_timeout}: ${101:"#"}}
-${102:${103:   become: ${104:true}} 
-${105:   become_method: ${106:su}} 
-${107:   become_user: ${108:nobody}} 
-${109:   become_flags: ${110:"-s /bin/sh"}}} 
-${111:   when: ${112:variable is defined}} 
-${113:   with_items: ${114:array}} 
+${39:   ${40:metrics_collection}: ${41:"#"}}
+${42:   ${43:metrics_granularity}: ${44:"#"}}
+${45:   ${46:metrics_list}: ${47:"#"}}
+${48:   ${49:min_size}: ${50:"#"}}
+${51:   ${52:name}: ${53:"#"}}
+${54:   ${55:notification_topic}: ${56:"#"}}
+${57:   ${58:notification_types}: ${59:"#"}}
+${60:   ${61:placement_group}: ${62:"#"}}
+${63:   ${64:profile}: ${65:"#"}}
+${66:   ${67:region}: ${68:"#"}}
+${69:   ${70:}: ${71:"#"}}
+${72:   ${73:replace_all_instances}: ${74:"#"}}
+${75:   ${76:replace_batch_size}: ${77:"#"}}
+${78:   ${79:replace_instances}: ${80:"#"}}
+${81:   ${82:security_token}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:suspend_processes}: ${89:"#"}}
+${90:   ${91:tags}: ${92:"#"}}
+${93:   ${94:target_group_arns}: ${95:"#"}}
+${96:   ${97:termination_policies}: ${98:"#"}}
+${99:   ${100:validate_certs}: ${101:"#"}}
+${102:   ${103:vpc_zone_identifier}: ${104:"#"}}
+${105:   ${106:wait_for_instances}: ${107:"#"}}
+${108:   ${109:wait_timeout}: ${110:"#"}}
+${111:${112:   become: ${113:true}} 
+${114:   become_method: ${115:su}} 
+${116:   become_user: ${117:nobody}} 
+${118:   become_flags: ${119:"-s /bin/sh"}}} 
+${120:   when: ${121:variable is defined}} 
+${122:   with_items: ${123:array}} 
 ]]></content>
 	<tabTrigger>ec2_asg</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

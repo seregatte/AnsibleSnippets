@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# api_url: URL of the ipify.org API service. `?format=json' will be appended per default. 
+${1:# api_url: URL of the ipify.org API service. `?format=json' 
 # timeout: HTTP connection timeout in seconds. 
-# validate_certs: When set to `NO', SSL certificates will not be validated. 
+# validate_certs: When set to `NO', SSL certificates will not be 
 }- name: ${2:Name for ipify_facts module.}
   ipify_facts:
 ${3:   ${4:api_url}: ${5:"#"}}

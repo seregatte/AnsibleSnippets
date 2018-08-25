@@ -1,15 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# active: Whether the volume is activate and visible to the host. 
-# force: Shrink or remove operations of volumes requires this switch. Ensures that that filesystems get never 
-# lv: (required) The name of the logical volume. 
-# opts: Free-form options to be passed to the lvcreate command 
-# pvs: Comma separated list of physical volumes e.g. /dev/sda,/dev/sdb 
-# shrink: shrink if current size is higher than size requested 
-# size: The size of the logical volume, according to lvcreate(8) --size, by default in megabytes or optionally 
+${1:# active: Whether the volume is activate and visible to 
+# force: Shrink or remove operations of volumes requires 
+# lv: The name of the logical volume. 
+# opts: Free-form options to be passed to the lvcreate 
+# pvs: Comma separated list of physical volumes (e.g. 
+# resizefs: Resize the underlying filesystem together with 
+# shrink: Shrink if current size is higher than size 
+# size: The size of the logical volume, according to 
 # snapshot: The name of the snapshot volume 
-# state: Control if the logical volume exists. If `present' and the volume does not already exist then the `size' 
-# vg: (required) The volume group this logical volume is part of. 
+# state: Control if the logical volume exists. If 
+# thinpool: The thin pool volume name. When you want to 
+# vg: The volume group this logical volume is part of. 
 }- name: ${2:Name for lvol module.}
   lvol:
 ${3:   ${4:active}: ${5:"#"}}
@@ -17,17 +19,19 @@ ${6:   ${7:force}: ${8:"#"}}
 ${9:   ${10:lv}: ${11:"#"}}
 ${12:   ${13:opts}: ${14:"#"}}
 ${15:   ${16:pvs}: ${17:"#"}}
-${18:   ${19:shrink}: ${20:"#"}}
-${21:   ${22:size}: ${23:"#"}}
-${24:   ${25:snapshot}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:vg}: ${32:"#"}}
-${33:${34:   become: ${35:true}} 
-${36:   become_method: ${37:su}} 
-${38:   become_user: ${39:nobody}} 
-${40:   become_flags: ${41:"-s /bin/sh"}}} 
-${42:   when: ${43:variable is defined}} 
-${44:   with_items: ${45:array}} 
+${18:   ${19:resizefs}: ${20:"#"}}
+${21:   ${22:shrink}: ${23:"#"}}
+${24:   ${25:size}: ${26:"#"}}
+${27:   ${28:snapshot}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:thinpool}: ${35:"#"}}
+${36:   ${37:vg}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>lvol</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

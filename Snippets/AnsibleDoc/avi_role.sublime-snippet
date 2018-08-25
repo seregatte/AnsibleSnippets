@@ -1,37 +1,45 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Avi API version of to use for Avi API and objects. 
-# controller: IP address or hostname of the controller. The default value is the environment variable 
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# controller: IP address or hostname of the controller. The 
 # name: (required) Name of the object. 
-# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# password: Password of Avi user in Avi controller. The 
 # privileges: List of permission. 
 # state: The state that should be applied on the entity. 
-# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
-# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
 # url: Avi controller URL of the object. 
-# username: Username used for accessing Avi controller. The default value is the environment variable 
+# username: Username used for accessing Avi controller. The 
 # uuid: Unique object identifier of the object. 
 }- name: ${2:Name for avi_role module.}
   avi_role:
-${3:   ${4:api_version}: ${5:"#"}}
-${6:   ${7:controller}: ${8:"#"}}
-${9:   ${10:name}: ${11:"#"}}
-${12:   ${13:password}: ${14:"#"}}
-${15:   ${16:privileges}: ${17:"#"}}
-${18:   ${19:state}: ${20:"#"}}
-${21:   ${22:tenant}: ${23:"#"}}
-${24:   ${25:tenant_ref}: ${26:"#"}}
-${27:   ${28:tenant_uuid}: ${29:"#"}}
-${30:   ${31:url}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:uuid}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_api_patch_op}: ${11:"#"}}
+${12:   ${13:avi_api_update_method}: ${14:"#"}}
+${15:   ${16:avi_credentials}: ${17:"#"}}
+${18:   ${19:controller}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:privileges}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:tenant}: ${35:"#"}}
+${36:   ${37:tenant_ref}: ${38:"#"}}
+${39:   ${40:tenant_uuid}: ${41:"#"}}
+${42:   ${43:url}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:uuid}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>avi_role</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

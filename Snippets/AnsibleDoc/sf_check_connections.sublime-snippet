@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# hostname: (required) The hostname or IP address of the SolidFire cluster. 
-# mvip: Optionally, use to test connection of a different MVIP. This is not needed to test the connection to the 
+${1:# hostname: (required) The hostname or IP address of the 
+# mvip: Optionally, use to test connection of a 
 # password: (required) Password for the specified user. 
 # skip: Skip checking connection to SVIP or MVIP. 
-# svip: Optionally, use to test connection of a different SVIP. This is not needed to test the connection to the 
-# username: (required) Please ensure that the user has the adequate permissions. For more information, please read 
+# svip: Optionally, use to test connection of a 
+# username: (required) Please ensure that the user has the 
 }- name: ${2:Name for sf_check_connections module.}
   sf_check_connections:
 ${3:   ${4:hostname}: ${5:"#"}}

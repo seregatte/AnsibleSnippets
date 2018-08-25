@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# description: Description of the vrf, the string length is 1 - 242 . 
+${1:# description: Description of the vrf, the string length is 1 - 
 # state: Manage the state of the resource. 
-# vrf: (required) VPN instance, the length of vrf name is 1 - 31, i.e. "test", but can not be `_public_'. 
+# vrf: (required) VPN instance, the length of vrf name 
 }- name: ${2:Name for ce_vrf module.}
   ce_vrf:
 ${3:   ${4:description}: ${5:"#"}}

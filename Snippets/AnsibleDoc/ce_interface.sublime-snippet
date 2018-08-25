@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# admin_state: Specifies the interface management status. The value is an enumerated type. up, An interface is in the 
-# description: Specifies an interface description. The value is a string of 1 to 242 case-sensitive characters, spaces 
-# interface: Full name of interface, i.e. 40GE1/0/10, Tunnel1. 
+${1:# admin_state: Specifies the interface management status. The 
+# description: Specifies an interface description. The value is 
+# interface: Full name of interface, i.e. 40GE1/0/10, 
 # interface_type: Interface type to be configured from the device. 
-# l2sub: Specifies whether the interface is a Layer 2 sub-interface. 
-# mode: Manage Layer 2 or Layer 3 state of the interface. 
-# state: (required) Specify desired state of the resource. 
+# l2sub: Specifies whether the interface is a Layer 2 
+# mode: Manage Layer 2 or Layer 3 state of the 
+# state: Specify desired state of the resource. 
 }- name: ${2:Name for ce_interface module.}
   ce_interface:
 ${3:   ${4:admin_state}: ${5:"#"}}

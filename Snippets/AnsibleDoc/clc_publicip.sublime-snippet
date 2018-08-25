@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# ports: A list of ports to expose. This is required when state is 'present' 
+${1:# ports: A list of ports to expose. This is required when 
 # protocol: The protocol that the public IP will listen for. 
-# server_ids: (required) A list of servers to create public ips on. 
-# state: Determine whether to create or delete public IPs. If present module will not create a second public ip 
-# wait: Whether to wait for the tasks to finish before returning. 
+# server_ids: (required) A list of servers to create public 
+# state: Determine whether to create or delete public 
+# wait: Whether to wait for the tasks to finish before 
 }- name: ${2:Name for clc_publicip module.}
   clc_publicip:
 ${3:   ${4:ports}: ${5:"#"}}

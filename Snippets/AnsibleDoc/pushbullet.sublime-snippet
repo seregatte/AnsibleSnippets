@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_key: (required) Push bullet API token 
-# body: Body of the notification, e.g. Details of the fault you're alerting. 
-# channel: The channel TAG you wish to broadcast a push notification, as seen on the "My Channels" > "Edit your 
-# device: The device NAME you wish to send a push notification, as seen on the Pushbullet main page. 
+# body: Body of the notification, e.g. Details of the 
+# channel: The channel TAG you wish to broadcast a push 
+# device: The device NAME you wish to send a push 
 # push_type: Thing you wish to push. 
 # title: (required) Title of the notification. 
 }- name: ${2:Name for pushbullet module.}

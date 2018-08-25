@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# link: (required) VNIC underlying link name. 
-# mac: Sets the VNIC's MAC address. Must be valid unicast MAC address. 
+# mac: Sets the VNIC's MAC address. Must be valid 
 # name: (required) VNIC name. 
 # state: Create or delete Solaris/illumos VNIC. 
-# temporary: Specifies that the VNIC is temporary. Temporary VNICs do not persist across reboots. 
-# vlan: Enable VLAN tagging for this VNIC. The VLAN tag will have id `vlan'. 
+# temporary: Specifies that the VNIC is temporary. Temporary 
+# vlan: Enable VLAN tagging for this VNIC. The VLAN tag 
 }- name: ${2:Name for dladm_vnic module.}
   dladm_vnic:
 ${3:   ${4:link}: ${5:"#"}}

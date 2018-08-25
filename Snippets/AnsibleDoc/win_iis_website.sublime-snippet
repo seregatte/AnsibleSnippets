@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# application_pool: The application pool in which the new site executes. 
-# hostname: The host header to bind to / use for the new site. 
-# ip: The IP address to bind to / use for the new site. 
-# name: (required) Names of web site 
-# parameters: Custom site Parameters from string where properties are separated by a pipe and property name/values by 
-# physical_path: The physical path on the remote host to use for the new site. The specified folder must already exist. 
+${1:# application_pool: The application pool in which the new site 
+# hostname: The host header to bind to / use for the new 
+# ip: The IP address to bind to / use for the new 
+# name: (required) Names of web site. 
+# parameters: Custom site Parameters from string where 
+# physical_path: The physical path on the remote host to use for 
 # port: The port to bind to / use for the new site. 
-# site_id: Explicitly set the IIS numeric ID for a site. Note that this value cannot be changed after the website 
+# site_id: Explicitly set the IIS numeric ID for a site. 
 # ssl: Enables HTTPS binding on the site.. 
 # state: State of the web site 
 }- name: ${2:Name for win_iis_website module.}

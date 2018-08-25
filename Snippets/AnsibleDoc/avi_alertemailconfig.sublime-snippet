@@ -1,41 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Avi API version of to use for Avi API and objects. 
-# cc_emails: Alerts are copied to the comma separated list of  email recipients. 
-# controller: IP address or hostname of the controller. The default value is the environment variable 
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# cc_emails: Alerts are copied to the comma separated list of 
+# controller: IP address or hostname of the controller. The 
 # description: User defined description for the object. 
-# name: (required) A user-friendly name of the email notification service. 
-# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# name: (required) A user-friendly name of the email 
+# password: Password of Avi user in Avi controller. The 
 # state: The state that should be applied on the entity. 
-# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
-# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
-# to_emails: (required) Alerts are sent to the comma separated list of  email recipients. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
+# to_emails: (required) Alerts are sent to the comma 
 # url: Avi controller URL of the object. 
-# username: Username used for accessing Avi controller. The default value is the environment variable 
+# username: Username used for accessing Avi controller. The 
 # uuid: Unique object identifier of the object. 
 }- name: ${2:Name for avi_alertemailconfig module.}
   avi_alertemailconfig:
-${3:   ${4:api_version}: ${5:"#"}}
-${6:   ${7:cc_emails}: ${8:"#"}}
-${9:   ${10:controller}: ${11:"#"}}
-${12:   ${13:description}: ${14:"#"}}
-${15:   ${16:name}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:tenant}: ${26:"#"}}
-${27:   ${28:tenant_ref}: ${29:"#"}}
-${30:   ${31:tenant_uuid}: ${32:"#"}}
-${33:   ${34:to_emails}: ${35:"#"}}
-${36:   ${37:url}: ${38:"#"}}
-${39:   ${40:username}: ${41:"#"}}
-${42:   ${43:uuid}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_api_patch_op}: ${11:"#"}}
+${12:   ${13:avi_api_update_method}: ${14:"#"}}
+${15:   ${16:avi_credentials}: ${17:"#"}}
+${18:   ${19:cc_emails}: ${20:"#"}}
+${21:   ${22:controller}: ${23:"#"}}
+${24:   ${25:description}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:tenant}: ${38:"#"}}
+${39:   ${40:tenant_ref}: ${41:"#"}}
+${42:   ${43:tenant_uuid}: ${44:"#"}}
+${45:   ${46:to_emails}: ${47:"#"}}
+${48:   ${49:url}: ${50:"#"}}
+${51:   ${52:username}: ${53:"#"}}
+${54:   ${55:uuid}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>avi_alertemailconfig</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

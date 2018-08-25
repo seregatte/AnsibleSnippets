@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# after: The ordered set of commands to append to the end of the command stack if a change needs to be made. 
-# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
-# before: The ordered set of commands to push on to the command stack if a change needs to be made.  This allows 
-# defaults: The `defaults' argument will influence how the running-config is collected from the device.  When the 
-# diff_against: When using the `ansible-playbook --diff' command line argument the module can generate diffs against 
-# diff_ignore_lines: Use this argument to specify one or more lines that should be ignored during the diff.  This is used for 
-# force: The force argument instructs the module to not consider the current devices running-config.  When set to 
-# intended_config: The `intended_config' provides the master configuration that the node should conform to and is used to 
-# lines: The ordered set of commands that should be configured in the section.  The commands must be the exact 
-# match: Instructs the module on the way to perform the matching of the set of commands against the current 
-# parents: The ordered set of parents that uniquely identify the section the commands should be checked against. 
-# provider: A dict object containing connection details. 
-# replace: Instructs the module on the way to perform the configuration on the device.  If the replace argument is 
-# running_config: The module, by default, will connect to the remote device and retrieve the current running-config to use 
-# save: The `save' argument instructs the module to save the running-config to startup-config.  This operation 
-# save_when: When changes are made to the device running-configuration, the changes are not copied to non-volatile 
-# src: The `src' argument provides a path to the configuration file to load into the remote system.  The path 
+${1:# after: The ordered set of commands to append to the end 
+# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# backup: This argument will cause the module to create a 
+# before: The ordered set of commands to push on to the 
+# defaults: The `defaults' argument will influence how the 
+# diff_against: When using the `ansible-playbook --diff' command 
+# diff_ignore_lines: Use this argument to specify one or more lines 
+# force: The force argument instructs the module to not 
+# intended_config: The `intended_config' provides the master 
+# lines: The ordered set of commands that should be 
+# match: Instructs the module on the way to perform the 
+# parents: The ordered set of parents that uniquely 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# replace: Instructs the module on the way to perform the 
+# running_config: The module, by default, will connect to the 
+# save: The `save' argument instructs the module to save 
+# save_when: When changes are made to the device running- 
+# src: The `src' argument provides a path to the 
 }- name: ${2:Name for eos_config module.}
   eos_config:
 ${3:   ${4:after}: ${5:"#"}}

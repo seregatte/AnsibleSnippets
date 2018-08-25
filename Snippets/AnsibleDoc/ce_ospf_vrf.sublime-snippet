@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# bandwidth: Specifies the reference bandwidth used to assign ospf cost. Valid values are an integer, in Mbps, 1 - 
-# description: Specifies the description information of ospf process. 
-# lsaaholdinterval: Specifies the hold interval of arrive LSA when use the intelligent timer. Valid value is an integer, in 
-# lsaainterval: Specifies the interval of arrive LSA when use the general timer. Valid value is an integer, in 
-# lsaalflag: Specifies the mode of timer to calculate interval of arrive LSA. If set the parameter but not specifies 
-# lsaamaxinterval: Specifies the max interval of arrive LSA when use the intelligent timer. Valid value is an integer, in 
-# lsaastartinterval: Specifies the start interval of arrive LSA when use the intelligent timer. Valid value is an integer, in 
-# lsaoholdinterval: Specifies the hold interval of originate LSA . Valid value is an integer, in millisecond, from 0 to 
-# lsaointerval: Specifies the interval of originate LSA . Valid value is an integer, in second, from 0 to 10, the 
-# lsaointervalflag: Specifies whether cancel the interval of LSA originate or not. If set the parameter but noe specifies 
-# lsaomaxinterval: Specifies the max interval of originate LSA . Valid value is an integer, in millisecond, from 1 to 
-# lsaostartinterval: Specifies the start interval of originate LSA . Valid value is an integer, in millisecond, from 0 to 
-# ospf: (required) The ID of the ospf process. Valid values are an integer, 1 - 4294967295, the default value is 
-# route_id: Specifies the ospf private route id,. Valid values are a string, formatted as an IP address (i.e. 
-# spfholdinterval: Specifies the hold interval to calculate SPF when use intelligent timer. Valid value is an integer, in 
-# spfinterval: Specifies the interval to calculate SPF when use second level  timer. Valid value is an integer, in 
-# spfintervalmi: Specifies the interval to calculate SPF when use millisecond level  timer. Valid value is an integer, in 
-# spfintervaltype: Specifies the mode of timer which used to calculate SPF. If set the parameter but noe specifies value, 
-# spfmaxinterval: Specifies the max interval to calculate SPF when use intelligent timer. Valid value is an integer, in 
-# spfstartinterval: Specifies the start interval to calculate SPF when use intelligent timer. Valid value is an integer, in 
+${1:# bandwidth: Specifies the reference bandwidth used to assign 
+# description: Specifies the description information of ospf 
+# lsaaholdinterval: Specifies the hold interval of arrive LSA when 
+# lsaainterval: Specifies the interval of arrive LSA when use 
+# lsaalflag: Specifies the mode of timer to calculate 
+# lsaamaxinterval: Specifies the max interval of arrive LSA when 
+# lsaastartinterval: Specifies the start interval of arrive LSA when 
+# lsaoholdinterval: Specifies the hold interval of originate LSA . 
+# lsaointerval: Specifies the interval of originate LSA . Valid 
+# lsaointervalflag: Specifies whether cancel the interval of LSA 
+# lsaomaxinterval: Specifies the max interval of originate LSA . 
+# lsaostartinterval: Specifies the start interval of originate LSA . 
+# ospf: (required) The ID of the ospf process. Valid 
+# route_id: Specifies the ospf private route id,. Valid 
+# spfholdinterval: Specifies the hold interval to calculate SPF 
+# spfinterval: Specifies the interval to calculate SPF when use 
+# spfintervalmi: Specifies the interval to calculate SPF when use 
+# spfintervaltype: Specifies the mode of timer which used to 
+# spfmaxinterval: Specifies the max interval to calculate SPF when 
+# spfstartinterval: Specifies the start interval to calculate SPF 
 # state: Specify desired state of the resource. 
-# vrf: Specifies the vpn instance which use ospf,length is 1 - 31. Valid values are a string. 
+# vrf: Specifies the vpn instance which use ospf,length 
 }- name: ${2:Name for ce_ospf_vrf module.}
   ce_ospf_vrf:
 ${3:   ${4:bandwidth}: ${5:"#"}}

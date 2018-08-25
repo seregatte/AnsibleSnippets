@@ -4,9 +4,9 @@ ${1:# description: The description of the virtual datacenter.
 # location: The datacenter location. 
 # name: (required) The name of the virtual datacenter. 
 # state: create or terminate datacenters 
-# subscription_password: THe ProfitBricks password. Overrides the PB_PASSWORD environment variable. 
-# subscription_user: The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable. 
-# wait: wait for the datacenter to be created before returning 
+# subscription_password: THe ProfitBricks password. Overrides the 
+# subscription_user: The ProfitBricks username. Overrides the 
+# wait: wait for the datacenter to be created before 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for profitbricks_datacenter module.}
   profitbricks_datacenter:

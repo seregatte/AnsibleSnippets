@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# addr_method: Configures the port to use DHCP. To enable this feature use the option `dhcp'. 
+${1:# addr_method: Configures the port to use DHCP. To enable this 
 # alias_name: Description of the port. 
-# ipv4: List of IPv4 addresses to configure on the interface. In the form `X.X.X.X/YY'. 
-# ipv6: List of IPv6 addresses to configure on the interface. In the form `X:X:X::X/YYY'. 
+# ipv4: List of IPv4 addresses to configure on the 
+# ipv6: List of IPv6 addresses to configure on the 
 # location: Interface directory location. 
-# mstpctl_treeprio: Set spanning tree root priority. Must be a multiple of 4096. 
-# mtu: Set MTU. Configure Jumbo Frame by setting MTU to `9000'. 
+# mstpctl_treeprio: Set spanning tree root priority. Must be a 
+# mtu: Set MTU. Configure Jumbo Frame by setting MTU to 
 # name: (required) Name of the interface. 
 # ports: (required) List of bridge members. 
-# pvid: In vlan-aware mode, defines vlan that is the untagged vlan. 
-# stp: Enables spanning tree Protocol. As of Cumulus Linux 2.5 the default bridging mode, only per vlan RSTP or 
-# vids: In vlan-aware mode, lists VLANs defined under the interface. 
-# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux VRR feature. 
-# virtual_mac: Define Ethernet mac associated with Cumulus Linux VRR feature. 
+# pvid: In vlan-aware mode, defines vlan that is the 
+# stp: Enables spanning tree Protocol. As of Cumulus 
+# vids: In vlan-aware mode, lists VLANs defined under 
+# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux 
+# virtual_mac: Define Ethernet mac associated with Cumulus 
 # vlan_aware: Enables vlan-aware mode. 
 }- name: ${2:Name for cl_bridge module.}
   cl_bridge:

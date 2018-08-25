@@ -2,24 +2,24 @@
 <content><![CDATA[
 ${1:# credential: Credential to use for the group. 
 # description: The description to use for the group. 
-# group_by: Limit groups automatically created from inventory source. 
-# instance_filters: Comma-separated list of filter expressions for matching hosts. 
-# inventory: (required) Inventory the group should be made a member of. 
+# group_by: Limit groups automatically created from 
+# instance_filters: Comma-separated list of filter expressions for 
+# inventory: (required) Inventory the group should be made a 
 # name: (required) The name to use for the group. 
-# overwrite: Delete child roups and hosts not found in source. 
-# overwrite_vars: Override vars in child groups and hosts with those from external source. 
+# overwrite: Delete child groups and hosts not found in 
+# overwrite_vars: Override vars in child groups and hosts with 
 # source: The source to use for this group. 
 # source_regions: Regions for cloud provider. 
-# source_script: Inventory script to be used when group type is "custom". 
-# source_vars: Override variables from source with variables from this field. 
+# source_script: Inventory script to be used when group type is 
+# source_vars: Override variables from source with variables 
 # state: Desired state of the resource. 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
-# update_on_launch: Refresh inventory data from its source each time a job is run. 
-# variables: Variables to use for the group, use '@' for a file. 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# update_on_launch: Refresh inventory data from its source each time 
+# variables: Variables to use for the group, use `@' for a 
 }- name: ${2:Name for tower_group module.}
   tower_group:
 ${3:   ${4:credential}: ${5:"#"}}

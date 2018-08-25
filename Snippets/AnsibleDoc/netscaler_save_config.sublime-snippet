@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
-# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
-# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler. 
-# nitro_user: (required) The username with which to authenticate to the netscaler node. 
-# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+${1:# nitro_pass: (required) The password with which to 
+# nitro_protocol: Which protocol to use when accessing the nitro 
+# nitro_timeout: Time in seconds until a timeout error is thrown 
+# nitro_user: (required) The username with which to 
+# nsip: (required) The ip address of the netscaler 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_save_config module.}
   netscaler_save_config:
 ${3:   ${4:nitro_pass}: ${5:"#"}}

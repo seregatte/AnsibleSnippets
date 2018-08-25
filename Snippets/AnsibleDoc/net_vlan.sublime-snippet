@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# aggregate: List of VLANs definitions. 
-# interfaces: List of interfaces the VLAN should be configured on. 
+# interfaces: List of interfaces the VLAN should be configured 
 # name: Name of the VLAN. 
-# purge: Purge VLANs not defined in the `aggregate' parameter. 
+# purge: Purge VLANs not defined in the `aggregate' 
 # state: State of the VLAN configuration. 
 # vlan_id: ID of the VLAN. 
 }- name: ${2:Name for net_vlan module.}

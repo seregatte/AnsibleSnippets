@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# address: An address to help identify and reach the client. This is only informational, usually an IP address or 
-# chef: The chef definition scope, used to configure the Sensu Enterprise Chef integration (Sensu Enterprise 
-# deregister: If a deregistration event should be created upon Sensu client process stop. 
-# deregistration: The deregistration definition scope, used to configure automated Sensu client de-registration. 
-# ec2: The ec2 definition scope, used to configure the Sensu Enterprise AWS EC2 integration (Sensu Enterprise 
-# keepalive: The keepalive definition scope, used to configure Sensu client keepalives behavior (e.g. keepalive 
-# keepalives: If Sensu should monitor keepalives for this client. 
-# name: A unique name for the client. The name cannot contain special characters or spaces. 
-# puppet: The puppet definition scope, used to configure the Sensu Enterprise Puppet integration (Sensu Enterprise 
-# redact: Client definition attributes to redact (values) when logging and sending client keepalives. 
-# registration: The registration definition scope, used to configure Sensu registration event handlers. 
-# safe_mode: If safe mode is enabled for the client. Safe mode requires local check definitions in order to accept a 
-# servicenow: The servicenow definition scope, used to configure the Sensu Enterprise ServiceNow integration (Sensu 
-# socket: The socket definition scope, used to configure the Sensu client socket. 
+${1:# address: An address to help identify and reach the 
+# chef: The chef definition scope, used to configure the 
+# deregister: If a deregistration event should be created upon 
+# deregistration: The deregistration definition scope, used to 
+# ec2: The ec2 definition scope, used to configure the 
+# keepalive: The keepalive definition scope, used to 
+# keepalives: If Sensu should monitor keepalives for this 
+# name: A unique name for the client. The name cannot 
+# puppet: The puppet definition scope, used to configure 
+# redact: Client definition attributes to redact (values) 
+# registration: The registration definition scope, used to 
+# safe_mode: If safe mode is enabled for the client. Safe 
+# servicenow: The servicenow definition scope, used to 
+# socket: The socket definition scope, used to configure 
 # state: Whether the client should be present or not 
-# subscriptions: (required) An array of client subscriptions, a list of roles and/or responsibilities assigned to the 
+# subscriptions: (required) An array of client subscriptions, a 
 }- name: ${2:Name for sensu_client module.}
   sensu_client:
 ${3:   ${4:address}: ${5:"#"}}

@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# config: Path to a .json configuration file containing the OneView client configuration. The configuration file 
+${1:# config: Path to a .json configuration file containing 
 # name: Fibre Channel Network name. 
-# params: List of params to delimit, filter and sort the list of resources. params allowed: - `start': The first 
+# params: List of params to delimit, filter and sort the 
 }- name: ${2:Name for oneview_fc_network_facts module.}
   oneview_fc_network_facts:
 ${3:   ${4:config}: ${5:"#"}}

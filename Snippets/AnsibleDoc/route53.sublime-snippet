@@ -1,31 +1,31 @@
 <snippet>
 <content><![CDATA[
 ${1:# alias: Indicates if this is an alias record. 
-# alias_evaluate_target_health: Whether or not to evaluate an alias target health. Useful for aliases to Elastic Load Balancers. 
+# alias_evaluate_target_health: Whether or not to evaluate an alias target 
 # alias_hosted_zone_id: The hosted zone identifier. 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# failover: Failover resource record sets only. Whether this is the primary or secondary resource record set. 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# failover: Failover resource record sets only. Whether this 
 # health_check: Health check to associate with this record 
 # hosted_zone_id: The Hosted Zone ID of the DNS zone to modify 
-# identifier: Have to be specified for Weighted, latency-based and failover resource record sets only. An identifier 
-# overwrite: Whether an existing record should be overwritten on create if values do not match 
-# private_zone: If set to true, the private zone matching the requested name within the domain will be used if there are 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# record: (required) The full DNS record to create or delete 
-# region: Latency-based resource record sets only Among resource record sets that have the same combination of DNS 
-# retry_interval: In the case that route53 is still servicing a prior request, this module will wait and try again after 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: (required) Specifies the state of the resource record. As of Ansible 2.4, the `command' option has been 
+# identifier: Have to be specified for Weighted, latency-based 
+# overwrite: Whether an existing record should be overwritten 
+# private_zone: If set to `yes', the private zone matching the 
+# profile: Uses a boto profile. Only works with boto >= 
+# record: (required) The full DNS record to create or 
+# region: Latency-based resource record sets only Among 
+# retry_interval: In the case that route53 is still servicing a 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) Specifies the state of the resource 
 # ttl: The TTL to give the new record 
 # type: (required) The type of DNS record to create 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# value: The new value when creating a DNS record.  YAML lists or multiple comma-spaced values are allowed for 
-# vpc_id: When used in conjunction with private_zone: true, this will only modify records in the private hosted 
-# wait: Wait until the changes have been replicated to all Amazon Route 53 DNS servers. 
-# wait_timeout: How long to wait for the changes to be replicated, in seconds. 
-# weight: Weighted resource record sets only. Among resource record sets that have the same combination of DNS 
+# validate_certs: When set to "no", SSL certificates will not be 
+# value: The new value when creating a DNS record.  YAML 
+# vpc_id: When used in conjunction with private_zone: 
+# wait: Wait until the changes have been replicated to 
+# wait_timeout: How long to wait for the changes to be 
+# weight: Weighted resource record sets only. Among 
 # zone: (required) The DNS zone to modify 
 }- name: ${2:Name for route53 module.}
   route53:

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# allowed: (required) List of ports to run initial run at 10G. 
+${1:# allowed: (required) List of ports to run initial run at 
 # location: Directory to store interface files. 
 }- name: ${2:Name for cl_interface_policy module.}
   cl_interface_policy:

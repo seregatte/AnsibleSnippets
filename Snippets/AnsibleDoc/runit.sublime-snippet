@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# enabled: Wheater the service is enabled or not, if disabled it also implies stopped. 
+${1:# enabled: Whether the service is enabled or not, if 
 # name: (required) Name of the service to manage. 
 # service_dir: directory runsv watches for services 
-# service_src: directory where services are defined, the source of symlinks to service_dir. 
-# state: `started'/`stopped' are idempotent actions that will not run commands unless necessary.  `restarted' 
+# service_src: directory where services are defined, the source 
+# state: `started'/`stopped' are idempotent actions that 
 }- name: ${2:Name for runit module.}
   runit:
 ${3:   ${4:enabled}: ${5:"#"}}

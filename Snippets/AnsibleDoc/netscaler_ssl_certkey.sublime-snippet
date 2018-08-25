@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# cert: Name of and, optionally, path to the X509 certificate file that is used to form the certificate-key 
-# certkey: Name for the certificate and private-key pair. Must begin with an ASCII alphanumeric or underscore `_' 
-# : ', period `.', space ` ', colon `:', at `@', equals `=', and hyphen `-' 
-# expirymonitor: Issue an alert when the certificate is about to expire. 
-# inform: Input format of the certificate and the private-key files. The three formats supported by the appliance 
-# key: Name of and, optionally, path to the private-key file that is used to form the certificate-key pair. The 
-# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
-# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
-# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
-# nitro_user: (required) The username with which to authenticate to the netscaler node. 
-# notificationperiod: Time, in number of days, before certificate expiration, at which to generate an alert that the 
-# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
-# passplain: Pass phrase used to encrypt the private-key. Required when adding an encrypted private-key in PEM 
-# password: Passphrase that was used to encrypt the private-key. Use this option to load encrypted private-keys in 
-# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
-# state: The state of the resource being configured by the module on the netscaler node. When present the 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+${1:# cert: Name of and, optionally, path to the X509 
+# certkey: Name for the certificate and private-key pair. 
+# hash: ', period 
+# expirymonitor: Issue an alert when the certificate is about to 
+# inform: Input format of the certificate and the private- 
+# key: Name of and, optionally, path to the private-key 
+# nitro_pass: (required) The password with which to 
+# nitro_protocol: Which protocol to use when accessing the nitro 
+# nitro_timeout: Time in seconds until a timeout error is thrown 
+# nitro_user: (required) The username with which to 
+# notificationperiod: Time, in number of days, before certificate 
+# nsip: (required) The ip address of the netscaler 
+# passplain: Pass phrase used to encrypt the private-key. 
+# password: Passphrase that was used to encrypt the private- 
+# save_config: If true the module will save the configuration 
+# state: The state of the resource being configured by 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_ssl_certkey module.}
   netscaler_ssl_certkey:
 ${3:   ${4:cert}: ${5:"#"}}
 ${6:   ${7:certkey}: ${8:"#"}}
-${9:   ${10:}: ${11:"#"}}
+${9:   ${10:hash}: ${11:"#"}}
 ${12:   ${13:expirymonitor}: ${14:"#"}}
 ${15:   ${16:inform}: ${17:"#"}}
 ${18:   ${19:key}: ${20:"#"}}

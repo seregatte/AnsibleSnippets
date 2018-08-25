@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# apply_to: What the policy applies to. Requires RabbitMQ 3.2.0 or later. 
+${1:# apply_to: What the policy applies to. Requires RabbitMQ 
 # name: (required) The name of the policy to manage. 
-# node: Erlang node name of the rabbit we wish to configure. 
-# pattern: (required) A regex of queues to apply the policy to. 
+# node: Erlang node name of the rabbit we wish to 
+# pattern: (required) A regex of queues to apply the policy 
 # priority: The priority of the policy. 
 # state: The state of the policy. 
-# tags: (required) A dict or string describing the policy. 
+# tags: (required) A dict or string describing the 
 # vhost: The name of the vhost to apply to. 
 }- name: ${2:Name for rabbitmq_policy module.}
   rabbitmq_policy:

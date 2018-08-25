@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# disk_count: Number of disks to place into the aggregate, including parity disks. The disks in this newly-created 
-# hostname: (required) The hostname or IP address of the ONTAP instance. 
+${1:# disk_count: Number of disks to place into the aggregate, 
+# hostname: (required) The hostname or IP address of the 
 # name: (required) The name of the aggregate to manage. 
 # password: (required) Password for the specified user. 
-# state: (required) Whether the specified aggregate should exist or not. 
-# username: (required) This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or 
+# state: (required) Whether the specified aggregate 
+# username: (required) This can be a Cluster-scoped or SVM- 
 }- name: ${2:Name for na_cdot_aggregate module.}
   na_cdot_aggregate:
 ${3:   ${4:disk_count}: ${5:"#"}}

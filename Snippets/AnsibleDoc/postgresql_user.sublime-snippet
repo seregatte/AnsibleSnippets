@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# conn_limit: Specifies the user connection limit. 
-# db: name of database where permissions will be granted 
-# encrypted: whether the password is stored hashed in the database. boolean. Passwords can be passed already hashed 
-# expires: sets the user's password expiration. 
-# fail_on_user: if `yes', fail when user can't be removed. Otherwise just log and continue 
+# db: Name of database where permissions will be 
+# encrypted: Whether the password is stored hashed in the 
+# expires: The date at which the user's password is to 
+# fail_on_user: If `yes', fail when user can't be removed. 
 # login_host: Host running PostgreSQL. 
-# login_password: Password used to authenticate with PostgreSQL 
-# login_unix_socket: Path to a Unix domain socket for local connections 
-# login_user: User (role) used to authenticate with PostgreSQL 
-# name: (required) name of the user (role) to add or remove 
-# no_password_changes: if `yes', don't inspect database for password changes. Effective when `pg_authid' is not accessible 
-# password: set the user's password, before 1.4 this was required. When passing an encrypted password, the encrypted 
+# login_password: Password used to authenticate with PostgreSQL. 
+# login_unix_socket: Path to a Unix domain socket for local 
+# login_user: User (role) used to authenticate with 
+# name: (required) Name of the user (role) to add or 
+# no_password_changes: If `yes', don't inspect database for password 
+# password: Set the user's password, before 1.4 this was 
 # port: Database port to connect to. 
-# priv: PostgreSQL privileges string in the format: `table:priv1,priv2' 
-# role_attr_flags: PostgreSQL role attributes string in the format: CREATEDB,CREATEROLE,SUPERUSER 
-# ssl_mode: Determines whether or with what priority a secure SSL TCP/IP connection will be negotiated with the 
-# ssl_rootcert: Specifies the name of a file containing SSL certificate authority (CA) certificate(s). If the file 
-# state: The user (role) state 
+# priv: PostgreSQL privileges string in the format: 
+# role_attr_flags: PostgreSQL role attributes string in the format: 
+# ssl_mode: Determines whether or with what priority a 
+# ssl_rootcert: Specifies the name of a file containing SSL 
+# state: The user (role) state. 
 }- name: ${2:Name for postgresql_user module.}
   postgresql_user:
 ${3:   ${4:conn_limit}: ${5:"#"}}

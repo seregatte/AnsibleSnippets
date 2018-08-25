@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_host: (required) the host of the Proxmox VE cluster 
-# api_password: the password to authenticate with you can use PROXMOX_PASSWORD environment variable 
+# api_password: the password to authenticate with you can use 
 # api_user: (required) the user to authenticate with 
 # cores: Specify number of cores per socket. 
 # cpus: numbers of allocated cpus for instance 
 # cpuunits: CPU weight for a VM 
 # disk: hard disk size in GB for instance 
-# force: forcing operations can be used only with states `present', `stopped', `restarted' with `state=present' 
-# hostname: the instance hostname required only for `state=present' must be unique if vmid is not passed 
-# ip_address: specifies the address the container will be assigned 
+# force: forcing operations can be used only with states 
+# hostname: the instance hostname required only for 
+# ip_address: specifies the address the container will be 
 # memory: memory size in MB for instance 
-# mounts: specifies additional mounts (separate disks) for the container. As a hash/dictionary defining mount 
+# mounts: specifies additional mounts (separate disks) for 
 # nameserver: sets DNS server IP address for a container 
-# netif: specifies network interfaces for the container. As a hash/dictionary defining interfaces. 
-# node: Proxmox VE node, when new VM will be created required only for `state=present' for another states will 
-# onboot: specifies whether a VM will be started during system bootup 
-# ostemplate: the template for VM creating required only for `state=present' 
-# password: the instance root password required only for `state=present' 
+# netif: specifies network interfaces for the container. 
+# node: Proxmox VE node, when new VM will be created 
+# onboot: specifies whether a VM will be started during 
+# ostemplate: the template for VM creating required only for 
+# password: the instance root password required only for 
 # pool: Proxmox VE resource pool 
-# pubkey: Public key to add to /root/.ssh/authorized_keys. This was added on Proxmox 4.2, it is ignored for 
+# pubkey: Public key to add to /root/.ssh/authorized_keys. 
 # searchdomain: sets DNS search domain for a container 
 # state: Indicate desired state of the instance 
 # storage: target storage 
@@ -27,7 +27,7 @@ ${1:# api_host: (required) the host of the Proxmox VE cluster
 # timeout: timeout for operations 
 # unprivileged: Indicate if the container should be unprivileged 
 # validate_certs: enable / disable https certificate verification 
-# vmid: the instance id if not set, the next available VM ID will be fetched from ProxmoxAPI. if not set, will 
+# vmid: the instance id if not set, the next available 
 }- name: ${2:Name for proxmox module.}
   proxmox:
 ${3:   ${4:api_host}: ${5:"#"}}

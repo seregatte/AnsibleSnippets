@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# name: (required) IP interface name. 
 # state: Create or delete Solaris/illumos IP interfaces. 
-# temporary: Specifies that the IP interface is temporary. Temporary IP interfaces do not persist across reboots. 
+# temporary: Specifies that the IP interface is temporary. 
 }- name: ${2:Name for ipadm_if module.}
   ipadm_if:
 ${3:   ${4:name}: ${5:"#"}}

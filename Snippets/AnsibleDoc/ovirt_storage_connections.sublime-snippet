@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# address: Address of the storage server. E.g.: myserver.mydomain.com 
-# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# force: This parameter is releven only when updating a connection. If `true' the storage domain don't have to be 
+${1:# address: Address of the storage server. E.g.: 
+# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
+# force: This parameter is releven only when updating a 
 # id: Id of the storage connection to manage. 
-# mount_options: Option which will be passed when mounting storage. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# nfs_retrans: The number of times to retry a request before attempting further recovery actions. Range 0 to 65535. 
-# nfs_timeout: The time in tenths of a second to wait for a response before retrying NFS requests. Range 0 to 65535. 
-# nfs_version: NFS version. One of: `auto', `v3', `v4' or `v4_1'. 
+# mount_options: Option which will be passed when mounting 
+# nested_attributes: Specifies list of the attributes which should be 
+# nfs_retrans: The number of times to retry a request before 
+# nfs_timeout: The time in tenths of a second to wait for a 
+# nfs_version: NFS version. One of: `auto', `v3', `v4' or 
 # password: A CHAP password for logging into a target. 
-# path: Path of the mount point of the storage. E.g.: /path/to/my/data 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
+# path: Path of the mount point of the storage. E.g.: 
+# poll_interval: Number of the seconds the module waits until 
 # port: Port of the iSCSI storage server. 
-# state: Should the storage connection be present or absent. 
-# storage: Name of the storage domain to be used with storage connection. 
+# state: Should the storage connection be present or 
+# storage: Name of the storage domain to be used with 
 # target: The target IQN for the storage device. 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
+# timeout: The amount of time in seconds the module should 
 # type: Storage type. For example: `nfs', `iscsi', etc. 
 # username: A CHAP username for logging into a target. 
 # vfs_type: Virtual File System type. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_storage_connections module.}
   ovirt_storage_connections:
 ${3:   ${4:address}: ${5:"#"}}

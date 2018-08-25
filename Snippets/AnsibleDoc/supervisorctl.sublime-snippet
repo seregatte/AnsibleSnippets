@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# config: The supervisor configuration file path 
-# name: (required) The name of the supervisord program or group to manage. The name will be taken as group name 
+# name: (required) The name of the supervisord program 
 # password: password to use for authentication 
 # server_url: URL on which supervisord server is listening 
 # state: (required) The desired state of program/group. 

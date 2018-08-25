@@ -2,30 +2,30 @@
 <content><![CDATA[
 ${1:# account_key: (required) Account API Key. 
 # account_secret: (required) Account Secret Key. 
-# auto: (required) If true, fallback to the primary IP address is manual after a failover. If false, fallback to 
-# contact: (required) Name or id of the contact list that the monitor will notify. The default `''' means the 
-# domain: (required) Domain to work with. Can be the domain name (e.g. "mydomain.com") or the numeric ID of the 
-# failover: (required) If `yes', add or change the failover.  This is applicable only for A records. 
-# http: The file at the Fqdn that the monitor queries for HTTP or HTTPS. 
-# http: The fully qualified domain name used by the monitor. 
-# http: The string in the httpFile that the monitor queries for HTTP or HTTPS. 
-# ip1: Primary IP address for the failover. Required if adding or changing the monitor or failover. 
-# ip2: Secondary IP address for the failover. Required if adding or changing the failover. 
+# auto: If true, fallback to the primary IP address is 
+# contact: (required) Name or id of the contact list that 
+# domain: (required) Domain to work with. Can be the 
+# failover: If `yes', add or change the failover.  This is 
+# http: The file at the Fqdn that the monitor queries 
+# http: The fully qualified domain name used by the 
+# http: The string in the httpFile that the monitor 
+# ip1: Primary IP address for the failover. Required if 
+# ip2: Secondary IP address for the failover. Required 
 # ip3: Tertiary IP address for the failover. 
 # ip4: Quaternary IP address for the failover. 
 # ip5: Quinary IP address for the failover. 
-# max: (required) Number of emails sent to the contact list by the monitor. 
-# monitor: (required) If `yes', add or change the monitor.  This is applicable only for A records. 
+# max: (required) Number of emails sent to the contact 
+# monitor: If `yes', add or change the monitor.  This is 
 # port: (required) Port used by the monitor. 
 # protocol: (required) Protocol used by the monitor. 
-# record_name: Record name to get/create/delete/update. If record_name is not specified; all records for the domain 
-# record_ttl: record's "Time to live".  Number of seconds the record remains cached in DNS servers. 
+# record_name: Record name to get/create/delete/update. If 
+# record_ttl: record's "Time to live".  Number of seconds the 
 # record_type: Record type. 
-# record_value: Record value. HTTPRED: <redirection URL>, MX: <priority> <target name>, NS: <name server>, PTR: <target 
-# sensitivity: (required) Number of checks the monitor performs before a failover occurs where Low = 8, Medium = 5,and 
-# state: (required) whether the record should exist or not 
+# record_value: Record value. HTTPRED: <redirection URL>, MX: 
+# sensitivity: (required) Number of checks the monitor performs 
+# state: (required) whether the record should exist or 
 # system: (required) Description used by the monitor. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for dnsmadeeasy module.}
   dnsmadeeasy:
 ${3:   ${4:account_key}: ${5:"#"}}

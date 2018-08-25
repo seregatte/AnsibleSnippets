@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# account_sid: (required) user's Twilio account token found on the account page 
+${1:# account_sid: (required) user's Twilio account token found on 
 # auth_token: (required) user's Twilio authentication token 
-# from_number: (required) the Twilio number to send the text message from, format +15551112222 
-# media_url: a URL with a picture, video or sound clip to send with an MMS (multimedia message) instead of a plain 
+# from_number: (required) the Twilio number to send the text 
+# media_url: a URL with a picture, video or sound clip to 
 # msg: (required) the body of the text message 
-# to_number: (required) one or more phone numbers to send the text message to, format +15551112222 
+# to_number: (required) one or more phone numbers to send the 
 }- name: ${2:Name for twilio module.}
   twilio:
 ${3:   ${4:account_sid}: ${5:"#"}}

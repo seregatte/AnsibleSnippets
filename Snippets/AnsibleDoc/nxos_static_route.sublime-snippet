@@ -1,47 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# next_hop: (required) Next hop address or interface of static route. If interface, it must be the fully-qualified 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# pref: Preference or administrative difference of route (range 1-255). 
+${1:# aggregate: List of static route definitions 
+# next_hop: (required) Next hop address or interface of 
+# pref: Preference or administrative difference of route 
 # prefix: (required) Destination prefix of static route. 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# route_name: Name of the route. Used with the name parameter on the CLI. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: (required) Manage the state of the resource. 
-# tag: Route tag value (numeric). 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# route_name: Name of the route or keyword 'default'. Used 
+# state: Manage the state of the resource. 
+# tag: Route tag value (numeric) or keyword 'default'. 
 # vrf: VRF for static route. 
 }- name: ${2:Name for nxos_static_route module.}
   nxos_static_route:
-${3:   ${4:host}: ${5:"#"}}
+${3:   ${4:aggregate}: ${5:"#"}}
 ${6:   ${7:next_hop}: ${8:"#"}}
-${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:port}: ${14:"#"}}
-${15:   ${16:pref}: ${17:"#"}}
-${18:   ${19:prefix}: ${20:"#"}}
-${21:   ${22:provider}: ${23:"#"}}
-${24:   ${25:route_name}: ${26:"#"}}
-${27:   ${28:ssh_keyfile}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:tag}: ${35:"#"}}
-${36:   ${37:timeout}: ${38:"#"}}
-${39:   ${40:transport}: ${41:"#"}}
-${42:   ${43:use_ssl}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:vrf}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${9:   ${10:pref}: ${11:"#"}}
+${12:   ${13:prefix}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:route_name}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:tag}: ${26:"#"}}
+${27:   ${28:vrf}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>nxos_static_route</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

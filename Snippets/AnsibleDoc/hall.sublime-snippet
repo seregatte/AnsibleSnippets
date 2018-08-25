@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# msg: (required) The message you wish to deliver as a notification 
-# picture: The full URL to the image you wish to use for the Icon of the message. Defaults to http://cdn2.hubspot.n 
-# room_token: (required) Room token provided to you by setting up the Ansible room integation on https://hall.com 
+${1:# msg: (required) The message you wish to deliver as a 
+# picture: The full URL to the image you wish to use for 
+# room_token: (required) Room token provided to you by setting 
 # title: (required) The title of the message 
 }- name: ${2:Name for hall module.}
   hall:

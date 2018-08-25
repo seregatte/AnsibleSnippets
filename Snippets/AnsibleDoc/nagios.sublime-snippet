@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) Action to take. servicegroup options were added in 2.0. delete_downtime options were added in 
-# author: Author to leave downtime comments as. Only usable with the `downtime' action. 
-# cmdfile: Path to the nagios `command file' (FIFO pipe). Only required if auto-detection fails. 
-# command: (required) The raw command to send to nagios, which should not include the submitted time header or the 
+${1:# action: (required) Action to take. servicegroup options 
+# author: Author to leave downtime comments as. Only 
+# cmdfile: Path to the nagios `command file' (FIFO pipe). 
+# command: (required) The raw command to send to nagios, 
 # comment: Comment for `downtime' action. 
 # host: Host to operate on in Nagios. 
-# minutes: Minutes to schedule downtime for. Only usable with the `downtime' action. 
-# servicegroup: The Servicegroup we want to set downtimes/alerts for. *Required* option when using the 
-# services: (required) What to manage downtime/alerts for. Separate multiple services with commas. `service' is an 
+# minutes: Minutes to schedule downtime for. Only usable 
+# servicegroup: The Servicegroup we want to set downtimes/alerts 
+# services: (required) What to manage downtime/alerts for. 
 }- name: ${2:Name for nagios module.}
   nagios:
 ${3:   ${4:action}: ${5:"#"}}

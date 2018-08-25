@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# link: (required) Link interface name. 
-# property: (required) Specifies the name of the property we want to manage. 
+# property: (required) Specifies the name of the property we 
 # state: Set or reset the property value. 
-# temporary: Specifies that lin property configuration is temporary. Temporary link property configuration does not 
-# value: Specifies the value we want to set for the link property. 
+# temporary: Specifies that lin property configuration is 
+# value: Specifies the value we want to set for the link 
 }- name: ${2:Name for dladm_linkprop module.}
   dladm_linkprop:
 ${3:   ${4:link}: ${5:"#"}}

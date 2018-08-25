@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# args: A dict of key-value pairs used in formatting the script using string.Template (see 
-# https: template-strings). 
-# password: The password to connect to the jenkins server with. 
-# script: (required) The groovy script to be executed. This gets passed as a string Template if args is defined. 
+${1:# args: A dict of key-value pairs used in formatting the 
+# : template- 
+# password: The password to connect to the jenkins server 
+# script: (required) The groovy script to be executed. 
 # timeout: The request timeout in seconds 
-# url: The jenkins server to execute the script against. The default is a local jenkins instance that is not 
-# user: The username to connect to the jenkins server with. 
-# validate_certs: If set to `no', the SSL certificates will not be validated. This should only set to `no' used on 
+# url: The jenkins server to execute the script 
+# user: The username to connect to the jenkins server 
+# validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for jenkins_script module.}
   jenkins_script:
 ${3:   ${4:args}: ${5:"#"}}
-${6:   ${7:https}: ${8:"#"}}
+${6:   ${7:}: ${8:"#"}}
 ${9:   ${10:password}: ${11:"#"}}
 ${12:   ${13:script}: ${14:"#"}}
 ${15:   ${16:timeout}: ${17:"#"}}

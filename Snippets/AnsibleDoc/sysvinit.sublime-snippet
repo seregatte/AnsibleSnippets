@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# arguments: Additional arguments provided on the command 
+# daemonize: Have the module daemonize as the service itself 
+# enabled: Whether the service should start on boot. *At 
+# name: (required) Name of the service. 
+# pattern: A substring to look for as would be found in the 
+# runlevels: The runlevels this script should be 
+# sleep: If the service is being `restarted' or 
+# state: `started'/`stopped' are idempotent actions that 
+}- name: ${2:Name for sysvinit module.}
+  sysvinit:
+${3:   ${4:arguments}: ${5:"#"}}
+${6:   ${7:daemonize}: ${8:"#"}}
+${9:   ${10:enabled}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:pattern}: ${17:"#"}}
+${18:   ${19:runlevels}: ${20:"#"}}
+${21:   ${22:sleep}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>sysvinit</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

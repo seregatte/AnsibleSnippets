@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# content: Datastructure of the Rack Type to create. The data can be in YAML / JSON or directly a variable. It's 
-# id: AOS Id of the Rack Type to manage (can't be used to create a new Rack Type), Only one of `name', `id' or 
-# name: Name of the Rack Type to manage. Only one of `name', `id' or `content' can be set. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Rack Type (present or not). 
+${1:# content: Datastructure of the Rack Type to create. The 
+# id: AOS Id of the Rack Type to manage (can't be used 
+# name: Name of the Rack Type to manage. Only one of 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the Rack 
 }- name: ${2:Name for aos_rack_type module.}
   aos_rack_type:
 ${3:   ${4:content}: ${5:"#"}}

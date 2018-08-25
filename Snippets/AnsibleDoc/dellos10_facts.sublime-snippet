@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# gather_subset: When supplied, this argument restricts the facts collected to a given subset.  Possible values for this 
+${1:# gather_subset: When supplied, this argument will restrict the 
 # provider: A dict object containing connection details. 
 }- name: ${2:Name for dellos10_facts module.}
   dellos10_facts:

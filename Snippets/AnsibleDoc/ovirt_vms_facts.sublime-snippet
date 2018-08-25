@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# all_content: If `true' all the attributes of the virtual machines should be included in the response. 
-# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# case_sensitive: If `true' performed search will take case into account. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+${1:# all_content: If `true' all the attributes of the virtual 
+# auth: (required) Dictionary with values needed to 
+# case_sensitive: If `true' performed search will take case into 
+# fetch_nested: If `True' the module will fetch additional data 
 # max: The maximum number of results to return. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# pattern: Search term which is accepted by oVirt/RHV search backend. For example to search VM X from cluster Y use 
+# nested_attributes: Specifies list of the attributes which should be 
+# pattern: Search term which is accepted by oVirt/RHV 
 }- name: ${2:Name for ovirt_vms_facts module.}
   ovirt_vms_facts:
 ${3:   ${4:all_content}: ${5:"#"}}

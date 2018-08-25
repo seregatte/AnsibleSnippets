@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# attachment: Path to a file to be attached to the issue. 
-# attachment_description: A string describing the file to be attached to the issue. 
+# attachment_description: A string describing the file to be attached to 
 # description: The issue description. 
-# issue_type: (required) The issue type. Must exist previously. 
+# issue_type: (required) The issue type. Must exist 
 # priority: The issue priority. Must exist previously. 
-# project: (required) Name of the project containing the issue. Must exist previously. 
+# project: (required) Name of the project containing the 
 # severity: The issue severity. Must exist previously. 
 # state: Whether the issue should be present or not. 
 # status: The issue status. Must exist previously. 

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# check: Specifies the check which the silence entry applies to. 
+${1:# check: Specifies the check which the silence entry 
 # creator: Specifies the entity responsible for this entry. 
-# expire: If specified, the silence entry will be automatically cleared after this number of seconds. 
-# expire_on_resolve: If specified as true, the silence entry will be automatically cleared once the condition it is silencing 
-# reason: If specified, this free-form string is used to provide context or rationale for the reason this silence 
-# state: (required) Specifies to create or clear (delete) a silence entry via the Sensu API 
-# subscription: (required) Specifies the subscription which the silence entry applies to. To create a silence entry for 
-# url: Specifies the URL of the Sensu monitoring host server. 
+# expire: If specified, the silence entry will be 
+# expire_on_resolve: If specified as true, the silence entry will be 
+# reason: If specified, this free-form string is used to 
+# state: (required) Specifies to create or clear (delete) 
+# subscription: (required) Specifies the subscription which the 
+# url: Specifies the URL of the Sensu monitoring host 
 }- name: ${2:Name for sensu_silence module.}
   sensu_silence:
 ${3:   ${4:check}: ${5:"#"}}

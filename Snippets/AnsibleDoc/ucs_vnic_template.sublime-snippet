@@ -1,0 +1,64 @@
+<snippet>
+<content><![CDATA[
+${1:# cdn_name: CDN Name used when cdn_source is set to user- 
+# cdn_source: CDN Source field. This can be one of the 
+# description: A user-defined description of the vNIC template. 
+# fabric: The Fabric ID field specifying the fabric 
+# hostname: (required) IP address or hostname of Cisco UCS 
+# mac_pool: The MAC address pool that vNICs created from 
+# mtu: The MTU field. The maximum transmission unit, or 
+# name: (required) The name of the vNIC template. This 
+# network_control_policy: The network control policy that vNICs created 
+# org_dn: Org dn (distinguished name) 
+# password: (required) Password for Cisco UCS Manager 
+# peer_redundancy_template: The Peer Redundancy Template. The name of the 
+# pin_group: The LAN pin group that vNICs created from this 
+# port: Port number to be used during connection (by 
+# proxy: If use_proxy is no, specfies proxy to be used 
+# qos_policy: The quality of service (QoS) policy that vNICs 
+# redundancy_type: The Redundancy Type used for vNIC redundancy 
+# state: If `present', will verify vNIC templates are 
+# stats_policy: The statistics collection policy that vNICs 
+# target: The possible target for vNICs created from this 
+# template_type: The Template Type field. This can be one of the 
+# use_proxy: If `no', will not use the proxy as defined by 
+# use_ssl: If `no', an HTTP connection will be used instead 
+# username: Username for Cisco UCS Manager authentication. 
+# vlans_list: List of VLANs used by the vNIC template. Each 
+}- name: ${2:Name for ucs_vnic_template module.}
+  ucs_vnic_template:
+${3:   ${4:cdn_name}: ${5:"#"}}
+${6:   ${7:cdn_source}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:fabric}: ${14:"#"}}
+${15:   ${16:hostname}: ${17:"#"}}
+${18:   ${19:mac_pool}: ${20:"#"}}
+${21:   ${22:mtu}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:network_control_policy}: ${29:"#"}}
+${30:   ${31:org_dn}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:peer_redundancy_template}: ${38:"#"}}
+${39:   ${40:pin_group}: ${41:"#"}}
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:proxy}: ${47:"#"}}
+${48:   ${49:qos_policy}: ${50:"#"}}
+${51:   ${52:redundancy_type}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:stats_policy}: ${59:"#"}}
+${60:   ${61:target}: ${62:"#"}}
+${63:   ${64:template_type}: ${65:"#"}}
+${66:   ${67:use_proxy}: ${68:"#"}}
+${69:   ${70:use_ssl}: ${71:"#"}}
+${72:   ${73:username}: ${74:"#"}}
+${75:   ${76:vlans_list}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
+]]></content>
+	<tabTrigger>ucs_vnic_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,43 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
-# auto_ip: Ensure instance has public ip however the cloud wants to do that 
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
+# auto_ip: Ensure instance has public ip however the cloud 
 # availability_zone: Availability zone in which to create the server. 
-# boot_from_volume: Should the instance boot from a persistent volume created based on the image given. Mututally exclusive 
-# boot_volume: Volume name or id to use as the volume to boot from. Implies boot_from_volume. Mutually exclusive with 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
-# config_drive: Whether to boot the server with config drive enabled 
-# delete_fip: When `state' is absent and this option is true, any floating IP associated with the instance will be 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# flavor: The name or id of the flavor in which the new instance has to be created. Mutually exclusive with 
-# flavor_include: Text to use to filter flavor names, for the case, such as Rackspace, where there are multiple flavors 
-# flavor_ram: The minimum amount of ram in MB that the flavor in which the new instance has to be created must have. 
-# floating_ip_pools: Name of floating IP pool from which to choose a floating IP 
-# floating_ips: list of valid floating IPs that pre-exist to assign to this node 
-# image: (required) The name or id of the base image to boot. 
-# image_exclude: Text to use to filter image names, for the case, such as HP, where there are multiple image names 
-# key: A path to a client key to use as part of the SSL transaction. 
-# key_name: The key pair name to be used when creating a instance 
-# meta: A list of key value pairs that should be provided as a metadata to the new instance or a string 
-# name: (required) Name that has to be given to the instance 
-# network: Name or ID of a network to attach this instance to. A simpler version of the nics parameter, only one of 
-# nics: A list of networks to which the instance's interface should be attached. Networks may be referenced by 
+# boot_from_volume: Should the instance boot from a persistent 
+# boot_volume: Volume name or id to use as the volume to boot 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
+# config_drive: Whether to boot the server with config drive 
+# delete_fip: When `state' is absent and this option is true, 
+# flavor: The name or id of the flavor in which the new 
+# flavor_include: Text to use to filter flavor names, for the 
+# flavor_ram: The minimum amount of ram in MB that the flavor 
+# floating_ip_pools: Name of floating IP pool from which to choose a 
+# floating_ips: list of valid floating IPs that pre-exist to 
+# image: (required) The name or id of the base image to 
+# image_exclude: Text to use to filter image names, for the case, 
+# interface: Endpoint URL type to fetch from the service 
+# key: A path to a client key to use as part of the SSL 
+# key_name: The key pair name to be used when creating a 
+# meta: A list of key value pairs that should be 
+# name: (required) Name that has to be given to the 
+# network: Name or ID of a network to attach this instance 
+# nics: A list of networks to which the instance's 
 # region_name: Name of the region. 
-# reuse_ips: When `auto_ip' is true and this option is true, the `auto_ip' code will attempt to re-use unassigned 
-# scheduler_hints: Arbitrary key/value pairs to the scheduler for custom use 
-# security_groups: Names of the security groups to which the instance should be added. This may be a YAML list or a comma 
+# reuse_ips: When `auto_ip' is true and this option is true, 
+# scheduler_hints: Arbitrary key/value pairs to the scheduler for 
+# security_groups: Names of the security groups to which the 
 # state: Should the resource be present or absent. 
-# terminate_volume: If true, delete volume when deleting instance (if booted from volume) 
-# timeout: The amount of time the module should wait for the instance to get into active state. 
-# userdata: Opaque blob of data which is made available to the instance 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# volume_size: The size of the volume to create in GB if booting from volume based on an image. 
-# volumes: A list of preexisting volumes names or ids to attach to the instance 
-# wait: If the module should wait for the instance to be created. 
+# terminate_volume: If `yes', delete volume when deleting instance 
+# timeout: The amount of time the module should wait for 
+# userdata: Opaque blob of data which is made available to 
+# verify: Whether or not SSL API requests should be 
+# volume_size: The size of the volume to create in GB if 
+# volumes: A list of preexisting volumes names or ids to 
+# wait: If the module should wait for the instance to be 
 }- name: ${2:Name for os_server module.}
   os_server:
 ${3:   ${4:api_timeout}: ${5:"#"}}
@@ -52,14 +52,14 @@ ${27:   ${28:cert}: ${29:"#"}}
 ${30:   ${31:cloud}: ${32:"#"}}
 ${33:   ${34:config_drive}: ${35:"#"}}
 ${36:   ${37:delete_fip}: ${38:"#"}}
-${39:   ${40:endpoint_type}: ${41:"#"}}
-${42:   ${43:flavor}: ${44:"#"}}
-${45:   ${46:flavor_include}: ${47:"#"}}
-${48:   ${49:flavor_ram}: ${50:"#"}}
-${51:   ${52:floating_ip_pools}: ${53:"#"}}
-${54:   ${55:floating_ips}: ${56:"#"}}
-${57:   ${58:image}: ${59:"#"}}
-${60:   ${61:image_exclude}: ${62:"#"}}
+${39:   ${40:flavor}: ${41:"#"}}
+${42:   ${43:flavor_include}: ${44:"#"}}
+${45:   ${46:flavor_ram}: ${47:"#"}}
+${48:   ${49:floating_ip_pools}: ${50:"#"}}
+${51:   ${52:floating_ips}: ${53:"#"}}
+${54:   ${55:image}: ${56:"#"}}
+${57:   ${58:image_exclude}: ${59:"#"}}
+${60:   ${61:interface}: ${62:"#"}}
 ${63:   ${64:key}: ${65:"#"}}
 ${66:   ${67:key_name}: ${68:"#"}}
 ${69:   ${70:meta}: ${71:"#"}}
@@ -74,7 +74,7 @@ ${93:   ${94:state}: ${95:"#"}}
 ${96:   ${97:terminate_volume}: ${98:"#"}}
 ${99:   ${100:timeout}: ${101:"#"}}
 ${102:   ${103:userdata}: ${104:"#"}}
-${105:   ${106:validate_certs}: ${107:"#"}}
+${105:   ${106:verify}: ${107:"#"}}
 ${108:   ${109:volume_size}: ${110:"#"}}
 ${111:   ${112:volumes}: ${113:"#"}}
 ${114:   ${115:wait}: ${116:"#"}}

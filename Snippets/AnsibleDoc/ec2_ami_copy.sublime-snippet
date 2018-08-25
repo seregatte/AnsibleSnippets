@@ -1,22 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# description: An optional human-readable string describing the contents and purpose of the new AMI. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# encrypted: Whether or not the destination snapshots of the copied AMI should be encrypted. 
-# kms_key_id: KMS key id used to encrypt image. If not specified, uses default EBS Customer Master Key (CMK) for your 
-# name: The name of the new AMI to copy. (As of 2.3 the default is 'default', in prior versions it was 'null'.) 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# source_image_id: (required) The ID of the AMI in source region that should be copied. 
-# source_region: (required) The source region the AMI should be copied from. 
-# tags: A hash/dictionary of tags to add to the new copied AMI; '{"key":"value"}' and 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# wait: Wait for the copied AMI to be in state 'available' before returning. 
-# wait_timeout: How long before wait gives up, in seconds. (As of 2.3 this option is deprecated. See boto3 Waiters) 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# description: An optional human-readable string describing the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# encrypted: Whether or not the destination snapshots of the 
+# kms_key_id: KMS key id used to encrypt image. If not 
+# name: The name of the new AMI to copy. (As of 2.3 the 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# source_image_id: (required) The ID of the AMI in source region 
+# source_region: (required) The source region the AMI should be 
+# tag_equality: Whether to use tags if the source AMI already 
+# tags: A hash/dictionary of tags to add to the new 
+# validate_certs: When set to "no", SSL certificates will not be 
+# wait: Wait for the copied AMI to be in state 
+# wait_timeout: How long before wait gives up, in seconds. Prior 
 }- name: ${2:Name for ec2_ami_copy module.}
   ec2_ami_copy:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -28,20 +29,21 @@ ${18:   ${19:kms_key_id}: ${20:"#"}}
 ${21:   ${22:name}: ${23:"#"}}
 ${24:   ${25:profile}: ${26:"#"}}
 ${27:   ${28:region}: ${29:"#"}}
-${30:   ${31:http}: ${32:"#"}}
+${30:   ${31:}: ${32:"#"}}
 ${33:   ${34:security_token}: ${35:"#"}}
 ${36:   ${37:source_image_id}: ${38:"#"}}
 ${39:   ${40:source_region}: ${41:"#"}}
-${42:   ${43:tags}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:   ${49:wait}: ${50:"#"}}
-${51:   ${52:wait_timeout}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${42:   ${43:tag_equality}: ${44:"#"}}
+${45:   ${46:tags}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:wait}: ${53:"#"}}
+${54:   ${55:wait_timeout}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>ec2_ami_copy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# instance_name: The name of the GCE instance to add/remove tags.  Required if instance_pattern is not specified. 
-# instance_pattern: The pattern of GCE instance names to match for adding/removing tags.  Full-Python regex is supported. 
-# pem_file: path to the pem file associated with the service account email 
-# project_id: your GCE project ID 
-# service_account_email: service account email 
-# state: desired state of the tags 
-# tags: (required) comma-separated list of tags to add or remove 
-# zone: the zone of the disk specified by source 
+${1:# instance_name: The name of the GCE instance to add/remove tags. 
+# instance_pattern: The pattern of GCE instance names to match for 
+# pem_file: Path to the PEM file associated with the service 
+# project_id: Your GCE project ID. 
+# service_account_email: Service account email. 
+# state: Desired state of the tags. 
+# tags: (required) Comma-separated list of tags to add 
+# zone: The zone of the disk specified by source. 
 }- name: ${2:Name for gce_tag module.}
   gce_tag:
 ${3:   ${4:instance_name}: ${5:"#"}}

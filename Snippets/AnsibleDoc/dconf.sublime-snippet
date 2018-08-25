@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# key: (required) A dconf key to modify or read from the dconf database. 
+${1:# key: (required) A dconf key to modify or read from 
 # state: The action to take upon the key/value. 
-# value: Value to set for the specified dconf key. Value should be specified in GVariant format. Due to 
+# value: Value to set for the specified dconf key. Value 
 }- name: ${2:Name for dconf module.}
   dconf:
 ${3:   ${4:key}: ${5:"#"}}

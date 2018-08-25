@@ -1,139 +1,151 @@
 <snippet>
 <content><![CDATA[
-${1:# a_pool: Name of container cloud application that constitutes a pool in a a-b pool configuration, if different 
+${1:# a_pool: Name of container cloud application that 
 # ab_pool: A/b pool configuration. 
-# ab_priority: Priority of this pool in a a-b pool pair. Internally used. 
-# api_version: Avi API version of to use for Avi API and objects. 
-# apic_epg_name: Synchronize cisco apic epg members with pool servers. 
-# application_persistence_profile_ref: Persistence will ensure the same user sticks to the same server for a desired duration of time. It is a 
-# autoscale_launch_config_ref: If configured then avi will trigger orchestration of pool server creation and deletion. It is only 
+# ab_priority: Priority of this pool in a a-b pool pair. 
+# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# apic_epg_name: Synchronize cisco apic epg members with pool 
+# application_persistence_profile_ref: Persistence will ensure the same user sticks to 
+# autoscale_launch_config_ref: If configured then avi will trigger 
 # autoscale_networks: Network ids for the launch configuration. 
-# autoscale_policy_ref: Reference to server autoscale policy. It is a reference to an object of type serverautoscalepolicy. 
-# capacity_estimation: Inline estimation of capacity of servers. Default value when not specified in API or module is 
-# capacity_estimation_ttfb_thresh: The maximum time-to-first-byte of a server. Allowed values are 1-5000. Special values are 0 - 
-# cloud_config_cksum: Checksum of cloud configuration for pool. Internally set by cloud connector. 
+# autoscale_policy_ref: Reference to server autoscale policy. It is a 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# capacity_estimation: Inline estimation of capacity of servers. 
+# capacity_estimation_ttfb_thresh: The maximum time-to-first-byte of a server. 
+# cloud_config_cksum: Checksum of cloud configuration for pool. 
 # cloud_ref: It is a reference to an object of type cloud. 
-# connection_ramp_duration: Duration for which new connections will be gradually ramped up to a server recently brought online. 
-# controller: IP address or hostname of the controller. The default value is the environment variable 
+# connection_ramp_duration: Duration for which new connections will be 
+# controller: IP address or hostname of the controller. The 
 # created_by: Creator name. 
-# default_server_port: Traffic sent to servers will use this destination server port unless overridden by the server's specific 
+# default_server_port: Traffic sent to servers will use this 
 # description: A description of the pool. 
-# domain_name: Comma separated list of domain names which will be used to verify the common names or subject 
+# domain_name: Comma separated list of domain names which will 
 # east_west: Inherited config from virtualservice. 
-# enabled: Enable or disable the pool. Disabling will terminate all open connections and pause health monitors. 
-# external_autoscale_groups: Names of external auto-scale groups for pool servers. Currently available only for aws. Field introduced 
-# fail_action: Enable an action - close connection, http redirect or local http response - when a pool failure happens. 
-# fewest_tasks_feedback_delay: Periodicity of feedback for fewest tasks server selection algorithm. Allowed values are 1-300. Default 
-# graceful_disable_timeout: Used to gracefully disable a server. Virtual service waits for the specified time before terminating the 
-# health_monitor_refs: Verify server health by applying one or more health monitors. Active monitors generate synthetic traffic 
-# host_check_enabled: Enable common name check for server certificate. If enabled and no explicit domain name is specified, 
-# inline_health_monitor: The passive monitor will monitor client to server connections and requests and adjust traffic load to 
-# ipaddrgroup_ref: Use list of servers from ip address group. It is a reference to an object of type ipaddrgroup. 
-# lb_algorithm: The load balancing algorithm will pick a server within the pool's list of available servers. Enum 
+# enabled: Enable or disable the pool. Disabling will 
+# external_autoscale_groups: Names of external auto-scale groups for pool 
+# fail_action: Enable an action - close connection, http 
+# fewest_tasks_feedback_delay: Periodicity of feedback for fewest tasks server 
+# graceful_disable_timeout: Used to gracefully disable a server. Virtual 
+# gslb_sp_enabled: Indicates if the pool is a site-persistence 
+# health_monitor_refs: Verify server health by applying one or more 
+# host_check_enabled: Enable common name check for server certificate. 
+# inline_health_monitor: The passive monitor will monitor client to 
+# ipaddrgroup_ref: Use list of servers from ip address group. It is 
+# lb_algorithm: The load balancing algorithm will pick a server 
 # lb_algorithm_consistent_hash_hdr: Http header name to be used for the hash key. 
-# lb_algorithm_core_nonaffinity: Degree of non-affinity for core afffinity based server selection. Allowed values are 1-65535. Field 
-# lb_algorithm_hash: Criteria used as a key for determining the hash between the client and  server. Enum options - 
-# max_concurrent_connections_per_server: The maximum number of concurrent connections allowed to each server within the pool. Note  applied value 
+# lb_algorithm_core_nonaffinity: Degree of non-affinity for core afffinity based 
+# lb_algorithm_hash: Criteria used as a key for determining the hash 
+# lookup_server_by_name: Allow server lookup by name. Field introduced in 
+# max_concurrent_connections_per_server: The maximum number of concurrent connections 
 # max_conn_rate_per_server: Rate limit connections to each server. 
 # name: (required) The name of the pool. 
-# networks: (internal-use) networks designated as containing servers for this pool. The servers may be further 
-# nsx_securitygroup: A list of nsx service groups where the servers for the pool are created. Field introduced in 17.1.1. 
-# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
-# pki_profile_ref: Avi will validate the ssl certificate present by a server against the selected pki profile. It is a 
-# placement_networks: Manually select the networks and subnets used to provide reachability to the pool's servers. Specify the 
+# networks: (internal-use) networks designated as containing 
+# nsx_securitygroup: A list of nsx service groups where the servers 
+# password: Password of Avi user in Avi controller. The 
+# pki_profile_ref: Avi will validate the ssl certificate present by 
+# placement_networks: Manually select the networks and subnets used to 
 # prst_hdr_name: Header name for custom header persistence. 
-# request_queue_depth: Minimum number of requests to be queued when pool is full. Default value when not specified in API or 
-# request_queue_enabled: Enable request queue when pool is full. Default value when not specified in API or module is interpreted 
-# rewrite_host_header_to_server_name: Rewrite incoming host header to server name of the server to which the request is proxied. Enabling this 
-# rewrite_host_header_to_sni: If sni server name is specified, rewrite incoming host header to the sni server name. Default value when 
-# server_auto_scale: Server autoscale. Not used anymore. Default value when not specified in API or module is interpreted by 
-# server_count: Number of server_count. Default value when not specified in API or module is interpreted by Avi 
-# server_name: Fully qualified dns hostname which will be used in the tls sni extension in server connections if sni is 
+# request_queue_depth: Minimum number of requests to be queued when 
+# request_queue_enabled: Enable request queue when pool is full. Default 
+# rewrite_host_header_to_server_name: Rewrite incoming host header to server name of 
+# rewrite_host_header_to_sni: If sni server name is specified, rewrite 
+# server_auto_scale: Server autoscale. Not used anymore. Default 
+# server_count: Number of server_count. Default value when not 
+# server_name: Fully qualified dns hostname which will be used 
 # server_reselect: Server reselect configuration for http requests. 
-# servers: The pool directs load balanced traffic to this list of destination servers. The servers can be 
-# sni_enabled: Enable tls sni for server connections. If disabled, avi will not send the sni extension as part of the 
-# ssl_key_and_certificate_ref: Service engines will present a client ssl certificate to the server. It is a reference to an object of 
-# ssl_profile_ref: When enabled, avi re-encrypts traffic to the backend servers. The specific ssl profile defines which 
+# servers: The pool directs load balanced traffic to this 
+# sni_enabled: Enable tls sni for server connections. If 
+# ssl_key_and_certificate_ref: Service engines will present a client ssl 
+# ssl_profile_ref: When enabled, avi re-encrypts traffic to the 
 # state: The state that should be applied on the entity. 
-# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
-# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
 # url: Avi controller URL of the object. 
-# use_service_port: Do not translate the client's destination port when sending the connection to the server. The pool or 
-# username: Username used for accessing Avi controller. The default value is the environment variable 
+# use_service_port: Do not translate the client's destination port 
+# username: Username used for accessing Avi controller. The 
 # uuid: Uuid of the pool. 
-# vrf_ref: Virtual routing context that the pool is bound to. This is used to provide the isolation of the set of 
+# vrf_ref: Virtual routing context that the pool is bound 
 }- name: ${2:Name for avi_pool module.}
   avi_pool:
 ${3:   ${4:a_pool}: ${5:"#"}}
 ${6:   ${7:ab_pool}: ${8:"#"}}
 ${9:   ${10:ab_priority}: ${11:"#"}}
-${12:   ${13:api_version}: ${14:"#"}}
-${15:   ${16:apic_epg_name}: ${17:"#"}}
-${18:   ${19:application_persistence_profile_ref}: ${20:"#"}}
-${21:   ${22:autoscale_launch_config_ref}: ${23:"#"}}
-${24:   ${25:autoscale_networks}: ${26:"#"}}
-${27:   ${28:autoscale_policy_ref}: ${29:"#"}}
-${30:   ${31:capacity_estimation}: ${32:"#"}}
-${33:   ${34:capacity_estimation_ttfb_thresh}: ${35:"#"}}
-${36:   ${37:cloud_config_cksum}: ${38:"#"}}
-${39:   ${40:cloud_ref}: ${41:"#"}}
-${42:   ${43:connection_ramp_duration}: ${44:"#"}}
-${45:   ${46:controller}: ${47:"#"}}
-${48:   ${49:created_by}: ${50:"#"}}
-${51:   ${52:default_server_port}: ${53:"#"}}
-${54:   ${55:description}: ${56:"#"}}
-${57:   ${58:domain_name}: ${59:"#"}}
-${60:   ${61:east_west}: ${62:"#"}}
-${63:   ${64:enabled}: ${65:"#"}}
-${66:   ${67:external_autoscale_groups}: ${68:"#"}}
-${69:   ${70:fail_action}: ${71:"#"}}
-${72:   ${73:fewest_tasks_feedback_delay}: ${74:"#"}}
-${75:   ${76:graceful_disable_timeout}: ${77:"#"}}
-${78:   ${79:health_monitor_refs}: ${80:"#"}}
-${81:   ${82:host_check_enabled}: ${83:"#"}}
-${84:   ${85:inline_health_monitor}: ${86:"#"}}
-${87:   ${88:ipaddrgroup_ref}: ${89:"#"}}
-${90:   ${91:lb_algorithm}: ${92:"#"}}
-${93:   ${94:lb_algorithm_consistent_hash_hdr}: ${95:"#"}}
-${96:   ${97:lb_algorithm_core_nonaffinity}: ${98:"#"}}
-${99:   ${100:lb_algorithm_hash}: ${101:"#"}}
-${102:   ${103:max_concurrent_connections_per_server}: ${104:"#"}}
-${105:   ${106:max_conn_rate_per_server}: ${107:"#"}}
-${108:   ${109:name}: ${110:"#"}}
-${111:   ${112:networks}: ${113:"#"}}
-${114:   ${115:nsx_securitygroup}: ${116:"#"}}
-${117:   ${118:password}: ${119:"#"}}
-${120:   ${121:pki_profile_ref}: ${122:"#"}}
-${123:   ${124:placement_networks}: ${125:"#"}}
-${126:   ${127:prst_hdr_name}: ${128:"#"}}
-${129:   ${130:request_queue_depth}: ${131:"#"}}
-${132:   ${133:request_queue_enabled}: ${134:"#"}}
-${135:   ${136:rewrite_host_header_to_server_name}: ${137:"#"}}
-${138:   ${139:rewrite_host_header_to_sni}: ${140:"#"}}
-${141:   ${142:server_auto_scale}: ${143:"#"}}
-${144:   ${145:server_count}: ${146:"#"}}
-${147:   ${148:server_name}: ${149:"#"}}
-${150:   ${151:server_reselect}: ${152:"#"}}
-${153:   ${154:servers}: ${155:"#"}}
-${156:   ${157:sni_enabled}: ${158:"#"}}
-${159:   ${160:ssl_key_and_certificate_ref}: ${161:"#"}}
-${162:   ${163:ssl_profile_ref}: ${164:"#"}}
-${165:   ${166:state}: ${167:"#"}}
-${168:   ${169:tenant}: ${170:"#"}}
-${171:   ${172:tenant_ref}: ${173:"#"}}
-${174:   ${175:tenant_uuid}: ${176:"#"}}
-${177:   ${178:url}: ${179:"#"}}
-${180:   ${181:use_service_port}: ${182:"#"}}
-${183:   ${184:username}: ${185:"#"}}
-${186:   ${187:uuid}: ${188:"#"}}
-${189:   ${190:vrf_ref}: ${191:"#"}}
-${192:${193:   become: ${194:true}} 
-${195:   become_method: ${196:su}} 
-${197:   become_user: ${198:nobody}} 
-${199:   become_flags: ${200:"-s /bin/sh"}}} 
-${201:   when: ${202:variable is defined}} 
-${203:   with_items: ${204:array}} 
+${12:   ${13:api_context}: ${14:"#"}}
+${15:   ${16:api_version}: ${17:"#"}}
+${18:   ${19:apic_epg_name}: ${20:"#"}}
+${21:   ${22:application_persistence_profile_ref}: ${23:"#"}}
+${24:   ${25:autoscale_launch_config_ref}: ${26:"#"}}
+${27:   ${28:autoscale_networks}: ${29:"#"}}
+${30:   ${31:autoscale_policy_ref}: ${32:"#"}}
+${33:   ${34:avi_api_patch_op}: ${35:"#"}}
+${36:   ${37:avi_api_update_method}: ${38:"#"}}
+${39:   ${40:avi_credentials}: ${41:"#"}}
+${42:   ${43:capacity_estimation}: ${44:"#"}}
+${45:   ${46:capacity_estimation_ttfb_thresh}: ${47:"#"}}
+${48:   ${49:cloud_config_cksum}: ${50:"#"}}
+${51:   ${52:cloud_ref}: ${53:"#"}}
+${54:   ${55:connection_ramp_duration}: ${56:"#"}}
+${57:   ${58:controller}: ${59:"#"}}
+${60:   ${61:created_by}: ${62:"#"}}
+${63:   ${64:default_server_port}: ${65:"#"}}
+${66:   ${67:description}: ${68:"#"}}
+${69:   ${70:domain_name}: ${71:"#"}}
+${72:   ${73:east_west}: ${74:"#"}}
+${75:   ${76:enabled}: ${77:"#"}}
+${78:   ${79:external_autoscale_groups}: ${80:"#"}}
+${81:   ${82:fail_action}: ${83:"#"}}
+${84:   ${85:fewest_tasks_feedback_delay}: ${86:"#"}}
+${87:   ${88:graceful_disable_timeout}: ${89:"#"}}
+${90:   ${91:gslb_sp_enabled}: ${92:"#"}}
+${93:   ${94:health_monitor_refs}: ${95:"#"}}
+${96:   ${97:host_check_enabled}: ${98:"#"}}
+${99:   ${100:inline_health_monitor}: ${101:"#"}}
+${102:   ${103:ipaddrgroup_ref}: ${104:"#"}}
+${105:   ${106:lb_algorithm}: ${107:"#"}}
+${108:   ${109:lb_algorithm_consistent_hash_hdr}: ${110:"#"}}
+${111:   ${112:lb_algorithm_core_nonaffinity}: ${113:"#"}}
+${114:   ${115:lb_algorithm_hash}: ${116:"#"}}
+${117:   ${118:lookup_server_by_name}: ${119:"#"}}
+${120:   ${121:max_concurrent_connections_per_server}: ${122:"#"}}
+${123:   ${124:max_conn_rate_per_server}: ${125:"#"}}
+${126:   ${127:name}: ${128:"#"}}
+${129:   ${130:networks}: ${131:"#"}}
+${132:   ${133:nsx_securitygroup}: ${134:"#"}}
+${135:   ${136:password}: ${137:"#"}}
+${138:   ${139:pki_profile_ref}: ${140:"#"}}
+${141:   ${142:placement_networks}: ${143:"#"}}
+${144:   ${145:prst_hdr_name}: ${146:"#"}}
+${147:   ${148:request_queue_depth}: ${149:"#"}}
+${150:   ${151:request_queue_enabled}: ${152:"#"}}
+${153:   ${154:rewrite_host_header_to_server_name}: ${155:"#"}}
+${156:   ${157:rewrite_host_header_to_sni}: ${158:"#"}}
+${159:   ${160:server_auto_scale}: ${161:"#"}}
+${162:   ${163:server_count}: ${164:"#"}}
+${165:   ${166:server_name}: ${167:"#"}}
+${168:   ${169:server_reselect}: ${170:"#"}}
+${171:   ${172:servers}: ${173:"#"}}
+${174:   ${175:sni_enabled}: ${176:"#"}}
+${177:   ${178:ssl_key_and_certificate_ref}: ${179:"#"}}
+${180:   ${181:ssl_profile_ref}: ${182:"#"}}
+${183:   ${184:state}: ${185:"#"}}
+${186:   ${187:tenant}: ${188:"#"}}
+${189:   ${190:tenant_ref}: ${191:"#"}}
+${192:   ${193:tenant_uuid}: ${194:"#"}}
+${195:   ${196:url}: ${197:"#"}}
+${198:   ${199:use_service_port}: ${200:"#"}}
+${201:   ${202:username}: ${203:"#"}}
+${204:   ${205:uuid}: ${206:"#"}}
+${207:   ${208:vrf_ref}: ${209:"#"}}
+${210:${211:   become: ${212:true}} 
+${213:   become_method: ${214:su}} 
+${215:   become_user: ${216:nobody}} 
+${217:   become_flags: ${218:"-s /bin/sh"}}} 
+${219:   when: ${220:variable is defined}} 
+${221:   with_items: ${222:array}} 
 ]]></content>
 	<tabTrigger>avi_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

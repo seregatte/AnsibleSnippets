@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# content: When used instead of `path', sets the content of the API requests directly. This may be convenient to 
-# hostname: (required) IP Address or hostname of Cisco IMC, resolvable by Ansible control host. 
+${1:# content: When used instead of `path', sets the content of 
+# hostname: (required) IP Address or hostname of Cisco IMC, 
 # password: The password to use for authentication. 
-# path: Name of the absolute path of the filename that includes the body of the http request being sent to the 
+# path: Name of the absolute path of the filename that 
 # protocol: Connection protocol to use. 
-# timeout: The socket level timeout in seconds. This is the time that every single connection (every fragment) can 
+# timeout: The socket level timeout in seconds. This is the 
 # username: Username used to login to the switch. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only set to `no' used on personally 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for imc_rest module.}
   imc_rest:
 ${3:   ${4:content}: ${5:"#"}}

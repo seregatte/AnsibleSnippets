@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# credentials_file: path to the JSON file associated with the service account email 
-# delete_on_termination: If yes, deletes the volume when instance is terminated 
-# detach_only: do not destroy the disk, merely detach it from an instance 
+${1:# credentials_file: path to the JSON file associated with the 
+# delete_on_termination: If `yes', deletes the volume when instance is 
+# detach_only: do not destroy the disk, merely detach it from 
 # disk_type: type of disk provisioned 
 # image: the source image to use for the disk 
-# instance_name: instance name if you wish to attach or detach the disk 
-# mode: GCE mount mode of disk, READ_ONLY (default) or READ_WRITE 
+# instance_name: instance name if you wish to attach or detach 
+# mode: GCE mount mode of disk, READ_ONLY (default) or 
 # name: (required) name of the disk 
-# pem_file: path to the pem file associated with the service account email This option is deprecated. Use 
+# pem_file: path to the pem file associated with the service 
 # project_id: your GCE project ID 
 # service_account_email: service account email 
-# size_gb: whole integer size of disk (in GB) to create, default is 10 GB 
+# size_gb: whole integer size of disk (in GB) to create, 
 # snapshot: the source snapshot to use for the disk 
 # state: desired state of the persistent disk 
 # zone: zone in which to create the disk 

@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# adapter_name: (required) Specifies the adapter name. 
+# hostname: (required) The hostname or IP address of the 
+# https: Enable and disabled https 
+# mode: Specifies the mode of the adapter. 
+# node_name: (required) Specifies the adapter home node. 
+# password: (required) Password for the specified user. 
+# state: Whether the specified adapter should exist. 
+# type: Specifies the fc4 type of the adapter. 
+# username: (required) This can be a Cluster-scoped or SVM- 
+}- name: ${2:Name for na_ontap_ucadapter module.}
+  na_ontap_ucadapter:
+${3:   ${4:adapter_name}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:mode}: ${14:"#"}}
+${15:   ${16:node_name}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:type}: ${26:"#"}}
+${27:   ${28:username}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>na_ontap_ucadapter</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

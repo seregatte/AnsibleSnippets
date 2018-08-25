@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Name of the package 
-# selection: (required) The selection state to set the package to. 
+# selection: (required) The selection state to set the 
 }- name: ${2:Name for dpkg_selections module.}
   dpkg_selections:
 ${3:   ${4:name}: ${5:"#"}}

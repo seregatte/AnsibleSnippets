@@ -1,41 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Avi API version of to use for Avi API and objects. 
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
 # config_settings: Tenantconfiguration settings for tenant. 
-# controller: IP address or hostname of the controller. The default value is the environment variable 
+# controller: IP address or hostname of the controller. The 
 # created_by: Creator of this tenant. 
 # description: User defined description for the object. 
-# local: Boolean flag to set local. Default value when not specified in API or module is interpreted by Avi 
+# local: Boolean flag to set local. Default value when 
 # name: (required) Name of the object. 
-# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# password: Password of Avi user in Avi controller. The 
 # state: The state that should be applied on the entity. 
-# tenant: Name of tenant used for all Avi API calls and context of object. 
-# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# tenant: Name of tenant used for all Avi API calls and 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
 # url: Avi controller URL of the object. 
-# username: Username used for accessing Avi controller. The default value is the environment variable 
+# username: Username used for accessing Avi controller. The 
 # uuid: Unique object identifier of the object. 
 }- name: ${2:Name for avi_tenant module.}
   avi_tenant:
-${3:   ${4:api_version}: ${5:"#"}}
-${6:   ${7:config_settings}: ${8:"#"}}
-${9:   ${10:controller}: ${11:"#"}}
-${12:   ${13:created_by}: ${14:"#"}}
-${15:   ${16:description}: ${17:"#"}}
-${18:   ${19:local}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:tenant}: ${32:"#"}}
-${33:   ${34:tenant_uuid}: ${35:"#"}}
-${36:   ${37:url}: ${38:"#"}}
-${39:   ${40:username}: ${41:"#"}}
-${42:   ${43:uuid}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_api_patch_op}: ${11:"#"}}
+${12:   ${13:avi_api_update_method}: ${14:"#"}}
+${15:   ${16:avi_credentials}: ${17:"#"}}
+${18:   ${19:config_settings}: ${20:"#"}}
+${21:   ${22:controller}: ${23:"#"}}
+${24:   ${25:created_by}: ${26:"#"}}
+${27:   ${28:description}: ${29:"#"}}
+${30:   ${31:local}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:tenant}: ${44:"#"}}
+${45:   ${46:tenant_uuid}: ${47:"#"}}
+${48:   ${49:url}: ${50:"#"}}
+${51:   ${52:username}: ${53:"#"}}
+${54:   ${55:uuid}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>avi_tenant</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

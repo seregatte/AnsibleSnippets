@@ -1,59 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:# auto_cost: Specifies the reference bandwidth used to assign OSPF cost. Valid values are an integer, in Mbps, or the 
-# default_metric: Specify the default Metric value. Valid values are an integer or the keyword 'default'. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# log_adjacency: Controls the level of log messages generated whenever a neighbor changes state. Valid values are 'log', 
+${1:# auto_cost: Specifies the reference bandwidth used to assign 
+# default_metric: Specify the default Metric value. Valid values 
+# log_adjacency: Controls the level of log messages generated 
 # ospf: (required) Name of the OSPF instance. 
-# passive_interface: Setting to true will suppress routing update on interface. Valid values are 'true' and 'false'. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# router_id: Router Identifier (ID) of the OSPF router VRF instance. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# timer_throttle_lsa_hold: Specify the hold interval for rate-limiting Link-State Advertisement (LSA) generation. Valid values are 
-# timer_throttle_lsa_max: Specify the max interval for rate-limiting Link-State Advertisement (LSA) generation. Valid values are 
-# timer_throttle_lsa_start: Specify the start interval for rate-limiting Link-State Advertisement (LSA) generation. Valid values are 
-# timer_throttle_spf_hold: Specify minimum hold time between Shortest Path First (SPF) calculations. Valid values are an integer, 
-# timer_throttle_spf_max: Specify the maximum wait time between Shortest Path First (SPF) calculations. Valid values are an 
-# timer_throttle_spf_start: Specify initial Shortest Path First (SPF) schedule delay. Valid values are an integer, in milliseconds, 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vrf: Name of the resource instance. Valid value is a string. The name 'default' is a valid VRF representing 
+# passive_interface: Setting to `yes' will suppress routing update on 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# router_id: Router Identifier (ID) of the OSPF router VRF 
+# state: State of ospf vrf configuration. 
+# timer_throttle_lsa_hold: Specify the hold interval for rate-limiting 
+# timer_throttle_lsa_max: Specify the max interval for rate-limiting Link- 
+# timer_throttle_lsa_start: Specify the start interval for rate-limiting 
+# timer_throttle_spf_hold: Specify minimum hold time between Shortest Path 
+# timer_throttle_spf_max: Specify the maximum wait time between Shortest 
+# timer_throttle_spf_start: Specify initial Shortest Path First (SPF) 
+# vrf: Name of the resource instance. Valid value is a 
 }- name: ${2:Name for nxos_ospf_vrf module.}
   nxos_ospf_vrf:
 ${3:   ${4:auto_cost}: ${5:"#"}}
 ${6:   ${7:default_metric}: ${8:"#"}}
-${9:   ${10:host}: ${11:"#"}}
-${12:   ${13:log_adjacency}: ${14:"#"}}
-${15:   ${16:ospf}: ${17:"#"}}
-${18:   ${19:passive_interface}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:port}: ${26:"#"}}
-${27:   ${28:provider}: ${29:"#"}}
-${30:   ${31:router_id}: ${32:"#"}}
-${33:   ${34:ssh_keyfile}: ${35:"#"}}
-${36:   ${37:timeout}: ${38:"#"}}
-${39:   ${40:timer_throttle_lsa_hold}: ${41:"#"}}
-${42:   ${43:timer_throttle_lsa_max}: ${44:"#"}}
-${45:   ${46:timer_throttle_lsa_start}: ${47:"#"}}
-${48:   ${49:timer_throttle_spf_hold}: ${50:"#"}}
-${51:   ${52:timer_throttle_spf_max}: ${53:"#"}}
-${54:   ${55:timer_throttle_spf_start}: ${56:"#"}}
-${57:   ${58:transport}: ${59:"#"}}
-${60:   ${61:use_ssl}: ${62:"#"}}
-${63:   ${64:username}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:   ${70:vrf}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${9:   ${10:log_adjacency}: ${11:"#"}}
+${12:   ${13:ospf}: ${14:"#"}}
+${15:   ${16:passive_interface}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:router_id}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:timer_throttle_lsa_hold}: ${29:"#"}}
+${30:   ${31:timer_throttle_lsa_max}: ${32:"#"}}
+${33:   ${34:timer_throttle_lsa_start}: ${35:"#"}}
+${36:   ${37:timer_throttle_spf_hold}: ${38:"#"}}
+${39:   ${40:timer_throttle_spf_max}: ${41:"#"}}
+${42:   ${43:timer_throttle_spf_start}: ${44:"#"}}
+${45:   ${46:vrf}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>nxos_ospf_vrf</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

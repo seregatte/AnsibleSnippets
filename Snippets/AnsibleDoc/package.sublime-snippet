@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) Package name, or package specifier with version, like `name-1.0'. Be aware that packages are 
-# state: (required) Whether to install (`present', `latest'), or remove (`absent') a package. 
-# use: The required package manager module to use (yum, apt, etc). The default 'auto' will use existing facts 
+${1:# name: (required) Package name, or package specifier 
+# state: (required) Whether to install (`present', or 
+# use: The required package manager module to use (yum, 
 }- name: ${2:Name for package module.}
   package:
 ${3:   ${4:name}: ${5:"#"}}

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# channel_id: Number of a channel. The value is an integer ranging from 0 to 9. The default value is 0. 
-# debug_enable: Whether a device is enabled to output debugging information. 
+${1:# channel_id: Number of a channel. The value is an integer 
+# debug_enable: Whether a device is enabled to output debugging 
 # debug_level: Debug level permitted to output. 
 # debug_time_stamp: Timestamp type of debugging information. 
-# module_name: Module name of the rule. The value is a string of 1 to 31 case-insensitive characters. The default value 
+# module_name: Module name of the rule. The value is a string 
 # state: Specify desired state of the resource. 
 }- name: ${2:Name for ce_info_center_debug module.}
   ce_info_center_debug:

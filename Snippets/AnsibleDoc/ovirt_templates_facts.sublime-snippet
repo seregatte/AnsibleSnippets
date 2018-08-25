@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# pattern: Search term which is accepted by oVirt/RHV search backend. For example to search template X from 
+${1:# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
+# nested_attributes: Specifies list of the attributes which should be 
+# pattern: Search term which is accepted by oVirt/RHV 
 }- name: ${2:Name for ovirt_templates_facts module.}
   ovirt_templates_facts:
 ${3:   ${4:auth}: ${5:"#"}}

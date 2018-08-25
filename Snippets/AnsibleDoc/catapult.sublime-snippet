@@ -2,10 +2,10 @@
 <content><![CDATA[
 ${1:# api_secret: (required) Api Secret from Api account page. 
 # api_token: (required) Api Token from Api account page. 
-# dest: (required) The phone number or numbers the message should be sent to (must be in E.164 format, like 
-# media: For MMS messages, a media url to the location of the media to be sent with the message. 
-# msg: (required) The contents of the text message (must be 2048 characters or less). 
-# src: (required) One of your catapult telephone numbers the message should come from (must be in E.164 format, 
+# dest: (required) The phone number or numbers the 
+# media: For MMS messages, a media url to the location of 
+# msg: (required) The contents of the text message 
+# src: (required) One of your catapult telephone 
 # user_id: (required) User Id from Api account page. 
 }- name: ${2:Name for catapult module.}
   catapult:

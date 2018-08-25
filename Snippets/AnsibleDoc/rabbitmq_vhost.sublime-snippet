@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) The name of the vhost to manage 
-# node: erlang node name of the rabbit we wish to configure 
+# node: erlang node name of the rabbit we wish to 
 # state: The state of vhost 
 # tracing: Enable/disable tracing for a vhost 
 }- name: ${2:Name for rabbitmq_vhost module.}

@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# active_connection_states: The list of TCP connection states which are counted as active connections. 
-# connect_timeout: Maximum number of seconds to wait for a connection to happen before closing and retrying. 
-# delay: Number of seconds to wait before starting to poll. 
-# exclude_hosts: List of hosts or IPs to ignore when looking for active TCP connections for `drained' state. 
+${1:# active_connection_states: The list of TCP connection states which are 
+# connect_timeout: Maximum number of seconds to wait for a 
+# delay: Number of seconds to wait before starting to 
+# exclude_hosts: List of hosts or IPs to ignore when looking for 
 # host: A resolvable hostname or IP address to wait for. 
-# msg: This overrides the normal error message from a failure to meet the required conditions. 
-# path: Path to a file on the filesystem that must exist before continuing. 
+# msg: This overrides the normal error message from a 
+# path: Path to a file on the filesystem that must exist 
 # port: Port number to poll. 
-# search_regex: Can be used to match a string in either a file or a socket connection. Defaults to a multiline regex. 
-# sleep: Number of seconds to sleep between checks, before 2.3 this was hardcoded to 1 second. 
-# state: Either `present', `started', or `stopped', `absent', or `drained'. When checking a port `started' will 
-# timeout: Maximum number of seconds to wait for, when used with another condition it will force an error. When 
+# search_regex: Can be used to match a string in either a file 
+# sleep: Number of seconds to sleep between checks, 
+# state: Either `present', `started', or `stopped', 
+# timeout: Maximum number of seconds to wait for, when used 
 }- name: ${2:Name for wait_for module.}
   wait_for:
 ${3:   ${4:active_connection_states}: ${5:"#"}}

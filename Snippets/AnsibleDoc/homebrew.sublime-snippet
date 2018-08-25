@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# install_options: options flags to install a package 
-# name: name of package to install/remove 
-# path: ':' separated list of paths to search for 'brew' executable. Since A package (`formula' in homebrew 
+# name: list of names of packages to install/remove 
+# path: A ':' separated list of paths to search for 
 # state: state of the package 
 # update_homebrew: update homebrew itself first 
 # upgrade_all: upgrade all homebrew packages 

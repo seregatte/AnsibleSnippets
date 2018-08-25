@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# as_number: (required) Specifies the number of the AS, in integer format. The value is an integer that ranges from 1 
+${1:# as_number: (required) Specifies the number of the AS, in 
 # bgp_evpn_enable: Enable or disable the BGP-EVPN address family. 
-# bgp_instance: Specifies the name of a BGP instance. The value of instance-name can be an integer 1 or a string of 1 to 
-# peer: Specifies the IPv4 address or the group name of a peer. 
+# bgp_instance: Specifies the name of a BGP instance. The value 
+# peer: Specifies the IPv4 address or the group name of 
 # peer_type: Specify the peer type. 
 # policy_vpn_target: Enable or disable the VPN-Target filtering. 
-# reflect_client: Configure the local device as the route reflector and the peer or peer group as the client of the route 
+# reflect_client: Configure the local device as the route 
 }- name: ${2:Name for ce_evpn_bgp_rr module.}
   ce_evpn_bgp_rr:
 ${3:   ${4:as_number}: ${5:"#"}}

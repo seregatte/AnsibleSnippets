@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# behavior: the optional behavior that can be attached to the session when it is created. This can be set to either 
-# checks: a list of checks that will be used to verify the session health. If all the checks fail, the session 
-# datacenter: name of the datacenter in which the session exists or should be created. 
-# delay: the optional lock delay that can be attached to the session when it is created. Locks for invalidated 
-# host: host of the consul agent defaults to localhost 
-# name: the name that should be associated with the session. This is opaque to Consul and not required. 
-# node: the name of the node that with which the session will be associated. by default this is the name of the 
-# port: the port on which the consul agent is running 
-# scheme: the protocol scheme on which the consul agent is running 
-# state: whether the session should be present i.e. created if it doesn't exist, or absent, removed if present. 
-# validate_certs: whether to verify the tls certificate of the consul agent 
+${1:# behavior: The optional behavior that can be attached to 
+# checks: A list of checks that will be used to verify the 
+# datacenter: The name of the datacenter in which the session 
+# delay: The optional lock delay that can be attached to 
+# host: The host of the consul agent defaults to 
+# name: The name that should be associated with the 
+# node: The name of the node that with which the session 
+# port: The port on which the consul agent is running. 
+# scheme: The protocol scheme on which the consul agent is 
+# state: Whether the session should be present i.e. 
+# validate_certs: Whether to verify the tls certificate of the 
 }- name: ${2:Name for consul_session module.}
   consul_session:
 ${3:   ${4:behavior}: ${5:"#"}}

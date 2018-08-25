@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# cacheable: This boolean indicates if the facts set will also be added to the fact cache, if fact caching is 
-# key_value: (required) The `set_fact' module takes key=value pairs as variables to set in the playbook scope. Or 
+${1:# cacheable: This boolean indicates if the facts set will 
+# key_value: (required) The `set_fact' module takes key=value 
 }- name: ${2:Name for set_fact module.}
   set_fact:
 ${3:   ${4:cacheable}: ${5:"#"}}

@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# default: if the target is a directory, setting this to yes will make it the default acl for entities created 
-# entity: actual user or group that the ACL applies to when matching entity types user or group are selected. 
-# entry: DEPRECATED. The acl to set or remove.  This must always be quoted in the form of 
-# etype: the entity type of the ACL to apply, see setfacl documentation for more info. 
-# follow: whether to follow symlinks on the path if a symlink is encountered. 
+${1:# default: if the target is a directory, setting this to 
+# entity: actual user or group that the ACL applies to 
+# entry: DEPRECATED. The acl to set or remove.  This must 
+# etype: the entity type of the ACL to apply, see setfacl 
+# follow: whether to follow symlinks on the path if a 
 # path: (required) The full path of the file or object. 
-# permissions: Permissions to apply/remove can be any combination of r, w and  x (read, write and execute respectively) 
-# recursive: Recursively sets the specified ACL (added in Ansible 2.0). Incompatible with `state=query'. 
-# state: defines whether the ACL should be present or not.  The `query' state gets the current acl without 
+# permissions: Permissions to apply/remove can be any 
+# recursive: Recursively sets the specified ACL (added in 
+# state: defines whether the ACL should be present or 
 }- name: ${2:Name for acl module.}
   acl:
 ${3:   ${4:default}: ${5:"#"}}

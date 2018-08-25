@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# arbiter: Arbiter count for volume 
-# bricks: Brick paths on servers. Multiple brick paths can be separated by commas. 
-# cluster: List of hosts to use for probing and brick setup 
-# directory: Directory for limit-usage 
-# disperses: Disperse count for volume 
-# force: If brick is being created in the root partition, module will fail. Set force to true to override this 
-# host: Override local hostname (for peer probing purposes) 
-# name: (required) The volume name 
-# options: A dictionary/hash with options/settings for the volume 
-# quota: Quota value for limit-usage (be sure to use 10.0MB instead of 10MB, see quota list) 
-# rebalance: Controls whether the cluster is rebalanced after changes 
-# redundancies: Redundancy count for volume 
-# replicas: Replica count for volume 
-# start_on_create: Controls whether the volume is started after creation or not 
-# state: (required) Use present/absent ensure if a volume exists or not. Use started/stopped to control its 
-# stripes: Stripe count for volume 
-# transport: Transport type for volume 
+${1:# arbiters: Arbiter count for volume. 
+# bricks: Brick paths on servers. Multiple brick paths can 
+# cluster: List of hosts to use for probing and brick 
+# directory: Directory for limit-usage. 
+# disperses: Disperse count for volume. 
+# force: If brick is being created in the root partition, 
+# host: Override local hostname (for peer probing 
+# name: (required) The volume name. 
+# options: A dictionary/hash with options/settings for the 
+# quota: Quota value for limit-usage (be sure to use 
+# rebalance: Controls whether the cluster is rebalanced after 
+# redundancies: Redundancy count for volume. 
+# replicas: Replica count for volume. 
+# start_on_create: Controls whether the volume is started after 
+# state: (required) Use present/absent ensure if a volume 
+# stripes: Stripe count for volume. 
+# transport: Transport type for volume. 
 }- name: ${2:Name for gluster_volume module.}
   gluster_volume:
-${3:   ${4:arbiter}: ${5:"#"}}
+${3:   ${4:arbiters}: ${5:"#"}}
 ${6:   ${7:bricks}: ${8:"#"}}
 ${9:   ${10:cluster}: ${11:"#"}}
 ${12:   ${13:directory}: ${14:"#"}}

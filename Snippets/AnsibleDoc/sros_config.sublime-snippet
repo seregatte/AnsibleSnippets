@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# after: The ordered set of commands to append to the end of the command stack if a change needs to be made. 
-# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
-# before: The ordered set of commands to push on to the command stack if a change needs to be made.  This allows 
-# config: The `config' argument allows the playbook designer to supply the base configuration to be used to 
-# defaults: This argument specifies whether or not to collect all defaults when getting the remote device running 
-# force: The force argument instructs the module to not consider the current devices running-config.  When set to 
-# lines: The ordered set of commands that should be configured in the section.  The commands must be the exact 
-# match: Instructs the module on the way to perform the matching of the set of commands against the current 
-# parents: The ordered set of parents that uniquely identify the section the commands should be checked against. 
+${1:# after: The ordered set of commands to append to the end 
+# backup: This argument will cause the module to create a 
+# before: The ordered set of commands to push on to the 
+# config: The `config' argument allows the playbook 
+# defaults: This argument specifies whether or not to 
+# force: The force argument instructs the module to not 
+# lines: The ordered set of commands that should be 
+# match: Instructs the module on the way to perform the 
+# parents: The ordered set of parents that uniquely 
 # provider: A dict object containing connection details. 
-# replace: Instructs the module on the way to perform the configuration on the device.  If the replace argument is 
-# save: The `save' argument instructs the module to save the running- config to the startup-config at the 
-# src: Specifies the source path to the file that contains the configuration or configuration template to load. 
+# replace: Instructs the module on the way to perform the 
+# save: The `save' argument instructs the module to save 
+# src: Specifies the source path to the file that 
 }- name: ${2:Name for sros_config module.}
   sros_config:
 ${3:   ${4:after}: ${5:"#"}}

@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# credential: Credential to use for job, only used if prompt for credential is set. 
-# extra_vars: Extra_vars to use for the job_template. Prepend '@' if a file. 
-# inventory: Inventory to use for the job, only used if prompt for inventory is set. 
+${1:# credential: Credential to use for job, only used if prompt 
+# extra_vars: Extra_vars to use for the job_template. Prepend 
+# inventory: Inventory to use for the job, only used if 
 # job_explanation: Job explanation field. 
-# job_template: (required) Name of the job_template to use. 
-# job_type: Job_type to use for the job, only used if prompt for job_type is set. 
-# limit: Limit to use for the job_template. 
+# job_template: (required) Name of the job template to use. 
+# job_type: Job_type to use for the job, only used if prompt 
+# limit: Limit to use for the `job_template'. 
 # tags: Specific tags to use for from playbook. 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 # use_job_endpoint: Disable launching jobs from job template. 
 }- name: ${2:Name for tower_job_launch module.}
   tower_job_launch:

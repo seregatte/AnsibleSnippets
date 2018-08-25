@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# 512emulation: Should the volume provide 512-byte sector emulation? Required when `state=present' 
-# access: Access allowed for the volume. readOnly: Only read operations are allowed. readWrite: Reads and writes 
-# account_id: (required) Account ID for the owner of this volume. 
-# attributes: A YAML dictionary of attributes that you would like to apply on this volume. 
-# hostname: (required) The hostname or IP address of the SolidFire cluster. 
+${1:# 512emulation: Should the volume provide 512-byte sector 
+# access: Access allowed for the volume. readOnly: Only 
+# account_id: (required) Account ID for the owner of this 
+# attributes: A YAML dictionary of attributes that you would 
+# hostname: (required) The hostname or IP address of the 
 # name: (required) The name of the volume to manage. 
 # password: (required) Password for the specified user. 
-# qos: Initial quality of service settings for this volume. Configure as dict in playbooks. 
-# size: The size of the volume in (size_unit). Required when `state = present'. 
+# qos: Initial quality of service settings for this 
+# size: The size of the volume in (size_unit). Required 
 # size_unit: The unit used to interpret the size parameter. 
-# state: (required) Whether the specified volume should exist or not. 
-# username: (required) Please ensure that the user has the adequate permissions. For more information, please read 
-# volume_id: The ID of the volume to manage or update. In order to create multiple volumes with the same name, but 
+# state: (required) Whether the specified volume should 
+# username: (required) Please ensure that the user has the 
+# volume_id: The ID of the volume to manage or update. In 
 }- name: ${2:Name for sf_volume_manager module.}
   sf_volume_manager:
 ${3:   ${4:512emulation}: ${5:"#"}}

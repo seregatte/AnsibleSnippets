@@ -1,33 +1,35 @@
 <snippet>
 <content><![CDATA[
-${1:# control: (required) The control of the PAM rule being modified.  This may be a complicated control with brackets. 
-# module_arguments: When state is 'updated', the module_arguments will replace existing module_arguments.  When state is 
-# module_path: (required) The module path of the PAM rule being modified.  The type, control and module_path all must 
-# name: (required) The name generally refers to the PAM service file to change, for example system-auth. 
+${1:# backup: Create a backup file including the timestamp 
+# control: (required) The control of the PAM rule being 
+# module_arguments: When state is 'updated', the module_arguments 
+# module_path: (required) The module path of the PAM rule being 
+# name: (required) The name generally refers to the PAM 
 # new_control: The new control to assign to the new rule. 
-# new_module_path: The new module path to be assigned to the new rule. 
+# new_module_path: The new module path to be assigned to the new 
 # new_type: The new type to assign to the new rule. 
 # path: This is the path to the PAM service files 
-# state: The default of 'updated' will modify an existing rule if type, control and module_path all match an 
-# type: (required) The type of the PAM rule being modified.  The type, control and module_path all must match a 
+# state: The default of 'updated' will modify an existing 
+# type: (required) The type of the PAM rule being 
 }- name: ${2:Name for pamd module.}
   pamd:
-${3:   ${4:control}: ${5:"#"}}
-${6:   ${7:module_arguments}: ${8:"#"}}
-${9:   ${10:module_path}: ${11:"#"}}
-${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:new_control}: ${17:"#"}}
-${18:   ${19:new_module_path}: ${20:"#"}}
-${21:   ${22:new_type}: ${23:"#"}}
-${24:   ${25:path}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:type}: ${32:"#"}}
-${33:${34:   become: ${35:true}} 
-${36:   become_method: ${37:su}} 
-${38:   become_user: ${39:nobody}} 
-${40:   become_flags: ${41:"-s /bin/sh"}}} 
-${42:   when: ${43:variable is defined}} 
-${44:   with_items: ${45:array}} 
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:control}: ${8:"#"}}
+${9:   ${10:module_arguments}: ${11:"#"}}
+${12:   ${13:module_path}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:new_control}: ${20:"#"}}
+${21:   ${22:new_module_path}: ${23:"#"}}
+${24:   ${25:new_type}: ${26:"#"}}
+${27:   ${28:path}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:type}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
 ]]></content>
 	<tabTrigger>pamd</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

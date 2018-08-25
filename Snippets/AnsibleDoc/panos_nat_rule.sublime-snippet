@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: API key that can be used instead of `username'/`password' credentials. 
+${1:# api_key: API key that can be used instead of 
 # commit: Commit configuration if changed. 
 # destination_ip: list of destination addresses 
 # destination_zone: (required) destination zone 
 # dnat_address: dnat translated address 
 # dnat_port: dnat translated port 
-# ip_address: (required) IP address (or hostname) of PAN-OS device being configured. 
-# operation: The action to be taken.  Supported values are `add'/`update'/`find'/`delete'. 
-# password: (required) Password credentials to use for auth unless `api_key' is set. 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# operation: The action to be taken.  Supported values are 
+# password: (required) Password credentials to use for auth 
 # rule_name: (required) name of the SNAT rule 
 # service: service 
-# snat_address_type: type of source translation. Supported values are `translated-address'/`translated-address'. 
+# snat_address_type: type of source translation. Supported values are 
 # snat_bidirectional: bidirectional flag 
-# snat_dynamic_address: Source NAT translated address. Used with Dynamic-IP and Dynamic-IP-and-Port. 
+# snat_dynamic_address: Source NAT translated address. Used with 
 # snat_interface: snat interface 
 # snat_interface_address: snat interface address 
-# snat_static_address: Source NAT translated address. Used with Static-IP translation. 
+# snat_static_address: Source NAT translated address. Used with Static- 
 # snat_type: type of source translation 
 # source_ip: list of source addresses 
 # source_zone: (required) list of source zones 
-# username: Username credentials to use for auth unless `api_key' is set. 
+# username: Username credentials to use for auth unless 
 }- name: ${2:Name for panos_nat_rule module.}
   panos_nat_rule:
 ${3:   ${4:api_key}: ${5:"#"}}

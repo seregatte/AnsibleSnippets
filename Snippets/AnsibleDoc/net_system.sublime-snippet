@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# domain_name: Configure the IP domain name on the remote device to the provided value. Value should be in the dotted 
-# domain_search: Provides the list of domain suffixes to append to the hostname for the purpose of doing name resolution. 
-# hostname: Configure the device hostname parameter. This option takes an ASCII string value. 
-# lookup_source: Provides one or more source interfaces to use for performing DNS lookups.  The interface provided in 
-# name_servers: List of DNS name servers by IP address to use to perform name resolution lookups.  This argument accepts 
-# state: State of the configuration values in the device's current active configuration.  When set to `present', 
+${1:# domain_name: Configure the IP domain name on the remote 
+# domain_search: Provides the list of domain suffixes to append 
+# hostname: Configure the device hostname parameter. This 
+# lookup_source: Provides one or more source interfaces to use 
+# name_servers: List of DNS name servers by IP address to use to 
+# state: State of the configuration values in the 
 }- name: ${2:Name for net_system module.}
   net_system:
 ${3:   ${4:domain_name}: ${5:"#"}}

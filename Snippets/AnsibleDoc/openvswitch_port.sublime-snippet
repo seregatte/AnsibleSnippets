@@ -5,7 +5,7 @@ ${1:# bridge: (required) Name of bridge to manage
 # port: (required) Name of port to manage on the bridge 
 # set: Set a single property on a port. 
 # state: Whether the port should exist 
-# tag: VLAN tag for this port. Must be a value between 0 and 4095. 
+# tag: VLAN tag for this port. Must be a value between 
 # timeout: How long to wait for ovs-vswitchd to respond 
 }- name: ${2:Name for openvswitch_port module.}
   openvswitch_port:

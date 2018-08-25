@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# fcp: Dictionary with values for fibre channel storage type: `address' - Address of the fibre channel storage 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+${1:# auth: (required) Dictionary with values needed to 
+# fcp: Dictionary with values for fibre channel storage 
+# fetch_nested: If `True' the module will fetch additional data 
 # host: (required) Host to get device list from. 
-# iscsi: Dictionary with values for iSCSI storage type: `address' - Address of the iSCSI storage server. `target' 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# iscsi: Dictionary with values for iSCSI storage type: 
+# nested_attributes: Specifies list of the attributes which should be 
 }- name: ${2:Name for ovirt_host_storage_facts module.}
   ovirt_host_storage_facts:
 ${3:   ${4:auth}: ${5:"#"}}

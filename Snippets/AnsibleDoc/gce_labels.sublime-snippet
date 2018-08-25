@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# labels: A list of labels (key/value pairs) to add or remove for the resource. 
-# resource_location: The location of resource (global, us-central1-f, etc.) 
+${1:# labels: A list of labels (key/value pairs) to add or 
+# resource_location: The location of resource (global, us-central1-f, 
 # resource_name: The name of resource. 
-# resource_type: The type of resource (instances, disks, snapshots, images) 
-# resource_url: The 'self_link' for the resource (instance, disk, snapshot, etc) 
+# resource_type: The type of resource (instances, disks, 
+# resource_url: The 'self_link' for the resource (instance, 
 }- name: ${2:Name for gce_labels module.}
   gce_labels:
 ${3:   ${4:labels}: ${5:"#"}}

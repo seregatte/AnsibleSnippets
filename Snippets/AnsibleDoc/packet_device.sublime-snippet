@@ -1,23 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# always_pxe: Persist PXE as the first boot option. Normally, the PXE process happens only on the first boot. Set this 
-# auth_token: Packet api token. You can also supply it in env var `PACKET_API_TOKEN'. 
-# count: The number of devices to create. Count number can be included in hostname via the %d string formatter. 
+${1:# always_pxe: Persist PXE as the first boot option. Normally, 
+# auth_token: Packet api token. You can also supply it in env 
+# count: The number of devices to create. Count number 
 # count_offset: From which number to start the count. 
 # device_ids: List of device IDs on which to operate. 
-# facility: Facility slug for device creation. See Packet API for current list - 
-# features: Dict with "features" for device creation. See Packet API docs for details. 
-# hostnames: A hostname of a device, or a list of hostnames. If given string or one-item list, you can use the `"%d"' 
-# ipxe_script_url: URL of custom iPXE script for provisioning. More about custome iPXE for Packet devices at 
+# facility: Facility slug for device creation. See Packet 
+# features: Dict with "features" for device creation. See 
+# hostnames: A hostname of a device, or a list of hostnames. 
+# ipxe_script_url: URL of custom iPXE script for provisioning. More 
 # locked: Whether to lock a created device. 
-# operating_system: OS slug for device creation. See Packet API for current list - 
-# plan: Plan slug for device creation. See Packet API for current list - 
+# operating_system: OS slug for device creation. See Packet API for 
+# plan: Plan slug for device creation. See Packet API 
 # project_id: (required) ID of project of the device. 
-# state: Desired state of the device. If set to `present' (the default), the module call will return immediately 
+# state: Desired state of the device. If set to `present' 
 # user_data: Userdata blob made available to the machine 
-# wait: Whether to wait for the instance to be assigned IP address before returning. This option has been 
-# wait_for_public_: Whether to wait for the instance to be assigned a public IPv4/IPv6 address. If set to 4, it will wait 
-# wait_timeout: How long (seconds) to wait either for automatic IP address assignment, or for the device to reach the 
+# wait_for_public_: Whether to wait for the instance to be assigned 
+# wait_timeout: How long (seconds) to wait either for automatic 
 }- name: ${2:Name for packet_device module.}
   packet_device:
 ${3:   ${4:always_pxe}: ${5:"#"}}
@@ -35,15 +34,14 @@ ${36:   ${37:plan}: ${38:"#"}}
 ${39:   ${40:project_id}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}
 ${45:   ${46:user_data}: ${47:"#"}}
-${48:   ${49:wait}: ${50:"#"}}
-${51:   ${52:wait_for_public_}: ${53:"#"}}
-${54:   ${55:wait_timeout}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${48:   ${49:wait_for_public_}: ${50:"#"}}
+${51:   ${52:wait_timeout}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>packet_device</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

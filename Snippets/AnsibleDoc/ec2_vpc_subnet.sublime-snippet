@@ -1,41 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# az: The availability zone for the subnet. Only required when state=present. 
-# cidr: The CIDR block for the subnet. E.g. 192.0.2.0/24. Only required when state=present. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# map_public: Specify true to indicate that instances launched into the subnet should be assigned public IP address by 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# assign_instances_ipv6: Specify `yes' to indicate that instances 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# az: The availability zone for the subnet. 
+# cidr: The CIDR block for the subnet. E.g. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# ipv6_cidr: The IPv6 CIDR block for the subnet. The VPC must 
+# map_public: Specify `yes' to indicate that instances 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_tags: Whether or not to remove tags that do not appear 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or remove the subnet 
-# tags: A dict of tags to apply to the subnet. Any tags currently applied to the subnet and not present here 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_id: VPC ID of the VPC in which to create the subnet. 
+# tags: A dict of tags to apply to the subnet. Any tags 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_id: (required) VPC ID of the VPC in which to create 
+# wait: When specified,`state=present' module will wait 
+# wait_timeout: Number of seconds to wait for subnet to become 
 }- name: ${2:Name for ec2_vpc_subnet module.}
   ec2_vpc_subnet:
-${3:   ${4:aws_access_key}: ${5:"#"}}
-${6:   ${7:aws_secret_key}: ${8:"#"}}
-${9:   ${10:az}: ${11:"#"}}
-${12:   ${13:cidr}: ${14:"#"}}
-${15:   ${16:ec2_url}: ${17:"#"}}
-${18:   ${19:map_public}: ${20:"#"}}
-${21:   ${22:profile}: ${23:"#"}}
-${24:   ${25:region}: ${26:"#"}}
-${27:   ${28:http}: ${29:"#"}}
-${30:   ${31:security_token}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:tags}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:vpc_id}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${3:   ${4:assign_instances_ipv6}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:az}: ${14:"#"}}
+${15:   ${16:cidr}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:ipv6_cidr}: ${23:"#"}}
+${24:   ${25:map_public}: ${26:"#"}}
+${27:   ${28:profile}: ${29:"#"}}
+${30:   ${31:purge_tags}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:}: ${38:"#"}}
+${39:   ${40:security_token}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:tags}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:vpc_id}: ${53:"#"}}
+${54:   ${55:wait}: ${56:"#"}}
+${57:   ${58:wait_timeout}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_subnet</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

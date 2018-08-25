@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# commands: (required) The commands or ordered set of 
+# interval: The number of seconds to wait between `retries' 
+# match: Used in conjunction with `wait_for' to create 
+# retries: Number of times a command should be tried before 
+# wait_for: Causes the task to wait for a specific condition 
+}- name: ${2:Name for edgeos_command module.}
+  edgeos_command:
+${3:   ${4:commands}: ${5:"#"}}
+${6:   ${7:interval}: ${8:"#"}}
+${9:   ${10:match}: ${11:"#"}}
+${12:   ${13:retries}: ${14:"#"}}
+${15:   ${16:wait_for}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>edgeos_command</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

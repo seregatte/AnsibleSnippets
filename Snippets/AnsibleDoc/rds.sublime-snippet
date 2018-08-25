@@ -1,45 +1,45 @@
 <snippet>
 <content><![CDATA[
-${1:# apply_immediately: Used only when command=modify.  If enabled, the modifications will be applied as soon as possible rather 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY environment variable is used. 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used. 
-# backup_retention: Number of days backups are retained.  Set to 0 to disable backups.  Default is 1 day.  Valid range: 
-# backup_window: Backup window in format of hh24:mi-hh24:mi.  If not specified then a random backup window is assigned. 
-# character_set_name: Associate the DB instance with a specified character set. Used with command=create. 
-# command: (required) Specifies the action to take. The 'reboot' option is available starting at version 2.0 
-# db_engine: The type of database.  Used only when command=create. mariadb was added in version 2.2 
-# db_name: Name of a database to create within the instance.  If not specified then no database is created. Used 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# engine_version: Version number of the database engine to use. Used only when command=create. If not specified then the 
-# force_failover: Used only when command=reboot.  If enabled, the reboot is done using a MultiAZ failover. 
-# instance_name: Database instance identifier. Required except when using command=facts or command=delete on just a 
-# instance_type: The instance type of the database.  Must be specified when command=create. Optional when 
-# iops: Specifies the number of IOPS for the instance.  Used only when command=create or command=modify. Must be 
-# license_model: The license model for this DB instance. Used only when command=create or command=restore. 
-# maint_window: Maintenance window in format of ddd:hh24:mi-ddd:hh24:mi.  (Example: Mon:22:00-Mon:23:15) If not 
-# multi_zone: Specifies if this is a Multi-availability-zone deployment. Can not be used in conjunction with zone 
-# new_instance_name: Name to rename an instance to. Used only when command=modify. 
-# option_group: The name of the option group to use.  If not specified then the default option group is used. Used only 
-# parameter_group: Name of the DB parameter group to associate with this instance.  If omitted then the RDS default 
-# password: Password for the master database username. Used only when command=create or command=modify. 
-# port: Port number that the DB instance uses for connections. Used only when command=create or 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# publicly_accessible: explicitly set whether the resource should be publicly accessible or not. Used with command=create, 
-# region: (required) The AWS region to use. If not specified then the value of the EC2_REGION environment 
-# security_groups: Comma separated list of one or more security groups.  Used only when command=create or command=modify. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# size: Size in gigabytes of the initial storage for the DB instance. Used only when command=create or 
-# snapshot: Name of snapshot to take. When command=delete, if no snapshot name is provided then no snapshot is 
-# source_instance: Name of the database to replicate. Used only when command=replicate. 
-# subnet: VPC subnet group.  If specified then a VPC instance is created. Used only when command=create. 
-# tags: tags dict to apply to a resource. Used with command=create, command=replicate, command=restore. Requires 
-# upgrade: Indicates that minor version upgrades should be applied automatically. Used only when command=create or 
-# username: Master database username. Used only when command=create. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_security_groups: Comma separated list of one or more vpc security group ids. Also requires `subnet` to be specified. Used 
-# wait: When command=create, replicate, modify or restore then wait for the database to enter the 'available' 
+${1:# apply_immediately: Used only when command=modify.  If enabled, the 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# backup_retention: Number of days backups are retained.  Set to 0 
+# backup_window: Backup window in format of hh24:mi-hh24:mi.  If 
+# character_set_name: Associate the DB instance with a specified 
+# command: (required) Specifies the action to take. The 
+# db_engine: The type of database.  Used only when 
+# db_name: Name of a database to create within the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# engine_version: Version number of the database engine to use. 
+# force_failover: Used only when command=reboot.  If enabled, the 
+# instance_name: Database instance identifier. Required except 
+# instance_type: The instance type of the database.  Must be 
+# iops: Specifies the number of IOPS for the instance. 
+# license_model: The license model for this DB instance. Used 
+# maint_window: Maintenance window in format of ddd:hh24:mi- 
+# multi_zone: Specifies if this is a Multi-availability-zone 
+# new_instance_name: Name to rename an instance to. Used only when 
+# option_group: The name of the option group to use.  If not 
+# parameter_group: Name of the DB parameter group to associate with 
+# password: Password for the master database username. Used 
+# port: Port number that the DB instance uses for 
+# profile: Uses a boto profile. Only works with boto >= 
+# publicly_accessible: explicitly set whether the resource should be 
+# region: (required) The AWS region to use. If not 
+# security_groups: Comma separated list of one or more security 
+# security_token: AWS STS security token. If not set then the 
+# size: Size in gigabytes of the initial storage for the 
+# snapshot: Name of snapshot to take. When command=delete, 
+# source_instance: Name of the database to replicate. Used only 
+# subnet: VPC subnet group.  If specified then a VPC 
+# tags: tags dict to apply to a resource. Used with 
+# upgrade: Indicates that minor version upgrades should be 
+# username: Master database username. Used only when 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_security_groups: Comma separated list of one or more vpc security 
+# wait: When command=create, replicate, modify or 
 # wait_timeout: how long before wait gives up, in seconds 
-# zone: availability zone in which to launch the instance. Used only when command=create, command=replicate or 
+# zone: availability zone in which to launch the 
 }- name: ${2:Name for rds module.}
   rds:
 ${3:   ${4:apply_immediately}: ${5:"#"}}

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# collector: The fully qualified domain name of a collector in your LogicMonitor account. This is optional for 
-# company: (required) The LogicMonitor account company name. If you would log in to your account at 
-# displayname: The display name of a host in your LogicMonitor account or the desired display name of a device to add 
-# fullpath: The fullpath of the hostgroup object you would like to manage. Recommend running on a single ansible 
-# hostname: The hostname of a host in your LogicMonitor account, or the desired hostname of a device to add into 
-# password: (required) The password for the chosen LogicMonitor User. If an md5 hash is used, the digest flag must 
-# target: (required) The LogicMonitor object you wish to manage. 
-# user: (required) A LogicMonitor user name. The module will authenticate and perform actions on behalf of this 
+${1:# collector: The fully qualified domain name of a collector 
+# company: (required) The LogicMonitor account company 
+# displayname: The display name of a host in your LogicMonitor 
+# fullpath: The fullpath of the hostgroup object you would 
+# hostname: The hostname of a host in your LogicMonitor 
+# password: (required) The password for the chosen 
+# target: (required) The LogicMonitor object you wish to 
+# user: (required) A LogicMonitor user name. The module 
 }- name: ${2:Name for logicmonitor_facts module.}
   logicmonitor_facts:
 ${3:   ${4:collector}: ${5:"#"}}

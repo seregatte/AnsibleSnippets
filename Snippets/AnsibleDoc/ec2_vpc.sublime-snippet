@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# cidr_block: The cidr block representing the VPC, e.g. `10.0.0.0/16', required when `state=present'. 
-# dns_hostnames: Toggles the "Enable DNS hostname support for instances" flag. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cidr_block: The cidr block representing the VPC, e.g. 
+# dns_hostnames: Toggles the "Enable DNS hostname support for 
 # dns_support: Toggles the "Enable DNS resolution" flag. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# instance_tenancy: The supported tenancy options for instances launched into the VPC. 
-# internet_gateway: Toggle whether there should be an Internet gateway attached to the VPC. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# resource_tags: (required) A dictionary array of resource tags of the form `{ tag1: value1, tag2: value2 }'. - Tags in 
-# route_tables: A dictionary array of route tables to add of the form: `{ subnets: [172.22.2.0/24, 172.22.3.0/24,], 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# instance_tenancy: The supported tenancy options for instances 
+# internet_gateway: Toggle whether there should be an Internet 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# resource_tags: (required) A dictionary array of resource tags 
+# route_tables: A dictionary array of route tables to add of the 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) Create or terminate the VPC. 
-# subnets: A dictionary array of subnets to add of the form `{ cidr: ..., az: ... , resource_tags: ... }'. Where 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# subnets: A dictionary array of subnets to add of the form 
+# validate_certs: When set to "no", SSL certificates will not be 
 # vpc_id: A VPC id to terminate when `state=absent'. 
-# wait: Wait for the VPC to be in state 'available' before returning. 
+# wait: Wait for the VPC to be in state 'available' 
 # wait_timeout: How long before wait gives up, in seconds. 
 }- name: ${2:Name for ec2_vpc module.}
   ec2_vpc:
@@ -32,7 +32,7 @@ ${21:   ${22:instance_tenancy}: ${23:"#"}}
 ${24:   ${25:internet_gateway}: ${26:"#"}}
 ${27:   ${28:profile}: ${29:"#"}}
 ${30:   ${31:region}: ${32:"#"}}
-${33:   ${34:http}: ${35:"#"}}
+${33:   ${34:}: ${35:"#"}}
 ${36:   ${37:resource_tags}: ${38:"#"}}
 ${39:   ${40:route_tables}: ${41:"#"}}
 ${42:   ${43:security_token}: ${44:"#"}}

@@ -3,7 +3,7 @@
 ${1:# access_vlan: Configure given VLAN in access port. 
 # aggregate: List of Layer-2 interface definitions. 
 # mode: Mode in which interface needs to be configured. 
-# name: Name of the interface excluding any logical unit number. 
+# name: Name of the interface excluding any logical unit 
 # native_vlan: Native VLAN to be configured in trunk port. 
 # state: State of the Layer-2 Interface configuration. 
 # trunk_allowed_vlans: List of allowed VLAN's in a given trunk port. 

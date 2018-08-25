@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# account: Name of PubNub account for from which `application' will be used to manage blocks. User's account will 
-# application: (required) Name of target PubNub application for which blocks configuration on specific `keyset' will be 
-# cache: In case if single play use blocks management module few times it is preferred to enabled 'caching' by 
-# changes: List of fields which should be changed by block itself (doesn't affect any event handlers). Possible 
-# description: Short block description which will be later visible on admin.pubnub.com. Used only if block doesn't 
-# email: Email from account for which new session should be started. Not required if `cache' contains result of 
-# event_handlers: List of event handlers which should be updated for specified block `name'. Each entry for new event 
-# keyset: (required) Name of application's keys set which is bound to managed blocks. 
-# name: (required) Name of managed block which will be later visible on admin.pubnub.com. 
-# password: Password which match to account to which specified `email' belong. Not required if `cache' contains 
-# state: Intended block state after event handlers creation / update process will be completed. 
-# validate_certs: This key allow to try skip certificates check when performing REST API calls. Sometimes host may have 
+${1:# account: Name of PubNub account for from which 
+# application: (required) Name of target PubNub application for 
+# cache: In case if single play use blocks management 
+# changes: List of fields which should be changed by block 
+# description: Short block description which will be later 
+# email: Email from account for which new session should 
+# event_handlers: List of event handlers which should be updated 
+# keyset: (required) Name of application's keys set which 
+# name: (required) Name of managed block which will be 
+# password: Password which match to account to which 
+# state: Intended block state after event handlers 
+# validate_certs: This key allow to try skip certificates check 
 }- name: ${2:Name for pubnub_blocks module.}
   pubnub_blocks:
 ${3:   ${4:account}: ${5:"#"}}

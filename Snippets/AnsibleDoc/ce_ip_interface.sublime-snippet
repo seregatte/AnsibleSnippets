@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# addr: IPv4 or IPv6 Address. 
-# interface: (required) Full name of interface, i.e. 40GE1/0/22, vlanif10. 
-# ipv4_type: Specifies an address type. The value is an enumerated type. main, primary IP address. sub, secondary IP 
-# mask: Subnet mask for IPv4 or IPv6 Address in decimal format. 
+# interface: (required) Full name of interface, i.e. 
+# ipv4_type: Specifies an address type. The value is an 
+# mask: Subnet mask for IPv4 or IPv6 Address in decimal 
 # state: Specify desired state of the resource. 
 # version: IP address version. 
 }- name: ${2:Name for ce_ip_interface module.}

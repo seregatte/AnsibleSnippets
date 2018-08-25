@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# aftype: (required) Destination ip address family type of static route. 
-# description: Name of the route. Used with the name parameter on the CLI. 
+${1:# aftype: (required) Destination ip address family type of 
+# description: Name of the route. Used with the name parameter 
 # destvrf: VPN instance of next hop ip address. 
 # mask: (required) Destination ip mask of static route. 
 # next_hop: Next hop address of static route. 
 # nhp_interface: Next hop interface full name of static route. 
-# pref: Preference or administrative difference of route (range 1-255). 
-# prefix: (required) Destination ip address of static route. 
+# pref: Preference or administrative difference of route 
+# prefix: (required) Destination ip address of static 
 # state: Specify desired state of the resource. 
 # tag: Route tag value (numeric). 
 # vrf: VPN instance of destination ip address. 

@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# clear_templates: List of templates cleared from the template. see 
+# http_login_password: Basic Auth password 
+# http_login_user: Basic Auth login 
+# link_templates: List of templates linked to the template. 
+# login_password: (required) Zabbix user password. 
+# login_user: (required) Zabbix user name. 
+# macros: List of templates macro 
+# server_url: (required) URL of Zabbix server, with protocol 
+# state: state present create/update template, absent 
+# template_groups: List of template groups to create or delete. 
+# template_json: JSON dump of template to import 
+# template_name: (required) Name of zabbix template 
+# timeout: The timeout of API request (seconds). 
+# validate_certs: If set to False, SSL certificates will not be 
+}- name: ${2:Name for zabbix_template module.}
+  zabbix_template:
+${3:   ${4:clear_templates}: ${5:"#"}}
+${6:   ${7:http_login_password}: ${8:"#"}}
+${9:   ${10:http_login_user}: ${11:"#"}}
+${12:   ${13:link_templates}: ${14:"#"}}
+${15:   ${16:login_password}: ${17:"#"}}
+${18:   ${19:login_user}: ${20:"#"}}
+${21:   ${22:macros}: ${23:"#"}}
+${24:   ${25:server_url}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:template_groups}: ${32:"#"}}
+${33:   ${34:template_json}: ${35:"#"}}
+${36:   ${37:template_name}: ${38:"#"}}
+${39:   ${40:timeout}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>zabbix_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

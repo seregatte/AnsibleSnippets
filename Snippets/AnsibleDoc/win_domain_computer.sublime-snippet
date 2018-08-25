@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# description: Specifies a description of the object. This 
+# dns_hostname: Specifies the fully qualified domain name (FQDN) 
+# enabled: Specifies if an account is enabled. An enabled 
+# name: (required) Specifies the name of the object. 
+# ou: Specifies the X.500 path of the Organizational 
+# sam_account_name: Specifies the Security Account Manager (SAM) 
+# state: Specified whether the computer should be 
+}- name: ${2:Name for win_domain_computer module.}
+  win_domain_computer:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:dns_hostname}: ${8:"#"}}
+${9:   ${10:enabled}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:ou}: ${17:"#"}}
+${18:   ${19:sam_account_name}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>win_domain_computer</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,48 +1,48 @@
 <snippet>
 <content><![CDATA[
-${1:# appflowlog: Enable logging of AppFlow information for the specified service group. 
+${1:# appflowlog: Enable logging of AppFlow information for the 
 # autoscale: Auto scale option for a servicegroup. 
-# cacheable: Use the transparent cache redirection virtual server to forward the request to the cache server. Note: 
+# cacheable: Use the transparent cache redirection virtual 
 # cachetype: Cache type supported by the cache server. 
-# cip: Insert the Client IP header in requests forwarded to the service. 
-# cipheader: Name of the HTTP header whose value must be set to the IP address of the client. Used with the Client IP 
+# cip: Insert the Client IP header in requests 
+# cipheader: Name of the HTTP header whose value must be set 
 # cka: Enable client keep-alive for the service group. 
-# clttimeout: Time, in seconds, after which to terminate an idle client connection. Minimum value = `0' Maximum value 
+# clttimeout: Time, in seconds, after which to terminate an 
 # cmp: Enable compression for the specified service. 
 # comment: Any information about the service group. 
-# disabled: When set to `yes' the service group state will be set to DISABLED. When set to `no' the service group 
-# downstateflush: Flush all active transactions associated with all the services in the service group whose state 
-# graceful: Wait for all existing connections to the service to terminate before shutting down the service. 
-# healthmonitor: Monitor the health of this service. Available settings function as follows: `yes' - Send probes to check 
-# httpprofilename: Name of the HTTP profile that contains HTTP configuration settings for the service group. Minimum length 
-# maxbandwidth: Maximum bandwidth, in Kbps, allocated for all the services in the service group. Minimum value = `0' 
-# maxclient: Maximum number of simultaneous open connections for the service group. Minimum value = `0' Maximum value 
-# maxreq: Maximum number of requests that can be sent on a persistent connection to the service group. Note: 
+# disabled: When set to `yes' the service group state will 
+# downstateflush: Flush all active transactions associated with 
+# graceful: Wait for all existing connections to the service 
+# healthmonitor: Monitor the health of this service. Available 
+# httpprofilename: Name of the HTTP profile that contains HTTP 
+# maxbandwidth: Maximum bandwidth, in Kbps, allocated for all 
+# maxclient: Maximum number of simultaneous open connections 
+# maxreq: Maximum number of requests that can be sent on a 
 # memberport: member port. 
-# monitorbindings: A list of monitornames to bind to this service Note that the monitors must have already been setup 
-# monthreshold: Minimum sum of weights of the monitors that are bound to this service. Used to determine whether to mark 
-# netprofile: Network profile for the service group. Minimum length = 1 Maximum length = 127 
-# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
-# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
-# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
-# nitro_user: (required) The username with which to authenticate to the netscaler node. 
-# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# monitorbindings: A list of monitornames to bind to this service 
+# monthreshold: Minimum sum of weights of the monitors that are 
+# netprofile: Network profile for the service group. Minimum 
+# nitro_pass: (required) The password with which to 
+# nitro_protocol: Which protocol to use when accessing the nitro 
+# nitro_timeout: Time in seconds until a timeout error is thrown 
+# nitro_user: (required) The username with which to 
+# nsip: (required) The ip address of the netscaler 
 # pathmonitor: Path monitoring for clustering. 
 # pathmonitorindv: Individual Path monitoring decisions. 
-# rtspsessionidremap: Enable RTSP session ID mapping for the service group. 
-# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
-# servicegroupname: Name of the service group. Must begin with an ASCII alphabetic or underscore `_' character, and must 
-# contain: ', period `.', 
-# servicemembers: A list of dictionaries describing each service member of the service group. 
+# rtspsessionidremap: Enable RTSP session ID mapping for the service 
+# save_config: If true the module will save the configuration 
+# servicegroupname: Name of the service group. Must begin with an 
+# hash: ', period 
+# servicemembers: A list of dictionaries describing each service 
 # servicetype: Protocol used to exchange data with the service. 
 # sp: Enable surge protection for the service group. 
-# state: The state of the resource being configured by the module on the netscaler node. When present the 
-# svrtimeout: Time, in seconds, after which to terminate an idle server connection. Minimum value = `0' Maximum value 
+# state: The state of the resource being configured by 
+# svrtimeout: Time, in seconds, after which to terminate an 
 # tcpb: Enable TCP buffering for the service group. 
-# tcpprofilename: Name of the TCP profile that contains TCP configuration settings for the service group. Minimum length = 
-# useproxyport: Use the proxy port as the source port when initiating connections with the server. With the NO setting, 
-# usip: Use client's IP address as the source IP address when initiating connection to the server. With the NO 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# tcpprofilename: Name of the TCP profile that contains TCP 
+# useproxyport: Use the proxy port as the source port when 
+# usip: Use client's IP address as the source IP address 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_servicegroup module.}
   netscaler_servicegroup:
 ${3:   ${4:appflowlog}: ${5:"#"}}
@@ -77,7 +77,7 @@ ${87:   ${88:pathmonitorindv}: ${89:"#"}}
 ${90:   ${91:rtspsessionidremap}: ${92:"#"}}
 ${93:   ${94:save_config}: ${95:"#"}}
 ${96:   ${97:servicegroupname}: ${98:"#"}}
-${99:   ${100:contain}: ${101:"#"}}
+${99:   ${100:hash}: ${101:"#"}}
 ${102:   ${103:servicemembers}: ${104:"#"}}
 ${105:   ${106:servicetype}: ${107:"#"}}
 ${108:   ${109:sp}: ${110:"#"}}

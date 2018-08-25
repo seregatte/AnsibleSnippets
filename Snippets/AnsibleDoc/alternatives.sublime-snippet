@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# link: The path to the symbolic link that should point to the real executable. This option is always required 
+${1:# link: The path to the symbolic link that should point 
 # name: (required) The generic name of the link. 
-# path: (required) The path to the real executable that the link should point to. 
+# path: (required) The path to the real executable that 
 # priority: The priority of the alternative 
 }- name: ${2:Name for alternatives module.}
   alternatives:

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# commandfile: (required) This specifies the path to the CNOS command file which needs to be applied. This usually 
-# device: (required) This specifies the type of device where the method is executed. The choices 
-# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
-# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
-# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
-# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
-# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
+${1:# commandfile: (required) This specifies the path to the CNOS 
+# device: (required) This specifies the type of device 
+# enable: Configures the password used to enter Global 
+# host: (required) This is the variable used to search 
+# outputfile: (required) This specifies the file path where 
+# password: (required) Configures the password used to 
+# username: (required) Configures the username used to 
 }- name: ${2:Name for cnos_template module.}
   cnos_template:
 ${3:   ${4:commandfile}: ${5:"#"}}

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# executable: Path to the pear executable 
-# name: (required) Name of the package to install, upgrade, or remove. 
+# name: (required) Name of the package to install, 
 # state: Desired state of the package. 
 }- name: ${2:Name for pear module.}
   pear:

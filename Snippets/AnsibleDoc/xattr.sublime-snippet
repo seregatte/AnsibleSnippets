@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# follow: if yes, dereferences symlinks and sets/gets attributes on symlink target, otherwise acts on symlink 
-# key: The name of a specific Extended attribute key to set/retrieve 
-# path: (required) The full path of the file/object to get the facts of. Before 2.3 this option was only usable 
-# state: defines which state you want to do. `read' retrieves the current value for a `key' (default) `present' 
-# value: The value to set the named name/key to, it automatically sets the `state' to 'set' 
+${1:# follow: If `yes', dereferences symlinks and sets/gets 
+# key: The name of a specific Extended attribute key to 
+# path: (required) The full path of the file/object to 
+# state: defines which state you want to do. `read' 
+# value: The value to set the named name/key to, it 
 }- name: ${2:Name for xattr module.}
   xattr:
 ${3:   ${4:follow}: ${5:"#"}}

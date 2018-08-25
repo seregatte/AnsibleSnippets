@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
-# default_project: Project name or ID that the user should be associated with by default 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
+# default_project: Project name or ID that the user should be 
 # description: Description about the user 
-# domain: Domain to create the user in if the cloud supports domains 
+# domain: Domain to create the user in if the cloud 
 # email: Email address for the user 
 # enabled: Is the user enabled 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# key: A path to a client key to use as part of the SSL transaction. 
+# interface: Endpoint URL type to fetch from the service 
+# key: A path to a client key to use as part of the SSL 
 # name: (required) Username for the user 
 # password: Password for the user 
 # region_name: Name of the region. 
 # state: Should the resource be present or absent. 
-# timeout: How long should ansible wait for the requested resource. 
-# update_password: `always' will attempt to update password.  `on_create' will only set the password for newly created 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: Should ansible wait until the requested resource is complete. 
+# timeout: How long should ansible wait for the requested 
+# update_password: `always' will attempt to update password. 
+# verify: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_user module.}
   os_user:
 ${3:   ${4:api_timeout}: ${5:"#"}}
@@ -36,7 +36,7 @@ ${27:   ${28:description}: ${29:"#"}}
 ${30:   ${31:domain}: ${32:"#"}}
 ${33:   ${34:email}: ${35:"#"}}
 ${36:   ${37:enabled}: ${38:"#"}}
-${39:   ${40:endpoint_type}: ${41:"#"}}
+${39:   ${40:interface}: ${41:"#"}}
 ${42:   ${43:key}: ${44:"#"}}
 ${45:   ${46:name}: ${47:"#"}}
 ${48:   ${49:password}: ${50:"#"}}
@@ -44,7 +44,7 @@ ${51:   ${52:region_name}: ${53:"#"}}
 ${54:   ${55:state}: ${56:"#"}}
 ${57:   ${58:timeout}: ${59:"#"}}
 ${60:   ${61:update_password}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
+${63:   ${64:verify}: ${65:"#"}}
 ${66:   ${67:wait}: ${68:"#"}}
 ${69:${70:   become: ${71:true}} 
 ${72:   become_method: ${73:su}} 

@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# name: (required) Etherstub name. 
 # state: Create or delete Solaris/illumos etherstub. 
-# temporary: Specifies that the etherstub is temporary. Temporary etherstubs do not persist across reboots. 
+# temporary: Specifies that the etherstub is temporary. 
 }- name: ${2:Name for dladm_etherstub module.}
   dladm_etherstub:
 ${3:   ${4:name}: ${5:"#"}}

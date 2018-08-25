@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# manual_slot: Specifies the slot number of netstream manual timeout. 
+${1:# manual_slot: Specifies the slot number of netstream manual 
 # state: Specify desired state of the resource. 
-# timeout_interval: Netstream timeout interval. If is active type the interval is 1-60. If is inactive ,the interval is 
+# timeout_interval: Netstream timeout interval. If is active type 
 # timeout_type: Netstream timeout type. 
-# type: Specifies the packet type of netstream timeout active interval. 
+# type: Specifies the packet type of netstream timeout 
 }- name: ${2:Name for ce_netstream_aging module.}
   ce_netstream_aging:
 ${3:   ${4:manual_slot}: ${5:"#"}}

@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# description: A description of the Server Group 
-# location: Datacenter to create the group in. If location is not provided, the group gets created in the default 
+# location: Datacenter to create the group in. If location 
 # name: (required) The name of the Server Group 
-# parent: The parent group of the server group. If parent is not provided, it creates the group at top level. 
+# parent: The parent group of the server group. If parent 
 # state: Whether to create or delete the group 
-# wait: Whether to wait for the tasks to finish before returning. 
+# wait: Whether to wait for the tasks to finish before 
 }- name: ${2:Name for clc_group module.}
   clc_group:
 ${3:   ${4:description}: ${5:"#"}}

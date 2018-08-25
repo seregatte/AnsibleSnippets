@@ -1,31 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# pn_broadcast_level: Specify a broadcast level in percent. The default value is 100%. 
+${1:# pn_broadcast_level: Specify a broadcast level in percent. The 
 # pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch(es) to run the cli on. 
 # pn_cliusername: Provide login username if user is not root. 
-# pn_description: Specify a description for the trunk configuration. 
+# pn_description: Specify a description for the trunk 
 # pn_edge_switch: Specify if the switch is an edge switch. 
-# pn_egress_rate_limit: Specify an egress port data rate limit for the configuration. 
+# pn_egress_rate_limit: Specify an egress port data rate limit for the 
 # pn_host: Host facing port control setting. 
 # pn_jumbo: Specify if the port can receive jumbo frames. 
-# pn_lacp_fallback: Specify the LACP fallback mode as bundles or individual. 
-# pn_lacp_fallback_timeout: Specify the LACP fallback timeout in seconds. The range is between 30 and 60 seconds with a default 
+# pn_lacp_fallback: Specify the LACP fallback mode as bundles or 
+# pn_lacp_fallback_timeout: Specify the LACP fallback timeout in seconds. 
 # pn_lacp_mode: Specify the LACP mode for the configuration. 
-# pn_lacp_priority: Specify the LACP priority. This is a number between 1 and 65535 with a default value of 32768. 
-# pn_lacp_timeout: Specify the LACP time out as slow (30 seconds) or fast (4seconds). The default value is slow. 
+# pn_lacp_priority: Specify the LACP priority. This is a number 
+# pn_lacp_timeout: Specify the LACP time out as slow (30 seconds) 
 # pn_loopback: Specify loopback if you want to use loopback. 
 # pn_loopvlans: Specify a list of looping vlans. 
-# pn_mirror_receive: Specify if the configuration receives mirrored traffic. 
-# pn_name: (required) Specify the name for the trunk configuration. 
+# pn_mirror_receive: Specify if the configuration receives mirrored 
+# pn_name: (required) Specify the name for the trunk 
 # pn_pause: Specify if pause frames are sent. 
 # pn_port_macaddr: Specify the MAC address of the port. 
-# pn_ports: Specify the port number(s) for the link(s) to aggregate into the trunk. Required for trunk-create. 
-# pn_routing: Specify if the port participates in routing on the network. 
+# pn_ports: Specify the port number(s) for the link(s) to 
+# pn_routing: Specify if the port participates in routing on 
 # pn_speed: Specify the port speed or disable the port. 
-# pn_unknown_mcast_level: Specify an unknown multicast level in percent. The default value is 100%. 
-# pn_unknown_ucast_level: Specify an unknown unicast level in percent. The default value is 100%. 
-# state: (required) State the action to perform. Use 'present' to create trunk, 'absent' to delete trunk and 
+# pn_unknown_mcast_level: Specify an unknown multicast level in percent. 
+# pn_unknown_ucast_level: Specify an unknown unicast level in percent. The 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_trunk module.}
   pn_trunk:
 ${3:   ${4:pn_broadcast_level}: ${5:"#"}}

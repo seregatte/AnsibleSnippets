@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# bfd_enable: Enables the global Bidirectional Forwarding Detection (BFD) function. 
-# damp_init_wait_time: Specifies an initial flapping suppression time for a BFD session. The value is an integer ranging from 1 
-# damp_max_wait_time: Specifies a maximum flapping suppression time for a BFD session. The value is an integer ranging from 1 
-# damp_second_wait_time: Specifies a secondary flapping suppression time for a BFD session. The value is an integer ranging from 
-# default_ip: Specifies the default multicast IP address. The value ranges from 224.0.0.107 to 224.0.0.250. 
-# delay_up_time: Specifies the delay before a BFD session becomes Up. The value is an integer ranging from 1 to 600, in 
-# state: Determines whether the config should be present or not on the device. 
-# tos_exp_dynamic: Indicates the priority of BFD control packets for dynamic BFD sessions. The value is an integer ranging 
-# tos_exp_static: Indicates the priority of BFD control packets for static BFD sessions. The value is an integer ranging 
+${1:# bfd_enable: Enables the global Bidirectional Forwarding 
+# damp_init_wait_time: Specifies an initial flapping suppression time 
+# damp_max_wait_time: Specifies a maximum flapping suppression time 
+# damp_second_wait_time: Specifies a secondary flapping suppression time 
+# default_ip: Specifies the default multicast IP address. The 
+# delay_up_time: Specifies the delay before a BFD session becomes 
+# state: Determines whether the config should be present 
+# tos_exp_dynamic: Indicates the priority of BFD control packets 
+# tos_exp_static: Indicates the priority of BFD control packets 
 }- name: ${2:Name for ce_bfd_global module.}
   ce_bfd_global:
 ${3:   ${4:bfd_enable}: ${5:"#"}}

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# force_install: Set value to True to force node into install state if it already exists in stacki. 
-# name: (required) Name of the host to be added to Stacki. 
+${1:# force_install: Set value to True to force node into install 
+# name: (required) Name of the host to be added to 
 # prim_intf: Name of the primary network interface. 
 # prim_intf_ip: IP Address for the primary network interface. 
-# prim_intf_mac: MAC Address for the primary PXE boot network interface. 
+# prim_intf_mac: MAC Address for the primary PXE boot network 
 # stacki_endpoint: (required) URL for the Stacki API Endpoint. 
-# stacki_password: (required) Password for authenticating with Stacki API, but if not specified, the environment variable 
-# stacki_user: (required) Username for authenticating with Stacki API, but if not specified, the environment variable 
+# stacki_password: (required) Password for authenticating with 
+# stacki_user: (required) Username for authenticating with 
 }- name: ${2:Name for stacki_host module.}
   stacki_host:
 ${3:   ${4:force_install}: ${5:"#"}}

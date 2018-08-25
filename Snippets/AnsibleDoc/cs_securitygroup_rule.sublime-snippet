@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# cidr: CIDR (full notation) to be used for security group rule. 
-# end_port: End port for this rule. Required if `protocol=tcp' or `protocol=udp', but `start_port' will be used if 
-# icmp_code: Error code for this icmp message. Required if `protocol=icmp'. 
-# icmp_type: Type of the icmp message being sent. Required if `protocol=icmp'. 
+${1:# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# cidr: CIDR (full notation) to be used for security 
+# end_port: End port for this rule. Required if 
+# icmp_code: Error code for this icmp message. Required if 
+# icmp_type: Type of the icmp message being sent. Required if 
 # poll_async: Poll async jobs until job has finished. 
-# project: Name of the project the security group to be created in. 
+# project: Name of the project the security group to be 
 # protocol: Protocol of the security group rule. 
-# security_group: (required) Name of the security group the rule is related to. The security group must be existing. 
-# start_port: Start port for this rule. Required if `protocol=tcp' or `protocol=udp'. 
+# security_group: (required) Name of the security group the rule 
+# start_port: Start port for this rule. Required if 
 # state: State of the security group rule. 
 # type: Ingress or egress security group rule. 
 # user_security_group: Security group this rule is based of. 

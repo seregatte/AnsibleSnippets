@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# align: Set alignment for newly created partitions. 
-# device: (required) The block device (disk) where to operate. 
-# flags: A list of the flags that has to be set on the partition. 
+# device: (required) The block device (disk) where to 
+# flags: A list of the flags that has to be set on the 
 # label: Creates a new disk label. 
-# name: Sets the name for the partition number (GPT, Mac, MIPS and PC98 only). 
-# number: The number of the partition to work with or the number of the partition that will be created. Required 
-# part_end: Where the partition will end as offset from the beginning of the disk, that is, the "distance" from the 
-# part_start: Where the partition will start as offset from the beginning of the disk, that is, the "distance" from 
-# part_type: Is one of 'primary', 'extended' or 'logical' and may be specified only with 'msdos' or 'dvh' partition 
-# state: If to create or delete a partition. If set to `info' the module will only return the device information. 
-# unit: Selects the current default unit that Parted will use to display locations and capacities on the disk 
+# name: Sets the name for the partition number (GPT, 
+# number: The number of the partition to work with or the 
+# part_end: Where the partition will end as offset from the 
+# part_start: Where the partition will start as offset from 
+# part_type: Is one of 'primary', 'extended' or 'logical' and 
+# state: If to create or delete a partition. If set to 
+# unit: Selects the current default unit that Parted 
 }- name: ${2:Name for parted module.}
   parted:
 ${3:   ${4:align}: ${5:"#"}}

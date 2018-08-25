@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# bridge: (required) Name of bridge or fake bridge to manage 
-# external_ids: A dictionary of external-ids. Omitting this parameter is a No-op. To  clear all external-ids pass an 
-# fail_mode: Set bridge fail-mode. The default value (None) is a No-op. 
+${1:# bridge: (required) Name of bridge or fake bridge to 
+# external_ids: A dictionary of external-ids. Omitting this 
+# fail_mode: Set bridge fail-mode. The default value (None) 
 # parent: Bridge parent of the fake bridge to manage 
-# set: Run set command after bridge configuration. This parameter is non-idempotent, play will always return 
+# set: Run set command after bridge configuration. This 
 # state: Whether the bridge should exist 
 # timeout: How long to wait for ovs-vswitchd to respond 
-# vlan: The VLAN id of the fake bridge to manage (must be between 0 and 4095). This parameter is required if 
+# vlan: The VLAN id of the fake bridge to manage (must 
 }- name: ${2:Name for openvswitch_bridge module.}
   openvswitch_bridge:
 ${3:   ${4:bridge}: ${5:"#"}}

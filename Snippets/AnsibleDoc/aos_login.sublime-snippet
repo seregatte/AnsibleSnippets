@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# passwd: Password to use when connecting to the AOS server. 
-# port: Port number to use when connecting to the AOS server. 
-# server: (required) Address of the AOS Server on which you want to open a connection. 
-# user: Login username to use when connecting to the AOS server. 
+${1:# passwd: Password to use when connecting to the AOS 
+# port: Port number to use when connecting to the AOS 
+# server: (required) Address of the AOS Server on which 
+# user: Login username to use when connecting to the AOS 
 }- name: ${2:Name for aos_login module.}
   aos_login:
 ${3:   ${4:passwd}: ${5:"#"}}

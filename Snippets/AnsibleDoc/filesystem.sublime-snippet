@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# dev: (required) Target block device. 
-# force: If yes, allows to create new filesystem on devices that already has filesystem. 
-# fstype: (required) File System type to be created. reiserfs support was added in 2.2. 
+${1:# dev: (required) Target path to device or image file. 
+# force: If `yes', allows to create new filesystem on 
+# fstype: (required) Filesystem type to be created. 
 # opts: List of options to be passed to mkfs command. 
-# resizefs: If yes, if the block device and filessytem size differ, grow the filesystem into the space. Note, XFS 
+# resizefs: If `yes', if the block device and filesytem size 
 }- name: ${2:Name for filesystem module.}
   filesystem:
 ${3:   ${4:dev}: ${5:"#"}}

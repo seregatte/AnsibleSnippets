@@ -1,28 +1,28 @@
 <snippet>
 <content><![CDATA[
-${1:# boot_order: This option uses complex arguments and is a list of items that specify the bootorder. 
-# cd_drive: The CD you wish to have mounted on the VM when `state = 'CD''. 
-# cluster: The rhev/ovirt cluster in which you want you VM to start. 
-# cpu_share: This parameter is used to configure the cpu share. 
-# datacenter: The rhev/ovirt datacenter in which you want you VM to start. 
+${1:# boot_order: This option uses complex arguments and is a list 
+# cd_drive: The CD you wish to have mounted on the VM when 
+# cluster: The rhev/ovirt cluster in which you want you VM 
+# cpu_share: This parameter is used to configure the cpu 
+# datacenter: The rhev/ovirt datacenter in which you want you 
 # del_prot: This option sets the delete protection checkbox. 
-# disks: This option uses complex arguments and is a list of disks with the options name, size and domain. 
-# ifaces: This option uses complex arguments and is a list of interfaces with the options name and vlan. 
+# disks: This option uses complex arguments and is a list 
+# ifaces: This option uses complex arguments and is a list 
 # image: The template to use for the VM. 
-# insecure_api: A boolean switch to make a secure or insecure connection to the server. 
-# mempol: The minimum amount of memory you wish to reserve for this system. 
+# insecure_api: A boolean switch to make a secure or insecure 
+# mempol: The minimum amount of memory you wish to reserve 
 # name: The name of the VM. 
 # osver: The operationsystem option in RHEV/oVirt. 
 # port: The port on which the API is reacheable. 
 # server: The name/ip of your RHEV-m/oVirt instance. 
-# state: This serves to create/remove/update or powermanage your VM. 
-# timeout: The timeout you wish to define for power actions. When `state = 'up'' When `state = 'down'' When `state 
+# state: This serves to create/remove/update or 
+# timeout: The timeout you wish to define for power 
 # type: To define if the VM is a server or desktop. 
 # user: The user to authenticate with. 
 # vm_ha: To make your VM High Available. 
 # vmcpu: The number of CPUs you want in your VM. 
 # vmhost: The host you wish your VM to run on. 
-# vmmem: The amount of memory you want your VM to use (in GB). 
+# vmmem: The amount of memory you want your VM to use (in 
 }- name: ${2:Name for rhevm module.}
   rhevm:
 ${3:   ${4:boot_order}: ${5:"#"}}

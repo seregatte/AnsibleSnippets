@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# expiration_days: The number of days to keep the server snapshot before it expires. 
+${1:# expiration_days: The number of days to keep the server snapshot 
 # server_ids: (required) The list of CLC server Ids. 
-# state: The state to insure that the provided resources are in. 
-# wait: Whether to wait for the provisioning tasks to finish before returning. 
+# state: The state to insure that the provided resources 
+# wait: Whether to wait for the provisioning tasks to 
 }- name: ${2:Name for clc_server_snapshot module.}
   clc_server_snapshot:
 ${3:   ${4:expiration_days}: ${5:"#"}}

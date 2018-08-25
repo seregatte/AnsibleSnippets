@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Install plugin with that name. 
-# plugin_bin: Specify logstash-plugin to use for plugin management. 
+# plugin_bin: Specify logstash-plugin to use for plugin 
 # proxy_host: Proxy host to use during plugin installation. 
 # proxy_port: Proxy port to use during plugin installation. 
 # state: Apply plugin state. 
-# version: Specify plugin Version of the plugin to install. If plugin exists with previous version, it will NOT be 
+# version: Specify plugin Version of the plugin to install. 
 }- name: ${2:Name for logstash_plugin module.}
   logstash_plugin:
 ${3:   ${4:name}: ${5:"#"}}

@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# authkey: Authentication key, required if version is v3 
-# community: The SNMP community string, required if version is v2/v2c 
-# host: (required) Set to target snmp server (normally {{inventory_hostname}}) 
+# community: The SNMP community string, required if version 
+# host: (required) Set to target snmp server (normally 
 # integrity: Hashing algorithm, required if version is v3 
 # level: Authentication level, required if version is v3 
-# privacy: Encryption algorithm, required if level is authPriv 
+# privacy: Encryption algorithm, required if level is 
 # privkey: Encryption key, required if version is authPriv 
 # username: Username for SNMPv3, required if version is v3 
 # version: (required) SNMP Version to use, v2/v2c or v3 

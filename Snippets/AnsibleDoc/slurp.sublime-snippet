@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# src: (required) The file on the remote system to fetch. This `must' be a file, not a directory. 
+${1:# src: (required) The file on the remote system to 
 }- name: ${2:Name for slurp module.}
   slurp:
 ${3:   ${4:src}: ${5:"#"}}

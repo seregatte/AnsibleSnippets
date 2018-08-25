@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# access_level: The access level to the group. One of the following can be used. guest reporter developer master owner 
+${1:# access_level: The access level to the group. One of the 
 # confirm: Require confirmation. 
 # email: (required) The email that belongs to the user. 
 # group: Add user as an member to this group. 
@@ -8,13 +8,13 @@ ${1:# access_level: The access level to the group. One of the following can be u
 # login_token: Gitlab token for logging in. 
 # login_user: Gitlab user name. 
 # name: (required) Name of the user you want to create 
-# password: (required) The password of the user. 
-# server_url: (required) Url of Gitlab server, with protocol (http or https). 
+# password: (required) The password of the user. GitLab 
+# server_url: (required) Url of Gitlab server, with protocol 
 # sshkey_file: The ssh key itself. 
 # sshkey_name: The name of the sshkey 
-# state: create or delete group. Possible values are present and absent. 
+# state: create or delete group. Possible values are 
 # username: (required) The username of the user. 
-# validate_certs: When using https if SSL certificate needs to be verified. 
+# validate_certs: When using https if SSL certificate needs to be 
 }- name: ${2:Name for gitlab_user module.}
   gitlab_user:
 ${3:   ${4:access_level}: ${5:"#"}}

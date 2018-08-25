@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: (required) Mattermost webhook api key. Log into your mattermost site, go to Menu -> Integration -> 
-# channel: Channel to send the message to. If absent, the message goes to the channel selected for the `api_key'. 
+${1:# api_key: (required) Mattermost webhook api key. Log into 
+# channel: Channel to send the message to. If absent, the 
 # icon_url: Url for the message sender's icon. 
-# text: (required) Text to send. Note that the module does not handle escaping characters. 
-# url: (required) Mattermost url (i.e. http://mattermost.yourcompany.com). 
-# username: This is the sender of the message (Username Override need to be enabled by mattermost admin, see 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# text: (required) Text to send. Note that the module 
+# url: (required) Mattermost url (i.e. 
+# username: This is the sender of the message (Username 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for mattermost module.}
   mattermost:
 ${3:   ${4:api_key}: ${5:"#"}}

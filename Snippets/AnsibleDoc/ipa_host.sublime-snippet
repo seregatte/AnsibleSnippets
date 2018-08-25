@@ -2,20 +2,22 @@
 <content><![CDATA[
 ${1:# description: A description of this host. 
 # force: Force host name even if not in DNS. 
-# fqdn: (required) Full qualified domain name. Can not be changed as it is the unique identifier. 
+# fqdn: (required) Full qualified domain name. Can not 
 # ip_address: Add the host to DNS with this IP address. 
-# ipa_host: IP or hostname of IPA server 
-# ipa_pass: (required) Password of administrative user 
-# ipa_port: Port of IPA server 
-# ipa_prot: Protocol used by IPA server 
-# ipa_user: Administrative account used on IPA server 
-# mac_address: List of Hardware MAC address(es) off this host. If option is omitted MAC addresses will not be checked 
+# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
+# mac_address: List of Hardware MAC address(es) off this host. 
 # ns_hardware_platform: Host hardware platform (e.g. "Lenovo T61") 
 # ns_host_location: Host location (e.g. "Lab 2") 
-# ns_os_version: Host operating system and version (e.g. "Fedora 9") 
+# ns_os_version: Host operating system and version (e.g. "Fedora 
+# random_password: Generate a random password to be used in bulk 
 # state: State to ensure 
-# user_certificate: List of Base-64 encoded server certificates. If option is omitted certificates will not be checked or 
-# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
+# update_dns: If set `"True"' with state as `"absent"', then 
+# user_certificate: List of Base-64 encoded server certificates. If 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
 }- name: ${2:Name for ipa_host module.}
   ipa_host:
 ${3:   ${4:description}: ${5:"#"}}
@@ -31,15 +33,17 @@ ${30:   ${31:mac_address}: ${32:"#"}}
 ${33:   ${34:ns_hardware_platform}: ${35:"#"}}
 ${36:   ${37:ns_host_location}: ${38:"#"}}
 ${39:   ${40:ns_os_version}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:user_certificate}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${42:   ${43:random_password}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:update_dns}: ${50:"#"}}
+${51:   ${52:user_certificate}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>ipa_host</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

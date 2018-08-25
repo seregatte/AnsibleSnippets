@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
 ${1:# check_interval: How often (in seconds) to send a health check. 
-# credentials_file: Path to the JSON file associated with the service account email 
+# credentials_file: Path to the JSON file associated with the 
 # healthcheck_name: (required) Name of the Healthcheck. 
 # healthcheck_type: (required) Type of Healthcheck. 
-# healthy_threshold: A so-far unhealthy instance will be marked healthy after this many consecutive successes. 
-# host_header: (required) The value of the host header in the health check request. If left empty, the public IP on 
-# port: The TCP port number for the health check request. The default value is 443 for HTTPS and 80 for HTTP. 
+# healthy_threshold: A so-far unhealthy instance will be marked 
+# host_header: (required) The value of the host header in the 
+# port: The TCP port number for the health check 
 # project_id: Your GCP project ID 
-# request_path: The request path of the HTTPS health check request. 
+# request_path: The request path of the HTTPS health check 
 # service_account_email: service account email 
-# service_account_permissions: service account permissions (see https://cloud.google.com/sdk/gcloud/reference/compute/instances/create, 
+# service_account_permissions: service account permissions (see https://cloud.g 
 # state: (required) State of the Healthcheck. 
-# timeout: How long (in seconds) to wait for a response before claiming failure. It is invalid for timeout to have 
-# unhealthy_threshold: A so-far healthy instance will be marked unhealthy after this many consecutive failures. 
+# timeout: How long (in seconds) to wait for a response 
+# unhealthy_threshold: A so-far healthy instance will be marked 
 }- name: ${2:Name for gcp_healthcheck module.}
   gcp_healthcheck:
 ${3:   ${4:check_interval}: ${5:"#"}}

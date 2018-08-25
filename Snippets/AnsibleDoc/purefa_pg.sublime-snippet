@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# api_token: (required) FlashArray API token for admin privilaged user. 
-# enabled: Define whether to enabled snapshots for the protection group. 
-# eradicate: Define whether to eradicate the protection group on delete and leave in trash. 
-# fa_url: (required) FlashArray management IPv4 address or Hostname. 
-# host: List of existing hosts to add to protection group. 
-# hostgroup: List of existing hostgroups to add to protection group. 
+${1:# api_token: (required) FlashArray API token for admin 
+# enabled: Define whether to enabled snapshots for the 
+# eradicate: Define whether to eradicate the protection group 
+# fa_url: (required) FlashArray management IPv4 address or 
+# host: List of existing hosts to add to protection 
+# hostgroup: List of existing hostgroups to add to protection 
 # pgroup: (required) The name of the protection group. 
-# state: Define whether the protection group should exist or not. 
-# volume: List of existing volumes to add to protection group. 
+# state: Define whether the protection group should exist 
+# volume: List of existing volumes to add to protection 
 }- name: ${2:Name for purefa_pg module.}
   purefa_pg:
 ${3:   ${4:api_token}: ${5:"#"}}

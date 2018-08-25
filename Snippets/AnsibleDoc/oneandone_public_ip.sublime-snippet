@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# api_url: Custom API URL. Overrides the ONEANDONE_API_URL 
+# auth_token: (required) Authenticating API token provided by 
+# datacenter: ID of the datacenter where the IP will be 
+# public_ip_id: (required) The ID of the public IP used with 
+# reverse_dns: Reverse DNS name. maxLength=256 
+# state: Define a public ip state to create, remove, or 
+# type: Type of IP. Currently, only IPV4 is available. 
+# wait: wait for the instance to be in state 'running' 
+# wait_interval: Defines the number of seconds to wait when using 
+# wait_timeout: how long before wait gives up, in seconds 
+}- name: ${2:Name for oneandone_public_ip module.}
+  oneandone_public_ip:
+${3:   ${4:api_url}: ${5:"#"}}
+${6:   ${7:auth_token}: ${8:"#"}}
+${9:   ${10:datacenter}: ${11:"#"}}
+${12:   ${13:public_ip_id}: ${14:"#"}}
+${15:   ${16:reverse_dns}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:type}: ${23:"#"}}
+${24:   ${25:wait}: ${26:"#"}}
+${27:   ${28:wait_interval}: ${29:"#"}}
+${30:   ${31:wait_timeout}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>oneandone_public_ip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

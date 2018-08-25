@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# : Any parameter starting with "HEADER_" is a sent with your request as a header. For example, 
-# body: The body of the http request/response to the web service. If `body_format' is set to 'json' it will take 
-# body_format: The serialization format of the body. When set to json, encodes the body argument, if needed, and 
-# client_cert: PEM formatted certificate chain file to be used for SSL client authentication. This file can also 
-# client_key: PEM formatted file that contains your private key to be used for SSL client authentication. If 
-# creates: a filename, when it already exists, this step will not be run. 
-# dest: path of where to download the file to (if desired). If `dest' is a directory, the basename of the file 
-# follow_redirects: Whether or not the URI module should follow redirects. `all' will follow all redirects. `safe' will 
-# force_basic_auth: The library used by the uri module only sends authentication information when a webservice responds to 
-# headers: Add custom HTTP headers to a request in the format of a YAML hash. As of `2.3' supplying `Content-Type' 
-# method: The HTTP method of the request or response. It MUST be uppercase. 
-# others: all arguments accepted by the [file] module also work here 
-# password: password for the module to use for Digest, Basic or WSSE authentication. 
-# removes: a filename, when it does not exist, this step will not be run. 
-# return_content: Whether or not to return the body of the response as a "content" key in the dictionary result. If the 
-# status_code: A valid, numeric, HTTP status code that signifies success of the request. Can also be comma separated 
+${1:# : Any parameter starting with "HEADER_" is a sent 
+# body: The body of the http request/response to the web 
+# body_format: The serialization format of the body. When set 
+# client_cert: PEM formatted certificate chain file to be used 
+# client_key: PEM formatted file that contains your private 
+# creates: A filename, when it already exists, this step 
+# dest: A path of where to download the file to (if 
+# follow_redirects: Whether or not the URI module should follow 
+# force_basic_auth: The library used by the uri module only sends 
+# headers: Add custom HTTP headers to a request in the 
+# method: The HTTP method of the request or response. It 
+# others: All arguments accepted by the [file] module also 
+# password: A password for the module to use for Digest, 
+# removes: A filename, when it does not exist, this step 
+# return_content: Whether or not to return the body of the 
+# status_code: A list of valid, numeric, HTTP status codes that 
 # timeout: The socket level timeout in seconds 
-# url: (required) HTTP or HTTPS URL in the form (http|https)://host.domain[:port]/path 
-# user: username for the module to use for Digest, Basic or WSSE authentication. 
-# validate_certs: If `no', SSL certificates will not be validated.  This should only set to `no' used on personally 
+# url: (required) HTTP or HTTPS URL in the form 
+# user: A username for the module to use for Digest, 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for uri module.}
   uri:
 ${3:   ${4:}: ${5:"#"}}

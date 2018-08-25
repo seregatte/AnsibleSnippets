@@ -1,23 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# expiration_date: Indicates the lifetime of the objects that are subject to the rule by the date they will expire. The 
-# expiration_days: Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non- 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# expiration_date: Indicates the lifetime of the objects that are 
+# expiration_days: Indicates the lifetime, in days, of the objects 
 # name: (required) Name of the s3 bucket 
-# prefix: Prefix identifying one or more objects to which the rule applies.  If no prefix is specified, the rule 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# rule_id: Unique identifier for the rule. The value cannot be longer than 255 characters. A unique value for the 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# noncurrent_version_expiration_days: Delete noncurrent versions this many days after 
+# noncurrent_version_storage_class: Transition noncurrent versions to this storage 
+# noncurrent_version_transition_days: Transition noncurrent versions this many days 
+# noncurrent_version_transitions: A list of transition behaviors to be applied to 
+# prefix: Prefix identifying one or more objects to which 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_transitions: "Whether to replace all the current 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# rule_id: Unique identifier for the rule. The value cannot 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or remove the lifecycle rule 
-# status: If 'enabled', the rule is currently being applied. If 'disabled', the rule is not currently being 
-# storage_class: The storage class to transition to. Currently there are two supported values - 'glacier' or 
-# transition_date: Indicates the lifetime of the objects that are subject to the rule by the date they will transition to a 
-# transition_days: Indicates when, in days, an object transitions to a different storage class. If transition_date is not 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# status: If 'enabled', the rule is currently being 
+# storage_class: The storage class to transition to. Currently 
+# transition_date: Indicates the lifetime of the objects that are 
+# transition_days: Indicates when, in days, an object transitions 
+# transitions: A list of transition behaviors to be applied to 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for s3_lifecycle module.}
   s3_lifecycle:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -26,24 +32,30 @@ ${9:   ${10:ec2_url}: ${11:"#"}}
 ${12:   ${13:expiration_date}: ${14:"#"}}
 ${15:   ${16:expiration_days}: ${17:"#"}}
 ${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:prefix}: ${23:"#"}}
-${24:   ${25:profile}: ${26:"#"}}
-${27:   ${28:region}: ${29:"#"}}
-${30:   ${31:http}: ${32:"#"}}
-${33:   ${34:rule_id}: ${35:"#"}}
-${36:   ${37:security_token}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:status}: ${44:"#"}}
-${45:   ${46:storage_class}: ${47:"#"}}
-${48:   ${49:transition_date}: ${50:"#"}}
-${51:   ${52:transition_days}: ${53:"#"}}
-${54:   ${55:validate_certs}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${21:   ${22:noncurrent_version_expiration_days}: ${23:"#"}}
+${24:   ${25:noncurrent_version_storage_class}: ${26:"#"}}
+${27:   ${28:noncurrent_version_transition_days}: ${29:"#"}}
+${30:   ${31:noncurrent_version_transitions}: ${32:"#"}}
+${33:   ${34:prefix}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:purge_transitions}: ${41:"#"}}
+${42:   ${43:region}: ${44:"#"}}
+${45:   ${46:}: ${47:"#"}}
+${48:   ${49:rule_id}: ${50:"#"}}
+${51:   ${52:security_token}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:status}: ${59:"#"}}
+${60:   ${61:storage_class}: ${62:"#"}}
+${63:   ${64:transition_date}: ${65:"#"}}
+${66:   ${67:transition_days}: ${68:"#"}}
+${69:   ${70:transitions}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>s3_lifecycle</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

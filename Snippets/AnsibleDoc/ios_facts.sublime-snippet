@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# gather_subset: When supplied, this argument will restrict the facts collected to a given subset.  Possible values for 
-# provider: A dict object containing connection details. 
+${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# gather_subset: When supplied, this argument will restrict the 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 }- name: ${2:Name for ios_facts module.}
   ios_facts:
 ${3:   ${4:auth_pass}: ${5:"#"}}

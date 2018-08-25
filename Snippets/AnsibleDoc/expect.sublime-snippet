@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# chdir: Change into this directory before running the command. 
-# command: (required) The command module takes command to run. 
-# creates: A filename, when it already exists, this step will *not* be run. 
-# echo: Whether or not to echo out your response strings. 
-# removes: A filename, when it does not exist, this step will *not* be run. 
-# responses: (required) Mapping of expected string/regex and string to respond with. If the response is a list, 
-# timeout: Amount of time in seconds to wait for the expected strings. 
+${1:# chdir: Change into this directory before running the 
+# command: (required) The command module takes command to 
+# creates: A filename, when it already exists, this step 
+# echo: Whether or not to echo out your response 
+# removes: A filename, when it does not exist, this step 
+# responses: (required) Mapping of expected string/regex and 
+# timeout: Amount of time in seconds to wait for the 
 }- name: ${2:Name for expect module.}
   expect:
 ${3:   ${4:chdir}: ${5:"#"}}

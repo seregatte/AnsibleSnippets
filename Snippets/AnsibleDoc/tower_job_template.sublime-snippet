@@ -1,33 +1,33 @@
 <snippet>
 <content><![CDATA[
 ${1:# ask_credential: Prompt user for credential on launch. 
-# ask_extra_vars: Prompt user for extra_vars on launch. 
+# ask_extra_vars: Prompt user for `extra_vars' on launch. 
 # ask_inventory: Propmt user for inventory on launch. 
 # ask_job_type: Prompt user for job type on launch. 
 # ask_tags: Prompt user for job tags on launch. 
-# become_enabled: Should become_enabled. 
-# cloud_credential: Cloud_credential to use for the job_template. 
-# description: Description to use for the job_template. 
-# extra_vars_path: Path to the extra_vars yaml file. 
-# forks: The number of parallel or simultaneous processes to use while executing the playbook. 
-# host_config_key: Allow provisioning callbacks using this host config key. 
-# inventory: Inventory to use for the job_template. 
-# job_tags: The job_tags to use for the job_template. 
-# job_type: (required) The job_type to use for the job_template. 
-# limit: A host pattern to further constrain the list of hosts managed or affected by the playbook 
-# machine_credential: Machine_credential to use for the job_template. 
+# become_enabled: Activate privilege escalation. 
+# cloud_credential: Cloud_credential to use for the job template. 
+# description: Description to use for the job template. 
+# extra_vars_path: Path to the `extra_vars' YAML file. 
+# forks: The number of parallel or simultaneous processes 
+# host_config_key: Allow provisioning callbacks using this host 
+# inventory: Inventory to use for the job template. 
+# job_tags: The job_tags to use for the job template. 
+# job_type: (required) The job_type to use for the job 
+# limit: A host pattern to further constrain the list of 
+# machine_credential: Machine_credential to use for the job template. 
 # name: (required) Name to use for the job_template. 
-# network_credential: The network_credential to use for the job_template. 
-# playbook: (required) Playbook to use for the job_template. 
-# project: (required) Project to use for the job_template. 
-# skip_tags: The skip_tags to use for the job_template. 
+# network_credential: The network_credential to use for the job 
+# playbook: (required) Playbook to use for the job template. 
+# project: (required) Project to use for the job template. 
+# skip_tags: The skip_tags to use for the job template. 
 # state: Desired state of the resource. 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
-# verbosity: Control the output level Ansible produces as the playbook runs. 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# verbosity: Control the output level Ansible produces as the 
 }- name: ${2:Name for tower_job_template module.}
   tower_job_template:
 ${3:   ${4:ask_credential}: ${5:"#"}}

@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# config: Path to a .json configuration file containing the OneView client configuration. The configuration file 
-# data: (required) List with Ethernet Network properties. 
-# state: Indicates the desired state for the Ethernet Network resource. - `present' will ensure data properties 
-# validate_etag: When the ETag Validation is enabled, the request will be conditionally processed only if the current 
+${1:# config: Path to a .json configuration file containing 
+# data: (required) List with Ethernet Network 
+# state: Indicates the desired state for the Ethernet 
+# validate_etag: When the ETag Validation is enabled, the request 
 }- name: ${2:Name for oneview_ethernet_network module.}
   oneview_ethernet_network:
 ${3:   ${4:config}: ${5:"#"}}

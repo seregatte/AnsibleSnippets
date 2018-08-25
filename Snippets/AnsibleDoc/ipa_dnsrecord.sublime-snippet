@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# ipa_host: IP or hostname of IPA server 
-# ipa_pass: (required) Password of administrative user 
-# ipa_port: Port of IPA server 
-# ipa_prot: Protocol used by IPA server 
-# ipa_user: Administrative account used on IPA server 
+${1:# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
 # record_name: (required) The DNS record name to manage. 
-# record_type: The type of DNS record name Currently, 'A', 'AAAA', and 'PTR' are supported 
-# record_value: (required) Manage DNS record name with this value. In the case of 'A' or 'AAAA' record types, this will 
+# record_type: The type of DNS record name. Currently, 'A', 
+# record_value: (required) Manage DNS record name with this 
 # state: State to ensure 
-# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
-# zone_name: (required) The DNS zone name to which DNS record needs to be managed. 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
+# zone_name: (required) The DNS zone name to which DNS record 
 }- name: ${2:Name for ipa_dnsrecord module.}
   ipa_dnsrecord:
 ${3:   ${4:ipa_host}: ${5:"#"}}

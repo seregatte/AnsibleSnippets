@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# filter: Filter for a specific fact. 
-# meta_data_host: Host or IP of the meta data API service. If not set, determination by parsing the dhcp lease file. 
+# meta_data_host: Host or IP of the meta data API service. If not 
 }- name: ${2:Name for cs_facts module.}
   cs_facts:
 ${3:   ${4:filter}: ${5:"#"}}

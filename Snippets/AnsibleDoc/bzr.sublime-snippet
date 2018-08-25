@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# dest: (required) Absolute path of where the branch should be cloned to. 
-# executable: Path to bzr executable to use. If not supplied, the normal mechanism for resolving binary paths will be 
-# force: If `yes', any modified files in the working tree will be discarded.  Before 1.9 the default value was 
-# name: (required) SSH or HTTP protocol address of the parent branch. 
-# version: What version of the branch to clone.  This can be the bzr revno or revid. 
+${1:# dest: (required) Absolute path of where the branch 
+# executable: Path to bzr executable to use. If not supplied, 
+# force: If `yes', any modified files in the working tree 
+# name: (required) SSH or HTTP protocol address of the 
+# version: What version of the branch to clone.  This can 
 }- name: ${2:Name for bzr module.}
   bzr:
 ${3:   ${4:dest}: ${5:"#"}}

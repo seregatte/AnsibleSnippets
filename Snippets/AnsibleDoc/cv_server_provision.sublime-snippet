@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# action: The action for the module to take. The actions are add, which applies the specified template config to 
-# auto_run: Flag that determines whether or not the module will execute the CVP task spawned as a result of changes 
-# host: (required) The hostname or IP address of the CVP node being connected to. 
-# password: (required) The password of the user that will be used to connect to CVP for API calls. 
-# port: The port number to use when making API calls to the CVP node. This will default to the default port for 
-# port_vlan: The vlan that should be applied to the port for this server. This parameter is dependent on a proper 
-# protocol: The protocol to use when making API calls to CVP. CVP defaults to https and newer versions of CVP no 
-# server_name: (required) The hostname or identifier for the server that is having it's switch port provisioned. 
-# switch_name: (required) The hostname of the switch is being configured for the server being provisioned. 
-# switch_port: (required) The physical port number on the switch that the new server is connected to. 
-# template: (required) A path to a Jinja formatted template file that contains the configuration block that will be 
-# username: (required) The user that will be used to connect to CVP for making API calls. 
+${1:# action: The action for the module to take. The actions 
+# auto_run: Flag that determines whether or not the module 
+# host: (required) The hostname or IP address of the CVP 
+# password: (required) The password of the user that will be 
+# port: The port number to use when making API calls to 
+# port_vlan: The vlan that should be applied to the port for 
+# protocol: The protocol to use when making API calls to 
+# server_name: (required) The hostname or identifier for the 
+# switch_name: (required) The hostname of the switch is being 
+# switch_port: (required) The physical port number on the 
+# template: (required) A path to a Jinja formatted template 
+# username: (required) The user that will be used to connect 
 }- name: ${2:Name for cv_server_provision module.}
   cv_server_provision:
 ${3:   ${4:action}: ${5:"#"}}

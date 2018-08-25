@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# comment: Add a comment to the rule. Requires UFW version >=0.35. 
+${1:# comment: Add a comment to the rule. Requires UFW version 
 # delete: Delete rule. 
-# direction: Select direction for a rule or default policy command. 
+# direction: Select direction for a rule or default policy 
 # from_ip: Source IP address. 
 # from_port: Source port. 
 # insert: Insert the corresponding rule as rule number NUM 
 # interface: Specify interface for rule. 
 # log: Log new connections matched to this rule 
-# logging: Toggles logging. Logged packets use the LOG_KERN syslog facility. 
-# name: Use profile located in `/etc/ufw/applications.d' 
-# policy: Change the default policy for incoming or outgoing traffic. 
+# logging: Toggles logging. Logged packets use the LOG_KERN 
+# name: Use profile located in 
+# policy: Change the default policy for incoming or 
 # proto: TCP/IP protocol. 
 # route: Apply the rule to routed/forwarded packets. 
 # rule: Add firewall rule 
-# state: `enabled' reloads firewall and enables firewall on boot. `disabled' unloads firewall and disables 
+# state: `enabled' reloads firewall and enables firewall 
 # to_ip: Destination IP address. 
 # to_port: Destination port. 
 }- name: ${2:Name for ufw module.}

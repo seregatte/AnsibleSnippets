@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dict with the authentication information required to connect to a Nuage VSP environment. 
-# children: Can be used to specify a set of child entities. A mandatory property of each child is the `type'. 
-# command: Specifies a command to be executed. With `command=find', if `parent_id' and `parent_type' are defined, 
-# id: The ID of the entity you want to work on. In combination with `command=find', it will only return the 
-# match_filter: A filter used when looking (both in `command' and `state' for entities, in the format the Nuage VSP API 
-# parent_id: The ID of the parent of the entity you want to work on. When `state' is specified, the entity will be 
-# parent_type: The type of parent the ID is specified for (example Enterprise). This should match the objects CamelCase 
-# properties: Properties are the key, value pairs of the different properties an entity has. If no `id' and no 
-# state: Specifies the desired state of the entity. If `state=present', in case the entity already exists, will 
-# type: (required) The type of entity you want to work on (example Enterprise). This should match the objects 
+${1:# auth: (required) Dict with the authentication 
+# children: Can be used to specify a set of child entities. 
+# command: Specifies a command to be executed. With 
+# id: The ID of the entity you want to work on. In 
+# match_filter: A filter used when looking (both in `command' 
+# parent_id: The ID of the parent of the entity you want to 
+# parent_type: The type of parent the ID is specified for 
+# properties: Properties are the key, value pairs of the 
+# state: Specifies the desired state of the entity. If 
+# type: (required) The type of entity you want to work 
 }- name: ${2:Name for nuage_vspk module.}
   nuage_vspk:
 ${3:   ${4:auth}: ${5:"#"}}

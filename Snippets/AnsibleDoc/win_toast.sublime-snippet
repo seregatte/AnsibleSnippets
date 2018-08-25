@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# expire: How long in seconds before the notification expires. 
-# group: Which notification group to add the notification to. 
-# msg: The message to appear inside the notification.  May include \n to format the message to appear within 
-# popup: If false, the notification will not pop up and will only appear in the Action Center. 
+${1:# expire: How long in seconds before the notification 
+# group: Which notification group to add the notification 
+# msg: The message to appear inside the notification. 
+# popup: If `no', the notification will not pop up and 
 # tag: The tag to add to the notification. 
-# title: The notification title, which appears in the pop up.. 
+# title: The notification title, which appears in the pop 
 }- name: ${2:Name for win_toast module.}
   win_toast:
 ${3:   ${4:expire}: ${5:"#"}}

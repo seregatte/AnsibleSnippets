@@ -1,47 +1,51 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_version: The api version to be used with the vca 
-# host: The authentication host to be used when service type  is vcd. 
-# instance_id: The instance id in a vchs environment to be used for creating the vapp 
+# gateway_name: The name of the gateway of the vdc where the 
+# host: The authentication host to be used when service 
+# instance_id: The instance id in a vchs environment to be used 
 # network_mode: Configures the mode of the network connection. 
-# network_name: The name of the network that should be attached to the virtual machine in the vApp.  The virtual network 
-# operation: Specifies an operation to be performed on the vApp. 
-# org: The org to login to for creating vapp, mostly set when the service_type is vdc. 
-# password: The vCloud Air password to use during authentication 
-# service_type: The type of service we are authenticating against 
+# network_name: The name of the network that should be attached 
+# operation: Specifies an operation to be performed on the 
+# org: The org to login to for creating vapp, mostly 
+# password: The vCloud Air password to use during 
+# service_type: The type of service we are authenticating 
 # state: Configures the state of the vApp. 
-# template_name: The name of the vApp template to use to create the vApp instance.  If the `state' is not `absent` then 
-# username: The vCloud Air username to use during authentication 
-# vapp_name: (required) The name of the vCloud Air vApp instance 
-# vdc_name: The name of the virtual data center (VDC) where the vm should be created or contains the vAPP. 
-# vm_cpus: The number of vCPUs to configure for the VM in the vApp.   If the `vm_name' argument is provided, then 
-# vm_memory: The amount of memory in MB to allocate to VMs in the vApp.  If the `vm_name' argument is provided, then 
-# vm_name: The name of the virtual machine instance in the vApp to manage. 
+# template_name: The name of the vApp template to use to create 
+# username: The vCloud Air username to use during 
+# vapp_name: (required) The name of the vCloud Air vApp 
+# vdc_name: The name of the virtual data center (VDC) where 
+# verify_certs: If the certificates of the authentication is to 
+# vm_cpus: The number of vCPUs to configure for the VM in 
+# vm_memory: The amount of memory in MB to allocate to VMs in 
+# vm_name: The name of the virtual machine instance in the 
 }- name: ${2:Name for vca_vapp module.}
   vca_vapp:
 ${3:   ${4:api_version}: ${5:"#"}}
-${6:   ${7:host}: ${8:"#"}}
-${9:   ${10:instance_id}: ${11:"#"}}
-${12:   ${13:network_mode}: ${14:"#"}}
-${15:   ${16:network_name}: ${17:"#"}}
-${18:   ${19:operation}: ${20:"#"}}
-${21:   ${22:org}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:service_type}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:template_name}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:vapp_name}: ${41:"#"}}
-${42:   ${43:vdc_name}: ${44:"#"}}
-${45:   ${46:vm_cpus}: ${47:"#"}}
-${48:   ${49:vm_memory}: ${50:"#"}}
-${51:   ${52:vm_name}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${6:   ${7:gateway_name}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:instance_id}: ${14:"#"}}
+${15:   ${16:network_mode}: ${17:"#"}}
+${18:   ${19:network_name}: ${20:"#"}}
+${21:   ${22:operation}: ${23:"#"}}
+${24:   ${25:org}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:service_type}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:template_name}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:vapp_name}: ${44:"#"}}
+${45:   ${46:vdc_name}: ${47:"#"}}
+${48:   ${49:verify_certs}: ${50:"#"}}
+${51:   ${52:vm_cpus}: ${53:"#"}}
+${54:   ${55:vm_memory}: ${56:"#"}}
+${57:   ${58:vm_name}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>vca_vapp</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

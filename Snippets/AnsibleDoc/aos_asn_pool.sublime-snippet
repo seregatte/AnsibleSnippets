@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# content: Datastructure of the ASN Pool to manage. The data can be in YAML / JSON or directly a variable. It's the 
-# id: AOS Id of the ASN Pool to manage. Only one of `name', `id' or `content' can be set. 
-# name: Name of the ASN Pool to manage. Only one of `name', `id' or `content' can be set. 
-# ranges: List of ASNs ranges to add to the ASN Pool. Each range must have 2 values. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the ASN Pool (present or not). 
+${1:# content: Datastructure of the ASN Pool to manage. The 
+# id: AOS Id of the ASN Pool to manage. Only one of 
+# name: Name of the ASN Pool to manage. Only one of 
+# ranges: List of ASNs ranges to add to the ASN Pool. Each 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the ASN 
 }- name: ${2:Name for aos_asn_pool module.}
   aos_asn_pool:
 ${3:   ${4:content}: ${5:"#"}}

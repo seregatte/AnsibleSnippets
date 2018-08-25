@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# automatic: Configures AutomaticManagedPagefile for the entire system. 
+${1:# automatic: Configures AutomaticManagedPagefile for the 
 # drive: The drive of the pagefile. 
 # initial_size: The initial size of the pagefile in megabytes. 
 # maximum_size: The maximum size of the pagefile in megabytes. 
 # override: Override the current pagefile on the drive. 
-# remove_all: Remove all pagefiles in the system, not including automatic managed. 
+# remove_all: Remove all pagefiles in the system, not 
 # state: State of the pagefile. 
-# system_managed: Configures current pagefile to be managed by the system. 
-# test_path: Use Test-Path on the drive to make sure the drive is accessible before creating the pagefile. 
+# system_managed: Configures current pagefile to be managed by the 
+# test_path: Use Test-Path on the drive to make sure the 
 }- name: ${2:Name for win_pagefile module.}
   win_pagefile:
 ${3:   ${4:automatic}: ${5:"#"}}

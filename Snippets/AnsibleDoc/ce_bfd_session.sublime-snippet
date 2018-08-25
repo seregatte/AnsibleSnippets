@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
 ${1:# addr_type: Specifies the peer IP address type. 
-# create_type: BFD session creation mode, the currently created BFD session only supports static or static auto- 
-# dest_addr: Specifies the peer IP address bound to the BFD session. 
-# out_if_name: Specifies the type and number of the interface bound to the BFD session. 
-# session_name: (required) Specifies the name of a BFD session. The value is a string of 1 to 15 case-sensitive 
-# src_addr: Indicates the source IP address carried in BFD packets. 
-# state: Determines whether the config should be present or not on the device. 
-# use_default_ip: Indicates the default multicast IP address that is bound to a BFD session. By default, BFD uses the 
-# vrf_name: Specifies the name of a Virtual Private Network (VPN) instance that is bound to a BFD session. The value 
+# create_type: BFD session creation mode, the currently created 
+# dest_addr: Specifies the peer IP address bound to the BFD 
+# out_if_name: Specifies the type and number of the interface 
+# session_name: (required) Specifies the name of a BFD session. 
+# src_addr: Indicates the source IP address carried in BFD 
+# state: Determines whether the config should be present 
+# use_default_ip: Indicates the default multicast IP address that 
+# vrf_name: Specifies the name of a Virtual Private Network 
 }- name: ${2:Name for ce_bfd_session module.}
   ce_bfd_session:
 ${3:   ${4:addr_type}: ${5:"#"}}

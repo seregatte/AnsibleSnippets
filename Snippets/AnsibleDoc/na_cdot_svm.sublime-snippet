@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# hostname: (required) The hostname or IP address of the ONTAP instance. 
+${1:# hostname: (required) The hostname or IP address of the 
 # name: (required) The name of the SVM to manage. 
 # password: (required) Password for the specified user. 
-# root_volume: Root volume of the SVM. Required when `state=present'. 
-# root_volume_aggregate: The aggregate on which the root volume will be created. Required when `state=present'. 
-# root_volume_security_style: Security Style of the root volume. When specified as part of the vserver-create, this field represents 
-# state: (required) Whether the specified SVM should exist or not. 
-# username: (required) This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or 
+# root_volume: Root volume of the SVM. Required when 
+# root_volume_aggregate: The aggregate on which the root volume will be 
+# root_volume_security_style: Security Style of the root volume. When 
+# state: (required) Whether the specified SVM should 
+# username: (required) This can be a Cluster-scoped or SVM- 
 }- name: ${2:Name for na_cdot_svm module.}
   na_cdot_svm:
 ${3:   ${4:hostname}: ${5:"#"}}

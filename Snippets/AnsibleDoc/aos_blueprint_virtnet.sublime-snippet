@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# blueprint: (required) Blueprint Name or Id as defined in AOS. 
-# content: Datastructure of the Virtual Network to manage. The data can be in YAML / JSON or directly a variable. 
-# name: Name of Virtual Network as part of the Blueprint. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Virtual Network (present or not). 
+${1:# blueprint: (required) Blueprint Name or Id as defined in 
+# content: Datastructure of the Virtual Network to manage. 
+# name: Name of Virtual Network as part of the 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
 }- name: ${2:Name for aos_blueprint_virtnet module.}
   aos_blueprint_virtnet:
 ${3:   ${4:blueprint}: ${5:"#"}}

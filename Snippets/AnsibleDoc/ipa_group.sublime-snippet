@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# cn: (required) Canonical name. Can not be changed as it is the unique identifier. 
-# external: Allow adding external non-IPA members from trusted domains. 
+${1:# cn: (required) Canonical name. Can not be changed as 
+# external: Allow adding external non-IPA members from 
 # gidnumber: GID (use this option to set it manually). 
-# group: List of group names assigned to this group. If an empty list is passed all groups will be removed from 
-# ipa_host: IP or hostname of IPA server 
-# ipa_pass: (required) Password of administrative user 
-# ipa_port: Port of IPA server 
-# ipa_prot: Protocol used by IPA server 
-# ipa_user: Administrative account used on IPA server 
+# group: List of group names assigned to this group. If 
+# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
 # nonposix: Create as a non-POSIX group. 
 # state: State to ensure 
-# user: List of user names assigned to this group. If an empty list is passed all users will be removed from 
-# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
+# user: List of user names assigned to this group. If an 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
 }- name: ${2:Name for ipa_group module.}
   ipa_group:
 ${3:   ${4:cn}: ${5:"#"}}

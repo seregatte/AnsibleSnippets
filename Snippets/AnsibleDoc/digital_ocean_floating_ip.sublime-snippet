@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# droplet_id: The Droplet that the Floating IP has been assigned to. 
-# ip: Public IP address of the Floating IP. Used to remove an IP 
+${1:# droplet_id: The Droplet that the Floating IP has been 
+# ip: Public IP address of the Floating IP. Used to 
 # oauth_token: (required) DigitalOcean OAuth token. 
 # region: The region that the Floating IP is reserved to. 
 # state: Indicate desired state of the target. 

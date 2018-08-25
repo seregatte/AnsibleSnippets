@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# data_assurance_enabled: If data assurance should be enabled for the volume 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# data_assurance_enabled: If data assurance should be enabled for the 
 # name: (required) The name of the volume to manage 
 # segment_size_kb: The segment size of the new volume 
-# size: (required) Required only when state = 'present'.  The size of the volume in (size_unit). 
+# size: (required) Required only when state = 'present'. 
 # size_unit: The unit used to interpret the size parameter 
-# ssd_cache_enabled: Whether an existing SSD cache should be enabled on the volume (fails if no SSD cache defined) 
-# ssid: (required) The ID of the array to manage. This value must be unique for each array. 
-# state: (required) Whether the specified volume should exist or not. 
-# storage_pool_name: (required) Required only when requested state is 'present'.  The name of the storage pool the volume 
-# thin_provision: Whether the volume should be thin provisioned.  Thin volumes can only be created on disk pools 
-# thin_volume_max_repo_size: Maximum size that the thin volume repository volume will automatically expand to 
-# thin_volume_repo_size: (required) Initial size of the thin volume repository volume (in size_unit) 
+# ssd_cache_enabled: Whether an existing SSD cache should be enabled 
+# ssid: (required) The ID of the array to manage. This 
+# state: (required) Whether the specified volume should 
+# storage_pool_name: (required) Required only when requested state is 
+# thin_provision: Whether the volume should be thin provisioned. 
+# thin_volume_max_repo_size: Maximum size that the thin volume repository 
+# thin_volume_repo_size: (required) Initial size of the thin volume 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_volume module.}
   netapp_e_volume:

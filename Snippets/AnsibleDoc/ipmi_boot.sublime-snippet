@@ -3,11 +3,11 @@
 ${1:# bootdev: (required) Set boot device to use on next reboot 
 # name: (required) Hostname or ip address of the BMC. 
 # password: (required) Password to connect to the BMC. 
-# persistent: If set, ask that system firmware uses this device beyond next boot. Be aware many systems do not honor 
+# persistent: If set, ask that system firmware uses this 
 # port: Remote RMCP port. 
 # state: Whether to ensure that boot devices is desired. 
-# uefiboot: If set, request UEFI boot explicitly. Strictly speaking, the spec suggests that if not set, the system 
-# user: (required) Username to use to connect to the BMC. 
+# uefiboot: If set, request UEFI boot explicitly. Strictly 
+# user: (required) Username to use to connect to the 
 }- name: ${2:Name for ipmi_boot module.}
   ipmi_boot:
 ${3:   ${4:bootdev}: ${5:"#"}}

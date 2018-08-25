@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) The action you wish to perform on target. Add: Add an object to your LogicMonitor account. 
-# alertenable: A boolean flag to turn alerting on or off for an object. Optional for managing all hosts (action=add or 
-# collector: The fully qualified domain name of a collector in your LogicMonitor account. This is required for the 
-# company: (required) The LogicMonitor account company name. If you would log in to your account at 
-# description: The long text description of the object in your LogicMonitor account. Optional for managing hosts and 
-# displayname: The display name of a host in your LogicMonitor account or the desired display name of a device to 
-# duration: The duration (minutes) of the Scheduled Down Time (SDT). Optional for putting an object into SDT 
-# fullpath: The fullpath of the host group object you would like to manage. Recommend running on a single Ansible 
-# groups: A list of groups that the host should be a member of. Optional for managing hosts (target=host; 
-# hostname: The hostname of a host in your LogicMonitor account, or the desired hostname of a device to manage. 
-# id: ID of the datasource to target. Required for management of LogicMonitor datasources (target=datasource). 
-# password: (required) The password of the specified LogicMonitor user 
-# properties: A dictionary of properties to set on the LogicMonitor host or host group. Optional for managing hosts 
-# starttime: The time that the Scheduled Down Time (SDT) should begin. Optional for managing SDT (action=sdt). Y-m-d 
-# target: (required) The type of LogicMonitor object you wish to manage. Collector: Perform actions on a 
-# user: (required) A LogicMonitor user name. The module will authenticate and perform actions on behalf of this 
+${1:# action: (required) The action you wish to perform on 
+# alertenable: A boolean flag to turn alerting on or off for an 
+# collector: The fully qualified domain name of a collector 
+# company: (required) The LogicMonitor account company 
+# description: The long text description of the object in your 
+# displayname: The display name of a host in your LogicMonitor 
+# duration: The duration (minutes) of the Scheduled Down 
+# fullpath: The fullpath of the host group object you would 
+# groups: A list of groups that the host should be a 
+# hostname: The hostname of a host in your LogicMonitor 
+# id: ID of the datasource to target. Required for 
+# password: (required) The password of the specified 
+# properties: A dictionary of properties to set on the 
+# starttime: The time that the Scheduled Down Time (SDT) 
+# target: (required) The type of LogicMonitor object you 
+# user: (required) A LogicMonitor user name. The module 
 }- name: ${2:Name for logicmonitor module.}
   logicmonitor:
 ${3:   ${4:action}: ${5:"#"}}

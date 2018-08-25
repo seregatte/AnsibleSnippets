@@ -1,0 +1,36 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# managed_zone: (required) A reference to ManagedZone resource. 
+# name: (required) For example, www.example.com. 
+# project: The Google Cloud Platform project to use. 
+# scopes: (required) Array of scopes to be used. 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# state: (required) Whether the given object should exist 
+# target: As defined in RFC 1035 (section 5) and RFC 1034 
+# ttl: Number of seconds that this ResourceRecordSet 
+# type: (required) One of valid DNS resource types. 
+}- name: ${2:Name for gcp_dns_resource_record_set module.}
+  gcp_dns_resource_record_set:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:managed_zone}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:project}: ${14:"#"}}
+${15:   ${16:scopes}: ${17:"#"}}
+${18:   ${19:service_account_email}: ${20:"#"}}
+${21:   ${22:service_account_file}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:target}: ${29:"#"}}
+${30:   ${31:ttl}: ${32:"#"}}
+${33:   ${34:type}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
+]]></content>
+	<tabTrigger>gcp_dns_resource_record_set</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# failure_threshold: (required) The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 
-# fqdn: Domain name of the endpoint to check. Either this or `ip_address` has to be provided. When both are 
-# ip_address: IP address of the end-point to check. Either this or `fqdn` has to be provided. 
-# port: The port on the endpoint on which you want Amazon Route 53 to perform health checks. Required for TCP 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# request_interval: (required) The number of seconds between the time that Amazon Route 53 gets a response from your 
-# resource_path: The path that you want Amazon Route 53 to request when performing health checks. The path can be any 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# failure_threshold: (required) The number of consecutive health 
+# fqdn: Domain name of the endpoint to check. Either 
+# ip_address: IP address of the end-point to check. Either 
+# port: The port on the endpoint on which you want 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# request_interval: (required) The number of seconds between the 
+# resource_path: The path that you want Amazon Route 53 to 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) Specifies the action to take. 
-# string_match: If the check type is HTTP_STR_MATCH or HTTP_STR_MATCH, the string that you want Amazon Route 53 to 
-# type: (required) The type of health check that you want to create, which indicates how Amazon Route 53 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# string_match: If the check type is HTTP_STR_MATCH or 
+# type: (required) The type of health check that you 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for route53_health_check module.}
   route53_health_check:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -28,7 +28,7 @@ ${18:   ${19:ip_address}: ${20:"#"}}
 ${21:   ${22:port}: ${23:"#"}}
 ${24:   ${25:profile}: ${26:"#"}}
 ${27:   ${28:region}: ${29:"#"}}
-${30:   ${31:http}: ${32:"#"}}
+${30:   ${31:}: ${32:"#"}}
 ${33:   ${34:request_interval}: ${35:"#"}}
 ${36:   ${37:resource_path}: ${38:"#"}}
 ${39:   ${40:security_token}: ${41:"#"}}

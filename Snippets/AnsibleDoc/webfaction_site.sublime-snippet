@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# host: (required) The webfaction host on which the site should be created. 
+${1:# host: (required) The webfaction host on which the site 
 # https: Whether or not to use HTTPS 
 # login_name: (required) The webfaction account to use 
 # login_password: (required) The webfaction password to use 

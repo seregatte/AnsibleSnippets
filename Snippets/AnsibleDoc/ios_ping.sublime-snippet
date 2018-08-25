@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
+${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
 # count: Number of packets to send. 
-# dest: (required) The IP Address or hostname (resolvable by switch) of the remote node. 
-# provider: A dict object containing connection details. 
+# dest: (required) The IP Address or hostname 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # source: The source IP Address. 
-# state: Determines if the expected result is success or fail. 
+# state: Determines if the expected result is success or 
 # vrf: The VRF to use for forwarding. 
 }- name: ${2:Name for ios_ping module.}
   ios_ping:

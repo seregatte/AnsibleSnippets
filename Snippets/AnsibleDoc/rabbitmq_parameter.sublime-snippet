@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# component: (required) Name of the component of which the parameter is being set 
+${1:# component: (required) Name of the component of which the 
 # name: (required) Name of the parameter being set 
-# node: erlang node name of the rabbit we wish to configure 
+# node: erlang node name of the rabbit we wish to 
 # state: Specify if user is to be added or removed 
 # value: Value of the parameter, as a JSON term 
 # vhost: vhost to apply access privileges. 

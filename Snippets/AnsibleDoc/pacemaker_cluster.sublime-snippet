@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# force: Force the change of the cluster state 
-# node: Specify which node of the cluster you want to manage. None == the cluster status itself, 'all' == check 
+# node: Specify which node of the cluster you want to 
 # state: (required) Indicate desired state of the cluster 
-# timeout: Timeout when the module should considered that the action has failed 
+# timeout: Timeout when the module should considered that 
 }- name: ${2:Name for pacemaker_cluster module.}
   pacemaker_cluster:
 ${3:   ${4:force}: ${5:"#"}}

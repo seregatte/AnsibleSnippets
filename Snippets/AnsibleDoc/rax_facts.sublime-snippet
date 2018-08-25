@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# address: Server IP address to retrieve facts for, will match any IP assigned to the server 
+${1:# address: Server IP address to retrieve facts for, will 
 # api_key: Rackspace API key, overrides `credentials'. 
 # auth_endpoint: The URI of the authentication service. 
-# credentials: File to find the Rackspace credentials in. Ignored if `api_key' and `username' are provided. 
+# credentials: File to find the Rackspace credentials in. 
 # env: Environment as configured in `~/.pyrax.cfg', see 
-# : pyrax-configuration. 
+# md: pyrax- 
 # id: Server ID to retrieve facts for 
-# identity_type: Authentication mechanism to use, such as rackspace or keystone. 
+# identity_type: Authentication mechanism to use, such as 
 # name: Server name to retrieve facts for 
 # region: Region to create an instance in. 
 # tenant_id: The tenant ID used for authentication. 
 # tenant_name: The tenant name used for authentication. 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API endpoints. 
+# verify_ssl: Whether or not to require SSL validation of API 
 }- name: ${2:Name for rax_facts module.}
   rax_facts:
 ${3:   ${4:address}: ${5:"#"}}
@@ -21,7 +21,7 @@ ${6:   ${7:api_key}: ${8:"#"}}
 ${9:   ${10:auth_endpoint}: ${11:"#"}}
 ${12:   ${13:credentials}: ${14:"#"}}
 ${15:   ${16:env}: ${17:"#"}}
-${18:   ${19:}: ${20:"#"}}
+${18:   ${19:md}: ${20:"#"}}
 ${21:   ${22:id}: ${23:"#"}}
 ${24:   ${25:identity_type}: ${26:"#"}}
 ${27:   ${28:name}: ${29:"#"}}

@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# managed_policy: A list of managed policy ARNs or friendly names 
+# name: (required) The name of the user to create. 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_policy: Detach policies which are not included in 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) Create or remove the IAM user 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for iam_user module.}
+  iam_user:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:managed_policy}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:profile}: ${20:"#"}}
+${21:   ${22:purge_policy}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>iam_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API, for example 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# create_copy_pair_if_does_not_exist: Defines if a copy pair will be created if it does not exist. If set to True destination_volume_id and 
-# destination_volume_id: The id of the volume copy destination. If used, must be paired with source_volume_id Mutually exclusive 
-# search_volume_id: Searches for all valid potential target and source volumes that could be used in a copy_pair Mutually 
-# source_volume_id: The id of the volume copy source. If used, must be paired with destination_volume_id Mutually exclusive 
-# ssid: (required) The ID of the array to manage. This value must be unique for each array. 
-# start_stop_copy: starts a re-copy or stops a copy in progress Note: If you stop the initial file copy before it it done 
-# state: (required) Whether the specified volume copy pair should exist or not. 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# create_copy_pair_if_does_not_exist: Defines if a copy pair will be created if it 
+# destination_volume_id: The id of the volume copy destination. If used, 
+# search_volume_id: Searches for all valid potential target and 
+# source_volume_id: The id of the volume copy source. If used, must 
+# ssid: (required) The ID of the array to manage. This 
+# start_stop_copy: starts a re-copy or stops a copy in progress 
+# state: (required) Whether the specified volume copy 
 # validate_certs: Should https certificates be validated? 
-# volume_copy_pair_id: The id of a given volume copy pair Mutually exclusive with destination_volume_id, source_volume_id, and 
+# volume_copy_pair_id: The id of a given volume copy pair Mutually 
 }- name: ${2:Name for netapp_e_volume_copy module.}
   netapp_e_volume_copy:
 ${3:   ${4:api_password}: ${5:"#"}}

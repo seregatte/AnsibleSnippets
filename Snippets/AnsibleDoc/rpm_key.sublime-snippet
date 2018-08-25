@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# key: (required) Key that will be modified. Can be a url, a file, or a keyid if the key already exists in the 
-# state: If the key will be imported or removed from the rpm db. 
-# validate_certs: If `no' and the `key' is a url starting with https, SSL certificates will not be validated. This should 
+${1:# key: (required) Key that will be modified. Can be a 
+# state: If the key will be imported or removed from the 
+# validate_certs: If `no' and the `key' is a url starting with 
 }- name: ${2:Name for rpm_key module.}
   rpm_key:
 ${3:   ${4:key}: ${5:"#"}}

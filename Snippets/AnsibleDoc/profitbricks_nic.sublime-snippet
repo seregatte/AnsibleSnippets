@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# datacenter: (required) The datacenter in which to operate. 
-# lan: (required) The LAN to place the NIC on. You can pass a LAN that doesn't exist and it will be created. 
-# name: (required) The name or ID of the NIC. This is only required on deletes, but not on create. 
+# lan: (required) The LAN to place the NIC on. You can 
+# name: (required) The name or ID of the NIC. This is 
 # server: (required) The server name or ID. 
 # state: Indicate desired state of the resource 
-# subscription_password: THe ProfitBricks password. Overrides the PB_PASSWORD environment variable. 
-# subscription_user: The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable. 
-# wait: wait for the operation to complete before returning 
+# subscription_password: THe ProfitBricks password. Overrides the 
+# subscription_user: The ProfitBricks username. Overrides the 
+# wait: wait for the operation to complete before 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for profitbricks_nic module.}
   profitbricks_nic:

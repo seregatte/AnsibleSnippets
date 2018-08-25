@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_host: (required) the host of the Proxmox VE cluster 
-# api_password: the password to authenticate with you can use PROXMOX_PASSWORD environment variable 
+# api_password: the password to authenticate with you can use 
 # api_user: (required) the user to authenticate with 
 # content_type: content type required only for `state=present' 
-# force: can be used only with `state=present', exists template will be overwritten 
-# node: (required) Proxmox VE node, when you will operate with template 
-# src: path to uploaded file required only for `state=present' 
+# force: can be used only with `state=present', exists 
+# node: (required) Proxmox VE node, when you will 
+# src: path to uploaded file required only for 
 # state: Indicate desired state of the template 
 # storage: target storage 
-# template: the template name required only for states `absent', `info' 
+# template: the template name required only for states 
 # timeout: timeout for operations 
 # validate_certs: enable / disable https certificate verification 
 }- name: ${2:Name for proxmox_template module.}

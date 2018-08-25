@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# acl_name: (required) ACL number or name. For a numbered rule group, the value ranging from 2000 to 4999. For a 
-# direction: (required) Direction ACL to be applied in on the interface. 
-# interface: (required) Interface name. Only support interface full name, such as "40GE2/0/1". 
-# state: Determines whether the config should be present or not on the device. 
+${1:# acl_name: (required) ACL number or name. For a numbered 
+# direction: (required) Direction ACL to be applied in on the 
+# interface: (required) Interface name. Only support 
+# state: Determines whether the config should be present 
 }- name: ${2:Name for ce_acl_interface module.}
   ce_acl_interface:
 ${3:   ${4:acl_name}: ${5:"#"}}

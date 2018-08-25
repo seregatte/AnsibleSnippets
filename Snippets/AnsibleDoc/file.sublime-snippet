@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# follow: This flag indicates that filesystem links, if they exist, should be followed. 
-# force: force the creation of the symlinks in two cases: the source file does not exist (but will appear later); 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# path: (required) path to the file being managed.  Aliases: `dest', `name' 
-# recurse: recursively set the specified file attributes (applies only to state=directory) 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# src: path of the file to link to (applies only to `state=link'). Will accept absolute, relative and 
-# state: If `directory', all immediate subdirectories will be created if they do not exist, since 1.7 they will 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
+${1:# attributes: Attributes the file or directory should have. To 
+# follow: This flag indicates that filesystem links, if 
+# force: force the creation of the symlinks in two cases: 
+# group: Name of the group that should own the 
+# mode: Mode the file or directory should be. For those 
+# owner: Name of the user that should own the 
+# path: (required) path to the file being managed. 
+# recurse: recursively set the specified file attributes 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# src: path of the file to link to (applies only to 
+# state: If `directory', all intermediate subdirectories 
+# unsafe_writes: Normally this module uses atomic operations to 
 }- name: ${2:Name for file module.}
   file:
 ${3:   ${4:attributes}: ${5:"#"}}

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# action: the action you want to perform on the entity 
-# name: (required) name of the entity 
-# nsc_host: (required) hostname or ip of your netscaler 
-# nsc_protocol: protocol used to access netscaler 
-# password: (required) password 
-# type: type of the entity 
-# user: (required) username 
-# validate_certs: If `no', SSL certificates for the target url will not be validated. This should only be used on 
+${1:# action: The action you want to perform on the entity. 
+# name: (required) Name of the entity. 
+# nsc_host: (required) Hostname or ip of your netscaler. 
+# nsc_protocol: Protocol used to access netscaler. 
+# password: (required) Password. 
+# type: Type of the entity. 
+# user: (required) Username. 
+# validate_certs: If `no', SSL certificates for the target url 
 }- name: ${2:Name for netscaler module.}
   netscaler:
 ${3:   ${4:action}: ${5:"#"}}

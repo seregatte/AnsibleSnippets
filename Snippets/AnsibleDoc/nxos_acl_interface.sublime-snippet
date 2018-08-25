@@ -1,41 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# direction: (required) Direction ACL to be applied in on the interface. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# interface: (required) Full name of interface, e.g. `Ethernet1/1'. 
-# name: (required) Case sensitive name of the access list (ACL). 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+${1:# direction: (required) Direction ACL to be applied in on the 
+# interface: (required) Full name of interface, e.g. 
+# name: (required) Case sensitive name of the access 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: Specify desired state of the resource. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
 }- name: ${2:Name for nxos_acl_interface module.}
   nxos_acl_interface:
 ${3:   ${4:direction}: ${5:"#"}}
-${6:   ${7:host}: ${8:"#"}}
-${9:   ${10:interface}: ${11:"#"}}
-${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:port}: ${20:"#"}}
-${21:   ${22:provider}: ${23:"#"}}
-${24:   ${25:ssh_keyfile}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:timeout}: ${32:"#"}}
-${33:   ${34:transport}: ${35:"#"}}
-${36:   ${37:use_ssl}: ${38:"#"}}
-${39:   ${40:username}: ${41:"#"}}
-${42:   ${43:validate_certs}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${6:   ${7:interface}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:provider}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>nxos_acl_interface</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

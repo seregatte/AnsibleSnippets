@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# attach_options: Extra options to the zoneadm attach command. For example, this can be used to specify whether a minimum 
-# config: The zonecfg configuration commands for this zone. See zonecfg(1M) for the valid options and syntax. 
+${1:# attach_options: Extra options to the zoneadm attach command. For 
+# config: The zonecfg configuration commands for this 
 # create_options: Extra options to the zonecfg(1M) create command. 
-# install_options: Extra options to the zoneadm(1M) install command. To automate Solaris 11 zone creation, use this to 
+# install_options: Extra options to the zoneadm(1M) install 
 # name: (required) Zone name. 
-# path: The path where the zone will be created. This is required when the zone is created, but not used 
-# root_password: The password hash for the root account. If not specified, the zone's root account will not have a 
-# sparse: Whether to create a sparse (`true') or whole root (`false') zone. 
-# state: (required) `present', configure and install the zone. `installed', synonym for `present'. `running', if 
+# path: The path where the zone will be created. This is 
+# root_password: The password hash for the root account. If not 
+# sparse: Whether to create a sparse (`true') or whole 
+# state: (required) `present', configure and install the 
 # timeout: Timeout, in seconds, for zone to boot. 
 }- name: ${2:Name for solaris_zone module.}
   solaris_zone:

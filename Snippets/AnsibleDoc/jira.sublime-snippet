@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# assignee: Sets the assignee on create or transition operations. Note not all transitions will allow this. 
+${1:# assignee: Sets the assignee on create or transition 
 # comment: The comment text to add. 
 # description: The issue description, where appropriate. 
-# fields: This is a free-form data structure that can contain arbitrary data. This is passed directly to the JIRA 
+# fields: This is a free-form data structure that can 
 # inwardissue: Set issue from which link will be created. 
 # issue: An existing issue key to operate on. 
 # issuetype: The issue type, for issue creation. 
@@ -11,12 +11,13 @@ ${1:# assignee: Sets the assignee on create or transition operations. Note not a
 # operation: (required) The operation to perform. 
 # outwardissue: Set issue to which link will be created. 
 # password: (required) The password to log-in with. 
-# project: The project for this operation. Required for issue creation. 
-# status: The desired status; only relevant for the transition operation. 
+# project: The project for this operation. Required for 
+# status: The desired status; only relevant for the 
 # summary: The issue summary, where appropriate. 
-# timeout: Set timeout, in seconds, on requests to JIRA API. 
+# timeout: Set timeout, in seconds, on requests to JIRA 
 # uri: (required) Base URI for the JIRA instance. 
 # username: (required) The username to log-in with. 
+# validate_certs: Require valid SSL certificates (set to `false` 
 }- name: ${2:Name for jira module.}
   jira:
 ${3:   ${4:assignee}: ${5:"#"}}
@@ -36,12 +37,13 @@ ${42:   ${43:summary}: ${44:"#"}}
 ${45:   ${46:timeout}: ${47:"#"}}
 ${48:   ${49:uri}: ${50:"#"}}
 ${51:   ${52:username}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>jira</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

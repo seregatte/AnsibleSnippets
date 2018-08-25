@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# configuration: (required) Configuration the instance should use. Examples are us-central1, asia-east1 and europe-west1. 
+${1:# configuration: (required) Configuration the instance should 
 # database_name: Name of database contained on the instance. 
-# force_instance_delete: To delete an instance, this argument must exist and be true (along with state being equal to absent). 
-# instance_display_name: Name of Instance to display.  If not specified, instance_id will be used instead. 
+# force_instance_delete: To delete an instance, this argument must exist 
+# instance_display_name: Name of Instance to display. If not specified, 
 # instance_id: (required) GCP spanner instance name. 
-# node_count: Number of nodes in the instance.  If not specified while creating an instance, node_count will be set to 
-# state: State of the instance or database (absent, present). Applies to the most granular resource. If a 
+# node_count: Number of nodes in the instance. 
+# state: State of the instance or database. Applies to 
 }- name: ${2:Name for gcspanner module.}
   gcspanner:
 ${3:   ${4:configuration}: ${5:"#"}}

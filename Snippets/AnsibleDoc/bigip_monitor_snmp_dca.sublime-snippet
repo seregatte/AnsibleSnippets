@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# agent_type: Specifies the SNMP agent running on the 
+# community: Specifies the community name that the system 
+# cpu_coefficient: Specifies the coefficient that the system uses 
+# cpu_threshold: Specifies the maximum acceptable CPU usage on 
+# description: Specifies descriptive text that identifies the 
+# disk_coefficient: Specifies the coefficient that the system uses 
+# disk_threshold: Specifies the maximum acceptable disk usage on 
+# interval: Specifies, in seconds, the frequency at which 
+# memory_coefficient: Specifies the coefficient that the system uses 
+# memory_threshold: Specifies the maximum acceptable memory usage on 
+# name: (required) Monitor name. 
+# parent: The parent template of this monitor template. 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: When `present', ensures that the monitor exists. 
+# time_until_up: Specifies the number of seconds to wait after a 
+# timeout: Specifies the number of seconds the target has 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+# version: Specifies the version of SNMP that the host 
+}- name: ${2:Name for bigip_monitor_snmp_dca module.}
+  bigip_monitor_snmp_dca:
+${3:   ${4:agent_type}: ${5:"#"}}
+${6:   ${7:community}: ${8:"#"}}
+${9:   ${10:cpu_coefficient}: ${11:"#"}}
+${12:   ${13:cpu_threshold}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:disk_coefficient}: ${20:"#"}}
+${21:   ${22:disk_threshold}: ${23:"#"}}
+${24:   ${25:interval}: ${26:"#"}}
+${27:   ${28:memory_coefficient}: ${29:"#"}}
+${30:   ${31:memory_threshold}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:parent}: ${38:"#"}}
+${39:   ${40:partition}: ${41:"#"}}
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:provider}: ${47:"#"}}
+${48:   ${49:server}: ${50:"#"}}
+${51:   ${52:server_port}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:time_until_up}: ${59:"#"}}
+${60:   ${61:timeout}: ${62:"#"}}
+${63:   ${64:user}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:   ${70:version}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>bigip_monitor_snmp_dca</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

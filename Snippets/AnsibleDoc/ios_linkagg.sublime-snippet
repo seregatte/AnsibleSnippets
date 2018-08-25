@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of link aggregation definitions. 
+# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# group: Channel-group number for the port-channel Link 
+# members: List of members of the link aggregation group. 
+# mode: Mode of the link aggregation group. 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# purge: Purge links not defined in the `aggregate' 
+# state: State of the link aggregation group. 
+}- name: ${2:Name for ios_linkagg module.}
+  ios_linkagg:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:auth_pass}: ${8:"#"}}
+${9:   ${10:authorize}: ${11:"#"}}
+${12:   ${13:group}: ${14:"#"}}
+${15:   ${16:members}: ${17:"#"}}
+${18:   ${19:mode}: ${20:"#"}}
+${21:   ${22:provider}: ${23:"#"}}
+${24:   ${25:purge}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>ios_linkagg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

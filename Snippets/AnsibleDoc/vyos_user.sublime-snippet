@@ -1,13 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# aggregate: The set of username objects to be configured on the remote VyOS device. The list entries can either be 
-# configured_password: The password to be configured on the VyOS device. The password needs to be provided in clear and it will 
-# full_name: The `full_name' argument provides the full name of the user account to be created on the remote device. 
-# level: The `level' argument configures the level of the user when logged into the system. This argument accepts 
-# name: The username to be configured on the VyOS device. This argument accepts a string value and is mutually 
-# purge: Instructs the module to consider the resource definition absolute. It will remove any previously 
-# state: Configures the state of the username definition as it relates to the device operational configuration. 
-# update_password: Since passwords are encrypted in the device running config, this argument will instruct the module when 
+${1:# aggregate: The set of username objects to be configured on 
+# configured_password: The password to be configured on the VyOS 
+# full_name: The `full_name' argument provides the full name 
+# level: The `level' argument configures the level of the 
+# name: The username to be configured on the VyOS 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# : multiple- 
+# purge: Instructs the module to consider the resource 
+# state: Configures the state of the username definition 
+# update_password: Since passwords are encrypted in the device 
 }- name: ${2:Name for vyos_user module.}
   vyos_user:
 ${3:   ${4:aggregate}: ${5:"#"}}
@@ -15,15 +17,17 @@ ${6:   ${7:configured_password}: ${8:"#"}}
 ${9:   ${10:full_name}: ${11:"#"}}
 ${12:   ${13:level}: ${14:"#"}}
 ${15:   ${16:name}: ${17:"#"}}
-${18:   ${19:purge}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:update_password}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:}: ${23:"#"}}
+${24:   ${25:purge}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:update_password}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>vyos_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

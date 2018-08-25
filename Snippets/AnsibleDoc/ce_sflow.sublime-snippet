@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# agent_ip: Specifies the IPv4/IPv6 address of an sFlow agent. 
-# collector_datagram_size: Specifies the maximum length of sFlow packets sent from an sFlow agent to an sFlow collector. The value 
-# collector_description: Specifies the description of an sFlow collector. The value is a string of 1 to 255 case-sensitive 
-# collector_id: Specifies the ID of an sFlow collector. This ID is used when you specify the collector in subsequent 
-# collector_ip: Specifies the IPv4/IPv6 address of the sFlow collector. 
-# collector_ip_vpn: Specifies the name of a VPN instance. The value is a string of 1 to 31 case-sensitive characters, spaces 
-# collector_meth: Configures the device to send sFlow packets through service interfaces, enhancing the sFlow packet 
-# collector_udp_port: Specifies the UDP destination port number of sFlow packets. The value is an integer that ranges from 1 
+${1:# agent_ip: Specifies the IPv4/IPv6 address of an sFlow 
+# collector_datagram_size: Specifies the maximum length of sFlow packets 
+# collector_description: Specifies the description of an sFlow collector. 
+# collector_id: Specifies the ID of an sFlow collector. This ID 
+# collector_ip: Specifies the IPv4/IPv6 address of the sFlow 
+# collector_ip_vpn: Specifies the name of a VPN instance. The value 
+# collector_meth: Configures the device to send sFlow packets 
+# collector_udp_port: Specifies the UDP destination port number of 
 # counter_collector: Indicates the ID list of the counter collector. 
-# counter_interval: Indicates the counter sampling interval. The value is an integer that ranges from 10 to 4294967295, in 
-# export_route: Configures the sFlow packets sent by the switch not to carry routing information. 
-# forward_enp_slot: Enable the Embedded Network Processor (ENP) chip function. The switch uses the ENP chip to perform sFlow 
-# rate_limit: Specifies the rate of sFlow packets sent from a card to the control plane. The value is an integer that 
-# rate_limit_slot: Specifies the slot where the rate of output sFlow packets is limited. If this parameter is not 
+# counter_interval: Indicates the counter sampling interval. The 
+# export_route: Configures the sFlow packets sent by the switch 
+# forward_enp_slot: Enable the Embedded Network Processor (ENP) chip 
+# rate_limit: Specifies the rate of sFlow packets sent from a 
+# rate_limit_slot: Specifies the slot where the rate of output 
 # sample_collector: Indicates the ID list of the collector. 
-# sample_direction: Enables flow sampling in the inbound or outbound direction. 
-# sample_length: Specifies the maximum length of sampled packets. The value is an integer and ranges from 18 to 512, in 
-# sample_rate: Specifies the flow sampling rate in the format 1/rate. The value is an integer and ranges from 1 to 
-# sflow_interface: Full name of interface for Flow Sampling or Counter. It must be a physical interface, Eth-Trunk, or 
-# source_ip: Specifies the source IPv4/IPv6 address of sFlow packets. 
-# state: Determines whether the config should be present or not on the device. 
+# sample_direction: Enables flow sampling in the inbound or outbound 
+# sample_length: Specifies the maximum length of sampled packets. 
+# sample_rate: Specifies the flow sampling rate in the format 
+# sflow_interface: Full name of interface for Flow Sampling or 
+# source_ip: Specifies the source IPv4/IPv6 address of sFlow 
+# state: Determines whether the config should be present 
 }- name: ${2:Name for ce_sflow module.}
   ce_sflow:
 ${3:   ${4:agent_ip}: ${5:"#"}}

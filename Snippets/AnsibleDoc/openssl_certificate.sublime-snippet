@@ -1,69 +1,95 @@
 <snippet>
 <content><![CDATA[
-${1:# acme_accountkey: Path to the accountkey for the `acme' provider 
-# acme_challenge_path: Path to the ACME challenge directory that is served on http://<HOST>:80/.well-known/acme-challenge/ 
-# csr_path: Path to the Certificate Signing Request (CSR) used to generate this certificate. This is not required in 
-# extended_key_usage: The `extended_key_usage' extension field must contain all these values. 
-# extended_key_usage_strict: If set to True, the `extended_key_usage' extension field must contain only these values. 
-# force: Generate the certificate, even if it already exists. 
-# has_expired: Checks if the certificate is expired/not expired at the time the module is executed. 
-# invalid_at: The certificate must be invalid at this point in time. The timestamp is formatted as an ASN.1 TIME. 
-# issuer: Key/value pairs that must be present in the issuer name field of the certificate 
-# key_usage: The `key_usage' extension field must contain all these values. 
-# key_usage_strict: If set to True, the `key_usage' extension field must contain only these values. 
-# not_after: The certificate must expire at this point in time. The timestamp is formatted as an ASN.1 TIME. 
-# not_before: The certificate must start to become valid at this point in time. The timestamp is formatted as an ASN.1 
-# path: (required) Remote absolute path where the generated certificate file should be created or is already 
+${1:# acme_accountkey_path: Path to the accountkey for the `acme' provider 
+# acme_chain: Include the intermediate certificate to the 
+# acme_challenge_path: Path to the ACME challenge directory that is 
+# attributes: Attributes the file or directory should have. To 
+# csr_path: Path to the Certificate Signing Request (CSR) 
+# extended_key_usage: The `extended_key_usage' extension field must 
+# extended_key_usage_strict: If set to True, the `extended_key_usage' 
+# force: Generate the certificate, even if it already 
+# group: Name of the group that should own the 
+# has_expired: Checks if the certificate is expired/not expired 
+# invalid_at: The certificate must be invalid at this point in 
+# issuer: Key/value pairs that must be present in the 
+# issuer_strict: If set to True, the `issuer' field must contain 
+# key_usage: The `key_usage' extension field must contain all 
+# key_usage_strict: If set to True, the `key_usage' extension field 
+# mode: Mode the file or directory should be. For those 
+# not_after: The certificate must expire at this point in 
+# not_before: The certificate must start to become valid at 
+# owner: Name of the user that should own the 
+# path: (required) Remote absolute path where the 
 # privatekey_passphrase: The passphrase for the `privatekey_path'. 
-# privatekey_path: Path to the private key to use when signing the certificate. 
-# provider: (required) Name of the provider to use to generate/retrieve the OpenSSL certificate. The `assertonly' 
-# selfsigned_digest: Digest algorithm to be used when self-signing the certificate 
-# selfsigned_not_after: The timestamp at which the certificate stops being valid. The timestamp is formatted as an ASN.1 TIME. 
-# selfsigned_not_before: The timestamp at which the certificate starts being valid. The timestamp is formatted as an ASN.1 TIME. 
-# signature_algorithms: list of algorithms that you would accept the certificate to be signed with (e.g. 
-# state: Whether the certificate should exist or not, taking action if the state is different from what is 
-# subject: Key/value pairs that must be present in the subject name field of the certificate 
-# subject_alt_name: The `subject_alt_name' extension field must contain these values. 
-# subject_alt_name_strict: If set to True, the `subject_alt_name' extension field must contain only these values. 
-# valid_at: The certificate must be valid at this point in time. The timestamp is formatted as an ASN.1 TIME. 
-# valid_in: The certificate must still be valid in `valid_in' seconds from now. 
-# version: Version of the certificate. Nowadays it should almost always be 3. 
+# privatekey_path: Path to the private key to use when signing the 
+# provider: (required) Name of the provider to use to 
+# selevel: Level part of the SELinux file context. This is 
+# selfsigned_digest: Digest algorithm to be used when self-signing 
+# selfsigned_not_after: The timestamp at which the certificate stops 
+# selfsigned_not_before: The timestamp at which the certificate starts 
+# selfsigned_version: Version of the `selfsigned' certificate. 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# signature_algorithms: list of algorithms that you would accept the 
+# state: Whether the certificate should exist or not, 
+# subject: Key/value pairs that must be present in the 
+# subject_alt_name: The `subject_alt_name' extension field must 
+# subject_alt_name_strict: If set to True, the `subject_alt_name' extension 
+# subject_strict: If set to True, the `subject' field must contain 
+# unsafe_writes: Normally this module uses atomic operations to 
+# valid_at: The certificate must be valid at this point in 
+# valid_in: The certificate must still be valid in 
+# version: Version of the certificate. Nowadays it should 
 }- name: ${2:Name for openssl_certificate module.}
   openssl_certificate:
-${3:   ${4:acme_accountkey}: ${5:"#"}}
-${6:   ${7:acme_challenge_path}: ${8:"#"}}
-${9:   ${10:csr_path}: ${11:"#"}}
-${12:   ${13:extended_key_usage}: ${14:"#"}}
-${15:   ${16:extended_key_usage_strict}: ${17:"#"}}
-${18:   ${19:force}: ${20:"#"}}
-${21:   ${22:has_expired}: ${23:"#"}}
-${24:   ${25:invalid_at}: ${26:"#"}}
-${27:   ${28:issuer}: ${29:"#"}}
-${30:   ${31:key_usage}: ${32:"#"}}
-${33:   ${34:key_usage_strict}: ${35:"#"}}
-${36:   ${37:not_after}: ${38:"#"}}
-${39:   ${40:not_before}: ${41:"#"}}
-${42:   ${43:path}: ${44:"#"}}
-${45:   ${46:privatekey_passphrase}: ${47:"#"}}
-${48:   ${49:privatekey_path}: ${50:"#"}}
-${51:   ${52:provider}: ${53:"#"}}
-${54:   ${55:selfsigned_digest}: ${56:"#"}}
-${57:   ${58:selfsigned_not_after}: ${59:"#"}}
-${60:   ${61:selfsigned_not_before}: ${62:"#"}}
-${63:   ${64:signature_algorithms}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:subject}: ${71:"#"}}
-${72:   ${73:subject_alt_name}: ${74:"#"}}
-${75:   ${76:subject_alt_name_strict}: ${77:"#"}}
-${78:   ${79:valid_at}: ${80:"#"}}
-${81:   ${82:valid_in}: ${83:"#"}}
-${84:   ${85:version}: ${86:"#"}}
-${87:${88:   become: ${89:true}} 
-${90:   become_method: ${91:su}} 
-${92:   become_user: ${93:nobody}} 
-${94:   become_flags: ${95:"-s /bin/sh"}}} 
-${96:   when: ${97:variable is defined}} 
-${98:   with_items: ${99:array}} 
+${3:   ${4:acme_accountkey_path}: ${5:"#"}}
+${6:   ${7:acme_chain}: ${8:"#"}}
+${9:   ${10:acme_challenge_path}: ${11:"#"}}
+${12:   ${13:attributes}: ${14:"#"}}
+${15:   ${16:csr_path}: ${17:"#"}}
+${18:   ${19:extended_key_usage}: ${20:"#"}}
+${21:   ${22:extended_key_usage_strict}: ${23:"#"}}
+${24:   ${25:force}: ${26:"#"}}
+${27:   ${28:group}: ${29:"#"}}
+${30:   ${31:has_expired}: ${32:"#"}}
+${33:   ${34:invalid_at}: ${35:"#"}}
+${36:   ${37:issuer}: ${38:"#"}}
+${39:   ${40:issuer_strict}: ${41:"#"}}
+${42:   ${43:key_usage}: ${44:"#"}}
+${45:   ${46:key_usage_strict}: ${47:"#"}}
+${48:   ${49:mode}: ${50:"#"}}
+${51:   ${52:not_after}: ${53:"#"}}
+${54:   ${55:not_before}: ${56:"#"}}
+${57:   ${58:owner}: ${59:"#"}}
+${60:   ${61:path}: ${62:"#"}}
+${63:   ${64:privatekey_passphrase}: ${65:"#"}}
+${66:   ${67:privatekey_path}: ${68:"#"}}
+${69:   ${70:provider}: ${71:"#"}}
+${72:   ${73:selevel}: ${74:"#"}}
+${75:   ${76:selfsigned_digest}: ${77:"#"}}
+${78:   ${79:selfsigned_not_after}: ${80:"#"}}
+${81:   ${82:selfsigned_not_before}: ${83:"#"}}
+${84:   ${85:selfsigned_version}: ${86:"#"}}
+${87:   ${88:serole}: ${89:"#"}}
+${90:   ${91:setype}: ${92:"#"}}
+${93:   ${94:seuser}: ${95:"#"}}
+${96:   ${97:signature_algorithms}: ${98:"#"}}
+${99:   ${100:state}: ${101:"#"}}
+${102:   ${103:subject}: ${104:"#"}}
+${105:   ${106:subject_alt_name}: ${107:"#"}}
+${108:   ${109:subject_alt_name_strict}: ${110:"#"}}
+${111:   ${112:subject_strict}: ${113:"#"}}
+${114:   ${115:unsafe_writes}: ${116:"#"}}
+${117:   ${118:valid_at}: ${119:"#"}}
+${120:   ${121:valid_in}: ${122:"#"}}
+${123:   ${124:version}: ${125:"#"}}
+${126:${127:   become: ${128:true}} 
+${129:   become_method: ${130:su}} 
+${131:   become_user: ${132:nobody}} 
+${133:   become_flags: ${134:"-s /bin/sh"}}} 
+${135:   when: ${136:variable is defined}} 
+${137:   with_items: ${138:array}} 
 ]]></content>
 	<tabTrigger>openssl_certificate</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# channel_id: Specifies a channel ID. The value is an integer ranging from 0 to 9. 
-# log_buff_enable: Enables the Switch to send logs to the log buffer. 
-# log_buff_size: Specifies the maximum number of logs in the log buffer. The value is an integer that ranges from 0 to 
+${1:# channel_id: Specifies a channel ID. The value is an integer 
+# log_buff_enable: Enables the Switch to send logs to the log 
+# log_buff_size: Specifies the maximum number of logs in the log 
 # log_enable: Indicates whether log filtering is enabled. 
 # log_level: Specifies a log severity. 
 # log_time_stamp: Sets the timestamp format of logs. 
-# module_name: Specifies the name of a module. The value is a module name in registration logs. 
-# state: Determines whether the config should be present or not on the device. 
+# module_name: Specifies the name of a module. The value is a 
+# state: Determines whether the config should be present 
 }- name: ${2:Name for ce_info_center_log module.}
   ce_info_center_log:
 ${3:   ${4:channel_id}: ${5:"#"}}

@@ -2,13 +2,13 @@
 <content><![CDATA[
 ${1:# application_key: (required) The applicationKey to use 
 # application_secret: (required) The application secret to use 
-# backend: (required) The IP address of the backend to update / modify / delete 
+# backend: (required) The IP address of the backend to 
 # consumer_key: (required) The consumer key to use 
-# endpoint: (required) The endpoint to use ( for instance ovh-eu) 
-# name: (required) Name of the LoadBalancing internal name (ip-X.X.X.X) 
-# probe: Determines the type of probe to use for this backend 
-# state: Determines whether the backend is to be created/modified or deleted 
-# timeout: The timeout in seconds used to wait for a task to be completed. 
+# endpoint: (required) The endpoint to use ( for instance 
+# name: (required) Name of the LoadBalancing internal 
+# probe: Determines the type of probe to use for this 
+# state: Determines whether the backend is to be 
+# timeout: The timeout in seconds used to wait for a task 
 # weight: Determines the weight for this backend 
 }- name: ${2:Name for ovh_ip_loadbalancing_backend module.}
   ovh_ip_loadbalancing_backend:

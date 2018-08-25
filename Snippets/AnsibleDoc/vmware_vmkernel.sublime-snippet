@@ -1,41 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:# enable_ft: Enable the VMK interface for Fault Tolerance traffic 
-# enable_mgmt: Enable the VMK interface for Management traffic 
-# enable_vmotion: Enable the VMK interface for vMotion traffic 
-# enable_vsan: Enable the VMK interface for VSAN traffic 
-# hostname: (required) The hostname or IP address of the vSphere vCenter. 
-# ip_address: (required) The IP Address for the VMK interface 
-# mtu: The MTU for the VMK interface 
-# password: (required) The password of the vSphere vCenter. 
-# portgroup_name: (required) The name of the portgroup for the VMK interface 
-# subnet_mask: (required) The Subnet Mask for the VMK interface 
-# username: (required) The username of the vSphere vCenter. 
-# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
-# vland_id: (required) The VLAN ID for the VMK interface 
-# vswitch_name: (required) The name of the vswitch where to add the VMK interface 
+${1:# enable_ft: Enable the VMKernel interface for Fault 
+# enable_mgmt: Enable the VMKernel interface for Management 
+# enable_vmotion: Enable the VMKernel interface for vMotion 
+# enable_vsan: Enable the VMKernel interface for VSAN traffic. 
+# esxi_hostname: (required) Name of ESXi host to which VMKernel 
+# hostname: The hostname or IP address of the vSphere 
+# ip_address: The IP Address for the VMKernel interface. Use 
+# mtu: The MTU for the VMKernel interface. The default 
+# network: A dictionary of network details. Following 
+# password: The password of the vSphere vCenter or ESXi 
+# port: The port number of the vSphere vCenter or ESXi 
+# portgroup_name: (required) The name of the port group for the 
+# state: If set to `present', VMKernel is created with 
+# subnet_mask: The Subnet Mask for the VMKernel interface. Use 
+# username: The username of the vSphere vCenter or ESXi 
+# validate_certs: Allows connection when SSL certificates are not 
+# vlan_id: The VLAN ID for the VMKernel interface. Required 
+# vswitch_name: The name of the vSwitch where to add the 
 }- name: ${2:Name for vmware_vmkernel module.}
   vmware_vmkernel:
 ${3:   ${4:enable_ft}: ${5:"#"}}
 ${6:   ${7:enable_mgmt}: ${8:"#"}}
 ${9:   ${10:enable_vmotion}: ${11:"#"}}
 ${12:   ${13:enable_vsan}: ${14:"#"}}
-${15:   ${16:hostname}: ${17:"#"}}
-${18:   ${19:ip_address}: ${20:"#"}}
-${21:   ${22:mtu}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:portgroup_name}: ${29:"#"}}
-${30:   ${31:subnet_mask}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:vland_id}: ${41:"#"}}
-${42:   ${43:vswitch_name}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${15:   ${16:esxi_hostname}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:ip_address}: ${23:"#"}}
+${24:   ${25:mtu}: ${26:"#"}}
+${27:   ${28:network}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:port}: ${35:"#"}}
+${36:   ${37:portgroup_name}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:subnet_mask}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:vlan_id}: ${53:"#"}}
+${54:   ${55:vswitch_name}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>vmware_vmkernel</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# credentials_file: path to the JSON file associated with the service account email 
-# external_ip: the external static IPv4 (or auto-assigned) address for the LB 
-# httphealthcheck_healthy_count: number of consecutive successful checks before marking a node healthy 
-# httphealthcheck_host: host header to pass through on HTTP check requests 
-# httphealthcheck_interval: the duration in seconds between each health check request 
+${1:# credentials_file: path to the JSON file associated with the 
+# external_ip: the external static IPv4 (or auto-assigned) 
+# httphealthcheck_healthy_count: number of consecutive successful checks before 
+# httphealthcheck_host: host header to pass through on HTTP check 
+# httphealthcheck_interval: the duration in seconds between each health 
 # httphealthcheck_name: the name identifier for the HTTP health check 
 # httphealthcheck_path: the url path to use for HTTP health checking 
 # httphealthcheck_port: the TCP port to use for HTTP health checking 
-# httphealthcheck_timeout: the timeout in seconds before a request is considered a failed check 
-# httphealthcheck_unhealthy_count: number of consecutive failed checks before marking a node unhealthy 
-# members: a list of zone/nodename pairs, e.g ['us-central1-a/www-a', ...] 
+# httphealthcheck_timeout: the timeout in seconds before a request is 
+# httphealthcheck_unhealthy_count: number of consecutive failed checks before 
+# members: a list of zone/nodename pairs, e.g ['us- 
 # name: name of the load-balancer resource 
-# pem_file: path to the pem file associated with the service account email This option is deprecated. Use 
-# port_range: the port (range) to forward, e.g. 80 or 8000-8888 defaults to all ports 
+# pem_file: path to the pem file associated with the service 
+# port_range: the port (range) to forward, e.g. 80 or 
 # project_id: your GCE project ID 
-# protocol: the protocol used for the load-balancer packet forwarding, tcp or udp 
-# region: the GCE region where the load-balancer is defined 
+# protocol: the protocol used for the load-balancer packet 
+# region: the GCE region where the load-balancer is 
 # service_account_email: service account email 
 # state: desired state of the LB 
 }- name: ${2:Name for gce_lb module.}

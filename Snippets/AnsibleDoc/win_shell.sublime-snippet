@@ -1,10 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# chdir: set the specified path as the current working directory before executing a command 
-# creates: a path or path filter pattern; when the referenced path exists on the target host, the task will be 
-# executable: change the shell used to execute the command (eg, `cmd'). The target shell must accept a `/c' parameter 
-# free_form: (required) The `win_shell' module takes a free form command to run.  There is no parameter actually 
-# removes: a path or path filter pattern; when the referenced path *does not* exist on the target host, the task 
+${1:# chdir: Set the specified path as the current working 
+# creates: A path or path filter pattern; when the 
+# executable: Change the shell used to execute the command 
+# free_form: (required) The `win_shell' module takes a free 
+# removes: A path or path filter pattern; when the 
+# stdin: Set the stdin of the command directly to the 
 }- name: ${2:Name for win_shell module.}
   win_shell:
 ${3:   ${4:chdir}: ${5:"#"}}
@@ -12,12 +13,13 @@ ${6:   ${7:creates}: ${8:"#"}}
 ${9:   ${10:executable}: ${11:"#"}}
 ${12:   ${13:free_form}: ${14:"#"}}
 ${15:   ${16:removes}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${18:   ${19:stdin}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>win_shell</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

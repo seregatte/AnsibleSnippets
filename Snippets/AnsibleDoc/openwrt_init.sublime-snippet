@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# enabled: Whether the service should start on boot. *At least one of state and enabled are required.* 
+${1:# enabled: Whether the service should start on boot. *At 
 # name: (required) Name of the service. 
-# pattern: If the service does not respond to the 'running' command, name a substring to look for as would be found 
-# state: `started'/`stopped' are idempotent actions that will not run commands unless necessary. `restarted' will 
+# pattern: If the service does not respond to the 'running' 
+# state: `started'/`stopped' are idempotent actions that 
 }- name: ${2:Name for openwrt_init module.}
   openwrt_init:
 ${3:   ${4:enabled}: ${5:"#"}}

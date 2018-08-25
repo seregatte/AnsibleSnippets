@@ -2,16 +2,16 @@
 <content><![CDATA[
 ${1:# description: Additional description of the network domain. 
 # location: (required) The target datacenter. 
-# mcp_password: The password used to authenticate to the CloudControl API. If not specified, will fall back to 
-# mcp_user: The username used to authenticate to the CloudControl API. If not specified, will fall back to 
-# name: (required) The name of the network domain to create. 
+# mcp_password: The password used to authenticate to the 
+# mcp_user: The username used to authenticate to the 
+# name: (required) The name of the network domain to 
 # region: The target region. 
-# service_plan: The service plan, either "ESSENTIALS" or "ADVANCED". MCP 2.0 Only. 
+# service_plan: The service plan, either "ESSENTIALS" or 
 # state: Should the resource be present or absent. 
-# validate_certs: If `false', SSL certificates will not be validated. This should only be used on private instances of the 
-# wait: Should we wait for the task to complete before moving onto the next. 
-# wait_poll_interval: The amount of time (in seconds) to wait between checks for task completion. Only applicable if 
-# wait_time: The maximum amount of time (in seconds) to wait for the task to complete. Only applicable if 
+# validate_certs: If `false', SSL certificates will not be 
+# wait: Should we wait for the task to complete before 
+# wait_poll_interval: The amount of time (in seconds) to wait between 
+# wait_time: The maximum amount of time (in seconds) to wait 
 }- name: ${2:Name for dimensiondata_network module.}
   dimensiondata_network:
 ${3:   ${4:description}: ${5:"#"}}

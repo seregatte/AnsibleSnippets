@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# cn: (required) Role name. Can not be changed as it is the unique identifier. 
+${1:# cn: (required) Role name. Can not be changed as it 
 # description: A description of this role-group. 
-# group: List of group names assign to this role. If an empty list is passed all assigned groups will be 
-# host: List of host names to assign. If an empty list is passed all assigned hosts will be unassigned from the 
-# hostgroup: List of host group names to assign. If an empty list is passed all assigned host groups will be removed 
-# ipa_host: IP or hostname of IPA server 
-# ipa_pass: (required) Password of administrative user 
-# ipa_port: Port of IPA server 
-# ipa_prot: Protocol used by IPA server 
-# ipa_user: Administrative account used on IPA server 
-# privilege: List of privileges granted to the role. If an empty list is passed all assigned privileges will be 
-# service: List of service names to assign. If an empty list is passed all assigned services will be removed from 
+# group: List of group names assign to this role. If an 
+# host: List of host names to assign. If an empty list 
+# hostgroup: List of host group names to assign. If an empty 
+# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
+# privilege: List of privileges granted to the role. If an 
+# service: List of service names to assign. If an empty 
 # state: State to ensure 
-# user: List of user names to assign. If an empty list is passed all assigned users will be removed from the 
-# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
+# user: List of user names to assign. If an empty list 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
 }- name: ${2:Name for ipa_role module.}
   ipa_role:
 ${3:   ${4:cn}: ${5:"#"}}

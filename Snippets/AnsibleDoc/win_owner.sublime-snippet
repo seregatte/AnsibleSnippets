@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# path: (required) Path to be used for changing owner 
-# recurse: Indicates if the owner should be changed recursively 
+# recurse: Indicates if the owner should be changed 
 # user: (required) Name to be used for changing owner 
 }- name: ${2:Name for win_owner module.}
   win_owner:

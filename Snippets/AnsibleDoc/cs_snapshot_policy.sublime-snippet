@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the volume is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# device_id: ID of the device on a VM the volume is attached to. This will only be considered if VM has multiple 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# device_id: ID of the device on a VM the volume is attached 
 # domain: Domain the volume is related to. 
 # interval_type: Interval of the snapshot. 
 # max_snaps: Max number of snapshots. 
 # project: Name of the project the volume is related to. 
-# schedule: Time the snapshot is scheduled. Required if `state=present'. Format for `interval_type=HOURLY': `MM' 
+# schedule: Time the snapshot is scheduled. Required if 
 # state: State of the snapshot policy. 
 # time_zone: Specifies a timezone for this command. 
-# vm: Name of the instance to select the volume from. Use `volume_type' if VM has a DATADISK and ROOT volume. 
-# volume: Name of the volume. Either `volume' or `vm' is required. 
+# vm: Name of the instance to select the volume from. 
+# volume: Name of the volume. Either `volume' or `vm' is 
 # volume_type: Type of the volume. 
 # vpc: Name of the vpc the instance is deployed in. 
 }- name: ${2:Name for cs_snapshot_policy module.}

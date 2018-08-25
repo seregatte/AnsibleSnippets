@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# device: (required) This specifies the type of device where the method is executed. The choices 
-# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
-# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
-# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
-# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
-# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
-# vlag: (required) This is an overloaded vlag first argument. Usage of this argument can be found is the User 
-# vlag: This is an overloaded vlag second argument. Usage of this argument can be found is the User Guide 
-# vlag: This is an overloaded vlag third argument. Usage of this argument can be found is the User Guide 
-# vlag: This is an overloaded vlag fourth argument. Usage of this argument can be found is the User Guide 
+${1:# device: (required) This specifies the type of device 
+# enable: Configures the password used to enter Global 
+# host: (required) This is the variable used to search 
+# outputfile: (required) This specifies the file path where 
+# password: (required) Configures the password used to 
+# username: (required) Configures the username used to 
+# vlag: (required) This is an overloaded vlag first 
+# vlag: This is an overloaded vlag second argument. 
+# vlag: This is an overloaded vlag third argument. Usage 
+# vlag: This is an overloaded vlag fourth argument. 
 }- name: ${2:Name for cnos_vlag module.}
   cnos_vlag:
 ${3:   ${4:device}: ${5:"#"}}

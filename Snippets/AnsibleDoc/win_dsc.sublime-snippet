@@ -1,17 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# module_version: Can be used to configure the exact version of the dsc resource to be invoked. Useful if the target node 
-# resource_name: (required) The DSC Resource to use. Must be accessible to PowerShell using any of the default paths. 
+${1:# free_form: (required) The [win_dsc] module takes in 
+# module_version: Can be used to configure the exact version of 
+# resource_name: (required) The name of the DSC Resource to use. 
 }- name: ${2:Name for win_dsc module.}
   win_dsc:
-${3:   ${4:module_version}: ${5:"#"}}
-${6:   ${7:resource_name}: ${8:"#"}}
-${9:${10:   become: ${11:true}} 
-${12:   become_method: ${13:su}} 
-${14:   become_user: ${15:nobody}} 
-${16:   become_flags: ${17:"-s /bin/sh"}}} 
-${18:   when: ${19:variable is defined}} 
-${20:   with_items: ${21:array}} 
+${3:   ${4:free_form}: ${5:"#"}}
+${6:   ${7:module_version}: ${8:"#"}}
+${9:   ${10:resource_name}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>win_dsc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

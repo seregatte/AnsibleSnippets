@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# executable: The explicit executable or a pathname to the executable to be used to run easy_install for a specific 
+${1:# executable: The explicit executable or a pathname to the 
 # name: (required) A Python library name 
-# state: The desired state of the library. `latest' ensures that the latest version is installed. 
-# virtualenv: an optional `virtualenv' directory path to install into. If the `virtualenv' does not exist, it is 
-# virtualenv_command: The command to create the virtual environment with. For example `pyvenv', `virtualenv', `virtualenv2'. 
-# virtualenv_site_packages: Whether the virtual environment will inherit packages from the global site-packages directory.  Note 
+# state: The desired state of the library. `latest' 
+# virtualenv: an optional `virtualenv' directory path to 
+# virtualenv_command: The command to create the virtual environment 
+# virtualenv_site_packages: Whether the virtual environment will inherit 
 }- name: ${2:Name for easy_install module.}
   easy_install:
 ${3:   ${4:executable}: ${5:"#"}}

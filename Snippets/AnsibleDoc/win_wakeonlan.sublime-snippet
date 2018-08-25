@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# broadcast: Network broadcast address to use for broadcasting magic Wake-on-LAN packet. 
-# mac: (required) MAC address to send Wake-on-LAN broadcast packet for. 
+${1:# broadcast: Network broadcast address to use for 
+# mac: (required) MAC address to send Wake-on-LAN 
 # port: UDP port to use for magic Wake-on-LAN packet. 
 }- name: ${2:Name for win_wakeonlan module.}
   win_wakeonlan:

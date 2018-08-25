@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# ca_certs: The path to the Certificate Authority certificate files that are to be treated as trusted by this 
-# certfile: The path pointing to the PEM encoded client certificate. If this is not None it will be used as client 
+${1:# ca_certs: The path to the Certificate Authority 
+# certfile: The path pointing to the PEM encoded client 
 # client_id: MQTT client identifier 
-# keyfile: The path pointing to the PEM encoded client private key. If this is not None it will be used as client 
-# password: Password for `username' to authenticate against the broker. 
-# payload: (required) Payload. The special string `"None"' may be used to send a NULL (i.e. empty) payload which is 
+# keyfile: The path pointing to the PEM encoded client 
+# password: Password for `username' to authenticate against 
+# payload: (required) Payload. The special string `"None"' 
 # port: MQTT broker port number 
 # qos: QoS (Quality of Service) 
-# retain: Setting this flag causes the broker to retain (i.e. keep) the message so that applications that 
+# retain: Setting this flag causes the broker to retain 
 # server: MQTT broker address/name 
 # topic: (required) MQTT topic name 
 # username: Username to authenticate against the broker. 

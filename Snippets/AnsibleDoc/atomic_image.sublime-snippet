@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# backend: Define the backend where the image is pulled. 
-# name: (required) Name of the container image 
-# started: Start or Stop the container 
-# state: The state of the container image. The state `latest' will ensure container image is upgraded to the 
+# name: (required) Name of the container image. 
+# started: Start or Stop the container. 
+# state: The state of the container image. The state 
 }- name: ${2:Name for atomic_image module.}
   atomic_image:
 ${3:   ${4:backend}: ${5:"#"}}

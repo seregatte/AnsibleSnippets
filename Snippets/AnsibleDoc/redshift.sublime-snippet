@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_version_upgrade: flag to determinate if upgrade of version is possible 
+${1:# allow_version_upgrade: flag to determinate if upgrade of version is 
 # automated_snapshot_retention_period: period when the snapshot take place 
 # availability_zone: availability zone in which to launch cluster 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # cluster_parameter_group_name: name of the cluster parameter group 
 # cluster_security_groups: in which security group the cluster belongs 
 # cluster_subnet_group_name: which subnet to place the cluster 
@@ -12,25 +12,27 @@ ${1:# allow_version_upgrade: flag to determinate if upgrade of version is possib
 # cluster_version: which version the cluster should have 
 # command: (required) Specifies the action to take. 
 # db_name: Name of the database. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # elastic_ip: if the cluster has an elastic IP or not 
 # encrypted: if the cluster is encrypted or not 
-# final_cluster_snapshot_identifier: identifier of the final snapshot to be created before deleting the cluster. If this parameter is 
+# final_cluster_snapshot_identifier: identifier of the final snapshot to be created 
 # identifier: (required) Redshift cluster identifier. 
 # new_cluster_identifier: Only used when command=modify. 
-# node_type: The node type of the cluster. Must be specified when command=create. 
-# number_of_nodes: Number of nodes. Only used when cluster_type=multi-node. 
-# password: Master database password. Used only when command=create. 
+# node_type: The node type of the cluster. Must be specified 
+# number_of_nodes: Number of nodes. Only used when cluster_type 
+# password: Master database password. Used only when 
 # port: which port the cluster is listining 
 # preferred_maintenance_window: maintenance window 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# profile: Uses a boto profile. Only works with boto >= 
 # publicly_accessible: if the cluster is accessible publicly or not 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# skip_final_cluster_snapshot: skip a final snapshot before deleting the cluster. Used only when command=delete. 
-# username: Master database username. Used only when command=create. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# skip_final_cluster_snapshot: skip a final snapshot before deleting the 
+# username: Master database username. Used only when 
+# validate_certs: When set to "no", SSL certificates will not be 
 # vpc_security_group_ids: VPC security group 
-# wait: When command=create, modify or restore then wait for the database to enter the 'available' state. When 
+# wait: When command=create, modify or restore then wait 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for redshift module.}
   redshift:
@@ -59,19 +61,21 @@ ${66:   ${67:port}: ${68:"#"}}
 ${69:   ${70:preferred_maintenance_window}: ${71:"#"}}
 ${72:   ${73:profile}: ${74:"#"}}
 ${75:   ${76:publicly_accessible}: ${77:"#"}}
-${78:   ${79:security_token}: ${80:"#"}}
-${81:   ${82:skip_final_cluster_snapshot}: ${83:"#"}}
-${84:   ${85:username}: ${86:"#"}}
-${87:   ${88:validate_certs}: ${89:"#"}}
-${90:   ${91:vpc_security_group_ids}: ${92:"#"}}
-${93:   ${94:wait}: ${95:"#"}}
-${96:   ${97:wait_timeout}: ${98:"#"}}
-${99:${100:   become: ${101:true}} 
-${102:   become_method: ${103:su}} 
-${104:   become_user: ${105:nobody}} 
-${106:   become_flags: ${107:"-s /bin/sh"}}} 
-${108:   when: ${109:variable is defined}} 
-${110:   with_items: ${111:array}} 
+${78:   ${79:region}: ${80:"#"}}
+${81:   ${82:}: ${83:"#"}}
+${84:   ${85:security_token}: ${86:"#"}}
+${87:   ${88:skip_final_cluster_snapshot}: ${89:"#"}}
+${90:   ${91:username}: ${92:"#"}}
+${93:   ${94:validate_certs}: ${95:"#"}}
+${96:   ${97:vpc_security_group_ids}: ${98:"#"}}
+${99:   ${100:wait}: ${101:"#"}}
+${102:   ${103:wait_timeout}: ${104:"#"}}
+${105:${106:   become: ${107:true}} 
+${108:   become_method: ${109:su}} 
+${110:   become_user: ${111:nobody}} 
+${112:   become_flags: ${113:"-s /bin/sh"}}} 
+${114:   when: ${115:variable is defined}} 
+${116:   with_items: ${117:array}} 
 ]]></content>
 	<tabTrigger>redshift</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

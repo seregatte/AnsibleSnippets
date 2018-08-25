@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# ports: (required) Ports or port ranges, separated by a comma 
+${1:# ports: (required) Ports or port ranges. Can be a list 
 # proto: (required) Protocol for the specified port. 
 # reload: Reload SELinux policy after commit. 
 # setype: (required) SELinux type for the specified port. 

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# depth: When using `dir', this module will, by default, recursively go through each sub directory and load up 
-# dir: The directory name from which the variables should be loaded. If the path is relative, it will look for 
-# extensions: List of file extensions to read when using `dir'. 
-# file: The file name from which variables should be loaded. If the path is relative, it will look for the file 
-# files_matching: Limit the files that are loaded within any directory to this regular expression. 
-# free: This module allows you to specify the 'file' option directly w/o any other options. There is no 'free- 
+${1:# depth: When using `dir', this module will, by default, 
+# dir: The directory name from which the variables 
+# extensions: List of file extensions to read when using 
+# file: The file name from which variables should be 
+# files_matching: Limit the files that are loaded within any 
+# free: This module allows you to specify the 'file' 
 # ignore_files: List of file names to ignore. 
-# name: The name of a variable into which assign the included vars, if omitted (null) they will be made top 
+# name: The name of a variable into which assign the 
 }- name: ${2:Name for include_vars module.}
   include_vars:
 ${3:   ${4:depth}: ${5:"#"}}

@@ -3,10 +3,10 @@
 ${1:# index_switch: Specifies the netstream index-switch. 
 # interface: (required) Netstream global interface. 
 # sampler_direction: Specifies the netstream sampler direction. 
-# sampler_interval: Specifies the netstream sampler interval, length is 1 - 65535. 
+# sampler_interval: Specifies the netstream sampler interval, length 
 # state: Specify desired state of the resource. 
 # statistics_direction: Specifies the netstream statistic direction. 
-# statistics_record: Specifies the flexible netstream statistic record, length is 1 - 32. 
+# statistics_record: Specifies the flexible netstream statistic 
 # type: Specifies the type of netstream global. 
 }- name: ${2:Name for ce_netstream_global module.}
   ce_netstream_global:

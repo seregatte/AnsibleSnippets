@@ -1,17 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# dns_domain_name: (required) the DNS name of the domain which should exist and be reachable or reside on the target 
-# safe_mode_password: (required) safe mode password for the domain controller 
+${1:# database_path: The path to a directory on a fixed disk of the 
+# dns_domain_name: (required) The DNS name of the domain which 
+# domain_netbios_name: The netbios name of the domain. If not set, then 
+# safe_mode_password: (required) Safe mode password for the domain 
+# sysvol_path: The path to a directory on a fixed disk of the 
 }- name: ${2:Name for win_domain module.}
   win_domain:
-${3:   ${4:dns_domain_name}: ${5:"#"}}
-${6:   ${7:safe_mode_password}: ${8:"#"}}
-${9:${10:   become: ${11:true}} 
-${12:   become_method: ${13:su}} 
-${14:   become_user: ${15:nobody}} 
-${16:   become_flags: ${17:"-s /bin/sh"}}} 
-${18:   when: ${19:variable is defined}} 
-${20:   with_items: ${21:array}} 
+${3:   ${4:database_path}: ${5:"#"}}
+${6:   ${7:dns_domain_name}: ${8:"#"}}
+${9:   ${10:domain_netbios_name}: ${11:"#"}}
+${12:   ${13:safe_mode_password}: ${14:"#"}}
+${15:   ${16:sysvol_path}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>win_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

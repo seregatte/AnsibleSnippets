@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: FlashBlade API token for admin privilaed user. 
+# eradicate: Define whether to eradicate the filesystem on 
+# fastremove: Define whether the fast remove directory is 
+# fb_url: FlashBlade management IP address or Hostname. 
+# http: Define whether to HTTP/HTTPS protocol is enabled 
+# name: (required) Filesystem Name. 
+# nfs: Define whether to NFS protocol is enabled for 
+# nfs_rules: Define the NFS rules in operation. 
+# size: Volume size in M, G, T or P units. See examples. 
+# smb: Define whether to SMB protocol is enabled for 
+# snapshot: Define whether a snapshot directory is enabled 
+# state: Create, delete or modifies a filesystem. 
+}- name: ${2:Name for purefb_fs module.}
+  purefb_fs:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:eradicate}: ${8:"#"}}
+${9:   ${10:fastremove}: ${11:"#"}}
+${12:   ${13:fb_url}: ${14:"#"}}
+${15:   ${16:http}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:nfs}: ${23:"#"}}
+${24:   ${25:nfs_rules}: ${26:"#"}}
+${27:   ${28:size}: ${29:"#"}}
+${30:   ${31:smb}: ${32:"#"}}
+${33:   ${34:snapshot}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>purefb_fs</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# description: Database parameter group description. Only set when a new group is added. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# engine: The type of database for this group. Required for state=present. 
-# immediate: Whether to apply the changes immediately, or after the next reboot of any associated instances. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# description: Database parameter group description. Only set 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# engine: The type of database for this group. Required 
+# immediate: Whether to apply the changes immediately, or 
 # name: (required) Database parameter group identifier. 
-# params: Map of parameter names and values. Numeric values may be represented as K for kilo (1024), M for mega 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# purge_tags: Whether or not to remove tags that do not appear in the `tags' list. Defaults to false. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: (required) Specifies whether the group should be present or absent. 
-# tags: Dictionary of tags to attach to the parameter group 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# params: Map of parameter names and values. Numeric 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_tags: Whether or not to remove tags that do not appear 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) Specifies whether the group should be 
+# tags: Dictionary of tags to attach to the parameter 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for rds_param_group module.}
   rds_param_group:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -29,7 +29,7 @@ ${24:   ${25:params}: ${26:"#"}}
 ${27:   ${28:profile}: ${29:"#"}}
 ${30:   ${31:purge_tags}: ${32:"#"}}
 ${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:http}: ${38:"#"}}
+${36:   ${37:}: ${38:"#"}}
 ${39:   ${40:security_token}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}
 ${45:   ${46:tags}: ${47:"#"}}

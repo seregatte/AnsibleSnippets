@@ -3,7 +3,7 @@
 ${1:# link: (required) VLAN underlying link name. 
 # name: (required) VLAN interface name. 
 # state: Create or delete Solaris/illumos VNIC. 
-# temporary: Specifies that the VLAN interface is temporary. Temporary VLANs do not persist across reboots. 
+# temporary: Specifies that the VLAN interface is temporary. 
 # vlan_id: VLAN ID value for VLAN interface. 
 }- name: ${2:Name for dladm_vlan module.}
   dladm_vlan:

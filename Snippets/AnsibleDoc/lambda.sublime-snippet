@@ -1,29 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# dead_letter_arn: The parent object that contains the target Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon 
-# description: A short, user-defined function description. Lambda does not use this value. Assign a meaningful 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# environment_variables: A dictionary of environment variables the Lambda function is given. 
-# handler: The function within your code that Lambda calls to begin execution 
-# memory_size: The amount of memory, in MB, your Lambda function is given 
-# name: (required) The name you want to assign to the function you are uploading. Cannot be changed. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# role: The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to 
-# runtime: The runtime environment for the Lambda function you are uploading. Required when creating a function. 
-# s3_bucket: Amazon S3 bucket name where the .zip file containing your deployment package is stored If 
-# s3_key: The Amazon S3 object (the deployment package) key name you want to upload s3_bucket and s3_key are 
-# s3_object_version: The Amazon S3 object (the deployment package) version you want to upload. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# dead_letter_arn: The parent object that contains the target 
+# description: A short, user-defined function description. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# environment_variables: A dictionary of environment variables the Lambda 
+# handler: The function within your code that Lambda calls 
+# memory_size: The amount of memory, in MB, your Lambda 
+# name: (required) The name you want to assign to the 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# role: The Amazon Resource Name (ARN) of the IAM role 
+# runtime: The runtime environment for the Lambda function 
+# s3_bucket: Amazon S3 bucket name where the .zip file 
+# s3_key: The Amazon S3 object (the deployment package) 
+# s3_object_version: The Amazon S3 object (the deployment package) 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or delete Lambda function 
-# timeout: The function execution time at which Lambda should terminate the function. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_security_group_ids: List of VPC security group IDs to associate with the Lambda function. Required when vpc_subnet_ids is 
-# vpc_subnet_ids: List of subnet IDs to run Lambda function in. Use this option if you need to access resources in your 
-# zip_file: A .zip file containing your deployment package If `state=present' then either zip_file or s3_bucket must 
+# tags: tag dict to apply to the function (requires 
+# timeout: The function execution time at which Lambda 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_security_group_ids: List of VPC security group IDs to associate with 
+# vpc_subnet_ids: List of subnet IDs to run Lambda function in. 
+# zip_file: A .zip file containing your deployment package 
 }- name: ${2:Name for lambda module.}
   lambda:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -37,7 +38,7 @@ ${24:   ${25:memory_size}: ${26:"#"}}
 ${27:   ${28:name}: ${29:"#"}}
 ${30:   ${31:profile}: ${32:"#"}}
 ${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:http}: ${38:"#"}}
+${36:   ${37:}: ${38:"#"}}
 ${39:   ${40:role}: ${41:"#"}}
 ${42:   ${43:runtime}: ${44:"#"}}
 ${45:   ${46:s3_bucket}: ${47:"#"}}
@@ -45,17 +46,18 @@ ${48:   ${49:s3_key}: ${50:"#"}}
 ${51:   ${52:s3_object_version}: ${53:"#"}}
 ${54:   ${55:security_token}: ${56:"#"}}
 ${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:timeout}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:   ${67:vpc_security_group_ids}: ${68:"#"}}
-${69:   ${70:vpc_subnet_ids}: ${71:"#"}}
-${72:   ${73:zip_file}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${60:   ${61:tags}: ${62:"#"}}
+${63:   ${64:timeout}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:   ${70:vpc_security_group_ids}: ${71:"#"}}
+${72:   ${73:vpc_subnet_ids}: ${74:"#"}}
+${75:   ${76:zip_file}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>lambda</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -2,14 +2,14 @@
 <content><![CDATA[
 ${1:# certname: The name to use when handling certificates. 
 # environment: Puppet environment to be used. 
-# execute: Execute a specific piece of Puppet code. It has no effect with a puppetmaster. 
-# facter_basename: Basename of the facter output file 
-# facts: A dict of values to pass in as persistent external facter facts 
-# logdest: Where the puppet logs should go, if puppet apply is being used 
-# manifest: Path to the manifest file to run puppet apply on. 
-# modulepath: Path to an alternate location for puppet modules 
+# execute: Execute a specific piece of Puppet code. It has 
+# facter_basename: Basename of the facter output file. 
+# facts: A dict of values to pass in as persistent 
+# logdest: Where the puppet logs should go, if puppet apply 
+# manifest: Path to the manifest file to run puppet apply 
+# modulepath: Path to an alternate location for puppet 
 # puppetmaster: The hostname of the puppetmaster to contact. 
-# tags: A comma-separated list of puppet tags to be used. 
+# tags: A comma-separated list of puppet tags to be 
 # timeout: How long to wait for `puppet' to finish. 
 }- name: ${2:Name for puppet module.}
   puppet:

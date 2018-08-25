@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
 ${1:# contact: Contact person in the SOA record. 
-# expire: Specifies the upper limit on the time interval that can elapse before the zone is no longer 
-# interfaces: List of interface IP addresses, on which the server should response this zone. Required if 
-# mx: List of MX servers. (Must declared as A or AAAA records). 
-# nameserver: List of appropriate name servers. Required if `state=present'. 
+# expire: Specifies the upper limit on the time interval 
+# interfaces: List of interface IP addresses, on which the 
+# mx: List of MX servers. (Must declared as A or AAAA 
+# nameserver: List of appropriate name servers. Required if 
 # refresh: Interval before the zone should be refreshed. 
-# retry: Interval that should elapse before a failed refresh should be retried. 
+# retry: Interval that should elapse before a failed 
 # state: Whether the dns zone is present or not. 
-# ttl: Minimum TTL field that should be exported with any RR from this zone. 
-# type: (required) Define if the zone is a forward or reverse DNS zone. 
+# ttl: Minimum TTL field that should be exported with 
+# type: (required) Define if the zone is a forward or 
 # zone: (required) DNS zone name, e.g. `example.com'. 
 }- name: ${2:Name for udm_dns_zone module.}
   udm_dns_zone:

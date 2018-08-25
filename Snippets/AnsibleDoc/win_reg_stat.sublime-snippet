@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# name: The registry property name to get information for, the return json will not include the sub_keys and 
-# path: (required) The full registry key path including the hive to search for. 
+${1:# name: The registry property name to get information 
+# path: (required) The full registry key path including 
 }- name: ${2:Name for win_reg_stat module.}
   win_reg_stat:
 ${3:   ${4:name}: ${5:"#"}}

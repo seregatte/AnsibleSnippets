@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# copy_settings: This will copy the current format and location values to new user profiles and the welcome screen. This 
-# format: The language format to set for the current user, see https://msdn.microsoft.com/en- 
-# location: The location to set for the current user, see https://msdn.microsoft.com/en-us/library/dd374073.aspx for 
-# unicode_language: The unicode language format to set for all users, see https://msdn.microsoft.com/en- 
+${1:# copy_settings: This will copy the current format and location 
+# format: The language format to set for the current user, 
+# location: The location to set for the current user, see 
+# unicode_language: The unicode language format to set for all 
 }- name: ${2:Name for win_region module.}
   win_region:
 ${3:   ${4:copy_settings}: ${5:"#"}}

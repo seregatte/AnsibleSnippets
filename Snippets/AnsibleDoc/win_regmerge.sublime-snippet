@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# compare_key: The parent key to use when comparing the contents of the registry to the contents of the file.  Needs to 
-# path: (required) The full path including file name to the registry file on the remote machine to be merged 
+${1:# compare_key: The parent key to use when comparing the 
+# path: (required) The full path including file name to 
 }- name: ${2:Name for win_regmerge module.}
   win_regmerge:
 ${3:   ${4:compare_key}: ${5:"#"}}

@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# excluded_volumes: A list of drive letters or mount point paths to exclude from defragmentation. 
-# freespace_consolidation: Perform free space consolidation on the specified volumes. 
-# included_volumes: A list of drive letters or mount point paths of the volumes to be defragmented. If this parameter is 
-# parallel: Run the operation on each volume in parallel in the background. 
+${1:# exclude_volumes: A list of drive letters or mount point paths to 
+# freespace_consolidation: Perform free space consolidation on the 
+# include_volumes: A list of drive letters or mount point paths of 
+# parallel: Run the operation on each volume in parallel in 
 # priority: Run the operation at low or normal priority. 
 }- name: ${2:Name for win_defrag module.}
   win_defrag:
-${3:   ${4:excluded_volumes}: ${5:"#"}}
+${3:   ${4:exclude_volumes}: ${5:"#"}}
 ${6:   ${7:freespace_consolidation}: ${8:"#"}}
-${9:   ${10:included_volumes}: ${11:"#"}}
+${9:   ${10:include_volumes}: ${11:"#"}}
 ${12:   ${13:parallel}: ${14:"#"}}
 ${15:   ${16:priority}: ${17:"#"}}
 ${18:${19:   become: ${20:true}} 

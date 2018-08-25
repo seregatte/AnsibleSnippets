@@ -1,34 +1,34 @@
 <snippet>
 <content><![CDATA[
-${1:# access_logs: An associative array of access logs configuration settings (see example) 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# connection_draining_timeout: Wait a specified timeout allowing connections to drain before terminating an instance 
-# cross_az_load_balancing: Distribute load across all configured Availability Zones 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# health_check: An associative array of health check configuration settings (see example) 
-# idle_timeout: ELB connections from clients and to servers are timed out after this amount of time 
+${1:# access_logs: An associative array of access logs 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# connection_draining_timeout: Wait a specified timeout allowing connections to 
+# cross_az_load_balancing: Distribute load across all configured 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# health_check: An associative array of health check 
+# idle_timeout: ELB connections from clients and to servers are 
 # instance_ids: List of instance ids to attach to this ELB 
-# listeners: List of ports/protocols for this ELB to listen on (see example) 
+# listeners: List of ports/protocols for this ELB to listen 
 # name: (required) The name of the ELB 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# purge_instance_ids: Purge existing instance ids on ELB that are not found in instance_ids 
-# purge_listeners: Purge existing listeners on ELB that are not found in listeners 
-# purge_subnets: Purge existing subnet on ELB that are not found in subnets 
-# purge_zones: Purge existing availability zones on ELB that are not found in zones 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# scheme: The scheme to use when creating the ELB. For a private VPC-visible ELB use 'internal'. If you choose to 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_instance_ids: Purge existing instance ids on ELB that are not 
+# purge_listeners: Purge existing listeners on ELB that are not 
+# purge_subnets: Purge existing subnet on ELB that are not found 
+# purge_zones: Purge existing availability zones on ELB that 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# scheme: The scheme to use when creating the ELB. For a 
 # security_group_ids: A list of security groups to apply to the elb 
-# security_group_names: A list of security group names to apply to the elb 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# security_group_names: A list of security group names to apply to the 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) Create or destroy the ELB 
-# stickiness: An associative array of stickiness policy settings. Policy will be applied to all listeners ( see 
-# subnets: A list of VPC subnets to use when creating ELB. Zones should be empty if using this. 
-# tags: An associative array of tags. To delete all tags, supply an empty dict. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# wait: When specified, Ansible will check the status of the load balancer to ensure it has been successfully 
-# wait_timeout: Used in conjunction with wait. Number of seconds to wait for the elb to be terminated. A maximum of 600 
+# stickiness: An associative array of stickiness policy 
+# subnets: A list of VPC subnets to use when creating ELB. 
+# tags: An associative array of tags. To delete all 
+# validate_certs: When set to `no', SSL certificates will not be 
+# wait: When specified, Ansible will check the status of 
+# wait_timeout: Used in conjunction with wait. Number of seconds 
 # zones: List of availability zones to enable on this ELB 
 }- name: ${2:Name for elb_classic_lb module.}
   elb_classic_lb:
@@ -49,7 +49,7 @@ ${42:   ${43:purge_listeners}: ${44:"#"}}
 ${45:   ${46:purge_subnets}: ${47:"#"}}
 ${48:   ${49:purge_zones}: ${50:"#"}}
 ${51:   ${52:region}: ${53:"#"}}
-${54:   ${55:http}: ${56:"#"}}
+${54:   ${55:}: ${56:"#"}}
 ${57:   ${58:scheme}: ${59:"#"}}
 ${60:   ${61:security_group_ids}: ${62:"#"}}
 ${63:   ${64:security_group_names}: ${65:"#"}}

@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# clean_invalid_entries: If adding/removing a role and invalid grantees are found, remove them. These entries will cause an 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# grant_types: List of grants to give to user/role. Likely "role,role grant" or "role,role grant,admin". Required when 
-# key_alias: Alias label to the key. One of `key_alias' or `key_arn' are required. 
-# key_arn: Full ARN to the key. One of `key_alias' or `key_arn' are required. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# clean_invalid_entries: If adding/removing a role and invalid grantees 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# grant_types: List of grants to give to user/role. Likely 
+# key_alias: Alias label to the key. One of `key_alias' or 
+# key_arn: Full ARN to the key. One of `key_alias' or 
 # mode: (required) Grant or deny access. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# role_arn: ARN of role to allow/deny access. One of `role_name' or `role_arn' are required. 
-# role_name: Role to allow/deny access. One of `role_name' or `role_arn' are required. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# role_arn: ARN of role to allow/deny access. One of 
+# role_name: Role to allow/deny access. One of `role_name' or 
+# security_token: AWS STS security token. If not set then the 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for aws_kms module.}
   aws_kms:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -27,7 +27,7 @@ ${21:   ${22:key_arn}: ${23:"#"}}
 ${24:   ${25:mode}: ${26:"#"}}
 ${27:   ${28:profile}: ${29:"#"}}
 ${30:   ${31:region}: ${32:"#"}}
-${33:   ${34:http}: ${35:"#"}}
+${33:   ${34:}: ${35:"#"}}
 ${36:   ${37:role_arn}: ${38:"#"}}
 ${39:   ${40:role_name}: ${41:"#"}}
 ${42:   ${43:security_token}: ${44:"#"}}

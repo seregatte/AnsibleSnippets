@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# hosts: (required) A list of ZooKeeper servers (format '[server]:[port]'). 
+${1:# hosts: (required) A list of ZooKeeper servers (format 
 # name: (required) The path of the znode. 
-# op: An operation to perform. Mutually exclusive with state. 
+# op: An operation to perform. Mutually exclusive with 
 # recursive: Recursively delete node and all its children. 
-# state: The state to enforce. Mutually exclusive with op. 
+# state: The state to enforce. Mutually exclusive with 
 # timeout: The amount of time to wait for a node to appear. 
 # value: The value assigned to the znode. 
 }- name: ${2:Name for znode module.}

@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# force: Assume "yes" is the answer to any question urpmi has to ask. Corresponds to the `--force' option for 
-# no: Corresponds to the `--no-recommends' option for `urpmi'. 
-# pkg: (required) name of package to install, upgrade or remove. 
-# root: Specifies an alternative install root, relative to which all packages will be installed. Corresponds to 
-# state: Indicates the desired package state 
-# update_cache: update the package database first `urpmi.update -a'. 
+${1:# force: Assume "yes" is the answer to any question urpmi 
+# name: (required) A list of package names to install, 
+# no: Corresponds to the `--no-recommends' option for 
+# root: Specifies an alternative install root, relative 
+# state: Indicates the desired package state. 
+# update_cache: Update the package database first `urpmi.update 
 }- name: ${2:Name for urpmi module.}
   urpmi:
 ${3:   ${4:force}: ${5:"#"}}
-${6:   ${7:no}: ${8:"#"}}
-${9:   ${10:pkg}: ${11:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:no}: ${11:"#"}}
 ${12:   ${13:root}: ${14:"#"}}
 ${15:   ${16:state}: ${17:"#"}}
 ${18:   ${19:update_cache}: ${20:"#"}}

@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
 ${1:# description: An description for the project. 
-# group: The name of the group of which this projects belongs to. When not provided, project will belong to user 
-# import_url: Git repository which will me imported into gitlab. Gitlab server needs read access to this git 
-# issues_enabled: Whether you want to create issues or not. Possible values are true and false. 
+# group: The name of the group of which this projects 
+# import_url: Git repository which will be imported into 
+# issues_enabled: Whether you want to create issues or not. 
 # login_password: Gitlab password for login_user 
 # login_token: Gitlab token for logging in. 
 # login_user: Gitlab user name. 
-# merge_requests_enabled: If merge requests can be made or not. Possible values are true and false. 
+# merge_requests_enabled: If merge requests can be made or not. Possible 
 # name: (required) The name of the project 
-# path: The path of the project you want to create, this will be server_url/<group>/path If not supplied, name 
-# public: If the project is public available or not. Setting this to true is same as setting visibility_level to 
-# server_url: (required) Url of Gitlab server, with protocol (http or https). 
-# snippets_enabled: If creating snippets should be available or not. Possible values are true and false. 
-# state: create or delete project. Possible values are present and absent. 
-# validate_certs: When using https if SSL certificate needs to be verified. 
-# visibility_level: Private. visibility_level is 0. Project access must be granted explicitly for each user. Internal. 
-# wiki_enabled: If an wiki for this project should be available or not. Possible values are true and false. 
+# path: The path of the project you want to create, this 
+# public: If the project is public available or not. 
+# server_url: (required) Url of Gitlab server, with protocol 
+# snippets_enabled: If creating snippets should be available or not. 
+# state: create or delete project. Possible values are 
+# validate_certs: When using https if SSL certificate needs to be 
+# visibility_level: Private. visibility_level is 0. Project access 
+# wiki_enabled: If an wiki for this project should be available 
 }- name: ${2:Name for gitlab_project module.}
   gitlab_project:
 ${3:   ${4:description}: ${5:"#"}}

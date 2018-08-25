@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# key_filename: (required) filename of the SSH Key to use for authentication 
-# newpassword: (required) password to configure for admin on the PAN-OS device 
+${1:# ip_address: (required) IP address (or hostname) of PAN-OS 
+# key_filename: (required) filename of the SSH Key to use for 
+# newpassword: (required) password to configure for admin on 
 # username: username for initial authentication 
 }- name: ${2:Name for panos_admpwd module.}
   panos_admpwd:

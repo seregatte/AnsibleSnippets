@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# host: (required) the ejabberd host associated with this username 
-# logging: enables or disables the local syslog facility for this module 
+${1:# host: (required) the ejabberd host associated with 
+# logging: enables or disables the local syslog facility 
 # password: the password to assign to the username 
-# state: describe the desired state of the user to be managed 
+# state: describe the desired state of the user to be 
 # username: (required) the name of the user to manage 
 }- name: ${2:Name for ejabberd_user module.}
   ejabberd_user:

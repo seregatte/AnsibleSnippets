@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# command: The handler command to be executed. The event data is passed to the process via STDIN. NOTE: the command 
-# filter: The Sensu event filter (name) to use when filtering events for the handler. 
-# filters: An array of Sensu event filters (names) to use when filtering events for the handler. Each array item 
-# handle_flapping: If events in the flapping state should be handled. 
-# handle_silenced: If events matching one or more silence entries should be handled. 
-# handlers: (required) An array of Sensu event handlers (names) to use for events using the handler set. Each array 
-# mutator: The Sensu event mutator (name) to use to mutate event data for the handler. 
-# name: (required) A unique name for the handler. The name cannot contain special characters or spaces. 
-# pipe: The pipe definition scope, used to configure the Sensu transport pipe. NOTE: the pipe attribute is only 
-# severities: An array of check result severities the handler will handle. NOTE: event resolution bypasses this 
-# socket: The socket definition scope, used to configure the TCP/UDP handler socket. NOTE: the socket attribute is 
+${1:# command: The handler command to be executed. The event 
+# filter: The Sensu event filter (name) to use when 
+# filters: An array of Sensu event filters (names) to use 
+# handle_flapping: If events in the flapping state should be 
+# handle_silenced: If events matching one or more silence entries 
+# handlers: An array of Sensu event handlers (names) to use 
+# mutator: The Sensu event mutator (name) to use to mutate 
+# name: (required) A unique name for the handler. The 
+# pipe: The pipe definition scope, used to configure the 
+# severities: An array of check result severities the handler 
+# socket: The socket definition scope, used to configure 
 # state: Whether the handler should be present or not 
-# timeout: The handler execution duration timeout in seconds (hard stop). Only used by pipe and tcp handler types. 
+# timeout: The handler execution duration timeout in 
 # type: (required) The handler type 
 }- name: ${2:Name for sensu_handler module.}
   sensu_handler:

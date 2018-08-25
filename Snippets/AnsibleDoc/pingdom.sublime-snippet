@@ -3,7 +3,7 @@
 ${1:# checkid: (required) Pingdom ID of the check. 
 # key: (required) Pingdom API key. 
 # passwd: (required) Pingdom user password. 
-# state: (required) Define whether or not the check should be running or paused. 
+# state: (required) Define whether or not the check 
 # uid: (required) Pingdom user ID. 
 }- name: ${2:Name for pingdom module.}
   pingdom:

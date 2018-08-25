@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# category: Install/Remove category instead of a single package. 
+${1:# category: Install/Remove category instead of a single 
 # name: (required) Package name, e.g. `SUNWcsr' 
 # proxy: HTTP[s] proxy to be used if `src' is a URL. 
-# response_file: Specifies the location of a response file to be used if package expects input on install. (added in 
-# src: Specifies the location to install the package from. Required when `state=present'. Can be any path 
-# state: (required) Whether to install (`present'), or remove (`absent') a package. If the package is to be 
-# zone: Whether to install the package only in the current zone, or install it into all zones. The installation 
+# response_file: Specifies the location of a response file to be 
+# src: Specifies the location to install the package 
+# state: (required) Whether to install (`present'), or 
+# zone: Whether to install the package only in the 
 }- name: ${2:Name for svr4pkg module.}
   svr4pkg:
 ${3:   ${4:category}: ${5:"#"}}

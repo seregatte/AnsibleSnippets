@@ -3,9 +3,9 @@
 ${1:# channel_token: (required) Token of the channel to post to. 
 # icon_url: Icon for the service 
 # message: (required) Message content 
-# service: Name of the service (displayed as the "user" in the message) 
+# service: Name of the service (displayed as the "user" in 
 # url: Service URL for the web client 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for grove module.}
   grove:
 ${3:   ${4:channel_token}: ${5:"#"}}

@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# device: When `managed' is `no', specifies the address, 
+# device_password: The password of the `device_username'. When 
+# device_port: Specifies the port of the remote device to 
+# device_username: The username used to connect to the remote 
+# key: (required) The registration key that you want to 
+# managed: Whether the specified device is a managed or un- 
+# password: (required) The password for the user account 
+# pool: (required) The registration key pool to use. 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: When `present', ensures that the device is 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigiq_regkey_license_assignment module.}
+  bigiq_regkey_license_assignment:
+${3:   ${4:device}: ${5:"#"}}
+${6:   ${7:device_password}: ${8:"#"}}
+${9:   ${10:device_port}: ${11:"#"}}
+${12:   ${13:device_username}: ${14:"#"}}
+${15:   ${16:key}: ${17:"#"}}
+${18:   ${19:managed}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:pool}: ${26:"#"}}
+${27:   ${28:provider}: ${29:"#"}}
+${30:   ${31:server}: ${32:"#"}}
+${33:   ${34:server_port}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:user}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>bigiq_regkey_license_assignment</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

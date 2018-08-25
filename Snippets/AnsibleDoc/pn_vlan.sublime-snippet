@@ -4,12 +4,12 @@ ${1:# pn_clipassword: Provide login password if user is not root.
 # pn_cliswitch: Target switch(es) to run the cli on. 
 # pn_cliusername: Provide login username if user is not root. 
 # pn_description: Specify a description for the VLAN. 
-# pn_ports: Specifies the switch network data port number, list of ports, or range of ports. Port numbers must ne in 
-# pn_scope: Specify a scope for the VLAN. Required for vlan-create. 
-# pn_stats: Specify if you want to collect statistics for a VLAN. Statistic collection is enabled by default. 
-# pn_untagged_ports: Specifies the ports that should have untagged packets mapped to the VLAN. Untagged packets are packets 
-# pn_vlanid: (required) Specify a VLAN identifier for the VLAN. This is a value between 2 and 4092. 
-# state: (required) State the action to perform. Use 'present' to create vlan and 'absent' to delete vlan. 
+# pn_ports: Specifies the switch network data port number, 
+# pn_scope: Specify a scope for the VLAN. Required for vlan- 
+# pn_stats: Specify if you want to collect statistics for a 
+# pn_untagged_ports: Specifies the ports that should have untagged 
+# pn_vlanid: (required) Specify a VLAN identifier for the 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_vlan module.}
   pn_vlan:
 ${3:   ${4:pn_clipassword}: ${5:"#"}}

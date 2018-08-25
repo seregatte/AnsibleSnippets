@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# description: Description of the group 
-# name: (required) Name of the group 
-# state: Create or remove the group 
+${1:# description: Description of the group. 
+# name: (required) Name of the group. 
+# state: Create or remove the group. 
 }- name: ${2:Name for win_group module.}
   win_group:
 ${3:   ${4:description}: ${5:"#"}}

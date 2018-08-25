@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# content: Datastructure of the Logical Device Map to manage. The data can be in YAML / JSON or directly a 
-# id: AOS Id of the Logical Device Map to manage (can't be used to create a new Logical Device Map), Only one 
-# name: Name of the Logical Device Map to manage. Only one of `name', `id' or `content' can be set. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Logical Device Map (present or not). 
+${1:# content: Datastructure of the Logical Device Map to 
+# id: AOS Id of the Logical Device Map to manage 
+# name: Name of the Logical Device Map to manage. Only 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
 }- name: ${2:Name for aos_logical_device_map module.}
   aos_logical_device_map:
 ${3:   ${4:content}: ${5:"#"}}

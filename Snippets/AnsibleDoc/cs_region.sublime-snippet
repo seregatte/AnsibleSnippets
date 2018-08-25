@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# endpoint: Endpoint URL of the region. Required if `state=present' 
-# id: (required) ID of the region. Must be an number (int). 
+${1:# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# endpoint: Endpoint URL of the region. Required if 
+# id: (required) ID of the region. Must be an number 
 # name: Name of the region. Required if `state=present' 
 # state: State of the region. 
 }- name: ${2:Name for cs_region module.}

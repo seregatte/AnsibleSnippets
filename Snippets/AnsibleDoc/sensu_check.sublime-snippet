@@ -1,29 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# aggregate: Classifies the check as an aggregate check, making it available via the aggregate API 
-# backup: Create a backup file (if yes), including the timestamp information so you can get the original file back 
-# command: (required) Path to the sensu check to run (not required when `state=absent') 
-# custom: A hash/dictionary of custom parameters for mixing to the configuration. You can't rewrite others module 
-# dependencies: Other checks this check depends on, if dependencies fail, handling of this check will be disabled 
+${1:# aggregate: Classifies the check as an aggregate check, 
+# backup: Create a backup file (if yes), including the 
+# command: (required) Path to the sensu check to run (not 
+# custom: A hash/dictionary of custom parameters for 
+# dependencies: Other checks this check depends on, if 
 # handle: Whether the check should be handled or not 
 # handlers: List of handlers to notify when the check fails 
 # high_flap_threshold: The high threshold for flap detection 
 # interval: Check interval in seconds 
 # low_flap_threshold: The low threshold for flap detection 
 # metric: Whether the check is a metric 
-# name: (required) The name of the check This is the key that is used to determine whether a check exists 
-# occurrences: Number of event occurrences before the handler should take action 
-# path: Path to the json file of the check to be added/removed. Will be created if it does not exist (unless 
-# publish: Whether the check should be scheduled at all. You can still issue it via the sensu api 
-# refresh: Number of seconds handlers should wait before taking second action 
-# source: The check source, used to create a JIT Sensu client for an external resource (e.g. a network switch). 
-# standalone: Whether the check should be scheduled by the sensu client or server This option obviates the need for 
+# name: (required) The name of the check This is the key 
+# occurrences: Number of event occurrences before the handler 
+# path: Path to the json file of the check to be 
+# publish: Whether the check should be scheduled at all. 
+# refresh: Number of seconds handlers should wait before 
+# source: The check source, used to create a JIT Sensu 
+# standalone: Whether the check should be scheduled by the 
 # state: Whether the check should be present or not 
 # subdue_begin: When to disable handling of check failures 
 # subdue_end: When to enable handling of check failures 
-# subscribers: List of subscribers/channels this check should run for See sensu_subscribers to subscribe a machine to a 
+# subscribers: List of subscribers/channels this check should 
 # timeout: Timeout for the check 
-# ttl: Time to live in seconds until the check is considered stale 
+# ttl: Time to live in seconds until the check is 
 }- name: ${2:Name for sensu_check module.}
   sensu_check:
 ${3:   ${4:aggregate}: ${5:"#"}}

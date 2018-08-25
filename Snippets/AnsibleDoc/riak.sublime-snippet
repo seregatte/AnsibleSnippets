@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# command: The command you would like to perform against the cluster. 
+${1:# command: The command you would like to perform against 
 # config_dir: The path to the riak configuration directory 
-# http_conn: The ip address and port that is listening for Riak HTTP queries 
-# target_node: The target node for certain operations (join, ping) 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# wait_for_handoffs: Number of seconds to wait for handoffs to complete. 
-# wait_for_ring: Number of seconds to wait for all nodes to agree on the ring. 
-# wait_for_service: Waits for a riak service to come online before continuing. 
+# http_conn: The ip address and port that is listening for 
+# target_node: The target node for certain operations (join, 
+# validate_certs: If `no', SSL certificates will not be validated. 
+# wait_for_handoffs: Number of seconds to wait for handoffs to 
+# wait_for_ring: Number of seconds to wait for all nodes to agree 
+# wait_for_service: Waits for a riak service to come online before 
 }- name: ${2:Name for riak module.}
   riak:
 ${3:   ${4:command}: ${5:"#"}}

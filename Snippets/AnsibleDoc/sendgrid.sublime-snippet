@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: sendgrid API key to use instead of username/password 
-# attachments: a list of relative or explicit paths of files you want to attach (7MB limit as per SendGrid docs) 
+${1:# api_key: sendgrid API key to use instead of 
+# attachments: a list of relative or explicit paths of files 
 # bcc: a list of email addresses to bcc 
 # cc: a list of email addresses to cc 
-# from_address: (required) the address in the "from" field for the email 
-# from_name: the name you want to appear in the from field, i.e 'John Doe' 
+# from_address: (required) the address in the "from" field for 
+# from_name: the name you want to appear in the from field, 
 # headers: a dict to pass on as headers 
-# html_body: whether the body is html content that should be rendered 
-# password: password that corresponds to the username Since 2.2 it is only required if api_key is not supplied. 
+# html_body: whether the body is html content that should be 
+# password: password that corresponds to the username Since 
 # subject: (required) the desired subject for the email 
-# to_addresses: (required) a list with one or more recipient email addresses 
-# username: username for logging into the SendGrid account. Since 2.2 it is only required if api_key is not 
+# to_addresses: (required) a list with one or more recipient 
+# username: username for logging into the SendGrid account. 
 }- name: ${2:Name for sendgrid module.}
   sendgrid:
 ${3:   ${4:api_key}: ${5:"#"}}

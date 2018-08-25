@@ -1,31 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key id. If not set then the value of the AWS_ACCESS_KEY environment variable is used. 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_KEY environment variable is used. 
+${1:# aws_access_key: AWS access key id. If not set then the value of 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # bucket: (required) Bucket name. 
-# dest: The destination file path when downloading an object/key with a GET operation. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# encrypt: When set for PUT mode, asks for server-side encryption. 
-# expiration: Time limit (in seconds) for the URL generated and returned by S3/Walrus when performing a mode=put or 
-# headers: Custom headers for PUT operation, as a dictionary of 'key=value' and 'key=value,key=value'. 
-# ignore_nonexistent_bucket: Overrides initial bucket lookups in case bucket or iam policies are restrictive. Example: a user may 
-# marker: Specifies the key to start with when using list mode. Object keys are returned in alphabetical order, 
-# max_keys: Max number of results to return in list mode, set this if you want to retrieve fewer than the default 
-# metadata: Metadata for PUT operation, as a dictionary of 'key=value' and 'key=value,key=value'. 
-# mode: (required) Switches the module behaviour between put (upload), get (download), geturl (return download 
-# object: Keyname of the object inside the bucket. Can be used to create "virtual directories", see examples. 
-# overwrite: Force overwrite either locally on the filesystem or remotely with the object/key. Used with PUT and GET 
-# permission: This option lets the user set the canned permissions on the object/bucket that are created. The 
-# prefix: Limits the response to keys that begin with the specified prefix for list mode 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: AWS region to create the bucket in. If not set then the value of the AWS_REGION and EC2_REGION 
-# retries: On recoverable failure, how many times to retry before actually failing. 
-# rgw: Enable Ceph RGW S3 support. This option requires an explicit url via s3_url. 
-# s3_url: S3 URL endpoint for usage with Ceph, Eucalypus, fakes3, etc.  Otherwise assumes AWS 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# src: The source file path when performing a PUT operation. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# version: Version ID of the object inside the bucket. Can be used to get a specific version of a file if 
+# dest: The destination file path when downloading an 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# encrypt: When set for PUT mode, asks for server-side 
+# expiration: Time limit (in seconds) for the URL generated 
+# headers: Custom headers for PUT operation, as a 
+# ignore_nonexistent_bucket: Overrides initial bucket lookups in case bucket 
+# marker: Specifies the key to start with when using list 
+# max_keys: Max number of results to return in list mode, 
+# metadata: Metadata for PUT operation, as a dictionary of 
+# mode: (required) Switches the module behaviour between 
+# object: Keyname of the object inside the bucket. Can be 
+# overwrite: Force overwrite either locally on the filesystem 
+# permission: This option lets the user set the canned 
+# prefix: Limits the response to keys that begin with the 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: AWS region to create the bucket in. If not set 
+# retries: On recoverable failure, how many times to retry 
+# rgw: Enable Ceph RGW S3 support. This option requires 
+# s3_url: S3 URL endpoint for usage with Ceph, Eucalypus, 
+# security_token: AWS STS security token. If not set then the 
+# src: The source file path when performing a PUT 
+# validate_certs: When set to "no", SSL certificates will not be 
+# version: Version ID of the object inside the bucket. Can 
 }- name: ${2:Name for aws_s3 module.}
   aws_s3:
 ${3:   ${4:aws_access_key}: ${5:"#"}}

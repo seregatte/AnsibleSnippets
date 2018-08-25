@@ -1,16 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) What to do with the items this rule is for. 
+${1:# action: (required) What to do with the items this rule 
 # description: Description for the firewall rule. 
-# direction: (required) Is this rule for inbound or outbound traffic. 
+# direction: (required) Is this rule for inbound or outbound 
 # enabled: Is this firewall rule enabled or disabled. 
+# force: Replace any existing rule by removing it first. 
 # localip: The local ip address this rule applies to. 
 # localport: The local port this rule applies to. 
 # name: (required) The rules name 
 # profiles: The profile this rule applies to. 
 # program: The program this rule applies to. 
 # protocol: The protocol this rule applies to. 
-# remoteip: The remote ip address/range this rule applies to. 
+# remoteip: The remote ip address/range this rule applies 
 # remoteport: The remote port this rule applies to. 
 # service: The service this rule applies to. 
 # state: Should this rule be added or removed. 
@@ -20,22 +21,23 @@ ${3:   ${4:action}: ${5:"#"}}
 ${6:   ${7:description}: ${8:"#"}}
 ${9:   ${10:direction}: ${11:"#"}}
 ${12:   ${13:enabled}: ${14:"#"}}
-${15:   ${16:localip}: ${17:"#"}}
-${18:   ${19:localport}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:profiles}: ${26:"#"}}
-${27:   ${28:program}: ${29:"#"}}
-${30:   ${31:protocol}: ${32:"#"}}
-${33:   ${34:remoteip}: ${35:"#"}}
-${36:   ${37:remoteport}: ${38:"#"}}
-${39:   ${40:service}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${15:   ${16:force}: ${17:"#"}}
+${18:   ${19:localip}: ${20:"#"}}
+${21:   ${22:localport}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:profiles}: ${29:"#"}}
+${30:   ${31:program}: ${32:"#"}}
+${33:   ${34:protocol}: ${35:"#"}}
+${36:   ${37:remoteip}: ${38:"#"}}
+${39:   ${40:remoteport}: ${41:"#"}}
+${42:   ${43:service}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>win_firewall_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

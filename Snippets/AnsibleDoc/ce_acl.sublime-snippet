@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# acl_description: ACL description. The value is a string of 1 to 127 characters. 
-# acl_name: (required) ACL number or name. For a numbered rule group, the value ranging from 2000 to 2999 indicates 
-# acl_num: ACL number. The value is an integer ranging from 2000 to 2999. 
-# acl_step: ACL step. The value is an integer ranging from 1 to 20. The default value is 5. 
+${1:# acl_description: ACL description. The value is a string of 1 to 
+# acl_name: (required) ACL number or name. For a numbered 
+# acl_num: ACL number. The value is an integer ranging from 
+# acl_step: ACL step. The value is an integer ranging from 1 
 # frag_type: Type of packet fragmentation. 
 # log_flag: Flag of logging matched data packets. 
 # rule_action: Matching mode of basic ACL rules. 
-# rule_description: Description about an ACL rule. The value is a string of 1 to 127 characters. 
-# rule_id: ID of a basic ACL rule in configuration mode. The value is an integer ranging from 0 to 4294967294. 
-# rule_name: Name of a basic ACL rule. The value is a string of 1 to 32 characters. The value is case-insensitive, 
-# source_ip: Source IP address. The value is a string of 0 to 255 characters.The default value is 0.0.0.0. The value 
-# src_mask: Mask of a source IP address. The value is an integer ranging from 1 to 32. 
+# rule_description: Description about an ACL rule. The value is a 
+# rule_id: ID of a basic ACL rule in configuration mode. 
+# rule_name: Name of a basic ACL rule. The value is a string 
+# source_ip: Source IP address. The value is a string of 0 to 
+# src_mask: Mask of a source IP address. The value is an 
 # state: Specify desired state of the resource. 
-# time_range: Name of a time range in which an ACL rule takes effect. The value is a string of 1 to 32 characters. The 
-# vrf_name: VPN instance name. The value is a string of 1 to 31 characters.The default value is _public_. 
+# time_range: Name of a time range in which an ACL rule takes 
+# vrf_name: VPN instance name. The value is a string of 1 to 
 }- name: ${2:Name for ce_acl module.}
   ce_acl:
 ${3:   ${4:acl_description}: ${5:"#"}}

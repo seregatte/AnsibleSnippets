@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# attachments: Define a list of attachments. This list mirrors the Slack JSON API. For more information, see 
-# channel: Channel to send the message to. If absent, the message goes to the channel selected for the `token'. 
-# color: Allow text to use default colors - use the default of 'normal' to not send a custom color bar at the 
-# domain: Slack (sub)domain for your environment without protocol. (i.e. `example.slack.com') In 1.8 and beyond, 
-# icon_emoji: Emoji for the message sender. See Slack documentation for options. (if `icon_emoji' is set, `icon_url' 
-# icon_url: Url for the message sender's icon (default `https://www.ansible.com/favicon.ico') 
-# link_names: Automatically create links for channels and usernames in `msg'. 
-# msg: Message to send. Note that the module does not handle escaping characters. Plain-text angle brackets and 
+${1:# attachments: Define a list of attachments. This list mirrors 
+# channel: Channel to send the message to. If absent, the 
+# color: Allow text to use default colors - use the 
+# domain: Slack (sub)domain for your environment without 
+# icon_emoji: Emoji for the message sender. See Slack 
+# icon_url: Url for the message sender's icon (default 
+# link_names: Automatically create links for channels and 
+# msg: Message to send. Note that the module does not 
 # parse: Setting for the message parser at Slack 
-# token: (required) Slack integration token.  This authenticates you to the slack service. Prior to 1.8, a token 
+# token: (required) Slack integration token.  This 
 # username: This is the sender of the message. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for slack module.}
   slack:
 ${3:   ${4:attachments}: ${5:"#"}}

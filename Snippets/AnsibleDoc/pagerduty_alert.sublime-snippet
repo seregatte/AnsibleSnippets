@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: (required) The pagerduty API key (readonly access), generated on the pagerduty site. 
-# client: The name of the monitoring client that is triggering this event. 
-# client_url: The URL of the monitoring client that is triggering this event. 
-# desc: For `triggered' `state' - Required. Short description of the problem that led to this trigger. This 
-# incident_key: Identifies the incident to which this `state' should be applied. For `triggered' `state' - If there's no 
+${1:# api_key: (required) The pagerduty API key (readonly 
+# client: The name of the monitoring client that is 
+# client_url: The URL of the monitoring client that is 
+# desc: For `triggered' `state' - Required. Short 
+# incident_key: Identifies the incident to which this `state' 
 # name: (required) PagerDuty unique subdomain. 
-# service_key: (required) The GUID of one of your "Generic API" services. This is the "service key" listed on a Generic 
+# service_key: (required) The GUID of one of your "Generic API" 
 # state: (required) Type of event to be sent. 
 }- name: ${2:Name for pagerduty_alert module.}
   pagerduty_alert:

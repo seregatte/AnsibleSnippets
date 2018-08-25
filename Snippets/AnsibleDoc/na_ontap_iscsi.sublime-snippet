@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# https: Enable and disabled https 
+# password: (required) Password for the specified user. 
+# service_state: Whether the specified service should running . 
+# state: Whether the service should be present or 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# vserver: (required) The name of the vserver to use. 
+}- name: ${2:Name for na_ontap_iscsi module.}
+  na_ontap_iscsi:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:https}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:service_state}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:   ${22:vserver}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>na_ontap_iscsi</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

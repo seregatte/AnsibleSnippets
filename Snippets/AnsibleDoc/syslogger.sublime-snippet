@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# facility: Set the log facility 
 # log_pid: Log the pid in brackets 
-# msg: (required) This is the message to place in syslog 
+# msg: (required) This is the message to place in 
 # priority: Set the log priority 
 }- name: ${2:Name for syslogger module.}
   syslogger:

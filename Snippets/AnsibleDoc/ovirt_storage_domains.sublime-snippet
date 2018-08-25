@@ -1,57 +1,67 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+${1:# auth: (required) Dictionary with values needed to 
+# backup: Boolean flag which indicates whether the storage 
 # comment: Comment of the storage domain. 
-# data_center: Data center name where storage domain should be attached. This parameter isn't idempotent, it's not 
+# critical_space_action_blocker: Inidcates the minimal free space the storage 
+# data_center: Data center name where storage domain should be 
 # description: Description of the storage domain. 
-# destroy: Logical remove of the storage domain. If `true' retains the storage domain's data for import. This 
-# domain_function: Function of the storage domain. This parameter isn't idempotent, it's not possible to change domain 
-# fcp: Dictionary with values for fibre channel storage type: `address' - Address of the fibre channel storage 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# format: If `True' storage domain will be formatted after removing it from oVirt/RHV. This parameter is relevant 
-# glusterfs: Dictionary with values for GlusterFS storage type: `address' - Address of the Gluster server. E.g.: 
+# destroy: Logical remove of the storage domain. If `true' 
+# discard_after_delete: If `True' storage domain blocks will be 
+# domain_function: Function of the storage domain. This parameter 
+# fcp: Dictionary with values for fibre channel storage 
+# fetch_nested: If `True' the module will fetch additional data 
+# format: If `True' storage domain will be formatted after 
+# glusterfs: Dictionary with values for GlusterFS storage 
 # host: Host to be used to mount storage. 
 # id: Id of the storage domain to be imported. 
-# iscsi: Dictionary with values for iSCSI storage type: `address' - Address of the iSCSI storage server. `port' - 
-# localfs: Dictionary with values for localfs storage type: `path' - Path of the mount point. E.g.: 
-# name: Name of the storage domain to manage. (Not required when state is `imported') 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# nfs: Dictionary with values for NFS storage type: `address' - Address of the NFS server. E.g.: 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
-# posixfs: Dictionary with values for PosixFS storage type: `path' - Path of the mount point. E.g.: 
-# state: Should the storage domain be present/absent/maintenance/unattached/imported `imported' is supported 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# iscsi: Dictionary with values for iSCSI storage type: 
+# localfs: Dictionary with values for localfs storage type: 
+# name: Name of the storage domain to manage. (Not 
+# nested_attributes: Specifies list of the attributes which should be 
+# nfs: Dictionary with values for NFS storage type: 
+# poll_interval: Number of the seconds the module waits until 
+# posixfs: Dictionary with values for PosixFS storage type: 
+# state: Should the storage domain be present/absent/main 
+# timeout: The amount of time in seconds the module should 
+# wait: `True' if the module should wait for the entity 
+# warning_low_space: Inidcates the minimum percentage of a free space 
+# wipe_after_delete: Boolean flag which indicates whether the storage 
 }- name: ${2:Name for ovirt_storage_domains module.}
   ovirt_storage_domains:
 ${3:   ${4:auth}: ${5:"#"}}
-${6:   ${7:comment}: ${8:"#"}}
-${9:   ${10:data_center}: ${11:"#"}}
-${12:   ${13:description}: ${14:"#"}}
-${15:   ${16:destroy}: ${17:"#"}}
-${18:   ${19:domain_function}: ${20:"#"}}
-${21:   ${22:fcp}: ${23:"#"}}
-${24:   ${25:fetch_nested}: ${26:"#"}}
-${27:   ${28:format}: ${29:"#"}}
-${30:   ${31:glusterfs}: ${32:"#"}}
-${33:   ${34:host}: ${35:"#"}}
-${36:   ${37:id}: ${38:"#"}}
-${39:   ${40:iscsi}: ${41:"#"}}
-${42:   ${43:localfs}: ${44:"#"}}
-${45:   ${46:name}: ${47:"#"}}
-${48:   ${49:nested_attributes}: ${50:"#"}}
-${51:   ${52:nfs}: ${53:"#"}}
-${54:   ${55:poll_interval}: ${56:"#"}}
-${57:   ${58:posixfs}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:timeout}: ${65:"#"}}
-${66:   ${67:wait}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${6:   ${7:backup}: ${8:"#"}}
+${9:   ${10:comment}: ${11:"#"}}
+${12:   ${13:critical_space_action_blocker}: ${14:"#"}}
+${15:   ${16:data_center}: ${17:"#"}}
+${18:   ${19:description}: ${20:"#"}}
+${21:   ${22:destroy}: ${23:"#"}}
+${24:   ${25:discard_after_delete}: ${26:"#"}}
+${27:   ${28:domain_function}: ${29:"#"}}
+${30:   ${31:fcp}: ${32:"#"}}
+${33:   ${34:fetch_nested}: ${35:"#"}}
+${36:   ${37:format}: ${38:"#"}}
+${39:   ${40:glusterfs}: ${41:"#"}}
+${42:   ${43:host}: ${44:"#"}}
+${45:   ${46:id}: ${47:"#"}}
+${48:   ${49:iscsi}: ${50:"#"}}
+${51:   ${52:localfs}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:nested_attributes}: ${59:"#"}}
+${60:   ${61:nfs}: ${62:"#"}}
+${63:   ${64:poll_interval}: ${65:"#"}}
+${66:   ${67:posixfs}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:timeout}: ${74:"#"}}
+${75:   ${76:wait}: ${77:"#"}}
+${78:   ${79:warning_low_space}: ${80:"#"}}
+${81:   ${82:wipe_after_delete}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>ovirt_storage_domains</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

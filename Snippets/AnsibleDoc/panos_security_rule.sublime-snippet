@@ -2,34 +2,34 @@
 <content><![CDATA[
 ${1:# action: Action to apply once rules maches. 
 # antivirus: Name of the already defined antivirus profile. 
-# api_key: API key that can be used instead of `username'/`password' credentials. 
+# api_key: API key that can be used instead of 
 # application: List of applications. 
 # commit: Commit configuration if changed. 
-# data_filtering: Name of the already defined data_filtering profile. 
+# data_filtering: Name of the already defined data_filtering 
 # description: Description for the security rule. 
 # destination_ip: List of destination addresses. 
 # destination_zone: List of destination zones. 
-# devicegroup: - Device groups are used for the Panorama interaction with Firewall(s). The group must exists on 
-# file_blocking: Name of the already defined file_blocking profile. 
-# group_profile: - Security profile group that is already defined in the system. This property supersedes antivirus, 
-# hip_profiles: - If you are using GlobalProtect with host information profile (HIP) enabled, you can also base the 
-# ip_address: (required) IP address (or hostname) of PAN-OS device being configured. 
+# devicegroup: - Device groups are used for the Panorama 
+# file_blocking: Name of the already defined file_blocking 
+# group_profile: - Security profile group that is already defined 
+# hip_profiles: - If you are using GlobalProtect with host 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
 # log_end: Whether to log at session end. 
 # log_start: Whether to log at session start. 
-# operation: The action to be taken.  Supported values are `add'/`update'/`find'/`delete'. 
-# password: (required) Password credentials to use for auth unless `api_key' is set. 
+# operation: The action to be taken.  Supported values are 
+# password: (required) Password credentials to use for auth 
 # rule_name: (required) Name of the security rule. 
-# rule_type: Type of security rule (version 6.1 of PanOS and above). 
+# rule_type: Type of security rule (version 6.1 of PanOS and 
 # service: List of services. 
 # source_ip: List of source addresses. 
-# source_user: Use users to enforce policy for individual users or a group of users. 
+# source_user: Use users to enforce policy for individual users 
 # source_zone: List of source zones. 
 # spyware: Name of the already defined spyware profile. 
-# tag_name: Administrative tags that can be added to the rule. Note, tags must be already defined. 
-# url_filtering: Name of the already defined url_filtering profile. 
-# username: Username credentials to use for auth unless `api_key' is set. 
-# vulnerability: Name of the already defined vulnerability profile. 
-# wildfire_analysis: Name of the already defined wildfire_analysis profile. 
+# tag_name: Administrative tags that can be added to the 
+# url_filtering: Name of the already defined url_filtering 
+# username: Username credentials to use for auth unless 
+# vulnerability: Name of the already defined vulnerability 
+# wildfire_analysis: Name of the already defined wildfire_analysis 
 }- name: ${2:Name for panos_security_rule module.}
   panos_security_rule:
 ${3:   ${4:action}: ${5:"#"}}

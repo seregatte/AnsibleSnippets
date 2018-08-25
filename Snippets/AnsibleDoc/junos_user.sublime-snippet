@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# active: Specifies whether or not the configuration is active or deactivated 
-# aggregate: The `aggregate' argument defines a list of users to be configured on the remote device.  The list of 
-# full_name: The `full_name' argument provides the full name of the user account to be created on the remote device. 
-# name: The `name' argument defines the username of the user to be created on the system.  This argument must 
-# provider: A dict object containing connection details. 
-# purge: The `purge' argument instructs the module to consider the users definition absolute.  It will remove any 
-# role: The `role' argument defines the role of the user account on the remote system.  User accounts can have 
-# sshkey: The `sshkey' argument defines the public SSH key to be configured for the user account on the remote 
-# state: The `state' argument configures the state of the user definitions as it relates to the device 
+${1:# active: Specifies whether or not the configuration is 
+# aggregate: The `aggregate' argument defines a list of users 
+# full_name: The `full_name' argument provides the full name 
+# name: The `name' argument defines the username of the 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# purge: The `purge' argument instructs the module to 
+# role: The `role' argument defines the role of the user 
+# sshkey: The `sshkey' argument defines the public SSH key 
+# state: The `state' argument configures the state of the 
 }- name: ${2:Name for junos_user module.}
   junos_user:
 ${3:   ${4:active}: ${5:"#"}}
