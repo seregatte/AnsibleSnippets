@@ -1,32 +1,32 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# backup: Create a backup file including the timestamp information so you can get the original file back if you 
-# checksum: If a checksum is passed to this parameter, the digest of the destination file will be calculated after 
-# client_cert: PEM formatted certificate chain file to be used for SSL client authentication. This file can also 
-# client_key: PEM formatted file that contains your private key to be used for SSL client authentication. If 
-# dest: (required) Absolute path of where to download the file to. If `dest' is a directory, either the server 
-# force: If `yes' and `dest' is not a directory, will download the file every time and replace the file if the 
-# force_basic_auth: httplib2, the library used by the uri module only sends authentication information when a webservice 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# headers: Add custom HTTP headers to a request in the format "key:value,key:value". 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# others: all arguments accepted by the [file] module also work here 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# sha256sum: If a SHA-256 checksum is passed to this parameter, the digest of the destination file will be calculated 
+${1:# attributes: Attributes the file or directory should have. To 
+# backup: Create a backup file including the timestamp 
+# checksum: If a checksum is passed to this parameter, the 
+# client_cert: PEM formatted certificate chain file to be used 
+# client_key: PEM formatted file that contains your private 
+# dest: (required) Absolute path of where to download 
+# force: If `yes' and `dest' is not a directory, will 
+# force_basic_auth: httplib2, the library used by the uri module 
+# group: Name of the group that should own the 
+# headers: Add custom HTTP headers to a request in 
+# mode: Mode the file or directory should be. For those 
+# others: all arguments accepted by the [file] module also 
+# owner: Name of the user that should own the 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# sha256sum: If a SHA-256 checksum is passed to this 
 # timeout: Timeout in seconds for URL request. 
-# tmp_dest: Absolute path of where temporary file is downloaded to. Defaults to `TMPDIR', `TEMP' or `TMP' env 
-# https: tempfile.tempdir 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# url: (required) HTTP, HTTPS, or FTP URL in the form (http|https|ftp)://[user[:pass]]@host.domain[:port]/path 
-# url_password: The password for use in HTTP basic authentication. If the `url_username' parameter is not specified, the 
-# url_username: The username for use in HTTP basic authentication. This parameter can be used without `url_password' for 
-# use_proxy: if `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# tmp_dest: Absolute path of where temporary file is 
+# tml: tempfile.temp 
+# unsafe_writes: Normally this module uses atomic operations to 
+# url: (required) HTTP, HTTPS, or FTP URL in the form ( 
+# url_password: The password for use in HTTP basic 
+# url_username: The username for use in HTTP basic 
+# use_proxy: if `no', it will not use a proxy, even if one is 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for get_url module.}
   get_url:
 ${3:   ${4:attributes}: ${5:"#"}}
@@ -49,7 +49,7 @@ ${51:   ${52:seuser}: ${53:"#"}}
 ${54:   ${55:sha256sum}: ${56:"#"}}
 ${57:   ${58:timeout}: ${59:"#"}}
 ${60:   ${61:tmp_dest}: ${62:"#"}}
-${63:   ${64:https}: ${65:"#"}}
+${63:   ${64:tml}: ${65:"#"}}
 ${66:   ${67:unsafe_writes}: ${68:"#"}}
 ${69:   ${70:url}: ${71:"#"}}
 ${72:   ${73:url_password}: ${74:"#"}}

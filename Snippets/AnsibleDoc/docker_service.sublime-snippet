@@ -1,33 +1,34 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: The version of the Docker API running on the Docker Host. Defaults to the latest version of the API 
-# build: Use with state `present' to always build images prior to starting the application. Same as running 
-# cacert_path: Use a CA certificate when performing server verification by providing the path to a CA certificate file. 
+${1:# api_version: The version of the Docker API running on the 
+# build: Use with state `present' to always build images 
+# cacert_path: Use a CA certificate when performing server 
 # cert_path: Path to the client's TLS certificate file. 
-# debug: Include `actions' in the return values. 
-# definition: Provide docker-compose yaml describing one or more services, networks and volumes. Mutually exclusive 
-# dependencies: When `state' is `present' specify whether or not to include linked services. 
-# docker_host: The URL or Unix socket path used to connect to the Docker API. To connect to a remote host, provide the 
-# files: List of file names relative to `project_src'. Overrides docker-compose.yml or docker-compose.yaml. Files 
-# hostname_check: Whether or not to check the Docker daemon's hostname against the name provided in the client 
+# debug: Debug mode 
+# definition: Provide docker-compose yaml describing one or 
+# dependencies: When `state' is `present' specify whether or not 
+# docker_host: The URL or Unix socket path used to connect to 
+# files: List of file names relative to `project_src'. 
+# hostname_check: Whether or not to check the Docker daemon's 
 # key_path: Path to the client's TLS key file. 
-# nocache: Use with the build option to ignore the cache during the image build process. 
-# project_name: Provide a project name. If not provided, the project name is taken from the basename of `project_src'. 
-# project_src: Path to a directory containing a docker-compose.yml or docker-compose.yaml file. Mutually exclusive with 
-# pull: Use with state `present' to always pull images prior to starting the application. Same as running 
-# recreate: By default containers will be recreated when their configuration differs from the service definition. 
-# remove_images: Use with state `absent' to remove the all images or only local images. 
+# nocache: Use with the build option to ignore the cache 
+# project_name: Provide a project name. If not provided, the 
+# project_src: Path to a directory containing a docker- 
+# pull: Use with state `present' to always pull images 
+# recreate: By default containers will be recreated when 
+# remove_images: Use with state `absent' to remove the all images 
+# remove_orphans: Remove containers for services not defined in 
 # remove_volumes: Use with state `absent' to remove data volumes. 
-# restarted: Use with state `present' to restart all containers. 
-# scale: When `state' is `present' scale services. Provide a dictionary of key/value pairs where the key is the 
-# services: When `state' is `present' run `docker-compose up' on a subset of services. 
-# ssl_version: Provide a valid SSL version number. Default value determined by docker-py, currently 1.0. 
-# state: Desired state of the project. Specifying `present' is the same as running `docker-compose up'. 
-# stopped: Use with state `present' to leave the containers in an exited or non-running state. 
-# timeout: The maximum amount of time in seconds to wait on a response from the API. 
-# tls: Secure the connection to the API by using TLS without verifying the authenticity of the Docker host 
-# tls_hostname: When verifying the authenticity of the Docker Host server, provide the expected name of the server. 
-# tls_verify: Secure the connection to the API by using TLS and verifying the authenticity of the Docker host server. 
+# restarted: Use with state `present' to restart all 
+# scale: When `state' is `present' scale services. 
+# services: When `state' is `present' run `docker-compose 
+# ssl_version: Provide a valid SSL version number. Default 
+# state: Desired state of the project. Specifying 
+# stopped: Use with state `present' to leave the containers 
+# timeout: timeout in seconds for container shutdown when 
+# tls: Secure the connection to the API by using TLS 
+# tls_hostname: When verifying the authenticity of the Docker 
+# tls_verify: Secure the connection to the API by using TLS 
 }- name: ${2:Name for docker_service module.}
   docker_service:
 ${3:   ${4:api_version}: ${5:"#"}}
@@ -47,23 +48,24 @@ ${42:   ${43:project_src}: ${44:"#"}}
 ${45:   ${46:pull}: ${47:"#"}}
 ${48:   ${49:recreate}: ${50:"#"}}
 ${51:   ${52:remove_images}: ${53:"#"}}
-${54:   ${55:remove_volumes}: ${56:"#"}}
-${57:   ${58:restarted}: ${59:"#"}}
-${60:   ${61:scale}: ${62:"#"}}
-${63:   ${64:services}: ${65:"#"}}
-${66:   ${67:ssl_version}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:stopped}: ${74:"#"}}
-${75:   ${76:timeout}: ${77:"#"}}
-${78:   ${79:tls}: ${80:"#"}}
-${81:   ${82:tls_hostname}: ${83:"#"}}
-${84:   ${85:tls_verify}: ${86:"#"}}
-${87:${88:   become: ${89:true}} 
-${90:   become_method: ${91:su}} 
-${92:   become_user: ${93:nobody}} 
-${94:   become_flags: ${95:"-s /bin/sh"}}} 
-${96:   when: ${97:variable is defined}} 
-${98:   with_items: ${99:array}} 
+${54:   ${55:remove_orphans}: ${56:"#"}}
+${57:   ${58:remove_volumes}: ${59:"#"}}
+${60:   ${61:restarted}: ${62:"#"}}
+${63:   ${64:scale}: ${65:"#"}}
+${66:   ${67:services}: ${68:"#"}}
+${69:   ${70:ssl_version}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:stopped}: ${77:"#"}}
+${78:   ${79:timeout}: ${80:"#"}}
+${81:   ${82:tls}: ${83:"#"}}
+${84:   ${85:tls_hostname}: ${86:"#"}}
+${87:   ${88:tls_verify}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>docker_service</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

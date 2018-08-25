@@ -3,7 +3,7 @@
 ${1:# arch: CPU architecture 
 # distro: (required) Linux distribution (e.g., `ubuntu') 
 # region: EC2 region 
-# release: (required) short name of the release (e.g., `precise') 
+# release: (required) short name of the release (e.g., 
 # store: Back-end store for instance 
 # stream: Type of release. 
 # virt: virutalization type 

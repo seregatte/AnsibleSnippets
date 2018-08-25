@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
 ${1:# directorymode: Permissions for the share's root directory. 
-# group: Directory owner group of the share's root directory. 
-# host: Host FQDN (server which provides the share), e.g. `{{ ansible_fqdn }}'. Required if `state=present'. 
+# group: Directory owner group of the share's root 
+# host: Host FQDN (server which provides the share), 
 # name: (required) Name 
 # nfs_custom_settings: Option name in exports file. 
-# nfs_hosts: Only allow access for this host, IP address or network. 
-# ou: (required) Organisational unit, inside the LDAP Base DN. 
+# nfs_hosts: Only allow access for this host, IP address or 
+# ou: (required) Organisational unit, inside the LDAP 
 # owner: Directory owner of the share's root directory. 
-# path: Directory on the providing server, e.g. `/home'. Required if `state=present'. 
+# path: Directory on the providing server, e.g. `/home'. 
 # root_squash: Modify user ID for root user (root squashing). 
 # samba_block_size: Blocking size. 
 # samba_blocking_locks: Blocking locks. 
@@ -31,8 +31,8 @@ ${1:# directorymode: Permissions for the share's root directory.
 # samba_hosts_allow: Allowed host/network. 
 # samba_hosts_deny: Denied host/network. 
 # samba_inherit_acls: Inherit ACLs. 
-# samba_inherit_owner: Create files/directories with the owner of the parent directory. 
-# samba_inherit_permissions: Create files/directories with permissions of the parent directory. 
+# samba_inherit_owner: Create files/directories with the owner of the 
+# samba_inherit_permissions: Create files/directories with permissions of the 
 # samba_invalid_users: Invalid users or groups. 
 # samba_level_2_oplocks: Level 2 oplocks. 
 # samba_locking: Locking. 
@@ -42,7 +42,7 @@ ${1:# directorymode: Permissions for the share's root directory.
 # samba_oplocks: Oplocks. 
 # samba_postexec: Postexec script. 
 # samba_preexec: Preexec script. 
-# samba_public: Allow anonymous read-only access with a guest user. 
+# samba_public: Allow anonymous read-only access with a guest 
 # samba_security_mode: Security mode. 
 # samba_strict_locking: Strict locking. 
 # samba_valid_users: Valid users or groups. 

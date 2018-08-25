@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# force: If yes, allows to remove volume group with logical volumes. 
-# pesize: The size of the physical extent in megabytes. Must be a power of 2. 
-# pv_options: Additional options to pass to `pvcreate' when creating the volume group. 
-# pvs: List of comma-separated devices to use as physical devices in this volume group. Required when creating 
+${1:# force: If `yes', allows to remove volume group with 
+# pesize: The size of the physical extent. pesize must be 
+# pv_options: Additional options to pass to `pvcreate' when 
+# pvs: List of comma-separated devices to use as 
 # state: Control if the volume group exists. 
 # vg: (required) The name of the volume group. 
-# vg_options: Additional options to pass to `vgcreate' when creating the volume group. 
+# vg_options: Additional options to pass to `vgcreate' when 
 }- name: ${2:Name for lvg module.}
   lvg:
 ${3:   ${4:force}: ${5:"#"}}

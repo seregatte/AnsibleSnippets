@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# domain: (required) the domain that will be added or removed from the list of permissive domains 
-# no_reload: automatically reload the policy after a change default is set to 'false' as that's what most people 
-# permissive: (required) indicate if the domain should or should not be set as permissive 
+${1:# domain: (required) the domain that will be added or 
+# no_reload: automatically reload the policy after a change 
+# permissive: (required) indicate if the domain should or 
 # store: name of the SELinux policy store to use 
 }- name: ${2:Name for selinux_permissive module.}
   selinux_permissive:

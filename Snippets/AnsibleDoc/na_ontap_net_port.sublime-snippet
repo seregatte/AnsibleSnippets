@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# autonegotiate_admin: Enables or disables Ethernet auto-negotiation of 
+# duplex_admin: Specifies the user preferred duplex setting of 
+# flowcontrol_admin: Specifies the user preferred flow control 
+# hostname: (required) The hostname or IP address of the 
+# https: Enable and disabled https 
+# ipspace: Specifies the port's associated IPspace name. 
+# mtu: Specifies the maximum transmission unit (MTU) 
+# node: (required) Specifies the name of node. 
+# password: (required) Password for the specified user. 
+# port: (required) Specifies the name of port. 
+# speed_admin: Specifies the user preferred speed setting of 
+# state: Whether the specified net port should exist or 
+# username: (required) This can be a Cluster-scoped or SVM- 
+}- name: ${2:Name for na_ontap_net_port module.}
+  na_ontap_net_port:
+${3:   ${4:autonegotiate_admin}: ${5:"#"}}
+${6:   ${7:duplex_admin}: ${8:"#"}}
+${9:   ${10:flowcontrol_admin}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:https}: ${17:"#"}}
+${18:   ${19:ipspace}: ${20:"#"}}
+${21:   ${22:mtu}: ${23:"#"}}
+${24:   ${25:node}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:port}: ${32:"#"}}
+${33:   ${34:speed_admin}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>na_ontap_net_port</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

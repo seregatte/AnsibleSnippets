@@ -2,9 +2,9 @@
 <content><![CDATA[
 ${1:# commit: commit if changed 
 # file: configuration file to load 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
-# username: username for authentication 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_loadcfg module.}
   panos_loadcfg:
 ${3:   ${4:commit}: ${5:"#"}}

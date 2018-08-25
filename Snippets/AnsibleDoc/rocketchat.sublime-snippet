@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
 ${1:# attachments: Define a list of attachments. 
-# channel: Channel to send the message to. If absent, the message goes to the channel selected for the `token' 
-# color: Allow text to use default colors - use the default of 'normal' to not send a custom color bar at the 
-# domain: (required) The domain for your environment without protocol. (i.e. `example.com' or `chat.example.com') 
-# icon_emoji: Emoji for the message sender. The representation for the available emojis can be got from Rocket Chat. 
+# channel: Channel to send the message to. If absent, the 
+# color: Allow text to use default colors - use the 
+# domain: (required) The domain for your environment 
+# icon_emoji: Emoji for the message sender. The representation 
 # icon_url: URL for the message sender's icon. 
-# link_names: Automatically create links for channels and usernames in `msg'. 
+# link_names: Automatically create links for channels and 
 # msg: Message to be sent. 
-# protocol: Specify the protocol used to send notification messages before the webhook url. (i.e. http or https) 
-# token: (required) Rocket Chat Incoming Webhook integration token.  This provides authentication to Rocket 
+# protocol: Specify the protocol used to send notification 
+# token: (required) Rocket Chat Incoming Webhook 
 # username: This is the sender of the message. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for rocketchat module.}
   rocketchat:
 ${3:   ${4:attachments}: ${5:"#"}}

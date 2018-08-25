@@ -4,9 +4,9 @@ ${1:# name: (required) Volume Name
 # password: Infinibox User password. 
 # pool: (required) Pool that volume will reside on 
 # size: Volume size in MB, GB or TB units. See examples. 
-# state: Creates/Modifies volume when present or removes when absent 
+# state: Creates/Modifies volume when present or removes 
 # system: (required) Infinibox Hostname or IPv4 Address. 
-# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# user: Infinibox User username with sufficient 
 }- name: ${2:Name for infini_vol module.}
   infini_vol:
 ${3:   ${4:name}: ${5:"#"}}

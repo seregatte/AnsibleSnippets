@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# datacenter_name: (required) The name of the datacenter. 
+# datastore_cluster_name: (required) The name of the datastore cluster. 
+# hostname: The hostname or IP address of the vSphere 
+# password: The password of the vSphere vCenter or ESXi 
+# port: The port number of the vSphere vCenter or ESXi 
+# state: If the datastore cluster should be present or 
+# username: The username of the vSphere vCenter or ESXi 
+# validate_certs: Allows connection when SSL certificates are not 
+}- name: ${2:Name for vmware_datastore_cluster module.}
+  vmware_datastore_cluster:
+${3:   ${4:datacenter_name}: ${5:"#"}}
+${6:   ${7:datastore_cluster_name}: ${8:"#"}}
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:port}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>vmware_datastore_cluster</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

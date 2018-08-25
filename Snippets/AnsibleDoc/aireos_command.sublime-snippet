@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# commands: (required) List of commands to send to the remote aireos device over the configured provider. The 
-# interval: Configures the interval in seconds to wait between retries of the command. If the command does not pass 
-# match: The `match' argument is used in conjunction with the `wait_for' argument to specify the match policy. 
+${1:# commands: (required) List of commands to send to the 
+# interval: Configures the interval in seconds to wait 
+# match: The `match' argument is used in conjunction with 
 # provider: A dict object containing connection details. 
-# retries: Specifies the number of retries a command should by tried before it is considered failed. The command is 
-# wait_for: List of conditions to evaluate against the output of the command. The task will wait for each condition 
+# retries: Specifies the number of retries a command should 
+# wait_for: List of conditions to evaluate against the 
 }- name: ${2:Name for aireos_command module.}
   aireos_command:
 ${3:   ${4:commands}: ${5:"#"}}

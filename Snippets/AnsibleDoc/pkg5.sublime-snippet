@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# accept_licenses: Accept any licences. 
-# name: (required) An FRMI of the package(s) to be installed/removed/updated. Multiple packages may be 
-# state: Whether to install (`present', `latest'), or remove (`absent') a package. 
+# name: (required) An FRMI of the package(s) to be 
+# state: Whether to install (`present', `latest'), or 
 }- name: ${2:Name for pkg5 module.}
   pkg5:
 ${3:   ${4:accept_licenses}: ${5:"#"}}

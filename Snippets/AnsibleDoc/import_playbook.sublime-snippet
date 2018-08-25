@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# free: This action allows you to specify the name of the file directly w/o any other options. 
+${1:# free: The name of the imported playbook is specified 
 }- name: ${2:Name for import_playbook module.}
   import_playbook:
 ${3:   ${4:free}: ${5:"#"}}

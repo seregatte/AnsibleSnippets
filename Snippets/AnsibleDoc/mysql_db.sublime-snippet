@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# collation: Collation mode (sorting). This only applies to new table/databases and does not update existing ones, 
-# config_file: Specify a config file from which user and password are to be read. 
-# connect_timeout: The connection timeout when connecting to the MySQL server. 
-# encoding: Encoding mode to use, examples include `utf8' or `latin1_swedish_ci' 
+${1:# collation: Collation mode (sorting). This only applies to 
+# config_file: Specify a config file from which user and 
+# connect_timeout: The connection timeout when connecting to the 
+# encoding: Encoding mode to use, examples include `utf8' or 
 # login_host: Host running the database. 
 # login_password: The password used to authenticate with. 
-# login_port: Port of the MySQL server. Requires `login_host' be defined as other then localhost if login_port is 
-# login_unix_socket: The path to a Unix domain socket for local connections. 
+# login_port: Port of the MySQL server. Requires `login_host' 
+# login_unix_socket: The path to a Unix domain socket for local 
 # login_user: The username used to authenticate with. 
-# name: (required) name of the database to add or remove name=all May only be provided if `state' is `dump' or 
+# name: (required) name of the database to add or remove 
 # quick: Option used for dumping large tables 
 # single_transaction: Execute the dump in a single transaction 
-# ssl_ca: The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same 
+# ssl_ca: The path to a Certificate Authority (CA) 
 # ssl_cert: The path to a client public key certificate. 
 # ssl_key: The path to the client private key. 
 # state: The database state 
-# target: Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (`.sql') 
+# target: Location, on the remote host, of the dump file 
 }- name: ${2:Name for mysql_db module.}
   mysql_db:
 ${3:   ${4:collation}: ${5:"#"}}

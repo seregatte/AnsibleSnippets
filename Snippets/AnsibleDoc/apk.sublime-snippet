@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# available: During upgrade, reset versioned world dependencies and change logic to prefer replacing or downgrading 
-# name: A package name, like `foo', or multiple packages, like `foo, bar'. 
-# repository: A package repository or multiple repositories 
-# state: Indicates the desired package(s) state. `present' ensures the package(s) is/are present. `absent' 
-# update_cache: Update repository indexes. Can be run with other steps or on it's own. 
-# upgrade: Upgrade all installed packages to their latest version. 
+${1:# available: During upgrade, reset versioned world 
+# name: A package name, like `foo', or multiple 
+# repository: A package repository or multiple repositories. 
+# state: Indicates the desired package(s) state. 
+# update_cache: Update repository indexes. Can be run with other 
+# upgrade: Upgrade all installed packages to their latest 
 }- name: ${2:Name for apk module.}
   apk:
 ${3:   ${4:available}: ${5:"#"}}

@@ -1,47 +1,29 @@
 <snippet>
 <content><![CDATA[
 ${1:# description: Description of the NVE interface. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# host_reachability: Specify mechanism for host reachability advertisement. 
-# interface: (required) Interface name for the VXLAN Network Virtualization Endpoint. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# host_reachability: Specify mechanism for host reachability 
+# interface: (required) Interface name for the VXLAN Network 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # shutdown: Administratively shutdown the NVE interface. 
-# source_interface: Specify the loopback interface whose IP address should be used for the NVE interface. 
-# source_interface_hold_down_time: Suppresses advertisement of the NVE loopback address until the overlay has converged. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: Determines whether the config should be present or not on the device. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# source_interface: Specify the loopback interface whose IP address 
+# source_interface_hold_down_time: Suppresses advertisement of the NVE loopback 
+# state: Determines whether the config should be present 
 }- name: ${2:Name for nxos_vxlan_vtep module.}
   nxos_vxlan_vtep:
 ${3:   ${4:description}: ${5:"#"}}
-${6:   ${7:host}: ${8:"#"}}
-${9:   ${10:host_reachability}: ${11:"#"}}
-${12:   ${13:interface}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:port}: ${20:"#"}}
-${21:   ${22:provider}: ${23:"#"}}
-${24:   ${25:shutdown}: ${26:"#"}}
-${27:   ${28:source_interface}: ${29:"#"}}
-${30:   ${31:source_interface_hold_down_time}: ${32:"#"}}
-${33:   ${34:ssh_keyfile}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:timeout}: ${41:"#"}}
-${42:   ${43:transport}: ${44:"#"}}
-${45:   ${46:use_ssl}: ${47:"#"}}
-${48:   ${49:username}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${6:   ${7:host_reachability}: ${8:"#"}}
+${9:   ${10:interface}: ${11:"#"}}
+${12:   ${13:provider}: ${14:"#"}}
+${15:   ${16:shutdown}: ${17:"#"}}
+${18:   ${19:source_interface}: ${20:"#"}}
+${21:   ${22:source_interface_hold_down_time}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>nxos_vxlan_vtep</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

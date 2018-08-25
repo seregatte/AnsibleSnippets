@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # default_visibility_timeout: The default visibility timeout in seconds. 
 # delivery_delay: The delivery delay in seconds. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # maximum_message_size: The maximum message size in bytes. 
 # message_retention_period: The message retention period in seconds. 
 # name: (required) Name of the queue. 
 # policy: The json dict policy to attach to queue 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# profile: Uses a boto profile. Only works with boto >= 
 # receive_message_wait_time: The receive message wait time in seconds. 
 # redrive_policy: json dict with the redrive_policy (see example) 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or delete the queue 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for sqs_queue module.}
   sqs_queue:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -32,7 +32,7 @@ ${30:   ${31:profile}: ${32:"#"}}
 ${33:   ${34:receive_message_wait_time}: ${35:"#"}}
 ${36:   ${37:redrive_policy}: ${38:"#"}}
 ${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:http}: ${44:"#"}}
+${42:   ${43:}: ${44:"#"}}
 ${45:   ${46:security_token}: ${47:"#"}}
 ${48:   ${49:state}: ${50:"#"}}
 ${51:   ${52:validate_certs}: ${53:"#"}}

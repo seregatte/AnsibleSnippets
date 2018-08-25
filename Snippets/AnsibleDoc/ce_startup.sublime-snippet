@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# action: Display the startup information. 
-# cfg_file: Name of the configuration file that is applied for the next startup. The value is a string of 5 to 255 
-# patch_file: Name of the patch file that is applied for the next startup. 
-# slot: Position of the device.The value is a string of 1 to 32 characters. The possible value of slot is all, 
-# software_file: File name of the system software that is applied for the next startup. The value is a string of 5 to 255 
+# cfg_file: Name of the configuration file that is applied 
+# patch_file: Name of the patch file that is applied for the 
+# slot: Position of the device.The value is a string of 
+# software_file: File name of the system software that is applied 
 }- name: ${2:Name for ce_startup module.}
   ce_startup:
 ${3:   ${4:action}: ${5:"#"}}

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# collect_counter: Configure the number of packets and bytes that are included in the flexible flow statistics sent to NSC. 
-# collect_interface: Configure the input or output interface that are included in the flexible flow statistics sent to NSC. 
-# description: Configure the description of netstream record. The value is a string of 1 to 80 case-insensitive 
-# match: Configure flexible flow statistics template keywords. 
-# record_name: Configure the name of netstream record. The value is a string of 1 to 32 case-insensitive characters. 
+${1:# collect_counter: Configure the number of packets and bytes that 
+# collect_interface: Configure the input or output interface that are 
+# description: Configure the description of netstream record. 
+# match: Configure flexible flow statistics template 
+# record_name: Configure the name of netstream record. The 
 # state: Specify desired state of the resource. 
-# type: (required) Configure the type of netstream record. 
+# type: (required) Configure the type of netstream 
 }- name: ${2:Name for ce_netstream_template module.}
   ce_netstream_template:
 ${3:   ${4:collect_counter}: ${5:"#"}}

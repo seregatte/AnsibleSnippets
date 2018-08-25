@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# access_token: Bigmon access token. If this isn't set, the environment variable `BIGSWITCH_ACCESS_TOKEN' is used. 
+${1:# access_token: Bigmon access token. If this isn't set, the 
 # controller: (required) The controller IP address. 
 # name: (required) The name of the chain. 
-# state: Whether the service chain should be present or absent. 
-# validate_certs: If `false', SSL certificates will not be validated. This should only be used on personally controlled 
+# state: Whether the service chain should be present or 
+# validate_certs: If `false', SSL certificates will not be 
 }- name: ${2:Name for bigmon_chain module.}
   bigmon_chain:
 ${3:   ${4:access_token}: ${5:"#"}}

@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
 ${1:# dfs_group_id: ID of a DFS group. The value is 1. 
-# eth_trunk_id: Name of the peer-link interface. The value is in the range from 0 to 511. 
-# ip_address: IP address bound to the DFS group. The value is in dotted decimal notation. 
-# nickname: The nickname bound to a DFS group. The value is an integer that ranges from 1 to 65471. 
-# peer_link_id: Number of the peer-link interface. The value is 1. 
-# priority_id: Priority of a DFS group. The value is an integer that ranges from 1 to 254. The default value is 100. 
-# pseudo_nickname: A pseudo nickname of a DFS group. The value is an integer that ranges from 1 to 65471. 
-# pseudo_priority: The priority of a pseudo nickname. The value is an integer that ranges from 128 to 255. The default 
+# eth_trunk_id: Name of the peer-link interface. The value is in 
+# ip_address: IP address bound to the DFS group. The value is 
+# nickname: The nickname bound to a DFS group. The value is 
+# peer_link_id: Number of the peer-link interface. The value is 
+# priority_id: Priority of a DFS group. The value is an integer 
+# pseudo_nickname: A pseudo nickname of a DFS group. The value is 
+# pseudo_priority: The priority of a pseudo nickname. The value is 
 # state: Specify desired state of the resource. 
-# vpn_instance_name: Name of the VPN instance bound to the DFS group. The value is a string of 1 to 31 case-sensitive 
+# vpn_instance_name: Name of the VPN instance bound to the DFS group. 
 }- name: ${2:Name for ce_mlag_config module.}
   ce_mlag_config:
 ${3:   ${4:dfs_group_id}: ${5:"#"}}

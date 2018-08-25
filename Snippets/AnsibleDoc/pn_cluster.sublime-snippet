@@ -3,11 +3,11 @@
 ${1:# pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch to run the cli on. 
 # pn_cliusername: Provide login username if user is not root. 
-# pn_cluster_node1: Specify the name of the first switch in the cluster. Required for 'cluster-create'. 
-# pn_cluster_node2: Specify the name of the second switch in the cluster. Required for 'cluster-create'. 
+# pn_cluster_node1: Specify the name of the first switch in the 
+# pn_cluster_node2: Specify the name of the second switch in the 
 # pn_name: (required) Specify the name of the cluster. 
-# pn_validate: Validate the inter-switch links and state of switches in the cluster. 
-# state: (required) Specify action to perform. Use 'present' to create cluster and 'absent' to delete cluster. 
+# pn_validate: Validate the inter-switch links and state of 
+# state: (required) Specify action to perform. Use 
 }- name: ${2:Name for pn_cluster module.}
   pn_cluster:
 ${3:   ${4:pn_clipassword}: ${5:"#"}}

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: API key of the Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_KEY' is used as default, when 
-# api_region: Name of the ini section in the `cloustack.ini' file. Since 2.4, the ENV variable `CLOUDSTACK_REGION' is 
-# api_secret: Secret key of the Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_SECRET' is used as default, 
-# api_timeout: HTTP timeout to Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_TIMEOUT' is used as default, 
-# content: Content of the record. Required if `state=present' or `name=""' 
+${1:# api_key: API key of the Exoscale DNS API. Since 2.4, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the Exoscale DNS API. Since 2.4, 
+# api_timeout: HTTP timeout to Exoscale DNS API. Since 2.4, the 
+# content: Content of the record. Required if 
 # domain: (required) Domain the record is related to. 
-# multiple: Whether there are more than one records with similar `name'. Only allowed with `record_type=A'. 
+# multiple: Whether there are more than one records with 
 # name: Name of the record. 
 # prio: Priority of the record. 
 # record_type: Type of the record. 

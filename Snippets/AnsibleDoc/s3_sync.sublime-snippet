@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # bucket: (required) Bucket name. 
-# cache_control: This is a string. Cache-Control header set on uploaded objects. Directives are separated by commmas. 
-# delete: Remove remote files that exist in bucket but are not present in the file root. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# exclude: Shell pattern-style file matching. Used after include to remove files (for instance, skip "*.txt") For 
-# file_change_strategy: Difference determination method to allow changes-only syncing. Unlike rsync, files are not patched- they 
-# file_root: (required) File/directory path for synchronization. This is a local path. This root path is scrubbed 
-# include: Shell pattern-style file matching. Used before exclude to determine eligible files (for instance, only 
-# key_prefix: In addition to file path, prepend s3 path with this prefix. Module will add slash at end of prefix if 
-# mime_map: Dict entry from extension to MIME type. This will override any default/sniffed MIME type. For example 
+# cache_control: This is a string. Cache-Control header set on 
+# delete: Remove remote files that exist in bucket but are 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# exclude: Shell pattern-style file matching. Used after 
+# file_change_strategy: Difference determination method to allow 
+# file_root: (required) File/directory path for 
+# include: Shell pattern-style file matching. Used before 
+# key_prefix: In addition to file path, prepend s3 path with 
+# mime_map: Dict entry from extension to MIME type. This 
 # mode: (required) sync direction. 
-# permission: Canned ACL to apply to synced files. Changing this ACL only changes newly synced files, it does not 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# permission: Canned ACL to apply to synced files. Changing 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for s3_sync module.}
   s3_sync:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -37,7 +37,7 @@ ${39:   ${40:mode}: ${41:"#"}}
 ${42:   ${43:permission}: ${44:"#"}}
 ${45:   ${46:profile}: ${47:"#"}}
 ${48:   ${49:region}: ${50:"#"}}
-${51:   ${52:http}: ${53:"#"}}
+${51:   ${52:}: ${53:"#"}}
 ${54:   ${55:security_token}: ${56:"#"}}
 ${57:   ${58:validate_certs}: ${59:"#"}}
 ${60:${61:   become: ${62:true}} 

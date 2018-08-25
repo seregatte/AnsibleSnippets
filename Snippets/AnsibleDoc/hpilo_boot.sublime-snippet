@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# force: Whether to force a reboot (even when the system is already booted). As a safeguard, without force, 
-# host: (required) The HP iLO hostname/address that is linked to the physical system. 
-# image: The URL of a cdrom, floppy or usb boot media image. protocol://username:password@hostname:port/filename 
-# login: The login name to authenticate to the HP iLO interface. 
+${1:# force: Whether to force a reboot (even when the system 
+# host: (required) The HP iLO hostname/address that is 
+# image: The URL of a cdrom, floppy or usb boot media 
+# login: The login name to authenticate to the HP iLO 
 # media: The boot media to boot the system from 
-# password: The password to authenticate to the HP iLO interface. 
+# password: The password to authenticate to the HP iLO 
 # ssl_version: Change the ssl_version used. 
-# state: The state of the boot media. no_boot: Do not boot from the device boot_once: Boot from the device once 
+# state: The state of the boot media. no_boot: Do not 
 }- name: ${2:Name for hpilo_boot module.}
   hpilo_boot:
 ${3:   ${4:force}: ${5:"#"}}

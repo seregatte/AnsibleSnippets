@@ -1,45 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_type: Whether the given md5string is in cleartext or has been encrypted. If in cleartext, the device will 
+${1:# auth_type: Whether the given md5string is in cleartext or 
 # authentication: Turns NTP authentication on or off. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# key_id: (required) Authentication key identifier (numeric). 
-# md5string: (required) MD5 String. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# key_id: Authentication key identifier (numeric). 
+# md5string: MD5 String. 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: Manage the state of the resource. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# trusted_key: Whether the given key is required to be supplied by a time source for the device to synchronize to the 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# trusted_key: Whether the given key is required to be supplied 
 }- name: ${2:Name for nxos_ntp_auth module.}
   nxos_ntp_auth:
 ${3:   ${4:auth_type}: ${5:"#"}}
 ${6:   ${7:authentication}: ${8:"#"}}
-${9:   ${10:host}: ${11:"#"}}
-${12:   ${13:key_id}: ${14:"#"}}
-${15:   ${16:md5string}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:port}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:ssh_keyfile}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:timeout}: ${35:"#"}}
-${36:   ${37:transport}: ${38:"#"}}
-${39:   ${40:trusted_key}: ${41:"#"}}
-${42:   ${43:use_ssl}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${9:   ${10:key_id}: ${11:"#"}}
+${12:   ${13:md5string}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:trusted_key}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>nxos_ntp_auth</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

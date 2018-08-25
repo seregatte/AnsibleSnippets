@@ -1,29 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# channel_cfg_name: Channel name.The value is a string of 1 to 30 case-sensitive characters. The default value is console. 
-# channel_id: Number for channel. The value is an integer ranging from 0 to 9. The default value is 0. 
-# channel_name: Channel name. The value is a string of 1 to 30 case-sensitive characters. 
+${1:# channel_cfg_name: Channel name.The value is a string of 1 to 30 
+# channel_id: Number for channel. The value is an integer 
+# channel_name: Channel name. The value is a string of 1 to 30 
 # channel_out_direct: Direction of information output. 
 # facility: Log record tool. 
-# filter_feature_name: Feature name of the filtered log. The value is a string of 1 to 31 case-insensitive characters. 
-# filter_log_name: Name of the filtered log. The value is a string of 1 to 63 case-sensitive characters. 
-# info_center_enable: Whether the info-center function is enabled. The value is of the Boolean type. 
+# filter_feature_name: Feature name of the filtered log. The value is a 
+# filter_log_name: Name of the filtered log. The value is a string 
+# info_center_enable: Whether the info-center function is enabled. The 
 # ip_type: Log server address type, IPv4 or IPv6. 
 # is_default_vpn: Use the default VPN or not. 
 # level: Level of logs saved on a log server. 
-# logfile_max_num: Maximum number of log files of the same type. The default value is 200. The value range for log files 
-# logfile_max_size: Maximum size (in MB) of a log file. The default value is 32. The value range for log files is [4, 8, 16, 
-# packet_priority: Set the priority of the syslog packet.The value is an integer ranging from 0 to 7. The default value is 
-# server_domain: Server name. The value is a string of 1 to 255 case-sensitive characters. 
-# server_ip: Log server address, IPv4 or IPv6 type. The value is a string of 0 to 255 characters. The value can be an 
-# server_port: Number of a port sending logs.The value is an integer ranging from 1 to 65535. For UDP, the default 
-# source_ip: Log source ip address, IPv4 or IPv6 type. The value is a string of 0 to 255. The value can be an valid 
-# ssl_policy_name: SSL policy name. The value is a string of 1 to 23 case-sensitive characters. 
+# logfile_max_num: Maximum number of log files of the same type. 
+# logfile_max_size: Maximum size (in MB) of a log file. The default 
+# packet_priority: Set the priority of the syslog packet.The value 
+# server_domain: Server name. The value is a string of 1 to 255 
+# server_ip: Log server address, IPv4 or IPv6 type. The value 
+# server_port: Number of a port sending logs.The value is an 
+# source_ip: Log source ip address, IPv4 or IPv6 type. The 
+# ssl_policy_name: SSL policy name. The value is a string of 1 to 
 # state: Specify desired state of the resource. 
-# suppress_enable: Whether a device is enabled to suppress duplicate statistics. The value is of the Boolean type. 
-# timestamp: Log server timestamp. The value is of the enumerated type and case-sensitive. 
-# transport_mode: Transport mode. The value is of the enumerated type and case-sensitive. 
-# vrf_name: VPN name on a log server. The value is a string of 1 to 31 case-sensitive characters. The default value 
+# suppress_enable: Whether a device is enabled to suppress 
+# timestamp: Log server timestamp. The value is of the 
+# transport_mode: Transport mode. The value is of the enumerated 
+# vrf_name: VPN name on a log server. The value is a string 
 }- name: ${2:Name for ce_info_center_global module.}
   ce_info_center_global:
 ${3:   ${4:channel_cfg_name}: ${5:"#"}}

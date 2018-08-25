@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
 # hosts: a list of host names/labels to add to the group 
-# id: The id number of the host group to manage. Either this or `name' must be supplied. 
-# name: The name of the host group to manage. Either this or `id_num' must be supplied. 
-# new_name: specify this when you need to update the name of a host group 
-# ssid: (required) The ID of the array to manage (as configured on the web services proxy). 
-# state: (required) Whether the specified host group should exist or not. 
+# id: The id number of the host group to manage. 
+# name: The name of the host group to manage. Either 
+# new_name: specify this when you need to update the name of 
+# ssid: (required) The ID of the array to manage (as 
+# state: (required) Whether the specified host group 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_hostgroup module.}
   netapp_e_hostgroup:

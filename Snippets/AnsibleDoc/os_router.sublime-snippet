@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# admin_state_up: Desired admin state of the created or existing router. 
-# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# admin_state_up: Desired admin state of the created or existing 
+# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
 # enable_snat: Enable Source NAT (SNAT) attribute. 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# external_fixed_ips: The IP address parameters for the external gateway network. Each is a dictionary with the subnet name or 
-# interfaces: List of subnets to attach to the router internal interface. 
-# key: A path to a client key to use as part of the SSL transaction. 
+# external_fixed_ips: The IP address parameters for the external 
+# interface: Endpoint URL type to fetch from the service 
+# interfaces: List of subnets to attach to the router internal 
+# key: A path to a client key to use as part of the SSL 
 # name: (required) Name to be give to the router 
-# network: Unique name or ID of the external gateway network. required `interfaces' or `enable_snat' are provided. 
+# network: Unique name or ID of the external gateway 
 # project: Unique name or ID of the project. 
 # region_name: Name of the region. 
 # state: Indicate desired state of the resource 
-# timeout: How long should ansible wait for the requested resource. 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: Should ansible wait until the requested resource is complete. 
+# timeout: How long should ansible wait for the requested 
+# verify: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_router module.}
   os_router:
 ${3:   ${4:admin_state_up}: ${5:"#"}}
@@ -32,8 +32,8 @@ ${18:   ${19:cacert}: ${20:"#"}}
 ${21:   ${22:cert}: ${23:"#"}}
 ${24:   ${25:cloud}: ${26:"#"}}
 ${27:   ${28:enable_snat}: ${29:"#"}}
-${30:   ${31:endpoint_type}: ${32:"#"}}
-${33:   ${34:external_fixed_ips}: ${35:"#"}}
+${30:   ${31:external_fixed_ips}: ${32:"#"}}
+${33:   ${34:interface}: ${35:"#"}}
 ${36:   ${37:interfaces}: ${38:"#"}}
 ${39:   ${40:key}: ${41:"#"}}
 ${42:   ${43:name}: ${44:"#"}}
@@ -42,7 +42,7 @@ ${48:   ${49:project}: ${50:"#"}}
 ${51:   ${52:region_name}: ${53:"#"}}
 ${54:   ${55:state}: ${56:"#"}}
 ${57:   ${58:timeout}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
+${60:   ${61:verify}: ${62:"#"}}
 ${63:   ${64:wait}: ${65:"#"}}
 ${66:${67:   become: ${68:true}} 
 ${69:   become_method: ${70:su}} 

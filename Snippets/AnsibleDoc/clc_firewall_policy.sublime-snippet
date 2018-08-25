@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# destination: The list of destination addresses for traffic on the terminating firewall. This is required when state 
+${1:# destination: The list of destination addresses for traffic on 
 # destination_account_alias: CLC alias for the destination account 
-# enabled: Whether the firewall policy is enabled or disabled 
-# firewall_policy_id: Id of the firewall policy. This is required to update or delete an existing firewall policy 
-# location: (required) Target datacenter for the firewall policy 
-# ports: The list of ports associated with the policy. TCP and UDP can take in single ports or port ranges. 
-# source: The list  of source addresses for traffic on the originating firewall. This is required when state is 
+# enabled: Whether the firewall policy is enabled or 
+# firewall_policy_id: Id of the firewall policy. This is required to 
+# location: (required) Target datacenter for the firewall 
+# ports: The list of ports associated with the policy. 
+# source: The list  of source addresses for traffic on the 
 # source_account_alias: (required) CLC alias for the source account 
 # state: Whether to create or delete the firewall policy 
-# wait: Whether to wait for the provisioning tasks to finish before returning. 
+# wait: Whether to wait for the provisioning tasks to 
 }- name: ${2:Name for clc_firewall_policy module.}
   clc_firewall_policy:
 ${3:   ${4:destination}: ${5:"#"}}

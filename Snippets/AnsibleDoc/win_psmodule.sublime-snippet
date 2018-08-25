@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_clobber: If yes imports all commands, even if they have the same names as commands that already exists. Available 
-# name: (required) Name of the powershell module that has to be installed. 
-# repository: Name of the custom repository to register. 
-# state: If present a new module is installed. If absent a module is removed. 
-# url: Url of the custom repository. 
+${1:# allow_clobber: If `yes' imports all commands, even if they have 
+# name: (required) Name of the powershell module that 
+# repository: Name of the custom repository to register or 
+# state: If `present' a new module is installed. If 
+# url: URL of the custom repository to register. 
 }- name: ${2:Name for win_psmodule module.}
   win_psmodule:
 ${3:   ${4:allow_clobber}: ${5:"#"}}

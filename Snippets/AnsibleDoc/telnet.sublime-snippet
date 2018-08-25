@@ -1,29 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:# command: (required) List of commands to be executed in the telnet session. 
+${1:# command: (required) List of commands to be executed in 
 # host: The host/target on which to execute the command 
+# login_prompt: Login or username prompt to expect 
 # password: The password for login 
+# password_prompt: Login or username prompt to expect 
 # pause: Seconds to pause between each command issued 
 # port: Remote port to use 
-# prompts: List of prompts expected before sending next command 
+# prompts: List of prompts expected before sending next 
 # timeout: timeout for remote operations 
 # user: The user for login 
 }- name: ${2:Name for telnet module.}
   telnet:
 ${3:   ${4:command}: ${5:"#"}}
 ${6:   ${7:host}: ${8:"#"}}
-${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:pause}: ${14:"#"}}
-${15:   ${16:port}: ${17:"#"}}
-${18:   ${19:prompts}: ${20:"#"}}
-${21:   ${22:timeout}: ${23:"#"}}
-${24:   ${25:user}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${9:   ${10:login_prompt}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:password_prompt}: ${17:"#"}}
+${18:   ${19:pause}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:prompts}: ${26:"#"}}
+${27:   ${28:timeout}: ${29:"#"}}
+${30:   ${31:user}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>telnet</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

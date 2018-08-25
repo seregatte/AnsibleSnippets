@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# account_type: Type of the account. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # domain: Domain the account is related to. 
-# email: Email of the user to be created if account did not exist. Required on `state=present'. 
-# first_name: First name of the user to be created if account did not exist. Required on `state=present'. 
-# last_name: Last name of the user to be created if account did not exist. Required on `state=present'. 
+# email: Email of the user to be created if account did 
+# first_name: First name of the user to be created if account 
+# last_name: Last name of the user to be created if account 
 # name: (required) Name of account. 
 # network_domain: Network domain of the account. 
-# password: Password of the user to be created if account did not exist. Required on `state=present'. 
+# password: Password of the user to be created if account 
 # poll_async: Poll async jobs until job has finished. 
-# state: State of the account. `unlocked' is an alias for `enabled'. 
-# timezone: Timezone of the user to be created if account did not exist. 
-# username: Username of the user to be created if account did not exist. Required on `state=present'. 
+# state: State of the account. `unlocked' is an alias for 
+# timezone: Timezone of the user to be created if account 
+# username: Username of the user to be created if account 
 }- name: ${2:Name for cs_account module.}
   cs_account:
 ${3:   ${4:account_type}: ${5:"#"}}

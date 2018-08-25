@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# cascade: when dropping a language, also delete object that depend on this language. only used when 
-# db: name of database where the language will be added, removed or changed 
-# fail_on_drop: if `yes', fail when removing a language. Otherwise just log and continue in some cases, it is not 
-# force_trust: marks the language as trusted, even if it's marked as untrusted in pg_pltemplate. use with care! 
-# lang: (required) name of the procedural language to add, remove or change 
-# login_host: Host running PostgreSQL where you want to execute the actions. 
-# login_password: Password used to authenticate with PostgreSQL (must match `login_user') 
+${1:# cascade: when dropping a language, also delete object 
+# db: name of database where the language will be 
+# fail_on_drop: if `yes', fail when removing a language. 
+# force_trust: marks the language as trusted, even if it's 
+# lang: (required) name of the procedural language to 
+# login_host: Host running PostgreSQL where you want to 
+# login_password: Password used to authenticate with PostgreSQL 
 # login_user: User used to authenticate with PostgreSQL 
 # port: Database port to connect to. 
-# state: The state of the language for the selected database 
+# state: The state of the language for the selected 
 # trust: make this language trusted for the selected db 
 }- name: ${2:Name for postgresql_lang module.}
   postgresql_lang:

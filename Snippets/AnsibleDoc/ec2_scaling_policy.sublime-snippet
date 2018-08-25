@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# adjustment_type: The type of change in capacity of the autoscaling group 
-# asg_name: (required) Name of the associated autoscaling group 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# cooldown: The minimum period of time between which autoscaling actions can take place 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# min_adjustment_step: Minimum amount of adjustment when policy is triggered 
+${1:# adjustment_type: The type of change in capacity of the 
+# asg_name: (required) Name of the associated autoscaling 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cooldown: The minimum period of time between which 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# min_adjustment_step: Minimum amount of adjustment when policy is 
 # name: (required) Unique name for the scaling policy 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# scaling_adjustment: The amount by which the autoscaling group is adjusted by the policy 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# scaling_adjustment: The amount by which the autoscaling group is 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) register or deregister the policy 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ec2_scaling_policy module.}
   ec2_scaling_policy:
 ${3:   ${4:adjustment_type}: ${5:"#"}}
@@ -27,7 +27,7 @@ ${21:   ${22:min_adjustment_step}: ${23:"#"}}
 ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:profile}: ${29:"#"}}
 ${30:   ${31:region}: ${32:"#"}}
-${33:   ${34:http}: ${35:"#"}}
+${33:   ${34:}: ${35:"#"}}
 ${36:   ${37:scaling_adjustment}: ${38:"#"}}
 ${39:   ${40:security_token}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}

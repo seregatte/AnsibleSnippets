@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# account_key_content: Content of the ACME account RSA or Elliptic 
+# account_key_src: Path to a file containing the ACME account RSA 
+# acme_directory: The ACME directory to use. This is the entry 
+# acme_version: The ACME version of the endpoint. Must be 1 for 
+# allow_creation: Whether account creation is allowed (when state 
+# contact: A list of contact URLs. Email addresses must be 
+# : section-7.1.2 
+# new_account_key_content: Content of the Let's Encrypt account RSA or 
+# new_account_key_src: Path to a file containing the Let's Encrypt 
+# state: (required) The state of the account, to be 
+# terms_agreed: Boolean indicating whether you agree to the 
+# validate_certs: Whether calls to the ACME directory will 
+}- name: ${2:Name for acme_account module.}
+  acme_account:
+${3:   ${4:account_key_content}: ${5:"#"}}
+${6:   ${7:account_key_src}: ${8:"#"}}
+${9:   ${10:acme_directory}: ${11:"#"}}
+${12:   ${13:acme_version}: ${14:"#"}}
+${15:   ${16:allow_creation}: ${17:"#"}}
+${18:   ${19:contact}: ${20:"#"}}
+${21:   ${22:}: ${23:"#"}}
+${24:   ${25:new_account_key_content}: ${26:"#"}}
+${27:   ${28:new_account_key_src}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:terms_agreed}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>acme_account</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

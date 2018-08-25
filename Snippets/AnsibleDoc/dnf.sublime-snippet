@@ -1,14 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# autoremove: If `yes', removes all "leaf" packages from the system that were originally installed as dependencies of 
-# conf_file: The remote dnf configuration file to use for the transaction. 
-# disable_gpg_check: Whether to disable the GPG checking of signatures of packages being installed. Has an effect only if 
-# disablerepo: `Repoid' of repositories to disable for the install/update operation. These repos will not persist 
-# enablerepo: `Repoid' of repositories to enable for the install/update operation. These repos will not persist beyond 
-# installroot: Specifies an alternative installroot, relative to which all packages will be installed. 
-# list: Various (non-idempotent) commands for usage with `/usr/bin/ansible' and `not' playbooks. See examples. 
-# name: (required) Package name, or package specifier with version, like `name-1.0'. When using state=latest, 
-# state: Whether to install (`present', `latest'), or remove (`absent') a package. 
+${1:# autoremove: If `yes', removes all "leaf" packages from the 
+# conf_file: The remote dnf configuration file to use for the 
+# disable_gpg_check: Whether to disable the GPG checking of 
+# disablerepo: `Repoid' of repositories to disable for the 
+# enablerepo: `Repoid' of repositories to enable for the 
+# installroot: Specifies an alternative installroot, relative 
+# list: Various (non-idempotent) commands for usage with 
+# name: (required) A list of package names, or package 
+# releasever: Specifies an alternative release from which all 
+# state: Whether to install (`present', `latest'), or 
 }- name: ${2:Name for dnf module.}
   dnf:
 ${3:   ${4:autoremove}: ${5:"#"}}
@@ -19,13 +20,14 @@ ${15:   ${16:enablerepo}: ${17:"#"}}
 ${18:   ${19:installroot}: ${20:"#"}}
 ${21:   ${22:list}: ${23:"#"}}
 ${24:   ${25:name}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${27:   ${28:releasever}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>dnf</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

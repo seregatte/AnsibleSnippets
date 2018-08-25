@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# interfaces: List of interfaces and areas. Required if 
+# ospf: (required) OSPF instance number 1-65535 
+# router_id: OSPF router ID. Required if `state=present'. 
+# state: OSPF state. 
+}- name: ${2:Name for onyx_ospf module.}
+  onyx_ospf:
+${3:   ${4:interfaces}: ${5:"#"}}
+${6:   ${7:ospf}: ${8:"#"}}
+${9:   ${10:router_id}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>onyx_ospf</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

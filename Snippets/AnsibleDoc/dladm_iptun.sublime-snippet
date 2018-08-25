@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# local_address: Literat IP address or hostname corresponding to the tunnel source. 
+${1:# local_address: Literat IP address or hostname corresponding to 
 # name: (required) IP tunnel interface name. 
-# remote_address: Literal IP address or hostname corresponding to the tunnel destination. 
+# remote_address: Literal IP address or hostname corresponding to 
 # state: Create or delete Solaris/illumos VNIC. 
-# temporary: Specifies that the IP tunnel interface is temporary. Temporary IP tunnel interfaces do not persist 
+# temporary: Specifies that the IP tunnel interface is 
 # type: Specifies the type of tunnel to be created. 
 }- name: ${2:Name for dladm_iptun module.}
   dladm_iptun:

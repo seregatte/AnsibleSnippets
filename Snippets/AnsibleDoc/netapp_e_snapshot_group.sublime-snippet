@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# base_volume_name: (required) The name of the base volume or thin volume to use as the base for the new snapshot group. If 
-# delete_limit: The automatic deletion indicator. If non-zero, the oldest snapshot image will be automatically deleted 
-# full_policy: The behavior on when the data repository becomes full. This value is overridden by consistency group 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# base_volume_name: (required) The name of the base volume or thin 
+# delete_limit: The automatic deletion indicator. If non-zero, 
+# full_policy: The behavior on when the data repository becomes 
 # name: (required) The name to give the snapshot group 
-# repo_pct: The size of the repository in relation to the size of the base volume 
-# rollback_priority: The importance of the rollback operation. This value is overridden by consistency group setting if this 
-# state: (required) Whether to ensure the group is present or absent. 
-# storage_pool_name: (required) The name of the storage pool on which to allocate the repository volume. 
+# repo_pct: The size of the repository in relation to the 
+# rollback_priority: The importance of the rollback operation. This 
+# state: (required) Whether to ensure the group is 
+# storage_pool_name: (required) The name of the storage pool on which 
 # validate_certs: Should https certificates be validated? 
-# warning_threshold: The repository utilization warning threshold, as a percentage of the repository volume capacity. 
+# warning_threshold: The repository utilization warning threshold, as 
 }- name: ${2:Name for netapp_e_snapshot_group module.}
   netapp_e_snapshot_group:
 ${3:   ${4:api_password}: ${5:"#"}}

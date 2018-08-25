@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+${1:# auth: (required) Dictionary with values needed to 
 # description: Description of the tag to manage. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# hosts: List of the hosts names, which should have assigned this tag. 
+# fetch_nested: If `True' the module will fetch additional data 
+# hosts: List of the hosts names, which should have 
 # name: (required) Name of the tag to manage. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# nested_attributes: Specifies list of the attributes which should be 
 # parent: Name of the parent tag. 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
-# state: Should the tag be present/absent/attached/detached. `Note': `attached' and `detached' states are 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# vms: List of the VMs names, which should have assigned this tag. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# poll_interval: Number of the seconds the module waits until 
+# state: Should the tag be 
+# timeout: The amount of time in seconds the module should 
+# vms: List of the VMs names, which should have 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_tags module.}
   ovirt_tags:
 ${3:   ${4:auth}: ${5:"#"}}

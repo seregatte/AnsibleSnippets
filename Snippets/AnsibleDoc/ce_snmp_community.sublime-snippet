@@ -7,7 +7,7 @@ ${1:# access_right: Access right read or write.
 # group_name: Unique name to identify the SNMPv3 group. 
 # notify_view: Mib view name for notification. 
 # read_view: Mib view name for read. 
-# security_level: Security level indicating whether to use authentication and encryption. 
+# security_level: Security level indicating whether to use 
 # state: Manage the state of the resource. 
 # write_view: Mib view name for write. 
 }- name: ${2:Name for ce_snmp_community module.}

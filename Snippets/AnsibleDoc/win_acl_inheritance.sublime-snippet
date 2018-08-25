@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# path: (required) Path to be used for changing inheritance 
-# reorganize: For P(state) = `absent', indicates if the inherited ACE's should be copied from the parent directory. 
-# state: Specify whether to enable `present' or disable `absent' ACL inheritance 
+${1:# path: (required) Path to be used for changing 
+# reorganize: For P(state) = `absent', indicates if the 
+# state: Specify whether to enable `present' or disable 
 }- name: ${2:Name for win_acl_inheritance module.}
   win_acl_inheritance:
 ${3:   ${4:path}: ${5:"#"}}

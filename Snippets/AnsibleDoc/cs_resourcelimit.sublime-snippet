@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the resource is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # domain: Domain the resource is related to. 
-# limit: Maximum number of the resource. Default is unlimited `-1'. 
+# limit: Maximum number of the resource. Default is 
 # project: Name of the project the resource is related to. 
 # resource_type: (required) Type of the resource. 
 }- name: ${2:Name for cs_resourcelimit module.}

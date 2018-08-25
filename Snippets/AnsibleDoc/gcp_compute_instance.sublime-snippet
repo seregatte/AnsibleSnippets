@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# can_ip_forward: Allows this instance to send and receive packets 
+# disks: An array of disks that are associated with the 
+# guest_accelerators: List of the type and count of accelerator cards 
+# label_fingerprint: A fingerprint for this request, which is 
+# machine_type: A reference to MachineType resource. 
+# metadata: The metadata key/value pairs to assign to 
+# min_cpu_platform: Specifies a minimum CPU platform for the VM 
+# name: The name of the resource, provided by the client 
+# network_interfaces: An array of configurations for this interface. 
+# project: The Google Cloud Platform project to use. 
+# scheduling: Sets the scheduling options for this instance. 
+# scopes: (required) Array of scopes to be used. 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# service_accounts: A list of service accounts, with their specified 
+# state: (required) Whether the given object should exist 
+# tags: A list of tags to apply to this instance. Tags 
+# zone: (required) A reference to Zone resource. 
+}- name: ${2:Name for gcp_compute_instance module.}
+  gcp_compute_instance:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:can_ip_forward}: ${8:"#"}}
+${9:   ${10:disks}: ${11:"#"}}
+${12:   ${13:guest_accelerators}: ${14:"#"}}
+${15:   ${16:label_fingerprint}: ${17:"#"}}
+${18:   ${19:machine_type}: ${20:"#"}}
+${21:   ${22:metadata}: ${23:"#"}}
+${24:   ${25:min_cpu_platform}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:network_interfaces}: ${32:"#"}}
+${33:   ${34:project}: ${35:"#"}}
+${36:   ${37:scheduling}: ${38:"#"}}
+${39:   ${40:scopes}: ${41:"#"}}
+${42:   ${43:service_account_email}: ${44:"#"}}
+${45:   ${46:service_account_file}: ${47:"#"}}
+${48:   ${49:service_accounts}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:tags}: ${56:"#"}}
+${57:   ${58:zone}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>gcp_compute_instance</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

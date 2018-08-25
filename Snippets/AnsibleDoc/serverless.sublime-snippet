@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# deploy: Whether or not to deploy artifacts after building them. When this option is `false` all the functions 
-# functions: A list of specific functions to deploy. If this is not provided, all functions in the service will be 
+${1:# deploy: Whether or not to deploy artifacts after 
+# functions: A list of specific functions to deploy. If this 
 # region: AWS region to deploy the service to 
-# serverless_bin_path: The path of a serverless framework binary relative to the 'service_path' eg. node_module/.bin/serverless 
-# service_path: (required) The path to the root of the Serverless Service to be operated on. 
-# stage: The name of the serverless framework project stage to deploy to. This uses the serverless framework 
+# serverless_bin_path: The path of a serverless framework binary 
+# service_path: (required) The path to the root of the 
+# stage: The name of the serverless framework project 
 # state: Goal state of given stage/project 
 }- name: ${2:Name for serverless module.}
   serverless:

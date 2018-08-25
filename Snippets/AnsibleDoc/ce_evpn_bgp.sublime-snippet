@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# advertise_l2vpn_evpn: Enable or disable a device to advertise IP routes imported to a VPN instance to its EVPN instance. 
-# advertise_router_type: Configures a device to advertise routes to its BGP EVPN peers. 
-# as_number: Specifies integral AS number. The value is an integer ranging from 1 to 4294967295. 
-# bgp_instance: (required) Name of a BGP instance. The value is a string of 1 to 31 case-sensitive characters, spaces 
-# peer_address: Specifies the IPv4 address of a BGP EVPN peer. The value is in dotted decimal notation. 
-# peer_enable: Enable or disable a BGP device to exchange routes with a specified peer or peer group in the address 
-# peer_group_name: Specify the name of a peer group that BGP peers need to join. The value is a string of 1 to 47 case- 
+${1:# advertise_l2vpn_evpn: Enable or disable a device to advertise IP 
+# advertise_router_type: Configures a device to advertise routes to its 
+# as_number: Specifies integral AS number. The value is an 
+# bgp_instance: (required) Name of a BGP instance. The value is 
+# peer_address: Specifies the IPv4 address of a BGP EVPN peer. 
+# peer_enable: Enable or disable a BGP device to exchange 
+# peer_group_name: Specify the name of a peer group that BGP peers 
 # state: Manage the state of the resource. 
-# vpn_name: Associates a specified VPN instance with the IPv4 address family. The value is a string of 1 to 31 case- 
+# vpn_name: Associates a specified VPN instance with the 
 }- name: ${2:Name for ce_evpn_bgp module.}
   ce_evpn_bgp:
 ${3:   ${4:advertise_l2vpn_evpn}: ${5:"#"}}

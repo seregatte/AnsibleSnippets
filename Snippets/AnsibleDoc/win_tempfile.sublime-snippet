@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# path: Location where temporary file or directory should be created. If path is not specified default system 
+${1:# path: Location where temporary file or directory 
 # prefix: Prefix of file/directory name created by module. 
 # state: Whether to create file or directory. 
 # suffix: Suffix of file/directory name created by module. 

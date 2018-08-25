@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# append_privs: Append the privileges defined by priv to the existing ones for this user instead of overwriting existing 
-# check_implicit_admin: Check if mysql allows login as root/nopassword before trying supplied credentials. 
-# config_file: Specify a config file from which user and password are to be read. 
-# connect_timeout: The connection timeout when connecting to the MySQL server. 
-# encrypted: Indicate that the 'password' field is a `mysql_native_password` hash 
+${1:# append_privs: Append the privileges defined by priv to the 
+# check_implicit_admin: Check if mysql allows login as root/nopassword 
+# config_file: Specify a config file from which user and 
+# connect_timeout: The connection timeout when connecting to the 
+# encrypted: Indicate that the 'password' field is a 
 # host: the 'host' part of the MySQL username 
-# host_all: override the host option, making ansible apply changes to all hostnames for a given user.  This option 
+# host_all: override the host option, making ansible apply 
 # login_host: Host running the database. 
 # login_password: The password used to authenticate with. 
-# login_port: Port of the MySQL server. Requires `login_host' be defined as other then localhost if login_port is 
-# login_unix_socket: The path to a Unix domain socket for local connections. 
+# login_port: Port of the MySQL server. Requires `login_host' 
+# login_unix_socket: The path to a Unix domain socket for local 
 # login_user: The username used to authenticate with. 
-# name: (required) name of the user (role) to add or remove 
+# name: (required) name of the user (role) to add or 
 # password: set the user's password. 
-# priv: MySQL privileges string in the format: `db.table:priv1,priv2'. Multiple privileges can be specified by 
-# sql_log_bin: Whether binary logging should be enabled or disabled for the connection. 
-# ssl_ca: The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same 
+# priv: MySQL privileges string in the format: 
+# sql_log_bin: Whether binary logging should be enabled or 
+# ssl_ca: The path to a Certificate Authority (CA) 
 # ssl_cert: The path to a client public key certificate. 
 # ssl_key: The path to the client private key. 
-# state: Whether the user should exist.  When `absent', removes the user. 
-# update_password: `always' will update passwords if they differ.  `on_create' will only set the password for newly created 
+# state: Whether the user should exist.  When `absent', 
+# update_password: `always' will update passwords if they differ. 
 }- name: ${2:Name for mysql_user module.}
   mysql_user:
 ${3:   ${4:append_privs}: ${5:"#"}}

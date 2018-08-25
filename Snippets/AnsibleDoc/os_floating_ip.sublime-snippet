@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# fixed_address: To which fixed IP of server the floating IP address should be attached to. 
-# floating_ip_address: A floating IP address to attach or to detach. Required only if `state' is absent. When `state' is 
-# key: A path to a client key to use as part of the SSL transaction. 
-# nat_destination: The name or id of a neutron private network that the fixed IP to attach floating IP is on 
-# network: The name or ID of a neutron external network or a nova pool name. 
-# purge: When `state' is absent, indicates whether or not to delete the floating IP completely, or only detach it 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
+# fixed_address: To which fixed IP of server the floating IP 
+# floating_ip_address: A floating IP address to attach or to detach. 
+# interface: Endpoint URL type to fetch from the service 
+# key: A path to a client key to use as part of the SSL 
+# nat_destination: The name or id of a neutron private network that 
+# network: The name or ID of a neutron external network or 
+# purge: When `state' is absent, indicates whether or not 
 # region_name: Name of the region. 
-# reuse: When `state' is present, and `floating_ip_address' is not present, this parameter can be used to specify 
-# server: (required) The name or ID of the instance to which the IP address should be assigned. 
+# reuse: When `state' is present, and 
+# server: (required) The name or ID of the instance to 
 # state: Should the resource be present or absent. 
-# timeout: Time to wait for an IP address to appear as attached. See wait. 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: When attaching a floating IP address, specify whether we should wait for it to appear as attached. 
+# timeout: Time to wait for an IP address to appear as 
+# verify: Whether or not SSL API requests should be 
+# wait: When attaching a floating IP address, specify 
 }- name: ${2:Name for os_floating_ip module.}
   os_floating_ip:
 ${3:   ${4:api_timeout}: ${5:"#"}}
@@ -30,9 +30,9 @@ ${12:   ${13:availability_zone}: ${14:"#"}}
 ${15:   ${16:cacert}: ${17:"#"}}
 ${18:   ${19:cert}: ${20:"#"}}
 ${21:   ${22:cloud}: ${23:"#"}}
-${24:   ${25:endpoint_type}: ${26:"#"}}
-${27:   ${28:fixed_address}: ${29:"#"}}
-${30:   ${31:floating_ip_address}: ${32:"#"}}
+${24:   ${25:fixed_address}: ${26:"#"}}
+${27:   ${28:floating_ip_address}: ${29:"#"}}
+${30:   ${31:interface}: ${32:"#"}}
 ${33:   ${34:key}: ${35:"#"}}
 ${36:   ${37:nat_destination}: ${38:"#"}}
 ${39:   ${40:network}: ${41:"#"}}
@@ -42,7 +42,7 @@ ${48:   ${49:reuse}: ${50:"#"}}
 ${51:   ${52:server}: ${53:"#"}}
 ${54:   ${55:state}: ${56:"#"}}
 ${57:   ${58:timeout}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
+${60:   ${61:verify}: ${62:"#"}}
 ${63:   ${64:wait}: ${65:"#"}}
 ${66:${67:   become: ${68:true}} 
 ${69:   become_method: ${70:su}} 

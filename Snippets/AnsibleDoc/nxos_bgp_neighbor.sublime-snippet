@@ -1,38 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# asn: (required) BGP autonomous system number. Valid values are string, Integer in ASPLAIN or ASDOT notation. 
-# capability_negotiation: Configure whether or not to negotiate capability with this neighbor. 
-# connected_check: Configure whether or not to check for directly connected peer. 
+${1:# asn: (required) BGP autonomous system number. Valid 
+# capability_negotiation: Configure whether or not to negotiate capability 
+# connected_check: Configure whether or not to check for directly 
 # description: Description of the neighbor. 
-# dynamic_capability: Configure whether or not to enable dynamic capability. 
-# ebgp_multihop: Specify multihop TTL for a remote peer. Valid values are integers between 2 and 255, or keyword 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# local_as: Specify the local-as number for the eBGP neighbor. Valid values are String or Integer in ASPLAIN or 
-# log_neighbor_changes: Specify whether or not to enable log messages for neighbor up/down event. 
-# low_memory_exempt: Specify whether or not to shut down this neighbor under memory pressure. 
-# maximum_peers: Specify Maximum number of peers for this neighbor prefix Valid values are between 1 and 1000, or 
-# neighbor: (required) Neighbor Identifier. Valid values are string. Neighbors may use IPv4 or IPv6 notation, with 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# pwd: Specify the password for neighbor. Valid value is string. 
-# pwd_type: Specify the encryption type the password will use. Valid values are '3des' or 'cisco_type_7' encryption. 
-# remote_as: Specify Autonomous System Number of the neighbor. Valid values are String or Integer in ASPLAIN or ASDOT 
-# remove_private_as: Specify the config to remove private AS number from outbound updates. Valid values are 'enable' to 
-# shutdown: Configure to administratively shutdown this neighbor. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: Determines whether the config should be present or not on the device. 
+# dynamic_capability: Configure whether or not to enable dynamic 
+# ebgp_multihop: Specify multihop TTL for a remote peer. Valid 
+# local_as: Specify the local-as number for the eBGP 
+# log_neighbor_changes: Specify whether or not to enable log messages 
+# low_memory_exempt: Specify whether or not to shut down this 
+# maximum_peers: Specify Maximum number of peers for this 
+# neighbor: (required) Neighbor Identifier. Valid values are 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# pwd: Specify the password for neighbor. Valid value 
+# pwd_type: Specify the encryption type the password will 
+# remote_as: Specify Autonomous System Number of the 
+# remove_private_as: Specify the config to remove private AS number 
+# shutdown: Configure to administratively shutdown this 
+# state: Determines whether the config should be present 
 # suppress_4_byte_as: Configure to suppress 4-byte AS Capability. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# timers_holdtime: Specify holdtime timer value. Valid values are integers between 0 and 3600 in terms of seconds, or 
-# timers_keepalive: Specify keepalive timer value. Valid values are integers between 0 and 3600 in terms of seconds, or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# transport_passive_only: Specify whether or not to only allow passive connection setup. Valid values are 'true', 'false', and 
-# update_source: Specify source interface of BGP session and updates. 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vrf: Name of the VRF. The name 'default' is a valid VRF representing the global bgp. 
+# timers_holdtime: Specify holdtime timer value. Valid values are 
+# timers_keepalive: Specify keepalive timer value. Valid values are 
+# transport_passive_only: Specify whether or not to only allow passive 
+# update_source: Specify source interface of BGP session and 
+# vrf: Name of the VRF. The name 'default' is a valid 
 }- name: ${2:Name for nxos_bgp_neighbor module.}
   nxos_bgp_neighbor:
 ${3:   ${4:asn}: ${5:"#"}}
@@ -41,39 +32,30 @@ ${9:   ${10:connected_check}: ${11:"#"}}
 ${12:   ${13:description}: ${14:"#"}}
 ${15:   ${16:dynamic_capability}: ${17:"#"}}
 ${18:   ${19:ebgp_multihop}: ${20:"#"}}
-${21:   ${22:host}: ${23:"#"}}
-${24:   ${25:local_as}: ${26:"#"}}
-${27:   ${28:log_neighbor_changes}: ${29:"#"}}
-${30:   ${31:low_memory_exempt}: ${32:"#"}}
-${33:   ${34:maximum_peers}: ${35:"#"}}
-${36:   ${37:neighbor}: ${38:"#"}}
-${39:   ${40:password}: ${41:"#"}}
-${42:   ${43:port}: ${44:"#"}}
-${45:   ${46:provider}: ${47:"#"}}
-${48:   ${49:pwd}: ${50:"#"}}
-${51:   ${52:pwd_type}: ${53:"#"}}
-${54:   ${55:remote_as}: ${56:"#"}}
-${57:   ${58:remove_private_as}: ${59:"#"}}
-${60:   ${61:shutdown}: ${62:"#"}}
-${63:   ${64:ssh_keyfile}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:suppress_4_byte_as}: ${71:"#"}}
-${72:   ${73:timeout}: ${74:"#"}}
-${75:   ${76:timers_holdtime}: ${77:"#"}}
-${78:   ${79:timers_keepalive}: ${80:"#"}}
-${81:   ${82:transport}: ${83:"#"}}
-${84:   ${85:transport_passive_only}: ${86:"#"}}
-${87:   ${88:update_source}: ${89:"#"}}
-${90:   ${91:use_ssl}: ${92:"#"}}
-${93:   ${94:username}: ${95:"#"}}
-${96:   ${97:validate_certs}: ${98:"#"}}
-${99:   ${100:vrf}: ${101:"#"}}
-${102:${103:   become: ${104:true}} 
-${105:   become_method: ${106:su}} 
-${107:   become_user: ${108:nobody}} 
-${109:   become_flags: ${110:"-s /bin/sh"}}} 
-${111:   when: ${112:variable is defined}} 
-${113:   with_items: ${114:array}} 
+${21:   ${22:local_as}: ${23:"#"}}
+${24:   ${25:log_neighbor_changes}: ${26:"#"}}
+${27:   ${28:low_memory_exempt}: ${29:"#"}}
+${30:   ${31:maximum_peers}: ${32:"#"}}
+${33:   ${34:neighbor}: ${35:"#"}}
+${36:   ${37:provider}: ${38:"#"}}
+${39:   ${40:pwd}: ${41:"#"}}
+${42:   ${43:pwd_type}: ${44:"#"}}
+${45:   ${46:remote_as}: ${47:"#"}}
+${48:   ${49:remove_private_as}: ${50:"#"}}
+${51:   ${52:shutdown}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:suppress_4_byte_as}: ${59:"#"}}
+${60:   ${61:timers_holdtime}: ${62:"#"}}
+${63:   ${64:timers_keepalive}: ${65:"#"}}
+${66:   ${67:transport_passive_only}: ${68:"#"}}
+${69:   ${70:update_source}: ${71:"#"}}
+${72:   ${73:vrf}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>nxos_bgp_neighbor</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

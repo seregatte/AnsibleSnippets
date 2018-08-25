@@ -1,18 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: A dict of custom LDAP attributes to set on the group. This can be used to set custom attributes that are 
-# category: The category of the group, this is the value to assign to the LDAP `groupType' attribute. If a new group 
-# description: The value to be assigned to the LDAP `description' attribute. 
-# display_name: The value to assign to the LDAP `displayName' attribute. 
+${1:# attributes: A dict of custom LDAP attributes to set on the 
+# category: The category of the group, this is the value to 
+# description: The value to be assigned to the LDAP 
+# display_name: The value to assign to the LDAP `displayName' 
 # domain_password: The password for `username'. 
-# domain_username: The username to use when interacting with AD. If this is not set then the user Ansible used to log in 
-# ignore_protection: Will ignore the `ProtectedFromAccidentalDeletion' flag when deleting or moving a group. The module will 
-# managed_by: The value to be assigned to the LDAP `managedBy' attribute. This value can be in the forms 
-# name: (required) The name of the group to create, modify or remove. This value can be in the forms 
-# organizational_unit: The full LDAP path to create or move the group to. This should be the path to the parent object to 
-# protect: Will set the `ProtectedFromAccidentalDeletion' flag based on this value. This flag stops a user from 
-# scope: The scope of the group. If `state=present' and the group doesn't exist then this must be set. 
-# state: If `state=present' this module will ensure the group is created and is configured accordingly. If 
+# domain_server: Specifies the Active Directory Domain Services 
+# domain_username: The username to use when interacting with AD. If 
+# ignore_protection: Will ignore the 
+# managed_by: The value to be assigned to the LDAP `managedBy' 
+# name: (required) The name of the group to create, 
+# organizational_unit: The full LDAP path to create or move the group 
+# protect: Will set the `ProtectedFromAccidentalDeletion' 
+# scope: The scope of the group. If `state=present' and 
+# state: If `state=present' this module will ensure the 
 }- name: ${2:Name for win_domain_group module.}
   win_domain_group:
 ${3:   ${4:attributes}: ${5:"#"}}
@@ -20,20 +21,21 @@ ${6:   ${7:category}: ${8:"#"}}
 ${9:   ${10:description}: ${11:"#"}}
 ${12:   ${13:display_name}: ${14:"#"}}
 ${15:   ${16:domain_password}: ${17:"#"}}
-${18:   ${19:domain_username}: ${20:"#"}}
-${21:   ${22:ignore_protection}: ${23:"#"}}
-${24:   ${25:managed_by}: ${26:"#"}}
-${27:   ${28:name}: ${29:"#"}}
-${30:   ${31:organizational_unit}: ${32:"#"}}
-${33:   ${34:protect}: ${35:"#"}}
-${36:   ${37:scope}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${18:   ${19:domain_server}: ${20:"#"}}
+${21:   ${22:domain_username}: ${23:"#"}}
+${24:   ${25:ignore_protection}: ${26:"#"}}
+${27:   ${28:managed_by}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:organizational_unit}: ${35:"#"}}
+${36:   ${37:protect}: ${38:"#"}}
+${39:   ${40:scope}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>win_domain_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

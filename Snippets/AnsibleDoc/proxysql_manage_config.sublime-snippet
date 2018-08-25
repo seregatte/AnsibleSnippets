@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) The supplied `action' combines with the supplied `direction' to provide the semantics of how 
-# config_file: Specify a config file from which login_user and login_password are to be read. 
-# config_layer: (required) RUNTIME - represents the in-memory data structures of ProxySQL used by the threads that are 
-# config_settings: (required) The `config_settings' specifies which configuration we're writing. 
-# direction: (required) FROM - denotes we're reading values FROM the supplied `config_layer' and writing to the next 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
+${1:# action: (required) The supplied `action' combines with 
+# config_file: Specify a config file from which `login_user' 
+# config_layer: (required) RUNTIME - represents the in-memory 
+# config_settings: (required) The `config_settings' specifies which 
+# direction: (required) FROM - denotes we're reading values 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
 }- name: ${2:Name for proxysql_manage_config module.}
   proxysql_manage_config:
 ${3:   ${4:action}: ${5:"#"}}

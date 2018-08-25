@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# account_api_token: (required) Account API token. You can obtain your API key from the bottom of the Cloudflare 'My Account' 
+${1:# account_api_token: (required) Account API token. You can obtain 
 # account_email: (required) Account email. 
 # port: Service port. Required for `type=SRV' 
-# priority: Record priority. Required for `type=MX' and `type=SRV' 
-# proto: Service protocol. Required for `type=SRV' 
+# priority: Record priority. Required for `type=MX' and 
+# proto: Service protocol. Required for `type=SRV'. 
 # proxied: Proxy through cloudflare network or just use DNS 
-# record: Record to add. Required if `state=present'. Default is `@' (e.g. the zone name) 
+# record: Record to add. Required if `state=present'. 
 # service: Record service. Required for `type=SRV' 
-# solo: Whether the record should be the only one for that record type and record name. Only use with 
+# solo: Whether the record should be the only one for 
 # state: Whether the record(s) should exist or not 
 # timeout: Timeout for Cloudflare API calls 
-# ttl: The TTL to give the new record. Must be between 120 and 2,147,483,647 seconds, or 1 for automatic. 
-# type: The type of DNS record to create. Required if `state=present' 
+# ttl: The TTL to give the new record. Must be between 
+# type: The type of DNS record to create. Required if 
 # value: The record value. Required for `state=present' 
 # weight: Service weight. Required for `type=SRV' 
-# zone: (required) The name of the Zone to work with (e.g. "example.com"). The Zone must already exist. 
+# zone: (required) The name of the Zone to work with 
 }- name: ${2:Name for cloudflare_dns module.}
   cloudflare_dns:
 ${3:   ${4:account_api_token}: ${5:"#"}}

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) Name of the package to be installed 
+${1:# name: (required) Name of the package to be installed. 
 }- name: ${2:Name for win_webpicmd module.}
   win_webpicmd:
 ${3:   ${4:name}: ${5:"#"}}

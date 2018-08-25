@@ -3,13 +3,13 @@
 ${1:# ddns: Enable dynamic DNS updates for this host. 
 # host: Sets OMAPI server host to interact with. 
 # ip: Sets the lease host IP address. 
-# key: (required) Sets the TSIG key content for authenticating against OMAPI server. 
-# key_name: (required) Sets the TSIG key name for authenticating against OMAPI server. 
+# key: (required) Sets the TSIG key content for 
+# key_name: (required) Sets the TSIG key name for 
 # macaddr: (required) Sets the lease host MAC address. 
-# name: Sets the host lease hostname (mandatory if state=present). 
+# name: Sets the host lease hostname (mandatory if 
 # port: Sets the OMAPI server port to interact with. 
 # state: (required) Create or remove OMAPI host. 
-# statements: Attach a list of OMAPI DHCP statements with host lease (without ending semicolon). 
+# statements: Attach a list of OMAPI DHCP statements with host 
 }- name: ${2:Name for omapi_host module.}
   omapi_host:
 ${3:   ${4:ddns}: ${5:"#"}}

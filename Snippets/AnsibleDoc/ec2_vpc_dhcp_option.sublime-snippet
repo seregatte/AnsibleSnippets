@@ -1,22 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# delete_old: Whether to delete the old VPC DHCP option set when associating a new one. This is primarily useful for 
-# dhcp_options_id: The resource_id of an existing DHCP options set. If this is specified, then it will override other 
-# dns_servers: A list of hosts to set the DNS servers for the VPC to. (Should be a list of IP addresses rather than 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# delete_old: Whether to delete the old VPC DHCP option set 
+# dhcp_options_id: The resource_id of an existing DHCP options set. 
+# dns_servers: A list of hosts to set the DNS servers for the 
 # domain_name: The domain name to set in the DHCP option sets 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# inherit_existing: For any DHCP options not specified in these parameters, whether to inherit them from the options set 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# inherit_existing: For any DHCP options not specified in these 
 # netbios_name_servers: List of hosts to advertise as NetBIOS servers. 
-# netbios_node_type: NetBIOS node type to advertise in the DHCP options. The AWS recommendation is to use 2 (when using 
-# ntp_servers: List of hosts to advertise as NTP servers for the VPC. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: create/assign or remove the DHCP options. If state is set to absent, then a DHCP options set matched 
-# tags: Tags to be applied to a VPC options set if a new one is created, or if the resource_id is provided. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_id: VPC ID to associate with the requested DHCP option set. If no vpc id is provided, and no matching option 
+# netbios_node_type: NetBIOS node type to advertise in the DHCP 
+# ntp_servers: List of hosts to advertise as NTP servers for 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: create/assign or remove the DHCP options. If 
+# tags: Tags to be applied to a VPC options set if a new 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_id: VPC ID to associate with the requested DHCP 
 }- name: ${2:Name for ec2_vpc_dhcp_option module.}
   ec2_vpc_dhcp_option:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -31,17 +33,19 @@ ${27:   ${28:netbios_name_servers}: ${29:"#"}}
 ${30:   ${31:netbios_node_type}: ${32:"#"}}
 ${33:   ${34:ntp_servers}: ${35:"#"}}
 ${36:   ${37:profile}: ${38:"#"}}
-${39:   ${40:security_token}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:tags}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:vpc_id}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${39:   ${40:region}: ${41:"#"}}
+${42:   ${43:}: ${44:"#"}}
+${45:   ${46:security_token}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:tags}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:   ${58:vpc_id}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_dhcp_option</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

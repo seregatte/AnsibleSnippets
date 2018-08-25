@@ -1,49 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:# assign_public_ip: when provisioning within vpc, assign a public IP address. Boto library must be 2.13.0+ 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# assign_public_ip: when provisioning within vpc, assign a public IP 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # count: number of instances to launch 
-# count_tag: Used with 'exact_count' to determine how many nodes based on a specific tag criteria should be running. 
-# ebs_optimized: whether instance is using optimized EBS volumes, see 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# exact_count: An integer value which indicates how many instances that match the 'count_tag' parameter should be 
-# group: security group (or list of groups) to use with the instance 
-# group_id: security group id (or list of ids) to use with the instance 
-# id: identifier for this instance or set of instances, so that the module will be idempotent with respect to 
+# count_tag: Used with 'exact_count' to determine how many 
+# ebs_optimized: whether instance is using optimized EBS volumes, 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# exact_count: An integer value which indicates how many 
+# group: security group (or list of groups) to use with 
+# group_id: security group id (or list of ids) to use with 
+# id: identifier for this instance or set of 
 # image: (required) `ami' ID to use for the instance 
-# instance_ids: list of instance ids, currently used for states: absent, running, stopped 
-# instance_initiated_shutdown_behavior: Set whether AWS will Stop or Terminate an instance on shutdown. This parameter is ignored when using 
-# instance_profile_name: Name of the IAM instance profile to use. Boto library must be 2.5.0+ 
-# instance_tags: a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; 
-# instance_type: (required) instance type to use for the instance, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide 
+# instance_ids: list of instance ids, currently used for states: 
+# instance_initiated_shutdown_behavior: Set whether AWS will Stop or Terminate an 
+# instance_profile_name: Name of the IAM instance profile to use. Boto 
+# instance_tags: a hash/dictionary of tags to add to the new 
+# instance_type: (required) instance type to use for the 
 # kernel: kernel `eki' to use for the instance 
 # key_name: key pair to use on the instance 
-# monitoring: enable detailed monitoring (CloudWatch) for instance 
-# network_interfaces: A list of existing network interfaces to attach to the instance at launch. When specifying existing 
-# placement_group: placement group for the instance when using EC2 Clustered Compute 
-# private_ip: the private ip address to assign the instance (from the vpc subnet) 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# monitoring: enable detailed monitoring (CloudWatch) for 
+# network_interfaces: A list of existing network interfaces to attach 
+# placement_group: placement group for the instance when using EC2 
+# private_ip: the private ip address to assign the instance 
+# profile: Uses a boto profile. Only works with boto >= 
 # ramdisk: ramdisk `eri' to use for the instance 
-# region: The AWS region to use.  Must be specified if ec2_url is not used. If not specified then the value of the 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# source_dest_check: Enable or Disable the Source/Destination checks (for NAT instances and Virtual Routers) 
-# spot_launch_group: Launch group for spot request, see http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-spot- 
-# instances: spot-launch-group 
-# spot_price: Maximum spot price to bid, If not set a regular on-demand instance is requested. A spot request is made 
-# spot_type: Type of spot request; one of "one-time" or "persistent". Defaults to "one-time" if not supplied. 
-# spot_wait_timeout: how long to wait for the spot instance request to be fulfilled 
-# state: create or terminate instances 
-# tenancy: An instance with a tenancy of "dedicated" runs on single-tenant hardware and can only be launched into a 
+# region: The AWS region to use.  Must be specified if 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# source_dest_check: Enable or Disable the Source/Destination checks 
+# spot_launch_group: Launch group for spot request, see http://docs.a 
+# work: spot- 
+# spot_price: Maximum spot price to bid, If not set a regular 
+# spot_type: Type of spot request; one of "one-time" or 
+# spot_wait_timeout: how long to wait for the spot instance request 
+# state: create, terminate, start, stop or restart 
+# tenancy: An instance with a tenancy of "dedicated" runs 
 # termination_protection: Enable or Disable the Termination Protection 
-# user_data: opaque blob of data which is made available to the ec2 instance 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# volumes: a list of hash/dictionaries of volumes to add to the new instance; '[{"key":"value", "key":"value"}]'; 
-# vpc_subnet_id: the subnet ID in which to launch the instance (VPC) 
-# wait: wait for the instance to reach its desired state before returning.  Does not wait for SSH, see 
+# user_data: opaque blob of data which is made available to 
+# validate_certs: When set to "no", SSL certificates will not be 
+# volumes: a list of hash/dictionaries of volumes to add to 
+# vpc_subnet_id: the subnet ID in which to launch the instance 
+# wait: wait for the instance to reach its desired state 
 # wait_timeout: how long before wait gives up, in seconds 
-# zone: AWS availability zone in which to launch the instance 
+# zone: AWS availability zone in which to launch the 
 }- name: ${2:Name for ec2 module.}
   ec2:
 ${3:   ${4:assign_public_ip}: ${5:"#"}}
@@ -72,11 +72,11 @@ ${69:   ${70:private_ip}: ${71:"#"}}
 ${72:   ${73:profile}: ${74:"#"}}
 ${75:   ${76:ramdisk}: ${77:"#"}}
 ${78:   ${79:region}: ${80:"#"}}
-${81:   ${82:http}: ${83:"#"}}
+${81:   ${82:}: ${83:"#"}}
 ${84:   ${85:security_token}: ${86:"#"}}
 ${87:   ${88:source_dest_check}: ${89:"#"}}
 ${90:   ${91:spot_launch_group}: ${92:"#"}}
-${93:   ${94:instances}: ${95:"#"}}
+${93:   ${94:work}: ${95:"#"}}
 ${96:   ${97:spot_price}: ${98:"#"}}
 ${99:   ${100:spot_type}: ${101:"#"}}
 ${102:   ${103:spot_wait_timeout}: ${104:"#"}}

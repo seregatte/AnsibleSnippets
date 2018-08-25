@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# id: AOS Id of the IP Pool to manage (can't be used to create a new IP Pool). Only one of `name' or `id' can 
-# name: Name of the Blueprint to manage. Only one of `name' or `id' can be set. 
-# reference_arch: When creating a blueprint, this value identifies a known AOS reference architecture value. `Refer to 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Blueprint. 
-# template: When creating a blueprint, this value identifies, by name, an existing engineering design template 
-# timeout: When `state=build-ready', this timeout identifies timeout in seconds to wait before declaring a failure. 
+${1:# id: AOS Id of the IP Pool to manage (can't be used 
+# name: Name of the Blueprint to manage. Only one of 
+# reference_arch: When creating a blueprint, this value identifies 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
+# template: When creating a blueprint, this value 
+# timeout: When `state=build-ready', this timeout 
 }- name: ${2:Name for aos_blueprint module.}
   aos_blueprint:
 ${3:   ${4:id}: ${5:"#"}}

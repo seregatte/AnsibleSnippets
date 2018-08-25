@@ -1,34 +1,34 @@
 <snippet>
 <content><![CDATA[
-${1:# allocation_pool_end: From the subnet pool the last IP that should be assigned to the virtual machines. 
-# allocation_pool_start: From the subnet pool the starting address from which the IP should be allocated. 
-# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# allocation_pool_end: From the subnet pool the last IP that should be 
+# allocation_pool_start: From the subnet pool the starting address from 
+# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cidr: The CIDR representation of the subnet that should be assigned to the subnet. Required when `state' is 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cidr: The CIDR representation of the subnet that 
+# cloud: Named cloud or cloud config to operate against. 
 # dns_nameservers: List of DNS nameservers for this subnet. 
 # enable_dhcp: Whether DHCP should be enabled for this subnet. 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# gateway_ip: The ip that would be assigned to the gateway for this subnet 
-# host_routes: A list of host route dictionaries for the subnet. 
+# gateway_ip: The ip that would be assigned to the gateway for 
+# host_routes: A list of host route dictionaries for the 
+# interface: Endpoint URL type to fetch from the service 
 # ip_version: The IP version of the subnet 4 or 6 
 # ipv6_address_mode: IPv6 address mode 
 # ipv6_ra_mode: IPv6 router advertisement mode 
-# key: A path to a client key to use as part of the SSL transaction. 
-# name: (required) The name of the subnet that should be created. Although Neutron allows for non-unique subnet 
-# network_name: Name of the network to which the subnet should be attached Required when `state' is 'present' 
-# no_gateway_ip: The gateway IP would not be assigned for this subnet 
-# project: Project name or ID containing the subnet (name admin-only) 
+# key: A path to a client key to use as part of the SSL 
+# name: (required) The name of the subnet that should be 
+# network_name: Name of the network to which the subnet should 
+# no_gateway_ip: The gateway IP would not be assigned for this 
+# project: Project name or ID containing the subnet (name 
 # region_name: Name of the region. 
 # state: Indicate desired state of the resource 
-# timeout: How long should ansible wait for the requested resource. 
-# use_default_subnetpool: Use the default subnetpool for `ip_version' to obtain a CIDR. 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: Should ansible wait until the requested resource is complete. 
+# timeout: How long should ansible wait for the requested 
+# use_default_subnetpool: Use the default subnetpool for `ip_version' to 
+# verify: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_subnet module.}
   os_subnet:
 ${3:   ${4:allocation_pool_end}: ${5:"#"}}
@@ -43,9 +43,9 @@ ${27:   ${28:cidr}: ${29:"#"}}
 ${30:   ${31:cloud}: ${32:"#"}}
 ${33:   ${34:dns_nameservers}: ${35:"#"}}
 ${36:   ${37:enable_dhcp}: ${38:"#"}}
-${39:   ${40:endpoint_type}: ${41:"#"}}
-${42:   ${43:gateway_ip}: ${44:"#"}}
-${45:   ${46:host_routes}: ${47:"#"}}
+${39:   ${40:gateway_ip}: ${41:"#"}}
+${42:   ${43:host_routes}: ${44:"#"}}
+${45:   ${46:interface}: ${47:"#"}}
 ${48:   ${49:ip_version}: ${50:"#"}}
 ${51:   ${52:ipv6_address_mode}: ${53:"#"}}
 ${54:   ${55:ipv6_ra_mode}: ${56:"#"}}
@@ -58,7 +58,7 @@ ${72:   ${73:region_name}: ${74:"#"}}
 ${75:   ${76:state}: ${77:"#"}}
 ${78:   ${79:timeout}: ${80:"#"}}
 ${81:   ${82:use_default_subnetpool}: ${83:"#"}}
-${84:   ${85:validate_certs}: ${86:"#"}}
+${84:   ${85:verify}: ${86:"#"}}
 ${87:   ${88:wait}: ${89:"#"}}
 ${90:${91:   become: ${92:true}} 
 ${93:   become_method: ${94:su}} 

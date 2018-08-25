@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# : Sets the exact scope of the operation in form of 
+# : Sets the scope of the operation to network 
+# : Sets the scope of the operation to use one or 
+# backup: Specifies a backup plan name 
+# create: Specifies if backup plan generation is enabled. 
+# extra_opts: Extra options to be set for operations. Check 
+# file: Indicates file format. 
+# file: Specifies a file name. Valid for Import and 
+# input: Specifies full path to plan file location for 
+# operation: (required) Supported operations allow user to 
+# ops: user specified operation name 
+# plan: Specifies a plan name. 
+# type: Specifies the type of the export operation. 
+# verbose: NetAct Configurator will print more info 
+}- name: ${2:Name for netact_cm_command module.}
+  netact_cm_command:
+${3:   ${4:}: ${5:"#"}}
+${6:   ${7:}: ${8:"#"}}
+${9:   ${10:}: ${11:"#"}}
+${12:   ${13:backup}: ${14:"#"}}
+${15:   ${16:create}: ${17:"#"}}
+${18:   ${19:extra_opts}: ${20:"#"}}
+${21:   ${22:file}: ${23:"#"}}
+${24:   ${25:file}: ${26:"#"}}
+${27:   ${28:input}: ${29:"#"}}
+${30:   ${31:operation}: ${32:"#"}}
+${33:   ${34:ops}: ${35:"#"}}
+${36:   ${37:plan}: ${38:"#"}}
+${39:   ${40:type}: ${41:"#"}}
+${42:   ${43:verbose}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>netact_cm_command</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

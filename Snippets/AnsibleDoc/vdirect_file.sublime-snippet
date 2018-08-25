@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# file_name: (required) vDirect runnable file name to be uploaded. May be velocity configuration template (.vm) or 
-# vdirect_http_port: vDirect server HTTP port number, may be set as VDIRECT_HTTP_PORT environment variable. 
-# vdirect_https_port: vDirect server HTTPS port number, may be set as VDIRECT_HTTPS_PORT environment variable. 
-# vdirect_ip: (required) Primary vDirect server IP address, may be set as VDIRECT_IP environment variable. 
-# vdirect_password: (required) vDirect server password, may be set as VDIRECT_PASSWORD environment variable. 
-# vdirect_secondary_ip: Secondary vDirect server IP address, may be set as VDIRECT_SECONDARY_IP environment variable. 
-# vdirect_timeout: Amount of time to wait for async operation completion [seconds], may be set as VDIRECT_TIMEOUT 
-# vdirect_use_ssl: If `no', an HTTP connection will be used instead of the default HTTPS connection, may be set as 
-# vdirect_user: (required) vDirect server username, may be set as VDIRECT_USER environment variable. 
-# vdirect_validate_certs: If `no', SSL certificates will not be validated, may be set as VDIRECT_VALIDATE_CERTS or VDIRECT_VERIFY 
-# vdirect_wait: Wait for async operation to complete, may be set as VDIRECT_WAIT environment variable. 
+${1:# file_name: (required) vDirect runnable file name to be 
+# vdirect_http_port: vDirect server HTTP port number, may be set as 
+# vdirect_https_port: vDirect server HTTPS port number, may be set as 
+# vdirect_ip: (required) Primary vDirect server IP address, 
+# vdirect_password: (required) vDirect server password, may be set 
+# vdirect_secondary_ip: Secondary vDirect server IP address, may be set 
+# vdirect_timeout: Amount of time to wait for async operation 
+# vdirect_use_ssl: If `no', an HTTP connection will be used instead 
+# vdirect_user: (required) vDirect server username, may be set 
+# vdirect_validate_certs: If `no', SSL certificates will not be validated, 
+# vdirect_wait: Wait for async operation to complete, may be set 
 }- name: ${2:Name for vdirect_file module.}
   vdirect_file:
 ${3:   ${4:file_name}: ${5:"#"}}

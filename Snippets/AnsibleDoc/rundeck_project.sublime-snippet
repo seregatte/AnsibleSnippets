@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Sets the API version used by module. API version must be at least 14. 
+${1:# api_version: Sets the API version used by module. API version 
 # name: (required) Sets the project name. 
 # state: Create or remove Rundeck project. 
-# token: (required) Sets the token to authenticate against Rundeck API. 
+# token: (required) Sets the token to authenticate 
 # url: (required) Sets the rundeck instance URL. 
 }- name: ${2:Name for rundeck_project module.}
   rundeck_project:

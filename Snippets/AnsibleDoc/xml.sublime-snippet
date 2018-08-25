@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# add_children: Add additional child-element(s) to a selected element for a given `xpath'. Child elements must be given 
-# attribute: The attribute to select when using parameter `value'. This is a string, not prepended with `@'. 
-# backup: Create a backup file including the timestamp information so you can get the original file back if you 
-# content: Search for a given `xpath' and get content. This parameter requires `xpath' to be set. 
-# count: Search for a given `xpath' and provide the count of any matches. This parameter requires `xpath' to be 
-# input_type: Type of input for `add_children' and `set_children'. 
-# namespaces: The namespace `prefix:uri' mapping for the XPath expression. Needs to be a `dict', not a `list' of 
-# path: (required) Path to the file to operate on. File must exist ahead of time. This parameter is required, 
+${1:# add_children: Add additional child-element(s) to a selected 
+# attribute: The attribute to select when using parameter 
+# backup: Create a backup file including the timestamp 
+# content: Search for a given `xpath' and get content. This 
+# count: Search for a given `xpath' and provide the count 
+# input_type: Type of input for `add_children' and 
+# namespaces: The namespace `prefix:uri' mapping for the XPath 
+# path: (required) Path to the file to operate on. File 
 # pretty_print: Pretty print XML output. 
-# print_match: Search for a given `xpath' and print out any matches. This parameter requires `xpath' to be set. 
-# set_children: Set the child-element(s) of a selected element for a given `xpath'. Removes any existing children. Child 
-# state: Set or remove an xpath selection (node(s), attribute(s)). 
-# value: Desired state of the selected attribute. Either a string, or to unset a value, the Python `None' keyword 
-# xmlstring: (required) A string containing XML on which to operate. This parameter is required, unless `path' is 
-# xpath: A valid XPath expression describing the item(s) you want to manipulate. Operates on the document root, 
+# print_match: Search for a given `xpath' and print out any 
+# set_children: Set the child-element(s) of a selected element 
+# state: Set or remove an xpath selection (node(s), 
+# value: Desired state of the selected attribute. Either 
+# xmlstring: (required) A string containing XML on which to 
+# xpath: A valid XPath expression describing the item(s) 
 }- name: ${2:Name for xml module.}
   xml:
 ${3:   ${4:add_children}: ${5:"#"}}

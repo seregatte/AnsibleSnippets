@@ -1,29 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# filter: Shell-style glob matching string used to filter fact keys. Not applicable for software, provision, and 
-# include: (required) Fact category or list of categories to collect 
-# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
-# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
-# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
-# session: BIG-IP session support; may be useful to avoid concurrency issues in certain circumstances. 
-# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+${1:# filter: Shell-style glob matching string used to filter 
+# include: (required) Fact category or list of categories 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# session: BIG-IP session support; may be useful to avoid 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for bigip_facts module.}
   bigip_facts:
 ${3:   ${4:filter}: ${5:"#"}}
 ${6:   ${7:include}: ${8:"#"}}
 ${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:server}: ${14:"#"}}
-${15:   ${16:server_port}: ${17:"#"}}
-${18:   ${19:session}: ${20:"#"}}
-${21:   ${22:user}: ${23:"#"}}
-${24:   ${25:validate_certs}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${12:   ${13:provider}: ${14:"#"}}
+${15:   ${16:server}: ${17:"#"}}
+${18:   ${19:server_port}: ${20:"#"}}
+${21:   ${22:session}: ${23:"#"}}
+${24:   ${25:user}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>bigip_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

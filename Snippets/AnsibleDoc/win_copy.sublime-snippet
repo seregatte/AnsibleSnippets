@@ -1,25 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# content: When used instead of `src', sets the contents of a file directly to the specified value. This is for 
-# dest: (required) Remote absolute path where the file should be copied to. If src is a directory, this must be 
-# force: If set to `yes', the file will only be transferred if the content is different than destination. If set 
-# local_follow: This flag indicates that filesystem links in the source tree, if they exist, should be followed. 
-# remote_src: If False, it will search for src at originating/master machine, if True it will go to the remote/target 
-# src: (required) Local path to a file to copy to the remote server; can be absolute or relative. If path is a 
+${1:# content: When used instead of `src', sets the contents of 
+# decrypt: This option controls the autodecryption of 
+# dest: (required) Remote absolute path where the file 
+# force: If set to `yes', the file will only be 
+# local_follow: This flag indicates that filesystem links in the 
+# remote_src: If `no', it will search for src at 
+# src: (required) Local path to a file to copy to the 
 }- name: ${2:Name for win_copy module.}
   win_copy:
 ${3:   ${4:content}: ${5:"#"}}
-${6:   ${7:dest}: ${8:"#"}}
-${9:   ${10:force}: ${11:"#"}}
-${12:   ${13:local_follow}: ${14:"#"}}
-${15:   ${16:remote_src}: ${17:"#"}}
-${18:   ${19:src}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${6:   ${7:decrypt}: ${8:"#"}}
+${9:   ${10:dest}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:local_follow}: ${17:"#"}}
+${18:   ${19:remote_src}: ${20:"#"}}
+${21:   ${22:src}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>win_copy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

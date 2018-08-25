@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# interface: (required) VLAN Interface name. 
+# magp_id: (required) MAGP instance number 1-255 
+# router_ip: MAGP router IP address. 
+# router_mac: MAGP router MAC address. 
+# state: MAGP state. 
+}- name: ${2:Name for onyx_magp module.}
+  onyx_magp:
+${3:   ${4:interface}: ${5:"#"}}
+${6:   ${7:magp_id}: ${8:"#"}}
+${9:   ${10:router_ip}: ${11:"#"}}
+${12:   ${13:router_mac}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>onyx_magp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

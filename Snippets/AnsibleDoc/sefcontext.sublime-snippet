@@ -3,7 +3,7 @@
 ${1:# ftype: File type. 
 # reload: Reload SELinux policy after commit. 
 # selevel: SELinux range for the specified target. 
-# setype: (required) SELinux type for the specified target. 
+# setype: (required) SELinux type for the specified 
 # seuser: SELinux user for the specified target. 
 # state: Desired boolean value. 
 # target: (required) Target path (expression). 

@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# force: Force principal name even if host is not in DNS. 
+# hosts: defines the list of 'ManagedBy' hosts 
+# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
+# krbcanonicalname: (required) principal of the service Can not be 
+# state: State to ensure 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
+}- name: ${2:Name for ipa_service module.}
+  ipa_service:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:hosts}: ${8:"#"}}
+${9:   ${10:ipa_host}: ${11:"#"}}
+${12:   ${13:ipa_pass}: ${14:"#"}}
+${15:   ${16:ipa_port}: ${17:"#"}}
+${18:   ${19:ipa_prot}: ${20:"#"}}
+${21:   ${22:ipa_user}: ${23:"#"}}
+${24:   ${25:krbcanonicalname}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>ipa_service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

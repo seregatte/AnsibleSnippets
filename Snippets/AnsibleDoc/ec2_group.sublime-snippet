@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# description: Description of the security group. Required when `state' is `present'. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# group_id: Id of group to delete (works only with absent). One of and only one of `name' or `group_id' is required. 
-# name: Name of the security group. One of and only one of `name' or `group_id' is required. Required if 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# purge_rules: Purge existing rules on security group that are not found in rules 
-# purge_rules_egress: Purge existing rules_egress on security group that are not found in rules_egress 
-# purge_tags: If yes, existing tags will be purged from the resource to match exactly what is defined by `tags' 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# rules: List of firewall inbound rules to enforce in this group (see example). If none are supplied, no inbound 
-# rules_egress: List of firewall outbound rules to enforce in this group (see example). If none are supplied, a default 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# description: Description of the security group. Required when 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# group_id: Id of group to delete (works only with absent). 
+# name: Name of the security group. One of and only one 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_rules: Purge existing rules on security group that are 
+# purge_rules_egress: Purge existing rules_egress on security group 
+# purge_tags: If yes, existing tags will be purged from the 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# rules: List of firewall inbound rules to enforce in 
+# rules_egress: List of firewall outbound rules to enforce in 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or delete a security group 
-# tags: A dictionary of one or more tags to assign to the security group. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# tags: A dictionary of one or more tags to assign to 
+# validate_certs: When set to "no", SSL certificates will not be 
 # vpc_id: ID of the VPC to create the group in. 
 }- name: ${2:Name for ec2_group module.}
   ec2_group:
@@ -32,7 +32,7 @@ ${24:   ${25:purge_rules}: ${26:"#"}}
 ${27:   ${28:purge_rules_egress}: ${29:"#"}}
 ${30:   ${31:purge_tags}: ${32:"#"}}
 ${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:http}: ${38:"#"}}
+${36:   ${37:}: ${38:"#"}}
 ${39:   ${40:rules}: ${41:"#"}}
 ${42:   ${43:rules_egress}: ${44:"#"}}
 ${45:   ${46:security_token}: ${47:"#"}}

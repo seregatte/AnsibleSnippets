@@ -3,10 +3,10 @@
 ${1:# pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch to run the CLI on. 
 # pn_cliusername: Provide login username if user is not root. 
-# pn_network_ip: (required) Specify the network IP (IPv4 or IPv6) address. 
-# pn_ospf_area: Stub area number for the configuration. Required for vrouter-ospf-add. 
+# pn_network_ip: (required) Specify the network IP (IPv4 or IPv6) 
+# pn_ospf_area: Stub area number for the configuration. Required 
 # pn_vrouter_name: (required) Specify the name of the vRouter. 
-# state: (required) Assert the state of the ospf. Use 'present' to add ospf and 'absent' to remove ospf. 
+# state: (required) Assert the state of the ospf. Use 
 }- name: ${2:Name for pn_ospf module.}
   pn_ospf:
 ${3:   ${4:pn_clipassword}: ${5:"#"}}

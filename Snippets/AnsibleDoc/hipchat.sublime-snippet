@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# api: API url if using a self-hosted hipchat server. For Hipchat API version 2 use the default URI with `/v2' 
+${1:# api: API url if using a self-hosted hipchat server. 
 # color: Background color for the message. 
-# from: Name the message will appear to be sent from. Max length is 15 characters - above this it will be 
+# from: Name the message will appear to be sent from. 
 # msg: (required) The message body. 
 # msg_format: Message format. 
-# notify: If true, a notification will be triggered for users in the room. 
+# notify: If true, a notification will be triggered for 
 # room: (required) ID or name of the room. 
 # token: (required) API token. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for hipchat module.}
   hipchat:
 ${3:   ${4:api}: ${5:"#"}}

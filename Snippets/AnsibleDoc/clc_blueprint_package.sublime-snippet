@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# package_id: (required) The package id of the blue print. 
-# package_params: The dictionary of arguments required to deploy the blue print. 
-# server_ids: (required) A list of server Ids to deploy the blue print package. 
-# state: Whether to install or un-install the package. Currently it supports only "present" for install action. 
-# wait: Whether to wait for the tasks to finish before returning. 
+# package_params: The dictionary of arguments required to deploy 
+# server_ids: (required) A list of server Ids to deploy the 
+# state: Whether to install or un-install the package. 
+# wait: Whether to wait for the tasks to finish before 
 }- name: ${2:Name for clc_blueprint_package module.}
   clc_blueprint_package:
 ${3:   ${4:package_id}: ${5:"#"}}

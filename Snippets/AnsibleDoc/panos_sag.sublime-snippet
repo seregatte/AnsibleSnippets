@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: API key that can be used instead of `username'/`password' credentials. 
+${1:# api_key: API key that can be used instead of 
 # commit: commit if changed 
-# description: The purpose / objective of the static Address Group 
-# devicegroup: - The name of the Panorama device group. The group must exist on Panorama. If device group is not 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# operation: (required) The operation to perform Supported values are `add'/`list'/`delete'. 
-# password: (required) password for authentication 
+# description: The purpose / objective of the static Address 
+# devicegroup: - The name of the Panorama device group. The 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# operation: (required) The operation to perform Supported 
+# password: (required) Password for authentication. 
 # sag_name: (required) name of the dynamic address group 
-# static_match_filter: (required) Static filter user by the address group 
+# static_match_filter: (required) Static filter user by the address 
 # tags: Tags to be associated with the address group 
-# username: username for authentication 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_sag module.}
   panos_sag:
 ${3:   ${4:api_key}: ${5:"#"}}

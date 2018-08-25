@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# alert_policy_id: The alert policy id to be associated to the server. This is mutually exclusive with 'alert_policy_name' 
-# alert_policy_name: The alert policy name to be associated to the server. This is mutually exclusive with 'alert_policy_id' 
-# anti_affinity_policy_id: The anti affinity policy id to be set for a hyper scale server. This is mutually exclusive with 
-# anti_affinity_policy_name: The anti affinity policy name to be set for a hyper scale server. This is mutually exclusive with 
+${1:# alert_policy_id: The alert policy id to be associated to the 
+# alert_policy_name: The alert policy name to be associated to the 
+# anti_affinity_policy_id: The anti affinity policy id to be set for a 
+# anti_affinity_policy_name: The anti affinity policy name to be set for a 
 # cpu: How many CPUs to update on the server 
 # memory: Memory (in GB) to set to the server. 
 # server_ids: (required) A list of server Ids to modify. 
-# state: The state to insure that the provided resources are in. 
-# wait: Whether to wait for the provisioning tasks to finish before returning. 
+# state: The state to insure that the provided resources 
+# wait: Whether to wait for the provisioning tasks to 
 }- name: ${2:Name for clc_modify_server module.}
   clc_modify_server:
 ${3:   ${4:alert_policy_id}: ${5:"#"}}

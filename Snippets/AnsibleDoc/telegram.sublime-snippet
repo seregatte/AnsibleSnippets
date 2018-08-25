@@ -2,15 +2,15 @@
 <content><![CDATA[
 ${1:# chat_id: (required) Telegram group or user chat_id 
 # msg: (required) What message you wish to send. 
-# msg_format: Message format. Formatting options `markdown` and `html` described in Telegram API docs 
-# : formatting-options). If option 
+# msg_format: Message format. Formatting options `markdown` 
+# i: formatting- 
 # token: (required) Token identifying your telegram bot. 
 }- name: ${2:Name for telegram module.}
   telegram:
 ${3:   ${4:chat_id}: ${5:"#"}}
 ${6:   ${7:msg}: ${8:"#"}}
 ${9:   ${10:msg_format}: ${11:"#"}}
-${12:   ${13:}: ${14:"#"}}
+${12:   ${13:i}: ${14:"#"}}
 ${15:   ${16:token}: ${17:"#"}}
 ${18:${19:   become: ${20:true}} 
 ${21:   become_method: ${22:su}} 

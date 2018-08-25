@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
-# comment: The `comment' argument specifies a text string to be used when committing the configuration.  If the 
-# confirm: The `confirm' argument will configure a time out value for the commit to be confirmed before it is 
-# confirm_commit: This argument will execute commit operation on remote device. It can be used to confirm a previous 
-# lines: This argument takes a list of `set' or `delete' configuration lines to push into the remote device. 
-# provider: A dict object containing connection details. 
-# replace: The `replace' argument will instruct the remote device to replace the current configuration hierarchy 
-# rollback: The `rollback' argument instructs the module to rollback the current configuration to the identifier 
-# src: The `src' argument provides a path to the configuration file to load into the remote system. The path 
-# src_format: The `src_format' argument specifies the format of the configuration found int `src'.  If the 
-# update: This argument will decide how to load the configuration data particulary when the candidate 
-# zeroize: The `zeroize' argument is used to completely sanitize the remote device configuration back to initial 
+${1:# backup: This argument will cause the module to create a 
+# comment: The `comment' argument specifies a text string 
+# confirm: The `confirm' argument will configure a time out 
+# confirm_commit: This argument will execute commit operation on 
+# lines: This argument takes a list of `set' or `delete' 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# replace: The `replace' argument will instruct the remote 
+# rollback: The `rollback' argument instructs the module to 
+# src: The `src' argument provides a path to the 
+# src_format: The `src_format' argument specifies the format 
+# update: This argument will decide how to load the 
+# zeroize: The `zeroize' argument is used to completely 
 }- name: ${2:Name for junos_config module.}
   junos_config:
 ${3:   ${4:backup}: ${5:"#"}}

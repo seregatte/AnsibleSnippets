@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# bridge_domain_id: (required) Specify an existed bridge domain (BD).The value is an integer ranging from 1 to 16777215. 
-# evpn: Create or delete an EVPN instance for a VXLAN in BD view. 
-# route_distinguisher: Configures a route distinguisher (RD) for a BD EVPN instance. The format of an RD can be as follows 1) 
+${1:# bridge_domain_id: (required) Specify an existed bridge domain 
+# evpn: Create or delete an EVPN instance for a VXLAN in 
+# route_distinguisher: Configures a route distinguisher (RD) for a BD 
 # state: Manage the state of the resource. 
-# vpn_target_both: Add VPN targets to both the import and export VPN target lists of a BD EVPN instance. The format is the 
-# vpn_target_export: Add VPN targets to the export VPN target list of a BD EVPN instance. The format is the same as 
-# vpn_target_import: (required) Add VPN targets to the import VPN target list of a BD EVPN instance. The format is the same 
+# vpn_target_both: Add VPN targets to both the import and export 
+# vpn_target_export: Add VPN targets to the export VPN target list of 
+# vpn_target_import: (required) Add VPN targets to the import VPN 
 }- name: ${2:Name for ce_evpn_bd_vni module.}
   ce_evpn_bd_vni:
 ${3:   ${4:bridge_domain_id}: ${5:"#"}}

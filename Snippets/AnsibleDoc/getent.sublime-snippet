@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# database: (required) the name of a getent database supported by the target system (passwd, group, hosts, etc). 
-# fail_key: If a supplied key is missing this will make the task fail if True 
-# key: key from which to return values from the specified database, otherwise the full contents are returned. 
-# split: character used to split the database values into lists/arrays such as ':' or '  ', otherwise  it will 
+${1:# database: (required) The name of a getent database 
+# fail_key: If a supplied key is missing this will make the 
+# key: Key from which to return values from the 
+# split: Character used to split the database values into 
 }- name: ${2:Name for getent module.}
   getent:
 ${3:   ${4:database}: ${5:"#"}}

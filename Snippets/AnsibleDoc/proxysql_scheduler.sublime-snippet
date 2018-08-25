@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# active: A schedule with `active' set to `False' will be tracked in the database, but will be never loaded in the 
+${1:# active: A schedule with `active' set to `False' will be 
 # arg1: Argument that can be passed to the job. 
 # arg2: Argument that can be passed to the job. 
 # arg3: Argument that can be passed to the job. 
 # arg4: Argument that can be passed to the job. 
 # arg5: Argument that can be passed to the job. 
-# comment: Text field that can be used for any purposed defined by the user. 
-# config_file: Specify a config file from which login_user and login_password are to be read. 
-# filename: (required) Full path of the executable to be executed. 
-# force_delete: By default we avoid deleting more than one schedule in a single batch, however if you need this 
-# interval_ms: How often (in millisecond) the job will be started. The minimum value for `interval_ms' is 100 
-# load_to_runtime: Dynamically load mysql host config to runtime memory. 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
-# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
-# state: When `present' - adds the schedule, when `absent' - removes the schedule. 
+# comment: Text field that can be used for any purposed 
+# config_file: Specify a config file from which `login_user' 
+# filename: (required) Full path of the executable to be 
+# force_delete: By default we avoid deleting more than one 
+# interval_ms: How often (in millisecond) the job will be 
+# load_to_runtime: Dynamically load config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
+# save_to_disk: Save config to sqlite db on disk to persist the 
+# state: When `present' - adds the schedule, when 
 }- name: ${2:Name for proxysql_scheduler module.}
   proxysql_scheduler:
 ${3:   ${4:active}: ${5:"#"}}

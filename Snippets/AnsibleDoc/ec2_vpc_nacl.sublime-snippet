@@ -1,19 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# egress: A list of rules for outgoing traffic. Each rule must be specified as a list. 
-# ingress: List of rules for incoming traffic. Each rule must be specified as a list. 
-# nacl_id: NACL id identifying a network ACL. One and only one of the `name' or `nacl_id' is required. 
-# name: Tagged name identifying a network ACL. One and only one of the `name' or `nacl_id' is required. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: Creates or modifies an existing NACL Deletes a NACL and reassociates subnets to the default NACL 
-# subnets: The list of subnets that should be associated with the network ACL. Must be specified as a list Each 
-# tags: Dictionary of tags to look for and apply when creating a network ACL. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_id: VPC id of the requesting VPC. Required when state present. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# egress: A list of rules for outgoing traffic. Each rule 
+# ingress: List of rules for incoming traffic. Each rule 
+# nacl_id: NACL id identifying a network ACL. One and only 
+# name: Tagged name identifying a network ACL. One and 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: Creates or modifies an existing NACL Deletes a 
+# subnets: The list of subnets that should be associated 
+# tags: Dictionary of tags to look for and apply when 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_id: VPC id of the requesting VPC. Required when 
 }- name: ${2:Name for ec2_vpc_nacl module.}
   ec2_vpc_nacl:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -24,18 +26,20 @@ ${15:   ${16:ingress}: ${17:"#"}}
 ${18:   ${19:nacl_id}: ${20:"#"}}
 ${21:   ${22:name}: ${23:"#"}}
 ${24:   ${25:profile}: ${26:"#"}}
-${27:   ${28:security_token}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:subnets}: ${35:"#"}}
-${36:   ${37:tags}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:vpc_id}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:subnets}: ${41:"#"}}
+${42:   ${43:tags}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:   ${49:vpc_id}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_nacl</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

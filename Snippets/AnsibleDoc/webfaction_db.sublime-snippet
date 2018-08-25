@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# login_name: (required) The webfaction account to use 
 # login_password: (required) The webfaction password to use 
-# machine: The machine name to use (optional for accounts with only one machine) 
+# machine: The machine name to use (optional for accounts 
 # name: (required) The name of the database 
 # password: The password for the new database user. 
 # state: Whether the database should exist 

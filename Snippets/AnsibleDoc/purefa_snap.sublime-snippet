@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# api_token: (required) FlashArray API token for admin privilaged user. 
-# eradicate: Define whether to eradicate the snapshot on delete or leave in trash. 
-# fa_url: (required) FlashArray management IPv4 address or Hostname. 
+${1:# api_token: (required) FlashArray API token for admin 
+# eradicate: Define whether to eradicate the snapshot on 
+# fa_url: (required) FlashArray management IPv4 address or 
 # name: (required) The name of the source volume. 
-# overwrite: Define whether to overwrite existing volume when creating from snapshot. 
-# state: Define whether the volume snapshot should exist or not. 
+# overwrite: Define whether to overwrite existing volume when 
+# state: Define whether the volume snapshot should exist 
 # suffix: Suffix of snapshot name. 
 # target: Name of target volume if creating from snapshot. 
 }- name: ${2:Name for purefa_snap module.}

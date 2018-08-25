@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# commercial_type: (required) Commercial name of the compute node 
+# enable_ipv6: Enable public IPv6 connectivity on the instance 
+# image: (required) Image identifier used to start the 
+# name: Name of the instance 
+# oauth_token: (required) Scaleway OAuth token. 
+# organization: (required) Organization identifier 
+# region: (required) Scaleway compute zone 
+# state: Indicate desired state of the instance. 
+# tags: List of tags to apply to the instance (5 max) 
+# timeout: Timeout for API calls 
+# wait: Wait for the instance to reach its desired state 
+# wait_sleep_time: Time to wait before every attempt to check the 
+# wait_timeout: Time to wait for the server to reach the 
+}- name: ${2:Name for scaleway_compute module.}
+  scaleway_compute:
+${3:   ${4:commercial_type}: ${5:"#"}}
+${6:   ${7:enable_ipv6}: ${8:"#"}}
+${9:   ${10:image}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:oauth_token}: ${17:"#"}}
+${18:   ${19:organization}: ${20:"#"}}
+${21:   ${22:region}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:tags}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:   ${34:wait}: ${35:"#"}}
+${36:   ${37:wait_sleep_time}: ${38:"#"}}
+${39:   ${40:wait_timeout}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>scaleway_compute</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

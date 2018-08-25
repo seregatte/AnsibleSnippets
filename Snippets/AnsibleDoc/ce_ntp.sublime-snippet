@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# is_preferred: Makes given NTP server or peer the preferred NTP server or peer for the device. 
-# key_id: Authentication key identifier to use with given NTP server or peer. 
+${1:# is_preferred: Makes given NTP server or peer the preferred NTP 
+# key_id: Authentication key identifier to use with given 
 # peer: Network address of NTP peer. 
 # server: Network address of NTP server. 
-# source_int: Local source interface from which NTP messages are sent. Must be fully qualified interface name, i.e. 
+# source_int: Local source interface from which NTP messages 
 # state: Manage the state of the resource. 
-# vpn_name: Makes the device communicate with the given NTP server or peer over a specific vpn. 
+# vpn_name: Makes the device communicate with the given NTP 
 }- name: ${2:Name for ce_ntp module.}
   ce_ntp:
 ${3:   ${4:is_preferred}: ${5:"#"}}

@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# component: (required) The name of the component being deployed. Ex: billing 
+${1:# component: (required) The name of the component being 
 # description: Free text description of the deployment. 
-# env: The environment name, typically 'production', 'staging', etc. 
+# env: The environment name, typically 'production', 
 # hosts: Name of affected host name. Can be a list. 
 # owner: The person responsible for the deployment. 
 # state: (required) State of the deployment. 
 # token: (required) API token. 
 # url: Base URL of the API server. 
-# validate_certs: If `no', SSL certificates for the target url will not be validated. This should only be used on 
+# validate_certs: If `no', SSL certificates for the target url 
 # version: (required) The deployment version. 
 }- name: ${2:Name for bigpanda module.}
   bigpanda:

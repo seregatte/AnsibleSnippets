@@ -1,60 +1,60 @@
 <snippet>
 <content><![CDATA[
-${1:# cap_add: Add capabilities for the container. Requires docker-py >= 0.5.0. 
-# cap_drop: Drop capabilities for the container. Requires docker-py >= 0.5.0. 
+${1:# cap_add: Add capabilities for the container. Requires 
+# cap_drop: Drop capabilities for the container. Requires 
 # command: Command used to match and launch containers. 
-# count: Number of matching containers that should be in the desired state. 
-# cpu_set: CPUs in which to allow execution. Requires docker-py >= 0.6.0. 
-# cpu_shares: CPU shares (relative weight). Requires docker-py >= 0.6.0. 
-# detach: Enable detached mode to leave the container running in background. If disabled, fail unless the process 
-# devices: List of host devices to expose to container 
+# count: Number of matching containers that should be in 
+# cpu_set: CPUs in which to allow execution. Requires 
+# cpu_shares: CPU shares (relative weight). Requires docker-py 
+# detach: Enable detached mode to leave the container 
+# devices: List of host devices to expose to container. 
 # dns: List of custom DNS servers for the container. 
-# docker_api_version: Remote API version to use. This defaults to the current default as specified by docker-py. 
-# docker_url: URL of the host running the docker daemon. This will default to the env var DOCKER_HOST if unspecified. 
+# docker_api_version: Remote API version to use. This defaults to the 
+# docker_url: URL of the host running the docker daemon. This 
 # docker_user: Username or UID to use within the container 
 # domainname: Container domain name. 
 # email: Remote API email. 
-# entrypoint: Corresponds to ``--entrypoint`` option of ``docker run`` command and ``ENTRYPOINT`` directive of 
-# env: Pass a dict of environment variables to the container. 
-# env_file: Pass in a path to a file with environment variable (FOO=BAR). If a key value is present in both 
-# expose: List of additional container ports to expose for port mappings or links. If the port is already exposed 
-# extra_hosts: Dict of custom host-to-IP mappings to be defined in the container 
+# entrypoint: Corresponds to `--entrypoint' option of `docker 
+# env: Pass a dict of environment variables to the 
+# env_file: Pass in a path to a file with environment 
+# expose: List of additional container ports to expose for 
+# extra_hosts: Dict of custom host-to-IP mappings to be defined 
 # hostname: Container hostname. 
-# image: (required) Container image used to match and launch containers. 
-# insecure_registry: Use insecure private registry by HTTP instead of HTTPS. Needed for docker-py >= 0.5.0. 
-# labels: Set container labels. Requires docker >= 1.6 and docker-py >= 1.2.0. 
-# links: List of other containers to link within this container with an optional alias. Use docker CLI-style 
-# log_driver: You can specify a different logging driver for the container than for the daemon. "json-file" Default 
-# log_opt: Additional options to pass to the logging driver selected above. See Docker `log-driver 
-# lxc_conf: LXC configuration parameters, such as `lxc.aa_profile:unconfined'. 
-# memory_limit: RAM allocated to the container as a number of bytes or as a human-readable string like "512MB". Leave as 
-# name: Name used to match and uniquely name launched containers. Explicit names are used to uniquely identify a 
-# net: Network mode for the launched container: bridge, none, container:<name|id> or host. Requires docker >= 
+# image: (required) Container image used to match and 
+# insecure_registry: Use insecure private registry by HTTP instead of 
+# labels: Set container labels. Requires docker >= 1.6 and 
+# links: List of other containers to link within this 
+# log_driver: You can specify a different logging driver for 
+# log_opt: Additional options to pass to the logging driver 
+# lxc_conf: LXC configuration parameters, such as 
+# memory_limit: RAM allocated to the container as a number of 
+# name: Name used to match and uniquely name launched 
+# net: Network mode for the launched container: bridge, 
 # password: Remote API password. 
-# pid: Set the PID namespace mode for the container (currently only supports 'host'). Requires docker-py >= 
-# ports: List containing private to public port mapping specification. Use docker 'CLI-style syntax: `8000', 
-# privileged: Whether the container should run in privileged mode or not. 
-# publish_all_ports: Publish all exposed ports to the host interfaces. 
-# pull: Control when container images are updated from the `docker_url' registry. If "missing," images will be 
-# read_only: Mount the container's root filesystem as read only 
+# pid: Set the PID namespace mode for the container 
+# ports: List containing private to public port mapping 
+# privileged: Whether the container should run in privileged 
+# publish_all_ports: Publish all exposed ports to the host 
+# pull: Control when container images are updated from 
+# read_only: Mount the container's root filesystem as read 
 # registry: Remote registry URL to pull images from. 
-# restart_policy: Container restart policy. The 'unless-stopped' choice is only available starting in Ansible 2.1 and for 
-# restart_policy_retry: Maximum number of times to restart a container. Leave as "0" for unlimited retries. 
-# signal: With the state "killed", you can alter the signal sent to the container. 
-# state: Assert the container's desired state. "present" only asserts that the matching containers exist. 
+# restart_policy: Container restart policy. The 'unless-stopped' 
+# restart_policy_retry: Maximum number of times to restart a container. 
+# signal: With the state "killed", you can alter the 
+# state: Assert the container's desired state. "present" 
 # stdin_open: Keep stdin open after a container is launched. 
-# stop_timeout: How many seconds to wait for the container to stop before killing it. 
+# stop_timeout: How many seconds to wait for the container to 
 # timeout: Docker daemon response timeout in seconds. 
-# tls_ca_cert: Path to a PEM-encoded certificate authority to secure the Docker connection. This has no effect if 
-# tls_client_cert: Path to the PEM-encoded certificate used to authenticate docker client. If specified tls_client_key must 
-# tls_client_key: Path to the PEM-encoded key used to authenticate docker client. If specified tls_client_cert must be 
-# tls_hostname: A hostname to check matches what's supplied in the docker server's certificate.  If unspecified, the 
+# tls_ca_cert: Path to a PEM-encoded certificate authority to 
+# tls_client_cert: Path to the PEM-encoded certificate used to 
+# tls_client_key: Path to the PEM-encoded key used to authenticate 
+# tls_hostname: A hostname to check matches what's supplied in 
 # tty: Allocate a pseudo-tty within the container. 
-# ulimits: ulimits, list ulimits with name, soft and optionally hard limit separated by colons. e.g. 
-# use_tls: Whether to use tls to connect to the docker server.  "no" means not to use tls (and ignore any other tls 
+# ulimits: ulimits, list ulimits with name, soft and 
+# use_tls: Whether to use tls to connect to the docker 
 # username: Remote API username. 
-# volumes: List of volumes to mount within the container Use docker CLI-style syntax: `/host:/container[:mode]' You 
-# volumes_from: List of names of containers to mount volumes from. 
+# volumes: List of volumes to mount within the container. 
+# volumes_from: List of names of containers to mount volumes 
 }- name: ${2:Name for docker module.}
   docker:
 ${3:   ${4:cap_add}: ${5:"#"}}

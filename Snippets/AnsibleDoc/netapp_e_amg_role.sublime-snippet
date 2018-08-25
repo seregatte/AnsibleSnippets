@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# force: Whether to force the role reversal regardless of the online-state of the primary 
-# no: Whether to avoid synchronization prior to role reversal 
-# role: (required) Whether the array should be the primary or secondary array for the AMG 
-# ssid: (required) The ID of the primary storage array for the async mirror action 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# force: Whether to force the role reversal regardless of 
+# no: Whether to avoid synchronization prior to role 
+# role: (required) Whether the array should be the 
+# ssid: (required) The ID of the primary storage array 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_amg_role module.}
   netapp_e_amg_role:

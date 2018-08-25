@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
 ${1:# job_id: (required) ID of the job to monitor. 
-# max_interval: Maximum interval in seconds, to request an update from Tower. 
-# min_interval: Minimum interval in seconds, to request an update from Tower. 
-# timeout: Maximum time in seconds to wait for a job to finish. 
+# max_interval: Maximum interval in seconds, to request an 
+# min_interval: Minimum interval in seconds, to request an 
+# timeout: Maximum time in seconds to wait for a job to 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 }- name: ${2:Name for tower_job_wait module.}
   tower_job_wait:
 ${3:   ${4:job_id}: ${5:"#"}}

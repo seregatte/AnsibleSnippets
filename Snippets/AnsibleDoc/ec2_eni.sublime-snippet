@@ -1,27 +1,28 @@
 <snippet>
 <content><![CDATA[
-${1:# attached: Specifies if network interface should be attached or detached from instance. If ommited, attachment 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# delete_on_termination: Delete the interface when the instance it is attached to is terminated. You can only specify this flag 
+${1:# attached: Specifies if network interface should be 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# delete_on_termination: Delete the interface when the instance it is 
 # description: Optional description of the ENI. 
-# device_index: The index of the device for the network interface attachment on the instance. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# eni_id: The ID of the ENI (to modify); if null and state is present, a new eni will be created. 
-# force_detach: Force detachment of the interface. This applies either when explicitly detaching the interface by 
-# instance_id: Instance ID that you wish to attach ENI to. Since version 2.2, use the 'attached' parameter to attach or 
+# device_index: The index of the device for the network 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# eni_id: The ID of the ENI (to modify); if null and state 
+# force_detach: Force detachment of the interface. This applies 
+# instance_id: Instance ID that you wish to attach ENI to. 
 # private_ip_address: Private IP address. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# secondary_private_ip_address_count: The number of secondary IP addresses to assign to the network interface. This option is mutually 
-# secondary_private_ip_addresses: A list of IP addresses to assign as secondary IP addresses to the network interface. This option is 
-# security_groups: List of security groups associated with the interface. Only used when state=present. Since version 2.2, 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# source_dest_check: By default, interfaces perform source/destination checks. NAT instances however need this check to be 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_secondary_private_ip_addresses: To be used with `secondary_private_ip_addresses' 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# secondary_private_ip_address_count: The number of secondary IP addresses to assign 
+# secondary_private_ip_addresses: A list of IP addresses to assign as secondary IP 
+# security_groups: List of security groups associated with the 
+# security_token: AWS STS security token. If not set then the 
+# source_dest_check: By default, interfaces perform 
 # state: Create or delete ENI 
 # subnet_id: ID of subnet in which to create the ENI. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ec2_eni module.}
   ec2_eni:
 ${3:   ${4:attached}: ${5:"#"}}
@@ -36,22 +37,23 @@ ${27:   ${28:force_detach}: ${29:"#"}}
 ${30:   ${31:instance_id}: ${32:"#"}}
 ${33:   ${34:private_ip_address}: ${35:"#"}}
 ${36:   ${37:profile}: ${38:"#"}}
-${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:http}: ${44:"#"}}
-${45:   ${46:secondary_private_ip_address_count}: ${47:"#"}}
-${48:   ${49:secondary_private_ip_addresses}: ${50:"#"}}
-${51:   ${52:security_groups}: ${53:"#"}}
-${54:   ${55:security_token}: ${56:"#"}}
-${57:   ${58:source_dest_check}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:subnet_id}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${39:   ${40:purge_secondary_private_ip_addresses}: ${41:"#"}}
+${42:   ${43:region}: ${44:"#"}}
+${45:   ${46:}: ${47:"#"}}
+${48:   ${49:secondary_private_ip_address_count}: ${50:"#"}}
+${51:   ${52:secondary_private_ip_addresses}: ${53:"#"}}
+${54:   ${55:security_groups}: ${56:"#"}}
+${57:   ${58:security_token}: ${59:"#"}}
+${60:   ${61:source_dest_check}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:subnet_id}: ${68:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>ec2_eni</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

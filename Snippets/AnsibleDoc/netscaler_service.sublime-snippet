@@ -1,57 +1,57 @@
 <snippet>
 <content><![CDATA[
-${1:# accessdown: Use Layer 2 mode to bridge the packets sent to this service if it is marked as DOWN. If the service is 
+${1:# accessdown: Use Layer 2 mode to bridge the packets sent to 
 # appflowlog: Enable logging of AppFlow information. 
-# cacheable: Use the transparent cache redirection virtual server to forward requests to the cache server. Note: Do 
+# cacheable: Use the transparent cache redirection virtual 
 # cachetype: Cache type supported by the cache server. 
-# cip: Before forwarding a request to the service, insert an HTTP header with the client's IPv4 or IPv6 address 
-# cipheader: Name for the HTTP header whose value must be set to the IP address of the client. Used with the Client 
+# cip: Before forwarding a request to the service, 
+# cipheader: Name for the HTTP header whose value must be set 
 # cka: Enable client keep-alive for the service. 
-# cleartextport: Port to which clear text data must be sent after the appliance decrypts incoming SSL traffic. Applicable 
-# clttimeout: Time, in seconds, after which to terminate an idle client connection. Minimum value = 0 Maximum value = 
+# cleartextport: Port to which clear text data must be sent after 
+# clttimeout: Time, in seconds, after which to terminate an 
 # cmp: Enable compression for the service. 
 # comment: Any information about the service. 
-# customserverid: Unique identifier for the service. Used when the persistency type for the virtual server is set to 
-# disabled: When set to `yes' the service state will be set to DISABLED. When set to `no' the service state will be 
-# dnsprofilename: Name of the DNS profile to be associated with the service. DNS profile properties will applied to the 
-# downstateflush: Flush all active transactions associated with a service whose state transitions from UP to DOWN. Do not 
-# graceful: Shut down gracefully, not accepting any new connections, and disabling the service when all of its 
-# hashid: A numerical identifier that can be used by hash based load balancing methods. Must be unique for each 
+# customserverid: Unique identifier for the service. Used when the 
+# disabled: When set to `yes' the service state will be set 
+# dnsprofilename: Name of the DNS profile to be associated with 
+# downstateflush: Flush all active transactions associated with a 
+# graceful: Shut down gracefully, not accepting any new 
+# hashid: A numerical identifier that can be used by hash 
 # healthmonitor: Monitor the health of this service 
-# httpprofilename: Name of the HTTP profile that contains HTTP configuration settings for the service. Minimum length = 1 
+# httpprofilename: Name of the HTTP profile that contains HTTP 
 # ip: IP to assign to the service. Minimum length = 1 
 # ipaddress: The new IP address of the service. 
-# maxbandwidth: Maximum bandwidth, in Kbps, allocated to the service. Minimum value = 0 Maximum value = 4294967287 
-# maxclient: Maximum number of simultaneous open connections to the service. Minimum value = 0 Maximum value = 
-# maxreq: Maximum number of requests that can be sent on a persistent connection to the service. Note: Connection 
-# monitor_bindings: A list of load balancing monitors to bind to this service. Each monitor entry is a dictionary which may 
-# monthreshold: Minimum sum of weights of the monitors that are bound to this service. Used to determine whether to mark 
-# name: Name for the service. Must begin with an ASCII alphabetic or underscore `_' character, and must contain 
-# only: ', period `.', space ` ', 
-# netprofile: Network profile to use for the service. Minimum length = 1 Maximum length = 127 
-# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
-# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
-# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
-# nitro_user: (required) The username with which to authenticate to the netscaler node. 
-# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
+# maxbandwidth: Maximum bandwidth, in Kbps, allocated to the 
+# maxclient: Maximum number of simultaneous open connections 
+# maxreq: Maximum number of requests that can be sent on a 
+# monitor_bindings: A list of load balancing monitors to bind to 
+# monthreshold: Minimum sum of weights of the monitors that are 
+# name: Name for the service. Must begin with an ASCII 
+# hash: ', period 
+# netprofile: Network profile to use for the service. Minimum 
+# nitro_pass: (required) The password with which to 
+# nitro_protocol: Which protocol to use when accessing the nitro 
+# nitro_timeout: Time in seconds until a timeout error is thrown 
+# nitro_user: (required) The username with which to 
+# nsip: (required) The ip address of the netscaler 
 # pathmonitor: Path monitoring for clustering. 
 # pathmonitorindv: Individual Path monitoring decisions. 
-# port: Port number of the service. Range 1 - 65535 * in CLI is represented as 65535 in NITRO API 
-# processlocal: By turning on this option packets destined to a service in a cluster will not under go any steering. 
+# port: Port number of the service. Range 1 - 65535 * in 
+# processlocal: By turning on this option packets destined to a 
 # rtspsessionidremap: Enable RTSP session ID mapping for the service. 
-# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
-# serverid: The identifier for the service. This is used when the persistency type is set to Custom Server ID. 
-# servername: Name of the server that hosts the service. Minimum length = 1 
-# servicetype: Protocol in which data is exchanged with the service. 
+# save_config: If true the module will save the configuration 
+# serverid: The identifier for the service. This is used 
+# servername: Name of the server that hosts the service. 
+# servicetype: Protocol in which data is exchanged with the 
 # sp: Enable surge protection for the service. 
-# state: The state of the resource being configured by the module on the netscaler node. When present the 
-# svrtimeout: Time, in seconds, after which to terminate an idle server connection. Minimum value = 0 Maximum value = 
+# state: The state of the resource being configured by 
+# svrtimeout: Time, in seconds, after which to terminate an 
 # tcpb: Enable TCP buffering for the service. 
-# tcpprofilename: Name of the TCP profile that contains TCP configuration settings for the service. Minimum length = 1 
-# td: Integer value that uniquely identifies the traffic domain in which you want to configure the entity. If 
-# useproxyport: Use the proxy port as the source port when initiating connections with the server. With the NO setting, 
-# usip: Use the client's IP address as the source IP address when initiating a connection to the server. When 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# tcpprofilename: Name of the TCP profile that contains TCP 
+# td: Integer value that uniquely identifies the 
+# useproxyport: Use the proxy port as the source port when 
+# usip: Use the client's IP address as the source IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_service module.}
   netscaler_service:
 ${3:   ${4:accessdown}: ${5:"#"}}
@@ -81,7 +81,7 @@ ${72:   ${73:maxreq}: ${74:"#"}}
 ${75:   ${76:monitor_bindings}: ${77:"#"}}
 ${78:   ${79:monthreshold}: ${80:"#"}}
 ${81:   ${82:name}: ${83:"#"}}
-${84:   ${85:only}: ${86:"#"}}
+${84:   ${85:hash}: ${86:"#"}}
 ${87:   ${88:netprofile}: ${89:"#"}}
 ${90:   ${91:nitro_pass}: ${92:"#"}}
 ${93:   ${94:nitro_protocol}: ${95:"#"}}

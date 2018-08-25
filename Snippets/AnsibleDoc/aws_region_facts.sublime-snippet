@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# filters: A dict of filters to apply. Each dict item 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for aws_region_facts module.}
+  aws_region_facts:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:ec2_url}: ${11:"#"}}
+${12:   ${13:filters}: ${14:"#"}}
+${15:   ${16:profile}: ${17:"#"}}
+${18:   ${19:region}: ${20:"#"}}
+${21:   ${22:}: ${23:"#"}}
+${24:   ${25:security_token}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>aws_region_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

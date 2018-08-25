@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# clouds: List of clouds to limit the return list to. No value means return information on all configured clouds 
+${1:# clouds: List of clouds to limit the return list to. No 
 }- name: ${2:Name for os_client_config module.}
   os_client_config:
 ${3:   ${4:clouds}: ${5:"#"}}

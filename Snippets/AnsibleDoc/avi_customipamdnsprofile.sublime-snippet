@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# controller: IP address or hostname of the controller. The 
+# name: (required) Name of the custom ipam dns profile. 
+# password: Password of Avi user in Avi controller. The 
+# script_params: Parameters that are always passed to the 
+# script_uri: (required) Script uri of form controller 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The 
+# uuid: Field introduced in 17.1.1. 
+}- name: ${2:Name for avi_customipamdnsprofile module.}
+  avi_customipamdnsprofile:
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_api_patch_op}: ${11:"#"}}
+${12:   ${13:avi_api_update_method}: ${14:"#"}}
+${15:   ${16:avi_credentials}: ${17:"#"}}
+${18:   ${19:controller}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:script_params}: ${29:"#"}}
+${30:   ${31:script_uri}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:tenant}: ${38:"#"}}
+${39:   ${40:tenant_ref}: ${41:"#"}}
+${42:   ${43:tenant_uuid}: ${44:"#"}}
+${45:   ${46:url}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:uuid}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>avi_customipamdnsprofile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# app_parameters: Parameters to be passed to the application when it starts. Use either this or 
-# app_parameters_free_form: Single string of parameters to be passed to the service. Use either this or `app_parameters', not both 
-# application: The application binary to run as a service Specify this whenever the service may need to be installed 
-# dependencies: Service dependencies that has to be started to trigger startup, separated by comma. 
-# name: (required) Name of the service to operate on 
-# password: Password to be used for service startup 
-# start_mode: If `auto' is selected, the service will start at bootup. `manual' means that the service will start only 
-# state: State of the service on the system Note that NSSM actions like "pause", "continue", "rotate" do not fit 
-# stderr_file: Path to receive error output 
-# stdout_file: Path to receive output 
-# user: User to be used for service startup 
+${1:# app_parameters: Parameters to be passed to the application when 
+# app_parameters_free_form: Single string of parameters to be passed to the 
+# application: The application binary to run as a service 
+# dependencies: Service dependencies that has to be started to 
+# name: (required) Name of the service to operate on. 
+# password: Password to be used for service startup. 
+# start_mode: If `auto' is selected, the service will start at 
+# state: State of the service on the system. Note that 
+# stderr_file: Path to receive error output. 
+# stdout_file: Path to receive output. 
+# user: User to be used for service startup. 
 }- name: ${2:Name for win_nssm module.}
   win_nssm:
 ${3:   ${4:app_parameters}: ${5:"#"}}

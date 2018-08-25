@@ -1,21 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# gid: Optional `GID' to set for the group. 
+# local: Forces the use of "local" command alternatives 
 # name: (required) Name of the group to manage. 
-# state: Whether the group should be present or not on the remote host. 
-# system: If `yes', indicates that the group created is a system group. 
+# state: Whether the group should be present or not on 
+# system: If `yes', indicates that the group created is a 
 }- name: ${2:Name for group module.}
   group:
 ${3:   ${4:gid}: ${5:"#"}}
-${6:   ${7:name}: ${8:"#"}}
-${9:   ${10:state}: ${11:"#"}}
-${12:   ${13:system}: ${14:"#"}}
-${15:${16:   become: ${17:true}} 
-${18:   become_method: ${19:su}} 
-${20:   become_user: ${21:nobody}} 
-${22:   become_flags: ${23:"-s /bin/sh"}}} 
-${24:   when: ${25:variable is defined}} 
-${26:   with_items: ${27:array}} 
+${6:   ${7:local}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:system}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

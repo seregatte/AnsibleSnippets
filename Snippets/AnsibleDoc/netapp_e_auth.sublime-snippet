@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: The password used to authenticate against the API This can optionally be set via an environment 
-# api_url: The full API url. Example: http://ENDPOINT:8080/devmgr/v2 This can optionally be set via an environment 
-# api_username: The username used to authenticate against the API This can optionally be set via an environment 
-# current_password: The current admin password. This is not required if the password hasn't been set before. 
-# name: The name of the storage array. Note that if more than one storage array with this name is detected, the 
-# new_password: (required) The password you would like to set. Cannot be more than 30 characters. 
-# set_admin: Boolean value on whether to update the admin password. If set to false then the RO account is updated. 
-# ssid: the identifier of the storage array in the Web Services Proxy. 
+${1:# api_password: The password used to authenticate against the 
+# api_url: The full API url. Example: 
+# api_username: The username used to authenticate against the 
+# current_password: The current admin password. This is not required 
+# name: The name of the storage array. Note that if more 
+# new_password: (required) The password you would like to set. 
+# set_admin: Boolean value on whether to update the admin 
+# ssid: the identifier of the storage array in the Web 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_auth module.}
   netapp_e_auth:

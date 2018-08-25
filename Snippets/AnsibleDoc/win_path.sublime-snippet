@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# elements: (required) A single path element, or a list of path elements (ie, directories) to add or remove. When 
-# name: Target path environment variable name 
-# scope: The level at which the environment variable specified by `name' should be managed (either for the 
-# state: Whether the path elements specified in `elements' should be present or absent. 
+${1:# elements: (required) A single path element, or a list of 
+# name: Target path environment variable name. 
+# scope: The level at which the environment variable 
+# state: Whether the path elements specified in 
 }- name: ${2:Name for win_path module.}
   win_path:
 ${3:   ${4:elements}: ${5:"#"}}

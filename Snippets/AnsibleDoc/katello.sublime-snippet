@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# entity: (required) The Foreman resource that the action will be performed on (e.g. organization, host) 
-# params: (required) Parameters associated to the entity resource to set or edit in dictionary format (e.g. name, 
-# password: (required) Password for user accessing Foreman server 
-# server_url: (required) URL of Foreman server 
-# username: (required) Username on Foreman server 
+${1:# entity: (required) The Foreman resource that the action 
+# params: (required) Parameters associated to the entity 
+# password: (required) Password for user accessing Foreman 
+# server_url: (required) URL of Foreman server. 
+# username: (required) Username on Foreman server. 
 }- name: ${2:Name for katello module.}
   katello:
 ${3:   ${4:entity}: ${5:"#"}}

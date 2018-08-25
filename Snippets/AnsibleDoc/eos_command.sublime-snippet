@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# commands: (required) The commands to send to the remote EOS device over the configured provider.  The resulting 
-# interval: Configures the interval in seconds to wait between retries of the command.  If the command does not pass 
-# match: The `match' argument is used in conjunction with the `wait_for' argument to specify the match policy. 
-# provider: A dict object containing connection details. 
-# retries: Specifies the number of retries a command should be tried before it is considered failed.  The command 
-# wait_for: Specifies what to evaluate from the output of the command and what conditionals to apply.  This argument 
+${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# commands: (required) The commands to send to the remote 
+# interval: Configures the interval in seconds to wait 
+# match: The `match' argument is used in conjunction with 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# retries: Specifies the number of retries a command should 
+# wait_for: Specifies what to evaluate from the output of 
 }- name: ${2:Name for eos_command module.}
   eos_command:
 ${3:   ${4:auth_pass}: ${5:"#"}}

@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# allowed: The list of ALLOW rules specified by this 
+# auth_kind: (required) The type of credential used. 
+# description: An optional description of this resource. 
+# name: Name of the resource. Provided by the client 
+# network: URL of the network resource for this firewall 
+# project: The Google Cloud Platform project to use. 
+# scopes: (required) Array of scopes to be used. 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# source_ranges: If source ranges are specified, the firewall 
+# source_tags: If source tags are specified, the firewall will 
+# state: (required) Whether the given object should exist 
+# target_tags: A list of instance tags indicating sets of 
+}- name: ${2:Name for gcp_compute_firewall module.}
+  gcp_compute_firewall:
+${3:   ${4:allowed}: ${5:"#"}}
+${6:   ${7:auth_kind}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:network}: ${17:"#"}}
+${18:   ${19:project}: ${20:"#"}}
+${21:   ${22:scopes}: ${23:"#"}}
+${24:   ${25:service_account_email}: ${26:"#"}}
+${27:   ${28:service_account_file}: ${29:"#"}}
+${30:   ${31:source_ranges}: ${32:"#"}}
+${33:   ${34:source_tags}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:target_tags}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>gcp_compute_firewall</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# address_type: (required) Specify address class. 
+# dhcp: Specify dhcp type. 
+# gateway_ip_address: Specify the gateway ip. 
+# hostname: (required) The hostname or IP address of the 
+# https: Enable and disabled https 
+# ip_address: Specify the service processor ip address. 
+# is_enabled: (required) Specify whether to enable or disable 
+# netmask: Specify the service processor netmask. 
+# node: (required) The node where the the service 
+# password: (required) Password for the specified user. 
+# prefix_length: Specify the service processor prefix_length. 
+# state: Whether the specified service processor network 
+# username: (required) This can be a Cluster-scoped or SVM- 
+}- name: ${2:Name for na_ontap_service_processor_network module.}
+  na_ontap_service_processor_network:
+${3:   ${4:address_type}: ${5:"#"}}
+${6:   ${7:dhcp}: ${8:"#"}}
+${9:   ${10:gateway_ip_address}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:https}: ${17:"#"}}
+${18:   ${19:ip_address}: ${20:"#"}}
+${21:   ${22:is_enabled}: ${23:"#"}}
+${24:   ${25:netmask}: ${26:"#"}}
+${27:   ${28:node}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:prefix_length}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>na_ontap_service_processor_network</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

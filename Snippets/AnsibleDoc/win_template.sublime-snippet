@@ -2,13 +2,13 @@
 <content><![CDATA[
 ${1:# block_end_string: The string marking the end of a block. 
 # block_start_string: The string marking the beginning of a block. 
-# dest: (required) Location to render the template to on the remote machine. 
-# force: the default is `yes', which will replace the remote file when contents are different than the source. 
-# newline_sequence: Specify the newline sequence to use for templating files. 
-# src: (required) Path of a Jinja2 formatted template on the local server. This can be a relative or absolute 
-# trim_blocks: If this is set to True the first newline after a block is removed (block, not variable tag!). 
+# dest: (required) Location to render the template to on 
+# force: If `yes', will replace the remote file when 
+# newline_sequence: Specify the newline sequence to use for 
+# src: (required) Path of a Jinja2 formatted template 
+# trim_blocks: If this is set to `yes' the first newline after 
 # variable_end_string: The string marking the end of a print statement. 
-# variable_start_string: The string marking the beginning of a print statement. 
+# variable_start_string: The string marking the beginning of a print 
 }- name: ${2:Name for win_template module.}
   win_template:
 ${3:   ${4:block_end_string}: ${5:"#"}}

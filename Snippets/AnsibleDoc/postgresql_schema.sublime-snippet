@@ -3,7 +3,7 @@
 ${1:# database: Name of the database to connect to. 
 # login_host: Host running the database. 
 # login_password: The password used to authenticate with. 
-# login_unix_socket: Path to a Unix domain socket for local connections. 
+# login_unix_socket: Path to a Unix domain socket for local 
 # login_user: The username used to authenticate with. 
 # name: (required) Name of the schema to add or remove. 
 # owner: Name of the role to set as owner of the schema. 

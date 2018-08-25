@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# after: The ordered set of commands to append to the end of the command stack if a change needs to be made. 
-# backup: This argument will cause the module to create a full backup of the current `current-configuration' from 
-# before: The ordered set of commands to push on to the command stack if a change needs to be made.  This allows 
-# config: The module, by default, will connect to the remote device and retrieve the current current-configuration 
-# defaults: The `defaults' argument will influence how the current-configuration is collected from the device.  When 
-# lines: The ordered set of commands that should be configured in the section.  The commands must be the exact 
-# match: Instructs the module on the way to perform the matching of the set of commands against the current 
-# parents: The ordered set of parents that uniquely identify the section the commands should be checked against. 
-# replace: Instructs the module on the way to perform the configuration on the device.  If the replace argument is 
-# save: The `save' argument instructs the module to save the current-configuration to saved-configuration.  This 
-# src: The `src' argument provides a path to the configuration file to load into the remote system.  The path 
+${1:# after: The ordered set of commands to append to the end 
+# backup: This argument will cause the module to create a 
+# before: The ordered set of commands to push on to the 
+# config: The module, by default, will connect to the 
+# defaults: The `defaults' argument will influence how the 
+# lines: The ordered set of commands that should be 
+# match: Instructs the module on the way to perform the 
+# parents: The ordered set of parents that uniquely 
+# replace: Instructs the module on the way to perform the 
+# save: The `save' argument instructs the module to save 
+# src: The `src' argument provides a path to the 
 }- name: ${2:Name for ce_config module.}
   ce_config:
 ${3:   ${4:after}: ${5:"#"}}

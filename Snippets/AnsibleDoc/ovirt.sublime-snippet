@@ -1,32 +1,32 @@
 <snippet>
 <content><![CDATA[
-${1:# disk_alloc: define if disk is thin or preallocated 
-# disk_int: interface type of the disk 
-# image: template to use for the instance 
-# instance_cores: define the instance's number of cores 
-# instance_cpus: the instance's number of cpu's 
-# instance_disksize: size of the instance's disk in GB 
-# instance_dns: define the instance's Primary DNS server 
-# instance_domain: define the instance's Domain 
-# instance_hostname: define the instance's Hostname 
-# instance_ip: define the instance's IP 
-# instance_key: define the instance's Authorized key 
-# instance_mem: the instance's amount of memory in MB 
-# instance_name: (required) the name of the instance to use 
-# instance_netmask: define the instance's Netmask 
-# instance_network: the logical network the machine should belong to 
-# instance_nic: name of the network interface in oVirt/RHEV 
-# instance_os: type of Operating System 
-# instance_rootpw: define the instance's Root password 
-# instance_type: define if the instance is a server or desktop 
-# password: (required) password of the user to authenticate with 
-# region: the oVirt/RHEV datacenter where you want to deploy to 
-# resource_type: whether you want to deploy an image or create an instance from scratch. 
-# sdomain: the Storage Domain where you want to create the instance's disk on. 
-# state: create, terminate or remove instances 
-# url: (required) the url of the oVirt instance 
-# user: (required) the user to authenticate with 
-# zone: deploy the image to this oVirt cluster 
+${1:# disk_alloc: Define whether disk is thin or preallocated. 
+# disk_int: Interface type of the disk. 
+# image: The template to use for the instance. 
+# instance_cores: Define the instance's number of cores. 
+# instance_cpus: The instance's number of CPUs. 
+# instance_disksize: Size of the instance's disk in GB. 
+# instance_dns: Define the instance's Primary DNS server. 
+# instance_domain: Define the instance's Domain. 
+# instance_hostname: Define the instance's Hostname. 
+# instance_ip: Define the instance's IP. 
+# instance_key: Define the instance's Authorized key. 
+# instance_mem: The instance's amount of memory in MB. 
+# instance_name: (required) The name of the instance to use. 
+# instance_netmask: Define the instance's Netmask. 
+# instance_network: The logical network the machine should belong 
+# instance_nic: The name of the network interface in oVirt/RHEV. 
+# instance_os: Type of Operating System. 
+# instance_rootpw: Define the instance's Root password. 
+# instance_type: Define whether the instance is a server, desktop 
+# password: (required) Password of the user to authenticate 
+# region: The oVirt/RHEV datacenter where you want to 
+# resource_type: Whether you want to deploy an image or create an 
+# sdomain: The Storage Domain where you want to create the 
+# state: Create, terminate or remove instances. 
+# url: (required) The url of the oVirt instance. 
+# user: (required) The user to authenticate with. 
+# zone: Deploy the image to this oVirt cluster. 
 }- name: ${2:Name for ovirt module.}
   ovirt:
 ${3:   ${4:disk_alloc}: ${5:"#"}}

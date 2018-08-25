@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# access_token: The oauth key provided by GitLab. One of 
+# api_url: (required) GitLab API url, e.g. 
+# enable_ssl_verification: Whether GitLab will do SSL verification when 
+# hook_url: (required) The url that you want GitLab to post 
+# issues_events: Trigger hook on issues events 
+# job_events: Trigger hook on job events 
+# merge_requests_events: Trigger hook on merge requests events 
+# note_events: Trigger hook on note events 
+# pipeline_events: Trigger hook on pipeline events 
+# private_token: Personal access token to use. One of 
+# project: (required) Numeric project id or name of project 
+# push_events: Trigger hook on push events 
+# state: (required) When `present' the hook will be 
+# tag_push_events: Trigger hook on tag push events 
+# token: Secret token to validate hook messages at the 
+# wiki_page_events: Trigger hook on wiki events 
+}- name: ${2:Name for gitlab_hooks module.}
+  gitlab_hooks:
+${3:   ${4:access_token}: ${5:"#"}}
+${6:   ${7:api_url}: ${8:"#"}}
+${9:   ${10:enable_ssl_verification}: ${11:"#"}}
+${12:   ${13:hook_url}: ${14:"#"}}
+${15:   ${16:issues_events}: ${17:"#"}}
+${18:   ${19:job_events}: ${20:"#"}}
+${21:   ${22:merge_requests_events}: ${23:"#"}}
+${24:   ${25:note_events}: ${26:"#"}}
+${27:   ${28:pipeline_events}: ${29:"#"}}
+${30:   ${31:private_token}: ${32:"#"}}
+${33:   ${34:project}: ${35:"#"}}
+${36:   ${37:push_events}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:tag_push_events}: ${44:"#"}}
+${45:   ${46:token}: ${47:"#"}}
+${48:   ${49:wiki_page_events}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>gitlab_hooks</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

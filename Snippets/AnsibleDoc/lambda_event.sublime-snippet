@@ -1,17 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# alias: (required) Name of the function alias. Mutually exclusive with `version'. 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# event_source: Source of the event that triggers the lambda function. 
-# lambda_function_arn: (required) The name or ARN of the lambda function. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# source_params: (required) Sub-parameters required for event source. `== stream event source ==' `source_arn' The Amazon 
+${1:# alias: (required) Name of the function alias. Mutually 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# event_source: Source of the event that triggers the lambda 
+# lambda_function_arn: (required) The name or ARN of the lambda 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# source_params: (required) Sub-parameters required for event 
 # state: (required) Describes the desired state. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# version: Version of the Lambda function. Mutually exclusive with `alias'. 
+# validate_certs: When set to "no", SSL certificates will not be 
+# version: Version of the Lambda function. Mutually 
 }- name: ${2:Name for lambda_event module.}
   lambda_event:
 ${3:   ${4:alias}: ${5:"#"}}
@@ -21,17 +23,19 @@ ${12:   ${13:ec2_url}: ${14:"#"}}
 ${15:   ${16:event_source}: ${17:"#"}}
 ${18:   ${19:lambda_function_arn}: ${20:"#"}}
 ${21:   ${22:profile}: ${23:"#"}}
-${24:   ${25:security_token}: ${26:"#"}}
-${27:   ${28:source_params}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:validate_certs}: ${35:"#"}}
-${36:   ${37:version}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:source_params}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:version}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>lambda_event</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

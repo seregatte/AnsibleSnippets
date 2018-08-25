@@ -1,41 +1,49 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_downgrade: Specify if the named package and version is allowed to downgrade a maybe already installed higher 
-# conf_file: The remote yum configuration file to use for the transaction. 
-# disable_gpg_check: Whether to disable the GPG checking of signatures of packages being installed. Has an effect only if 
-# disablerepo: `Repoid' of repositories to disable for the install/update operation. These repos will not persist 
-# enablerepo: `Repoid' of repositories to enable for the install/update operation. These repos will not persist beyond 
-# exclude: Package name(s) to exclude when state=present, or latest 
-# installroot: Specifies an alternative installroot, relative to which all packages will be installed. 
-# list: Package name to run the equivalent of yum list <package> against. 
-# name: (required) Package name, or package specifier with version, like `name-1.0'. If a previous version is 
-# security: If set to `yes', and `state=latest' then only installs updates that have been marked security related. 
-# skip_broken: Resolve depsolve problems by removing packages that are causing problems from the trans‐ action. 
-# state: Whether to install (`present' or `installed', `latest'), or remove (`absent' or `removed') a package. 
-# update_cache: Force yum to check if cache is out of date and redownload if needed. Has an effect only if state is 
-# validate_certs: This only applies if using a https url as the source of the rpm. e.g. for localinstall. If set to `no', 
+${1:# allow_downgrade: Specify if the named package and version is 
+# bugfix: If set to `yes', and `state=latest' then only 
+# conf_file: The remote yum configuration file to use for the 
+# disable_gpg_check: Whether to disable the GPG checking of 
+# disable_plugin: `Plugin' name to disable for the install/update 
+# disablerepo: `Repoid' of repositories to disable for the 
+# enable_plugin: `Plugin' name to enable for the install/update 
+# enablerepo: `Repoid' of repositories to enable for the 
+# exclude: Package name(s) to exclude when state=present, 
+# installroot: Specifies an alternative installroot, relative 
+# list: Package name to run the equivalent of yum list 
+# name: A package name or package specifier with 
+# security: If set to `yes', and `state=latest' then only 
+# skip_broken: Resolve depsolve problems by removing packages 
+# state: Whether to install (`present' or `installed', 
+# update_cache: Force yum to check if cache is out of date and 
+# update_only: When using latest, only update installed 
+# validate_certs: This only applies if using a https url as the 
 }- name: ${2:Name for yum module.}
   yum:
 ${3:   ${4:allow_downgrade}: ${5:"#"}}
-${6:   ${7:conf_file}: ${8:"#"}}
-${9:   ${10:disable_gpg_check}: ${11:"#"}}
-${12:   ${13:disablerepo}: ${14:"#"}}
-${15:   ${16:enablerepo}: ${17:"#"}}
-${18:   ${19:exclude}: ${20:"#"}}
-${21:   ${22:installroot}: ${23:"#"}}
-${24:   ${25:list}: ${26:"#"}}
-${27:   ${28:name}: ${29:"#"}}
-${30:   ${31:security}: ${32:"#"}}
-${33:   ${34:skip_broken}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:update_cache}: ${41:"#"}}
-${42:   ${43:validate_certs}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${6:   ${7:bugfix}: ${8:"#"}}
+${9:   ${10:conf_file}: ${11:"#"}}
+${12:   ${13:disable_gpg_check}: ${14:"#"}}
+${15:   ${16:disable_plugin}: ${17:"#"}}
+${18:   ${19:disablerepo}: ${20:"#"}}
+${21:   ${22:enable_plugin}: ${23:"#"}}
+${24:   ${25:enablerepo}: ${26:"#"}}
+${27:   ${28:exclude}: ${29:"#"}}
+${30:   ${31:installroot}: ${32:"#"}}
+${33:   ${34:list}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:security}: ${41:"#"}}
+${42:   ${43:skip_broken}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:update_cache}: ${50:"#"}}
+${51:   ${52:update_only}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>yum</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

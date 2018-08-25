@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# datacenter: (required) The datacenter in which to operate. 
-# server: (required) The name of the server you wish to detach or attach the volume. 
+# server: (required) The name of the server you wish to 
 # state: Indicate desired state of the resource 
-# subscription_password: THe ProfitBricks password. Overrides the PB_PASSWORD environment variable. 
-# subscription_user: The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable. 
+# subscription_password: THe ProfitBricks password. Overrides the 
+# subscription_user: The ProfitBricks username. Overrides the 
 # volume: (required) The volume name or ID. 
-# wait: wait for the operation to complete before returning 
+# wait: wait for the operation to complete before 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for profitbricks_volume_attachments module.}
   profitbricks_volume_attachments:

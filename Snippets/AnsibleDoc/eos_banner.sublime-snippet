@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# banner: (required) Specifies which banner that should be configured on the remote device. 
-# provider: A dict object containing connection details. 
-# state: Specifies whether or not the configuration is present in the current devices active running 
-# text: The banner text that should be present in the remote device running configuration.  This argument 
+${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# banner: (required) Specifies which banner that should be 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# state: Specifies whether or not the configuration is 
+# text: The banner text that should be present in the 
 }- name: ${2:Name for eos_banner module.}
   eos_banner:
 ${3:   ${4:auth_pass}: ${5:"#"}}

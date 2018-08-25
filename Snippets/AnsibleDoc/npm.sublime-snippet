@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# executable: The executable location for npm. This is useful if you are using a version manager, such as nvm 
+${1:# executable: The executable location for npm. This is useful 
 # global: Install the node.js library globally 
-# ignore_scripts: Use the --ignore-scripts flag when installing. 
+# ignore_scripts: Use the `--ignore-scripts' flag when installing. 
 # name: The name of a node.js library to install 
-# path: The base path where to install the node.js libraries 
-# production: Install dependencies in production mode, excluding devDependencies 
+# path: The base path where to install the node.js 
+# production: Install dependencies in production mode, 
 # registry: The registry to install modules from. 
 # state: The state of the node.js library 
 # version: The version to be installed 

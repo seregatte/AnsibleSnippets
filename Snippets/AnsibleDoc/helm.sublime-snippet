@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# chart: A map describing the chart to install. For example: chart:   name: memcached   version: 0.4.0   source: 
-# disable_hooks: Whether to disable hooks during the uninstall process 
+${1:# chart: A map describing the chart to install. For 
+# disable_hooks: Whether to disable hooks during the uninstall 
 # host: Tiller's server host 
 # name: Release name to manage 
-# namespace: Kubernetes namespace where the chart should be installed 
+# namespace: Kubernetes namespace where the chart should be 
 # port: Tiller's server port 
-# state: Whether to install `present', remove `absent', or purge `purged' a package. 
+# state: Whether to install `present', remove `absent', 
 # values: A map of value options for the chart. 
 }- name: ${2:Name for helm module.}
   helm:

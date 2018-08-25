@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: As of Ansible 2.4, this field can take in dict entries to set the application pool attributes. These 
-# reference: 005, see the 
+${1:# attributes: This field is a free form dictionary value for 
+# ationpools: 00 
 # name: (required) Name of the application pool. 
-# state: The state of the application pool. If `present' will ensure the app pool is configured and exists. If 
+# state: The state of the application pool. If `absent' 
 }- name: ${2:Name for win_iis_webapppool module.}
   win_iis_webapppool:
 ${3:   ${4:attributes}: ${5:"#"}}
-${6:   ${7:reference}: ${8:"#"}}
+${6:   ${7:ationpools}: ${8:"#"}}
 ${9:   ${10:name}: ${11:"#"}}
 ${12:   ${13:state}: ${14:"#"}}
 ${15:${16:   become: ${17:true}} 

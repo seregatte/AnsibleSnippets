@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# data: Data to return for the `ping' return value. If this parameter is set to `crash', the module will cause 
+${1:# data: Data to return for the `ping' return value. If 
 }- name: ${2:Name for ping module.}
   ping:
 ${3:   ${4:data}: ${5:"#"}}

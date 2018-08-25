@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) The name of the `monit' program/process to manage 
+${1:# name: (required) The name of the `monit' 
 # state: (required) The state of service 
-# timeout: If there are pending actions for the service monitored by monit, then Ansible will check for up to this 
+# timeout: If there are pending actions for the service 
 }- name: ${2:Name for monit module.}
   monit:
 ${3:   ${4:name}: ${5:"#"}}

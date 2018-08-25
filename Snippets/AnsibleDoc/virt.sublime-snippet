@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# autostart: start VM at host startup 
-# command: in addition to state management, various non-idempotent commands are available. See examples 
-# name: (required) name of the guest VM being managed. Note that VM must be previously defined with xml. 
-# state: Note that there may be some lag for state requests like `shutdown' since these refer only to VM states. 
-# uri: libvirt connection uri 
-# xml: XML document used with the define command 
+${1:# autostart: start VM at host startup. 
+# command: In addition to state management, various non- 
+# name: (required) name of the guest VM being managed. 
+# state: Note that there may be some lag for state 
+# uri: libvirt connection uri. 
+# xml: XML document used with the define command. Must 
 }- name: ${2:Name for virt module.}
   virt:
 ${3:   ${4:autostart}: ${5:"#"}}

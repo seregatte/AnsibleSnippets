@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# force: Delete and re-install the plugin. Can be useful for plugins update 
+${1:# force: Delete and re-install the plugin. Can be useful 
 # name: (required) Name of the plugin to install 
 # plugin_bin: Location of the plugin binary 
-# plugin_dir: Your configured plugin directory specified in Kibana 
+# plugin_dir: Your configured plugin directory specified in 
 # state: Desired state of a plugin. 
 # timeout: Timeout setting: 30s, 1m, 1h... 
-# url: Set exact URL to download the plugin from. For local file, prefix its absolute path with file:// 
-# version: Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated if 
+# url: Set exact URL to download the plugin from. For 
+# version: Version of the plugin to be installed. If plugin 
 }- name: ${2:Name for kibana_plugin module.}
   kibana_plugin:
 ${3:   ${4:force}: ${5:"#"}}

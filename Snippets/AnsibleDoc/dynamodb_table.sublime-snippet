@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# hash_key_name: Name of the hash key. Required when `state=present'. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# hash_key_name: Name of the hash key. Required when 
 # hash_key_type: Type of the hash key. 
-# indexes: list of dictionaries describing indexes to add to the table. global indexes can be updated. local 
+# indexes: list of dictionaries describing indexes to add 
 # name: (required) Name of the table. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# profile: Uses a boto profile. Only works with boto >= 
 # range_key_name: Name of the range key. 
 # range_key_type: Type of the range key. 
 # read_capacity: Read throughput capacity (units) to provision. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or delete the table 
-# tags: a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# wait_for_active_timeout: how long before wait gives up, in seconds. only used when tags is set 
+# tags: a hash/dictionary of tags to add to the new 
+# validate_certs: When set to "no", SSL certificates will not be 
+# wait_for_active_timeout: how long before wait gives up, in seconds. only 
 # write_capacity: Write throughput capacity (units) to provision. 
 }- name: ${2:Name for dynamodb_table module.}
   dynamodb_table:
@@ -33,7 +33,7 @@ ${27:   ${28:range_key_name}: ${29:"#"}}
 ${30:   ${31:range_key_type}: ${32:"#"}}
 ${33:   ${34:read_capacity}: ${35:"#"}}
 ${36:   ${37:region}: ${38:"#"}}
-${39:   ${40:http}: ${41:"#"}}
+${39:   ${40:}: ${41:"#"}}
 ${42:   ${43:security_token}: ${44:"#"}}
 ${45:   ${46:state}: ${47:"#"}}
 ${48:   ${49:tags}: ${50:"#"}}

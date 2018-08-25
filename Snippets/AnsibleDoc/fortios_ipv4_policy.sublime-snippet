@@ -2,34 +2,34 @@
 <content><![CDATA[
 ${1:# application_list: Specifies Application Control name. 
 # av_profile: Specifies Antivirus profile name. 
-# backup: This argument will cause the module to create a backup of the current `running-config' from the remote 
-# backup_filename: Specifies the backup filename. If omitted filename will be formatted like HOST_config.YYYY-MM- 
-# backup_path: Specifies where to store backup files. Required if `backup=yes'. 
+# backup: This argument will cause the module to create a 
+# backup_filename: Specifies the backup filename. If omitted 
+# backup_path: Specifies where to store backup files. Required 
 # comment: free text to describe policy. 
-# config_file: Path to configuration file. Required when `file_mode' is True. 
-# dst_addr: Specifies destination address (or group) object name(s). Required when `state=present'. 
+# config_file: Path to configuration file. Required when 
+# dst_addr: Specifies destination address (or group) object 
 # dst_addr_negate: Negate destination address param. 
-# dst_intf: Specifies destination interface name. 
-# file_mode: Don't connect to any device, only use `config_file' as input and Output. 
+# dst_intf: Specifies destination interface name(s). 
+# file_mode: Don't connect to any device, only use 
 # fixedport: Use fixed port for nat. 
-# host: Specifies the DNS hostname or IP address for connecting to the remote fortios device. Required when 
-# id: (required) Policy ID. Warning: policy ID number is different than Policy sequence number. The policy ID 
+# host: Specifies the DNS hostname or IP address for 
+# id: (required) Policy ID. Warning: policy ID number 
 # ips_sensor: Specifies IPS Sensor profile name. 
 # logtraffic: Logs sessions that matched policy. 
 # logtraffic_start: Logs beginning of session as well. 
 # nat: Enable or disable Nat. 
-# password: Specifies the password used to authenticate to the remote device. Required when `file_mode' is True. 
-# policy_action: Specifies accept or deny action policy. Required when `state=present'. 
+# password: Specifies the password used to authenticate to 
+# policy_action: Specifies accept or deny action policy. Required 
 # poolname: Specifies NAT pool name. 
 # schedule: defines policy schedule. 
-# service: Specifies policy service(s), could be a list (ex: ['MAIL','DNS']). Required when `state=present'. 
-# service_negate: Negate policy service(s) defined in service value. 
-# src_addr: Specifies source address (or group) object name(s). Required when `state=present'. 
+# service: Specifies policy service(s), could be a list 
+# service_negate: Negate policy service(s) defined in service 
+# src_addr: Specifies source address (or group) object 
 # src_addr_negate: Negate source address param. 
-# src_intf: Specifies source interface name. 
-# state: Specifies if policy `id' need to be added or deleted. 
-# timeout: Timeout in seconds for connecting to the remote device. 
-# username: Configures the username used to authenticate to the remote device. Required when `file_mode' is True. 
+# src_intf: Specifies source interface name(s). 
+# state: Specifies if policy `id' need to be added or 
+# timeout: Timeout in seconds for connecting to the remote 
+# username: Configures the username used to authenticate to 
 # vdom: Specifies on which vdom to apply configuration 
 # webfilter_profile: Specifies Webfilter profile name. 
 }- name: ${2:Name for fortios_ipv4_policy module.}

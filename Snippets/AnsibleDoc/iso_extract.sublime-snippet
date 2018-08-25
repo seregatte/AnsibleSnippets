@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# dest: (required) The destination directory to extract files to. 
-# executable: The path to the `7z' executable to use for extracting files from the ISO. 
-# files: (required) A list of files to extract from the image. Extracting directories does not work. 
-# force: If `yes', which will replace the remote file when contents are different than the source. If `no', the 
+${1:# dest: (required) The destination directory to extract 
+# executable: The path to the `7z' executable to use for 
+# files: (required) A list of files to extract from the 
+# force: If `yes', which will replace the remote file 
 # image: (required) The ISO image to extract files from. 
 }- name: ${2:Name for iso_extract module.}
   iso_extract:

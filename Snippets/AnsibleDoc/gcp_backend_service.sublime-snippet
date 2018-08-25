@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# backend_service_name: (required) Name of the Backend Service. 
-# backends: (required) List of backends that make up the backend service. A backend is made up of an instance group 
-# credentials_file: Path to the JSON file associated with the service account email. 
-# enable_cdn: If true, enable Cloud CDN for this Backend Service. 
-# healthchecks: (required) List of healthchecks. Only one healthcheck is supported. 
-# port_name: Name of the port on the managed instance group (MIG) that backend services can forward data to. Required 
+# backends: (required) List of backends that make up the 
+# credentials_file: Path to the JSON file associated with the 
+# enable_cdn: If true, enable Cloud CDN for this Backend 
+# healthchecks: (required) List of healthchecks. Only one 
+# port_name: Name of the port on the managed instance group 
 # project_id: GCE project ID. 
-# protocol: The protocol this Backend Service uses to communicate with backends. Possible values are HTTP, HTTPS, 
+# protocol: The protocol this Backend Service uses to 
 # service_account_email: Service account email 
 # state: Desired state of the resource 
-# timeout: How many seconds to wait for the backend before considering it a failed request. Default is 30 seconds. 
+# timeout: How many seconds to wait for the backend before 
 }- name: ${2:Name for gcp_backend_service module.}
   gcp_backend_service:
 ${3:   ${4:backend_service_name}: ${5:"#"}}

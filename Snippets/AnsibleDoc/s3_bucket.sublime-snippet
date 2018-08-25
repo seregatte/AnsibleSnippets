@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ceph: Enable API compatibility with Ceph. It takes into account the S3 API subset working with Ceph in order 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# force: When trying to delete a bucket, delete all keys in the bucket first (an s3 bucket must be empty for a 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ceph: Enable API compatibility with Ceph. It takes 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# force: When trying to delete a bucket, delete all keys 
 # name: (required) Name of the s3 bucket 
 # policy: The JSON policy as a string. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# requester_pays: With Requester Pays buckets, the requester instead of the bucket owner pays the cost of the request and 
-# s3_url: S3 URL endpoint for usage with Ceph, Eucalypus, fakes3, etc. Otherwise assumes AWS 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# requester_pays: With Requester Pays buckets, the requester 
+# s3_url: S3 URL endpoint for usage with Ceph, Eucalypus, 
+# security_token: AWS STS security token. If not set then the 
 # state: Create or remove the s3 bucket 
 # tags: tags dict to apply to bucket 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# versioning: Whether versioning is enabled or disabled (note that once versioning is enabled, it can only be 
+# validate_certs: When set to "no", SSL certificates will not be 
+# versioning: Whether versioning is enabled or disabled (note 
 }- name: ${2:Name for s3_bucket module.}
   s3_bucket:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -28,7 +28,7 @@ ${18:   ${19:name}: ${20:"#"}}
 ${21:   ${22:policy}: ${23:"#"}}
 ${24:   ${25:profile}: ${26:"#"}}
 ${27:   ${28:region}: ${29:"#"}}
-${30:   ${31:http}: ${32:"#"}}
+${30:   ${31:}: ${32:"#"}}
 ${33:   ${34:requester_pays}: ${35:"#"}}
 ${36:   ${37:s3_url}: ${38:"#"}}
 ${39:   ${40:security_token}: ${41:"#"}}

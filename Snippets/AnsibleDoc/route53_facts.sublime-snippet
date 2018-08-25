@@ -1,24 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# change_id: The ID of the change batch request. The value that you specify here is the value that 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# change_id: The ID of the change batch request. The value 
 # delegation_set_id: The DNS Zone delegation set ID 
-# dns_name: The first name in the lexicographic ordering of domain names that you want the list_command to start 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# dns_name: The first name in the lexicographic ordering of 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # health_check_id: The ID of the health check 
-# health_check_method: This is used in conjunction with query: health_check. It allows for listing details, counts or tags of 
+# health_check_method: This is used in conjunction with query: 
 # hosted_zone_id: The Hosted Zone ID of the DNS zone 
-# hosted_zone_method: This is used in conjunction with query: hosted_zone. It allows for listing details, counts or tags of 
-# max_items: Maximum number of items to return for various get/list requests 
-# next_marker: Some requests such as list_command: hosted_zones will return a maximum number of entries - EG 100 or the 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
+# hosted_zone_method: This is used in conjunction with query: 
+# max_items: Maximum number of items to return for various 
+# next_marker: Some requests such as list_command: hosted_zones 
+# profile: Uses a boto profile. Only works with boto >= 
 # query: (required) specifies the query action to take 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
 # resource_id: The ID/s of the specified resource/s 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# start_record_name: The first name in the lexicographic ordering of domain names that you want the list_command: record_sets 
+# security_token: AWS STS security token. If not set then the 
+# start_record_name: The first name in the lexicographic ordering of 
 # type: The type of DNS record 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for route53_facts module.}
   route53_facts:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -35,17 +37,19 @@ ${33:   ${34:max_items}: ${35:"#"}}
 ${36:   ${37:next_marker}: ${38:"#"}}
 ${39:   ${40:profile}: ${41:"#"}}
 ${42:   ${43:query}: ${44:"#"}}
-${45:   ${46:resource_id}: ${47:"#"}}
-${48:   ${49:security_token}: ${50:"#"}}
-${51:   ${52:start_record_name}: ${53:"#"}}
-${54:   ${55:type}: ${56:"#"}}
-${57:   ${58:validate_certs}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${45:   ${46:region}: ${47:"#"}}
+${48:   ${49:}: ${50:"#"}}
+${51:   ${52:resource_id}: ${53:"#"}}
+${54:   ${55:security_token}: ${56:"#"}}
+${57:   ${58:start_record_name}: ${59:"#"}}
+${60:   ${61:type}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>route53_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

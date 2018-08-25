@@ -3,10 +3,10 @@
 ${1:# name: (required) File system name. 
 # password: Infinibox User password. 
 # pool: (required) Pool that will host file system. 
-# size: File system size in MB, GB or TB units. See examples. 
-# state: Creates/Modifies file system when present or removes when absent. 
+# size: File system size in MB, GB or TB units. See 
+# state: Creates/Modifies file system when present or 
 # system: (required) Infinibox Hostname or IPv4 Address. 
-# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# user: Infinibox User username with sufficient 
 }- name: ${2:Name for infini_fs module.}
   infini_fs:
 ${3:   ${4:name}: ${5:"#"}}

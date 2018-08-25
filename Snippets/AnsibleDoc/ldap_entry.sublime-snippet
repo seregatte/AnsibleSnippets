@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: If `state=present', attributes necessary to create an entry. Existing entries are never modified. To 
-# bind_dn: A DN to bind with. If this is omitted, we'll try a SASL bind with the EXTERNAL mechanism. If this is 
+${1:# attributes: If `state=present', attributes necessary to 
+# bind_dn: A DN to bind with. If this is omitted, we'll try 
 # bind_pw: The password to use with `bind_dn'. 
 # dn: (required) The DN of the entry to add or remove. 
-# object: If `state=present', value or list of values to use when creating the entry. It can either be a string or 
-# params: List of options which allows to overwrite any of the task or the `attributes' options. To remove an 
-# server_uri: A URI to the LDAP server. The default value lets the underlying LDAP client library look for a UNIX 
+# object: If `state=present', value or list of values to 
+# params: List of options which allows to overwrite any of 
+# server_uri: A URI to the LDAP server. The default value lets 
 # start_tls: If true, we'll use the START_TLS LDAP extension. 
 # state: The target state of the entry. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on sites using self-signed 
+# validate_certs: If set to `no', SSL certificates will not be 
 }- name: ${2:Name for ldap_entry module.}
   ldap_entry:
 ${3:   ${4:attributes}: ${5:"#"}}

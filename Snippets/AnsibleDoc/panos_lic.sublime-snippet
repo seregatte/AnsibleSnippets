@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_code: (required) authcode to be applied 
-# force: whether to apply authcode even if device is already licensed 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
-# username: username for authentication 
+# force: whether to apply authcode even if device is 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_lic module.}
   panos_lic:
 ${3:   ${4:auth_code}: ${5:"#"}}

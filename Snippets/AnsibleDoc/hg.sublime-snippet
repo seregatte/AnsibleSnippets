@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# clone: If `no', do not clone the repository if it does not exist locally. 
-# dest: (required) Absolute path of where the repository should be cloned to. This parameter is required, unless 
-# executable: Path to hg executable to use. If not supplied, the normal mechanism for resolving binary paths will be 
-# force: Discards uncommitted changes. Runs `hg update -C'.  Prior to 1.9, the default was `yes`. 
+${1:# clone: If `no', do not clone the repository if it does 
+# dest: (required) Absolute path of where the repository 
+# executable: Path to hg executable to use. If not supplied, 
+# force: Discards uncommitted changes. Runs `hg update 
 # purge: Deletes untracked files. Runs `hg purge'. 
 # repo: (required) The repository address. 
-# revision: Equivalent `-r' option in hg command which could be the changeset, revision number, branch name or even 
-# update: If `no', do not retrieve new revisions from the origin repository 
+# revision: Equivalent `-r' option in hg command which could 
+# update: If `no', do not retrieve new revisions from the 
 }- name: ${2:Name for hg module.}
   hg:
 ${3:   ${4:clone}: ${5:"#"}}

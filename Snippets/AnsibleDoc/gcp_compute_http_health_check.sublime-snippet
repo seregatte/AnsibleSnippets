@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# check_interval_sec: How often (in seconds) to send a health check. 
+# description: An optional description of this resource. 
+# healthy_threshold: A so-far unhealthy instance will be marked 
+# host: The value of the host header in the HTTP health 
+# name: (required) Name of the resource. Provided by the 
+# port: The TCP port number for the HTTP health check 
+# project: The Google Cloud Platform project to use. 
+# request_path: The request path of the HTTP health check 
+# scopes: (required) Array of scopes to be used. 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# state: (required) Whether the given object should exist 
+# timeout_sec: How long (in seconds) to wait before claiming 
+# unhealthy_threshold: A so-far healthy instance will be marked 
+}- name: ${2:Name for gcp_compute_http_health_check module.}
+  gcp_compute_http_health_check:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:check_interval_sec}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:healthy_threshold}: ${14:"#"}}
+${15:   ${16:host}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:project}: ${26:"#"}}
+${27:   ${28:request_path}: ${29:"#"}}
+${30:   ${31:scopes}: ${32:"#"}}
+${33:   ${34:service_account_email}: ${35:"#"}}
+${36:   ${37:service_account_file}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:timeout_sec}: ${44:"#"}}
+${45:   ${46:unhealthy_threshold}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>gcp_compute_http_health_check</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# dependencies: A list of service dependencies to set for this particular service. This should be a list of service 
-# dependency_action: Used in conjunction with `dependency' to either add the dependencies to the existing service 
+${1:# dependencies: A list of service dependencies to set for this 
+# dependency_action: Used in conjunction with `dependency' to either 
 # description: The description to set for the service. 
-# desktop_interact: Whether to allow the service user to interact with the desktop. This should only be set to true when 
+# desktop_interact: Whether to allow the service user to interact 
 # display_name: The display name to set for the service. 
-# force_dependent_services: If True, stopping or restarting a service with dependent services will force the dependent services to 
-# name: (required) Name of the service 
-# password: The password to set the service to start as. This and the `username' argument must be supplied together. 
-# path: The path to the executable to set for the service. 
-# start_mode: Set the startup type for the service. `delayed' added in Ansible 2.3 
-# state: `started'/`stopped'/`absent'/`pause' are idempotent actions that will not run commands unless necessary. 
-# username: The username to set the service to start as. This and the `password' argument must be supplied together. 
+# force_dependent_services: If `yes', stopping or restarting a service with 
+# name: (required) Name of the service. If only the name 
+# password: The password to set the service to start as. 
+# path: The path to the executable to set for the 
+# start_mode: Set the startup type for the service. `delayed' 
+# state: `started'/`stopped'/`absent'/`pause' are 
+# username: The username to set the service to start as. 
 }- name: ${2:Name for win_service module.}
   win_service:
 ${3:   ${4:dependencies}: ${5:"#"}}

@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# change_password_on_the_next_logon: Whether or not the user must change their password in their next logon. Valid values = true/false. 
-# cyberark_session: (required) Dictionary set by a CyberArk authentication containing the different values to perform 
-# disabled: Whether or not the user will be disabled. Valid values = true/false. 
+${1:# change_password_on_the_next_logon: Whether or not the user must change their 
+# cyberark_session: (required) Dictionary set by a CyberArk 
+# disabled: Whether or not the user will be disabled. Valid 
 # email: The user email address. 
-# expiry_date: The date and time when the user account will expire and become disabled. 
+# expiry_date: The date and time when the user account will 
 # first_name: The user first name. 
 # group_name: The name of the group the user will be added to. 
-# initial_password: The password that the new user will use to log on the first time. This password must meet the password 
+# initial_password: The password that the new user will use to log 
 # last_name: The user last name. 
 # location: The Vault Location for the user. 
-# new_password: The user updated password. Make sure that this password meets the password policy requirements. 
-# state: Specifies the state needed for the user present for create user, absent for delete user. 
+# new_password: The user updated password. Make sure that this 
+# state: Specifies the state needed for the user present 
 # user_type_name: The type of user. 
-# username: (required) The name of the user who will be queried (for details), added, updated or deleted. 
+# username: (required) The name of the user who will be 
 }- name: ${2:Name for cyberark_user module.}
   cyberark_user:
 ${3:   ${4:change_password_on_the_next_logon}: ${5:"#"}}

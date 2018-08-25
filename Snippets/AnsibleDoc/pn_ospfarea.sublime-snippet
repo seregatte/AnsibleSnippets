@@ -9,7 +9,7 @@ ${1:# pn_clipassword: (required) Login password.
 # pn_quiet: Enable/disable system information. 
 # pn_stub_type: Specify the OSPF stub type. 
 # pn_vrouter_name: (required) Specify the name of the vRouter. 
-# state: (required) State the action to perform. Use 'present' to add ospf-area, 'absent' to remove ospf-area and 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_ospfarea module.}
   pn_ospfarea:
 ${3:   ${4:pn_clipassword}: ${5:"#"}}

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# arguments: extra arguments for exchange. If defined this argument is a key/value dictionary 
-# auto_delete: if the exchange should delete itself after all queues/exchanges unbound from it 
+${1:# arguments: extra arguments for exchange. If defined this 
+# auto_delete: if the exchange should delete itself after all 
 # durable: whether exchange is durable or not 
 # exchange_type: type for the exchange 
 # internal: exchange is available only for other exchanges 
@@ -10,7 +10,7 @@ ${1:# arguments: extra arguments for exchange. If defined this argument is a key
 # login_port: rabbitMQ management api port 
 # login_user: rabbitMQ user for connection 
 # name: (required) Name of the exchange to create 
-# state: Whether the exchange should be present or absent Only present implemented atm 
+# state: Whether the exchange should be present or absent 
 # vhost: rabbitMQ virtual host 
 }- name: ${2:Name for rabbitmq_exchange module.}
   rabbitmq_exchange:

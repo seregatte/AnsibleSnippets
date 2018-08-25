@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# groups: The groups to add the hostname to, comma separated. 
-# name: (required) The hostname/ip of the host to add to the inventory, can include a colon and a port number. 
+${1:# groups: The groups to add the hostname to, comma 
+# name: (required) The hostname/ip of the host to add to 
 }- name: ${2:Name for add_host module.}
   add_host:
 ${3:   ${4:groups}: ${5:"#"}}

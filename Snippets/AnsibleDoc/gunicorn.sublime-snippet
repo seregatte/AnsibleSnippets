@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# app: (required) The app module. A name refers to a WSGI callable that should be found in the specified 
-# chdir: Chdir to specified directory before apps loading. 
+${1:# app: (required) The app module. A name refers to a 
+# chdir: Chdir to specified directory before apps 
 # config: Path to the gunicorn configuration file. 
-# pid: A filename to use for the PID file. If not set and not found on the configuration file a tmp pid file 
+# pid: A filename to use for the PID file. If not set 
 # user: Switch worker processes to run as this user. 
 # venv: Path to the virtualenv directory. 
-# worker: The type of workers to use. The default class (sync) should handle most "normal" types of workloads. 
+# worker: The type of workers to use. The default class 
 }- name: ${2:Name for gunicorn module.}
   gunicorn:
 ${3:   ${4:app}: ${5:"#"}}

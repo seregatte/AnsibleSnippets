@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# config_file: Specify a config file from which login_user and login_password are to be read. 
-# load_to_runtime: Dynamically load mysql host config to runtime memory. 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
-# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
-# value: Defines a value the variable specified using `variable' should be set to. 
-# variable: (required) Defines which variable should be returned, or if `value' is specified which variable should 
+${1:# config_file: Specify a config file from which `login_user' 
+# load_to_runtime: Dynamically load config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
+# save_to_disk: Save config to sqlite db on disk to persist the 
+# value: Defines a value the variable specified using 
+# variable: (required) Defines which variable should be 
 }- name: ${2:Name for proxysql_global_variables module.}
   proxysql_global_variables:
 ${3:   ${4:config_file}: ${5:"#"}}

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# commands: The commands to send to the remote junos device over the configured provider.  The resulting output from 
-# display: Encoding scheme to use when serializing output from the device. This handles how to properly understand 
-# interval: Configures the interval in seconds to wait between retries of the command.  If the command does not pass 
-# match: The `match' argument is used in conjunction with the `wait_for' argument to specify the match policy. 
-# provider: A dict object containing connection details. 
-# retries: Specifies the number of retries a command should be tried before it is considered failed.  The command 
-# rpcs: The `rpcs' argument accepts a list of RPCs to be executed over a netconf session and the results from 
-# wait_for: Specifies what to evaluate from the output of the command and what conditionals to apply.  This argument 
+${1:# commands: The commands to send to the remote junos device 
+# display: Encoding scheme to use when serializing output 
+# interval: Configures the interval in seconds to wait 
+# match: The `match' argument is used in conjunction with 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# retries: Specifies the number of retries a command should 
+# rpcs: The `rpcs' argument accepts a list of RPCs to be 
+# wait_for: Specifies what to evaluate from the output of 
 }- name: ${2:Name for junos_command module.}
   junos_command:
 ${3:   ${4:commands}: ${5:"#"}}

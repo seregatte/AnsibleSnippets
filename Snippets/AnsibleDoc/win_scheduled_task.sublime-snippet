@@ -1,41 +1,93 @@
 <snippet>
 <content><![CDATA[
-${1:# arguments: Arguments to provide scheduled task action 
-# days_of_week: Days of the week to run a weekly task, not idempotent 
-# description: The description for the scheduled task 
-# enabled: Enable/disable the task 
-# executable: Command the scheduled task should execute 
-# frequency: The frequency of the command, not idempotent 
-# name: (required) Name of the scheduled task 
-# password: Password for the user account to run the scheduled task as.  This is required for running a task without 
-# path: Task folder in which this task will be stored - creates a non-existent path when `state' is `present', 
-# runlevel: The level of user rights used to run the task 
-# state: (required) State that the task should become 
-# store_password: Store the password for the user running the task.  If `false', the task will only have access to local 
-# time: Time to execute scheduled task, not idempotent 
-# user: User to run the scheduled task as; defaults to the current user 
+${1:# actions: A list of action to configure for the task. See 
+# allow_demand_start: Whether the task can be started by using either 
+# allow_hard_terminate: Whether the task can be terminated by using 
+# arguments: Arguments to provide for a scheduled task 
+# author: The author of the task. 
+# compatibility: The integer value with indicates which version 
+# date: The date when the task was registered. 
+# days_of_week: Days of the week to run a weekly task. Specify a 
+# delete_expired_task_after: The amount of time that the Task Scheduler will 
+# description: The description of the task. 
+# disallow_start_if_on_batteries: Whether the task will not be started if the 
+# display_name: The name of the user/group that is displayed in 
+# enabled: Whether the task is enabled, the task can only 
+# executable: The path to the executable to run for a 
+# execution_time_limit: The amount of time allowed to complete the task. 
+# frequency: The frequency of the task to run. DEPRECATED 
+# group: The group that will run the task. `group' and 
+# hidden: Whether the task will be hidden in the UI. 
+# logon_type: The logon method that the task will run with. 
+# multiple_instances: An integer that indicates the behaviour when 
+# name: (required) The name of the scheduled task 
+# password: The password for the user account to run the 
+# path: Task folder in which this task will be stored. 
+# priority: The priority level (0-10) of the task. When 
+# restart_count: The number of times that the Task Scheduler will 
+# restart_interval: How long the Task Scheduler will attempt to 
+# run_level: The level of user rights used to run the task. 
+# run_only_if_idle: Whether the task will run the task only if the 
+# run_only_if_network_available: Whether the task will run only when a network is 
+# source: The source of the task. 
+# start_when_available: Whether the task can start at any time after its 
+# state: When `state=present' will ensure the task 
+# stop_if_going_on_batteries: Whether the task will be stopped if the computer 
+# store_password: Whether to store the password for the user 
+# time: The start time to execute the scheduled task. 
+# triggers: A list of triggers to configure for the task. 
+# update_password: Whether to update the password even when not 
+# username: The user to run the scheduled task as. Will 
+# version: The version number of the task. 
+# wake_to_run: Whether the task will wake the computer when it 
 }- name: ${2:Name for win_scheduled_task module.}
   win_scheduled_task:
-${3:   ${4:arguments}: ${5:"#"}}
-${6:   ${7:days_of_week}: ${8:"#"}}
-${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:enabled}: ${14:"#"}}
-${15:   ${16:executable}: ${17:"#"}}
-${18:   ${19:frequency}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:path}: ${29:"#"}}
-${30:   ${31:runlevel}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:store_password}: ${38:"#"}}
-${39:   ${40:time}: ${41:"#"}}
-${42:   ${43:user}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${3:   ${4:actions}: ${5:"#"}}
+${6:   ${7:allow_demand_start}: ${8:"#"}}
+${9:   ${10:allow_hard_terminate}: ${11:"#"}}
+${12:   ${13:arguments}: ${14:"#"}}
+${15:   ${16:author}: ${17:"#"}}
+${18:   ${19:compatibility}: ${20:"#"}}
+${21:   ${22:date}: ${23:"#"}}
+${24:   ${25:days_of_week}: ${26:"#"}}
+${27:   ${28:delete_expired_task_after}: ${29:"#"}}
+${30:   ${31:description}: ${32:"#"}}
+${33:   ${34:disallow_start_if_on_batteries}: ${35:"#"}}
+${36:   ${37:display_name}: ${38:"#"}}
+${39:   ${40:enabled}: ${41:"#"}}
+${42:   ${43:executable}: ${44:"#"}}
+${45:   ${46:execution_time_limit}: ${47:"#"}}
+${48:   ${49:frequency}: ${50:"#"}}
+${51:   ${52:group}: ${53:"#"}}
+${54:   ${55:hidden}: ${56:"#"}}
+${57:   ${58:logon_type}: ${59:"#"}}
+${60:   ${61:multiple_instances}: ${62:"#"}}
+${63:   ${64:name}: ${65:"#"}}
+${66:   ${67:password}: ${68:"#"}}
+${69:   ${70:path}: ${71:"#"}}
+${72:   ${73:priority}: ${74:"#"}}
+${75:   ${76:restart_count}: ${77:"#"}}
+${78:   ${79:restart_interval}: ${80:"#"}}
+${81:   ${82:run_level}: ${83:"#"}}
+${84:   ${85:run_only_if_idle}: ${86:"#"}}
+${87:   ${88:run_only_if_network_available}: ${89:"#"}}
+${90:   ${91:source}: ${92:"#"}}
+${93:   ${94:start_when_available}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:   ${100:stop_if_going_on_batteries}: ${101:"#"}}
+${102:   ${103:store_password}: ${104:"#"}}
+${105:   ${106:time}: ${107:"#"}}
+${108:   ${109:triggers}: ${110:"#"}}
+${111:   ${112:update_password}: ${113:"#"}}
+${114:   ${115:username}: ${116:"#"}}
+${117:   ${118:version}: ${119:"#"}}
+${120:   ${121:wake_to_run}: ${122:"#"}}
+${123:${124:   become: ${125:true}} 
+${126:   become_method: ${127:su}} 
+${128:   become_user: ${129:nobody}} 
+${130:   become_flags: ${131:"-s /bin/sh"}}} 
+${132:   when: ${133:variable is defined}} 
+${134:   with_items: ${135:array}} 
 ]]></content>
 	<tabTrigger>win_scheduled_task</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

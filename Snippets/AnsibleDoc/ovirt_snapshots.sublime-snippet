@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
+${1:# auth: (required) Dictionary with values needed to 
 # description: Description of the snapshot. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
+# fetch_nested: If `True' the module will fetch additional data 
+# nested_attributes: Specifies list of the attributes which should be 
+# poll_interval: Number of the seconds the module waits until 
 # snapshot_id: ID of the snapshot to manage. 
-# state: Should the Virtual Machine snapshot be restore/present/absent. 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# use_memory: If `true' and `state' is `present' save memory of the Virtual Machine if it's running. If `true' and 
-# vm_name: (required) Name of the Virtual Machine to manage. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# state: Should the Virtual Machine snapshot be 
+# timeout: The amount of time in seconds the module should 
+# use_memory: If `true' and `state' is `present' save memory 
+# vm_name: (required) Name of the Virtual Machine to 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_snapshots module.}
   ovirt_snapshots:
 ${3:   ${4:auth}: ${5:"#"}}

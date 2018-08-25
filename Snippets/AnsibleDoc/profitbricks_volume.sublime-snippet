@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# auto_increment: Whether or not to increment a single number in the name for created virtual machines. 
+${1:# auto_increment: Whether or not to increment a single number in 
 # bus: The bus type. 
 # count: The number of volumes you wish to create. 
-# datacenter: (required) The datacenter in which to create the volumes. 
+# datacenter: (required) The datacenter in which to create the 
 # disk_type: The disk type of the volume. 
-# image: (required) The system image ID for the volume, e.g. a3eae284-a2fe-11e4-b187-5f1f641608c8. This can also 
+# image: (required) The system image ID for the volume, 
 # image_password: Password set for the administrative user. 
-# instance_ids: list of instance ids, currently only used when state='absent' to remove instances. 
-# licence_type: The licence type for the volume. This is used when the image is non-standard. 
-# name: (required) The name of the volumes. You can enumerate the names using auto_increment. 
+# instance_ids: list of instance ids, currently only used when 
+# licence_type: The licence type for the volume. This is used 
+# name: (required) The name of the volumes. You can 
 # size: The size of the volume. 
-# ssh_keys: Public SSH keys allowing access to the virtual machine. 
+# ssh_keys: Public SSH keys allowing access to the virtual 
 # state: create or terminate datacenters 
-# subscription_password: THe ProfitBricks password. Overrides the PB_PASSWORD environment variable. 
-# subscription_user: The ProfitBricks username. Overrides the PB_SUBSCRIPTION_ID environment variable. 
-# wait: wait for the datacenter to be created before returning 
+# subscription_password: THe ProfitBricks password. Overrides the 
+# subscription_user: The ProfitBricks username. Overrides the 
+# wait: wait for the datacenter to be created before 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for profitbricks_volume module.}
   profitbricks_volume:

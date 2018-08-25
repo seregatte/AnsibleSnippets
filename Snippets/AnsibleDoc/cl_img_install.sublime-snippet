@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# src: (required) The full path to the Cumulus Linux binary image. Can be a local path, http or https URL. If 
-# switch_slot: Switch slots after installing the image. To run the installed code, reboot the switch. 
-# version: Inform the module of the exact version one is installing. This overrides the automatic check of version 
+${1:# src: (required) The full path to the Cumulus Linux 
+# switch_slot: Switch slots after installing the image. To run 
+# version: Inform the module of the exact version one is 
 }- name: ${2:Name for cl_img_install module.}
   cl_img_install:
 ${3:   ${4:src}: ${5:"#"}}

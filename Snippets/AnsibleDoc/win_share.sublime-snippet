@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# caching_mode: Set the CachingMode for this share. 
-# change: Specify user list that should get read and write access on share, separated by comma. 
-# deny: Specify user list that should get no access, regardless of implied access on share, separated by comma. 
-# description: Share description 
-# encrypt: Sets whether to encrypt the traffic to the share or not. 
-# full: Specify user list that should get full access on share, separated by comma. 
-# list: Specify whether to allow or deny file listing, in case user got no permission on share. 
+# change: Specify user list that should get read and write 
+# deny: Specify user list that should get no access, 
+# description: Share description. 
+# encrypt: Sets whether to encrypt the traffic to the share 
+# full: Specify user list that should get full access on 
+# list: Specify whether to allow or deny file listing, 
 # name: (required) Share name. 
 # path: (required) Share directory. 
-# read: Specify user list that should get read access on share, separated by comma. 
-# state: Specify whether to add `present' or remove `absent' the specified share. 
+# read: Specify user list that should get read access on 
+# state: Specify whether to add `present' or remove 
 }- name: ${2:Name for win_share module.}
   win_share:
 ${3:   ${4:caching_mode}: ${5:"#"}}

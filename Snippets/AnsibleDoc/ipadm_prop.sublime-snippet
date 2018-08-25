@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# property: (required) Specifies the name of property we want to manage. 
-# protocol: (required) Specifies the procotol for which we want to manage properties. 
+${1:# property: (required) Specifies the name of property we 
+# protocol: (required) Specifies the procotol for which we 
 # state: Set or reset the property value. 
-# temporary: Specifies that the property value is temporary. Temporary property values do not persist across reboots. 
-# value: Specifies the value we want to set for the property. 
+# temporary: Specifies that the property value is temporary. 
+# value: Specifies the value we want to set for the 
 }- name: ${2:Name for ipadm_prop module.}
   ipadm_prop:
 ${3:   ${4:property}: ${5:"#"}}

@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# account_disabled: `yes' will disable the user account.  `no' will clear the disabled flag. 
+${1:# account_disabled: `yes' will disable the user account. `no' will 
 # account_locked: `no' will unlock the user account if locked. 
-# description: Description of the user 
-# fullname: Full name of the user 
-# groups: Adds or removes the user from this comma-separated lis of groups, depending on the value of 
-# groups_action: If `replace', the user is added as a member of each group in `groups' and removed from any other groups. 
-# name: (required) Name of the user to create, remove or modify. 
-# password: Optionally set the user's password to this (plain text) value. 
-# password_expired: `yes' will require the user to change their password at next login. `no' will clear the expired password 
-# password_never_expires: `yes' will set the password to never expire.  `no' will allow the password to expire. 
-# state: When `present', creates or updates the user account.  When `absent', removes the user account if it 
-# update_password: `always' will update passwords if they differ.  `on_create' will only set the password for newly created 
-# user_cannot_change_password: `yes' will prevent the user from changing their password.  `no' will allow the user to change their 
+# description: Description of the user. 
+# fullname: Full name of the user. 
+# groups: Adds or removes the user from this comma- 
+# groups_action: If `add', the user is added to each group in 
+# name: (required) Name of the user to create, remove or 
+# password: Optionally set the user's password to this 
+# password_expired: `yes' will require the user to change their 
+# password_never_expires: `yes' will set the password to never expire. 
+# state: When `absent', removes the user account if it 
+# update_password: `always' will update passwords if they differ. 
+# user_cannot_change_password: `yes' will prevent the user from changing their 
 }- name: ${2:Name for win_user module.}
   win_user:
 ${3:   ${4:account_disabled}: ${5:"#"}}

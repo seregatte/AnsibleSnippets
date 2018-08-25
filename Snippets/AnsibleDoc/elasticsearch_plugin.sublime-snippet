@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) Name of the plugin to install. In Eleasticsearch >= 2.0, the name can be an URL or file 
-# plugin_bin: Location of the plugin binary. If this file is not found, the default plugin binaries will be used. The 
-# plugin_dir: Your configured plugin directory specified in Elasticsearch 
+${1:# name: (required) Name of the plugin to install. In 
+# plugin_bin: Location of the plugin binary. If this file is 
+# plugin_dir: Your configured plugin directory specified in 
 # proxy_host: Proxy host to use during plugin installation 
 # proxy_port: Proxy port to use during plugin installation 
 # state: Desired state of a plugin. 
-# timeout: Timeout setting: 30s, 1m, 1h... Only valid for Elasticsearch < 5.0. This option is ignored for 
-# url: Set exact URL to download the plugin from (Only works for ES 1.x) 
-# version: Version of the plugin to be installed. If plugin exists with previous version, it will NOT be updated 
+# timeout: Timeout setting: 30s, 1m, 1h... Only valid for 
+# url: Set exact URL to download the plugin from (Only 
+# version: Version of the plugin to be installed. If plugin 
 }- name: ${2:Name for elasticsearch_plugin module.}
   elasticsearch_plugin:
 ${3:   ${4:name}: ${5:"#"}}

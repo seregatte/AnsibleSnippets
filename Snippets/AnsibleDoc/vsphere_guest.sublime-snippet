@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# cluster: The name of the cluster to create the VM in. By default this is derived from the host you tell the 
-# esxi: Dictionary which includes datacenter and hostname on which the VM should be created. For standalone ESXi 
-# force: Boolean. Allows you to run commands which may alter the running state of a guest. Also used to 
-# from_template: Specifies if the VM should be deployed from a template (mutually exclusive with 'state' parameter). No 
-# guest: (required) The virtual server name you wish to manage. 
-# password: (required) Password of the user to connect to vcenter as. 
-# power_on_after_clone: Specifies if the VM should be powered on after the clone. 
-# resource_pool: The name of the resource_pool to create the VM in. 
-# snapshot_to_clone: A string that when specified, will create a linked clone copy of the VM. Snapshot must already be taken 
-# state: Indicate desired state of the vm. 'reconfigured' only applies changes to 'vm_cdrom', 'memory_mb', and 
+${1:# cluster: The name of the cluster to create the VM in. By 
+# esxi: Dictionary which includes datacenter and 
+# force: Boolean. Allows you to run commands which may 
+# from_template: Specifies if the VM should be deployed from a 
+# guest: (required) The virtual server name you wish to 
+# password: (required) Password of the user to connect to 
+# power_on_after_clone: Specifies if the VM should be powered on after 
+# resource_pool: The name of the resource_pool to create the VM 
+# snapshot_to_clone: A string that when specified, will create a 
+# state: Indicate desired state of the vm. 'reconfigured' 
 # template_src: Name of the source template to deploy from 
 # username: (required) Username to connect to vcenter as. 
-# validate_certs: Validate SSL certs.  Note, if running on python without SSLContext support (typically, python < 2.7.9) 
-# vcenter_hostname: (required) The hostname of the vcenter server the module will connect to, to create the guest. 
-# vm_disk: A key, value list of disks and their sizes and which datastore to keep it in. 
-# vm_extra_config: A key, value pair of any extra values you want set or changed in the vmx file of the VM. Useful to set 
-# vm_hardware: A key, value list of VM config settings. Must include ['memory_mb', 'num_cpus', 'osid', 'scsi']. 
-# vm_hw_version: Desired hardware version identifier (for example, "vmx-08" for vms that needs to be managed with vSphere 
-# vm_nic: A key, value list of nics, their types and what network to put them on. 
+# validate_certs: Validate SSL certs.  Note, if running on python 
+# vcenter_hostname: (required) The hostname of the vcenter server 
+# vm_disk: A key, value list of disks and their sizes and 
+# vm_extra_config: A key, value pair of any extra values you want 
+# vm_hardware: A key, value list of VM config settings. Must 
+# vm_hw_version: Desired hardware version identifier (for 
+# vm_nic: A key, value list of nics, their types and what 
 # vmware_guest_facts: Gather facts from vCenter on a particular VM 
 }- name: ${2:Name for vsphere_guest module.}
   vsphere_guest:

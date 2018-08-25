@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# delay: Delay interval, in seconds, waiting for the 
+# group_name: MLAG group name. Required if `state=present'. 
+# ipaddress: Virtual IP address of the MLAG. Required if 
+# mac_address: MLAG system MAC address. Required if 
+# state: MLAG VIP state. 
+}- name: ${2:Name for onyx_mlag_vip module.}
+  onyx_mlag_vip:
+${3:   ${4:delay}: ${5:"#"}}
+${6:   ${7:group_name}: ${8:"#"}}
+${9:   ${10:ipaddress}: ${11:"#"}}
+${12:   ${13:mac_address}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>onyx_mlag_vip</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# manageiq_connection: (required) ManageIQ connection configuration 
+# resource_name: (required) the relevant resource name in 
+# resource_type: (required) the relevant resource type in 
+# state: absent - tags should not exist, present - tags 
+# tags: tags - list of dictionaries, each includes 
+}- name: ${2:Name for manageiq_tags module.}
+  manageiq_tags:
+${3:   ${4:manageiq_connection}: ${5:"#"}}
+${6:   ${7:resource_name}: ${8:"#"}}
+${9:   ${10:resource_type}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:tags}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>manageiq_tags</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

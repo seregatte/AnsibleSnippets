@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# action: `add' will add the users/groups to the existing right. `remove' will remove the users/groups from the 
-# name: (required) The name of the User Right as shown by the `Constant Name' value from 
-# users: (required) A list of users or groups to add/remove on the User Right. These can be in the form DOMAIN 
+${1:# action: `add' will add the users/groups to the existing 
+# name: (required) The name of the User Right as shown 
+# users: (required) A list of users or groups to 
 }- name: ${2:Name for win_user_right module.}
   win_user_right:
 ${3:   ${4:action}: ${5:"#"}}

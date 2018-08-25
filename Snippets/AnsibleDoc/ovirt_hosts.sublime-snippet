@@ -1,29 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:# activate: If `state' is `present' activate the host. This parameter is good to disable, when you don't want to 
-# address: Host address. It can be either FQDN (preferred) or IP address. 
-# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# check_upgrade: If `true' and `state' is `upgraded' run check for upgrade action before executing upgrade action. 
-# cluster: Name of the cluster, where host should be created. 
+${1:# activate: If `state' is `present' activate the host. This 
+# address: Host address. It can be either FQDN (preferred) 
+# auth: (required) Dictionary with values needed to 
+# check_upgrade: If `true' and `state' is `upgraded' run check 
+# cluster: Name of the cluster, where host should be 
 # comment: Description of the host. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# force: If True host will be forcibly moved to desired state. 
-# hosted_engine: If `deploy' it means this host should deploy also hosted engine components. If `undeploy' it means this 
-# iscsi: If `state' is `iscsidiscover' it means that the iscsi attribute is being used to discover targets If 
-# kdump_integration: Specify if host will have enabled Kdump integration. 
-# kernel_params: List of kernel boot parameters. Following are most common kernel parameters used for host: Hostdev 
+# fetch_nested: If `True' the module will fetch additional data 
+# force: If True host will be forcibly moved to desired 
+# hosted_engine: If `deploy' it means this host should deploy 
+# iscsi: If `state' is `iscsidiscover' it means that the 
+# kdump_integration: Specify if host will have enabled Kdump 
+# kernel_params: List of kernel boot parameters. Following are 
 # name: (required) Name of the host to manage. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# override_display: Override the display address of all VMs on this host with specified address. 
-# override_iptables: If True host iptables will be overridden by host deploy script. Note that `override_iptables' is `false' 
-# password: Password of the root. It's required in case `public_key' is set to `False'. 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
-# power_management_enabled: Enable or disable power management of the host. For more comprehensive setup of PM use `ovirt_host_pm' 
-# public_key: `True' if the public key should be used to authenticate to host. It's required in case `password' is not 
-# spm_priority: SPM priority of the host. Integer value from 1 to 10, where higher number means higher priority. 
-# state: State which should a host to be in after successful completion. `iscsilogin' and `iscsidiscover' are 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# nested_attributes: Specifies list of the attributes which should be 
+# override_display: Override the display address of all VMs on this 
+# override_iptables: If True host iptables will be overridden by host 
+# password: Password of the root. It's required in case 
+# poll_interval: Number of the seconds the module waits until 
+# power_management_enabled: Enable or disable power management of the host. 
+# public_key: `True' if the public key should be used to 
+# reboot_after_upgrade: If `true' and `state' is `upgraded' reboot host 
+# spm_priority: SPM priority of the host. Integer value from 1 
+# state: State which should a host to be in after 
+# timeout: The amount of time in seconds the module should 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_hosts module.}
   ovirt_hosts:
 ${3:   ${4:activate}: ${5:"#"}}
@@ -46,16 +47,17 @@ ${51:   ${52:password}: ${53:"#"}}
 ${54:   ${55:poll_interval}: ${56:"#"}}
 ${57:   ${58:power_management_enabled}: ${59:"#"}}
 ${60:   ${61:public_key}: ${62:"#"}}
-${63:   ${64:spm_priority}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:timeout}: ${71:"#"}}
-${72:   ${73:wait}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${63:   ${64:reboot_after_upgrade}: ${65:"#"}}
+${66:   ${67:spm_priority}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:timeout}: ${74:"#"}}
+${75:   ${76:wait}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>ovirt_hosts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

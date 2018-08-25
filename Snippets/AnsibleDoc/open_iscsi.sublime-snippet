@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# auto_node_startup: whether the target node should be automatically connected at startup 
-# discover: whether the list of target nodes on the portal should be (re)discovered and added to the persistent 
+${1:# auto_node_startup: whether the target node should be automatically 
+# discover: whether the list of target nodes on the portal 
 # login: whether the target node should be connected 
 # node_auth: discovery.sendtargets.auth.authmethod 
 # node_pass: discovery.sendtargets.auth.password 
 # node_user: discovery.sendtargets.auth.username 
-# port: the port on which the iscsi target process listens 
+# port: the port on which the iscsi target process 
 # portal: the ip address of the iscsi target 
-# show_nodes: whether the list of nodes in the persistent iscsi database should be returned by the module 
+# show_nodes: whether the list of nodes in the persistent 
 # target: the iscsi target name 
 }- name: ${2:Name for open_iscsi module.}
   open_iscsi:

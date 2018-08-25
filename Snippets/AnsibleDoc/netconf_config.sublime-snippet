@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_agent: if true, enables querying SSH agent (if found) for keys if false, disables querying the SSH agent for 
-# datastore: auto, uses candidate and fallback to running candidate, edit <candidate/> datastore and then commit 
-# host: (required) the hostname or ip address of the netconf device 
-# hostkey_verify: if true, the ssh host key of the device must match a ssh key present on the host if false, the ssh host 
-# look_for_keys: if true, enables looking in the usual locations for ssh keys (e.g. ~/.ssh/id_*) if false, disables 
-# password: (required) password of the user to authenticate with 
+${1:# allow_agent: if true, enables querying SSH agent (if found) 
+# datastore: auto, uses candidate and fallback to running 
+# host: (required) the hostname or ip address of the 
+# hostkey_verify: if true, the ssh host key of the device must 
+# look_for_keys: if true, enables looking in the usual locations 
+# password: (required) password of the user to authenticate 
 # port: the netconf port 
-# save: The `save' argument instructs the module to save the running- config to the startup-config if changed. 
-# src: Specifies the source path to the xml file that contains the configuration or configuration template to 
+# save: The `save' argument instructs the module to save 
+# src: Specifies the source path to the xml file that 
 # username: (required) the username to authenticate with 
 # xml: the XML content to send to the device 
 }- name: ${2:Name for netconf_config module.}

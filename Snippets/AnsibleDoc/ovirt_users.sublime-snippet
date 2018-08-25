@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# authz_name: (required) Authorization provider of the user. In previous versions of oVirt/RHV known as domain. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# name: (required) Name of the user to manage. In most LDAPs it's `uid' of the user, but in Active Directory you 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
+${1:# auth: (required) Dictionary with values needed to 
+# authz_name: (required) Authorization provider of the user. 
+# fetch_nested: If `True' the module will fetch additional data 
+# name: (required) Name of the user to manage. In most 
+# nested_attributes: Specifies list of the attributes which should be 
+# poll_interval: Number of the seconds the module waits until 
 # state: Should the user be present/absent. 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# timeout: The amount of time in seconds the module should 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_users module.}
   ovirt_users:
 ${3:   ${4:auth}: ${5:"#"}}

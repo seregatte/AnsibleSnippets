@@ -1,26 +1,28 @@
 <snippet>
 <content><![CDATA[
-${1:# archive: Mirrors the rsync archive flag, enables recursive, links, perms, times, owner, group flags and -D. 
-# checksum: Skip based on checksum, rather than mod-time & size; Note that that "archive" option is still enabled by 
-# compress: Compress file data during the transfer. In most cases, leave this enabled unless it causes problems. 
-# copy_links: Copy symlinks as the item that they point to (the referent) is copied, rather than the symlink. 
-# delete: Delete files in `dest' that don't exist (after transfer, not before) in the `src' path. This option 
-# dest: (required) Path on the destination host that will be synchronized from the source; The path can be 
-# dest_port: Port number for ssh on the destination host. Prior to ansible 2.0, the ansible_ssh_port inventory var 
+${1:# archive: Mirrors the rsync archive flag, enables 
+# checksum: Skip based on checksum, rather than mod-time & 
+# compress: Compress file data during the transfer. In most 
+# copy_links: Copy symlinks as the item that they point to 
+# delete: Delete files in `dest' that don't exist (after 
+# dest: (required) Path on the destination host that 
+# dest_port: Port number for ssh on the destination host. 
 # dirs: Transfer directories without recursing 
 # existing_only: Skip creating new files on receiver. 
 # group: Preserve group 
+# link_dest: add a destination to hard link against during 
 # links: Copy symlinks as symlinks. 
-# mode: Specify the direction of the synchronization. In push mode the localhost or delegate is the source; In 
+# mode: Specify the direction of the synchronization. In 
 # owner: Preserve owner (super user only) 
-# partial: Tells rsync to keep the partial file which should make a subsequent transfer of the rest of the file 
+# partial: Tells rsync to keep the partial file which 
 # perms: Preserve permissions. 
+# private_key: Specify the private key to use for SSH-based 
 # recursive: Recurse into directories. 
-# rsync_opts: Specify additional rsync options by passing in an array. 
-# rsync_path: Specify the rsync command to run on the remote host. See `--rsync-path' on the rsync man page. 
-# rsync_timeout: Specify a --timeout for the rsync command in seconds. 
-# set_remote_user: put user@ for the remote paths. If you have a custom ssh config to define the remote user for a host 
-# src: (required) Path on the source host that will be synchronized to the destination; The path can be 
+# rsync_opts: Specify additional rsync options by passing in 
+# rsync_path: Specify the rsync command to run on the remote 
+# rsync_timeout: Specify a --timeout for the rsync command in 
+# set_remote_user: put user@ for the remote paths. If you have a 
+# src: (required) Path on the source host that will be 
 # times: Preserve modification times 
 # use_ssh_args: Use the ssh_args specified in ansible.cfg 
 # verify_host: Verify destination host key. 
@@ -36,26 +38,28 @@ ${21:   ${22:dest_port}: ${23:"#"}}
 ${24:   ${25:dirs}: ${26:"#"}}
 ${27:   ${28:existing_only}: ${29:"#"}}
 ${30:   ${31:group}: ${32:"#"}}
-${33:   ${34:links}: ${35:"#"}}
-${36:   ${37:mode}: ${38:"#"}}
-${39:   ${40:owner}: ${41:"#"}}
-${42:   ${43:partial}: ${44:"#"}}
-${45:   ${46:perms}: ${47:"#"}}
-${48:   ${49:recursive}: ${50:"#"}}
-${51:   ${52:rsync_opts}: ${53:"#"}}
-${54:   ${55:rsync_path}: ${56:"#"}}
-${57:   ${58:rsync_timeout}: ${59:"#"}}
-${60:   ${61:set_remote_user}: ${62:"#"}}
-${63:   ${64:src}: ${65:"#"}}
-${66:   ${67:times}: ${68:"#"}}
-${69:   ${70:use_ssh_args}: ${71:"#"}}
-${72:   ${73:verify_host}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${33:   ${34:link_dest}: ${35:"#"}}
+${36:   ${37:links}: ${38:"#"}}
+${39:   ${40:mode}: ${41:"#"}}
+${42:   ${43:owner}: ${44:"#"}}
+${45:   ${46:partial}: ${47:"#"}}
+${48:   ${49:perms}: ${50:"#"}}
+${51:   ${52:private_key}: ${53:"#"}}
+${54:   ${55:recursive}: ${56:"#"}}
+${57:   ${58:rsync_opts}: ${59:"#"}}
+${60:   ${61:rsync_path}: ${62:"#"}}
+${63:   ${64:rsync_timeout}: ${65:"#"}}
+${66:   ${67:set_remote_user}: ${68:"#"}}
+${69:   ${70:src}: ${71:"#"}}
+${72:   ${73:times}: ${74:"#"}}
+${75:   ${76:use_ssh_args}: ${77:"#"}}
+${78:   ${79:verify_host}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>synchronize</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

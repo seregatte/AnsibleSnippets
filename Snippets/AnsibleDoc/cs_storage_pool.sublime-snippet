@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
 ${1:# allocation_state: Allocation state of the storage pool. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# capacity_bytes: Bytes CloudStack can provision from this storage pool. 
-# capacity_iops: Bytes CloudStack can provision from this storage pool. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# capacity_bytes: Bytes CloudStack can provision from this storage 
+# capacity_iops: Bytes CloudStack can provision from this storage 
 # cluster: Name of the cluster. 
 # hypervisor: Required when creating a zone scoped pool. 
-# managed: Whether the storage pool should be managed by CloudStack. Only considere on creation. 
+# managed: Whether the storage pool should be managed by 
 # name: (required) Name of the storage pool. 
 # pod: Name of the pod. 
-# provider: Name of the storage provider e.g. SolidFire, SolidFireShared, DefaultPrimary, CloudByte. 
-# scope: The scope of the storage pool. Defaults to cluster when `cluster' is provided, otherwise zone. 
+# provider: Name of the storage provider e.g. SolidFire, 
+# scope: The scope of the storage pool. Defaults to 
 # state: State of the storage pool. 
 # storage_tags: Tags associated with this storage pool. 
-# storage_url: URL of the storage pool. Required if `state=present'. 
-# zone: Name of the zone in which the host should be deployed. If not set, default zone is used. 
+# storage_url: URL of the storage pool. Required if 
+# zone: Name of the zone in which the host should be 
 }- name: ${2:Name for cs_storage_pool module.}
   cs_storage_pool:
 ${3:   ${4:allocation_state}: ${5:"#"}}

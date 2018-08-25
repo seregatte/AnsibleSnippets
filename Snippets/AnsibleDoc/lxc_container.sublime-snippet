@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# archive: Create an archive of a container. This will create a tarball of the running container. 
-# archive_compression: Type of compression to use when creating an archive of a running container. 
-# archive_path: Path the save the archived container. If the path does not exist the archive method will attempt to 
+${1:# archive: Create an archive of a container. This will 
+# archive_compression: Type of compression to use when creating an 
+# archive_path: Path the save the archived container. If the 
 # backing_store: Backend storage type for the container. 
-# clone_name: Name of the new cloned server. This is only used when state is clone. 
-# clone_snapshot: Create a snapshot a container when cloning. This is not supported by all container storage backends. 
+# clone_name: Name of the new cloned server. This is only used 
+# clone_snapshot: Create a snapshot a container when cloning. This 
 # config: Path to the LXC configuration file. 
 # container_command: Run a command within a container. 
-# container_config: list of 'key=value' options to use when configuring a container. 
-# container_log: Enable a container log for host actions to the container. 
-# container_log_level: Set the log level for a container where *container_log* was set. 
+# container_config: list of 'key=value' options to use when 
+# container_log: Enable a container log for host actions to the 
+# container_log_level: Set the log level for a container where 
 # directory: Place rootfs directory under DIR. 
 # fs_size: File system Size. 
 # fs_type: Create fstype TYPE. 
-# lv_name: Name of the logical volume, defaults to the container name. 
+# lv_name: Name of the logical volume, defaults to the 
 # lxc_path: Place container under PATH 
 # name: (required) Name of a container. 
-# state: Define the state of a container. If you clone a container using `clone_name` the newly cloned container 
-# template: Name of the template to use within an LXC create. 
+# state: Define the state of a container. If you clone a 
+# template: Name of the template to use within an LXC 
 # template_options: Template options when building the container. 
 # thinpool: Use LVM thin pool called TP. 
-# vg_name: If Backend store is lvm, specify the name of the volume group. 
+# vg_name: If Backend store is lvm, specify the name of the 
 # zfs_root: Create zfs under given zfsroot. 
 }- name: ${2:Name for lxc_container module.}
   lxc_container:

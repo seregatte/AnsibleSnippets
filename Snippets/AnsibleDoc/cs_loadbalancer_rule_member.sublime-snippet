@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the rule is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # domain: Domain the rule is related to. 
-# ip_address: Public IP address from where the network traffic will be load balanced from. Only needed to find the 
+# ip_address: Public IP address from where the network traffic 
 # name: (required) The name of the load balancer rule. 
-# project: Name of the project the firewall rule is related to. 
-# state: Should the VMs be present or absent from the rule. 
-# vms: (required) List of VMs to assign to or remove from the rule. 
-# zone: Name of the zone in which the rule should be located. If not set, default zone is used. 
+# project: Name of the project the firewall rule is related 
+# state: Should the VMs be present or absent from the 
+# vms: (required) List of VMs to assign to or remove 
+# zone: Name of the zone in which the rule should be 
 }- name: ${2:Name for cs_loadbalancer_rule_member module.}
   cs_loadbalancer_rule_member:
 ${3:   ${4:account}: ${5:"#"}}

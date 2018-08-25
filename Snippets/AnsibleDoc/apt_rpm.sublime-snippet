@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# pkg: (required) name of package to install, upgrade or remove. 
-# state: Indicates the desired package state 
-# update_cache: update the package database first `apt-get update'. 
+${1:# pkg: (required) name of package to install, upgrade 
+# state: Indicates the desired package state. 
+# update_cache: update the package database first `apt-get 
 }- name: ${2:Name for apt_rpm module.}
   apt_rpm:
 ${3:   ${4:pkg}: ${5:"#"}}

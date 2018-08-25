@@ -1,38 +1,38 @@
 <snippet>
 <content><![CDATA[
 ${1:# allow_empty_checksums: Allow empty checksums to be used. 
-# force: Forces install of the package (even if it already exists). Using `force' will cause ansible to always 
+# allow_prerelease: Allow install of prerelease packages. If state 
+# force: Forces install of the package (even if it 
 # ignore_checksums: Ignore checksums altogether. 
-# ignore_dependencies: Ignore dependencies, only install/upgrade the package itself. 
+# ignore_dependencies: Ignore dependencies, only install/upgrade the 
 # install_args: Arguments to pass to the native installer. 
-# name: (required) Name of the package to be installed. This must be a single package name. 
+# name: (required) Name of the package to be installed. 
 # params: Parameters to pass to the package 
-# proxy_password: Proxy password used to install chocolatey and the package. See notes in `proxy_username' when dealing 
-# proxy_url: Proxy url used to install chocolatey and the package. 
-# proxy_username: Proxy username used to install chocolatey and the package. When dealing with a username with double 
-# skip_scripts: Do not run `chocolateyInstall.ps1' or `chocolateyUninstall.ps1' scripts. 
-# source: Specify source rather than using default chocolatey repository. 
+# proxy_password: Proxy password used to install chocolatey and 
+# proxy_url: Proxy url used to install chocolatey and the 
+# proxy_username: Proxy username used to install chocolatey and 
+# skip_scripts: Do not run `chocolateyInstall.ps1' or 
+# source: Specify source rather than using default 
 # state: State of the package on the system. 
-# timeout: The time to allow chocolatey to finish before timing out. 
-# upgrade: If package is already installed it, try to upgrade to the latest version or to the specified version. As 
-# version: Specific version of the package to be installed. Ignored when `state' is set to `absent'. 
+# timeout: The time to allow chocolatey to finish before 
+# version: Specific version of the package to be installed. 
 }- name: ${2:Name for win_chocolatey module.}
   win_chocolatey:
 ${3:   ${4:allow_empty_checksums}: ${5:"#"}}
-${6:   ${7:force}: ${8:"#"}}
-${9:   ${10:ignore_checksums}: ${11:"#"}}
-${12:   ${13:ignore_dependencies}: ${14:"#"}}
-${15:   ${16:install_args}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:params}: ${23:"#"}}
-${24:   ${25:proxy_password}: ${26:"#"}}
-${27:   ${28:proxy_url}: ${29:"#"}}
-${30:   ${31:proxy_username}: ${32:"#"}}
-${33:   ${34:skip_scripts}: ${35:"#"}}
-${36:   ${37:source}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:timeout}: ${44:"#"}}
-${45:   ${46:upgrade}: ${47:"#"}}
+${6:   ${7:allow_prerelease}: ${8:"#"}}
+${9:   ${10:force}: ${11:"#"}}
+${12:   ${13:ignore_checksums}: ${14:"#"}}
+${15:   ${16:ignore_dependencies}: ${17:"#"}}
+${18:   ${19:install_args}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:params}: ${26:"#"}}
+${27:   ${28:proxy_password}: ${29:"#"}}
+${30:   ${31:proxy_url}: ${32:"#"}}
+${33:   ${34:proxy_username}: ${35:"#"}}
+${36:   ${37:skip_scripts}: ${38:"#"}}
+${39:   ${40:source}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
 ${48:   ${49:version}: ${50:"#"}}
 ${51:${52:   become: ${53:true}} 
 ${54:   become_method: ${55:su}} 

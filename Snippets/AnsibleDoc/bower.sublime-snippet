@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: The name of a bower package to install 
-# offline: Install packages from local cache, if the packages were installed before 
-# path: (required) The base path where to install the bower packages 
+# offline: Install packages from local cache, if the 
+# path: (required) The base path where to install the 
 # production: Install with --production flag 
-# relative_execpath: Relative path to bower executable from install path 
+# relative_execpath: Relative path to bower executable from install 
 # state: The state of the bower package 
 # version: The version to be installed 
 }- name: ${2:Name for bower module.}

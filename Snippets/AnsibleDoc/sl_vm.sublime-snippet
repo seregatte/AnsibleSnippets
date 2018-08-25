@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# cpus: (required) Count of cpus to be assigned to new virtual instance 
-# datacenter: Datacenter for the virtual instance to be deployed 
-# dedicated: Flag to determine if the instance should be deployed in dedicated space 
-# disks: (required) List of disk sizes to be assigned to new virtual instance 
-# domain: Domain name to be provided to a virtual instance 
-# hostname: Hostname to be provided to a virtual instance 
-# hourly: Flag to determine if the instance should be hourly billed 
-# image_id: Image Template to be used for new virtual instance 
-# instance_id: Instance Id of the virtual instance to perform action option 
-# local_disk: Flag to determine if local disk should be used for the new instance 
-# memory: (required) Amount of memory to be assigned to new virtual instance 
-# nic_speed: NIC Speed to be assigned to new virtual instance 
-# os_code: OS Code to be used for new virtual instance 
-# post_uri: URL of a post provisioning script to be loaded and executed on virtual instance 
-# private: Flag to determine if the instance should be private only 
-# private_vlan: VLAN by its Id to be assigned to the private NIC 
-# public_vlan: VLAN by its Id to be assigned to the public NIC 
-# ssh_keys: List of ssh keys by their Id to be assigned to a virtual instance 
-# state: Create, or cancel a virtual instance. Specify "present" for create, "absent" to cancel. 
-# tags: Tag or list of tags to be provided to a virtual instance 
-# wait: Flag used to wait for active status before returning 
-# wait_time: time in seconds before wait returns 
+${1:# cpus: (required) Count of cpus to be assigned to new 
+# datacenter: Datacenter for the virtual instance to be 
+# dedicated: Flag to determine if the instance should be 
+# disks: (required) List of disk sizes to be assigned to 
+# domain: Domain name to be provided to a virtual 
+# hostname: Hostname to be provided to a virtual instance. 
+# hourly: Flag to determine if the instance should be 
+# image_id: Image Template to be used for new virtual 
+# instance_id: Instance Id of the virtual instance to perform 
+# local_disk: Flag to determine if local disk should be used 
+# memory: (required) Amount of memory to be assigned to 
+# nic_speed: NIC Speed to be assigned to new virtual 
+# os_code: OS Code to be used for new virtual instance. 
+# post_uri: URL of a post provisioning script to be loaded 
+# private: Flag to determine if the instance should be 
+# private_vlan: VLAN by its Id to be assigned to the private 
+# public_vlan: VLAN by its Id to be assigned to the public NIC. 
+# ssh_keys: List of ssh keys by their Id to be assigned to a 
+# state: Create, or cancel a virtual instance. Specify 
+# tags: Tag or list of tags to be provided to a virtual 
+# wait: Flag used to wait for active status before 
+# wait_time: Time in seconds before wait returns. 
 }- name: ${2:Name for sl_vm module.}
   sl_vm:
 ${3:   ${4:cpus}: ${5:"#"}}

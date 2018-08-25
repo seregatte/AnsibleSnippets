@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# attachments: Define a list of attachments. For more information, see https://github.com/bearyinnovative/bearychat- 
-# tutorial: attachments 
-# channel: Channel to send the message to. If absent, the message goes to the default channel selected by the 
+${1:# attachments: Define a list of attachments. For more 
+# bots:  
+# channel: Channel to send the message to. If absent, the 
 # markdown: If `yes', text will be parsed as markdown. 
 # text: Message to send. 
-# url: (required) BearyChat WebHook URL. This authenticates you to the bearychat service. It looks like 
+# url: (required) BearyChat WebHook URL. This 
 }- name: ${2:Name for bearychat module.}
   bearychat:
 ${3:   ${4:attachments}: ${5:"#"}}
-${6:   ${7:tutorial}: ${8:"#"}}
+${6:   ${7:bots}: ${8:"#"}}
 ${9:   ${10:channel}: ${11:"#"}}
 ${12:   ${13:markdown}: ${14:"#"}}
 ${15:   ${16:text}: ${17:"#"}}

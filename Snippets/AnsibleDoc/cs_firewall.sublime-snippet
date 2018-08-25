@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the firewall rule is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# cidr: CIDR (full notation) to be used for firewall rule. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# cidrs: List of CIDRs (full notation) to be used for 
 # domain: Domain the firewall rule is related to. 
-# end_port: End port for this rule. Considered if `protocol=tcp' or `protocol=udp'. If not specified, equal 
-# icmp_code: Error code for this icmp message. Considered if `protocol=icmp'. 
-# icmp_type: Type of the icmp message being sent. Considered if `protocol=icmp'. 
-# ip_address: Public IP address the ingress rule is assigned to. Required if `type=ingress'. 
-# network: Network the egress rule is related to. Required if `type=egress'. 
+# end_port: End port for this rule. Considered if 
+# icmp_code: Error code for this icmp message. Considered if 
+# icmp_type: Type of the icmp message being sent. Considered 
+# ip_address: Public IP address the ingress rule is assigned 
+# network: Network the egress rule is related to. Required 
 # poll_async: Poll async jobs until job has finished. 
-# project: Name of the project the firewall rule is related to. 
-# protocol: Protocol of the firewall rule. `all' is only available if `type=egress' 
-# start_port: Start port for this rule. Considered if `protocol=tcp' or `protocol=udp'. 
+# project: Name of the project the firewall rule is related 
+# protocol: Protocol of the firewall rule. `all' is only 
+# start_port: Start port for this rule. Considered if 
 # state: State of the firewall rule. 
-# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. To delete all tags, set a 
+# tags: List of tags. Tags are a list of dictionaries 
 # type: Type of the firewall rule. 
-# zone: Name of the zone in which the virtual machine is in. If not set, default zone is used. 
+# zone: Name of the zone in which the virtual machine is 
 }- name: ${2:Name for cs_firewall module.}
   cs_firewall:
 ${3:   ${4:account}: ${5:"#"}}
@@ -31,7 +31,7 @@ ${12:   ${13:api_region}: ${14:"#"}}
 ${15:   ${16:api_secret}: ${17:"#"}}
 ${18:   ${19:api_timeout}: ${20:"#"}}
 ${21:   ${22:api_url}: ${23:"#"}}
-${24:   ${25:cidr}: ${26:"#"}}
+${24:   ${25:cidrs}: ${26:"#"}}
 ${27:   ${28:domain}: ${29:"#"}}
 ${30:   ${31:end_port}: ${32:"#"}}
 ${33:   ${34:icmp_code}: ${35:"#"}}

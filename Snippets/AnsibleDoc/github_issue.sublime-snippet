@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# action: Get various details about issue depending upon action specified. 
-# issue: (required) Issue number for which information is required. 
-# organization: (required) Name of the GitHub organization in which the repository is hosted. 
-# repo: (required) Name of repository from which issue needs to be retrieved. 
+${1:# action: Get various details about issue depending upon 
+# issue: (required) Issue number for which information is 
+# organization: (required) Name of the GitHub organization in 
+# repo: (required) Name of repository from which issue 
 }- name: ${2:Name for github_issue module.}
   github_issue:
 ${3:   ${4:action}: ${5:"#"}}

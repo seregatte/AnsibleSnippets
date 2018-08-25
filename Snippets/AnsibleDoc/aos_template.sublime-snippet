@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# content: Datastructure of the Template to create. The data can be in YAML / JSON or directly a variable. It's the 
-# id: AOS Id of the Template to manage (can't be used to create a new Template), Only one of `name', `id' or 
-# name: Name of the Template to manage. Only one of `name', `id' or `src' can be set. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Template (present or not). 
+${1:# content: Datastructure of the Template to create. The 
+# id: AOS Id of the Template to manage (can't be used 
+# name: Name of the Template to manage. Only one of 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
 }- name: ${2:Name for aos_template module.}
   aos_template:
 ${3:   ${4:content}: ${5:"#"}}

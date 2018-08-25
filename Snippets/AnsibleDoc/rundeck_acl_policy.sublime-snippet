@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Sets the API version used by module. API version must be at least 14. 
+${1:# api_version: Sets the API version used by module. API version 
 # name: (required) Sets the project name. 
-# policy: Sets the ACL policy content. ACL policy content is a YAML object as described in 
-# project: Sets the project which receive the ACL policy. If unset, it's a system ACL policy. 
+# policy: Sets the ACL policy content. ACL policy content 
+# project: Sets the project which receive the ACL policy. 
 # state: Create or remove Rundeck project. 
-# token: (required) Sets the token to authenticate against Rundeck API. 
+# token: (required) Sets the token to authenticate 
 # url: (required) Sets the rundeck instance URL. 
 }- name: ${2:Name for rundeck_acl_policy module.}
   rundeck_acl_policy:

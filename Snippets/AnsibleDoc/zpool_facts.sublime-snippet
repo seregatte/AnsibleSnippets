@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: ZFS pool name. 
-# parsable: Specifies if property values should be displayed in machine friendly format. 
-# properties: Specifies which dataset properties should be queried in comma-separated format. For more information 
+# parsable: Specifies if property values should be displayed 
+# properties: Specifies which dataset properties should be 
 }- name: ${2:Name for zpool_facts module.}
   zpool_facts:
 ${3:   ${4:name}: ${5:"#"}}

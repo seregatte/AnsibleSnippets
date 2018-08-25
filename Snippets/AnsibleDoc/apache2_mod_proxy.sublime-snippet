@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# balancer_url_suffix: Suffix of the balancer pool url required to access the balancer pool status page (e.g. 
-# balancer_vhost: (required) (ipv4|ipv6|fqdn):port of the Apache httpd 2.4 mod_proxy balancer pool. 
-# member_host: (ipv4|ipv6|fqdn) of the balancer member to get or to set attributes to. Port number is autodetected and 
-# state: Desired state of the member host. (absent|disabled),drained,hot_standby,ignore_errors can be 
+${1:# balancer_url_suffix: Suffix of the balancer pool url required to 
+# balancer_vhost: (required) (ipv4|ipv6|fqdn):port of the Apache 
+# member_host: (ipv4|ipv6|fqdn) of the balancer member to get 
+# state: Desired state of the member host. (absent|disabl 
 # tls: Use https to access balancer management page. 
 # validate_certs: Validate ssl/tls certificates. 
 }- name: ${2:Name for apache2_mod_proxy module.}

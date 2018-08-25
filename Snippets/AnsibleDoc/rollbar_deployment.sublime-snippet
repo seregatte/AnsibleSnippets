@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# comment: Deploy comment (e.g. what is being deployed). 
-# environment: (required) Name of the environment being deployed, e.g. 'production'. 
+# environment: (required) Name of the environment being 
 # revision: (required) Revision number/sha being deployed. 
 # rollbar_user: Rollbar username of the user who deployed. 
 # token: (required) Your project access token. 
 # url: Optional URL to submit the notification to. 
 # user: User who deployed. 
-# validate_certs: If `no', SSL certificates for the target url will not be validated. This should only be used on 
+# validate_certs: If `no', SSL certificates for the target url 
 }- name: ${2:Name for rollbar_deployment module.}
   rollbar_deployment:
 ${3:   ${4:comment}: ${5:"#"}}

@@ -1,25 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:# force: Should the key be regenerated even it it already exists 
+${1:# attributes: Attributes the file or directory should have. To 
+# force: Should the key be regenerated even it it already 
 # format: The format of the public key. 
-# path: (required) Name of the file in which the generated TLS/SSL public key will be written. 
+# group: Name of the group that should own the 
+# mode: Mode the file or directory should be. For those 
+# owner: Name of the user that should own the 
+# path: (required) Name of the file in which the 
 # privatekey_passphrase: The passphrase for the privatekey. 
-# privatekey_path: (required) Path to the TLS/SSL private key from which to generate the public key. 
-# state: Whether the public key should exist or not, taking action if the state is different from what is stated. 
+# privatekey_path: (required) Path to the TLS/SSL private key from 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# state: Whether the public key should exist or not, 
+# unsafe_writes: Normally this module uses atomic operations to 
 }- name: ${2:Name for openssl_publickey module.}
   openssl_publickey:
-${3:   ${4:force}: ${5:"#"}}
-${6:   ${7:format}: ${8:"#"}}
-${9:   ${10:path}: ${11:"#"}}
-${12:   ${13:privatekey_passphrase}: ${14:"#"}}
-${15:   ${16:privatekey_path}: ${17:"#"}}
-${18:   ${19:state}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${3:   ${4:attributes}: ${5:"#"}}
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:format}: ${11:"#"}}
+${12:   ${13:group}: ${14:"#"}}
+${15:   ${16:mode}: ${17:"#"}}
+${18:   ${19:owner}: ${20:"#"}}
+${21:   ${22:path}: ${23:"#"}}
+${24:   ${25:privatekey_passphrase}: ${26:"#"}}
+${27:   ${28:privatekey_path}: ${29:"#"}}
+${30:   ${31:selevel}: ${32:"#"}}
+${33:   ${34:serole}: ${35:"#"}}
+${36:   ${37:setype}: ${38:"#"}}
+${39:   ${40:seuser}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:unsafe_writes}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>openssl_publickey</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

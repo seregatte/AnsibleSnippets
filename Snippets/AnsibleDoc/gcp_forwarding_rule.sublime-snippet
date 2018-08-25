@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# address: IPv4 or named IP address. Must be of the same scope (regional, global). Reserved addresses can (and 
+${1:# address: IPv4 or named IP address. Must be of the same 
 # forwarding_rule_name: (required) Name of the Forwarding_Rule. 
-# port_range: For global forwarding rules, must be set to 80 or 8080 for TargetHttpProxy, and 443 for TargetHttpsProxy 
-# protocol: For global forwarding rules, TCP, UDP, ESP, AH, SCTP or ICMP. Default is TCP. 
-# region: The region for this forwarding rule. Currently, only 'global' is supported. 
-# state: (required) The state of the Forwarding Rule. 'present' or 'absent' 
-# target: Target resource for forwarding rule. For global proxy, this is a Global TargetProxy resource. Required 
+# port_range: For global forwarding rules, must be set to 80 
+# protocol: For global forwarding rules, TCP, UDP, ESP, AH, 
+# region: The region for this forwarding rule. Currently, 
+# state: (required) The state of the Forwarding Rule. 
+# target: Target resource for forwarding rule. For global 
 }- name: ${2:Name for gcp_forwarding_rule module.}
   gcp_forwarding_rule:
 ${3:   ${4:address}: ${5:"#"}}

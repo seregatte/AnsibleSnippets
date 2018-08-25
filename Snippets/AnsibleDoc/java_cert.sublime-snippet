@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
 ${1:# cert_alias: Imported certificate alias. 
-# cert_path: Local path to load certificate from. One of cert_url or cert_path is required to load certificate. 
-# cert_port: Port to connect to URL. This will be used to create server URL:PORT 
-# cert_url: Basic URL to fetch SSL certificate from. One of cert_url or cert_path is required to load certificate. 
-# executable: Path to keytool binary if not used we search in PATH for it. 
+# cert_path: Local path to load certificate from. One of 
+# cert_port: Port to connect to URL. This will be used to 
+# cert_url: Basic URL to fetch SSL certificate from. One of 
+# executable: Path to keytool binary if not used we search in 
 # keystore_create: Create keystore if it doesn't exist 
 # keystore_pass: (required) Keystore password. 
 # keystore_path: Path to keystore. 
 # pkcs12_alias: Alias in the PKCS12 keystore. 
 # pkcs12_password: Password for importing from PKCS12 keystore. 
 # pkcs12_path: Local path to load PKCS12 keystore from. 
-# state: Defines action which can be either certificate import or removal. 
+# state: Defines action which can be either certificate 
 }- name: ${2:Name for java_cert module.}
   java_cert:
 ${3:   ${4:cert_alias}: ${5:"#"}}

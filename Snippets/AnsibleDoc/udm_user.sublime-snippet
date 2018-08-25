@@ -11,8 +11,8 @@ ${1:# birthday: Birthday
 # employee_type: Employee type 
 # firstname: First name. Required if `state=present'. 
 # gecos: GECOS 
-# groups: POSIX groups, the LDAP DNs of the groups will be found with the LDAP filter for each group as $GROUP: 
-# home_share: Home NFS share. Must be a LDAP DN, e.g. `cn=home,cn=shares,ou=school,dc=example,dc=com'. 
+# groups: POSIX groups, the LDAP DNs of the groups will be 
+# home_share: Home NFS share. Must be a LDAP DN, e.g. 
 # home_share_path: Path to home NFS share, inside the homeShare. 
 # home_telephone_number: List of private telephone numbers. 
 # homedrive: Windows home drive, e.g. `"H:"'. 
@@ -22,20 +22,20 @@ ${1:# birthday: Birthday
 # mail_primary_address: Primary e-mail address 
 # mobile_telephone_number: Mobile phone number 
 # organisation: Organisation 
-# ou: Organizational Unit inside the LDAP Base DN, e.g. `school' for LDAP OU `ou=school,dc=example,dc=com'. 
+# ou: Organizational Unit inside the LDAP Base DN, 
 # override_pw_history: Override password history 
 # override_pw_length: Override password check 
 # pager_telephonenumber: List of pager telephone numbers. 
 # password: Password. Required if `state=present'. 
 # phone: List of telephone numbers. 
-# position: Define the whole position of users object inside the LDAP tree, e.g. 
+# position: Define the whole position of users object inside 
 # postcode: Postal code of users business address. 
 # primary_group: Primary group. This must be the group LDAP DN. 
 # profilepath: Windows profile directory 
 # pwd_change_next_login: Change password on next login. 
 # room_number: Room number of users business address. 
-# samba_privileges: Samba privilege, like allow printer administration, do domain join. 
-# samba_user_workstations: Allow the authentication only on this Microsoft Windows host. 
+# samba_privileges: Samba privilege, like allow printer 
+# samba_user_workstations: Allow the authentication only on this Microsoft 
 # sambahome: Windows home path, e.g. `'\\$FQDN\$USERNAME''. 
 # scriptpath: Windows logon script. 
 # secretary: A list of superiors as LDAP DNs. 
@@ -43,10 +43,10 @@ ${1:# birthday: Birthday
 # shell: Login shell 
 # state: Whether the user is present or not. 
 # street: Street of users business address. 
-# subpath: LDAP subpath inside the organizational unit, e.g. `cn=teachers,cn=users' for LDAP container 
+# subpath: LDAP subpath inside the organizational unit, 
 # title: Title, e.g. `Prof.'. 
 # unixhome: Unix home directory 
-# update_password: `always' will update passwords if they differ. `on_create' will only set the password for newly created 
+# update_password: `always' will update passwords if they differ. 
 # userexpiry: Account expiry date, e.g. `1999-12-31'. 
 # username: (required) User name 
 }- name: ${2:Name for udm_user module.}

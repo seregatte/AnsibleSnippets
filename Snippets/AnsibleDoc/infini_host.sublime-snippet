@@ -2,9 +2,9 @@
 <content><![CDATA[
 ${1:# name: (required) Host Name 
 # password: Infinibox User password. 
-# state: Creates/Modifies Host when present or removes when absent 
+# state: Creates/Modifies Host when present or removes 
 # system: (required) Infinibox Hostname or IPv4 Address. 
-# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# user: Infinibox User username with sufficient 
 # volume: Volume name to map to the host 
 # wwns: List of wwns of the host 
 }- name: ${2:Name for infini_host module.}

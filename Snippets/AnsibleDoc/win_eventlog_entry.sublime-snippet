@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# category: A numeric task category associated with the category message file for the log source. 
-# entry_type: Indicates the entry being written to the log is of a specific type. 
-# event_id: (required) The numeric event identifier for the entry. Value must be between 0 and 65535. 
-# log: (required) Name of the event log to write an entry to. 
+${1:# category: A numeric task category associated with the 
+# entry_type: Indicates the entry being written to the log is 
+# event_id: (required) The numeric event identifier for the 
+# log: (required) Name of the event log to write an 
 # message: (required) The message for the given log entry. 
-# raw_data: Binary data associated with the log entry. Value must be a comma-separated array of 8-bit unsigned 
-# source: (required) Name of the log source to indicate where the entry is from. 
+# raw_data: Binary data associated with the log entry. Value 
+# source: (required) Name of the log source to indicate 
 }- name: ${2:Name for win_eventlog_entry module.}
   win_eventlog_entry:
 ${3:   ${4:category}: ${5:"#"}}

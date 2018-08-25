@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
 ${1:# cluster: Name of the Vertica cluster. 
-# create_roles: Comma separated list of roles to create and grant usage and create access to the schema. 
+# create_roles: Comma separated list of roles to create and 
 # db: Name of the Vertica database. 
 # login_password: The password used to authenticate with. 
 # login_user: The username used to authenticate with. 
 # name: (required) Name of the schema to add or remove. 
 # owner: Name of the user to set as owner of the schema. 
 # port: Vertica cluster port to connect to. 
-# state: Whether to create `present', or drop `absent' a schema. 
-# usage_roles: Comma separated list of roles to create and grant usage access to the schema. 
+# state: Whether to create `present', or drop `absent' a 
+# usage_roles: Comma separated list of roles to create and 
 }- name: ${2:Name for vertica_schema module.}
   vertica_schema:
 ${3:   ${4:cluster}: ${5:"#"}}

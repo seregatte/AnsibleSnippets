@@ -1,63 +1,62 @@
 <snippet>
 <content><![CDATA[
-${1:# async: If set to `yes' Yum will download packages and metadata from this repo in parallel, if possible. 
-# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# bandwidth: Maximum available network bandwidth in bytes/second. Used with the `throttle' option. If `throttle' is a 
-# baseurl: URL to the directory where the yum repository's 'repodata' directory lives. It can also be a list of 
-# cost: Relative cost of accessing this repository. Useful for weighing one repo's packages as greater/less than 
-# deltarpm_metadata_percentage: When the relative size of deltarpm metadata vs pkgs is larger than this, deltarpm metadata is not 
-# deltarpm_percentage: When the relative size of delta vs pkg is larger than this, delta is not used. Use `0' to turn off delta 
-# description: A human readable string describing the repository. This parameter is only required if `state' is set to 
-# enabled: This tells yum whether or not use this repository. 
-# enablegroups: Determines whether yum will allow the use of package groups for this repository. 
-# exclude: List of packages to exclude from updates or installs. This should be a space separated list. Shell globs 
-# failovermethod: `roundrobin' randomly selects a URL out of the list of URLs to start with and proceeds through each of 
-# file: File to use to save the repo in. Defaults to the value of `name'. 
-# gpgcakey: A URL pointing to the ASCII-armored CA key file for the repository. 
-# gpgcheck: Tells yum whether or not it should perform a GPG signature check on packages. 
-# gpgkey: A URL pointing to the ASCII-armored GPG key file for the repository. It can also be a list of multiple 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# http_caching: Determines how upstream HTTP caches are instructed to handle any HTTP downloads that Yum does. `all' 
-# include: Include external configuration file. Both, local path and URL is supported. Configuration file will be 
-# includepkgs: List of packages you want to only use from a repository. This should be a space separated list. Shell 
-# ip_resolve: Determines how yum resolves host names. `4' or `IPv4' - resolve to IPv4 addresses only. `6' or `IPv6' - 
-# keepalive: This tells yum whether or not HTTP/1.1 keepalive should be used with this repository. This can improve 
-# keepcache: Either `1' or `0'. Determines whether or not yum keeps the cache of headers and packages after 
-# metadata_expire: Time (in seconds) after which the metadata will expire. Default value is 6 hours. 
-# metadata_expire_filter: Filter the `metadata_expire' time, allowing a trade of speed for accuracy if a command doesn't require 
-# metalink: Specifies a URL to a metalink file for the repomd.xml, a list of mirrors for the entire repository are 
-# mirrorlist: Specifies a URL to a file containing a list of baseurls. This or the `baseurl' parameter is required if 
-# mirrorlist_expire: Time (in seconds) after which the mirrorlist locally cached will expire. Default value is 6 hours. 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# name: (required) Unique repository ID. This parameter is only required if `state' is set to `present' or 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# params: Option used to allow the user to overwrite any of the other options. To remove an option, set the value 
-# password: Password to use with the username for basic authentication. 
-# priority: Enforce ordered protection of repositories. The value is an integer from 1 to 99. This option only works 
-# protect: Protect packages from updates from other repositories. 
-# proxy: URL to the proxy server that yum should use. Set to `_none_' to disable the global proxy setting. 
+${1:# async: If set to `yes' Yum will download packages and 
+# attributes: Attributes the file or directory should have. To 
+# bandwidth: Maximum available network bandwidth in 
+# baseurl: URL to the directory where the yum repository's 
+# cost: Relative cost of accessing this repository. 
+# deltarpm_metadata_percentage: When the relative size of deltarpm metadata vs 
+# deltarpm_percentage: When the relative size of delta vs pkg is larger 
+# description: A human readable string describing the 
+# enabled: This tells yum whether or not use this 
+# enablegroups: Determines whether yum will allow the use of 
+# exclude: List of packages to exclude from updates or 
+# failovermethod: `roundrobin' randomly selects a URL out of the 
+# file: File name without the `.repo' extension to save 
+# gpgcakey: A URL pointing to the ASCII-armored CA key file 
+# gpgcheck: Tells yum whether or not it should perform a GPG 
+# gpgkey: A URL pointing to the ASCII-armored GPG key file 
+# group: Name of the group that should own the 
+# http_caching: Determines how upstream HTTP caches are 
+# include: Include external configuration file. Both, local 
+# includepkgs: List of packages you want to only use from a 
+# ip_resolve: Determines how yum resolves host names. `4' or 
+# keepalive: This tells yum whether or not HTTP/1.1 keepalive 
+# keepcache: Either `1' or `0'. Determines whether or not yum 
+# metadata_expire: Time (in seconds) after which the metadata will 
+# metadata_expire_filter: Filter the `metadata_expire' time, allowing a 
+# metalink: Specifies a URL to a metalink file for the 
+# mirrorlist: Specifies a URL to a file containing a list of 
+# mirrorlist_expire: Time (in seconds) after which the mirrorlist 
+# mode: Mode the file or directory should be. For those 
+# name: (required) Unique repository ID. This parameter 
+# owner: Name of the user that should own the 
+# password: Password to use with the username for basic 
+# priority: Enforce ordered protection of repositories. The 
+# protect: Protect packages from updates from other 
+# proxy: URL to the proxy server that yum should use. Set 
 # proxy_password: Username to use for proxy. 
 # proxy_username: Password for this proxy. 
-# repo_gpgcheck: This tells yum whether or not it should perform a GPG signature check on the repodata from this 
-# reposdir: Directory where the `.repo' files will be stored. 
-# retries: Set the number of times any attempt to retrieve a file should retry before returning an error. Setting 
-# s3_enabled: Enables support for S3 repositories. This option only works if the YUM S3 plugin is installed. 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# skip_if_unavailable: If set to `yes' yum will continue running if this repository cannot be contacted for any reason. This 
-# ssl_check_cert_permissions: Whether yum should check the permissions on the paths for the certificates on the repository (both 
-# sslcacert: Path to the directory containing the databases of the certificate authorities yum should use to verify 
-# sslclientcert: Path to the SSL client certificate yum should use to connect to repos/remote sites. 
-# sslclientkey: Path to the SSL client key yum should use to connect to repos/remote sites. 
-# sslverify: Defines whether yum should verify SSL certificates/hosts at all. 
+# repo_gpgcheck: This tells yum whether or not it should perform 
+# reposdir: Directory where the `.repo' files will be 
+# retries: Set the number of times any attempt to retrieve 
+# s3_enabled: Enables support for S3 repositories. This option 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# skip_if_unavailable: If set to `yes' yum will continue running if 
+# ssl_check_cert_permissions: Whether yum should check the permissions on the 
+# sslcacert: Path to the directory containing the databases 
+# sslclientcert: Path to the SSL client certificate yum should 
+# sslclientkey: Path to the SSL client key yum should use to 
+# sslverify: Defines whether yum should verify SSL 
 # state: State of the repo file. 
-# throttle: Enable bandwidth throttling for downloads. This option can be expressed as a absolute data rate in 
-# timeout: Number of seconds to wait for a connection before timing out. 
-# ui_repoid_vars: When a repository id is displayed, append these yum variables to the string if they are used in the 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# username: Username to use for basic authentication to a repo or really any url. 
+# throttle: Enable bandwidth throttling for downloads. This 
+# timeout: Number of seconds to wait for a connection 
+# ui_repoid_vars: When a repository id is displayed, append these 
+# unsafe_writes: Normally this module uses atomic operations to 
+# username: Username to use for basic authentication to a 
 }- name: ${2:Name for yum_repository module.}
   yum_repository:
 ${3:   ${4:async}: ${5:"#"}}
@@ -91,39 +90,38 @@ ${84:   ${85:mirrorlist_expire}: ${86:"#"}}
 ${87:   ${88:mode}: ${89:"#"}}
 ${90:   ${91:name}: ${92:"#"}}
 ${93:   ${94:owner}: ${95:"#"}}
-${96:   ${97:params}: ${98:"#"}}
-${99:   ${100:password}: ${101:"#"}}
-${102:   ${103:priority}: ${104:"#"}}
-${105:   ${106:protect}: ${107:"#"}}
-${108:   ${109:proxy}: ${110:"#"}}
-${111:   ${112:proxy_password}: ${113:"#"}}
-${114:   ${115:proxy_username}: ${116:"#"}}
-${117:   ${118:repo_gpgcheck}: ${119:"#"}}
-${120:   ${121:reposdir}: ${122:"#"}}
-${123:   ${124:retries}: ${125:"#"}}
-${126:   ${127:s3_enabled}: ${128:"#"}}
-${129:   ${130:selevel}: ${131:"#"}}
-${132:   ${133:serole}: ${134:"#"}}
-${135:   ${136:setype}: ${137:"#"}}
-${138:   ${139:seuser}: ${140:"#"}}
-${141:   ${142:skip_if_unavailable}: ${143:"#"}}
-${144:   ${145:ssl_check_cert_permissions}: ${146:"#"}}
-${147:   ${148:sslcacert}: ${149:"#"}}
-${150:   ${151:sslclientcert}: ${152:"#"}}
-${153:   ${154:sslclientkey}: ${155:"#"}}
-${156:   ${157:sslverify}: ${158:"#"}}
-${159:   ${160:state}: ${161:"#"}}
-${162:   ${163:throttle}: ${164:"#"}}
-${165:   ${166:timeout}: ${167:"#"}}
-${168:   ${169:ui_repoid_vars}: ${170:"#"}}
-${171:   ${172:unsafe_writes}: ${173:"#"}}
-${174:   ${175:username}: ${176:"#"}}
-${177:${178:   become: ${179:true}} 
-${180:   become_method: ${181:su}} 
-${182:   become_user: ${183:nobody}} 
-${184:   become_flags: ${185:"-s /bin/sh"}}} 
-${186:   when: ${187:variable is defined}} 
-${188:   with_items: ${189:array}} 
+${96:   ${97:password}: ${98:"#"}}
+${99:   ${100:priority}: ${101:"#"}}
+${102:   ${103:protect}: ${104:"#"}}
+${105:   ${106:proxy}: ${107:"#"}}
+${108:   ${109:proxy_password}: ${110:"#"}}
+${111:   ${112:proxy_username}: ${113:"#"}}
+${114:   ${115:repo_gpgcheck}: ${116:"#"}}
+${117:   ${118:reposdir}: ${119:"#"}}
+${120:   ${121:retries}: ${122:"#"}}
+${123:   ${124:s3_enabled}: ${125:"#"}}
+${126:   ${127:selevel}: ${128:"#"}}
+${129:   ${130:serole}: ${131:"#"}}
+${132:   ${133:setype}: ${134:"#"}}
+${135:   ${136:seuser}: ${137:"#"}}
+${138:   ${139:skip_if_unavailable}: ${140:"#"}}
+${141:   ${142:ssl_check_cert_permissions}: ${143:"#"}}
+${144:   ${145:sslcacert}: ${146:"#"}}
+${147:   ${148:sslclientcert}: ${149:"#"}}
+${150:   ${151:sslclientkey}: ${152:"#"}}
+${153:   ${154:sslverify}: ${155:"#"}}
+${156:   ${157:state}: ${158:"#"}}
+${159:   ${160:throttle}: ${161:"#"}}
+${162:   ${163:timeout}: ${164:"#"}}
+${165:   ${166:ui_repoid_vars}: ${167:"#"}}
+${168:   ${169:unsafe_writes}: ${170:"#"}}
+${171:   ${172:username}: ${173:"#"}}
+${174:${175:   become: ${176:true}} 
+${177:   become_method: ${178:su}} 
+${179:   become_user: ${180:nobody}} 
+${181:   become_flags: ${182:"-s /bin/sh"}}} 
+${183:   when: ${184:variable is defined}} 
+${185:   with_items: ${186:array}} 
 ]]></content>
 	<tabTrigger>yum_repository</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

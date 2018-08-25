@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# annotated_by: The person or robot who the annotation should be attributed to. 
-# deployed_by: The person or robot responsible for deploying the code 
-# deployed_to: The environment code was deployed to. (ie: development, staging, production) 
-# event: The type of event to send, either annotation or deploy 
-# event_epoch: Unix timestamp of where the event should appear in the timeline, defaults to now. Be careful with this. 
-# instance_id: id of an EC2 instance that this event should be attached to, which will limit the contexts where this 
+${1:# annotated_by: The person or robot?who the annotation should be 
+# deployed_by: The person or robot responsible for deploying 
+# deployed_to: The environment code was deployed to. (ie: 
+# event: The type of event to send, either annotation or 
+# event_epoch: Unix timestamp of where the event should appear 
+# instance_id: id of an EC2 instance that this event should be 
 # key: (required) API key. 
-# level: one of INFO/WARN/ERROR, defaults to INFO if not supplied.  May affect display. 
-# msg: The contents of the annotation message, in plain text.  Limited to 256 characters. Required for 
+# level: one of INFO/WARN/ERROR, defaults to INFO if not 
+# msg: The contents of the annotation message, in plain 
 # repository: The repository (or project) deployed 
-# revision_id: The revision of the code that was deployed. Required for deploy events 
+# revision_id: The revision of the code that was deployed. 
 }- name: ${2:Name for stackdriver module.}
   stackdriver:
 ${3:   ${4:annotated_by}: ${5:"#"}}

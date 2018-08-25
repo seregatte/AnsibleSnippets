@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# data: (required) NSO data in format as `| display 
+# password: (required) NSO password 
+# timeout: JSON-RPC request timeout in seconds 
+# url: (required) NSO JSON-RPC URL, 
+# username: (required) NSO username 
+}- name: ${2:Name for nso_verify module.}
+  nso_verify:
+${3:   ${4:data}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:timeout}: ${11:"#"}}
+${12:   ${13:url}: ${14:"#"}}
+${15:   ${16:username}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>nso_verify</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

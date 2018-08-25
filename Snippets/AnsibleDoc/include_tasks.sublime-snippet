@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# free: This action allows you to specify the name of the file directly w/o any other options. Unlike 
+${1:# free: The name of the imported file is specified 
 }- name: ${2:Name for include_tasks module.}
   include_tasks:
 ${3:   ${4:free}: ${5:"#"}}

@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# cas: used when acquiring a lock with a session. If the cas is 0, then Consul will only put the key if it does 
-# flags: opaque integer value that can be passed when setting a value. 
-# host: host of the consul agent defaults to localhost 
-# key: (required) the key at which the value should be stored. 
-# port: the port on which the consul agent is running 
-# recurse: if the key represents a prefix, each entry with the prefix can be retrieved by setting this to true. 
-# scheme: the protocol scheme on which the consul agent is running 
-# session: the session that should be used to acquire or release a lock associated with a key/value pair 
-# state: the action to take with the supplied key and value. If the state is 'present', the key contents will be 
-# token: the token key indentifying an ACL rule set that controls access to the key value pair 
-# validate_certs: whether to verify the tls certificate of the consul agent 
-# value: (required) the value should be associated with the given key, required if state is present 
+${1:# cas: Used when acquiring a lock with a session. If 
+# flags: Opaque integer value that can be passed when 
+# host: Host of the consul agent. 
+# key: (required) The key at which the value should be 
+# port: The port on which the consul agent is running. 
+# recurse: If the key represents a prefix, each entry with 
+# scheme: The protocol scheme on which the consul agent is 
+# session: The session that should be used to acquire or 
+# state: The action to take with the supplied key and 
+# token: The token key indentifying an ACL rule set that 
+# validate_certs: Whether to verify the tls certificate of the 
+# value: (required) The value should be associated with 
 }- name: ${2:Name for consul_kv module.}
   consul_kv:
 ${3:   ${4:cas}: ${5:"#"}}

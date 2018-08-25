@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# array_password: The management password of the array to manage, if set. 
-# array_wwn: The WWN of the array to manage. Only necessary if in-band managing multiple arrays on the same agent 
-# controller_addresses: (required) The list addresses for the out-of-band management adapter or the agent host. Mutually 
-# enable_trace: Enable trace logging for SYMbol calls to the storage system. 
-# meta_tags: Optional meta tags to associate to this storage system 
-# ssid: (required) The ID of the array to manage. This value must be unique for each array. 
-# state: (required) Whether the specified array should be configured on the Web Services Proxy or not. 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# array_password: The management password of the array to manage, 
+# array_wwn: The WWN of the array to manage. Only necessary 
+# controller_addresses: (required) The list addresses for the out-of- 
+# enable_trace: Enable trace logging for SYMbol calls to the 
+# meta_tags: Optional meta tags to associate to this storage 
+# ssid: (required) The ID of the array to manage. This 
+# state: (required) Whether the specified array should be 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_storage_system module.}
   netapp_e_storage_system:

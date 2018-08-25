@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# force: Force a given operation (where supported by imgadm(1M)). 
+${1:# force: Force a given operation (where supported by 
 # pool: zpool to import to or delete images from. 
 # source: URI for the image source. 
-# state: (required) State the object operated on should be in. `imported' is an alias for for `present' and 
+# state: (required) State the object operated on should 
 # type: Type for image sources. 
-# uuid: Image UUID. Can either be a full UUID or `*' for all images. 
+# uuid: Image UUID. Can either be a full UUID or `*' for 
 }- name: ${2:Name for imgadm module.}
   imgadm:
 ${3:   ${4:force}: ${5:"#"}}

@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# account: Account the user will be created under. Required on `state=present'. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+${1:# account: Account the user will be created under. Required 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # domain: Domain the user is related to. 
 # email: Email of the user. Required on `state=present'. 
-# first_name: First name of the user. Required on `state=present'. 
-# keys_registered: If API keys of the user should be generated. Note: Keys can not be removed by the API again. 
-# last_name: Last name of the user. Required on `state=present'. 
-# password: Password of the user to be created. Required on `state=present'. Only considered on creation and will 
+# first_name: First name of the user. Required on 
+# keys_registered: If API keys of the user should be generated. 
+# last_name: Last name of the user. Required on 
+# password: Password of the user to be created. Required on 
 # poll_async: Poll async jobs until job has finished. 
-# state: State of the user. `unlocked' is an alias for `enabled'. 
+# state: State of the user. `unlocked' is an alias for 
 # timezone: Timezone of the user. 
 # username: (required) Username of the user. 
 }- name: ${2:Name for cs_user module.}

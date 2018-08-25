@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# comment: Change the comment on the public key. Rewriting the comment is useful in cases such as fetching it from 
-# exclusive: Whether to remove all other non-specified keys from the authorized_keys file. Multiple keys can be 
-# key: (required) The SSH public key(s), as a string or (since 1.9) url (https://github.com/username.keys) 
-# key_options: A string of ssh key options to be prepended to the key in the authorized_keys file 
-# manage_dir: Whether this module should manage the directory of the authorized key file.  If set, the module will 
+${1:# comment: Change the comment on the public key. Rewriting 
+# exclusive: Whether to remove all other non-specified keys 
+# key: (required) The SSH public key(s), as a string or 
+# key_options: A string of ssh key options to be prepended to 
+# manage_dir: Whether this module should manage the directory 
 # path: Alternate path to the authorized_keys file 
-# state: Whether the given key (with the given key_options) should or should not be in the file 
-# user: (required) The username on the remote host whose authorized_keys file will be modified 
-# validate_certs: This only applies if using a https url as the source of the keys. If set to `no', the SSL certificates 
+# state: Whether the given key (with the given 
+# user: (required) The username on the remote host whose 
+# validate_certs: This only applies if using a https url as the 
 }- name: ${2:Name for authorized_key module.}
   authorized_key:
 ${3:   ${4:comment}: ${5:"#"}}

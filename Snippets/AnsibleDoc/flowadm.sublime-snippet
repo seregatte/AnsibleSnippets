@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# dsfield: - Identifies the 8-bit differentiated services field (as defined in RFC 2474). The optional dsfield_mask 
+${1:# dsfield: - Identifies the 8-bit differentiated services 
 # link: Specifiies a link to configure flow on. 
-# local_ip: Identifies a network flow by the local IP address. 
-# local_port: Identifies a service specified by the local port. 
-# maxbw: - Sets the full duplex bandwidth for the flow. The bandwidth is specified as an integer with one of the 
-# name: (required) - A flow is defined as a set of attributes based on Layer 3 and Layer 4 headers, which can be 
+# local_ip: Identifies a network flow by the local IP 
+# local_port: Identifies a service specified by the local 
+# maxbw: - Sets the full duplex bandwidth for the flow. 
+# name: (required) - A flow is defined as a set of 
 # priority: Sets the relative priority for the flow. 
-# remove_ip: Identifies a network flow by the remote IP address. 
-# state: Create/delete/enable/disable an IP address on the network interface. 
-# temporary: Specifies that the configured flow is temporary. Temporary flows do not persist across reboots. 
-# transport: - Specifies a Layer 4 protocol to be used. It is typically used in combination with `local_port' to 
+# remote_ip: Identifies a network flow by the remote IP 
+# state: Create/delete/enable/disable an IP address on 
+# temporary: Specifies that the configured flow is temporary. 
+# transport: - Specifies a Layer 4 protocol to be used. It is 
 }- name: ${2:Name for flowadm module.}
   flowadm:
 ${3:   ${4:dsfield}: ${5:"#"}}
@@ -20,7 +20,7 @@ ${12:   ${13:local_port}: ${14:"#"}}
 ${15:   ${16:maxbw}: ${17:"#"}}
 ${18:   ${19:name}: ${20:"#"}}
 ${21:   ${22:priority}: ${23:"#"}}
-${24:   ${25:remove_ip}: ${26:"#"}}
+${24:   ${25:remote_ip}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:temporary}: ${32:"#"}}
 ${33:   ${34:transport}: ${35:"#"}}

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# api: API endpoint 
+# msg: (required) The message body. 
+# port: API endpoint port 
+# token: (required) Log token. 
+}- name: ${2:Name for logentries_msg module.}
+  logentries_msg:
+${3:   ${4:api}: ${5:"#"}}
+${6:   ${7:msg}: ${8:"#"}}
+${9:   ${10:port}: ${11:"#"}}
+${12:   ${13:token}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>logentries_msg</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

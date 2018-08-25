@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# force: The default is `yes', which will replace the existing remote key if it's different than `pubkey'. If 
+${1:# force: The default is `yes', which will replace the 
 # name: (required) SSH key name 
-# pubkey: SSH public key value. Required when `state=present'. 
-# state: Whether to remove a key, ensure that it exists, or update its value. 
-# token: (required) GitHub Access Token with permission to list and create public keys. 
+# pubkey: SSH public key value. Required when 
+# state: Whether to remove a key, ensure that it exists, 
+# token: (required) GitHub Access Token with permission 
 }- name: ${2:Name for github_key module.}
   github_key:
 ${3:   ${4:force}: ${5:"#"}}

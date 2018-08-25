@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# dest: (required) Destination file/directory to sync (Will receive contents of src). 
-# flags: Directly supply Robocopy flags. If set, `purge' and `recurse' will be ignored. 
-# purge: Deletes any files/directories found in the destination that do not exist in the source. Toggles the 
-# recurse: Includes all subdirectories (Toggles the `/e' flag to RoboCopy). If `flags' is set, this will be 
+${1:# dest: (required) Destination file/directory to sync 
+# flags: Directly supply Robocopy flags. If set, `purge' 
+# purge: Deletes any files/directories found in the 
+# recurse: Includes all subdirectories (Toggles the `/e' 
 # src: (required) Source file/directory to sync. 
 }- name: ${2:Name for win_robocopy module.}
   win_robocopy:

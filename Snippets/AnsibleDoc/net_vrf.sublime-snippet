@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# aggregate: List of VRFs definitions 
-# interfaces: List of interfaces the VRF should be configured on. 
+# interfaces: List of interfaces the VRF should be configured 
 # name: Name of the VRF. 
-# purge: Purge VRFs not defined in the `aggregate' parameter. 
+# purge: Purge VRFs not defined in the `aggregate' 
 # state: State of the VRF configuration. 
 }- name: ${2:Name for net_vrf module.}
   net_vrf:

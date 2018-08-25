@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# capability: (required) Desired capability to set (with operator and flags, if state is `present') or remove (if 
-# path: (required) Specifies the path to the file to be managed. 
-# state: Whether the entry should be present or absent in the file's capabilities. 
+${1:# capability: (required) Desired capability to set (with 
+# path: (required) Specifies the path to the file to be 
+# state: Whether the entry should be present or absent in 
 }- name: ${2:Name for capabilities module.}
   capabilities:
 ${3:   ${4:capability}: ${5:"#"}}

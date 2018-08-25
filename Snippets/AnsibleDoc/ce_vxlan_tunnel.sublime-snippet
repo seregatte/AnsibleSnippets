@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# bridge_domain_id: Specifies a bridge domain ID. The value is an integer ranging from 1 to 16777215. 
+${1:# bridge_domain_id: Specifies a bridge domain ID. The value is an 
 # nve_mode: Specifies the working mode of an NVE interface. 
-# nve_name: Specifies the number of an NVE interface. The value ranges from 1 to 2. 
-# peer_list_ip: Specifies the IP address of a remote VXLAN tunnel endpoints (VTEP). The value is in dotted decimal 
+# nve_name: Specifies the number of an NVE interface. The 
+# peer_list_ip: Specifies the IP address of a remote VXLAN 
 # protocol_type: The operation type of routing protocol. 
-# source_ip: Specifies an IP address for a source VTEP. The value is in dotted decimal notation. 
+# source_ip: Specifies an IP address for a source VTEP. The 
 # state: Manage the state of the resource. 
-# vni_id: Specifies a VXLAN network identifier (VNI) ID. The value is an integer ranging from 1 to 16000000. 
+# vni_id: Specifies a VXLAN network identifier (VNI) ID. 
 }- name: ${2:Name for ce_vxlan_tunnel module.}
   ce_vxlan_tunnel:
 ${3:   ${4:bridge_domain_id}: ${5:"#"}}

@@ -1,34 +1,35 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# deregistration_delay_timeout: The amount time for Elastic Load Balancing to wait before changing the state of a deregistering target 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# health_check_interval: The approximate amount of time, in seconds, between health checks of an individual target. 
-# health_check_path: The ping path that is the destination on the targets for health checks. The path must be defined in 
-# health_check_port: The port the load balancer uses when performing health checks on targets. 
-# health_check_protocol: The protocol the load balancer uses when performing health checks on targets. 
-# health_check_timeout: The amount of time, in seconds, during which no response from a target means a failed health check. 
-# healthy_threshold_count: The number of consecutive health checks successes required before considering an unhealthy target 
-# modify_targets: Whether or not to alter existing targets in the group to match what is passed with the module 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# deregistration_delay_timeout: The amount time for Elastic Load Balancing to 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# health_check_interval: The approximate amount of time, in seconds, 
+# health_check_path: The ping path that is the destination on the 
+# health_check_port: The port the load balancer uses when performing 
+# health_check_protocol: The protocol the load balancer uses when 
+# health_check_timeout: The amount of time, in seconds, during which no 
+# healthy_threshold_count: The number of consecutive health checks 
+# modify_targets: Whether or not to alter existing targets in the 
 # name: (required) The name of the target group. 
-# port: The port on which the targets receive traffic. This port is used unless you specify a port override when 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# protocol: The protocol to use for routing traffic to the targets. Required when `state' is `present'. 
-# purge_tags: If yes, existing tags will be purged from the resource to match exactly what is defined by `tags' 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# port: The port on which the targets receive traffic. 
+# profile: Uses a boto profile. Only works with boto >= 
+# protocol: The protocol to use for routing traffic to the 
+# purge_tags: If yes, existing tags will be purged from the 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) Create or destroy the target group. 
 # stickiness_enabled: Indicates whether sticky sessions are enabled. 
-# stickiness_lb_cookie_duration: The time period, in seconds, during which requests from a client should be routed to the same target. 
-# stickiness_type: The type of sticky sessions. The possible value is lb_cookie. 
-# successful_response_codes: The HTTP codes to use when checking for a successful response from a target. You can specify multiple 
-# tags: A dictionary of one or more tags to assign to the target group. 
-# targets: A list of targets to assign to the target group. This parameter defaults to an empty list. Unless you 
-# unhealthy_threshold_count: The number of consecutive health check failures required before considering a target unhealthy. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_id: The identifier of the virtual private cloud (VPC). Required when `state' is `present'. 
+# stickiness_lb_cookie_duration: The time period, in seconds, during which 
+# stickiness_type: The type of sticky sessions. The possible value 
+# successful_response_codes: The HTTP codes to use when checking for a 
+# tags: A dictionary of one or more tags to assign to 
+# target_type: The type of target that you must specify when 
+# targets: A list of targets to assign to the target group. 
+# unhealthy_threshold_count: The number of consecutive health check failures 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_id: The identifier of the virtual private cloud 
 }- name: ${2:Name for elb_target_group module.}
   elb_target_group:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -48,7 +49,7 @@ ${42:   ${43:profile}: ${44:"#"}}
 ${45:   ${46:protocol}: ${47:"#"}}
 ${48:   ${49:purge_tags}: ${50:"#"}}
 ${51:   ${52:region}: ${53:"#"}}
-${54:   ${55:http}: ${56:"#"}}
+${54:   ${55:}: ${56:"#"}}
 ${57:   ${58:security_token}: ${59:"#"}}
 ${60:   ${61:state}: ${62:"#"}}
 ${63:   ${64:stickiness_enabled}: ${65:"#"}}
@@ -56,16 +57,17 @@ ${66:   ${67:stickiness_lb_cookie_duration}: ${68:"#"}}
 ${69:   ${70:stickiness_type}: ${71:"#"}}
 ${72:   ${73:successful_response_codes}: ${74:"#"}}
 ${75:   ${76:tags}: ${77:"#"}}
-${78:   ${79:targets}: ${80:"#"}}
-${81:   ${82:unhealthy_threshold_count}: ${83:"#"}}
-${84:   ${85:validate_certs}: ${86:"#"}}
-${87:   ${88:vpc_id}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${78:   ${79:target_type}: ${80:"#"}}
+${81:   ${82:targets}: ${83:"#"}}
+${84:   ${85:unhealthy_threshold_count}: ${86:"#"}}
+${87:   ${88:validate_certs}: ${89:"#"}}
+${90:   ${91:vpc_id}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
 ]]></content>
 	<tabTrigger>elb_target_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

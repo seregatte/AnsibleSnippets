@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# data: Additional data for this record, e.g. ['a': '192.0.2.1']. Required if `state=present'. 
-# name: (required) Name of the record, this is also the DNS record. E.g. www for www.example.com. 
+${1:# data: Additional data for this record, e.g. ['a': 
+# name: (required) Name of the record, this is also the 
 # state: Whether the dns record is present or not. 
-# type: (required) Define the record type. `host_record' is a A or AAAA record, `alias' is a CNAME, `ptr_record' 
-# zone: (required) Corresponding DNS zone for this record, e.g. example.com. 
+# type: (required) Define the record type. `host_record' 
+# zone: (required) Corresponding DNS zone for this 
 }- name: ${2:Name for udm_dns_record module.}
   udm_dns_record:
 ${3:   ${4:data}: ${5:"#"}}

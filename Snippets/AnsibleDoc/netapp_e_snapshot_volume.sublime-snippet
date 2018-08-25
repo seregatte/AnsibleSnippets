@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# full_threshold: The repository utilization warning threshold percentage 
-# name: (required) The name you wish to give the snapshot volume 
-# repo_percentage: The size of the view in relation to the size of the base volume 
-# snapshot_image_id: (required) The identifier of the snapshot image used to create the new snapshot volume. Note: You'll 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# full_threshold: The repository utilization warning threshold 
+# name: (required) The name you wish to give the 
+# repo_percentage: The size of the view in relation to the size of 
+# snapshot_image_id: (required) The identifier of the snapshot image 
 # ssid: (required) storage array ID 
-# state: (required) Whether to create or remove the snapshot volume 
-# storage_pool_name: (required) Name of the storage pool on which to allocate the repository volume. 
+# state: (required) Whether to create or remove the 
+# storage_pool_name: (required) Name of the storage pool on which to 
 # validate_certs: Should https certificates be validated? 
 # view_mode: (required) The snapshot volume access mode 
 }- name: ${2:Name for netapp_e_snapshot_volume module.}

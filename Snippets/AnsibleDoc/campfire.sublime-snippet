@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# msg: (required) The message body. 
 # notify: Send a notification sound before the message. 
-# room: (required) Room number to which the message should be sent. 
+# room: (required) Room number to which the message 
 # subscription: (required) The subscription name to use. 
 # token: (required) API token. 
 }- name: ${2:Name for campfire module.}

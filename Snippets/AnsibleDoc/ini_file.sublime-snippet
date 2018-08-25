@@ -1,49 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# backup: Create a backup file including the timestamp information so you can get the original file back if you 
-# create: If set to 'no', the module will fail if the file does not already exist. By default it will create the 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
+${1:# allow_no_value: allow option without value and without '=' 
+# attributes: Attributes the file or directory should have. To 
+# backup: Create a backup file including the timestamp 
+# create: If set to 'no', the module will fail if the file 
+# group: Name of the group that should own the 
+# mode: Mode the file or directory should be. For those 
 # no_extra_spaces: Do not insert spaces before and after '=' symbol 
-# option: If set (required for changing a `value'), this is the name of the option. May be omitted if 
-# others: All arguments accepted by the [file] module also work here 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# path: (required) Path to the INI-style file; this file is created if required. Before 2.3 this option was only 
-# section: (required) Section name in INI file. This is added if `state=present' automatically when a single value 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# state: If set to `absent' the option or section will be removed if present instead of created. 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# value: The string value to be associated with an `option'. May be omitted when removing an `option'. 
+# option: If set (required for changing a `value'), this 
+# others: All arguments accepted by the [file] module also 
+# owner: Name of the user that should own the 
+# path: (required) Path to the INI-style file; this file 
+# section: (required) Section name in INI file. This is 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# state: If set to `absent' the option or section will be 
+# unsafe_writes: Normally this module uses atomic operations to 
+# value: The string value to be associated with an 
 }- name: ${2:Name for ini_file module.}
   ini_file:
-${3:   ${4:attributes}: ${5:"#"}}
-${6:   ${7:backup}: ${8:"#"}}
-${9:   ${10:create}: ${11:"#"}}
-${12:   ${13:group}: ${14:"#"}}
-${15:   ${16:mode}: ${17:"#"}}
-${18:   ${19:no_extra_spaces}: ${20:"#"}}
-${21:   ${22:option}: ${23:"#"}}
-${24:   ${25:others}: ${26:"#"}}
-${27:   ${28:owner}: ${29:"#"}}
-${30:   ${31:path}: ${32:"#"}}
-${33:   ${34:section}: ${35:"#"}}
-${36:   ${37:selevel}: ${38:"#"}}
-${39:   ${40:serole}: ${41:"#"}}
-${42:   ${43:setype}: ${44:"#"}}
-${45:   ${46:seuser}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:unsafe_writes}: ${53:"#"}}
-${54:   ${55:value}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${3:   ${4:allow_no_value}: ${5:"#"}}
+${6:   ${7:attributes}: ${8:"#"}}
+${9:   ${10:backup}: ${11:"#"}}
+${12:   ${13:create}: ${14:"#"}}
+${15:   ${16:group}: ${17:"#"}}
+${18:   ${19:mode}: ${20:"#"}}
+${21:   ${22:no_extra_spaces}: ${23:"#"}}
+${24:   ${25:option}: ${26:"#"}}
+${27:   ${28:others}: ${29:"#"}}
+${30:   ${31:owner}: ${32:"#"}}
+${33:   ${34:path}: ${35:"#"}}
+${36:   ${37:section}: ${38:"#"}}
+${39:   ${40:selevel}: ${41:"#"}}
+${42:   ${43:serole}: ${44:"#"}}
+${45:   ${46:setype}: ${47:"#"}}
+${48:   ${49:seuser}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:unsafe_writes}: ${56:"#"}}
+${57:   ${58:value}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>ini_file</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

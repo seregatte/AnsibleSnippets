@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) This is the feature name to enable or disable. 
-# state: Apply feature state. 
+${1:# name: (required) This is the feature name to enable or 
+# state: If set to `present' and feature is disabled, 
 }- name: ${2:Name for icinga2_feature module.}
   icinga2_feature:
 ${3:   ${4:name}: ${5:"#"}}

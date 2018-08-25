@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# conditions: list of conditions used in the rule. Each 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# metric_name: A friendly name or description for the metrics 
+# name: (required) Name of the Web Application Firewall 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_conditions: Whether or not to remove conditions that are not 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: whether the rule should be present or absent 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for aws_waf_rule module.}
+  aws_waf_rule:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:conditions}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:metric_name}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:purge_conditions}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>aws_waf_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

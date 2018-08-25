@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# path: (required) Path to a pester test file or a 
+# version: Minimum version of the pester module that has to 
+}- name: ${2:Name for win_pester module.}
+  win_pester:
+${3:   ${4:path}: ${5:"#"}}
+${6:   ${7:version}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>win_pester</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

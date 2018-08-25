@@ -2,15 +2,15 @@
 <content><![CDATA[
 ${1:# description: The description to use for the host. 
 # enabled: If the host should be enabled. 
-# inventory: (required) Inventory the host should be made a member of. 
+# inventory: (required) Inventory the host should be made a 
 # name: (required) The name to use for the host. 
 # state: Desired state of the resource. 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
-# variables: Variables to use for the host. Use '@' for a file. 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# variables: Variables to use for the host. Use `@' for a 
 }- name: ${2:Name for tower_host module.}
   tower_host:
 ${3:   ${4:description}: ${5:"#"}}

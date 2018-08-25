@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# clicommand: (required) This specifies the CLI command as an attribute to this method. The command is passed using 
-# condition: (required) If you specify condition=false in the inventory file against any device, the command 
-# device: (required) This specifies the type of device where the method is executed. The choices 
-# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
-# flag: (required) If a task needs to be executed, you have to set the flag the same as it is specified in the 
-# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
-# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
-# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
-# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
+${1:# clicommand: (required) This specifies the CLI command as an 
+# condition: (required) If you specify condition=false in the 
+# device: (required) This specifies the type of device 
+# enable: Configures the password used to enter Global 
+# flag: (required) If a task needs to be executed, you 
+# host: (required) This is the variable used to search 
+# outputfile: (required) This specifies the file path where 
+# password: (required) Configures the password used to 
+# username: (required) Configures the username used to 
 }- name: ${2:Name for cnos_conditional_command module.}
   cnos_conditional_command:
 ${3:   ${4:clicommand}: ${5:"#"}}

@@ -3,9 +3,9 @@
 ${1:# name: (required) Hostname or ip address of the BMC. 
 # password: (required) Password to connect to the BMC. 
 # port: Remote RMCP port. 
-# state: (required) Whether to ensure that the machine in desired state. 
-# timeout: Maximum number of seconds before interrupt request. 
-# user: (required) Username to use to connect to the BMC. 
+# state: (required) Whether to ensure that the machine in 
+# timeout: Maximum number of seconds before interrupt 
+# user: (required) Username to use to connect to the 
 }- name: ${2:Name for ipmi_power module.}
   ipmi_power:
 ${3:   ${4:name}: ${5:"#"}}

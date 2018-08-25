@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# enable: Set interface DLDP enable state. 
-# interface: (required) Must be fully qualified interface name, i.e. GE1/0/1, 10GE1/0/1, 40GE1/0/22, 100GE1/0/1. 
-# local_mac: Set the source MAC address for DLDP packets sent in the DLDP-compatible mode. The value of MAC address 
+# interface: (required) Must be fully qualified interface 
+# local_mac: Set the source MAC address for DLDP packets sent 
 # mode_enable: Set DLDP compatible-mode enable state. 
 # reset: Specify whether reseting interface DLDP state. 
 # state: Manage the state of the resource. 

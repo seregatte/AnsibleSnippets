@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# arguments: Composer arguments like required package, version and so on. 
-# command: Composer command like "install", "update" and so on. 
-# executable: Path to PHP Executable on the remote host, if PHP is not in PATH 
+${1:# arguments: Composer arguments like required package, 
+# command: Composer command like "install", "update" and so 
+# executable: Path to PHP Executable on the remote host, if 
 # global_command: Runs the specified command globally. 
-# ignore_platform_reqs: Ignore php, hhvm, lib-* and ext-* requirements and force the installation even if the local machine does 
-# no_dev: Disables installation of require-dev packages (see --no-dev). 
+# ignore_platform_reqs: Ignore php, hhvm, lib-* and ext-* requirements 
+# no_dev: Disables installation of require-dev packages 
 # no_plugins: Disables all plugins ( see --no-plugins ). 
-# no_scripts: Skips the execution of all scripts defined in composer.json (see --no-scripts). 
-# optimize_autoloader: Optimize autoloader during autoloader dump (see --optimize-autoloader). Convert PSR-0/4 autoloading to 
-# prefer_dist: Forces installation from package dist even for dev versions (see --prefer-dist). 
-# prefer_source: Forces installation from package sources when possible (see --prefer-source). 
-# working_dir: Directory of your project (see --working-dir). This is required when the command is not run globally. 
+# no_scripts: Skips the execution of all scripts defined in 
+# optimize_autoloader: Optimize autoloader during autoloader dump (see 
+# prefer_dist: Forces installation from package dist even for 
+# prefer_source: Forces installation from package sources when 
+# working_dir: Directory of your project (see --working-dir). 
 }- name: ${2:Name for composer module.}
   composer:
 ${3:   ${4:arguments}: ${5:"#"}}

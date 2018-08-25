@@ -1,30 +1,30 @@
 <snippet>
 <content><![CDATA[
 ${1:# admin_state_up: Sets admin state. 
-# allowed_address_pairs: Allowed address pairs list.  Allowed address pairs are supported with dictionary structure. e.g. 
-# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+# allowed_address_pairs: Allowed address pairs list.  Allowed address 
+# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
 # device_id: Device ID of device using this port. 
 # device_owner: The ID of the entity that uses this port. 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# extra_dhcp_opts: Extra dhcp options to be assigned to this port.  Extra options are supported with dictionary structure. 
-# fixed_ips: Desired IP and/or subnet for this port.  Subnet is referenced by subnet_id and IP is referenced by 
-# key: A path to a client key to use as part of the SSL transaction. 
+# extra_dhcp_opts: Extra dhcp options to be assigned to this port. 
+# fixed_ips: Desired IP and/or subnet for this port.  Subnet 
+# interface: Endpoint URL type to fetch from the service 
+# key: A path to a client key to use as part of the SSL 
 # mac_address: MAC address of this port. 
 # name: Name that has to be given to the port. 
-# network: (required) Network ID or name this port belongs to. 
-# no_security_groups: Do not associate a security group with this port. 
+# network: (required) Network ID or name this port belongs 
+# no_security_groups: Do not associate a security group with this 
 # region_name: Name of the region. 
-# security_groups: Security group(s) ID(s) or name(s) associated with the port (comma separated string or YAML list) 
+# security_groups: Security group(s) ID(s) or name(s) associated 
 # state: Should the resource be present or absent. 
-# timeout: How long should ansible wait for the requested resource. 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: Should ansible wait until the requested resource is complete. 
+# timeout: How long should ansible wait for the requested 
+# verify: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_port module.}
   os_port:
 ${3:   ${4:admin_state_up}: ${5:"#"}}
@@ -38,9 +38,9 @@ ${24:   ${25:cert}: ${26:"#"}}
 ${27:   ${28:cloud}: ${29:"#"}}
 ${30:   ${31:device_id}: ${32:"#"}}
 ${33:   ${34:device_owner}: ${35:"#"}}
-${36:   ${37:endpoint_type}: ${38:"#"}}
-${39:   ${40:extra_dhcp_opts}: ${41:"#"}}
-${42:   ${43:fixed_ips}: ${44:"#"}}
+${36:   ${37:extra_dhcp_opts}: ${38:"#"}}
+${39:   ${40:fixed_ips}: ${41:"#"}}
+${42:   ${43:interface}: ${44:"#"}}
 ${45:   ${46:key}: ${47:"#"}}
 ${48:   ${49:mac_address}: ${50:"#"}}
 ${51:   ${52:name}: ${53:"#"}}
@@ -50,7 +50,7 @@ ${60:   ${61:region_name}: ${62:"#"}}
 ${63:   ${64:security_groups}: ${65:"#"}}
 ${66:   ${67:state}: ${68:"#"}}
 ${69:   ${70:timeout}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
+${72:   ${73:verify}: ${74:"#"}}
 ${75:   ${76:wait}: ${77:"#"}}
 ${78:${79:   become: ${80:true}} 
 ${81:   become_method: ${82:su}} 

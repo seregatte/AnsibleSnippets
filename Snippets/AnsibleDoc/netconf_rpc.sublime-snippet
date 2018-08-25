@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# content: This argument specifies the optional request 
+# display: Encoding scheme to use when serializing output 
+# rpc: This argument specifies the request (name of the 
+# xmlns: NETCONF operations not defined in rfc6241 
+}- name: ${2:Name for netconf_rpc module.}
+  netconf_rpc:
+${3:   ${4:content}: ${5:"#"}}
+${6:   ${7:display}: ${8:"#"}}
+${9:   ${10:rpc}: ${11:"#"}}
+${12:   ${13:xmlns}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>netconf_rpc</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# count: Number of packets to send. 
-# dest: (required) The IP Address or hostname (resolvable by switch) of the remote node. 
+# dest: (required) The IP Address or hostname 
 # source: The source IP Address. 
-# state: Determines if the expected result is success or fail. 
+# state: Determines if the expected result is success or 
 # vrf: The VRF to use for forwarding. 
 }- name: ${2:Name for net_ping module.}
   net_ping:

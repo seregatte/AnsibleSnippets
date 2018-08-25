@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# revision: The version number of the atomic host to be deployed. Providing `latest' will upgrade to the latest 
+${1:# revision: The version number of the atomic host to be 
 }- name: ${2:Name for atomic_host module.}
   atomic_host:
 ${3:   ${4:revision}: ${5:"#"}}

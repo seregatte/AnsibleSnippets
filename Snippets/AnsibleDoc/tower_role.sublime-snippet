@@ -2,19 +2,19 @@
 <content><![CDATA[
 ${1:# credential: Credential the role acts on. 
 # inventory: Inventory the role acts on. 
-# job_template: The job_template the role acts on. 
-# organization: Organiation the role acts on. 
+# job_template: The job template the role acts on. 
+# organization: Organization the role acts on. 
 # project: Project the role acts on. 
 # role: (required) The role type to grant/revoke. 
 # state: Desired state of the resource. 
 # target_team: Team that the role acts on. 
-# team: Team that receives the permissions specified by the role. 
+# team: Team that receives the permissions specified by 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
-# user: User that receives the permissions specified by the role. 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# user: User that receives the permissions specified by 
 }- name: ${2:Name for tower_role module.}
   tower_role:
 ${3:   ${4:credential}: ${5:"#"}}

@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# list_url: An URL of the alternative overlays list that defines the overlay to install. This list will be fetched 
-# name: (required) The overlay id to install, synchronize, or uninstall. Use 'ALL' to sync all of the installed 
-# state: Whether to install (`present'), sync (`updated'), or uninstall (`absent') the overlay. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be set to `no' when no other option 
+${1:# list_url: An URL of the alternative overlays list that 
+# name: (required) The overlay id to install, 
+# state: Whether to install (`present'), sync 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for layman module.}
   layman:
 ${3:   ${4:list_url}: ${5:"#"}}

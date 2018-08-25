@@ -1,23 +1,24 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the VPC is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# cidr: CIDR of the VPC, e.g. 10.1.0.0/16 All VPC guest networks' CIDRs must be within this CIDR. Required on 
-# display_text: Display text of the VPC. If not set, `name' will be used for creating. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# cidr: CIDR of the VPC, e.g. 10.1.0.0/16 All VPC guest 
+# clean_up: Whether to redeploy a VPC router or not when 
+# display_text: Display text of the VPC. If not set, `name' will 
 # domain: Domain the VPC is related to. 
 # name: (required) Name of the VPC. 
-# network_domain: Network domain for the VPC. All networks inside the VPC will belong to this domain. 
+# network_domain: Network domain for the VPC. All networks inside 
 # poll_async: Poll async jobs until job has finished. 
 # project: Name of the project the VPC is related to. 
-# state: State of the VPC. 
-# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. For deleting all tags, set 
-# vpc_offering: Name of the VPC offering. If not set, default VPC offering is used. 
-# zone: Name of the zone. If not set, default zone is used. 
+# state: State of the VPC. The state `present' creates a 
+# tags: List of tags. Tags are a list of dictionaries 
+# vpc_offering: Name of the VPC offering. If not set, default 
+# zone: Name of the zone. If not set, default zone is 
 }- name: ${2:Name for cs_vpc module.}
   cs_vpc:
 ${3:   ${4:account}: ${5:"#"}}
@@ -28,22 +29,23 @@ ${15:   ${16:api_secret}: ${17:"#"}}
 ${18:   ${19:api_timeout}: ${20:"#"}}
 ${21:   ${22:api_url}: ${23:"#"}}
 ${24:   ${25:cidr}: ${26:"#"}}
-${27:   ${28:display_text}: ${29:"#"}}
-${30:   ${31:domain}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:network_domain}: ${38:"#"}}
-${39:   ${40:poll_async}: ${41:"#"}}
-${42:   ${43:project}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:tags}: ${50:"#"}}
-${51:   ${52:vpc_offering}: ${53:"#"}}
-${54:   ${55:zone}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${27:   ${28:clean_up}: ${29:"#"}}
+${30:   ${31:display_text}: ${32:"#"}}
+${33:   ${34:domain}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:network_domain}: ${41:"#"}}
+${42:   ${43:poll_async}: ${44:"#"}}
+${45:   ${46:project}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:tags}: ${53:"#"}}
+${54:   ${55:vpc_offering}: ${56:"#"}}
+${57:   ${58:zone}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>cs_vpc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

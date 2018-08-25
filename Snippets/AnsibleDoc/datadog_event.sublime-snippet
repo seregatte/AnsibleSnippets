@@ -4,13 +4,13 @@ ${1:# aggregation_key: An arbitrary string to use for aggregation.
 # alert_type: Type of alert. 
 # api_key: (required) Your DataDog API key. 
 # app_key: (required) Your DataDog app key. 
-# date_happened: POSIX timestamp of the event. Default value is now. 
+# date_happened: POSIX timestamp of the event. Default value is 
 # host: Host name to associate with the event. 
 # priority: The priority of the event. 
-# tags: Comma separated list of tags to apply to the event. 
+# tags: Comma separated list of tags to apply to the 
 # text: (required) The body of the event. 
 # title: (required) The event title. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for datadog_event module.}
   datadog_event:
 ${3:   ${4:aggregation_key}: ${5:"#"}}

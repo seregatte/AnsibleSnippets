@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# channel: (required) Channel name.  One of nick_to or channel needs to be set.  When both are set, the message 
-# color: Text color for the message. ("none" is a valid option in 1.6 or later, in 1.6 and prior, the default 
+${1:# channel: (required) Channel name.  One of nick_to or 
+# color: Text color for the message. ("none" is a valid 
 # key: Channel key 
 # msg: (required) The message body. 
-# nick: Nickname to send the message from. May be shortened, depending on server's NICKLEN setting. 
-# nick_to: A list of nicknames to send the message to. One of nick_to or channel needs to be set.  When both are 
-# part: Designates whether user should part from channel after sending message or not. Useful for when using a 
+# nick: Nickname to send the message from. May be 
+# nick_to: A list of nicknames to send the message to. One 
+# part: Designates whether user should part from channel 
 # passwd: Server password 
 # port: IRC server port number 
 # server: IRC server name/address 
-# style: Text style for the message. Note italic does not work on some clients 
-# timeout: Timeout to use while waiting for successful registration and join messages, this is to prevent an 
+# style: Text style for the message. Note italic does not 
+# timeout: Timeout to use while waiting for successful 
 # topic: Set the channel topic 
-# use_ssl: Designates whether TLS/SSL should be used when connecting to the IRC server 
+# use_ssl: Designates whether TLS/SSL should be used when 
 }- name: ${2:Name for irc module.}
   irc:
 ${3:   ${4:channel}: ${5:"#"}}

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# adapter_names: (required) Adapter name or list of adapter names for which to manage DNS settings ('*' is supported as a 
-# ipv4_addresses: (required) Single or ordered list of DNS server IPv4 addresses to configure for lookup. An empty list 
+${1:# adapter_names: (required) Adapter name or list of adapter names 
+# ipv4_addresses: (required) Single or ordered list of DNS server 
 }- name: ${2:Name for win_dns_client module.}
   win_dns_client:
 ${3:   ${4:adapter_names}: ${5:"#"}}

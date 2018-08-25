@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# accept_hostkey: if `yes', ensure that "-o StrictHostKeyChecking=no" is present as an ssh options. 
-# archive: Specify archive file path with extension. If specified, creates an archive file of the specified format 
-# bare: if `yes', repository will be created as a bare repo, otherwise it will be a standard repo with a 
-# clone: If `no', do not clone the repository if it does not exist locally 
-# depth: Create a shallow clone with a history truncated to the specified number or revisions. The minimum 
-# dest: (required) The path of where the repository should be checked out. This parameter is required, unless 
-# executable: Path to git executable to use. If not supplied, the normal mechanism for resolving binary paths will be 
-# force: If `yes', any modified files in the working repository will be discarded.  Prior to 0.7, this was always 
-# key_file: Specify an optional private key file to use for the checkout. 
-# recursive: if `no', repository will be cloned without the --recursive option, skipping sub-modules. 
-# reference: Reference repository (see "git clone --reference ...") 
-# refspec: Add an additional refspec to be fetched. If version is set to a `SHA-1' not reachable from any branch or 
+${1:# accept_hostkey: if `yes', ensure that "-o 
+# archive: Specify archive file path with extension. If 
+# bare: if `yes', repository will be created as a bare 
+# clone: If `no', do not clone the repository if it does 
+# depth: Create a shallow clone with a history truncated 
+# dest: (required) The path of where the repository 
+# executable: Path to git executable to use. If not supplied, 
+# force: If `yes', any modified files in the working 
+# key_file: Specify an optional private key file path, on 
+# recursive: if `no', repository will be cloned without the 
+# reference: Reference repository (see "git clone --reference 
+# refspec: Add an additional refspec to be fetched. If 
 # remote: Name of the remote. 
-# repo: (required) git, SSH, or HTTP(S) protocol address of the git repository. 
-# ssh_opts: Creates a wrapper script and exports the path as GIT_SSH which git then automatically uses to override 
-# track_submodules: if `yes', submodules will track the latest commit on their master branch (or other branch specified in 
-# umask: The umask to set before doing any checkouts, or any other repository maintenance. 
-# update: If `no', do not retrieve new revisions from the origin repository 
-# verify_commit: if `yes', when cloning or checking out a `version' verify the signature of a GPG signed commit. This 
-# version: What version of the repository to check out.  This can be the the literal string `HEAD', a branch name, 
+# repo: (required) git, SSH, or HTTP(S) protocol address 
+# ssh_opts: Creates a wrapper script and exports the path as 
+# track_submodules: if `yes', submodules will track the latest 
+# umask: The umask to set before doing any checkouts, or 
+# update: If `no', do not retrieve new revisions from the 
+# verify_commit: if `yes', when cloning or checking out a 
+# version: What version of the repository to check out. 
 }- name: ${2:Name for git module.}
   git:
 ${3:   ${4:accept_hostkey}: ${5:"#"}}

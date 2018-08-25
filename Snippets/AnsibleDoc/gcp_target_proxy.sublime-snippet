@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# target_proxy_name: (required) Name of the Target_Proxy. 
-# target_proxy_type: (required) Type of Target_Proxy. HTTP, HTTPS or SSL. Only HTTP is currently supported. 
-# url_map_name: Name of the Url Map.  Required if type is HTTP or HTTPS proxy. 
+# target_proxy_type: (required) Type of Target_Proxy. HTTP, HTTPS or 
+# url_map_name: Name of the Url Map.  Required if type is HTTP 
 }- name: ${2:Name for gcp_target_proxy module.}
   gcp_target_proxy:
 ${3:   ${4:target_proxy_name}: ${5:"#"}}

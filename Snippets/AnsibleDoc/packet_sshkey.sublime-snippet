@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_token: Packet api token. You can also supply it in env var `PACKET_API_TOKEN'. 
+${1:# auth_token: Packet api token. You can also supply it in env 
 # fingerprint: Fingerprint of the key which you want to remove. 
 # id: UUID of the key which you want to remove. 
-# key: Public Key string ({type} {base64 encoded key} {description}). 
+# key: Public Key string ({type} {base64 encoded key} 
 # key_file: File with the public key. 
-# label: Label for the key. If you keep it empty, it will be read from key string. 
+# label: Label for the key. If you keep it empty, it will 
 # state: Indicate desired state of the target. 
 }- name: ${2:Name for packet_sshkey module.}
   packet_sshkey:

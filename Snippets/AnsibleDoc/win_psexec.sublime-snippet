@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
 ${1:# chdir: Run the command from this (remote) directory. 
-# command: (required) The command line to run through PsExec (limited to 260 characters). 
+# command: (required) The command line to run through 
 # elevated: Run the command with elevated privileges. 
-# executable: The location of the PsExec utility (in case it is not located in your PATH). 
-# hostnames: The hostnames to run the command. If not provided, the command is run locally. 
-# interactive: Run the program so that it interacts with the desktop on the remote system. 
-# limited: Run the command as limited user (strips the Administrators group and allows only privileges assigned to 
-# nobanner: Do not display the startup banner and copyright message. This only works for specific versions of the 
-# noprofile: Run the command without loading the account's profile. 
-# password: The password for the (remote) user to run the command as. This is mandatory in order authenticate 
+# executable: The location of the PsExec utility (in case it 
+# hostnames: The hostnames to run the command. If not 
+# interactive: Run the program so that it interacts with the 
+# limited: Run the command as limited user (strips the 
+# nobanner: Do not display the startup banner and copyright 
+# noprofile: Run the command without loading the account's 
+# password: The password for the (remote) user to run the 
 # priority: Used to run the command at a different priority. 
 # system: Run the remote command in the System account. 
 # timeout: The connection timeout in seconds 
-# username: The (remote) user to run the command as. If not provided, the current user is used. 
-# wait: Wait for the application to terminate. Only use for non-interactive applications. 
+# username: The (remote) user to run the command as. If not 
+# wait: Wait for the application to terminate. Only use 
 }- name: ${2:Name for win_psexec module.}
   win_psexec:
 ${3:   ${4:chdir}: ${5:"#"}}

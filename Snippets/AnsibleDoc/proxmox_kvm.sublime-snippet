@@ -1,76 +1,76 @@
 <snippet>
 <content><![CDATA[
-${1:# acpi: Specify if ACPI should be enables/disabled. 
-# agent: Specify if the QEMU GuestAgent should be enabled/disabled. 
-# api_host: (required) Specify the target host of the Proxmox VE cluster. 
-# api_password: Specify the password to authenticate with. You can use `PROXMOX_PASSWORD' environment variable. 
-# api_user: (required) Specify the user to authenticate with. 
-# args: Pass arbitrary arguments to kvm. This option is for experts only! 
-# autostart: Specify, if the VM should be automatically restarted after crash (currently ignored in PVE API). 
-# balloon: Specify the amount of RAM for the VM in MB. Using zero disables the balloon driver. 
+${1:# acpi: Specify if ACPI should be enabled/disabled. 
+# agent: Specify if the QEMU Guest Agent should be 
+# api_host: (required) Specify the target host of the 
+# api_password: Specify the password to authenticate with. You 
+# api_user: (required) Specify the user to authenticate 
+# args: Pass arbitrary arguments to kvm. This option is 
+# autostart: Specify if the VM should be automatically 
+# balloon: Specify the amount of RAM for the VM in MB. 
 # bios: Specify the BIOS implementation. 
-# boot: Specify the boot order -> boot on floppy `a', hard disk `c', CD-ROM `d', or network `n'. You can combine 
-# bootdisk: Enable booting from specified disk. `(ide|sata|scsi|virtio'\d+) 
-# clone: Name of VM to be cloned. If `vmid' is setted, `clone' can take arbitrary value but required for 
+# boot: Specify the boot order -> boot on floppy `a', 
+# bootdisk: Enable booting from specified disk. 
+# clone: Name of VM to be cloned. If `vmid' is setted, 
 # cores: Specify number of cores per socket. 
 # cpu: Specify emulated CPU type. 
-# cpulimit: Specify if CPU usage will be limited. Value 0 indicates no CPU limit. If the computer has 2 CPUs, it has 
-# cpuunits: Specify CPU weight for a VM. You can disable fair-scheduler configuration by setting this to 0 
+# cpulimit: Specify if CPU usage will be limited. Value 0 
+# cpuunits: Specify CPU weight for a VM. You can disable 
 # delete: Specify a list of settings you want to delete. 
-# description: Specify the description for the VM. Only used on the configuration web interface. This is saved as 
-# digest: Specify if to prevent changes if current configuration file has different SHA1 digest. This can be used 
-# force: Allow to force stop VM. Can be used only with states `stopped', `restarted'. 
-# format: Target drive's backing file's data format. Used only with clone 
-# freeze: Specify if PVE should freeze CPU at startup (use 'c' monitor command to start execution). 
-# full: Create a full copy of all disk. This is always done when you clone a normal VM. For VM templates, we try 
-# hostpci: Specify a hash/dictionary of map host pci devices into guest. `hostpci='{"key":"value", 
-# hotplug: Selectively enable hotplug features. This is a comma separated list of hotplug features `'network', 
+# description: Specify the description for the VM. Only used on 
+# digest: Specify if to prevent changes if current 
+# force: Allow to force stop VM. Can be used only with 
+# format: Target drive's backing file's data format. Used 
+# freeze: Specify if PVE should freeze CPU at startup (use 
+# full: Create a full copy of all disk. This is always 
+# hostpci: Specify a hash/dictionary of map host pci 
+# hotplug: Selectively enable hotplug features. This is a 
 # hugepages: Enable/disable hugepages memory. 
-# ide: A hash/dictionary of volume used as IDE hard disk or CD-ROM. `ide='{"key":"value", "key":"value"}''. 
+# ide: A hash/dictionary of volume used as IDE hard 
 # keyboard: Sets the keyboard layout for VNC server. 
 # kvm: Enable/disable KVM hardware virtualization. 
-# localtime: Sets the real time clock to local time. This is enabled by default if ostype indicates a Microsoft OS. 
+# localtime: Sets the real time clock to local time. This is 
 # lock: Lock/unlock the VM. 
-# machine: Specifies the Qemu machine type. type => 
+# machine: Specifies the Qemu machine type. type => `(pc|pc 
 # memory: Memory size in MB for instance. 
-# migrate_downtime: Sets maximum tolerated downtime (in seconds) for migrations. 
-# migrate_speed: Sets maximum speed (in MB/s) for migrations. A value of 0 is no limit. 
-# name: Specifies the VM name. Only used on the configuration web interface. Required only for `state=present'. 
-# net: A hash/dictionary of network interfaces for the VM. `net='{"key":"value", "key":"value"}''. Keys allowed 
-# newid: VMID for the clone. Used only with clone. If newid is not set, the next available VM ID will be fetched 
-# node: Proxmox VE node, where the new VM will be created. Only required for `state=present'. For other states, 
-# numa: A hash/dictionaries of NUMA topology. `numa='{"key":"value", "key":"value"}''. Keys allowed are - 
-# onboot: Specifies whether a VM will be started during system bootup. 
-# ostype: Specifies guest operating system. This is used to enable special optimization/features for specific 
-# parallel: A hash/dictionary of map host parallel devices. `parallel='{"key":"value", "key":"value"}''. Keys 
+# migrate_downtime: Sets maximum tolerated downtime (in seconds) for 
+# migrate_speed: Sets maximum speed (in MB/s) for migrations. A 
+# name: Specifies the VM name. Only used on the 
+# net: A hash/dictionary of network interfaces for the 
+# newid: VMID for the clone. Used only with clone. If 
+# node: Proxmox VE node, where the new VM will be 
+# numa: A hash/dictionaries of NUMA topology. 
+# onboot: Specifies whether a VM will be started during 
+# ostype: Specifies guest operating system. This is used 
+# parallel: A hash/dictionary of map host parallel devices. 
 # pool: Add the new VM to the specified pool. 
-# protection: Enable/disable the protection flag of the VM. This will enable/disable the remove VM and remove disk 
-# reboot: Allow reboot. If set to yes, the VM exit on reboot. 
+# protection: Enable/disable the protection flag of the VM. 
+# reboot: Allow reboot. If set to `yes', the VM exit on 
 # revert: Revert a pending change. 
-# sata: A hash/dictionary of volume used as sata hard disk or CD-ROM. `sata='{"key":"value", "key":"value"}''. 
-# scsi: A hash/dictionary of volume used as SCSI hard disk or CD-ROM. `scsi='{"key":"value", "key":"value"}''. 
+# sata: A hash/dictionary of volume used as sata hard 
+# scsi: A hash/dictionary of volume used as SCSI hard 
 # scsihw: Specifies the SCSI controller model. 
-# serial: A hash/dictionary of serial device to create inside the VM. `'{"key":"value", "key":"value"}''. Keys 
-# shares: Rets amount of memory shares for auto-ballooning. (0 - 50000). The larger the number is, the more memory 
-# skiplock: Ignore locks Only root is allowed to use this option. 
+# serial: A hash/dictionary of serial device to create 
+# shares: Rets amount of memory shares for auto- 
+# skiplock: Ignore locks Only root is allowed to use this 
 # smbios: Specifies SMBIOS type 1 fields. 
 # snapname: The name of the snapshot. Used only with clone. 
 # sockets: Sets the number of CPU sockets. (1 - N). 
-# startdate: Sets the initial date of the real time clock. Valid format for date are `'now'' or 
-# startup: Startup and shutdown behavior. `[[order=]\d+] [,up=\d+] [,down=\d+]'. Order is a non-negative number 
-# state: Indicates desired state of the instance. If `current', the current state of the VM will be fecthed. You 
+# startdate: Sets the initial date of the real time clock. 
+# startup: Startup and shutdown behavior. `[[order=]\d+] 
+# state: Indicates desired state of the instance. If 
 # storage: Target storage for full clone. 
 # tablet: Enables/disables the USB tablet device. 
-# target: Target node. Only allowed if the original VM is on shared storage. Used only with clone 
+# target: Target node. Only allowed if the original VM is 
 # tdf: Enables/disables time drift fix. 
 # template: Enables/disables the template. 
 # timeout: Timeout for operations. 
-# update: If `yes', the VM will be update with new value. Cause of the operations of the API and security reasons, 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# update: If `yes', the VM will be update with new value. 
+# validate_certs: If `no', SSL certificates will not be validated. 
 # vcpus: Sets number of hotplugged vcpus. 
-# vga: Select VGA type. If you want to use high resolution modes (>= 1280x1024x16) then you should use option 
-# virtio: A hash/dictionary of volume used as VIRTIO hard disk. `virtio='{"key":"value", "key":"value"}''. Keys 
-# vmid: Specifies the VM ID. Instead use `name' parameter. If vmid is not set, the next available VM ID will be 
+# vga: Select VGA type. If you want to use high 
+# virtio: A hash/dictionary of volume used as VIRTIO hard 
+# vmid: Specifies the VM ID. Instead use `name' 
 # watchdog: Creates a virtual hardware watchdog device. 
 }- name: ${2:Name for proxmox_kvm module.}
   proxmox_kvm:

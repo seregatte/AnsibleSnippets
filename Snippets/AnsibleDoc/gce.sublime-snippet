@@ -1,31 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# credentials_file: path to the JSON file associated with the service account email 
-# disk_auto_delete: if set boot disk will be removed after instance destruction 
-# disk_size: The size of the boot disk created for this instance (in GB) 
-# disks: a list of persistent disks to attach to the instance; a string value gives the name of the disk; 
-# external_ip: type of external ip, ephemeral by default; alternatively, a fixed gce ip or ip name can be given. 
-# external_projects: A list of other projects (accessible with the provisioning credentials) to be searched for the image. 
-# image: image string to use for the instance (default will follow latest stable debian image) 
-# image_family: image family from which to select the image.  The most recent non-deprecated image in the family will be 
-# instance_names: a comma-separated list of instance names to create or destroy 
-# ip_forward: set to true if the instance can forward ip packets (useful for gateways) 
-# machine_type: machine type to use for the instance, use 'n1-standard-1' by default 
-# metadata: a hash/dictionary of custom data for the instance; '{"key":"value", ...}' 
-# name: either a name of a single instance or when used with 'num_instances', the base name of a cluster of 
-# network: name of the network, 'default' will be used if not specified 
-# num_instances: can be used with 'name', specifies the number of nodes to provision using 'name' as a base name 
-# pem_file: path to the pem file associated with the service account email This option is deprecated. Use 
-# persistent_boot_disk: if set, create the instance with a persistent boot disk 
-# preemptible: if set to true, instances will be preemptible and time-limited. (requires libcloud >= 0.20.0) 
+${1:# credentials_file: path to the JSON file associated with the 
+# disk_auto_delete: if set boot disk will be removed after instance 
+# disk_size: The size of the boot disk created for this 
+# disks: a list of persistent disks to attach to the 
+# external_ip: type of external ip, ephemeral by default; 
+# external_projects: A list of other projects (accessible with the 
+# image: image string to use for the instance (default 
+# image_family: image family from which to select the image. 
+# instance_names: a comma-separated list of instance names to 
+# ip_forward: set to `yes' if the instance can forward ip 
+# machine_type: machine type to use for the instance, use 
+# metadata: a hash/dictionary of custom data for the 
+# name: either a name of a single instance or when used 
+# network: name of the network, 'default' will be used if 
+# num_instances: can be used with 'name', specifies the number of 
+# pem_file: path to the pem file associated with the service 
+# persistent_boot_disk: if set, create the instance with a persistent 
+# preemptible: if set to `yes', instances will be preemptible 
 # project_id: your GCE project ID 
 # service_account_email: service account email 
-# service_account_permissions: service account permissions (see https://cloud.google.com/sdk/gcloud/reference/compute/instances/create, 
+# service_account_permissions: service account permissions (see https://cloud.g 
 # state: desired state of the resource 
-# subnetwork: name of the subnetwork in which the instance should be created 
-# tags: a comma-separated list of tags to associate with the instance 
-# zone: (required) the GCE zone to use. The list of available zones is at https://cloud.google.com/compute/docs 
-# : available. 
+# subnetwork: name of the subnetwork in which the instance 
+# tags: a comma-separated list of tags to associate with 
+# zone: (required) the GCE zone to use. The list of 
+# zones: available. 
 }- name: ${2:Name for gce module.}
   gce:
 ${3:   ${4:credentials_file}: ${5:"#"}}
@@ -53,7 +53,7 @@ ${66:   ${67:state}: ${68:"#"}}
 ${69:   ${70:subnetwork}: ${71:"#"}}
 ${72:   ${73:tags}: ${74:"#"}}
 ${75:   ${76:zone}: ${77:"#"}}
-${78:   ${79:}: ${80:"#"}}
+${78:   ${79:zones}: ${80:"#"}}
 ${81:${82:   become: ${83:true}} 
 ${84:   become_method: ${85:su}} 
 ${86:   become_user: ${87:nobody}} 

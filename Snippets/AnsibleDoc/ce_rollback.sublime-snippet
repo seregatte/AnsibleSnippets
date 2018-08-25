@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) The operation of configuration rollback. 
-# commit_id: Specifies the label of the configuration rollback point to which system configurations are expected to 
-# filename: Specifies a configuration file for configuration rollback. The value is a string of 5 to 64 case- 
-# label: Specifies a user label for a configuration rollback point. The value is a string of 1 to 256 case- 
-# last: Specifies the number of configuration rollback points. The value is an integer that ranges from 1 to 80. 
-# oldest: Specifies the number of configuration rollback points. The value is an integer that ranges from 1 to 80. 
+${1:# action: (required) The operation of configuration 
+# commit_id: Specifies the label of the configuration 
+# filename: Specifies a configuration file for configuration 
+# label: Specifies a user label for a configuration 
+# last: Specifies the number of configuration rollback 
+# oldest: Specifies the number of configuration rollback 
 }- name: ${2:Name for ce_rollback module.}
   ce_rollback:
 ${3:   ${4:action}: ${5:"#"}}

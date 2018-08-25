@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# address: Network Address. 
-# connect_port: Udp port used by SNMP agent to connect the Network management. 
+# connect_port: Udp port used by SNMP agent to connect the 
 # host_name: Unique name to identify target host entry. 
 # interface_name: Name of the interface to send the trap message. 
-# is_public_net: To enable or disable Public Net-manager for target Host. 
+# is_public_net: To enable or disable Public Net-manager for 
 # notify_type: To configure notify type as trap or inform. 
-# recv_port: UDP Port number used by network management to receive alarm messages. 
-# security_level: Security level indicating whether to use authentication and encryption. 
+# recv_port: UDP Port number used by network management to 
+# security_level: Security level indicating whether to use 
 # security_model: Security Model. 
 # security_name: Security Name. 
 # security_name_v3: Security Name V3. 

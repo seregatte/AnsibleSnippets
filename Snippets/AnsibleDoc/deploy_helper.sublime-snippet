@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# clean: Whether to run the clean procedure in case of `state=finalize'. 
-# current_path: the name of the symlink that is created when the deploy is finalized. Used in `finalize' and `clean'. 
-# keep_releases: the number of old releases to keep when cleaning. Used in `finalize' and `clean'. Any unfinished builds 
-# path: (required) the root path of the project. Alias `dest'. Returned in the `deploy_helper.project_path' 
-# release: the release version that is being deployed. Defaults to a timestamp format %Y%m%d%H%M%S (i.e. 
-# releases_path: the name of the folder that will hold the releases. This can be relative to `path' or absolute. Returned 
-# shared_path: the name of the folder that will hold the shared resources. This can be relative to `path' or absolute. 
-# state: the state of the project. `query' will only gather facts, `present' will create the project `root' 
-# unfinished_filename: the name of the file that indicates a deploy has not finished. All folders in the releases_path that 
+${1:# clean: Whether to run the clean procedure in case of 
+# current_path: the name of the symlink that is created when the 
+# keep_releases: the number of old releases to keep when 
+# path: (required) the root path of the project. Alias 
+# release: the release version that is being deployed. 
+# releases_path: the name of the folder that will hold the 
+# shared_path: the name of the folder that will hold the shared 
+# state: the state of the project. `query' will only 
+# unfinished_filename: the name of the file that indicates a deploy has 
 }- name: ${2:Name for deploy_helper module.}
   deploy_helper:
 ${3:   ${4:clean}: ${5:"#"}}

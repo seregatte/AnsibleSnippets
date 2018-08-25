@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Name to use for the label. 
-# organization: (required) Organization the label should be applied to. 
+# organization: (required) Organization the label should be 
 # state: Desired state of the resource. 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 }- name: ${2:Name for tower_label module.}
   tower_label:
 ${3:   ${4:name}: ${5:"#"}}

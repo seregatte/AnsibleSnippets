@@ -2,24 +2,24 @@
 <content><![CDATA[
 ${1:# api_key: (required) Your DataDog API key. 
 # app_key: (required) Your DataDog app key. 
-# escalation_message: A message to include with a re-notification. Supports the '@username' notification we allow elsewhere. 
-# id: The id of the alert. If set, will be used instead of the name to locate the alert. 
-# locked: A boolean indicating whether changes to this monitor should be restricted to the creator or admins. 
-# message: A message to include with notifications for this monitor. Email notifications can be sent to specific 
+# escalation_message: A message to include with a re-notification. 
+# id: The id of the alert. If set, will be used 
+# locked: A boolean indicating whether changes to this 
+# message: A message to include with notifications for this 
 # name: (required) The name of the alert. 
-# new_host_delay: A positive integer representing the number of seconds to wait before evaluating the monitor for new 
-# no_data_timeframe: The number of minutes before a monitor will notify when data stops reporting. Must be at least 2x the 
-# notify_audit: A boolean indicating whether tagged users will be notified on changes to this monitor. 
-# notify_no_data: A boolean indicating whether this monitor will notify when data stops reporting.. 
-# query: The monitor query to notify on with syntax varying depending on what type of monitor you are creating. 
-# renotify_interval: The number of minutes after the last notification before a monitor will re-notify on the current status. 
-# require_full_window: A boolean indicating whether this monitor needs a full window of data before it's evaluated. We highly 
-# silenced: Dictionary of scopes to timestamps or None. Each scope will be muted until the given POSIX timestamp or 
+# new_host_delay: A positive integer representing the number of 
+# no_data_timeframe: The number of minutes before a monitor will 
+# notify_audit: A boolean indicating whether tagged users will 
+# notify_no_data: A boolean indicating whether this monitor will 
+# query: The monitor query to notify on with syntax 
+# renotify_interval: The number of minutes after the last 
+# require_full_window: A boolean indicating whether this monitor needs 
+# silenced: Dictionary of scopes to timestamps or None. Each 
 # state: (required) The designated state of the monitor. 
-# tags: A list of tags to associate with your monitor when creating or updating. This can help you categorize 
-# thresholds: A dictionary of thresholds by status. This option is only available for service checks and metric 
-# timeout_h: The number of hours of the monitor not reporting data before it will automatically resolve from a 
-# type: The type of the monitor. The 'event alert'is available starting at Ansible 2.1 
+# tags: A list of tags to associate with your monitor 
+# thresholds: A dictionary of thresholds by status. This 
+# timeout_h: The number of hours of the monitor not reporting 
+# type: The type of the monitor. The 'event alert'is 
 }- name: ${2:Name for datadog_monitor module.}
   datadog_monitor:
 ${3:   ${4:api_key}: ${5:"#"}}

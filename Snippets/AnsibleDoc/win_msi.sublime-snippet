@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# creates: Path to a file created by installing the MSI to prevent from attempting to reinstall the package on 
-# extra_args: Additional arguments to pass to the msiexec.exe command. 
-# path: (required) File system path to the MSI file to install 
-# removes: Path to a file removed by uninstalling the MSI to prevent from attempting to re-uninstall the package on 
-# state: Whether the MSI file should be installed or uninstalled. 
-# wait: Specify whether to wait for install or uninstall to complete before continuing. 
+${1:# creates: Path to a file created by installing the MSI to 
+# extra_args: Additional arguments to pass to the msiexec.exe 
+# path: (required) File system path to the MSI file to 
+# removes: Path to a file removed by uninstalling the MSI 
+# state: Whether the MSI file should be installed or 
+# wait: Specify whether to wait for install or uninstall 
 }- name: ${2:Name for win_msi module.}
   win_msi:
 ${3:   ${4:creates}: ${5:"#"}}

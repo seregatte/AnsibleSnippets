@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# timezone: (required) Timezone to set to. Example Central Standard Time 
+${1:# timezone: (required) Timezone to set to. Example: Central 
 }- name: ${2:Name for win_timezone module.}
   win_timezone:
 ${3:   ${4:timezone}: ${5:"#"}}

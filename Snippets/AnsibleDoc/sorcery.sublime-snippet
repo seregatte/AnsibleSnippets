@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# cache_valid_time: Time in seconds to invalidate grimoire collection on update especially useful for SCM and rsync 
-# depends: Comma-separated list of _optional_ dependencies to build a spell (or make sure it is built) with; use 
-# name: Name of the spell multiple names can be given, separated by commas special value '*' in conjunction with 
-# state: Whether to cast, dispel or rebuild a package state `cast' is an equivalent of `present', not `latest' 
-# update: Whether or not to update sorcery scripts at the very first stage 
-# update_cache: Whether or not to update grimoire collection before casting spells 
+${1:# cache_valid_time: Time in seconds to invalidate grimoire 
+# depends: Comma-separated list of _optional_ dependencies 
+# name: Name of the spell multiple names can be given, 
+# state: Whether to cast, dispel or rebuild a package 
+# update: Whether or not to update sorcery scripts at the 
+# update_cache: Whether or not to update grimoire collection 
 }- name: ${2:Name for sorcery module.}
   sorcery:
 ${3:   ${4:cache_valid_time}: ${5:"#"}}

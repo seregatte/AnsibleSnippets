@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# bridge_domain_id: Specifies a bridge domain ID. The value is an integer ranging from 1 to 16777215. 
-# nvo3_acl_extend: Enabling or disabling the VXLAN ACL extension function. 
-# nvo3_ecmp_hash: Load balancing of VXLAN packets through ECMP in optimized mode. 
-# nvo3_eth_trunk_hash: Eth-Trunk from load balancing VXLAN packets in optimized mode. 
-# nvo3_gw_enhanced: Configuring the Layer 3 VXLAN Gateway to Work in Non-loopback Mode. 
-# nvo3_prevent_loops: Loop prevention of VXLAN traffic in non-enhanced mode. When the device works in non-enhanced mode, 
-# nvo3_service_extend: Enabling or disabling the VXLAN service extension function. 
-# state: Determines whether the config should be present or not on the device. 
-# tunnel_mode_vxlan: Set the tunnel mode to VXLAN when configuring the VXLAN feature. 
+${1:# bridge_domain_id: Specifies a bridge domain ID. The value is an 
+# nvo3_acl_extend: Enabling or disabling the VXLAN ACL extension 
+# nvo3_ecmp_hash: Load balancing of VXLAN packets through ECMP in 
+# nvo3_eth_trunk_hash: Eth-Trunk from load balancing VXLAN packets in 
+# nvo3_gw_enhanced: Configuring the Layer 3 VXLAN Gateway to Work in 
+# nvo3_prevent_loops: Loop prevention of VXLAN traffic in non-enhanced 
+# nvo3_service_extend: Enabling or disabling the VXLAN service 
+# state: Determines whether the config should be present 
+# tunnel_mode_vxlan: Set the tunnel mode to VXLAN when configuring 
 }- name: ${2:Name for ce_vxlan_global module.}
   ce_vxlan_global:
 ${3:   ${4:bridge_domain_id}: ${5:"#"}}

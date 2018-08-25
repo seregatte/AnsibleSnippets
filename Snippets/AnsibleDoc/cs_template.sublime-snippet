@@ -1,42 +1,42 @@
 <snippet>
 <content><![CDATA[
-${1:# account: Account the template, snapshot or VM is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+${1:# account: Account the template, snapshot or VM is related 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # bits: 32 or 64 bits support. 
-# checksum: The MD5 checksum value of this template. If set, we search by checksum instead of name. 
-# cross_zones: Whether the template should be synced or removed across zones. Only used if `state' is present or 
+# checksum: The MD5 checksum value of this template. If set, 
+# cross_zones: Whether the template should be synced or removed 
 # details: Template details in key/value pairs. 
 # display_text: Display text of the template. 
-# domain: Domain the template, snapshot or VM is related to. 
-# format: The format for the template. Relevant when using `state=present'. 
-# hypervisor: Name the hypervisor to be used for creating the new template. Relevant when using `state=present'. 
-# is_dynamically_scalable: Register the template having XS/VMWare tools installed in order to support dynamic scaling of VM 
-# is_extractable: True if the template or its derivatives are extractable. 
-# is_featured: Register the template to be featured. Only used if `state' is present. 
-# is_public: Register the template to be publicly available to all users. Only used if `state' is present. 
-# is_ready: This flag is used for searching existing templates. If set to `true', it will only list template ready 
-# is_routing: True if the template type is routing i.e., if template is used to deploy router. Only considered if 
-# mode: Mode for the template extraction. Only used if `state=extracted'. 
+# domain: Domain the template, snapshot or VM is related 
+# format: The format for the template. Relevant when using 
+# hypervisor: Name the hypervisor to be used for creating the 
+# is_dynamically_scalable: Register the template having XS/VMWare tools 
+# is_extractable: True if the template or its derivatives are 
+# is_featured: Register the template to be featured. Only used 
+# is_public: Register the template to be publicly available 
+# is_ready: This flag is used for searching existing 
+# is_routing: True if the template type is routing i.e., if 
+# mode: Mode for the template extraction. Only used if 
 # name: (required) Name of the template. 
-# os_type: OS type that best represents the OS of this template. 
-# password_enabled: True if the template supports the password reset feature. 
+# os_type: OS type that best represents the OS of this 
+# password_enabled: True if the template supports the password reset 
 # poll_async: Poll async jobs until job has finished. 
-# project: Name of the project the template to be registered in. 
+# project: Name of the project the template to be 
 # requires_hvm: true if this template requires HVM. 
-# snapshot: Name of the snapshot, created from the VM ROOT volume, the template will be created from. `vm' is 
-# sshkey_enabled: True if the template supports the sshkey upload feature. 
+# snapshot: Name of the snapshot, created from the VM ROOT 
+# sshkey_enabled: True if the template supports the sshkey upload 
 # state: State of the template. 
-# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. To delete all tags, set a 
-# template_filter: Name of the filter used to search for the template. 
+# tags: List of tags. Tags are a list of dictionaries 
+# template_filter: Name of the filter used to search for the 
 # template_tag: the tag for this template. 
-# url: URL of where the template is hosted on `state=present'. URL to which the template would be extracted on 
-# vm: VM name the template will be created from its volume or alternatively from a snapshot. VM must be in 
-# zone: Name of the zone you wish the template to be registered or deleted from. If not specified, first found 
+# url: URL of where the template is hosted on 
+# vm: VM name the template will be created from its 
+# zone: Name of the zone you wish the template to be 
 }- name: ${2:Name for cs_template module.}
   cs_template:
 ${3:   ${4:account}: ${5:"#"}}

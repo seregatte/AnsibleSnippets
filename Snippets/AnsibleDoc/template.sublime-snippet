@@ -1,26 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# backup: Create a backup file including the timestamp information so you can get the original file back if you 
+${1:# attributes: Attributes the file or directory should have. To 
+# backup: Create a backup file including the timestamp 
 # block_end_string: The string marking the end of a block. 
 # block_start_string: The string marking the beginning of a block. 
-# dest: (required) Location to render the template to on the remote machine. 
-# follow: This flag indicates that filesystem links in the destination, if they exist, should be followed. 
-# force: the default is `yes', which will replace the remote file when contents are different than the source. 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# newline_sequence: Specify the newline sequence to use for templating files. 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# src: (required) Path of a Jinja2 formatted template on the Ansible controller. This can be a relative or 
-# trim_blocks: If this is set to True the first newline after a block is removed (block, not variable tag!). 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# validate: The validation command to run before copying into place. The path to the file to validate is passed in 
+# dest: (required) Location to render the template to on 
+# follow: This flag indicates that filesystem links in the 
+# force: the default is `yes', which will replace the 
+# group: Name of the group that should own the 
+# lstrip_blocks: If this is set to True leading spaces and tabs 
+# mode: Mode the file or directory should be. For those 
+# newline_sequence: Specify the newline sequence to use for 
+# owner: Name of the user that should own the 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# src: (required) Path of a Jinja2 formatted template 
+# trim_blocks: If this is set to True the first newline after a 
+# unsafe_writes: Normally this module uses atomic operations to 
+# validate: The validation command to run before copying 
 # variable_end_string: The string marking the end of a print statement. 
-# variable_start_string: The string marking the beginning of a print statement. 
+# variable_start_string: The string marking the beginning of a print 
 }- name: ${2:Name for template module.}
   template:
 ${3:   ${4:attributes}: ${5:"#"}}
@@ -31,25 +32,26 @@ ${15:   ${16:dest}: ${17:"#"}}
 ${18:   ${19:follow}: ${20:"#"}}
 ${21:   ${22:force}: ${23:"#"}}
 ${24:   ${25:group}: ${26:"#"}}
-${27:   ${28:mode}: ${29:"#"}}
-${30:   ${31:newline_sequence}: ${32:"#"}}
-${33:   ${34:owner}: ${35:"#"}}
-${36:   ${37:selevel}: ${38:"#"}}
-${39:   ${40:serole}: ${41:"#"}}
-${42:   ${43:setype}: ${44:"#"}}
-${45:   ${46:seuser}: ${47:"#"}}
-${48:   ${49:src}: ${50:"#"}}
-${51:   ${52:trim_blocks}: ${53:"#"}}
-${54:   ${55:unsafe_writes}: ${56:"#"}}
-${57:   ${58:validate}: ${59:"#"}}
-${60:   ${61:variable_end_string}: ${62:"#"}}
-${63:   ${64:variable_start_string}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${27:   ${28:lstrip_blocks}: ${29:"#"}}
+${30:   ${31:mode}: ${32:"#"}}
+${33:   ${34:newline_sequence}: ${35:"#"}}
+${36:   ${37:owner}: ${38:"#"}}
+${39:   ${40:selevel}: ${41:"#"}}
+${42:   ${43:serole}: ${44:"#"}}
+${45:   ${46:setype}: ${47:"#"}}
+${48:   ${49:seuser}: ${50:"#"}}
+${51:   ${52:src}: ${53:"#"}}
+${54:   ${55:trim_blocks}: ${56:"#"}}
+${57:   ${58:unsafe_writes}: ${59:"#"}}
+${60:   ${61:validate}: ${62:"#"}}
+${63:   ${64:variable_end_string}: ${65:"#"}}
+${66:   ${67:variable_start_string}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
 ]]></content>
 	<tabTrigger>template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

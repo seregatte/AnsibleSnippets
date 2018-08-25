@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# data_center: (required) Name of the datacenter where quota resides. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# name: Name of the quota, can be used as glob expression. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+${1:# auth: (required) Dictionary with values needed to 
+# data_center: (required) Name of the datacenter where quota 
+# fetch_nested: If `True' the module will fetch additional data 
+# name: Name of the quota, can be used as glob 
+# nested_attributes: Specifies list of the attributes which should be 
 }- name: ${2:Name for ovirt_quotas_facts module.}
   ovirt_quotas_facts:
 ${3:   ${4:auth}: ${5:"#"}}

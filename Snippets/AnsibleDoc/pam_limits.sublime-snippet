@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# backup: Create a backup file including the timestamp information so you can get the original file back if you 
+${1:# backup: Create a backup file including the timestamp 
 # comment: Comment associated with the limit. 
 # dest: Modify the limits.conf path. 
-# domain: (required) A username, @groupname, wildcard, uid/gid range. 
+# domain: (required) A username, @groupname, wildcard, 
 # limit_item: (required) The limit to be set 
-# limit_type: (required) Limit type, see `man limits' for an explanation 
-# use_max: If set to `yes', the maximal value will be used or conserved. If the specified value is superior to the 
-# use_min: If set to `yes', the minimal value will be used or conserved. If the specified value is inferior to the 
+# limit_type: (required) Limit type, see `man limits' for an 
+# use_max: If set to `yes', the maximal value will be used 
+# use_min: If set to `yes', the minimal value will be used 
 # value: (required) The value of the limit. 
 }- name: ${2:Name for pam_limits module.}
   pam_limits:

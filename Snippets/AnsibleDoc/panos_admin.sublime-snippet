@@ -3,10 +3,10 @@
 ${1:# admin_password: (required) password for admin user 
 # admin_username: username for admin user 
 # commit: commit if changed 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
 # role: role for admin user 
-# username: username for authentication 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_admin module.}
   panos_admin:
 ${3:   ${4:admin_password}: ${5:"#"}}

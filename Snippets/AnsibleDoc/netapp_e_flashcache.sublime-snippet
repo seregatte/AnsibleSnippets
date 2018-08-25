@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# cache_size_min: The minimum size (in size_units) of the ssd cache. The cache will be expanded if this exceeds the 
-# disk_count: The minimum number of disks to use for building the cache. The cache will be expanded if this number 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# cache_size_min: The minimum size (in size_units) of the ssd 
+# disk_count: The minimum number of disks to use for building 
 # io_type: The type of workload to optimize the cache for. 
 # name: (required) The name of the SSD cache to manage 
 # size_unit: The unit to be applied to size arguments 
-# ssid: (required) The ID of the array to manage (as configured on the web services proxy). 
-# state: (required) Whether the specified SSD cache should exist or not. 
+# ssid: (required) The ID of the array to manage (as 
+# state: (required) Whether the specified SSD cache 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_flashcache module.}
   netapp_e_flashcache:

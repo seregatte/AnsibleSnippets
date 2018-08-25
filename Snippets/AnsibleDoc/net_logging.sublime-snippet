@@ -4,8 +4,8 @@ ${1:# aggregate: List of logging definitions.
 # dest: Destination of the logs. 
 # facility: Set logging facility. 
 # level: Set logging severity levels. 
-# name: If value of `dest' is `host' it indicates file-name the host name to be notified. 
-# purge: Purge logging not defined in the `aggregate' parameter. 
+# name: If value of `dest' is `host' it indicates file- 
+# purge: Purge logging not defined in the `aggregate' 
 # state: State of the logging configuration. 
 }- name: ${2:Name for net_logging module.}
   net_logging:

@@ -3,12 +3,12 @@
 ${1:# commit: commit if changed 
 # data_filtering: name of the data filtering profile 
 # file_blocking: name of the file blocking profile 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
 # pg_name: (required) name of the security profile group 
 # spyware: name of the spyware profile 
 # url_filtering: name of the url filtering profile 
-# username: username for authentication 
+# username: Username for authentication. 
 # virus: name of the anti-virus profile 
 # vulnerability: name of the vulnerability profile 
 # wildfire: name of the wildfire analysis profile 

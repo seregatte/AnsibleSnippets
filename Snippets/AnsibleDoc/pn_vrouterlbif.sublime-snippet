@@ -6,7 +6,7 @@ ${1:# pn_clipassword: Provide login password if user is not root.
 # pn_index: Specify the interface index from 1 to 255. 
 # pn_interface_ip: (required) Specify the IP address. 
 # pn_vrouter_name: (required) Specify the name of the vRouter. 
-# state: (required) State the action to perform. Use 'present' to add vrouter loopback interface and 'absent' to 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_vrouterlbif module.}
   pn_vrouterlbif:
 ${3:   ${4:pn_clipassword}: ${5:"#"}}

@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# cn: (required) Name of host-group. Can not be changed as it is the unique identifier. 
+${1:# cn: (required) Name of host-group. Can not be 
 # description: Description 
-# host: List of hosts that belong to the host-group. If an empty list is passed all hosts will be removed from 
-# hostgroup: List of host-groups than belong to that host-group. If an empty list is passed all host-groups will be 
-# ipa_host: IP or hostname of IPA server 
-# ipa_pass: (required) Password of administrative user 
-# ipa_port: Port of IPA server 
-# ipa_prot: Protocol used by IPA server 
-# ipa_user: Administrative account used on IPA server 
+# host: List of hosts that belong to the host-group. If 
+# hostgroup: List of host-groups than belong to that host- 
+# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
 # state: State to ensure. 
-# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
 }- name: ${2:Name for ipa_hostgroup module.}
   ipa_hostgroup:
 ${3:   ${4:cn}: ${5:"#"}}

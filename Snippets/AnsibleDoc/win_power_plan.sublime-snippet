@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) String value that indicates the desired power plan. The power plan must already be present on 
+${1:# name: (required) String value that indicates the 
 }- name: ${2:Name for win_power_plan module.}
   win_power_plan:
 ${3:   ${4:name}: ${5:"#"}}

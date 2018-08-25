@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# frame_distribution_hash: Specifies the basis for the hash that the system 
+# interfaces: The interfaces that are part of the trunk. To 
+# lacp_enabled: When `yes', specifies that the system supports 
+# lacp_mode: Specifies the operation mode for link 
+# lacp_timeout: Specifies the rate at which the system sends the 
+# link_selection_policy: Specifies, once the trunk is configured, the 
+# name: (required) Specifies the name of the trunk. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: When `present', ensures that the resource 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigip_trunk module.}
+  bigip_trunk:
+${3:   ${4:frame_distribution_hash}: ${5:"#"}}
+${6:   ${7:interfaces}: ${8:"#"}}
+${9:   ${10:lacp_enabled}: ${11:"#"}}
+${12:   ${13:lacp_mode}: ${14:"#"}}
+${15:   ${16:lacp_timeout}: ${17:"#"}}
+${18:   ${19:link_selection_policy}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:provider}: ${29:"#"}}
+${30:   ${31:server}: ${32:"#"}}
+${33:   ${34:server_port}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:user}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>bigip_trunk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

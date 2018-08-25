@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# environment: (required) The airbrake environment name, typically 'production', 'staging', etc. 
+${1:# environment: (required) The airbrake environment name, 
 # repo: URL of the project repository 
-# revision: A hash, number, tag, or other identifier showing what revision was deployed 
+# revision: A hash, number, tag, or other identifier showing 
 # token: (required) API token. 
-# url: Optional URL to submit the notification to. Use to send notifications to Airbrake-compliant tools like 
+# url: Optional URL to submit the notification to. Use 
 # user: The username of the person doing the deployment 
-# validate_certs: If `no', SSL certificates for the target url will not be validated. This should only be used on 
+# validate_certs: If `no', SSL certificates for the target url 
 }- name: ${2:Name for airbrake_deployment module.}
   airbrake_deployment:
 ${3:   ${4:environment}: ${5:"#"}}

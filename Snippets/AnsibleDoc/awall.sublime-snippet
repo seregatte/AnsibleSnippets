@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# activate: Activate the new firewall rules. Can be run with other steps or on it's own. 
-# name: A policy name, like `foo', or multiple policies, like `foo, bar'. 
-# state: The policy(ies) will be `enabled' The policy(ies) will be `disabled' 
+${1:# activate: Activate the new firewall rules. Can be run with 
+# name: A policy name, like `foo', or multiple policies, 
+# state: The policy(ies) will be `enabled' The 
 }- name: ${2:Name for awall module.}
   awall:
 ${3:   ${4:activate}: ${5:"#"}}

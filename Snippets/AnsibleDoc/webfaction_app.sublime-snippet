@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# autostart: Whether the app should restart with an autostart.cgi script 
+${1:# autostart: Whether the app should restart with an 
 # extra_info: Any extra parameters required by the app 
 # login_name: (required) The webfaction account to use 
 # login_password: (required) The webfaction password to use 
-# machine: The machine name to use (optional for accounts with only one machine) 
+# machine: The machine name to use (optional for accounts 
 # name: (required) The name of the application 
 # port_open: IF the port should be opened 
 # state: Whether the application should exist 
-# type: (required) The type of application to create. See the Webfaction docs at http://docs.webfaction.com 
+# type: (required) The type of application to create. 
 }- name: ${2:Name for webfaction_app module.}
   webfaction_app:
 ${3:   ${4:autostart}: ${5:"#"}}

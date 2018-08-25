@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
 ${1:# bpdu_filter: Specify a port as a BPDU filter port. 
-# bpdu_protection: Configure BPDU protection on an edge port. This function prevents network flapping caused by attack 
-# cost: Set the path cost of the current port. The default instance is 0. 
+# bpdu_protection: Configure BPDU protection on an edge port. This 
+# cost: Set the path cost of the current port. The 
 # edged_port: Set the current port as an edge port. 
-# interface: Interface name. If the value is `all', will apply configuration to all interfaces. if the value is a 
+# interface: Interface name. If the value is `all', will 
 # loop_protection: Enable loop protection on the current port. 
 # root_protection: Enable root protection on the current port. 
 # state: Specify desired state of the resource. 
-# stp_converge: STP convergence mode. Fast means set STP aging mode to Fast. Normal means set STP aging mode to Normal. 
+# stp_converge: STP convergence mode. Fast means set STP aging 
 # stp_enable: Enable or disable STP on a switch. 
-# stp_mode: Set an operation mode for the current MSTP process. The mode can be STP, RSTP, or MSTP. 
-# tc_protection: Configure the TC BPDU protection function for an MSTP process. 
-# tc_protection_interval: Set the time the MSTP device takes to handle the maximum number of TC BPDUs and immediately refresh 
-# tc_protection_threshold: Set the maximum number of TC BPDUs that the MSTP can handle. The value is an integer ranging from 1 to 
+# stp_mode: Set an operation mode for the current MSTP 
+# tc_protection: Configure the TC BPDU protection function for an 
+# tc_protection_interval: Set the time the MSTP device takes to handle the 
+# tc_protection_threshold: Set the maximum number of TC BPDUs that the MSTP 
 }- name: ${2:Name for ce_stp module.}
   ce_stp:
 ${3:   ${4:bpdu_filter}: ${5:"#"}}

@@ -1,42 +1,42 @@
 <snippet>
 <content><![CDATA[
-${1:# architecture: The architecture for the container (e.g. "x86_64" or "i686"). See 
-# https: post-1 
+${1:# architecture: The architecture for the container (e.g. 
+# api: post-1 
 # cert_file: The client certificate file path. 
-# config: The config for the container (e.g. {"limits.cpu": "2"}). See https://github.com/lxc/lxd/blob/master/doc 
-# : post-1 If the container already exists and its "config" 
-# https: 10containersname 
-# devices: The devices for the container (e.g. { "rootfs": { "path": "/dev/kvm", "type": "unix-char" }). See 
-# https: post-1 
-# ephemeral: Whether or not the container is ephemeral (e.g. true or false). See 
-# https: post-1 
-# force_stop: If this is true, the `lxd_container' forces to stop the container when it stops or restarts the 
+# config: The config for the container (e.g. 
+# api: post-1 If 
+# : 10co 
+# devices: The devices for the container (e.g. { "rootfs": 
+# api: post-1 
+# ephemeral: Whether or not the container is ephemeral (e.g. 
+# api: post-1 
+# force_stop: If this is true, the `lxd_container' forces to 
 # key_file: The client certificate key file path. 
 # name: (required) Name of a container. 
-# source: The source for the container (e.g. { "type": "image", "mode": "pull", "server": 
-# : post-1 
+# source: The source for the container (e.g. { "type": 
+# api: post-1 
 # state: Define the state of a container. 
-# timeout: A timeout for changing the state of the container. This is also used as a timeout for waiting until IPv4 
-# trust_password: The client trusted password. You need to set this password on the LXD server before running this module 
-# url: The unix domain socket path or the https URL for the LXD server. 
-# wait_for_ipv4_addresses: If this is true, the `lxd_container' waits until IPv4 addresses are set to the all network interfaces in 
+# timeout: A timeout for changing the state of the 
+# trust_password: The client trusted password. You need to set 
+# url: The unix domain socket path or the https URL for 
+# wait_for_ipv4_addresses: If this is true, the `lxd_container' waits until 
 }- name: ${2:Name for lxd_container module.}
   lxd_container:
 ${3:   ${4:architecture}: ${5:"#"}}
-${6:   ${7:https}: ${8:"#"}}
+${6:   ${7:api}: ${8:"#"}}
 ${9:   ${10:cert_file}: ${11:"#"}}
 ${12:   ${13:config}: ${14:"#"}}
-${15:   ${16:}: ${17:"#"}}
-${18:   ${19:https}: ${20:"#"}}
+${15:   ${16:api}: ${17:"#"}}
+${18:   ${19:}: ${20:"#"}}
 ${21:   ${22:devices}: ${23:"#"}}
-${24:   ${25:https}: ${26:"#"}}
+${24:   ${25:api}: ${26:"#"}}
 ${27:   ${28:ephemeral}: ${29:"#"}}
-${30:   ${31:https}: ${32:"#"}}
+${30:   ${31:api}: ${32:"#"}}
 ${33:   ${34:force_stop}: ${35:"#"}}
 ${36:   ${37:key_file}: ${38:"#"}}
 ${39:   ${40:name}: ${41:"#"}}
 ${42:   ${43:source}: ${44:"#"}}
-${45:   ${46:}: ${47:"#"}}
+${45:   ${46:api}: ${47:"#"}}
 ${48:   ${49:state}: ${50:"#"}}
 ${51:   ${52:timeout}: ${53:"#"}}
 ${54:   ${55:trust_password}: ${56:"#"}}

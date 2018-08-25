@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# catalog_id: The ID of the Data Catalog in which to create 
+# connection_properties: (required) A dict of key-value pairs used as 
+# connection_type: The type of the connection. Currently, only JDBC 
+# description: The description of the connection. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# match_criteria: A list of UTF-8 strings that specify the 
+# name: (required) The name of the connection. 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_groups: A list of security groups to be used by the 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) Create or delete the AWS Glue 
+# subnet_id: The subnet ID used by the connection. 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for aws_glue_connection module.}
+  aws_glue_connection:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:catalog_id}: ${11:"#"}}
+${12:   ${13:connection_properties}: ${14:"#"}}
+${15:   ${16:connection_type}: ${17:"#"}}
+${18:   ${19:description}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:match_criteria}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:profile}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:}: ${38:"#"}}
+${39:   ${40:security_groups}: ${41:"#"}}
+${42:   ${43:security_token}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:subnet_id}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>aws_glue_connection</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

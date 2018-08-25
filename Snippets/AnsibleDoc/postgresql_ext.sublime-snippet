@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# db: (required) name of the database to add or remove the extension to/from 
+${1:# db: (required) name of the database to add or remove 
 # login_host: Host running the database 
 # login_password: The password used to authenticate with 
 # login_user: The username used to authenticate with 
-# name: (required) name of the extension to add or remove 
+# name: (required) name of the extension to add or 
 # port: Database port to connect to. 
 # state: The database extension state 
 }- name: ${2:Name for postgresql_ext module.}

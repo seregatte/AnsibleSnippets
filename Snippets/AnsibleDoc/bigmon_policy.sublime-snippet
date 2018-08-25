@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# access_token: Bigmon access token. If this isn't set, the environment variable `BIGSWITCH_ACCESS_TOKEN' is used. 
-# action: Forward matching packets to delivery interfaces, Drop is for measure rate of matching packets, but do 
+${1:# access_token: Bigmon access token. If this isn't set, the 
+# action: Forward matching packets to delivery interfaces, 
 # controller: (required) The controller address. 
-# delivery_packet_count: Run policy until delivery_packet_count packets are delivered. 
-# duration: Run policy for duration duration or until delivery_packet_count packets are delivered, whichever comes 
+# delivery_packet_count: Run policy until delivery_packet_count packets 
+# duration: Run policy for duration duration or until 
 # name: (required) The name of the policy. 
 # policy_description: Description of policy. 
-# priority: A priority associated with this policy. The higher priority policy takes precedence over a lower 
+# priority: A priority associated with this policy. The 
 # start_time: Date the policy becomes active 
 # state: Whether the policy should be present or absent. 
-# validate_certs: If `false', SSL certificates will not be validated. This should only be used on personally controlled 
+# validate_certs: If `false', SSL certificates will not be 
 }- name: ${2:Name for bigmon_policy module.}
   bigmon_policy:
 ${3:   ${4:access_token}: ${5:"#"}}

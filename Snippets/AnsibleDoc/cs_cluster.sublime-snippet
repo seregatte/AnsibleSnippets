@@ -1,30 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+${1:# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # cluster_type: Type of the cluster. Required if `state=present' 
-# guest_vswitch_name: Name of virtual switch used for guest traffic in the cluster. This would override zone wide traffic 
-# guest_vswitch_type: Type of virtual switch used for guest traffic in the cluster. Allowed values are, vmwaresvs (for VMware 
-# hypervisor: Name the hypervisor to be used. Required if `state=present'. 
+# guest_vswitch_name: Name of virtual switch used for guest traffic in 
+# guest_vswitch_type: Type of virtual switch used for guest traffic in 
+# hypervisor: Name the hypervisor to be used. Required if 
 # name: (required) name of the cluster. 
-# ovm3_cluster: Ovm3 native OCFS2 clustering enabled for cluster. 
+# ovm3_cluster: Ovm3 native OCFS2 clustering enabled for 
 # ovm3_pool: Ovm3 native pooling enabled for cluster. 
 # ovm3_vip: Ovm3 vip to use for pool (and cluster). 
 # password: Password for the cluster. 
 # pod: Name of the pod in which the cluster belongs to. 
-# public_vswitch_name: Name of virtual switch used for public traffic in the cluster. This would override zone wide traffic 
-# public_vswitch_type: Type of virtual switch used for public traffic in the cluster. Allowed values are, vmwaresvs (for VMware 
+# public_vswitch_name: Name of virtual switch used for public traffic 
+# public_vswitch_type: Type of virtual switch used for public traffic 
 # state: State of the cluster. 
 # url: URL for the cluster 
 # username: Username for the cluster. 
-# vms_ip_address: IP address of the VSM associated with this cluster. 
-# vms_password: Password for the VSM associated with this cluster. 
-# vms_username: Username for the VSM associated with this cluster. 
-# zone: Name of the zone in which the cluster belongs to. If not set, default zone is used. 
+# vms_ip_address: IP address of the VSM associated with this 
+# vms_password: Password for the VSM associated with this 
+# vms_username: Username for the VSM associated with this 
+# zone: Name of the zone in which the cluster belongs 
 }- name: ${2:Name for cs_cluster module.}
   cs_cluster:
 ${3:   ${4:api_http_method}: ${5:"#"}}

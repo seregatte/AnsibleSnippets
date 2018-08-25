@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# address: The IP address of the host or network in CIDR notation. 
-# address_type: The type of address object definition.  Valid types are `ip-netmask' and `ip-range'. 
-# addressgroup: A static group of address objects or dynamic address group. 
+${1:# address: The IP address of the host or network in CIDR 
+# address_type: The type of address object definition.  Valid 
+# addressgroup: A static group of address objects or dynamic 
 # addressobject: The name of the address object. 
-# api_key: API key that can be used instead of `username'/`password' credentials. 
-# color: - The color of the tag object.  Valid values are `red, green, blue, yellow, copper, orange, purple, 
+# api_key: API key that can be used instead of 
+# color: - The color of the tag object.  Valid values are 
 # description: The description of the object. 
-# destination_port: The destination port to be used in a service object definition. 
-# devicegroup: - The name of the Panorama device group. The group must exist on Panorama. If device group is not 
-# dynamic_value: The filter match criteria to be used in a dynamic addressgroup definition. 
-# ip_address: (required) IP address (or hostname) of PAN-OS device or Panorama management console being configured. 
-# operation: (required) The operation to be performed.  Supported values are `add'/`delete'/`find'. 
-# password: (required) Password credentials to use for authentication. 
-# protocol: The IP protocol to be used in a service object definition.  Valid values are `tcp' or `udp'. 
+# destination_port: The destination port to be used in a service 
+# devicegroup: - The name of the Panorama device group. The 
+# dynamic_value: The filter match criteria to be used in a 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# operation: (required) The operation to be performed. 
+# password: (required) Password credentials to use for 
+# protocol: The IP protocol to be used in a service object 
 # servicegroup: A group of service objects. 
 # serviceobject: The name of the service object. 
-# services: The group of service objects used in a servicegroup definition. 
-# source_port: The source port to be used in a service object definition. 
-# static_value: A group of address objects to be used in an addressgroup definition. 
+# services: The group of service objects used in a 
+# source_port: The source port to be used in a service object 
+# static_value: A group of address objects to be used in an 
 # tag_name: The name of an object or rule tag. 
 # username: Username credentials to use for authentication. 
 }- name: ${2:Name for panos_object module.}

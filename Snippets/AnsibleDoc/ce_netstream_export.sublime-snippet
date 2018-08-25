@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# as_option: Specifies the AS number recorded in the statistics as the original or the peer AS number. 
-# bgp_nexthop: Configures the statistics to carry BGP next hop information. Currently, only V9 supports the exported 
-# host_ip: Specifies destination address which can be IPv6 or IPv4 of the exported NetStream packet. 
-# host_port: Specifies the destination UDP port number of the exported packets. The value is an integer that ranges 
-# host_vpn: Specifies the VPN instance of the exported packets carrying flow statistics. Ensure the VPN instance has 
-# source_ip: Specifies source address which can be IPv6 or IPv4 of the exported NetStream packet. 
+${1:# as_option: Specifies the AS number recorded in the 
+# bgp_nexthop: Configures the statistics to carry BGP next hop 
+# host_ip: Specifies destination address which can be IPv6 
+# host_port: Specifies the destination UDP port number of the 
+# host_vpn: Specifies the VPN instance of the exported 
+# source_ip: Specifies source address which can be IPv6 or 
 # state: Manage the state of the resource. 
 # type: (required) Specifies NetStream feature. 
 # version: Sets the version of exported packets. 

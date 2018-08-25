@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# amazon_asn: (required) amazon side asn 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# direct_connect_gateway_id: id of an existing direct connect gateway 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# name: name of the dxgw to be created or deleted 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: present to ensure resource is created. absent to 
+# validate_certs: When set to "no", SSL certificates will not be 
+# virtual_gateway_id: vpn gateway id of an existing virtual gateway 
+}- name: ${2:Name for aws_direct_connect_gateway module.}
+  aws_direct_connect_gateway:
+${3:   ${4:amazon_asn}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:direct_connect_gateway_id}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:virtual_gateway_id}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>aws_direct_connect_gateway</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

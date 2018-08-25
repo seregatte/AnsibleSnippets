@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# autoscaling: A dictionary of configuration for the autoscaler. 'enabled (bool)', 'name (str)' and 
-# credentials_file: Path to the JSON file associated with the service account email 
+${1:# autoscaling: A dictionary of configuration for the 
+# credentials_file: Path to the JSON file associated with the 
 # name: (required) Name of the Managed Instance Group. 
-# named_ports: Define named ports that backend services can forward data to.  Format is a a list of name:port 
+# named_ports: Define named ports that backend services can 
 # project_id: GCE project ID 
 # service_account_email: service account email 
-# size: Size of Managed Instance Group.  If MIG already exists, it will be resized to the number provided here. 
+# size: Size of Managed Instance Group.  If MIG already 
 # state: desired state of the resource 
-# template: Instance Template to be used in creating the VMs.  See https://cloud.google.com/compute/docs/instance- 
-# zone: (required) The GCE zone to use for this Managed Instance Group. 
+# template: Instance Template to be used in creating the 
+# zone: (required) The GCE zone to use for this Managed 
 }- name: ${2:Name for gce_mig module.}
   gce_mig:
 ${3:   ${4:autoscaling}: ${5:"#"}}

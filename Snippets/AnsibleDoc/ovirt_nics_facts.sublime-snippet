@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+${1:# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
 # name: Name of the NIC, can be used as glob expression. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
+# nested_attributes: Specifies list of the attributes which should be 
 # vm: (required) Name of the VM where NIC is attached. 
 }- name: ${2:Name for ovirt_nics_facts module.}
   ovirt_nics_facts:

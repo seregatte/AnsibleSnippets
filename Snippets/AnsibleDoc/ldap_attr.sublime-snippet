@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# bind_dn: A DN to bind with. If this is omitted, we'll try a SASL bind with the EXTERNAL mechanism. If this is 
+${1:# bind_dn: A DN to bind with. If this is omitted, we'll try 
 # bind_pw: The password to use with `bind_dn'. 
-# dn: (required) The DN of the entry to modify. 
+# dn: (required) The DN of the entry to add or remove. 
 # name: (required) The name of the attribute to modify. 
-# server_uri: A URI to the LDAP server. The default value lets the underlying LDAP client library look for a UNIX 
+# server_uri: A URI to the LDAP server. The default value lets 
 # start_tls: If true, we'll use the START_TLS LDAP extension. 
-# state: The state of the attribute values. If `present', all given values will be added if they're missing. If 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on sites using self-signed 
-# values: (required) The value(s) to add or remove. This can be a string or a list of strings. The complex 
+# state: The state of the attribute values. If `present', 
+# validate_certs: If set to `no', SSL certificates will not be 
+# values: (required) The value(s) to add or remove. This 
 }- name: ${2:Name for ldap_attr module.}
   ldap_attr:
 ${3:   ${4:bind_dn}: ${5:"#"}}

@@ -2,10 +2,10 @@
 <content><![CDATA[
 ${1:# admin_distance: Admin distance of the static route. 
 # aggregate: List of static route definitions 
-# mask: (required) Network prefix mask of the static route. 
+# mask: (required) Network prefix mask of the static 
 # next_hop: (required) Next hop IP of the static route. 
 # prefix: (required) Network prefix of the static route. 
-# purge: Purge static routes not defined in the `aggregate' parameter. 
+# purge: Purge static routes not defined in the 
 # state: State of the static route configuration. 
 }- name: ${2:Name for net_static_route module.}
   net_static_route:

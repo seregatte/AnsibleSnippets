@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# ipv6: The listener daemon on the remote host will bind to the ipv6 localhost socket if this parameter is set 
-# minutes: The `accelerate' listener daemon is started on nodes and will stay around for this number of minutes 
-# multi_key: When enabled, the daemon will open a local socket file which can be used by future daemon executions to 
+${1:# ipv6: The listener daemon on the remote host will bind 
+# minutes: The `accelerate' listener daemon is started on 
+# multi_key: When enabled, the daemon will open a local 
 # port: TCP port for the socket connection 
-# timeout: The number of seconds the socket will wait for data. If none is received when the timeout value is 
+# timeout: The number of seconds the socket will wait for 
 }- name: ${2:Name for accelerate module.}
   accelerate:
 ${3:   ${4:ipv6}: ${5:"#"}}

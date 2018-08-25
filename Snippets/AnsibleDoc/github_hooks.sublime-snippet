@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) This tells the githooks module what you want it to do. 
-# content_type: Content type to use for requests made to the webhook 
-# hookurl: When creating a new hook, this is the url that you want GitHub to post to. It is only required when 
-# oauthkey: (required) The oauth key provided by GitHub. It can be found/generated on GitHub under "Edit Your 
-# repo: (required) This is the API url for the repository you want to manage hooks for. It should be in the form 
+${1:# action: (required) This tells the githooks module what 
+# content_type: Content type to use for requests made to the 
+# hookurl: When creating a new hook, this is the url that 
+# oauthkey: (required) The oauth key provided by GitHub. It 
+# repo: (required) This is the API url for the 
 # user: (required) Github username. 
-# validate_certs: If `no', SSL certificates for the target repo will not be validated. This should only be used on 
+# validate_certs: If `no', SSL certificates for the target repo 
 }- name: ${2:Name for github_hooks module.}
   github_hooks:
 ${3:   ${4:action}: ${5:"#"}}

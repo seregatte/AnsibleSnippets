@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# command: (required) The selected redis command 
-# db: The database to flush (used in db mode) [flush command] 
-# flush_mode: Type of flush (all the dbs in a redis instance or a specific one) [flush command] 
+${1:# command: (required) The selected redis command `config' 
+# db: The database to flush (used in db mode) [flush 
+# flush_mode: Type of flush (all the dbs in a redis instance 
 # login_host: The host running the database 
-# login_password: The password used to authenticate with (usually not used) 
+# login_password: The password used to authenticate with (usually 
 # login_port: The port to connect to 
 # master_host: The host of the master instance [slave command] 
 # master_port: The port of the master instance [slave command] 

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# grafana_plugin_url: Custom Grafana plugin URL. Requires grafana 
+# grafana_plugins_dir: Directory where Grafana plugin will be 
+# grafana_repo: Grafana repository. If not set, gafana-cli will 
+# name: (required) Name of the plugin. 
+# state: Status of the Grafana plugin. If latest is set, 
+# version: Version of the plugin to install. Default to 
+}- name: ${2:Name for grafana_plugin module.}
+  grafana_plugin:
+${3:   ${4:grafana_plugin_url}: ${5:"#"}}
+${6:   ${7:grafana_plugins_dir}: ${8:"#"}}
+${9:   ${10:grafana_repo}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:version}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>grafana_plugin</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

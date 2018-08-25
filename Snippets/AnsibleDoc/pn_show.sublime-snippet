@@ -3,9 +3,9 @@
 ${1:# pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch(es) to run the cli on. 
 # pn_cliusername: Provide login username if user is not root. 
-# pn_command: (required) The `pn_command' takes a CLI show command as value. 
+# pn_command: (required) The `pn_command' takes a CLI show 
 # pn_options: Specify formatting options. 
-# pn_parameters: Display output using a specific parameter. Use 'all' to display possible output. List of comma separated 
+# pn_parameters: Display output using a specific parameter. Use 
 }- name: ${2:Name for pn_show module.}
   pn_show:
 ${3:   ${4:pn_clipassword}: ${5:"#"}}

@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# address: Specifiies an IP address to configure in CIDR notation. 
-# addrobj: (required) Specifies an unique IP address on the system. 
+${1:# address: Specifiies an IP address to configure in CIDR 
+# addrobj: (required) Specifies an unique IP address on the 
 # addrtype: Specifiies a type of IP address to configure. 
-# state: Create/delete/enable/disable an IP address on the network interface. 
-# temporary: Specifies that the configured IP address is temporary. Temporary IP addresses do not persist across 
-# wait: Specifies the time in seconds we wait for obtaining address via DHCP. 
+# state: Create/delete/enable/disable an IP address on 
+# temporary: Specifies that the configured IP address is 
+# wait: Specifies the time in seconds we wait for 
 }- name: ${2:Name for ipadm_addr module.}
   ipadm_addr:
 ${3:   ${4:address}: ${5:"#"}}

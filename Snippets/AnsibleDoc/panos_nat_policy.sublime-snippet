@@ -5,8 +5,8 @@ ${1:# commit: commit if changed
 # dnat_address: dnat translated address 
 # dnat_port: dnat translated port 
 # from_zone: (required) list of source zones 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# override: attempt to override rule if one with the same name already exists 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# override: attempt to override rule if one with the same 
 # password: (required) password for authentication 
 # rule_name: (required) name of the SNAT rule 
 # service: service 

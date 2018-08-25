@@ -1,21 +1,22 @@
 <snippet>
 <content><![CDATA[
 ${1:# cluster: (required) Name of the cluster to add the host. 
-# cpu_expandable_reservations: In a resource pool with an expandable reservation, the reservation on a resource pool can grow beyond 
-# cpu_limit: The utilization of a virtual machine/resource pool will not exceed this limit, even if there are 
-# cpu_reservation: Amount of resource that is guaranteed available to the virtual machine or resource pool. 
-# cpu_shares: Memory shares are used in case of resource contention. 
-# datacenter: (required) Name of the datacenter to add the host. 
-# hostname: (required) ESXi hostname to manage. 
-# mem_expandable_reservations: In a resource pool with an expandable reservation, the reservation on a resource pool can grow beyond 
-# mem_limit: The utilization of a virtual machine/resource pool will not exceed this limit, even if there are 
-# mem_reservation: Amount of resource that is guaranteed available to the virtual machine or resource pool. 
-# mem_shares: Memory shares are used in case of resource contention. 
-# password: (required) ESXi password. 
+# cpu_expandable_reservations: In a resource pool with an expandable 
+# cpu_limit: The utilization of a virtual machine/resource 
+# cpu_reservation: Amount of resource that is guaranteed available 
+# cpu_shares: Memory shares are used in case of resource 
+# datacenter: (required) Name of the datacenter to add the 
+# hostname: The hostname or IP address of the vSphere 
+# mem_expandable_reservations: In a resource pool with an expandable 
+# mem_limit: The utilization of a virtual machine/resource 
+# mem_reservation: Amount of resource that is guaranteed available 
+# mem_shares: Memory shares are used in case of resource 
+# password: The password of the vSphere vCenter or ESXi 
+# port: The port number of the vSphere vCenter or ESXi 
 # resource_pool: (required) Resource pool name to manage. 
 # state: Add or remove the resource pool 
-# username: (required) ESXi username. 
-# validate_certs: Allows connection when SSL certificates are not valid. Set to false when certificates are not trusted. 
+# username: The username of the vSphere vCenter or ESXi 
+# validate_certs: Allows connection when SSL certificates are not 
 }- name: ${2:Name for vmware_resource_pool module.}
   vmware_resource_pool:
 ${3:   ${4:cluster}: ${5:"#"}}
@@ -30,16 +31,17 @@ ${27:   ${28:mem_limit}: ${29:"#"}}
 ${30:   ${31:mem_reservation}: ${32:"#"}}
 ${33:   ${34:mem_shares}: ${35:"#"}}
 ${36:   ${37:password}: ${38:"#"}}
-${39:   ${40:resource_pool}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${39:   ${40:port}: ${41:"#"}}
+${42:   ${43:resource_pool}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>vmware_resource_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>
