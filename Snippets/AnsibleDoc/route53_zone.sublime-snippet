@@ -1,41 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # comment: Comment associated with the zone 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# hosted_zone_id: The unique zone identifier you want to delete or "all" if there are many zones with the same domain 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# delegation_set_id: The reusable delegation set ID to be associated 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# hosted_zone_id: The unique zone identifier you want to delete or 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: whether or not the zone should exist or not 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
-# vpc_id: The VPC ID the zone should be a part of (if this is going to be a private zone) 
-# vpc_region: The VPC Region the zone should be a part of (if this is going to be a private zone) 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_id: The VPC ID the zone should be a part of (if this 
+# vpc_region: The VPC Region the zone should be a part of (if 
 # zone: (required) The DNS zone record (eg: foo.com.) 
 }- name: ${2:Name for route53_zone module.}
   route53_zone:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:comment}: ${11:"#"}}
-${12:   ${13:ec2_url}: ${14:"#"}}
-${15:   ${16:hosted_zone_id}: ${17:"#"}}
-${18:   ${19:profile}: ${20:"#"}}
-${21:   ${22:region}: ${23:"#"}}
-${24:   ${25:http}: ${26:"#"}}
-${27:   ${28:security_token}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:validate_certs}: ${35:"#"}}
-${36:   ${37:vpc_id}: ${38:"#"}}
-${39:   ${40:vpc_region}: ${41:"#"}}
-${42:   ${43:zone}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${12:   ${13:delegation_set_id}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:hosted_zone_id}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:vpc_id}: ${41:"#"}}
+${42:   ${43:vpc_region}: ${44:"#"}}
+${45:   ${46:zone}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>route53_zone</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

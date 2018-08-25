@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# connect_timeout: The maximum number of seconds to wait for a connection to happen before closing and retrying. 
-# delay: The number of seconds to wait before starting to poll. 
-# exclude_hosts: The list of hosts or IPs to ignore when looking for active TCP connections when `state=drained'. 
-# host: A resolvable hostname or IP address to wait for. If `state=drained' then it will only check for 
-# path: The path to a file on the filesystem to check. If `state' is present or started then it will wait until 
+${1:# connect_timeout: The maximum number of seconds to wait for a 
+# delay: The number of seconds to wait before starting to 
+# exclude_hosts: The list of hosts or IPs to ignore when looking 
+# host: A resolvable hostname or IP address to wait for. 
+# path: The path to a file on the filesystem to check. 
 # port: The port number to poll on `host'. 
-# search_regex: Can be used to match a string in a file. If `state' is present or started then it will wait until the 
+# search_regex: Can be used to match a string in a file. If 
 # sleep: Number of seconds to sleep between checks. 
-# state: When checking a port, `started' will ensure the port is open, `stopped' will check that is it closed and 
+# state: When checking a port, `started' will ensure the 
 # timeout: The maximum number of seconds to wait for. 
 }- name: ${2:Name for win_wait_for module.}
   win_wait_for:

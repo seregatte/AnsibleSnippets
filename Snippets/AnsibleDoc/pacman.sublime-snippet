@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# force: When removing package - force remove package, without any checks. When update_cache - force redownload 
-# name: Name of the package to install, upgrade, or remove. 
-# recurse: When removing a package, also remove its dependencies, provided that they are not required by other 
+${1:# force: When removing package - force remove package, 
+# name: Name or list of names of the packages to 
+# recurse: When removing a package, also remove its 
 # state: Desired state of the package. 
-# update_cache: Whether or not to refresh the master package lists. This can be run as part of a package installation or 
-# upgrade: Whether or not to upgrade whole system 
+# update_cache: Whether or not to refresh the master package 
+# upgrade: Whether or not to upgrade whole system. 
 }- name: ${2:Name for pacman module.}
   pacman:
 ${3:   ${4:force}: ${5:"#"}}

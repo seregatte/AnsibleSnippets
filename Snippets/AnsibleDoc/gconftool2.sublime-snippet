@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# config_source: Specify a configuration source to use rather than the default path. See man gconftool-2(1) 
-# direct: Access the config database directly, bypassing server.  If direct is specified then the config_source 
-# key: (required) A GConf preference key is an element in the GConf repository that corresponds to an 
-# state: (required) The action to take upon the key/value. 
-# value: Preference keys typically have simple values such as strings, integers, or lists of strings and 
-# value_type: The type of value being set. This is ignored if the state is "get". 
+${1:# config_source: Specify a configuration source to use rather 
+# direct: Access the config database directly, bypassing 
+# key: (required) A GConf preference key is an element 
+# state: (required) The action to take upon the 
+# value: Preference keys typically have simple values 
+# value_type: The type of value being set. This is ignored if 
 }- name: ${2:Name for gconftool2 module.}
   gconftool2:
 ${3:   ${4:config_source}: ${5:"#"}}

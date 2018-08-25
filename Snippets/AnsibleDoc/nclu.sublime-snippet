@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# abort: Boolean. When true, perform a 'net abort' before the block. This cleans out any uncommitted changes in 
-# atomic: When true, equivalent to both `commit' and `abort' being true. Mutually exclusive with `commit' and 
-# commands: A list of strings containing the net commands to run. Mutually exclusive with `template'. 
-# commit: When true, performs a 'net commit' at the end of the block. Mutually exclusive with `atomic'. 
-# description: Commit description that will be recorded to the commit log if `commit' or `atomic' are true. 
-# template: A single, multi-line string with jinja2 formatting. This string will be broken by lines, and each line 
+${1:# abort: Boolean. When true, perform a 'net abort' before 
+# atomic: When true, equivalent to both `commit' and 
+# commands: A list of strings containing the net commands to 
+# commit: When true, performs a 'net commit' at the end of 
+# description: Commit description that will be recorded to the 
+# template: A single, multi-line string with jinja2 
 }- name: ${2:Name for nclu module.}
   nclu:
 ${3:   ${4:abort}: ${5:"#"}}

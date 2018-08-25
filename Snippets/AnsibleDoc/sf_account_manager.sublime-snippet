@@ -2,15 +2,15 @@
 <content><![CDATA[
 ${1:# account_id: The ID of the account to manage or update. 
 # attributes: List of Name/Value pairs in JSON object format. 
-# hostname: (required) The hostname or IP address of the SolidFire cluster. 
-# initiator_secret: CHAP secret to use for the initiator. Should be 12-16 characters long and impenetrable. The CHAP 
-# name: (required) Unique username for this account. (May be 1 to 64 characters in length). 
+# hostname: (required) The hostname or IP address of the 
+# initiator_secret: CHAP secret to use for the initiator. Should be 
+# name: (required) Unique username for this account. 
 # new_name: New name for the user account. 
 # password: (required) Password for the specified user. 
-# state: (required) Whether the specified account should exist or not. 
+# state: (required) Whether the specified account should 
 # status: Status of the account. 
-# target_secret: CHAP secret to use for the target (mutual CHAP authentication). Should be 12-16 characters long and 
-# username: (required) Please ensure that the user has the adequate permissions. For more information, please read 
+# target_secret: CHAP secret to use for the target (mutual CHAP 
+# username: (required) Please ensure that the user has the 
 }- name: ${2:Name for sf_account_manager module.}
   sf_account_manager:
 ${3:   ${4:account_id}: ${5:"#"}}

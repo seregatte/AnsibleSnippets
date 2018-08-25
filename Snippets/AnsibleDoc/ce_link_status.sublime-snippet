@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# interface: (required) For the interface parameter, you can enter `all' to display information about all interface, 
+${1:# interface: (required) For the interface parameter, you can 
 }- name: ${2:Name for ce_link_status module.}
   ce_link_status:
 ${3:   ${4:interface}: ${5:"#"}}

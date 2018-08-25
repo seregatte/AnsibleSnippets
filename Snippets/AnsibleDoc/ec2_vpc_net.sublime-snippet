@@ -1,22 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# cidr_block: (required) The CIDR of the VPC 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cidr_block: (required) The primary CIDR of the VPC. After 
 # dhcp_opts_id: the id of the DHCP options to use for this vpc 
 # dns_hostnames: Whether to enable AWS hostname support. 
 # dns_support: Whether to enable AWS DNS support. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# multi_ok: By default the module will not create another VPC if there is another VPC with the same name and CIDR 
-# name: (required) The name to give your VPC. This is used in combination with the cidr_block parameter to 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# multi_ok: By default the module will not create another 
+# name: (required) The name to give your VPC. This is 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_cidrs: Remove CIDRs that are associated with the VPC 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: The state of the VPC. Either absent or present. 
-# tags: The tags you want attached to the VPC. This is independent of the name value, note if you pass a 'Name' 
-# tenancy: Whether to be default or dedicated tenancy. This cannot be changed after the VPC has been created. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# tags: The tags you want attached to the VPC. This is 
+# tenancy: Whether to be default or dedicated tenancy. This 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ec2_vpc_net module.}
   ec2_vpc_net:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -29,19 +30,20 @@ ${21:   ${22:ec2_url}: ${23:"#"}}
 ${24:   ${25:multi_ok}: ${26:"#"}}
 ${27:   ${28:name}: ${29:"#"}}
 ${30:   ${31:profile}: ${32:"#"}}
-${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:http}: ${38:"#"}}
-${39:   ${40:security_token}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:tags}: ${47:"#"}}
-${48:   ${49:tenancy}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${33:   ${34:purge_cidrs}: ${35:"#"}}
+${36:   ${37:region}: ${38:"#"}}
+${39:   ${40:}: ${41:"#"}}
+${42:   ${43:security_token}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:tags}: ${50:"#"}}
+${51:   ${52:tenancy}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_net</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

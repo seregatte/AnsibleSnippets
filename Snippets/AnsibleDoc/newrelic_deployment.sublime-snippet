@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# app_name: (one of app_name or application_id are required) The value of app_name in the newrelic.yml file used by 
-# application_id: (one of app_name or application_id are required) The application id, found in the URL when viewing the 
+${1:# app_name: (one of app_name or application_id are required) 
+# application_id: (one of app_name or application_id are required) 
 # appname: Name of the application 
 # changelog: A list of changes for this deployment 
-# description: Text annotation for the deployment - notes for you 
+# description: Text annotation for the deployment - notes for 
 # environment: The environment for this deployment 
 # revision: A revision number (e.g., git commit SHA) 
-# token: (required) API token, to place in the x-api-key header. 
-# user: The name of the user/process that triggered this deployment 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# token: (required) API token, to place in the x-api-key 
+# user: The name of the user/process that triggered this 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for newrelic_deployment module.}
   newrelic_deployment:
 ${3:   ${4:app_name}: ${5:"#"}}

@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# comment: Text field that can be used for any purposed defined by the user. Could be a description of what the 
-# compression: If the value of `compression' is greater than 0, new connections to that server will use compression. If 
-# config_file: Specify a config file from which login_user and login_password are to be read. 
-# hostgroup_id: The hostgroup in which this mysqld instance is included. An instance can be part of one or more 
-# hostname: (required) The ip address at which the mysqld instance can be contacted. 
-# load_to_runtime: Dynamically load mysql host config to runtime memory. 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
-# max_connections: The maximum number of connections ProxySQL will open to this backend server. If omitted the proxysql 
-# max_latency_ms: Ping time is monitored regularly. If a host has a ping time greater than `max_latency_ms' it is excluded 
-# max_replication_lag: If greater than 0, ProxySQL will reguarly monitor replication lag. If replication lag goes above 
-# port: The port at which the mysqld instance can be contacted. 
-# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
-# state: When `present' - adds the host, when `absent' - removes the host. 
-# status: ONLINE - Backend server is fully operational. OFFLINE_SOFT - When a server is put into `OFFLINE_SOFT' 
-# use_ssl: If `use_ssl' is set to `True', connections to this server will be made using SSL connections. If omitted 
-# weight: The bigger the weight of a server relative to other weights, the higher the probability of the server 
+${1:# comment: Text field that can be used for any purposed 
+# compression: If the value of `compression' is greater than 0, 
+# config_file: Specify a config file from which `login_user' 
+# hostgroup_id: The hostgroup in which this mysqld instance is 
+# hostname: (required) The ip address at which the mysqld 
+# load_to_runtime: Dynamically load config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
+# max_connections: The maximum number of connections ProxySQL will 
+# max_latency_ms: Ping time is monitored regularly. If a host has 
+# max_replication_lag: If greater than 0, ProxySQL will reguarly 
+# port: The port at which the mysqld instance can be 
+# save_to_disk: Save config to sqlite db on disk to persist the 
+# state: When `present' - adds the host, when `absent' - 
+# status: ONLINE - Backend server is fully operational. 
+# use_ssl: If `use_ssl' is set to `True', connections to 
+# weight: The bigger the weight of a server relative to 
 }- name: ${2:Name for proxysql_backend_servers module.}
   proxysql_backend_servers:
 ${3:   ${4:comment}: ${5:"#"}}

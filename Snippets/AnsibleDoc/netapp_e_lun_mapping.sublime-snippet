@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: The password used to authenticate against the API. This can optionally be set via an environment 
-# api_url: The full API url. Example: http://ENDPOINT:8080/devmgr/v2 This can optionally be set via an environment 
-# api_username: The username used to authenticate against the API. This can optionally be set via an environment 
-# lun: The LUN number you wish to give the mapping If the supplied `volume_name' is associated with a different 
-# ssid: The storage system array identifier. 
-# state: (required) Present will ensure the mapping exists, absent will remove the mapping. All parameters `lun', 
-# target: The name of host or hostgroup you wish to assign to the mapping If omitted, the default hostgroup is 
-# target_type: Whether the target is a host or group. Required if supplying an explicit target. 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# lun: The LUN number you wish to give the mapping If 
+# ssid: (required) The ID of the array to manage. This 
+# state: (required) Present will ensure the mapping 
+# target: The name of host or hostgroup you wish to assign 
+# target_type: Whether the target is a host or group. Required 
 # validate_certs: Should https certificates be validated? 
-# volume_name: (required) The name of the volume you wish to include in the mapping. 
+# volume_name: (required) The name of the volume you wish to 
 }- name: ${2:Name for netapp_e_lun_mapping module.}
   netapp_e_lun_mapping:
 ${3:   ${4:api_password}: ${5:"#"}}

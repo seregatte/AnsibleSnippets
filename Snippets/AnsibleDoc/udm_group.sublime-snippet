@@ -2,10 +2,10 @@
 <content><![CDATA[
 ${1:# description: Group description. 
 # name: (required) Name of the posix group. 
-# ou: LDAP OU, e.g. school for LDAP OU `ou=school,dc=example,dc=com'. 
-# position: define the whole ldap position of the group, e.g. `cn=g123m- 
+# ou: LDAP OU, e.g. school for LDAP OU 
+# position: define the whole ldap position of the group, 
 # state: Whether the group is present or not. 
-# subpath: Subpath inside the OU, e.g. `cn=classes,cn=students,cn=groups'. 
+# subpath: Subpath inside the OU, e.g. 
 }- name: ${2:Name for udm_group module.}
   udm_group:
 ${3:   ${4:description}: ${5:"#"}}

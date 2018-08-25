@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# attach: A space-separated list of pathnames of files to attach to the message. Attached files will have their 
-# bcc: The email-address(es) the mail is being 'blind' copied to. This is a comma-separated list, which may 
+${1:# attach: A list of pathnames of files to attach to the 
+# bcc: The email-address(es) the mail is being 'blind' 
 # body: The body of the email being sent. 
-# cc: The email-address(es) the mail is being copied to. This is a comma-separated list, which may contain 
-# charset: The character set of email being sent 
-# from: The email-address the mail is sent from. May contain address and phrase. 
-# headers: A vertical-bar-separated list of headers which should be added to the message. Each individual header is 
-# host: The mail server 
-# password: If SMTP requires password 
-# port: The mail server port.  This must be a valid integer between 1 and 65534 
-# secure: If `always', the connection will only send email if the connection is Encrypted. If the server doesn't 
+# cc: The email-address(es) the mail is being copied 
+# charset: The character set of email being sent. 
+# from: The email-address the mail is sent from. May 
+# headers: A list of headers which should be added to the 
+# host: The mail server. 
+# password: If SMTP requires password. 
+# port: The mail server port. This must be a valid 
+# secure: If `always', the connection will only send email 
 # subject: (required) The subject of the email being sent. 
-# subtype: The minor mime type, can be either text or html. The major type is always text. 
-# timeout: Sets the Timeout in seconds for connection attempts 
-# to: The email-address(es) the mail is being sent to. This is a comma-separated list, which may contain 
-# username: If SMTP requires username 
+# subtype: The minor mime type, can be either `plain' or 
+# timeout: Sets the timeout in seconds for connection 
+# to: The email-address(es) the mail is being sent to. 
+# username: If SMTP requires username. 
 }- name: ${2:Name for mail module.}
   mail:
 ${3:   ${4:attach}: ${5:"#"}}

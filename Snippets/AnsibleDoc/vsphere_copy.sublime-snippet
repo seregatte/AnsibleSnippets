@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# datacenter: (required) The datacenter on the vCenter server that holds the datastore. 
-# datastore: (required) The datastore on the vCenter server to push files to. 
-# host: (required) The vCenter server on which the datastore is available. 
-# login: (required) The login name to authenticate on the vCenter server. 
-# password: (required) The password to authenticate on the vCenter server. 
-# path: (required) The file to push to the datastore on the vCenter server. 
+${1:# datacenter: (required) The datacenter on the vCenter server 
+# datastore: (required) The datastore on the vCenter server 
+# host: (required) The vCenter server on which the 
+# login: (required) The login name to authenticate on the 
+# password: (required) The password to authenticate on the 
+# path: (required) The file to push to the datastore on 
 # src: (required) The file to push to vCenter 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be set to `no' when no other option 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for vsphere_copy module.}
   vsphere_copy:
 ${3:   ${4:datacenter}: ${5:"#"}}

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# executable: Path to the hponcfg executable (`hponcfg` which uses $PATH). 
+${1:# executable: Path to the hponcfg executable (`hponcfg` which 
 # minfw: The minimum firmware level needed. 
 # path: (required) The XML file as accepted by hponcfg. 
 # verbose: Run hponcfg in verbose mode (-v). 

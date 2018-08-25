@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # description: description to be applied to the snapshot 
-# device_name: device name of a mounted volume to be snapshotted 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# instance_id: instance that has the required volume to snapshot mounted 
-# last_snapshot_min_age: If the volume's most recent snapshot has started less than `last_snapshot_min_age' minutes ago, a new 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# device_name: device name of a mounted volume to be 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# instance_id: instance that has the required volume to 
+# last_snapshot_min_age: If the volume's most recent snapshot has started 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # snapshot_id: snapshot id to remove 
 # snapshot_tags: a hash/dictionary of tags to add to the snapshot 
 # state: whether to add or create a snapshot 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 # volume_id: volume from which to take the snapshot 
 # wait: wait for the snapshot to be ready 
-# wait_timeout: how long before wait gives up, in seconds specify 0 to wait forever 
+# wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for ec2_snapshot module.}
   ec2_snapshot:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -29,7 +29,7 @@ ${18:   ${19:instance_id}: ${20:"#"}}
 ${21:   ${22:last_snapshot_min_age}: ${23:"#"}}
 ${24:   ${25:profile}: ${26:"#"}}
 ${27:   ${28:region}: ${29:"#"}}
-${30:   ${31:http}: ${32:"#"}}
+${30:   ${31:}: ${32:"#"}}
 ${33:   ${34:security_token}: ${35:"#"}}
 ${36:   ${37:snapshot_id}: ${38:"#"}}
 ${39:   ${40:snapshot_tags}: ${41:"#"}}

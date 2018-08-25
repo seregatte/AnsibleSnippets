@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# actions: This array of objects will power the action links found at the bottom of the card. 
-# color: Accent color used for branding or indicating status in the card. 
-# sections: Contains a list of sections to display in the card. For more information see 
-# summary: A string used for summarizing card content. This will be shown as the message subject. This is required 
-# text: The main text of the card. This will be rendered below the sender information and optional title, and 
-# title: A title for the Connector message. Shown at the top of the message. 
-# webhook: (required) The webhook URL is given to you when you create a new Connector. 
+${1:# actions: This array of objects will power the action 
+# color: Accent color used for branding or indicating 
+# sections: Contains a list of sections to display in the 
+# summary: A string used for summarizing card content. This 
+# text: The main text of the card. This will be rendered 
+# title: A title for the Connector message. Shown at the 
+# webhook: (required) The webhook URL is given to you when 
 }- name: ${2:Name for office_365_connector_card module.}
   office_365_connector_card:
 ${3:   ${4:actions}: ${5:"#"}}

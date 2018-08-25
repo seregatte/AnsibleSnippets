@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: Heroku API key 
+# apps: (required) List of Heroku App names 
+# state: Create or remove the heroku collaborator 
+# suppress_invitation: Suppress email invitation when creating 
+# user: (required) User ID or e-mail 
+}- name: ${2:Name for heroku_collaborator module.}
+  heroku_collaborator:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:apps}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:suppress_invitation}: ${14:"#"}}
+${15:   ${16:user}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>heroku_collaborator</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

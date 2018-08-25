@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_unauthenticated: Ignore if packages cannot be authenticated. This is useful for bootstrapping environments that manage 
-# autoclean: If `yes', cleans the local repository of retrieved package files that can no longer be downloaded. 
-# autoremove: If `yes', remove unused dependency packages for all module states except `build-dep'. It can also be 
-# cache_valid_time: Update the apt cache if its older than the `cache_valid_time'. This option is set in seconds. As of 
-# deb: Path to a .deb package on the remote machine. If :// in the path, ansible will attempt to download deb 
-# default_release: Corresponds to the `-t' option for `apt' and sets pin priorities 
-# dpkg_options: Add dpkg options to apt command. Defaults to '-o "Dpkg::Options::=--force-confdef" -o "Dpkg::Options 
-# force: If `yes', force installs/removes. 
+${1:# allow_unauthenticated: Ignore if packages cannot be authenticated. This 
+# autoclean: If `yes', cleans the local repository of 
+# autoremove: If `yes', remove unused dependency packages for 
+# cache_valid_time: Update the apt cache if its older than the 
+# deb: Path to a .deb package on the remote machine. If 
+# default_release: Corresponds to the `-t' option for `apt' and 
+# dpkg_options: Add dpkg options to apt command. Defaults to '-o 
+# force: Corresponds to the `--force-yes' to `apt-get' 
 # force_apt_get: Force usage of apt-get instead of aptitude 
-# install_recommends: Corresponds to the `--no-install-recommends' option for `apt'. `yes' installs recommended packages. 
-# name: A package name, like `foo', or package specifier with version, like `foo=1.0'. Name wildcards (fnmatch) 
-# only_upgrade: Only upgrade a package if it is already installed. 
-# purge: Will force purging of configuration files if the module state is set to `absent'. 
-# state: Indicates the desired package state. `latest' ensures that the latest version is installed. `build-dep' 
-# update_cache: Run the equivalent of `apt-get update' before the operation. Can be run as part of the package 
-# upgrade: If yes or safe, performs an aptitude safe-upgrade. If full, performs an aptitude full-upgrade. If dist, 
+# install_recommends: Corresponds to the `--no-install-recommends' 
+# name: A list of package names, like `foo', or package 
+# only_upgrade: Only upgrade a package if it is already 
+# purge: Will force purging of configuration files if the 
+# state: Indicates the desired package state. `latest' 
+# update_cache: Run the equivalent of `apt-get update' before 
+# upgrade: If yes or safe, performs an aptitude safe- 
 }- name: ${2:Name for apt module.}
   apt:
 ${3:   ${4:allow_unauthenticated}: ${5:"#"}}

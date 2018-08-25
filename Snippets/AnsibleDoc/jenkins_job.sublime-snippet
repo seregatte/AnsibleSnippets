@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# config: config in XML format. Required if job does not yet exist. Mututally exclusive with `enabled'. Considered 
-# enabled: Whether the job should be enabled or disabled. Mututally exclusive with `config'. Considered if 
+${1:# config: config in XML format. Required if job does not 
+# enabled: Whether the job should be enabled or disabled. 
 # name: (required) Name of the Jenkins job. 
-# password: Password to authenticate with the Jenkins server. 
-# state: Attribute that specifies if the job has to be created or deleted. 
-# token: API token used to authenticate alternatively to password. 
+# password: Password to authenticate with the Jenkins 
+# state: Attribute that specifies if the job has to be 
+# token: API token used to authenticate alternatively to 
 # url: Url where the Jenkins server is accessible. 
 # user: User to authenticate with the Jenkins server. 
 }- name: ${2:Name for jenkins_job module.}

@@ -1,47 +1,38 @@
 <snippet>
 <content><![CDATA[
-${1:# additional_paths_install: Install a backup path into the forwarding table and provide prefix independent convergence (PIC) in case 
-# additional_paths_receive: Enables the receive capability of additional paths for all of the neighbors under this address family 
-# additional_paths_selection: Configures the capability of selecting additional paths for a prefix. Valid values are a string defining 
-# additional_paths_send: Enables the send capability of additional paths for all of the neighbors under this address family for 
+${1:# additional_paths_install: Install a backup path into the forwarding table 
+# additional_paths_receive: Enables the receive capability of additional 
+# additional_paths_selection: Configures the capability of selecting 
+# additional_paths_send: Enables the send capability of additional paths 
 # advertise_l2vpn_evpn: Advertise evpn routes. 
 # afi: (required) Address Family Identifier. 
-# asn: (required) BGP autonomous system number. Valid values are String, Integer in ASPLAIN or ASDOT notation. 
+# asn: (required) BGP autonomous system number. Valid 
 # client_to_client: Configure client-to-client route reflection. 
-# dampen_igp_metric: Specify dampen value for IGP metric-related changes, in seconds. Valid values are integer and keyword 
-# dampening_half_time: Specify decay half-life in minutes for route-flap dampening. Valid values are integer and keyword 
-# dampening_max_suppress_time: Specify max suppress time for route-flap dampening stable route. Valid values are integer and keyword 
-# dampening_reuse_time: Specify route reuse time for route-flap dampening. Valid values are integer and keyword 'default'. 
-# dampening_routemap: Specify route-map for route-flap dampening. Valid values are a string defining the name of the route- 
+# dampen_igp_metric: Specify dampen value for IGP metric-related 
+# dampening_half_time: Specify decay half-life in minutes for route- 
+# dampening_max_suppress_time: Specify max suppress time for route-flap 
+# dampening_reuse_time: Specify route reuse time for route-flap 
+# dampening_routemap: Specify route-map for route-flap dampening. 
 # dampening_state: Enable/disable route-flap dampening. 
-# dampening_suppress_time: Specify route suppress time for route-flap dampening. Valid values are integer and keyword 'default'. 
+# dampening_suppress_time: Specify route suppress time for route-flap 
 # default_information_originate: Default information originate. 
-# default_metric: Sets default metrics for routes redistributed into BGP. Valid values are Integer or keyword 'default' 
-# distance_ebgp: Sets the administrative distance for eBGP routes. Valid values are Integer or keyword 'default'. 
-# distance_ibgp: Sets the administrative distance for iBGP routes. Valid values are Integer or keyword 'default'. 
-# distance_local: Sets the administrative distance for local BGP routes. Valid values are Integer or keyword 'default'. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# inject_map: An array of route-map names which will specify prefixes to inject. Each array entry must first specify 
-# maximum_paths: Configures the maximum number of equal-cost paths for load sharing. Valid value is an integer in the 
-# maximum_paths_ibgp: Configures the maximum number of ibgp equal-cost paths for load sharing. Valid value is an integer in 
-# networks: Networks to configure. Valid value is a list of network prefixes to advertise. The list must be in the 
-# next_hop_route_map: Configure a route-map for valid nexthops. Valid values are a string defining the name of the route-map. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# redistribute: A list of redistribute directives. Multiple redistribute entries are allowed. The list must be in the 
+# default_metric: Sets default metrics for routes redistributed 
+# distance_ebgp: Sets the administrative distance for eBGP 
+# distance_ibgp: Sets the administrative distance for iBGP 
+# distance_local: Sets the administrative distance for local BGP 
+# inject_map: An array of route-map names which will specify 
+# maximum_paths: Configures the maximum number of equal-cost 
+# maximum_paths_ibgp: Configures the maximum number of ibgp equal-cost 
+# networks: Networks to configure. Valid value is a list of 
+# next_hop_route_map: Configure a route-map for valid nexthops. Valid 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# redistribute: A list of redistribute directives. Multiple 
 # safi: (required) Sub Address Family Identifier. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: Determines whether the config should be present or not on the device. 
+# state: Determines whether the config should be present 
 # suppress_inactive: Advertises only active routes to peers. 
-# table_map: Apply table-map to filter routes downloaded into URIB. Valid values are a string. 
-# table_map_filter: Filters routes rejected by the route-map and does not download them to the RIB. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vrf: (required) Name of the VRF. The name 'default' is a valid VRF representing the global bgp. 
+# table_map: Apply table-map to filter routes downloaded into 
+# table_map_filter: Filters routes rejected by the route-map and 
+# vrf: (required) Name of the VRF. The name 'default' 
 }- name: ${2:Name for nxos_bgp_af module.}
   nxos_bgp_af:
 ${3:   ${4:additional_paths_install}: ${5:"#"}}
@@ -64,34 +55,25 @@ ${51:   ${52:default_metric}: ${53:"#"}}
 ${54:   ${55:distance_ebgp}: ${56:"#"}}
 ${57:   ${58:distance_ibgp}: ${59:"#"}}
 ${60:   ${61:distance_local}: ${62:"#"}}
-${63:   ${64:host}: ${65:"#"}}
-${66:   ${67:inject_map}: ${68:"#"}}
-${69:   ${70:maximum_paths}: ${71:"#"}}
-${72:   ${73:maximum_paths_ibgp}: ${74:"#"}}
-${75:   ${76:networks}: ${77:"#"}}
-${78:   ${79:next_hop_route_map}: ${80:"#"}}
-${81:   ${82:password}: ${83:"#"}}
-${84:   ${85:port}: ${86:"#"}}
-${87:   ${88:provider}: ${89:"#"}}
-${90:   ${91:redistribute}: ${92:"#"}}
-${93:   ${94:safi}: ${95:"#"}}
-${96:   ${97:ssh_keyfile}: ${98:"#"}}
-${99:   ${100:state}: ${101:"#"}}
-${102:   ${103:suppress_inactive}: ${104:"#"}}
-${105:   ${106:table_map}: ${107:"#"}}
-${108:   ${109:table_map_filter}: ${110:"#"}}
-${111:   ${112:timeout}: ${113:"#"}}
-${114:   ${115:transport}: ${116:"#"}}
-${117:   ${118:use_ssl}: ${119:"#"}}
-${120:   ${121:username}: ${122:"#"}}
-${123:   ${124:validate_certs}: ${125:"#"}}
-${126:   ${127:vrf}: ${128:"#"}}
-${129:${130:   become: ${131:true}} 
-${132:   become_method: ${133:su}} 
-${134:   become_user: ${135:nobody}} 
-${136:   become_flags: ${137:"-s /bin/sh"}}} 
-${138:   when: ${139:variable is defined}} 
-${140:   with_items: ${141:array}} 
+${63:   ${64:inject_map}: ${65:"#"}}
+${66:   ${67:maximum_paths}: ${68:"#"}}
+${69:   ${70:maximum_paths_ibgp}: ${71:"#"}}
+${72:   ${73:networks}: ${74:"#"}}
+${75:   ${76:next_hop_route_map}: ${77:"#"}}
+${78:   ${79:provider}: ${80:"#"}}
+${81:   ${82:redistribute}: ${83:"#"}}
+${84:   ${85:safi}: ${86:"#"}}
+${87:   ${88:state}: ${89:"#"}}
+${90:   ${91:suppress_inactive}: ${92:"#"}}
+${93:   ${94:table_map}: ${95:"#"}}
+${96:   ${97:table_map_filter}: ${98:"#"}}
+${99:   ${100:vrf}: ${101:"#"}}
+${102:${103:   become: ${104:true}} 
+${105:   become_method: ${106:su}} 
+${107:   become_user: ${108:nobody}} 
+${109:   become_flags: ${110:"-s /bin/sh"}}} 
+${111:   when: ${112:variable is defined}} 
+${113:   with_items: ${114:array}} 
 ]]></content>
 	<tabTrigger>nxos_bgp_af</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# path: (required) File to get version(provide absolute path) 
+${1:# path: (required) File to get version. Always provide 
 }- name: ${2:Name for win_file_version module.}
   win_file_version:
 ${3:   ${4:path}: ${5:"#"}}

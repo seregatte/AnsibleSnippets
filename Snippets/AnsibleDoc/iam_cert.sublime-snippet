@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# cert: The path to, or content of the certificate body in PEM encoded format. As of 2.4 content is accepted. If 
-# cert_chain: The path to, or content of the CA certificate chain in PEM encoded format. As of 2.4 content is 
-# dup_ok: By default the module will not upload a certificate that is already uploaded into AWS. If set to True, 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# key: The path to, or content of the private key in PEM encoded format. As of 2.4 content is accepted. If the 
-# name: (required) Name of certificate to add, update or remove. 
-# new_name: When state is present, this will update the name of the cert. The cert, key and cert_chain parameters 
-# new_path: When state is present, this will update the path of the cert. The cert, key and cert_chain parameters 
-# path: When creating or updating, specify the desired path of the certificate. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: (required) Whether to create(or update) or delete certificate. If new_path or new_name is defined, 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cert: The path to, or content of the certificate body 
+# cert_chain: The path to, or content of the CA certificate 
+# dup_ok: By default the module will not upload a 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# key: The path to, or content of the private key in 
+# name: (required) Name of certificate to add, update or 
+# new_name: When state is present, this will update the name 
+# new_path: When state is present, this will update the path 
+# path: When creating or updating, specify the desired 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) Whether to create(or update) or 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for iam_cert module.}
   iam_cert:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -32,7 +32,7 @@ ${30:   ${31:new_path}: ${32:"#"}}
 ${33:   ${34:path}: ${35:"#"}}
 ${36:   ${37:profile}: ${38:"#"}}
 ${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:http}: ${44:"#"}}
+${42:   ${43:}: ${44:"#"}}
 ${45:   ${46:security_token}: ${47:"#"}}
 ${48:   ${49:state}: ${50:"#"}}
 ${51:   ${52:validate_certs}: ${53:"#"}}

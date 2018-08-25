@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# access_vlan: If `mode=access', used as the access VLAN ID, in the range from 1 to 4094. 
-# interface: (required) Full name of the interface, i.e. 40GE1/0/22. 
+${1:# access_vlan: If `mode=access', used as the access VLAN ID, in 
+# interface: (required) Full name of the interface, i.e. 
 # mode: The link type of an interface. 
-# native_vlan: If `mode=trunk', used as the trunk native VLAN ID, in the range from 1 to 4094. 
+# native_vlan: If `mode=trunk', used as the trunk native VLAN 
 # state: Manage the state of the resource. 
-# trunk_vlans: If `mode=trunk', used as the VLAN range to ADD or REMOVE from the trunk, such as 2-10 or 2,5,10-15, etc. 
+# trunk_vlans: If `mode=trunk', used as the VLAN range to ADD 
 }- name: ${2:Name for ce_switchport module.}
   ce_switchport:
 ${3:   ${4:access_vlan}: ${5:"#"}}

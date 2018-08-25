@@ -2,15 +2,15 @@
 <content><![CDATA[
 ${1:# desc: Short description of maintenance window. 
 # hours: Length of maintenance window in hours. 
-# minutes: Maintenance window in minutes (this is added to the hours). 
+# minutes: Maintenance window in minutes (this is added to 
 # name: (required) PagerDuty unique subdomain. 
 # passwd: (required) PagerDuty user password. 
-# requester_id: (required) ID of user making the request. Only needed when using a token and creating a 
+# requester_id: (required) ID of user making the request. Only 
 # service: A comma separated list of PagerDuty service IDs. 
-# state: (required) Create a maintenance window or get a list of ongoing windows. 
-# token: (required) A pagerduty token, generated on the pagerduty site. Can be used instead of user/passwd 
+# state: (required) Create a maintenance window or get a 
+# token: (required) A pagerduty token, generated on the 
 # user: (required) PagerDuty user ID. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for pagerduty module.}
   pagerduty:
 ${3:   ${4:desc}: ${5:"#"}}

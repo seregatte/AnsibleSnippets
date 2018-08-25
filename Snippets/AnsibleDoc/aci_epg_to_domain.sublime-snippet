@@ -1,55 +1,63 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_useg: Allows micro-segmentation. The APIC defaults new EPG to Domain bindings to use `encap'. 
-# ap: Name of an existing application network profile, that will contain the EPGs. 
-# deploy_immediacy: Determines when the policy is pushed to hardware Policy CAM. The APIC defaults new EPG to Domain 
-# domain: Name of the physical or virtual domain being associated with the EPG. 
-# domain_type: Determines if the Domain is physical (phys) or virtual (vmm). 
-# encap: The VLAN encapsulation for the EPG when binding a VMM Domain with static encap_mode. This acts as the 
-# encap_mode: The ecapsulataion method to be used. The APIC defaults new EPG to Domain bindings to `auto'. 
+${1:# allow_useg: Allows micro-segmentation. The APIC defaults to 
+# ap: Name of an existing application network profile, 
+# certificate_name: The X.509 certificate name attached to the APIC 
+# deploy_immediacy: Determines when the policy is pushed to hardware 
+# domain: Name of the physical or virtual domain being 
+# domain_type: Determines if the Domain is physical (phys) or 
+# encap: The VLAN encapsulation for the EPG when binding 
+# encap_mode: The ecapsulataion method to be used. The APIC 
 # epg: Name of the end point group. 
-# hostname: (required) IP Address or hostname of APIC resolvable by Ansible control host. 
-# netflow: Determines if netflow should be enabled. The APIC defaults new EPG to Domain binings to `disabled'. 
-# password: (required) The password to use for authentication. 
+# host: (required) IP Address or hostname of APIC 
+# netflow: Determines if netflow should be enabled. The 
+# output_level: Influence the output of this ACI module. 
+# password: (required) The password to use for 
+# port: Port number to be used for REST connection. The 
 # primary_encap: Determines the primary VLAN ID when using useg. 
-# resolution_immediacy: Determines when the policies should be resolved and available. The APIC defaults new EPG to Domain 
-# state: Use `present' or `absent' for adding or removing. Use `query' for listing an object or multiple objects. 
+# private_key: (required) PEM formatted file that contains your 
+# resolution_immediacy: Determines when the policies should be resolved 
+# state: Use `present' or `absent' for adding or 
 # tenant: Name of an existing tenant. 
 # timeout: The socket level timeout in seconds. 
-# use_proxy: If `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
-# use_ssl: If `no', an HTTP connection will be used instead of the default HTTPS connection. 
-# username: (required) The username to use for authentication. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only set to `no' used on personally 
-# vm_provider: The VM platform for VMM Domains. 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# use_ssl: If `no', an HTTP connection will be used instead 
+# username: The username to use for authentication. 
+# validate_certs: If `no', SSL certificates will not be validated. 
+# vm_provider: The VM platform for VMM Domains. Support for 
 }- name: ${2:Name for aci_epg_to_domain module.}
   aci_epg_to_domain:
 ${3:   ${4:allow_useg}: ${5:"#"}}
 ${6:   ${7:ap}: ${8:"#"}}
-${9:   ${10:deploy_immediacy}: ${11:"#"}}
-${12:   ${13:domain}: ${14:"#"}}
-${15:   ${16:domain_type}: ${17:"#"}}
-${18:   ${19:encap}: ${20:"#"}}
-${21:   ${22:encap_mode}: ${23:"#"}}
-${24:   ${25:epg}: ${26:"#"}}
-${27:   ${28:hostname}: ${29:"#"}}
-${30:   ${31:netflow}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:primary_encap}: ${38:"#"}}
-${39:   ${40:resolution_immediacy}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:tenant}: ${47:"#"}}
-${48:   ${49:timeout}: ${50:"#"}}
-${51:   ${52:use_proxy}: ${53:"#"}}
-${54:   ${55:use_ssl}: ${56:"#"}}
-${57:   ${58:username}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
-${63:   ${64:vm_provider}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${9:   ${10:certificate_name}: ${11:"#"}}
+${12:   ${13:deploy_immediacy}: ${14:"#"}}
+${15:   ${16:domain}: ${17:"#"}}
+${18:   ${19:domain_type}: ${20:"#"}}
+${21:   ${22:encap}: ${23:"#"}}
+${24:   ${25:encap_mode}: ${26:"#"}}
+${27:   ${28:epg}: ${29:"#"}}
+${30:   ${31:host}: ${32:"#"}}
+${33:   ${34:netflow}: ${35:"#"}}
+${36:   ${37:output_level}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:primary_encap}: ${47:"#"}}
+${48:   ${49:private_key}: ${50:"#"}}
+${51:   ${52:resolution_immediacy}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:tenant}: ${59:"#"}}
+${60:   ${61:timeout}: ${62:"#"}}
+${63:   ${64:use_proxy}: ${65:"#"}}
+${66:   ${67:use_ssl}: ${68:"#"}}
+${69:   ${70:username}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:   ${76:vm_provider}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>aci_epg_to_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

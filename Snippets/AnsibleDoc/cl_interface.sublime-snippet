@@ -2,23 +2,23 @@
 <content><![CDATA[
 ${1:# addr_method: Address method. 
 # alias_name: Description of the port. 
-# clagd_enable: Enables the clagd daemon. This command should only be applied to the clag peerlink interface. 
-# clagd_peer_ip: IP address of the directly connected peer switch interface. 
-# clagd_priority: Integer that changes the role the switch has in the clag domain. The lower priority switch will assume 
-# clagd_sys_mac: Clagd system mac address. Recommended to use the range starting with 44:38:39:ff. Needs to be the same 
-# ipv4: List of IPv4 addresses to configure on the interface. In the form `X.X.X.X/YY'. 
-# ipv6: List of IPv6 addresses to configure on the interface. In the form `X:X:X::X/YYY'. 
+# clagd_enable: Enables the clagd daemon. This command should 
+# clagd_peer_ip: IP address of the directly connected peer switch 
+# clagd_priority: Integer that changes the role the switch has in 
+# clagd_sys_mac: Clagd system mac address. Recommended to use the 
+# ipv4: List of IPv4 addresses to configure on the 
+# ipv6: List of IPv6 addresses to configure on the 
 # location: Interface directory location 
 # mstpctl_bpduguard: Enables BPDU Guard on a port in vlan-aware mode. 
 # mstpctl_portadminedge: Enables admin edge port. 
 # mstpctl_portnetwork: Enables bridge assurance in vlan-aware mode. 
-# mtu: Set MTU. Configure Jumbo Frame by setting MTU to `9000'. 
+# mtu: Set MTU. Configure Jumbo Frame by setting MTU to 
 # name: (required) Name of the interface. 
-# pvid: In vlan-aware mode, defines vlan that is the untagged vlan. 
-# speed: Set speed of the swp(front panel) or management(eth0) interface. speed is in MB. 
-# vids: In vlan-aware mode, lists VLANs defined under the interface. 
-# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux VRR feature. 
-# virtual_mac: Define Ethernet mac associated with Cumulus Linux VRR feature. 
+# pvid: In vlan-aware mode, defines vlan that is the 
+# speed: Set speed of the swp(front panel) or 
+# vids: In vlan-aware mode, lists VLANs defined under 
+# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux 
+# virtual_mac: Define Ethernet mac associated with Cumulus 
 }- name: ${2:Name for cl_interface module.}
   cl_interface:
 ${3:   ${4:addr_method}: ${5:"#"}}

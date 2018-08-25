@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# backend: Name of the HAProxy backend pool. 
-# drain: Wait until the server has no active connections or until the timeout determined by wait_interval and 
-# fail_on_not_found: Fail whenever trying to enable/disable a backend host that does not exist 
+# drain: Wait until the server has no active connections 
+# fail_on_not_found: Fail whenever trying to enable/disable a backend 
 # host: (required) Name of the backend host to change. 
-# shutdown_sessions: When disabling a server, immediately terminate all the sessions attached to the specified server. This 
+# shutdown_sessions: When disabling a server, immediately terminate 
 # socket: Path to the HAProxy socket file. 
-# state: (required) Desired state of the provided backend host. Note that `drain' state was added in version 2.4. 
-# wait: Wait until the server reports a status of 'UP' when `state=enabled`, status of 'MAINT' when 
+# state: (required) Desired state of the provided backend 
+# wait: Wait until the server reports a status of 'UP' 
 # wait_interval: Number of seconds to wait between retries. 
-# wait_retries: Number of times to check for status after changing the state. 
-# weight: The value passed in argument. If the value ends with the `%` sign, then the new weight will be relative 
+# wait_retries: Number of times to check for status after 
+# weight: The value passed in argument. If the value ends 
 }- name: ${2:Name for haproxy module.}
   haproxy:
 ${3:   ${4:backend}: ${5:"#"}}

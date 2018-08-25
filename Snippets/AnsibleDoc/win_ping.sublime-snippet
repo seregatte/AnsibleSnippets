@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# data: Alternate data to return instead of 'pong'. If this parameter is set to `crash', the module will cause 
+${1:# data: Alternate data to return instead of 'pong'. If 
 }- name: ${2:Name for win_ping module.}
   win_ping:
 ${3:   ${4:data}: ${5:"#"}}

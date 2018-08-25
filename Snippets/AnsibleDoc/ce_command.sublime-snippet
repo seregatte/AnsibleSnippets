@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# commands: (required) The commands to send to the remote HUAWEI CloudEngine device over the configured provider. 
-# interval: Configures the interval in seconds to wait between retries of the command.  If the command does not pass 
-# match: The `match' argument is used in conjunction with the `wait_for' argument to specify the match policy. 
-# retries: Specifies the number of retries a command should by tried before it is considered failed.  The command 
-# wait_for: Specifies what to evaluate from the output of the command and what conditionals to apply.  This argument 
+${1:# commands: (required) The commands to send to the remote 
+# interval: Configures the interval in seconds to wait 
+# match: The `match' argument is used in conjunction with 
+# retries: Specifies the number of retries a command should 
+# wait_for: Specifies what to evaluate from the output of 
 }- name: ${2:Name for ce_command module.}
   ce_command:
 ${3:   ${4:commands}: ${5:"#"}}

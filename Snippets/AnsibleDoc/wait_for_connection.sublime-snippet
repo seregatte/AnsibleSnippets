@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# connect_timeout: Maximum number of seconds to wait for a connection to happen before closing and retrying. 
-# delay: Number of seconds to wait before starting to poll. 
+${1:# connect_timeout: Maximum number of seconds to wait for a 
+# delay: Number of seconds to wait before starting to 
 # sleep: Number of seconds to sleep between checks. 
 # timeout: Maximum number of seconds to wait for. 
 }- name: ${2:Name for wait_for_connection module.}

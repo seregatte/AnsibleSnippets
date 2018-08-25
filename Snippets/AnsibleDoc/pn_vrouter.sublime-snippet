@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# pn_bgp_as: Specify the Autonomous System Number(ASN) if the vRouter runs Border Gateway Protocol(BGP). 
-# pn_bgp_max_paths: Specify the maximum number of paths for BGP. This is a number between 1 and 255 or 0 to unset. 
-# pn_bgp_options: Specify other BGP options as a whitespaces separated string within single quotes ''. 
+${1:# pn_bgp_as: Specify the Autonomous System Number(ASN) if the 
+# pn_bgp_max_paths: Specify the maximum number of paths for BGP. 
+# pn_bgp_options: Specify other BGP options as a whitespaces 
 # pn_bgp_redistribute: Specify how BGP routes are redistributed. 
 # pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch(es) to run the CLI on. 
 # pn_cliusername: Provide login username if user is not root. 
 # pn_hw_vrrp_id: Specifies the VRRP ID for a hardware vrouter. 
 # pn_name: (required) Specify the name of the vRouter. 
-# pn_ospf_options: Specify other OSPF options as a whitespaces separated string within single quotes ''. 
+# pn_ospf_options: Specify other OSPF options as a whitespaces 
 # pn_ospf_redistribute: Specify how OSPF routes are redistributed. 
 # pn_rip_redistribute: Specify how RIP routes are redistributed. 
 # pn_router_id: Specify the vRouter IP address. 
-# pn_router_type: Specify if the vRouter uses software or hardware. Note that if you specify hardware as router type, you 
+# pn_router_type: Specify if the vRouter uses software or 
 # pn_service_state: Specify to enable or disable vRouter service. 
-# pn_service_type: Specify if the vRouter is a dedicated or shared VNET service. 
-# pn_vnet: Specify the name of the VNET. Required for vrouter-create. 
-# state: (required) State the action to perform. Use 'present' to create vrouter, 'absent' to delete vrouter and 
+# pn_service_type: Specify if the vRouter is a dedicated or shared 
+# pn_vnet: Specify the name of the VNET. Required for 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_vrouter module.}
   pn_vrouter:
 ${3:   ${4:pn_bgp_as}: ${5:"#"}}

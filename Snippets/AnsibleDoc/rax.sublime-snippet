@@ -2,39 +2,39 @@
 <content><![CDATA[
 ${1:# api_key: Rackspace API key, overrides `credentials'. 
 # auth_endpoint: The URI of the authentication service. 
-# auto_increment: Whether or not to increment a single number with the name of the created servers. Only applicable when 
-# boot_from_volume: Whether or not to boot the instance from a Cloud Block Storage volume. If `yes' and `image' is specified 
-# boot_volume: Cloud Block Storage ID or Name to use as the boot volume of the instance 
-# boot_volume_size: Size of the volume to create in Gigabytes. This is only required with `image' and `boot_from_volume'. 
-# boot_volume_terminate: Whether the `boot_volume' or newly created volume from `image' will be terminated when the server is 
-# config_drive: Attach read-only configuration drive to server as label config-2 
+# auto_increment: Whether or not to increment a single number with 
+# boot_from_volume: Whether or not to boot the instance from a Cloud 
+# boot_volume: Cloud Block Storage ID or Name to use as the 
+# boot_volume_size: Size of the volume to create in Gigabytes. This 
+# boot_volume_terminate: Whether the `boot_volume' or newly created 
+# config_drive: Attach read-only configuration drive to server 
 # count: number of instances to launch 
 # count_offset: number count to start at 
-# credentials: File to find the Rackspace credentials in. Ignored if `api_key' and `username' are provided. 
+# credentials: File to find the Rackspace credentials in. 
 # disk_config: Disk partitioning strategy 
 # env: Environment as configured in `~/.pyrax.cfg', see 
-# : pyrax-configuration. 
-# exact_count: Explicitly ensure an exact count of instances, used with state=active/present. If specified as `yes' and 
-# extra_client_args: A hash of key/value pairs to be used when creating the cloudservers client. This is considered an 
-# extra_create_args: A hash of key/value pairs to be used when creating a new server. This is considered an advanced option, 
-# files: Files to insert into the instance. remotefilename:localcontent 
+# md: pyrax- 
+# exact_count: Explicitly ensure an exact count of instances, 
+# extra_client_args: A hash of key/value pairs to be used when 
+# extra_create_args: A hash of key/value pairs to be used when 
+# files: Files to insert into the instance. 
 # flavor: flavor to use for the instance 
-# group: host group to assign to server, is also used for idempotent operations to ensure a specific number of 
-# identity_type: Authentication mechanism to use, such as rackspace or keystone. 
-# image: image to use for the instance. Can be an `id', `human_id' or `name'. With `boot_from_volume', a Cloud 
-# instance_ids: list of instance ids, currently only used when state='absent' to remove instances 
+# group: host group to assign to server, is also used for 
+# identity_type: Authentication mechanism to use, such as 
+# image: image to use for the instance. Can be an `id', 
+# instance_ids: list of instance ids, currently only used when 
 # key_name: key pair to use on the instance 
-# meta: A hash of metadata to associate with the instance 
+# meta: A hash of metadata to associate with the 
 # name: Name to give the instance 
-# networks: The network to attach to the instances. If specified, you must include ALL networks including the public 
+# networks: The network to attach to the instances. If 
 # region: Region to create an instance in. 
 # state: Indicate desired state of the resource 
 # tenant_id: The tenant ID used for authentication. 
 # tenant_name: The tenant name used for authentication. 
-# user_data: Data to be uploaded to the servers config drive. This option implies `config_drive'. Can be a file path 
+# user_data: Data to be uploaded to the servers config drive. 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API endpoints. 
-# wait: wait for the instance to be in state 'running' before returning 
+# verify_ssl: Whether or not to require SSL validation of API 
+# wait: wait for the instance to be in state 'running' 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for rax module.}
   rax:
@@ -51,7 +51,7 @@ ${30:   ${31:count_offset}: ${32:"#"}}
 ${33:   ${34:credentials}: ${35:"#"}}
 ${36:   ${37:disk_config}: ${38:"#"}}
 ${39:   ${40:env}: ${41:"#"}}
-${42:   ${43:}: ${44:"#"}}
+${42:   ${43:md}: ${44:"#"}}
 ${45:   ${46:exact_count}: ${47:"#"}}
 ${48:   ${49:extra_client_args}: ${50:"#"}}
 ${51:   ${52:extra_create_args}: ${53:"#"}}

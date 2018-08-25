@@ -1,16 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
 # backup_gigabytes: Maximum size of backups in GB's. 
 # backups: Maximum number of backups allowed. 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
 # cores: Maximum number of CPU's per project. 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
 # fixed_ips: Number of fixed IP's to allow. 
 # floating_ips: Number of floating IP's to allow in Compute. 
 # floatingip: Number of floating IP's to allow in Network. 
@@ -20,14 +19,15 @@ ${1:# api_timeout: How long should the socket layer wait before timing out for A
 # injected_files: Number of injected files to allow. 
 # injected_path_size: Maximum path size. 
 # instances: Maximum number of instances allowed. 
-# key: A path to a client key to use as part of the SSL transaction. 
+# interface: Endpoint URL type to fetch from the service 
+# key: A path to a client key to use as part of the SSL 
 # key_pairs: Number of key pairs to allow. 
 # loadbalancer: Number of load balancers to allow. 
-# name: (required) Name of the OpenStack Project to manage. 
+# name: (required) Name of the OpenStack Project to 
 # network: Number of networks to allow. 
 # per_volume_gigabytes: Maximum size in GB's of individual volumes. 
 # pool: Number of load balancer pools to allow. 
-# port: Number of Network ports to allow, this needs to be greater than the instances limit. 
+# port: Number of Network ports to allow, this needs to 
 # properties: Number of properties to allow. 
 # ram: Maximum amount of ram in MB to allow. 
 # rbac_policy: Number of policies to allow. 
@@ -39,14 +39,14 @@ ${1:# api_timeout: How long should the socket layer wait before timing out for A
 # server_groups: Number of server groups to allow. 
 # snapshots: Number of snapshots to allow. 
 # snapshots_lvm: Number of LVM snapshots to allow. 
-# state: A value of present sets the quota and a value of absent resets the quota to system defaults. 
+# state: A value of present sets the quota and a value of 
 # subnet: Number of subnets to allow. 
 # subnetpool: Number of subnet pools to allow. 
-# timeout: How long should ansible wait for the requested resource. 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
+# timeout: How long should ansible wait for the requested 
+# verify: Whether or not SSL API requests should be 
 # volumes: Number of volumes to allow. 
 # volumes_lvm: Number of LVM volumes to allow. 
-# wait: Should ansible wait until the requested resource is complete. 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_quota module.}
   os_quota:
 ${3:   ${4:api_timeout}: ${5:"#"}}
@@ -59,16 +59,16 @@ ${21:   ${22:cacert}: ${23:"#"}}
 ${24:   ${25:cert}: ${26:"#"}}
 ${27:   ${28:cloud}: ${29:"#"}}
 ${30:   ${31:cores}: ${32:"#"}}
-${33:   ${34:endpoint_type}: ${35:"#"}}
-${36:   ${37:fixed_ips}: ${38:"#"}}
-${39:   ${40:floating_ips}: ${41:"#"}}
-${42:   ${43:floatingip}: ${44:"#"}}
-${45:   ${46:gigabytes}: ${47:"#"}}
-${48:   ${49:gigabytes_lvm}: ${50:"#"}}
-${51:   ${52:injected_file_size}: ${53:"#"}}
-${54:   ${55:injected_files}: ${56:"#"}}
-${57:   ${58:injected_path_size}: ${59:"#"}}
-${60:   ${61:instances}: ${62:"#"}}
+${33:   ${34:fixed_ips}: ${35:"#"}}
+${36:   ${37:floating_ips}: ${38:"#"}}
+${39:   ${40:floatingip}: ${41:"#"}}
+${42:   ${43:gigabytes}: ${44:"#"}}
+${45:   ${46:gigabytes_lvm}: ${47:"#"}}
+${48:   ${49:injected_file_size}: ${50:"#"}}
+${51:   ${52:injected_files}: ${53:"#"}}
+${54:   ${55:injected_path_size}: ${56:"#"}}
+${57:   ${58:instances}: ${59:"#"}}
+${60:   ${61:interface}: ${62:"#"}}
 ${63:   ${64:key}: ${65:"#"}}
 ${66:   ${67:key_pairs}: ${68:"#"}}
 ${69:   ${70:loadbalancer}: ${71:"#"}}
@@ -92,7 +92,7 @@ ${120:   ${121:state}: ${122:"#"}}
 ${123:   ${124:subnet}: ${125:"#"}}
 ${126:   ${127:subnetpool}: ${128:"#"}}
 ${129:   ${130:timeout}: ${131:"#"}}
-${132:   ${133:validate_certs}: ${134:"#"}}
+${132:   ${133:verify}: ${134:"#"}}
 ${135:   ${136:volumes}: ${137:"#"}}
 ${138:   ${139:volumes_lvm}: ${140:"#"}}
 ${141:   ${142:wait}: ${143:"#"}}

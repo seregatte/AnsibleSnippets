@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# evpn: Is extend vpn or normal vpn. 
-# route_distinguisher: VPN instance route distinguisher,the RD used to distinguish same route prefix from different vpn. The RD 
+# route_distinguisher: VPN instance route distinguisher,the RD used to 
 # state: Manage the state of the af. 
 # vpn_target_state: Manage the state of the vpn target. 
 # vpn_target_type: VPN instance vpn target type. 
-# vpn_target_value: VPN instance target value. Such as X.X.X.X:number<0-65535> or number<0-65535>:number<0-4294967295> or 
+# vpn_target_value: VPN instance target value. Such as 
 # vrf: (required) VPN instance. 
 # vrf_aftype: VPN instance address family. 
 }- name: ${2:Name for ce_vrf_af module.}

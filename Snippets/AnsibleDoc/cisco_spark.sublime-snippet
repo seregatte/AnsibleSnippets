@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# message: (required) The message you would like to send. 
-# message_type: Specifies how you would like the message formatted. 
-# personal_token: (required) Your personal access token required to validate the Spark API. 
-# recipient_id: (required) The unique identifier associated with the supplied `recipient_type'. 
-# recipient_type: (required) The request parameter you would like to send the message to. Messages can be sent to either a 
+# message_type: Specifies how you would like the message 
+# personal_token: (required) Your personal access token required 
+# recipient_id: (required) The unique identifier associated with 
+# recipient_type: (required) The request parameter you would like 
 }- name: ${2:Name for cisco_spark module.}
   cisco_spark:
 ${3:   ${4:message}: ${5:"#"}}

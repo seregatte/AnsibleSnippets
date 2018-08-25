@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
-${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
+# cloud: Named cloud or cloud config to operate against. 
 # description: Group description 
-# domain_id: Domain id to create the group in if the cloud supports domains. 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# key: A path to a client key to use as part of the SSL transaction. 
+# domain_id: Domain id to create the group in if the cloud 
+# interface: Endpoint URL type to fetch from the service 
+# key: A path to a client key to use as part of the SSL 
 # name: (required) Group name 
 # region_name: Name of the region. 
 # state: Should the resource be present or absent. 
-# timeout: How long should ansible wait for the requested resource. 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: Should ansible wait until the requested resource is complete. 
+# timeout: How long should ansible wait for the requested 
+# verify: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_group module.}
   os_group:
 ${3:   ${4:api_timeout}: ${5:"#"}}
@@ -28,13 +28,13 @@ ${18:   ${19:cert}: ${20:"#"}}
 ${21:   ${22:cloud}: ${23:"#"}}
 ${24:   ${25:description}: ${26:"#"}}
 ${27:   ${28:domain_id}: ${29:"#"}}
-${30:   ${31:endpoint_type}: ${32:"#"}}
+${30:   ${31:interface}: ${32:"#"}}
 ${33:   ${34:key}: ${35:"#"}}
 ${36:   ${37:name}: ${38:"#"}}
 ${39:   ${40:region_name}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}
 ${45:   ${46:timeout}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
+${48:   ${49:verify}: ${50:"#"}}
 ${51:   ${52:wait}: ${53:"#"}}
 ${54:${55:   become: ${56:true}} 
 ${57:   become_method: ${58:su}} 

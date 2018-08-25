@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# active: A user with `active' set to `False' will be tracked in the database, but will be never loaded in the in- 
-# backend: If `backend' is set to `True', this (username, password) pair is used for authenticating to the ProxySQL 
-# config_file: Specify a config file from which login_user and login_password are to be read. 
-# default_hostgroup: If there is no matching rule for the queries sent by this user, the traffic it generates is sent to the 
-# default_schema: The schema to which the connection should change to by default. 
-# fast_forward: If `fast_forward' is set to `True', `fast_forward' will bypass the query processing layer (rewriting, 
-# frontend: If `frontend' is set to `True', this (username, password) pair is used for authenticating to the mysqld 
-# load_to_runtime: Dynamically load mysql host config to runtime memory. 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
-# max_connections: The maximum number of connections ProxySQL will open to the backend for this user. If omitted the 
-# password: Password of the user connecting to the mysqld or ProxySQL instance. 
-# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
-# state: When `present' - adds the user, when `absent' - removes the user. 
-# transaction_persistent: If this is set for the user with which the MySQL client is connecting to ProxySQL (thus a "frontend" 
-# use_ssl: If `use_ssl' is set to `True', connections by this user will be made using SSL connections. If omitted 
-# username: (required) Name of the user connecting to the mysqld or ProxySQL instance. 
+${1:# active: A user with `active' set to `False' will be 
+# backend: If `backend' is set to `True', this (username, 
+# config_file: Specify a config file from which `login_user' 
+# default_hostgroup: If there is no matching rule for the queries 
+# default_schema: The schema to which the connection should change 
+# fast_forward: If `fast_forward' is set to `True', 
+# frontend: If `frontend' is set to `True', this (username, 
+# load_to_runtime: Dynamically load config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
+# max_connections: The maximum number of connections ProxySQL will 
+# password: Password of the user connecting to the mysqld or 
+# save_to_disk: Save config to sqlite db on disk to persist the 
+# state: When `present' - adds the user, when `absent' - 
+# transaction_persistent: If this is set for the user with which the MySQL 
+# use_ssl: If `use_ssl' is set to `True', connections by 
+# username: (required) Name of the user connecting to the 
 }- name: ${2:Name for proxysql_mysql_users module.}
   proxysql_mysql_users:
 ${3:   ${4:active}: ${5:"#"}}

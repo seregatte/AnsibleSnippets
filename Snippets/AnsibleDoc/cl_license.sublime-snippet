@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# force: Force installation of a license. Typically not needed. It is recommended to manually run this command 
-# src: (required) The full path to the license. Can be local path or HTTP URL. 
+${1:# force: Force installation of a license. Typically not 
+# src: (required) The full path to the license. Can be 
 }- name: ${2:Name for cl_license module.}
   cl_license:
 ${3:   ${4:force}: ${5:"#"}}

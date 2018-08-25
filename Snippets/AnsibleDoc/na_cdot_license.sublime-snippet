@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# hostname: (required) The hostname or IP address of the ONTAP instance. 
-# licenses: List of licenses to add or remove. Please note that trying to remove a non-existent license will throw 
+${1:# hostname: (required) The hostname or IP address of the 
+# licenses: List of licenses to add or remove. Please note 
 # password: (required) Password for the specified user. 
-# remove_expired: Remove licenses that have expired in the cluster. 
-# remove_unused: Remove licenses that have no controller affiliation in the cluster. 
-# serial_number: Serial number of the node associated with the license. This parameter is used primarily when removing 
-# username: (required) This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or 
+# remove_expired: Remove licenses that have expired in the 
+# remove_unused: Remove licenses that have no controller 
+# serial_number: Serial number of the node associated with the 
+# username: (required) This can be a Cluster-scoped or SVM- 
 }- name: ${2:Name for na_cdot_license module.}
   na_cdot_license:
 ${3:   ${4:hostname}: ${5:"#"}}

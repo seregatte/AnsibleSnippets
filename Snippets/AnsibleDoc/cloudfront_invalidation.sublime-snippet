@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# alias: The alias of the cloudfront distribution to 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# caller_reference: A unique reference identifier for the 
+# distribution_id: The id of the cloudfront distribution to 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# target_paths: (required) A list of paths on the distribution 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for cloudfront_invalidation module.}
+  cloudfront_invalidation:
+${3:   ${4:alias}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:caller_reference}: ${14:"#"}}
+${15:   ${16:distribution_id}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:target_paths}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>cloudfront_invalidation</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

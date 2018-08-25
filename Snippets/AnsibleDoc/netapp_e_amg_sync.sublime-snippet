@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# delete_recovery_point: Indicates whether the failures point can be deleted on the secondary if necessary to achieve the 
-# name: (required) The name of the async mirror group you wish to target 
-# ssid: The ID of the storage array containing the AMG you wish to target 
-# state: (required) The synchronization action you'd like to take. If `running' then it will begin syncing if 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# delete_recovery_point: Indicates whether the failures point can be 
+# name: (required) The name of the async mirror group 
+# ssid: The ID of the storage array containing the AMG 
+# state: (required) The synchronization action you'd like 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_amg_sync module.}
   netapp_e_amg_sync:

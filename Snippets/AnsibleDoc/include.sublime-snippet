@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# free: This module allows you to specify the name of the file directly w/o any other options. 
+${1:# free: This module allows you to specify the name of 
 }- name: ${2:Name for include module.}
   include:
 ${3:   ${4:free}: ${5:"#"}}

@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
 ${1:# comment: Comments associated with this cs action. 
-# name: Name for the content switching action. Must begin with an ASCII alphanumeric or underscore `_' 
-# : ', period `.', space ` ', colon `:', at sign `@', equal sign `=', and 
-# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
-# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
-# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
-# nitro_user: (required) The username with which to authenticate to the netscaler node. 
-# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
-# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
-# state: The state of the resource being configured by the module on the netscaler node. When present the 
-# targetlbvserver: Name of the load balancing virtual server to which the content is switched. 
-# targetvserver: Name of the VPN virtual server to which the content is switched. 
+# name: Name for the content switching action. Must 
+# hash: ', period 
+# nitro_pass: (required) The password with which to 
+# nitro_protocol: Which protocol to use when accessing the nitro 
+# nitro_timeout: Time in seconds until a timeout error is thrown 
+# nitro_user: (required) The username with which to 
+# nsip: (required) The ip address of the netscaler 
+# save_config: If true the module will save the configuration 
+# state: The state of the resource being configured by 
+# targetlbvserver: Name of the load balancing virtual server to 
+# targetvserver: Name of the VPN virtual server to which the 
 # targetvserverexpr: Information about this content switching action. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_cs_action module.}
   netscaler_cs_action:
 ${3:   ${4:comment}: ${5:"#"}}
 ${6:   ${7:name}: ${8:"#"}}
-${9:   ${10:}: ${11:"#"}}
+${9:   ${10:hash}: ${11:"#"}}
 ${12:   ${13:nitro_pass}: ${14:"#"}}
 ${15:   ${16:nitro_protocol}: ${17:"#"}}
 ${18:   ${19:nitro_timeout}: ${20:"#"}}

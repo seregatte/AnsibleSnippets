@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
 ${1:# bucket: (required) Bucket name. 
-# dest: The destination file path when downloading an object/key with a GET operation. 
-# expiration: Time limit (in seconds) for the URL generated and returned by GCA when performing a mode=put or 
-# force: Forces an overwrite either locally on the filesystem or remotely with the object/key. Used with PUT and 
-# gs_access_key: (required) GS access key. If not set then the value of the GS_ACCESS_KEY_ID environment variable is 
-# gs_secret_key: (required) GS secret key. If not set then the value of the GS_SECRET_ACCESS_KEY environment variable is 
+# dest: The destination file path when downloading an 
+# expiration: Time limit (in seconds) for the URL generated 
+# force: Forces an overwrite either locally on the 
+# gs_access_key: (required) GS access key. If not set then the 
+# gs_secret_key: (required) GS secret key. If not set then the 
 # headers: Headers to attach to object. 
-# mode: (required) Switches the module behaviour between upload, download, get_url (return download url) , 
-# object: Keyname of the object inside the bucket. Can be also be used to create "virtual directories" (see 
-# permission: This option let's the user set the canned permissions on the object/bucket that are created. The 
-# region: The gs region to use. If not defined then the value 'US' will be used. See 
-# src: The source file path when performing a PUT operation. 
-# versioning: Whether versioning is enabled or disabled (note that once versioning is enabled, it can only be 
+# mode: (required) Switches the module behaviour between 
+# object: Keyname of the object inside the bucket. Can be 
+# permission: This option let's the user set the canned 
+# region: The gs region to use. If not defined then the 
+# src: The source file path when performing a PUT 
+# versioning: Whether versioning is enabled or disabled (note 
 }- name: ${2:Name for gc_storage module.}
   gc_storage:
 ${3:   ${4:bucket}: ${5:"#"}}

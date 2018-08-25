@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# external_user_name: (chat only - required) Name of the "user" sending the message 
-# from_address: (inbox only - required) Email address of the message sender 
+${1:# external_user_name: (chat only - required) Name of the "user" 
+# from_address: (inbox only - required) Email address of the 
 # from_name: (inbox only) Name of the message sender 
-# link: (inbox only) Link associated with the message. This will be used to link the message subject in Team 
+# link: (inbox only) Link associated with the message. 
 # msg: (required) Content of the message 
-# project: (inbox only) Human readable identifier for more detailed message categorization 
+# project: (inbox only) Human readable identifier for more 
 # reply_to: (inbox only) Email address for replies 
-# source: (inbox only - required) Human readable identifier of the application that uses the Flowdock API 
-# subject: (inbox only - required) Subject line of the message 
+# source: (inbox only - required) Human readable 
+# subject: (inbox only - required) Subject line of the 
 # tags: tags of the message, separated by commas 
 # token: (required) API token. 
 # type: (required) Whether to post to 'inbox' or 'chat' 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for flowdock module.}
   flowdock:
 ${3:   ${4:external_user_name}: ${5:"#"}}

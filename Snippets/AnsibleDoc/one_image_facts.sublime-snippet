@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# api_password: Password of the user to login into OpenNebula 
+# api_url: URL of the OpenNebula RPC server. It is 
+# api_username: Name of the user to login into the OpenNebula 
+# ids: A list of images ids whose facts you want to 
+# name: A `name' of the image whose facts will be 
+}- name: ${2:Name for one_image_facts module.}
+  one_image_facts:
+${3:   ${4:api_password}: ${5:"#"}}
+${6:   ${7:api_url}: ${8:"#"}}
+${9:   ${10:api_username}: ${11:"#"}}
+${12:   ${13:ids}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>one_image_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

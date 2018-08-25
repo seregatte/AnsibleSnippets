@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_token: DigitalOcean api token. 
-# backups_enabled: Optional, Boolean, enables backups for your droplet. 
+# backups_enabled: Optional, Boolean, enables backups for your 
 # command: Which target you want to operate on. 
 # id: Numeric, the droplet id you want to operate on. 
-# image_id: This is the slug of the image you would like the droplet created with. 
+# image_id: This is the slug of the image you would like the 
 # ipv6: Optional, Boolean, enable IPv6 for your droplet. 
-# name: String, this is the name of the droplet - must be formatted by hostname rules, or the name of a SSH key. 
-# private_networking: Bool, add an additional, private network interface to droplet for inter-droplet communication. 
-# region_id: This is the slug of the region you would like your server to be created in. 
-# size_id: This is the slug of the size you would like the droplet created with. 
-# ssh_key_ids: Optional, array of SSH key (numeric) ID that you would like to be added to the server. 
-# ssh_pub_key: The public SSH key you want to add to your account. 
+# name: String, this is the name of the droplet - must 
+# private_networking: Bool, add an additional, private network 
+# region_id: This is the slug of the region you would like 
+# size_id: This is the slug of the size you would like the 
+# ssh_key_ids: Optional, array of SSH key (numeric) ID that you 
+# ssh_pub_key: The public SSH key you want to add to your 
 # state: Indicate desired state of the target. 
-# unique_name: Bool, require unique hostnames.  By default, DigitalOcean allows multiple hosts with the same name. 
-# user_data: opaque blob of data which is made available to the droplet 
-# virtio: Bool, turn on virtio driver in droplet for improved network and storage I/O. 
-# wait: Wait for the droplet to be in state 'running' before returning.  If wait is "no" an ip_address may not 
+# unique_name: Bool, require unique hostnames.  By default, 
+# user_data: opaque blob of data which is made available to 
+# virtio: Bool, turn on virtio driver in droplet for 
+# wait: Wait for the droplet to be in state 'running' 
 # wait_timeout: How long before wait gives up, in seconds. 
 }- name: ${2:Name for digital_ocean module.}
   digital_ocean:

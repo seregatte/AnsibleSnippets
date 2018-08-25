@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# list_all: List all settings (optionally limited to a given `scope') 
-# name: The name of the setting. If no value is supplied, the value will be read from the config if it has been 
-# repo: Path to a git repository for reading and writing values from a specific repo. 
-# scope: Specify which scope to read/set values from. This is required when setting config values. If this is set 
-# value: When specifying the name of a single setting, supply a value to set that setting to the given value. 
+${1:# list_all: List all settings (optionally limited to a given 
+# name: The name of the setting. If no value is 
+# repo: Path to a git repository for reading and writing 
+# scope: Specify which scope to read/set values from. 
+# value: When specifying the name of a single setting, 
 }- name: ${2:Name for git_config module.}
   git_config:
 ${3:   ${4:list_all}: ${5:"#"}}

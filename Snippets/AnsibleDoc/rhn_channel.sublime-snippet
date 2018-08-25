@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Name of the software channel. 
-# password: (required) RHN/Satellite password 
-# state: Whether the channel should be present or not, taking action if the state is different from what is 
-# sysname: (required) Name of the system as it is known in RHN/Satellite. 
-# url: (required) The full URL to the RHN/Satellite API. 
-# user: (required) RHN/Satellite login 
+# password: (required) RHN/Satellite password. 
+# state: Whether the channel should be present or not, 
+# sysname: (required) Name of the system as it is known in 
+# url: (required) The full URL to the RHN/Satellite 
+# user: (required) RHN/Satellite login. 
 }- name: ${2:Name for rhn_channel module.}
   rhn_channel:
 ${3:   ${4:name}: ${5:"#"}}

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# creates: If this file or directory exists the specified src will not be extracted. 
+${1:# creates: If this file or directory exists the specified 
 # delete_archive: Remove the zip file, after unzipping. 
-# dest: (required) Destination of zip file (provide absolute path of directory). If it does not exist, the 
-# recurse: Recursively expand zipped files within the src file. 
-# src: (required) File to be unzipped (provide absolute path). 
+# dest: (required) Destination of zip file (provide 
+# recurse: Recursively expand zipped files within the src 
+# src: (required) File to be unzipped (provide absolute 
 }- name: ${2:Name for win_unzip module.}
   win_unzip:
 ${3:   ${4:creates}: ${5:"#"}}

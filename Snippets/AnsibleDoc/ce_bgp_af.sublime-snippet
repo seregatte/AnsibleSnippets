@@ -1,59 +1,59 @@
 <snippet>
 <content><![CDATA[
-${1:# active_route_advertise: If the value is true, BGP is enabled to advertise only optimal routes in the RM to peers. If the value 
-# add_path_sel_num: Number of Add-Path routes. The value is an integer ranging from 2 to 64. 
-# af_type: (required) Address family type of a BGP instance. 
-# allow_invalid_as: Allow routes with BGP origin AS validation result Invalid to be selected. If the value is true, invalid 
-# always_compare_med: If the value is true, the MEDs of routes learned from peers in different autonomous systems are compared 
-# as_path_neglect: If the value is true, the AS path attribute is ignored when BGP selects an optimal route. If the value 
-# auto_frr_enable: If the value is true, BGP auto FRR is enabled. If the value is false, BGP auto FRR is disabled. 
-# default_local_pref: Set the Local-Preference attribute. The value is an integer. The value is an integer ranging from 0 to 
-# default_med: Specify the Multi-Exit-Discriminator (MED) of BGP routes. The value is an integer ranging from 0 to 
-# default_rt_import_enable: If the value is true, importing default routes to the BGP routing table is allowed. If the value is 
-# determin_med: If the value is true, BGP deterministic-MED is enabled. If the value is false, BGP deterministic-MED is 
-# ebgp_ecmp_nexthop_changed: If the value is true, the next hop of an advertised route is changed to the advertiser itself in EBGP 
-# ebgp_if_sensitive: If the value is true, after the fast EBGP interface awareness function is enabled, EBGP sessions on an 
-# ecmp_nexthop_changed: If the value is true, the next hop of an advertised route is changed to the advertiser itself in BGP 
-# ibgp_ecmp_nexthop_changed: If the value is true, the next hop of an advertised route is changed to the advertiser itself in IBGP 
-# igp_metric_ignore: If the value is true, the metrics of next-hop IGP routes are not compared when BGP selects an optimal 
-# import_process_id: Process ID of an imported routing protocol. The value is an integer ranging from 0 to 4294967295. 
-# import_protocol: Routing protocol from which routes can be imported. 
+${1:# active_route_advertise: If the value is true, BGP is enabled to 
+# add_path_sel_num: Number of Add-Path routes. The value is an 
+# af_type: (required) Address family type of a BGP 
+# allow_invalid_as: Allow routes with BGP origin AS validation 
+# always_compare_med: If the value is true, the MEDs of routes learned 
+# as_path_neglect: If the value is true, the AS path attribute is 
+# auto_frr_enable: If the value is true, BGP auto FRR is enabled. 
+# default_local_pref: Set the Local-Preference attribute. The value is 
+# default_med: Specify the Multi-Exit-Discriminator (MED) of 
+# default_rt_import_enable: If the value is true, importing default routes 
+# determin_med: If the value is true, BGP deterministic-MED is 
+# ebgp_ecmp_nexthop_changed: If the value is true, the next hop of an 
+# ebgp_if_sensitive: If the value is true, after the fast EBGP 
+# ecmp_nexthop_changed: If the value is true, the next hop of an 
+# ibgp_ecmp_nexthop_changed: If the value is true, the next hop of an 
+# igp_metric_ignore: If the value is true, the metrics of next-hop 
+# import_process_id: Process ID of an imported routing protocol. The 
+# import_protocol: Routing protocol from which routes can be 
 # ingress_lsp_policy_name: Ingress lsp policy name. 
 # load_balancing_as_path_ignore: Load balancing as path ignore. 
-# lowest_priority: If the value is true, enable reduce priority to advertise route. If the value is false, disable reduce 
-# mask_len: Specify the mask length of an IP address. The value is an integer ranging from 0 to 128. 
-# max_load_ebgp_num: Specify the maximum number of equal-cost EBGP routes. The value is an integer ranging from 1 to 65535. 
-# max_load_ibgp_num: Specify the maximum number of equal-cost IBGP routes. The value is an integer ranging from 1 to 65535. 
-# maximum_load_balance: Specify the maximum number of equal-cost routes in the BGP routing table. The value is an integer 
-# med_none_as_maximum: If the value is true, when BGP selects an optimal route, the system uses 4294967295 as the MED value of 
-# network_address: Specify the IP address advertised by BGP. The value is a string of 0 to 255 characters. 
+# lowest_priority: If the value is true, enable reduce priority to 
+# mask_len: Specify the mask length of an IP address. The 
+# max_load_ebgp_num: Specify the maximum number of equal-cost EBGP 
+# max_load_ibgp_num: Specify the maximum number of equal-cost IBGP 
+# maximum_load_balance: Specify the maximum number of equal-cost routes 
+# med_none_as_maximum: If the value is true, when BGP selects an 
+# network_address: Specify the IP address advertised by BGP. The 
 # next_hop_sel_depend_type: Next hop select depend type. 
-# nexthop_third_party: If the value is true, the third-party next hop function is enabled. If the value is false, the third- 
-# nhp_relay_route_policy_name: Specify the name of a route-policy for route iteration. The value is a string of 1 to 40 characters. 
+# nexthop_third_party: If the value is true, the third-party next hop 
+# nhp_relay_route_policy_name: Specify the name of a route-policy for route 
 # originator_prior: Originator prior. 
-# policy_ext_comm_enable: If the value is true, modifying extended community attributes is allowed. If the value is false, 
-# policy_vpn_target: If the value is true, VPN-Target filtering function is performed for received VPN routes. If the value 
-# preference_external: Set the protocol priority of EBGP routes. The value is an integer ranging from 1 to 255. 
-# preference_internal: Set the protocol priority of IBGP routes. The value is an integer ranging from 1 to 255. 
-# preference_local: Set the protocol priority of a local BGP route. The value is an integer ranging from 1 to 255. 
-# prefrence_policy_name: Set a routing policy to filter routes so that a configured priority is applied to the routes that match 
-# reflect_between_client: If the value is true, route reflection is enabled between clients. If the value is false, route 
-# reflect_chg_path: If the value is true, the route reflector is enabled to modify route path attributes based on an export 
-# reflector_cluster_id: Set a cluster ID. Configuring multiple RRs in a cluster can enhance the stability of the network. The 
-# reflector_cluster_ipv4: Set a cluster ipv4 address. The value is expressed in the format of an IPv4 address. 
-# relay_delay_enable: If the value is true, relay delay enable. If the value is false, relay delay disable. 
-# rib_only_enable: If the value is true, BGP routes cannot be advertised to the IP routing table. If the value is false, 
-# rib_only_policy_name: Specify the name of a routing policy. The value is a string of 1 to 40 characters. 
-# route_sel_delay: Route selection delay. The value is an integer ranging from 0 to 3600. 
-# router_id: ID of a router that is in IPv4 address format. The value is a string of 0 to 255 characters. The value 
-# router_id_neglect: If the value is true, the router ID attribute is ignored when BGP selects the optimal route. If the 
-# rr_filter_number: Set the number of the extended community filter supported by an RR group. The value is a string of 1 to 
+# policy_ext_comm_enable: If the value is true, modifying extended 
+# policy_vpn_target: If the value is true, VPN-Target filtering 
+# preference_external: Set the protocol priority of EBGP routes. The 
+# preference_internal: Set the protocol priority of IBGP routes. The 
+# preference_local: Set the protocol priority of a local BGP route. 
+# prefrence_policy_name: Set a routing policy to filter routes so that a 
+# reflect_between_client: If the value is true, route reflection is 
+# reflect_chg_path: If the value is true, the route reflector is 
+# reflector_cluster_id: Set a cluster ID. Configuring multiple RRs in a 
+# reflector_cluster_ipv4: Set a cluster ipv4 address. The value is 
+# relay_delay_enable: If the value is true, relay delay enable. If the 
+# rib_only_enable: If the value is true, BGP routes cannot be 
+# rib_only_policy_name: Specify the name of a routing policy. The value 
+# route_sel_delay: Route selection delay. The value is an integer 
+# router_id: ID of a router that is in IPv4 address format. 
+# router_id_neglect: If the value is true, the router ID attribute is 
+# rr_filter_number: Set the number of the extended community filter 
 # state: Specify desired state of the resource. 
-# summary_automatic: If the value is true, automatic aggregation is enabled for locally imported routes. If the value is 
-# supernet_label_adv: If the value is true, the function to advertise supernetwork label is enabled. If the value is false, 
-# supernet_uni_adv: If the value is true, the function to advertise supernetwork unicast routes is enabled. If the value is 
-# vrf_name: (required) Name of a BGP instance. The name is a case-sensitive string of characters. The BGP instance 
-# vrf_rid_auto_sel: If the value is true, VPN BGP instances are enabled to automatically select router IDs. If the value is 
+# summary_automatic: If the value is true, automatic aggregation is 
+# supernet_label_adv: If the value is true, the function to advertise 
+# supernet_uni_adv: If the value is true, the function to advertise 
+# vrf_name: (required) Name of a BGP instance. The name is a 
+# vrf_rid_auto_sel: If the value is true, VPN BGP instances are 
 }- name: ${2:Name for ce_bgp_af module.}
   ce_bgp_af:
 ${3:   ${4:active_route_advertise}: ${5:"#"}}

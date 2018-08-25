@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# filters: Criteria for selecting image. Can be any value from image manifest and 'published_date', 'published', 
+${1:# filters: Criteria for selecting image. Can be any value 
 }- name: ${2:Name for smartos_image_facts module.}
   smartos_image_facts:
 ${3:   ${4:filters}: ${5:"#"}}

@@ -1,30 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:# addr_method: Configures the port to use DHCP. To enable this feature use the option `dhcp'. 
+${1:# addr_method: Configures the port to use DHCP. To enable this 
 # alias_name: Description of the port. 
-# clag_id: Specify a unique clag_id for every dual connected bond on each peer switch. The value must be between 1 
-# ipv4: List of IPv4 addresses to configure on the interface. In the form `X.X.X.X/YY'. 
-# ipv6: List of IPv6 addresses to configure on the interface. In the form `X:X:X::X/YYY'. 
-# lacp_bypass_all_active: Activate all interfaces for bypass. It is recommended to configure all_active instead of using 
+# clag_id: Specify a unique clag_id for every dual 
+# ipv4: List of IPv4 addresses to configure on the 
+# ipv6: List of IPv6 addresses to configure on the 
+# lacp_bypass_all_active: Activate all interfaces for bypass. It is 
 # lacp_bypass_allow: Enable LACP bypass. 
-# lacp_bypass_period: Period for enabling LACP bypass. Max value is 900. 
-# lacp_bypass_priority: List of ports and priorities. Example `"swp1=10, swp2=20"'. 
+# lacp_bypass_period: Period for enabling LACP bypass. Max value is 
+# lacp_bypass_priority: List of ports and priorities. Example `"swp1=10, 
 # lacp_rate: The lacp rate. 
 # location: Interface directory location. 
 # miimon: The mii link monitoring interval. 
 # min_links: Minimum number of links. 
-# mode: The bond mode, as of Cumulus Linux 2.5 only LACP bond mode is supported. 
+# mode: The bond mode, as of Cumulus Linux 2.5 only LACP 
 # mstpctl_bpduguard: Enables BPDU Guard on a port in vlan-aware mode. 
 # mstpctl_portadminedge: Enables admin edge port. 
 # mstpctl_portnetwork: Enables bridge assurance in vlan-aware mode. 
-# mtu: Set MTU. Configure Jumbo Frame by setting MTU to `9000'. 
+# mtu: Set MTU. Configure Jumbo Frame by setting MTU to 
 # name: (required) Name of the interface. 
-# pvid: In vlan-aware mode, defines vlan that is the untagged vlan. 
+# pvid: In vlan-aware mode, defines vlan that is the 
 # slaves: (required) Bond members. 
-# vids: In vlan-aware mode, lists VLANs defined under the interface. 
-# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux VRR feature. 
-# virtual_mac: Define Ethernet mac associated with Cumulus Linux VRR feature. 
-# xmit_hash_policy: Transmit load balancing algorithm. As of Cumulus Linux 2.5 only `layer3+4' policy is supported. 
+# vids: In vlan-aware mode, lists VLANs defined under 
+# virtual_ip: Define IPv4 virtual IP used by the Cumulus Linux 
+# virtual_mac: Define Ethernet mac associated with Cumulus 
+# xmit_hash_policy: Transmit load balancing algorithm. As of Cumulus 
 }- name: ${2:Name for cl_bond module.}
   cl_bond:
 ${3:   ${4:addr_method}: ${5:"#"}}

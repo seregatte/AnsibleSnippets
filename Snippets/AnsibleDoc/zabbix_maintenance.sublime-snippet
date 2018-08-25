@@ -1,18 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# collect_data: Type of maintenance. With data collection, or without. 
-# desc: (required) Short description of maintenance window. 
-# host_groups: Host groups to manage maintenance window for. Separate multiple groups with commas. `host_group' is an 
-# host_names: Hosts to manage maintenance window for. Separate multiple hosts with commas. `host_name' is an alias for 
+${1:# collect_data: Type of maintenance. With data collection, or 
+# desc: (required) Short description of maintenance 
+# host_groups: Host groups to manage maintenance window for. 
+# host_names: Hosts to manage maintenance window for. Separate 
 # http_login_password: Basic Auth password 
 # http_login_user: Basic Auth login 
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
 # minutes: Length of maintenance window in minutes. 
 # name: (required) Unique name of maintenance window. 
-# server_url: (required) Url of Zabbix server, with protocol (http or https). `url' is an alias for `server_url'. 
+# server_url: (required) URL of Zabbix server, with protocol 
 # state: Create or remove a maintenance window. 
 # timeout: The timeout of API request (seconds). 
+# validate_certs: If set to False, SSL certificates will not be 
 }- name: ${2:Name for zabbix_maintenance module.}
   zabbix_maintenance:
 ${3:   ${4:collect_data}: ${5:"#"}}
@@ -28,12 +29,13 @@ ${30:   ${31:name}: ${32:"#"}}
 ${33:   ${34:server_url}: ${35:"#"}}
 ${36:   ${37:state}: ${38:"#"}}
 ${39:   ${40:timeout}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>zabbix_maintenance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

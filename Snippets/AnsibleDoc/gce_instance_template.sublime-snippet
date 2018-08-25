@@ -1,32 +1,32 @@
 <snippet>
 <content><![CDATA[
-${1:# automatic_restart: Defines whether the instance should be automatically restarted when it is terminated by Compute Engine. 
-# can_ip_forward: Set to True to allow instance to send/receive non-matching src/dst packets. 
-# credentials_file: path to the JSON file associated with the service account email 
+${1:# automatic_restart: Defines whether the instance should be 
+# can_ip_forward: Set to `yes' to allow instance to send/receive 
+# credentials_file: path to the JSON file associated with the 
 # description: description of instance template 
-# disk_auto_delete: Indicate that the boot disk should be deleted when the Node is deleted. 
-# disk_type: Specify a `pd-standard' disk or `pd-ssd' for an SSD disk. 
-# disks: a list of persistent disks to attach to the instance; a string value gives the name of the disk; 
-# disks_gce_struct: Support passing in the GCE-specific formatted formatted disks[] structure. Case sensitive. see 
-# https:  
-# external_ip: The external IP address to use. If `ephemeral', a new non-static address will be used.  If `None', then 
-# image: The image to use to create the instance. Cannot specify both both `image' and `source'. 
-# image_family: The image family to use to create the instance. If `image' has been used `image_family' is ignored. 
-# metadata: a hash/dictionary of custom data for the instance; '{"key":"value", ...}' 
-# name: (required) The name of the GCE instance template. 
+# disk_auto_delete: Indicate that the boot disk should be deleted 
+# disk_type: Specify a `pd-standard' disk or `pd-ssd' for an 
+# disks: a list of persistent disks to attach to the 
+# disks_gce_struct: Support passing in the GCE-specific formatted 
+# es: resource for 
+# external_ip: The external IP address to use. If `ephemeral', 
+# image: The image to use to create the instance. Cannot 
+# image_family: The image family to use to create the instance. 
+# metadata: a hash/dictionary of custom data for the 
+# name: The name of the GCE instance template. 
 # network: The network to associate with the instance. 
-# nic_gce_struct: Support passing in the GCE-specific formatted networkInterfaces[] structure. 
-# pem_file: path to the pem file associated with the service account email This option is deprecated. Use 
+# nic_gce_struct: Support passing in the GCE-specific formatted 
+# pem_file: path to the pem file associated with the service 
 # preemptible: Defines whether the instance is preemptible. 
 # project_id: your GCE project ID 
 # service_account_email: service account email 
-# service_account_permissions: service account permissions (see https://cloud.google.com/sdk/gcloud/reference/compute/instances/create, 
-# size: The desired machine type for the instance template. 
-# source: A source disk to attach to the instance. Cannot specify both `image' and `source'. 
+# service_account_permissions: service account permissions (see https://cloud.g 
+# size: The desired machine type for the instance 
+# source: A source disk to attach to the instance. Cannot 
 # state: The desired state for the instance template. 
 # subnetwork: The Subnetwork resource name for this instance. 
-# subnetwork_region: Region that subnetwork resides in. (Required for subnetwork to successfully complete) 
-# tags: a comma-separated list of tags to associate with the instance 
+# subnetwork_region: Region that subnetwork resides in. (Required for 
+# tags: a comma-separated list of tags to associate with 
 }- name: ${2:Name for gce_instance_template module.}
   gce_instance_template:
 ${3:   ${4:automatic_restart}: ${5:"#"}}
@@ -37,7 +37,7 @@ ${15:   ${16:disk_auto_delete}: ${17:"#"}}
 ${18:   ${19:disk_type}: ${20:"#"}}
 ${21:   ${22:disks}: ${23:"#"}}
 ${24:   ${25:disks_gce_struct}: ${26:"#"}}
-${27:   ${28:https}: ${29:"#"}}
+${27:   ${28:es}: ${29:"#"}}
 ${30:   ${31:external_ip}: ${32:"#"}}
 ${33:   ${34:image}: ${35:"#"}}
 ${36:   ${37:image_family}: ${38:"#"}}

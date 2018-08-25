@@ -1,23 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# changed_use: Include installed packages where USE flags have changed, except when flags that the user has not enabled 
-# deep: Consider the entire dependency tree of packages (--deep) 
-# depclean: Remove packages not needed by explicitly merged packages (--depclean) If no package is specified, clean 
-# getbinpkg: Prefer packages specified at PORTAGE_BINHOST in make.conf 
-# jobs: Specifies the number of packages to build simultaneously. 
+${1:# changed_use: Include installed packages where USE flags have 
+# deep: Consider the entire dependency tree of packages 
+# depclean: Remove packages not needed by explicitly merged 
+# getbinpkg: Prefer packages specified at PORTAGE_BINHOST in 
+# jobs: Specifies the number of packages to build 
 # keepgoing: Continue as much as possible after an error. 
-# loadavg: Specifies that no new builds should be started if there are other builds running and the load average is 
-# newuse: Include installed packages where USE flags have changed (--newuse) 
-# nodeps: Only merge packages but not their dependencies (--nodeps) 
-# noreplace: Do not re-emerge installed packages (--noreplace) 
-# oneshot: Do not add the packages to the world file (--oneshot) 
-# onlydeps: Only merge packages' dependencies but not the packages (--onlydeps) 
-# package: Package atom or set, e.g. `sys-apps/foo' or `>foo-2.13' or `@world' 
+# loadavg: Specifies that no new builds should be started 
+# newuse: Include installed packages where USE flags have 
+# nodeps: Only merge packages but not their dependencies 
+# noreplace: Do not re-emerge installed packages 
+# oneshot: Do not add the packages to the world file 
+# onlydeps: Only merge packages' dependencies but not the 
+# package: Package atom or set, e.g. `sys-apps/foo' or 
 # quiet: Run emerge in quiet mode (--quiet) 
+# quietbuild: Redirect all build output to logs alone, and do 
+# quietfail: Suppresses display of the build log on stdout 
 # state: State of the package atom 
-# sync: Sync package repositories first If yes, perform "emerge --sync" If web, perform "emerge-webrsync" 
-# update: Update packages to the best version available (--update) 
-# usepkgonly: Merge only binaries (no compiling). This sets getbinpkg=yes. 
+# sync: Sync package repositories first If yes, perform 
+# update: Update packages to the best version available 
+# usepkgonly: Merge only binaries (no compiling). This sets 
 # verbose: Run emerge in verbose mode (--verbose) 
 }- name: ${2:Name for portage module.}
   portage:
@@ -35,17 +37,19 @@ ${33:   ${34:oneshot}: ${35:"#"}}
 ${36:   ${37:onlydeps}: ${38:"#"}}
 ${39:   ${40:package}: ${41:"#"}}
 ${42:   ${43:quiet}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:sync}: ${50:"#"}}
-${51:   ${52:update}: ${53:"#"}}
-${54:   ${55:usepkgonly}: ${56:"#"}}
-${57:   ${58:verbose}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${45:   ${46:quietbuild}: ${47:"#"}}
+${48:   ${49:quietfail}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:sync}: ${56:"#"}}
+${57:   ${58:update}: ${59:"#"}}
+${60:   ${61:usepkgonly}: ${62:"#"}}
+${63:   ${64:verbose}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>portage</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

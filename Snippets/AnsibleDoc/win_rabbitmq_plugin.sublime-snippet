@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# names: (required) Comma-separated list of plugin names. 
-# new_only: Only enable missing plugins. Does not disable plugins that are not in the names list. 
+# new_only: Only enable missing plugins. Does not disable 
 # prefix: Specify a custom install prefix to a Rabbit. 
-# state: Specify if plugins are to be enabled or disabled. 
+# state: Specify if plugins are to be enabled or 
 }- name: ${2:Name for win_rabbitmq_plugin module.}
   win_rabbitmq_plugin:
 ${3:   ${4:names}: ${5:"#"}}

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# msg: The customized message used for failing execution. If omitted, fail will simply bail out with a generic 
+${1:# msg: The customized message used for failing 
 }- name: ${2:Name for fail module.}
   fail:
 ${3:   ${4:msg}: ${5:"#"}}

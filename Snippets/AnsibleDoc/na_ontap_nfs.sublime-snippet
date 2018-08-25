@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# https: Enable and disabled https 
+# nfsv3: status of nfsv3. 
+# nfsv4: status of nfsv4. 
+# nfsv41: status of nfsv41. 
+# nfsv4_id_domain: Name of the nfsv4_id_domain to use. 
+# password: (required) Password for the specified user. 
+# service_state: Whether the specified nfs should be enabled or 
+# state: Whether nfs should exist or not. 
+# tcp: Enable TCP. 
+# udp: Enable UDP. 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# vserver: (required) Name of the vserver to use. 
+# vstorage_state: status of vstorage_state. 
+}- name: ${2:Name for na_ontap_nfs module.}
+  na_ontap_nfs:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:https}: ${8:"#"}}
+${9:   ${10:nfsv3}: ${11:"#"}}
+${12:   ${13:nfsv4}: ${14:"#"}}
+${15:   ${16:nfsv41}: ${17:"#"}}
+${18:   ${19:nfsv4_id_domain}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:service_state}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:tcp}: ${32:"#"}}
+${33:   ${34:udp}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:vserver}: ${41:"#"}}
+${42:   ${43:vstorage_state}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>na_ontap_nfs</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

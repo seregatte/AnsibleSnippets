@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# annotation: A comma-separated list of keyvalue-pairs of the form `<+/-/:><key>[=<value>]'. A `+' denotes adding an 
-# autoremove: Remove automatically installed packages which are no longer needed. 
-# cached: Use local package base instead of fetching an updated one. 
-# chroot: Pkg will chroot in the specified environment. Can not be used together with `rootdir' or `jail' options. 
-# jail: Pkg will execute in the given jail name or id. Can not be used together with `chroot' or `rootdir' 
-# name: (required) Name of package to install/remove. 
-# pkgsite: For pkgng versions before 1.1.4, specify packagesite to use for downloading packages. If not specified, 
-# rootdir: For pkgng versions 1.5 and later, pkg will install all packages within the specified root directory. Can 
+${1:# annotation: A comma-separated list of keyvalue-pairs of the 
+# autoremove: Remove automatically installed packages which 
+# cached: Use local package base instead of fetching an 
+# chroot: Pkg will chroot in the specified environment. 
+# jail: Pkg will execute in the given jail name or id. 
+# name: (required) Name or list of names of packages to 
+# pkgsite: For pkgng versions before 1.1.4, specify 
+# rootdir: For pkgng versions 1.5 and later, pkg will 
 # state: State of the package. 
 }- name: ${2:Name for pkgng module.}
   pkgng:

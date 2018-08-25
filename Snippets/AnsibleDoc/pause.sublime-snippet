@@ -1,19 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# minutes: A positive number of minutes to pause for. 
+${1:# echo: Contols whether or not keyboard input is shown 
+# minutes: A positive number of minutes to pause for. 
 # prompt: Optional text to use for the prompt message. 
 # seconds: A positive number of seconds to pause for. 
 }- name: ${2:Name for pause module.}
   pause:
-${3:   ${4:minutes}: ${5:"#"}}
-${6:   ${7:prompt}: ${8:"#"}}
-${9:   ${10:seconds}: ${11:"#"}}
-${12:${13:   become: ${14:true}} 
-${15:   become_method: ${16:su}} 
-${17:   become_user: ${18:nobody}} 
-${19:   become_flags: ${20:"-s /bin/sh"}}} 
-${21:   when: ${22:variable is defined}} 
-${23:   with_items: ${24:array}} 
+${3:   ${4:echo}: ${5:"#"}}
+${6:   ${7:minutes}: ${8:"#"}}
+${9:   ${10:prompt}: ${11:"#"}}
+${12:   ${13:seconds}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>pause</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

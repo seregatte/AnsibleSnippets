@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# path: (required) path to the file being managed.  Aliases: `dest', `name' 
-# state: If `directory', all immediate subdirectories will be created if they do not exist. If `file', the file 
+${1:# path: (required) Path to the file being managed. 
+# state: If `directory', all immediate subdirectories 
 }- name: ${2:Name for win_file module.}
   win_file:
 ${3:   ${4:path}: ${5:"#"}}

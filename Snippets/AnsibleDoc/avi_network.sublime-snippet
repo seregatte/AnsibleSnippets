@@ -1,51 +1,59 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Avi API version of to use for Avi API and objects. 
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
 # cloud_ref: It is a reference to an object of type cloud. 
 # configured_subnets: List of subnet. 
-# controller: IP address or hostname of the controller. The default value is the environment variable 
-# dhcp_enabled: Select the ip address management scheme for this network. Default value when not specified in API or 
-# exclude_discovered_subnets: When selected, excludes all discovered subnets in this network from consideration for virtual service 
+# controller: IP address or hostname of the controller. The 
+# dhcp_enabled: Select the ip address management scheme for this 
+# exclude_discovered_subnets: When selected, excludes all discovered subnets 
 # name: (required) Name of the object. 
-# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# password: Password of Avi user in Avi controller. The 
 # state: The state that should be applied on the entity. 
-# synced_from_se: Boolean flag to set synced_from_se. Default value when not specified in API or module is interpreted by 
-# tenant: Name of tenant used for all Avi API calls and context of object. 
+# synced_from_se: Boolean flag to set synced_from_se. Default 
+# tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
-# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
 # url: Avi controller URL of the object. 
-# username: Username used for accessing Avi controller. The default value is the environment variable 
+# username: Username used for accessing Avi controller. The 
 # uuid: Unique object identifier of the object. 
-# vcenter_dvs: Boolean flag to set vcenter_dvs. Default value when not specified in API or module is interpreted by Avi 
-# vimgrnw_ref: It is a reference to an object of type vimgrnwruntime. 
-# vrf_context_ref: It is a reference to an object of type vrfcontext. 
+# vcenter_dvs: Boolean flag to set vcenter_dvs. Default value 
+# vimgrnw_ref: It is a reference to an object of type 
+# vrf_context_ref: It is a reference to an object of type 
 }- name: ${2:Name for avi_network module.}
   avi_network:
-${3:   ${4:api_version}: ${5:"#"}}
-${6:   ${7:cloud_ref}: ${8:"#"}}
-${9:   ${10:configured_subnets}: ${11:"#"}}
-${12:   ${13:controller}: ${14:"#"}}
-${15:   ${16:dhcp_enabled}: ${17:"#"}}
-${18:   ${19:exclude_discovered_subnets}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:synced_from_se}: ${32:"#"}}
-${33:   ${34:tenant}: ${35:"#"}}
-${36:   ${37:tenant_ref}: ${38:"#"}}
-${39:   ${40:tenant_uuid}: ${41:"#"}}
-${42:   ${43:url}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:uuid}: ${50:"#"}}
-${51:   ${52:vcenter_dvs}: ${53:"#"}}
-${54:   ${55:vimgrnw_ref}: ${56:"#"}}
-${57:   ${58:vrf_context_ref}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_api_patch_op}: ${11:"#"}}
+${12:   ${13:avi_api_update_method}: ${14:"#"}}
+${15:   ${16:avi_credentials}: ${17:"#"}}
+${18:   ${19:cloud_ref}: ${20:"#"}}
+${21:   ${22:configured_subnets}: ${23:"#"}}
+${24:   ${25:controller}: ${26:"#"}}
+${27:   ${28:dhcp_enabled}: ${29:"#"}}
+${30:   ${31:exclude_discovered_subnets}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:synced_from_se}: ${44:"#"}}
+${45:   ${46:tenant}: ${47:"#"}}
+${48:   ${49:tenant_ref}: ${50:"#"}}
+${51:   ${52:tenant_uuid}: ${53:"#"}}
+${54:   ${55:url}: ${56:"#"}}
+${57:   ${58:username}: ${59:"#"}}
+${60:   ${61:uuid}: ${62:"#"}}
+${63:   ${64:vcenter_dvs}: ${65:"#"}}
+${66:   ${67:vimgrnw_ref}: ${68:"#"}}
+${69:   ${70:vrf_context_ref}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>avi_network</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

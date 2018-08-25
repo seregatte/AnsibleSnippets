@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# interface: The intended protocol to use if both Fibre and iSCSI are available. 
-# manual: Setting this to true will cause other synchronization values to be ignored 
-# name: (required) The name of the async array you wish to target, or create. If `state' is present and the name 
-# recovery: Recovery point warning threshold (minutes). The user will be warned when the age of the last good 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# interface: The intended protocol to use if both Fibre and 
+# manual: Setting this to true will cause other 
+# name: (required) The name of the async array you wish 
+# recovery: Recovery point warning threshold (minutes). The 
 # repo: Recovery point warning threshold 
-# secondary: (required) The ID of the secondary array to be used in mirroing process 
-# ssid: (required) The ID of the array to manage. This value must be unique for each array. 
-# state: (required) A `state' of present will either create or update the async mirror group. A `state' of absent 
+# secondary: (required) The ID of the secondary array to be 
+# ssid: (required) The ID of the array to manage. This 
+# state: (required) A `state' of present will either 
 # sync: The synchronization interval in minutes 
-# sync: The threshold (in minutes) for notifying the user that periodic synchronization has taken too long to 
+# sync: The threshold (in minutes) for notifying the 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_amg module.}
   netapp_e_amg:

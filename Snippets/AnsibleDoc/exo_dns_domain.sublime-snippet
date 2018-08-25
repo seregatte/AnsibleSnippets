@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: API key of the Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_KEY' is used as default, when 
-# api_region: Name of the ini section in the `cloustack.ini' file. Since 2.4, the ENV variable `CLOUDSTACK_REGION' is 
-# api_secret: Secret key of the Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_SECRET' is used as default, 
-# api_timeout: HTTP timeout to Exoscale DNS API. Since 2.4, the ENV variable `CLOUDSTACK_TIMEOUT' is used as default, 
+${1:# api_key: API key of the Exoscale DNS API. Since 2.4, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the Exoscale DNS API. Since 2.4, 
+# api_timeout: HTTP timeout to Exoscale DNS API. Since 2.4, the 
 # name: (required) Name of the record. 
 # state: State of the resource. 
 # validate_certs: Validate SSL certs of the Exoscale DNS API. 

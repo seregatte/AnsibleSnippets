@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# error_key: The object key name to use when a 4XX class error occurs. To remove an error key, set to None. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# error_key: The object key name to use when a 4XX class 
 # name: (required) Name of the s3 bucket 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# redirect_all_requests: Describes the redirect behavior for every request to this s3 bucket website endpoint 
-# region: AWS region to create the bucket in. If not set then the value of the AWS_REGION and EC2_REGION 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# profile: Uses a boto profile. Only works with boto >= 
+# redirect_all_requests: Describes the redirect behavior for every 
+# region: AWS region to create the bucket in. If not set 
+# security_token: AWS STS security token. If not set then the 
 # state: Add or remove s3 website configuration 
-# suffix: Suffix that is appended to a request that is for a directory on the website endpoint (e.g. if the suffix 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# suffix: Suffix that is appended to a request that is for 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for s3_website module.}
   s3_website:
 ${3:   ${4:aws_access_key}: ${5:"#"}}

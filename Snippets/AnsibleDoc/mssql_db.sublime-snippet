@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# autocommit: Automatically commit the change only if the import succeed. Sometimes it is necessary to use 
+${1:# autocommit: Automatically commit the change only if the 
 # login_host: Host running the database 
 # login_password: The password used to authenticate with 
-# login_port: Port of the MSSQL server. Requires login_host be defined as other then localhost if login_port is used 
+# login_port: Port of the MSSQL server. Requires login_host be 
 # login_user: The username used to authenticate with 
 # name: (required) name of the database to add or remove 
 # state: The database state 
-# target: Location, on the remote host, of the dump file to read from or write to. Uncompressed SQL files (`.sql') 
+# target: Location, on the remote host, of the dump file 
 }- name: ${2:Name for mssql_db module.}
   mssql_db:
 ${3:   ${4:autocommit}: ${5:"#"}}

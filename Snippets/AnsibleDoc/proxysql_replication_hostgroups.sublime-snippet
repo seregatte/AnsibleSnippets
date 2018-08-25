@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# comment: Text field that can be used for any purposed defined by the user. 
-# config_file: Specify a config file from which login_user and login_password are to be read. 
-# load_to_runtime: Dynamically load mysql host config to runtime memory. 
-# login_host: The host used to connect to ProxySQL admin interface. 
-# login_password: The password used to authenticate to ProxySQL admin interface. 
-# login_port: The port used to connect to ProxySQL admin interface. 
-# login_user: The username used to authenticate to ProxySQL admin interface. 
+${1:# comment: Text field that can be used for any purposed 
+# config_file: Specify a config file from which `login_user' 
+# load_to_runtime: Dynamically load config to runtime memory. 
+# login_host: The host used to connect to ProxySQL admin 
+# login_password: The password used to authenticate to ProxySQL 
+# login_port: The port used to connect to ProxySQL admin 
+# login_user: The username used to authenticate to ProxySQL 
 # reader_hostgroup: (required) Id of the reader hostgroup. 
-# save_to_disk: Save mysql host config to sqlite db on disk to persist the configuration. 
-# state: When `present' - adds the replication hostgroup, when `absent' - removes the replication hostgroup. 
+# save_to_disk: Save config to sqlite db on disk to persist the 
+# state: When `present' - adds the replication hostgroup, 
 # writer_hostgroup: (required) Id of the writer hostgroup. 
 }- name: ${2:Name for proxysql_replication_hostgroups module.}
   proxysql_replication_hostgroups:

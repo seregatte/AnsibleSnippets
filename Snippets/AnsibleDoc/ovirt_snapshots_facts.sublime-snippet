@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# description: Description of the snapshot, can be used as glob expression. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# snapshot_id: Id of the snaphost we want to retrieve facts about. 
+${1:# auth: (required) Dictionary with values needed to 
+# description: Description of the snapshot, can be used as glob 
+# fetch_nested: If `True' the module will fetch additional data 
+# nested_attributes: Specifies list of the attributes which should be 
+# snapshot_id: Id of the snaphost we want to retrieve facts 
 # vm: (required) Name of the VM with snapshot. 
 }- name: ${2:Name for ovirt_snapshots_facts module.}
   ovirt_snapshots_facts:

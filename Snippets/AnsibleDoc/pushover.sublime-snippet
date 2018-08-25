@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# app_token: (required) Pushover issued token identifying your pushover app. 
+${1:# app_token: (required) Pushover issued token identifying 
 # msg: (required) What message you wish to send. 
-# pri: Message priority (see https://pushover.net for details.) 
-# user_key: (required) Pushover issued authentication key for your user. 
+# pri: Message priority (see https://pushover.net for 
+# user_key: (required) Pushover issued authentication key 
 }- name: ${2:Name for pushover module.}
   pushover:
 ${3:   ${4:app_token}: ${5:"#"}}

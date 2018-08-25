@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# fact_path: path used for local ansible facts (*.fact) - files in this dir will be run (if executable) and their 
-# filter: if supplied, only return facts that match this shell-style (fnmatch) wildcard. 
-# gather_subset: if supplied, restrict the additional facts collected to the given subset. Possible values: all, min, 
-# gather_timeout: Set the default timeout in seconds for individual fact gathering 
+${1:# fact_path: path used for local ansible facts (*.fact) - 
+# filter: if supplied, only return facts that match this 
+# gather_subset: if supplied, restrict the additional facts 
+# gather_timeout: Set the default timeout in seconds for 
 }- name: ${2:Name for setup module.}
   setup:
 ${3:   ${4:fact_path}: ${5:"#"}}

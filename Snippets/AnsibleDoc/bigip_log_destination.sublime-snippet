@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# description: The description of the log destination. 
+# name: (required) Specifies the name of the log 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# pool_settings: This parameter is only available when `type' is 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: When `present', ensures that the resource 
+# syslog_settings: This parameter is only available when `type' is 
+# type: (required) Specifies the type of log 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigip_log_destination module.}
+  bigip_log_destination:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:partition}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:pool_settings}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:server}: ${23:"#"}}
+${24:   ${25:server_port}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:syslog_settings}: ${32:"#"}}
+${33:   ${34:type}: ${35:"#"}}
+${36:   ${37:user}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>bigip_log_destination</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

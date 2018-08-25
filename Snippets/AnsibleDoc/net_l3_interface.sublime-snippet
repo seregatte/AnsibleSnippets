@@ -4,7 +4,7 @@ ${1:# aggregate: List of L3 interfaces definitions
 # ipv4: IPv4 of the L3 interface. 
 # ipv6: IPv6 of the L3 interface. 
 # name: Name of the L3 interface. 
-# purge: Purge L3 interfaces not defined in the `aggregate' parameter. 
+# purge: Purge L3 interfaces not defined in the 
 # state: State of the L3 interface configuration. 
 }- name: ${2:Name for net_l3_interface module.}
   net_l3_interface:

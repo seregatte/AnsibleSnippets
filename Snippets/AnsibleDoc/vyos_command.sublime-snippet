@@ -1,25 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# commands: (required) The ordered set of commands to execute on the remote device running VyOS.  The output from 
-# interval: Configures the interval in seconds to wait between `retries' of the command. If the command does not 
-# match: The `match' argument is used in conjunction with the `wait_for' argument to specify the match policy. 
-# provider: A dict object containing connection details. 
-# retries: Specifies the number of retries a command should be tried before it is considered failed. The command is 
-# wait_for: Specifies what to evaluate from the output of the command and what conditionals to apply.  This argument 
+${1:# commands: (required) The ordered set of commands to 
+# interval: Configures the interval in seconds to wait 
+# match: The `match' argument is used in conjunction with 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# : multiple- 
+# retries: Specifies the number of retries a command should 
+# wait_for: Specifies what to evaluate from the output of 
 }- name: ${2:Name for vyos_command module.}
   vyos_command:
 ${3:   ${4:commands}: ${5:"#"}}
 ${6:   ${7:interval}: ${8:"#"}}
 ${9:   ${10:match}: ${11:"#"}}
 ${12:   ${13:provider}: ${14:"#"}}
-${15:   ${16:retries}: ${17:"#"}}
-${18:   ${19:wait_for}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${15:   ${16:}: ${17:"#"}}
+${18:   ${19:retries}: ${20:"#"}}
+${21:   ${22:wait_for}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>vyos_command</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

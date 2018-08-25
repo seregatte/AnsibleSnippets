@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# flexvol_name: The name of the FlexVol the lun should exist on. Required when `state=present'. 
-# force_remove: If "true", override checks that prevent a LUN from being destroyed if it is online and mapped. If 
-# force_remove_fenced: If "true", override checks that prevent a LUN from being destroyed while it is fenced. If "false", 
-# force_resize: Forcibly reduce the size. This is required for reducing the size of the LUN to avoid accidentally 
-# hostname: (required) The hostname or IP address of the ONTAP instance. 
+${1:# flexvol_name: The name of the FlexVol the lun should exist on. 
+# force_remove: If "true", override checks that prevent a LUN 
+# force_remove_fenced: If "true", override checks that prevent a LUN 
+# force_resize: Forcibly reduce the size. This is required for 
+# hostname: (required) The hostname or IP address of the 
 # name: (required) The name of the lun to manage. 
 # password: (required) Password for the specified user. 
-# size: The size of the lun in `size_unit'. Required when `state=present'. 
+# size: The size of the lun in `size_unit'. Required 
 # size_unit: The unit used to interpret the size parameter. 
-# state: (required) Whether the specified lun should exist or not. 
-# username: (required) This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or 
+# state: (required) Whether the specified lun should 
+# username: (required) This can be a Cluster-scoped or SVM- 
 # vserver: (required) The name of the vserver to use. 
 }- name: ${2:Name for na_cdot_lun module.}
   na_cdot_lun:

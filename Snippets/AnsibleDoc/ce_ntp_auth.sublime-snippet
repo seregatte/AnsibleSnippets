@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_mode: Specify authentication algorithm. 
-# auth_pwd: Plain text with length of 1 to 255, encrypted text with length of 20 to 392. 
-# auth_type: Whether the given password is in cleartext or has been encrypted. If in cleartext, the device will 
-# authentication: Configure ntp authentication enable or unconfigure ntp authentication enable. 
-# key_id: (required) Authentication key identifier (numeric). 
+# auth_pwd: Plain text with length of 1 to 255, encrypted 
+# auth_type: Whether the given password is in cleartext or 
+# authentication: Configure ntp authentication enable or 
+# key_id: (required) Authentication key identifier 
 # state: Manage the state of the resource. 
-# trusted_key: Whether the given key is required to be supplied by a time source for the device to synchronize to the 
+# trusted_key: Whether the given key is required to be supplied 
 }- name: ${2:Name for ce_ntp_auth module.}
   ce_ntp_auth:
 ${3:   ${4:auth_mode}: ${5:"#"}}

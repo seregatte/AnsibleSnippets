@@ -1,63 +1,71 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: Avi API version of to use for Avi API and objects. 
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
 # availability_zone: Availability_zone of serviceengine. 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
 # cloud_ref: It is a reference to an object of type cloud. 
-# container_mode: Boolean flag to set container_mode. Default value when not specified in API or module is interpreted by 
-# container_type: Enum options - container_type_bridge, container_type_host, container_type_host_dpdk. Default value when 
-# controller: IP address or hostname of the controller. The default value is the environment variable 
-# controller_created: Boolean flag to set controller_created. Default value when not specified in API or module is interpreted 
+# container_mode: Boolean flag to set container_mode. Default 
+# container_type: Enum options - container_type_bridge, 
+# controller: IP address or hostname of the controller. The 
+# controller_created: Boolean flag to set controller_created. Default 
 # controller_ip: Controller_ip of serviceengine. 
 # data_vnics: List of vnic. 
-# enable_state: Inorder to disable se set this field appropriately. Enum options - SE_STATE_ENABLED, 
+# enable_state: Inorder to disable se set this field 
 # flavor: Flavor of serviceengine. 
-# host_ref: It is a reference to an object of type vimgrhostruntime. 
-# hypervisor: Enum options - default, vmware_esx, kvm, vmware_vsan, xen. 
+# host_ref: It is a reference to an object of type 
+# hypervisor: Enum options - default, vmware_esx, kvm, 
 # mgmt_vnic: Vnic settings for serviceengine. 
-# name: Name of the object. Default value when not specified in API or module is interpreted by Avi Controller 
-# password: Password of Avi user in Avi controller. The default value is the environment variable `AVI_PASSWORD'. 
+# name: Name of the object. Default value when not 
+# password: Password of Avi user in Avi controller. The 
 # resources: Seresources settings for serviceengine. 
-# se_group_ref: It is a reference to an object of type serviceenginegroup. 
+# se_group_ref: It is a reference to an object of type 
 # state: The state that should be applied on the entity. 
-# tenant: Name of tenant used for all Avi API calls and context of object. 
+# tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
-# tenant_uuid: UUID of tenant used for all Avi API calls and context of object. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
 # url: Avi controller URL of the object. 
-# username: Username used for accessing Avi controller. The default value is the environment variable 
+# username: Username used for accessing Avi controller. The 
 # uuid: Unique object identifier of the object. 
 }- name: ${2:Name for avi_serviceengine module.}
   avi_serviceengine:
-${3:   ${4:api_version}: ${5:"#"}}
-${6:   ${7:availability_zone}: ${8:"#"}}
-${9:   ${10:cloud_ref}: ${11:"#"}}
-${12:   ${13:container_mode}: ${14:"#"}}
-${15:   ${16:container_type}: ${17:"#"}}
-${18:   ${19:controller}: ${20:"#"}}
-${21:   ${22:controller_created}: ${23:"#"}}
-${24:   ${25:controller_ip}: ${26:"#"}}
-${27:   ${28:data_vnics}: ${29:"#"}}
-${30:   ${31:enable_state}: ${32:"#"}}
-${33:   ${34:flavor}: ${35:"#"}}
-${36:   ${37:host_ref}: ${38:"#"}}
-${39:   ${40:hypervisor}: ${41:"#"}}
-${42:   ${43:mgmt_vnic}: ${44:"#"}}
-${45:   ${46:name}: ${47:"#"}}
-${48:   ${49:password}: ${50:"#"}}
-${51:   ${52:resources}: ${53:"#"}}
-${54:   ${55:se_group_ref}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:tenant}: ${62:"#"}}
-${63:   ${64:tenant_ref}: ${65:"#"}}
-${66:   ${67:tenant_uuid}: ${68:"#"}}
-${69:   ${70:url}: ${71:"#"}}
-${72:   ${73:username}: ${74:"#"}}
-${75:   ${76:uuid}: ${77:"#"}}
-${78:${79:   become: ${80:true}} 
-${81:   become_method: ${82:su}} 
-${83:   become_user: ${84:nobody}} 
-${85:   become_flags: ${86:"-s /bin/sh"}}} 
-${87:   when: ${88:variable is defined}} 
-${89:   with_items: ${90:array}} 
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:availability_zone}: ${11:"#"}}
+${12:   ${13:avi_api_patch_op}: ${14:"#"}}
+${15:   ${16:avi_api_update_method}: ${17:"#"}}
+${18:   ${19:avi_credentials}: ${20:"#"}}
+${21:   ${22:cloud_ref}: ${23:"#"}}
+${24:   ${25:container_mode}: ${26:"#"}}
+${27:   ${28:container_type}: ${29:"#"}}
+${30:   ${31:controller}: ${32:"#"}}
+${33:   ${34:controller_created}: ${35:"#"}}
+${36:   ${37:controller_ip}: ${38:"#"}}
+${39:   ${40:data_vnics}: ${41:"#"}}
+${42:   ${43:enable_state}: ${44:"#"}}
+${45:   ${46:flavor}: ${47:"#"}}
+${48:   ${49:host_ref}: ${50:"#"}}
+${51:   ${52:hypervisor}: ${53:"#"}}
+${54:   ${55:mgmt_vnic}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:password}: ${62:"#"}}
+${63:   ${64:resources}: ${65:"#"}}
+${66:   ${67:se_group_ref}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:tenant}: ${74:"#"}}
+${75:   ${76:tenant_ref}: ${77:"#"}}
+${78:   ${79:tenant_uuid}: ${80:"#"}}
+${81:   ${82:url}: ${83:"#"}}
+${84:   ${85:username}: ${86:"#"}}
+${87:   ${88:uuid}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>avi_serviceengine</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

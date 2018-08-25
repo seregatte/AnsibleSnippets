@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # cache_engine_version: The version number of the cache engine 
-# cache_parameter_group: The name of the cache parameter group to associate with this cache cluster. If this argument is omitted, 
-# cache_port: The port number on which each of the cache nodes will accept connections 
-# cache_security_groups: A list of cache security group names to associate with this cache cluster. Must be an empty list if 
-# cache_subnet_group: The subnet group name to associate with. Only use if inside a vpc. Required if inside a vpc 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+# cache_parameter_group: The name of the cache parameter group to 
+# cache_port: The port number on which each of the cache nodes 
+# cache_security_groups: A list of cache security group names to 
+# cache_subnet_group: The subnet group name to associate with. Only 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # engine: Name of the cache engine to be used. 
-# hard_modify: Whether to destroy and recreate an existing cache cluster if necessary in order to modify its state 
+# hard_modify: Whether to destroy and recreate an existing 
 # name: (required) The cache cluster identifier 
-# node_type: The compute and memory capacity of the nodes in the cache cluster 
-# num_nodes: The initial number of cache nodes that the cache cluster will have. Required when state=present. 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_group_ids: A list of vpc security group names to associate with this cache cluster. Only use if inside a vpc 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: (required) `absent' or `present' are idempotent actions that will create or destroy a cache cluster as 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# node_type: The compute and memory capacity of the nodes in 
+# num_nodes: The initial number of cache nodes that the cache 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_group_ids: A list of vpc security group names to associate 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) `absent' or `present' are idempotent 
+# validate_certs: When set to "no", SSL certificates will not be 
 # wait: Wait for cache cluster result before returning 
-# zone: The EC2 Availability Zone in which the cache cluster will be created 
+# zone: The EC2 Availability Zone in which the cache 
 }- name: ${2:Name for elasticache module.}
   elasticache:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -39,7 +39,7 @@ ${36:   ${37:node_type}: ${38:"#"}}
 ${39:   ${40:num_nodes}: ${41:"#"}}
 ${42:   ${43:profile}: ${44:"#"}}
 ${45:   ${46:region}: ${47:"#"}}
-${48:   ${49:http}: ${50:"#"}}
+${48:   ${49:}: ${50:"#"}}
 ${51:   ${52:security_group_ids}: ${53:"#"}}
 ${54:   ${55:security_token}: ${56:"#"}}
 ${57:   ${58:state}: ${59:"#"}}

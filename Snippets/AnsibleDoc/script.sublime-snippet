@@ -1,23 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# chdir: cd into this directory on the remote node before running the script 
-# creates: a filename, when it already exists, this step will *not* be run. 
-# decrypt: This option controls the autodecryption of source files using vault. 
-# free_form: (required) path to the local script file followed by optional arguments. There is no parameter actually 
-# removes: a filename, when it does not exist, this step will *not* be run. 
+${1:# chdir: cd into this directory on the remote node before 
+# creates: a filename, when it already exists, this step 
+# decrypt: This option controls the autodecryption of 
+# executable: Name or path of a executable to invoke the 
+# free_form: (required) Path to the local script file 
+# removes: a filename, when it does not exist, this step 
 }- name: ${2:Name for script module.}
   script:
 ${3:   ${4:chdir}: ${5:"#"}}
 ${6:   ${7:creates}: ${8:"#"}}
 ${9:   ${10:decrypt}: ${11:"#"}}
-${12:   ${13:free_form}: ${14:"#"}}
-${15:   ${16:removes}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${12:   ${13:executable}: ${14:"#"}}
+${15:   ${16:free_form}: ${17:"#"}}
+${18:   ${19:removes}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>script</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# interval: time waited between checks 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
 # timeout: timeout of API calls 
-# username: username for authentication 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_check module.}
   panos_check:
 ${3:   ${4:interval}: ${5:"#"}}

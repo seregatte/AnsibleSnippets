@@ -2,41 +2,41 @@
 <content><![CDATA[
 ${1:# add_public_ip: Whether to add a public ip to the server 
 # additional_disks: The list of additional disks for the server 
-# alert_policy_id: The alert policy to assign to the server. This is mutually exclusive with 'alert_policy_name'. 
-# alert_policy_name: The alert policy to assign to the server. This is mutually exclusive with 'alert_policy_id'. 
-# alias: The account alias to provision the servers under. 
-# anti_affinity_policy_id: The anti-affinity policy to assign to the server. This is mutually exclusive with 
-# anti_affinity_policy_name: The anti-affinity policy to assign to the server. This is mutually exclusive with 
-# configuration_id: Only required for bare metal servers. Specifies the identifier for the specific configuration type of 
-# count: The number of servers to build (mutually exclusive with exact_count) 
-# count_group: Required when exact_count is specified.  The Server Group use to determine how many severs to deploy. 
+# alert_policy_id: The alert policy to assign to the server. This 
+# alert_policy_name: The alert policy to assign to the server. This 
+# alias: The account alias to provision the servers 
+# anti_affinity_policy_id: The anti-affinity policy to assign to the 
+# anti_affinity_policy_name: The anti-affinity policy to assign to the 
+# configuration_id: Only required for bare metal servers. Specifies 
+# count: The number of servers to build (mutually 
+# count_group: Required when exact_count is specified.  The 
 # cpu: How many CPUs to provision on the server 
 # cpu_autoscale_policy_id: The autoscale policy to assign to the server. 
 # custom_fields: The list of custom fields to set on the server. 
 # description: The description to set for the server. 
-# exact_count: Run in idempotent mode.  Will insure that this exact number of servers are running in the provided 
+# exact_count: Run in idempotent mode.  Will insure that this 
 # group: The Server Group to create servers under. 
-# ip_address: The IP Address for the server. One is assigned if not provided. 
+# ip_address: The IP Address for the server. One is assigned 
 # location: The Datacenter to create servers in. 
-# managed_os: Whether to create the server as 'Managed' or not. 
+# managed_os: Whether to create the server as 'Managed' or 
 # memory: Memory in GB. 
-# name: A 1 to 6 character identifier to use for the server. This is required when state is 'present' 
+# name: A 1 to 6 character identifier to use for the 
 # network_id: The network UUID on which to create servers. 
-# os_type: Only required for bare metal servers. Specifies the OS to provision with the bare metal server. 
-# packages: The list of blue print packages to run on the server after its created. 
+# os_type: Only required for bare metal servers. Specifies 
+# packages: The list of blue print packages to run on the 
 # password: Password for the administrator / root user 
 # primary_dns: Primary DNS used by the server. 
-# public_ip_ports: A list of ports to allow on the firewall to the servers public ip, if add_public_ip is set to True. 
-# public_ip_protocol: The protocol to use for the public ip if add_public_ip is set to True. 
+# public_ip_ports: A list of ports to allow on the firewall to the 
+# public_ip_protocol: The protocol to use for the public ip if 
 # secondary_dns: Secondary DNS used by the server. 
-# server_ids: Required for started, stopped, and absent states. A list of server Ids to insure are started, stopped, 
-# source_server_password: The password for the source server if a clone is specified. 
-# state: The state to insure that the provided resources are in. 
+# server_ids: Required for started, stopped, and absent 
+# source_server_password: The password for the source server if a clone is 
+# state: The state to insure that the provided resources 
 # storage_type: The type of storage to attach to the server. 
-# template: The template to use for server creation.  Will search for a template if a partial string is provided. 
-# ttl: The time to live for the server in seconds.  The server will be deleted when this time expires. 
+# template: The template to use for server creation.  Will 
+# ttl: The time to live for the server in seconds.  The 
 # type: The type of server to create. 
-# wait: Whether to wait for the provisioning tasks to finish before returning. 
+# wait: Whether to wait for the provisioning tasks to 
 }- name: ${2:Name for clc_server module.}
   clc_server:
 ${3:   ${4:add_public_ip}: ${5:"#"}}

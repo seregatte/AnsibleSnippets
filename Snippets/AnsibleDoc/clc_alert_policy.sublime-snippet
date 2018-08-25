@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# alert_recipients: A list of recipient email ids to notify the alert. This is required for state 'present' 
+${1:# alert_recipients: A list of recipient email ids to notify the 
 # alias: (required) The alias of your CLC Account 
-# duration: The length of time in minutes that the condition must exceed the threshold. This is required for state 
-# id: The alert policy id. This is mutually exclusive with name 
-# metric: The metric on which to measure the condition that will trigger the alert. This is required for state 
-# name: The name of the alert policy. This is mutually exclusive with id 
+# duration: The length of time in minutes that the condition 
+# id: The alert policy id. This is mutually exclusive 
+# metric: The metric on which to measure the condition 
+# name: The name of the alert policy. This is mutually 
 # state: Whether to create or delete the policy. 
-# threshold: The threshold that will trigger the alert when the metric equals or exceeds it. This is required for 
+# threshold: The threshold that will trigger the alert when 
 }- name: ${2:Name for clc_alert_policy module.}
   clc_alert_policy:
 ${3:   ${4:alert_recipients}: ${5:"#"}}

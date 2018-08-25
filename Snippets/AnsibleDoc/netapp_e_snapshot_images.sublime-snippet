@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# snapshot_group: (required) The name of the snapshot group in which you want to create a snapshot image. 
-# state: (required) Whether a new snapshot image should be created or oldest be deleted. 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# snapshot_group: (required) The name of the snapshot group in 
+# state: (required) Whether a new snapshot image should 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_snapshot_images module.}
   netapp_e_snapshot_images:

@@ -1,21 +1,24 @@
 <snippet>
 <content><![CDATA[
 ${1:# bwc_policy: The bandwidth controller for the route domain. 
-# connection_limit: The maximum number of concurrent connections allowed for the route domain. Setting this to `0' turns off 
-# description: Specifies descriptive text that identifies the route domain. 
-# flow_eviction_policy: The eviction policy to use with this route domain. Apply an eviction policy to provide customized 
-# id: (required) The unique identifying integer representing the route domain. 
-# parent: Specifies the route domain the system searches when it cannot find a route in the configured domain. 
-# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
-# routing_protocol: Dynamic routing protocols for the system to use in the route domain. 
-# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
-# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
-# service_policy: Service policy to associate with the route domain. 
+# connection_limit: The maximum number of concurrent connections 
+# description: Specifies descriptive text that identifies the 
+# flow_eviction_policy: The eviction policy to use with this route 
+# id: The unique identifying integer representing the 
+# name: The name of the route domain. 
+# parent: Specifies the route domain the system searches 
+# partition: Partition to create the route domain on. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# routing_protocol: Dynamic routing protocols for the system to use 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# service_policy: Service policy to associate with the route 
 # state: Whether the route domain should exist or not. 
-# strict: Specifies whether the system enforces cross-routing restrictions or not. 
-# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vlans: VLANs for the system to use in the route domain 
+# strict: Specifies whether the system enforces cross- 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+# vlans: VLANs for the system to use in the route domain. 
 }- name: ${2:Name for bigip_routedomain module.}
   bigip_routedomain:
 ${3:   ${4:bwc_policy}: ${5:"#"}}
@@ -23,23 +26,26 @@ ${6:   ${7:connection_limit}: ${8:"#"}}
 ${9:   ${10:description}: ${11:"#"}}
 ${12:   ${13:flow_eviction_policy}: ${14:"#"}}
 ${15:   ${16:id}: ${17:"#"}}
-${18:   ${19:parent}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:routing_protocol}: ${26:"#"}}
-${27:   ${28:server}: ${29:"#"}}
-${30:   ${31:server_port}: ${32:"#"}}
-${33:   ${34:service_policy}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:strict}: ${41:"#"}}
-${42:   ${43:user}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:   ${49:vlans}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:parent}: ${23:"#"}}
+${24:   ${25:partition}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:provider}: ${32:"#"}}
+${33:   ${34:routing_protocol}: ${35:"#"}}
+${36:   ${37:server}: ${38:"#"}}
+${39:   ${40:server_port}: ${41:"#"}}
+${42:   ${43:service_policy}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:strict}: ${50:"#"}}
+${51:   ${52:user}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:   ${58:vlans}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>bigip_routedomain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

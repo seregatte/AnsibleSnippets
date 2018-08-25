@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# backup: If set, create a backup of the crontab before it is modified. The location of the backup is returned in 
-# cron_file: If specified, uses this file instead of an individual user's crontab. Without a leading /, this is 
-# insertafter: Used with `state=present'. If specified, the variable will be inserted after the variable specified. 
-# insertbefore: Used with `state=present'. If specified, the variable will be inserted just before the variable 
+${1:# backup: If set, create a backup of the crontab before it 
+# cron_file: If specified, uses this file instead of an 
+# insertafter: If specified, the variable will be inserted 
+# insertbefore: Used with `state=present'. If specified, the 
 # name: (required) Name of the crontab variable. 
-# state: Whether to ensure that the variable is present or absent. 
-# user: The specific user whose crontab should be modified. 
-# value: The value to set this variable to.  Required if state=present. 
+# state: Whether to ensure that the variable is present 
+# user: The specific user whose crontab should be 
+# value: The value to set this variable to. Required if 
 }- name: ${2:Name for cronvar module.}
   cronvar:
 ${3:   ${4:backup}: ${5:"#"}}

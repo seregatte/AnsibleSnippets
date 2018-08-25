@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# end_sound_path: Full path to a `.wav' file containing a sound to play after the text has been spoken. Useful on 
-# msg: The text to be spoken. Use either `msg' or `msg_file'. Optional so that you can use this module just to 
-# msg_file: Full path to a windows format text file containing the text to be spokend. Use either `msg' or 
-# speech_speed: How fast or slow to speak the text. Must be an integer value in the range -10 to 10. -10 is slowest, 10 
-# start_sound_path: Full path to a `.wav' file containing a sound to play before the text is spoken. Useful on conference 
-# voice: Which voice to use. See notes for how to discover installed voices. If the requested voice is not 
+${1:# end_sound_path: Full path to a `.wav' file containing a sound to 
+# msg: The text to be spoken. Use either `msg' or 
+# msg_file: Full path to a windows format text file 
+# speech_speed: How fast or slow to speak the text. Must be an 
+# start_sound_path: Full path to a `.wav' file containing a sound to 
+# voice: Which voice to use. See notes for how to 
 }- name: ${2:Name for win_say module.}
   win_say:
 ${3:   ${4:end_sound_path}: ${5:"#"}}

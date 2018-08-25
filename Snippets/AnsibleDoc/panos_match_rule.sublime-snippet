@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: API key that can be used instead of 
+# application: The application. 
+# category: URL category 
+# destination_ip: The destination IP address. 
+# destination_port: The destination port. 
+# destination_zone: The destination zone. 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password credentials to use for auth 
+# protocol: The IP protocol number from 1 to 255. 
+# rule_type: Type of rule. Valid types are `security' or 
+# source_ip: (required) The source IP address. 
+# source_port: The source port. 
+# source_user: The source user or group. 
+# source_zone: The source zone. 
+# to_interface: The inbound interface in a NAT rule. 
+# username: Username credentials to use for auth unless 
+# vsys_id: (required) ID of the VSYS object. 
+}- name: ${2:Name for panos_match_rule module.}
+  panos_match_rule:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:application}: ${8:"#"}}
+${9:   ${10:category}: ${11:"#"}}
+${12:   ${13:destination_ip}: ${14:"#"}}
+${15:   ${16:destination_port}: ${17:"#"}}
+${18:   ${19:destination_zone}: ${20:"#"}}
+${21:   ${22:ip_address}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:protocol}: ${29:"#"}}
+${30:   ${31:rule_type}: ${32:"#"}}
+${33:   ${34:source_ip}: ${35:"#"}}
+${36:   ${37:source_port}: ${38:"#"}}
+${39:   ${40:source_user}: ${41:"#"}}
+${42:   ${43:source_zone}: ${44:"#"}}
+${45:   ${46:to_interface}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:vsys_id}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>panos_match_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

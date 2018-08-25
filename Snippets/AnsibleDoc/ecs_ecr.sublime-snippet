@@ -1,17 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # delete_policy: if yes, remove the policy from the repository 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# force_set_policy: if no, prevents setting a policy that would prevent you from setting another policy in the future. 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# force_set_policy: if no, prevents setting a policy that would 
 # name: (required) the name of the repository 
 # policy: JSON or dict that represents the new policy 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# registry_id: AWS account id associated with the registry. If not specified, the default registry is assumed. 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# registry_id: AWS account id associated with the registry. If 
+# security_token: AWS STS security token. If not set then the 
 # state: create or destroy the repository 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ecs_ecr module.}
   ecs_ecr:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -22,16 +24,18 @@ ${15:   ${16:force_set_policy}: ${17:"#"}}
 ${18:   ${19:name}: ${20:"#"}}
 ${21:   ${22:policy}: ${23:"#"}}
 ${24:   ${25:profile}: ${26:"#"}}
-${27:   ${28:registry_id}: ${29:"#"}}
-${30:   ${31:security_token}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:registry_id}: ${35:"#"}}
+${36:   ${37:security_token}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>ecs_ecr</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

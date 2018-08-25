@@ -1,25 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:# bucket: The s3 bucket to which the snapshot is exported 
-# cluster_id: The name of an existing cache cluster in the replication group to make the snapshot. 
-# name: (required) The name of the snapshot we want to create, copy, delete 
-# replication_id: The name of the existing replication group to make the snapshot. 
-# state: Actions that will create, destroy, or copy a snapshot. 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# bucket: The s3 bucket to which the snapshot is exported 
+# cluster_id: The name of an existing cache cluster in the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# name: (required) The name of the snapshot we want to 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# replication_id: The name of the existing replication group to 
+# security_token: AWS STS security token. If not set then the 
+# state: Actions that will create, destroy, or copy a 
 # target: The name of a snapshot copy 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for elasticache_snapshot module.}
   elasticache_snapshot:
-${3:   ${4:bucket}: ${5:"#"}}
-${6:   ${7:cluster_id}: ${8:"#"}}
-${9:   ${10:name}: ${11:"#"}}
-${12:   ${13:replication_id}: ${14:"#"}}
-${15:   ${16:state}: ${17:"#"}}
-${18:   ${19:target}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:bucket}: ${11:"#"}}
+${12:   ${13:cluster_id}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:replication_id}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:target}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>elasticache_snapshot</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

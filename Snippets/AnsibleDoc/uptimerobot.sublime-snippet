@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# apikey: (required) Uptime Robot API key. 
 # monitorid: (required) ID of the monitor to check. 
-# state: (required) Define whether or not the monitor should be running or paused. 
+# state: (required) Define whether or not the monitor 
 }- name: ${2:Name for uptimerobot module.}
   uptimerobot:
 ${3:   ${4:apikey}: ${5:"#"}}

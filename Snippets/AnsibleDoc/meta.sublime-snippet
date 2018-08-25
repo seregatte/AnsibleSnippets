@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# free_form: (required) This module takes a free form command, as a string. There's not an actual option named "free 
+${1:# free_form: (required) This module takes a free form 
 }- name: ${2:Name for meta module.}
   meta:
 ${3:   ${4:free_form}: ${5:"#"}}

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# addrobj: (required) Specifies the address object we want to manage. 
-# property: (required) Specifies the name of the address property we want to manage. 
+${1:# addrobj: (required) Specifies the address object we want 
+# property: (required) Specifies the name of the address 
 # state: Set or reset the property value. 
-# temporary: Specifies that the address property value is temporary. Temporary values do not persist across reboots. 
-# value: Specifies the value we want to set for the address property. 
+# temporary: Specifies that the address property value is 
+# value: Specifies the value we want to set for the 
 }- name: ${2:Name for ipadm_addrprop module.}
   ipadm_addrprop:
 ${3:   ${4:addrobj}: ${5:"#"}}

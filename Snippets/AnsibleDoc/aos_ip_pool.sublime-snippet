@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# content: Datastructure of the IP Pool to manage. The data can be in YAML / JSON or directly a variable. It's the 
-# id: AOS Id of the IP Pool to manage (can't be used to create a new IP Pool), Only one of `name', `id' or 
-# name: Name of the IP Pool to manage. Only one of `name', `id' or `content' can be set. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the IP Pool (present or not). 
-# subnets: List of subnet that needs to be part of the IP Pool. 
+${1:# content: Datastructure of the IP Pool to manage. The data 
+# id: AOS Id of the IP Pool to manage (can't be used 
+# name: Name of the IP Pool to manage. Only one of 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the IP 
+# subnets: List of subnet that needs to be part of the IP 
 }- name: ${2:Name for aos_ip_pool module.}
   aos_ip_pool:
 ${3:   ${4:content}: ${5:"#"}}

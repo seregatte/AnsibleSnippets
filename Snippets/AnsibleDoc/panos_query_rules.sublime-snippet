@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: API key that can be used instead of 
+# application: Name of the application or application group to 
+# destination_ip: The destination IP address to be queried. 
+# destination_port: The destination port to be queried. 
+# destination_zone: Name of the destination security zone to be 
+# devicegroup: The Panorama device group in which to conduct 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password credentials to use for 
+# protocol: The protocol used to be queried.  Must be either 
+# source_ip: The source IP address to be queried. 
+# source_port: The source port to be queried. 
+# source_zone: Name of the source security zone to be queried. 
+# tag_name: Name of the rule tag to be queried. 
+# username: Username credentials to use for authentication. 
+}- name: ${2:Name for panos_query_rules module.}
+  panos_query_rules:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:application}: ${8:"#"}}
+${9:   ${10:destination_ip}: ${11:"#"}}
+${12:   ${13:destination_port}: ${14:"#"}}
+${15:   ${16:destination_zone}: ${17:"#"}}
+${18:   ${19:devicegroup}: ${20:"#"}}
+${21:   ${22:ip_address}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:protocol}: ${29:"#"}}
+${30:   ${31:source_ip}: ${32:"#"}}
+${33:   ${34:source_port}: ${35:"#"}}
+${36:   ${37:source_zone}: ${38:"#"}}
+${39:   ${40:tag_name}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>panos_query_rules</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

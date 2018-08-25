@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# display_seconds: How long to wait for receiver to acknowledge message, in seconds. 
-# msg: The text of the message to be displayed. The message must be less than 256 characters. 
-# to: Who to send the message to. Can be a username, sessionname or sessionid. 
-# wait: Whether to wait for users to respond.  Module will only wait for the number of seconds specified in 
+${1:# display_seconds: How long to wait for receiver to acknowledge 
+# msg: The text of the message to be displayed. The 
+# to: Who to send the message to. Can be a username, 
+# wait: Whether to wait for users to respond.  Module 
 }- name: ${2:Name for win_msg module.}
   win_msg:
 ${3:   ${4:display_seconds}: ${5:"#"}}

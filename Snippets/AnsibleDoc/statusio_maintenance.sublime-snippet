@@ -3,22 +3,22 @@
 ${1:# all_infrastructure_affected: If it affects all components and containers 
 # api_id: (required) Your unique API ID from status.io 
 # api_key: (required) Your unique API Key from status.io 
-# automation: Automatically start and end the maintenance window 
+# automation: Automatically start and end the maintenance 
 # components: The given name of your component (server name) 
 # containers: The given name of your container (data center) 
 # desc: Message describing the maintenance window 
-# maintenance_id: The maintenance id number when deleting a maintenance window 
-# maintenance_notify_1_hr: Notify subscribers 1 hour before maintenance start time 
-# maintenance_notify_24_hr: Notify subscribers 24 hours before maintenance start time 
-# maintenance_notify_72_hr: Notify subscribers 72 hours before maintenance start time 
+# maintenance_id: The maintenance id number when deleting a 
+# maintenance_notify_1_hr: Notify subscribers 1 hour before maintenance 
+# maintenance_notify_24_hr: Notify subscribers 24 hours before maintenance 
+# maintenance_notify_72_hr: Notify subscribers 72 hours before maintenance 
 # maintenance_notify_now: Notify subscribers now 
-# minutes: The length of time in UTC that the maintenance will run             (starting from playbook runtime) 
-# start_date: Date maintenance is expected to start (Month/Day/Year) (UTC) End Date is worked out from start_date + 
-# start_time: Time maintenance is expected to start (Hour:Minutes) (UTC) End Time is worked out from start_time + 
+# minutes: The length of time in UTC that the maintenance 
+# start_date: Date maintenance is expected to start 
+# start_time: Time maintenance is expected to start 
 # state: Desired state of the package. 
-# statuspage: (required) Your unique StatusPage ID from status.io 
+# statuspage: (required) Your unique StatusPage ID from 
 # title: A descriptive title for the maintenance window 
-# url: Status.io API URL. A private apiary can be used instead. 
+# url: Status.io API URL. A private apiary can be used 
 }- name: ${2:Name for statusio_maintenance module.}
   statusio_maintenance:
 ${3:   ${4:all_infrastructure_affected}: ${5:"#"}}

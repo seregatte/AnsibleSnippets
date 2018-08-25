@@ -1,31 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:# boot: Determines if the filesystem should be mounted on boot. Only applies to Solaris systems. 
-# dump: Dump (see fstab(5)). Note that if set to `null' and `state' set to `present', it will cease to work and 
-# fstab: File to use instead of `/etc/fstab'. You shouldn't use this option unless you really know what you are 
-# fstype: Filesystem type. Required when `state' is `present' or `mounted'. 
-# opts: Mount options (see fstab(5), or vfstab(4) on Solaris). 
-# passno: Passno (see fstab(5)). Note that if set to `null' and `state' set to `present', it will cease to work 
-# path: (required) Path to the mount point (e.g. `/mnt/files'). Before 2.3 this option was only usable as 
-# src: Device to be mounted on `path'. Required when `state' set to `present' or `mounted'. 
-# state: (required) If `mounted', the device will be actively mounted and appropriately configured in `fstab'. If 
+${1:# backup: Create a backup file including the timestamp 
+# boot: Determines if the filesystem should be mounted 
+# dump: Dump (see fstab(5)). Note that if set to `null' 
+# fstab: File to use instead of `/etc/fstab'. You 
+# fstype: Filesystem type. Required when `state' is 
+# opts: Mount options (see fstab(5), or vfstab(4) on 
+# passno: Passno (see fstab(5)). Note that if set to 
+# path: (required) Path to the mount point (e.g. 
+# src: Device to be mounted on `path'. Required when 
+# state: (required) If `mounted', the device will be 
 }- name: ${2:Name for mount module.}
   mount:
-${3:   ${4:boot}: ${5:"#"}}
-${6:   ${7:dump}: ${8:"#"}}
-${9:   ${10:fstab}: ${11:"#"}}
-${12:   ${13:fstype}: ${14:"#"}}
-${15:   ${16:opts}: ${17:"#"}}
-${18:   ${19:passno}: ${20:"#"}}
-${21:   ${22:path}: ${23:"#"}}
-${24:   ${25:src}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:boot}: ${8:"#"}}
+${9:   ${10:dump}: ${11:"#"}}
+${12:   ${13:fstab}: ${14:"#"}}
+${15:   ${16:fstype}: ${17:"#"}}
+${18:   ${19:opts}: ${20:"#"}}
+${21:   ${22:passno}: ${23:"#"}}
+${24:   ${25:path}: ${26:"#"}}
+${27:   ${28:src}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>mount</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

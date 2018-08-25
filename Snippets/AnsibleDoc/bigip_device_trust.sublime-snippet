@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# password: (required) The password for the user account 
+# peer_hostname: The hostname that you want to associate with the 
+# peer_password: The password of the API username of the remote 
+# peer_server: (required) The peer address to connect to and 
+# peer_user: The API username of the remote peer device that 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: When `present', ensures the specified devices 
+# type: Specifies whether the device you are adding is a 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigip_device_trust module.}
+  bigip_device_trust:
+${3:   ${4:password}: ${5:"#"}}
+${6:   ${7:peer_hostname}: ${8:"#"}}
+${9:   ${10:peer_password}: ${11:"#"}}
+${12:   ${13:peer_server}: ${14:"#"}}
+${15:   ${16:peer_user}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:server}: ${23:"#"}}
+${24:   ${25:server_port}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:type}: ${32:"#"}}
+${33:   ${34:user}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>bigip_device_trust</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

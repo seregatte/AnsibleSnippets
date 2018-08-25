@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# state: list is the only valid option. 
-# topic: GCP pubsub topic name.  Only the name, not the full path, is required. 
-# view: (required) Choices are 'topics' or 'subscriptions' 
+# topic: GCP pubsub topic name.  Only the name, not the 
+# view: (required) Choices are 'topics' or 
 }- name: ${2:Name for gcpubsub_facts module.}
   gcpubsub_facts:
 ${3:   ${4:state}: ${5:"#"}}

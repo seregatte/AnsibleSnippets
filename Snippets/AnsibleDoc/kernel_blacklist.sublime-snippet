@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# blacklist_file: If specified, use this blacklist file instead of `/etc/modprobe.d/blacklist-ansible.conf'. 
-# name: (required) Name of kernel module to black- or whitelist. 
-# state: Whether the module should be present in the blacklist or absent. 
+${1:# blacklist_file: If specified, use this blacklist file instead of 
+# name: (required) Name of kernel module to black- or 
+# state: Whether the module should be present in the 
 }- name: ${2:Name for kernel_blacklist module.}
   kernel_blacklist:
 ${3:   ${4:blacklist_file}: ${5:"#"}}

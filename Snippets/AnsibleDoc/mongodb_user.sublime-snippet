@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# database: (required) The name of the database to add/remove the user from 
+${1:# database: (required) The name of the database to 
 # login_database: The database where login credentials are stored 
 # login_host: The host running the database 
 # login_password: The password used to authenticate with 
@@ -8,12 +8,12 @@ ${1:# database: (required) The name of the database to add/remove the user from
 # login_user: The username used to authenticate with 
 # name: (required) The name of the user to add or remove 
 # password: The password to use for the user 
-# replica_set: Replica set to connect to (automatically connects to primary for writes) 
-# roles: The database user roles valid values could either be one or more of the following strings: 'read', 
-# ssl: Whether to use an SSL connection when connecting to the database 
-# ssl_cert_reqs: Specifies whether a certificate is required from the other side of the connection, and whether it will 
+# replica_set: Replica set to connect to (automatically 
+# roles: The database user roles valid values could 
+# ssl: Whether to use an SSL connection when connecting 
+# ssl_cert_reqs: Specifies whether a certificate is required from 
 # state: The database user state 
-# update_password: `always' will update passwords if they differ.  `on_create' will only set the password for newly created 
+# update_password: `always' will update passwords if they differ. 
 }- name: ${2:Name for mongodb_user module.}
   mongodb_user:
 ${3:   ${4:database}: ${5:"#"}}

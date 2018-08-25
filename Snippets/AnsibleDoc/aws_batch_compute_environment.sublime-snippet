@@ -1,0 +1,66 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# bid_percentage: The minimum percentage that a Spot Instance 
+# compute_environment_name: (required) The name for your compute 
+# compute_environment_state: The state of the compute environment. If the 
+# compute_resource_type: (required) The type of compute resource. 
+# desiredv_cpus: The desired number of EC2 vCPUS in the compute 
+# ec2_key_pair: The EC2 key pair that is used for instances 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# image_id: The Amazon Machine Image (AMI) ID used for 
+# instance_role: (required) The Amazon ECS instance role applied 
+# instance_types: (required) The instance types that may be 
+# maxv_cpus: (required) The maximum number of EC2 vCPUs that 
+# minv_cpus: (required) The minimum number of EC2 vCPUs that 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_group_ids: (required) The EC2 security groups that are 
+# security_token: AWS STS security token. If not set then the 
+# service_role: (required) The full Amazon Resource Name (ARN) 
+# spot_iam_fleet_role: The Amazon Resource Name (ARN) of the Amazon EC2 
+# state: (required) Describes the desired state. 
+# subnets: (required) The VPC subnets into which the 
+# tags: Key-value pair tags to be applied to resources 
+# type: (required) The type of the compute environment. 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for aws_batch_compute_environment module.}
+  aws_batch_compute_environment:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:bid_percentage}: ${11:"#"}}
+${12:   ${13:compute_environment_name}: ${14:"#"}}
+${15:   ${16:compute_environment_state}: ${17:"#"}}
+${18:   ${19:compute_resource_type}: ${20:"#"}}
+${21:   ${22:desiredv_cpus}: ${23:"#"}}
+${24:   ${25:ec2_key_pair}: ${26:"#"}}
+${27:   ${28:ec2_url}: ${29:"#"}}
+${30:   ${31:image_id}: ${32:"#"}}
+${33:   ${34:instance_role}: ${35:"#"}}
+${36:   ${37:instance_types}: ${38:"#"}}
+${39:   ${40:maxv_cpus}: ${41:"#"}}
+${42:   ${43:minv_cpus}: ${44:"#"}}
+${45:   ${46:profile}: ${47:"#"}}
+${48:   ${49:region}: ${50:"#"}}
+${51:   ${52:}: ${53:"#"}}
+${54:   ${55:security_group_ids}: ${56:"#"}}
+${57:   ${58:security_token}: ${59:"#"}}
+${60:   ${61:service_role}: ${62:"#"}}
+${63:   ${64:spot_iam_fleet_role}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:subnets}: ${71:"#"}}
+${72:   ${73:tags}: ${74:"#"}}
+${75:   ${76:type}: ${77:"#"}}
+${78:   ${79:validate_certs}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
+]]></content>
+	<tabTrigger>aws_batch_compute_environment</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

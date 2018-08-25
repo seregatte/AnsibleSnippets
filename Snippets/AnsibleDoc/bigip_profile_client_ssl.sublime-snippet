@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# cert_key_chain: One or more certificates and keys to associate 
+# ciphers: Specifies the list of ciphers that the system 
+# name: (required) Specifies the name of the profile. 
+# parent: The parent template of this monitor template. 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: When `present', ensures that the profile exists. 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigip_profile_client_ssl module.}
+  bigip_profile_client_ssl:
+${3:   ${4:cert_key_chain}: ${5:"#"}}
+${6:   ${7:ciphers}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:parent}: ${14:"#"}}
+${15:   ${16:partition}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:provider}: ${23:"#"}}
+${24:   ${25:server}: ${26:"#"}}
+${27:   ${28:server_port}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:user}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>bigip_profile_client_ssl</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,21 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# cluster_grace: Cluster grace(hard limit) defined in percentage (1-100). 
-# cluster_threshold: Cluster threshold(soft limit) defined in percentage (0-100). 
-# clusters: List of dictionary of cluster limits, which is valid to specific cluster. If cluster isn't spefied it's 
-# data_center: (required) Name of the datacenter where quota should be managed. 
+${1:# auth: (required) Dictionary with values needed to 
+# cluster_grace: Cluster grace(hard limit) defined in percentage 
+# cluster_threshold: Cluster threshold(soft limit) defined in 
+# clusters: List of dictionary of cluster limits, which is 
+# data_center: (required) Name of the datacenter where quota 
 # description: Description of the quota to manage. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
+# fetch_nested: If `True' the module will fetch additional data 
 # name: (required) Name of the quota to manage. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
+# nested_attributes: Specifies list of the attributes which should be 
+# poll_interval: Number of the seconds the module waits until 
 # state: Should the quota be present/absent. 
-# storage_grace: Storage grace(hard limit) defined in percentage (1-100). 
-# storage_threshold: Storage threshold(soft limit) defined in percentage (0-100). 
-# storages: List of dictionary of storage limits, which is valid to specific storage. If storage isn't spefied it's 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# storage_grace: Storage grace(hard limit) defined in percentage 
+# storage_threshold: Storage threshold(soft limit) defined in 
+# storages: List of dictionary of storage limits, which is 
+# timeout: The amount of time in seconds the module should 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_quotas module.}
   ovirt_quotas:
 ${3:   ${4:auth}: ${5:"#"}}

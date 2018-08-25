@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# hotfix_identifier: The name of the hotfix as shown in DISM, see examples for details. This or `hotfix_kb' MUST be set when 
-# hotfix_kb: The name of the KB the hotfix relates to, see examples for details. This of `hotfix_identifier' MUST be 
-# source: The path to the downloaded hotfix .msu file. This MUST be set if `state=present' and MUST be a .msu 
-# state: Whether to install or uninstall the hotfix. When `present', `source' MUST be set. When `absent', 
+${1:# hotfix_identifier: The name of the hotfix as shown in DISM, see 
+# hotfix_kb: The name of the KB the hotfix relates to, see 
+# source: The path to the downloaded hotfix .msu file. 
+# state: Whether to install or uninstall the hotfix. When 
 }- name: ${2:Name for win_hotfix module.}
   win_hotfix:
 ${3:   ${4:hotfix_identifier}: ${5:"#"}}

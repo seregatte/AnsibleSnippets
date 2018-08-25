@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# hwclock: Whether the hardware clock is in UTC or in local timezone. Default is to keep current setting. Note that 
-# name: Name of the timezone for the system clock. Default is to keep current setting. *At least one of name and 
+${1:# hwclock: Whether the hardware clock is in UTC or in local 
+# name: Name of the timezone for the system clock. 
 }- name: ${2:Name for timezone module.}
   timezone:
 ${3:   ${4:hwclock}: ${5:"#"}}

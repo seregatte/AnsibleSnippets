@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# file_system: The remote file system of the device. If omitted, devices that support a file_system parameter will use 
-# the: flash:' is root directory of the flash memory 
-# : flash:' is root directory of the flash memory on 
-# a: flash indicates the flash memory 
-# local_file: (required) Path to local file. Local directory must exist. The maximum length of local_file is 4096. 
-# remote_file: Remote file path of the copy. Remote directories must exist. If omitted, the name of the local file will 
+${1:# file_system: The remote file system of the device. If 
+# 2: flash' 
+# number: flash' is 
+# : flash' 
+# local_file: (required) Path to local file. Local directory 
+# remote_file: Remote file path of the copy. Remote directories 
 }- name: ${2:Name for ce_file_copy module.}
   ce_file_copy:
 ${3:   ${4:file_system}: ${5:"#"}}
-${6:   ${7:the}: ${8:"#"}}
-${9:   ${10:}: ${11:"#"}}
-${12:   ${13:a}: ${14:"#"}}
+${6:   ${7:2}: ${8:"#"}}
+${9:   ${10:number}: ${11:"#"}}
+${12:   ${13:}: ${14:"#"}}
 ${15:   ${16:local_file}: ${17:"#"}}
 ${18:   ${19:remote_file}: ${20:"#"}}
 ${21:${22:   become: ${23:true}} 

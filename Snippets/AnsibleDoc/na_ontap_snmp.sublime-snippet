@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# access_control: (required) Access control for the community. The 
+# community_name: (required) The name of the SNMP community to 
+# hostname: (required) The hostname or IP address of the 
+# https: Enable and disabled https 
+# password: (required) Password for the specified user. 
+# state: Whether the specified SNMP community should 
+# username: (required) This can be a Cluster-scoped or SVM- 
+}- name: ${2:Name for na_ontap_snmp module.}
+  na_ontap_snmp:
+${3:   ${4:access_control}: ${5:"#"}}
+${6:   ${7:community_name}: ${8:"#"}}
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:https}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>na_ontap_snmp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

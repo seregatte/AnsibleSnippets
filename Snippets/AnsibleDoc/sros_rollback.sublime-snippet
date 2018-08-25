@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# local_max_checkpoints: The `local_max_checkpoints' argument configures the maximum number of rollback files that can be saved 
+${1:# local_max_checkpoints: The `local_max_checkpoints' argument configures 
 # provider: A dict object containing connection details. 
-# remote_max_checkpoints: The `remote_max_checkpoints' argument configures the maximum number of rollback files that can be 
-# rescue_location: The `rescue_location' specifies the location of the rescue file.  This argument supports any valid local 
-# rollback_location: The `rollback_location' specifies the location and filename of the rollback checkpoint files.   This 
-# state: The `state' argument specifies the state of the configuration entries in the devices active 
+# remote_max_checkpoints: The `remote_max_checkpoints' argument configures 
+# rescue_location: The `rescue_location' specifies the location of 
+# rollback_location: The `rollback_location' specifies the location 
+# state: The `state' argument specifies the state of the 
 }- name: ${2:Name for sros_rollback module.}
   sros_rollback:
 ${3:   ${4:local_max_checkpoints}: ${5:"#"}}

@@ -2,8 +2,8 @@
 <content><![CDATA[
 ${1:# speed_10g: List of ports to run initial run at 10G. 
 # speed_40g: List of ports to run initial run at 40G. 
-# speed_40g_div_4: List of 10G ports that will be ganged to form a 40G port. 
-# speed_4_by_10g: List of 40G ports that will be unganged to run as 4 10G ports. 
+# speed_40g_div_4: List of 10G ports that will be ganged to form a 
+# speed_4_by_10g: List of 40G ports that will be unganged to run 
 }- name: ${2:Name for cl_ports module.}
   cl_ports:
 ${3:   ${4:speed_10g}: ${5:"#"}}

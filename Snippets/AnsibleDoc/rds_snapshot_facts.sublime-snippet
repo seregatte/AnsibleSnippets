@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# db_cluster_identifier: RDS cluster name for which to find snapshots. 
+# db_cluster_snapshot_identifier: Name of an RDS cluster snapshot. Mutually 
+# db_instance_identifier: RDS instance name for which to find snapshots. 
+# db_snapshot_identifier: Name of an RDS (unclustered) snapshot. Mutually 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# snapshot_type: Type of snapshot to find. By default both 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for rds_snapshot_facts module.}
+  rds_snapshot_facts:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:db_cluster_identifier}: ${11:"#"}}
+${12:   ${13:db_cluster_snapshot_identifier}: ${14:"#"}}
+${15:   ${16:db_instance_identifier}: ${17:"#"}}
+${18:   ${19:db_snapshot_identifier}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:snapshot_type}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>rds_snapshot_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

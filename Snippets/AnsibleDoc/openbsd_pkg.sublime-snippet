@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# build: Build the package from source instead of downloading and installing a binary. Requires that the port 
-# clean: When updating or removing packages, delete the extra configuration file(s) in the old packages which are 
-# name: (required) Name of the package. 
-# ports_dir: When used in combination with the `build' option, allows overriding the default ports source directory. 
-# quick: Replace or delete packages quickly; do not bother with checksums before removing normal files. 
-# state: `present' will make sure the package is installed. `latest' will make sure the latest version of the 
+${1:# build: Build the package from source instead of 
+# clean: When updating or removing packages, delete the 
+# name: (required) A name or a list of names of the 
+# ports_dir: When used in combination with the `build' 
+# quick: Replace or delete packages quickly; do not 
+# state: `present' will make sure the package is 
 }- name: ${2:Name for openbsd_pkg module.}
   openbsd_pkg:
 ${3:   ${4:build}: ${5:"#"}}

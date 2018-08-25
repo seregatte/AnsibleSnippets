@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# binstub_directory: Only applies if state is `present'. Specifies the directory to install any gem bins files to. When 
-# chdir: The directory to execute the bundler commands from. This directoy needs to contain a valid Gemfile or 
-# clean: Only applies if state is `present'. If set removes any gems on the target host that are not in the 
-# deployment_mode: Only applies if state is `present'. If set it will only install gems that are in the default or 
-# exclude_groups: A list of Gemfile groups to exclude during operations. This only applies when state is `present'. 
+${1:# binstub_directory: Only applies if state is `present'. Specifies 
+# chdir: The directory to execute the bundler commands 
+# clean: Only applies if state is `present'. If set 
+# deployment_mode: Only applies if state is `present'. If set it 
+# exclude_groups: A list of Gemfile groups to exclude during 
 # executable: The path to the bundler executable 
-# extra_args: A space separated string of additional commands that can be applied to the Bundler command. Refer to the 
-# gem_path: Only applies if state is `present'. Specifies the directory to install the gems into. If `chdir' is set 
-# gemfile: Only applies if state is `present'. The path to the gemfile to use to install gems. 
-# local: If set only installs gems from the cache on the target host 
-# state: The desired state of the Gem bundle. `latest' updates gems to the most recent, acceptable version 
-# user_install: Only applies if state is `present'. Installs gems in the local user's cache or for all users 
+# extra_args: A space separated string of additional commands 
+# gem_path: Only applies if state is `present'. Specifies 
+# gemfile: Only applies if state is `present'. The path to 
+# local: If set only installs gems from the cache on the 
+# state: The desired state of the Gem bundle. `latest' 
+# user_install: Only applies if state is `present'. Installs 
 }- name: ${2:Name for bundler module.}
   bundler:
 ${3:   ${4:binstub_directory}: ${5:"#"}}

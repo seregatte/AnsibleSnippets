@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# location: (required) Datacenter in which the policy lives/should live. 
+${1:# location: (required) Datacenter in which the policy 
 # name: (required) The name of the Anti Affinity Policy. 
 # state: Whether to create or delete the policy. 
-# wait: Whether to wait for the tasks to finish before returning. 
+# wait: Whether to wait for the tasks to finish before 
 }- name: ${2:Name for clc_aa_policy module.}
   clc_aa_policy:
 ${3:   ${4:location}: ${5:"#"}}

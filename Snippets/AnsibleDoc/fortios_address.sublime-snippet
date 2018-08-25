@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# backup: This argument will cause the module to create a backup of the current `running-config' from the remote 
-# backup_filename: Specifies the backup filename. If omitted filename will be formatted like HOST_config.YYYY-MM- 
-# backup_path: Specifies where to store backup files. Required if `backup=yes'. 
+${1:# backup: This argument will cause the module to create a 
+# backup_filename: Specifies the backup filename. If omitted 
+# backup_path: Specifies where to store backup files. Required 
 # comment: free text to describe address. 
-# config_file: Path to configuration file. Required when `file_mode' is True. 
+# config_file: Path to configuration file. Required when 
 # country: 2 letter country code (like FR). 
 # end_ip: Last ip in range (used only with type=iprange). 
-# file_mode: Don't connect to any device, only use `config_file' as input and Output. 
-# host: Specifies the DNS hostname or IP address for connecting to the remote fortios device. Required when 
+# file_mode: Don't connect to any device, only use 
+# host: Specifies the DNS hostname or IP address for 
 # interface: interface name the address apply to. 
 # name: (required) Name of the address to add or delete. 
-# password: Specifies the password used to authenticate to the remote device. Required when `file_mode' is True. 
+# password: Specifies the password used to authenticate to 
 # start_ip: First ip in range (used only with type=iprange). 
-# state: (required) Specifies if address need to be added or deleted. 
-# timeout: Timeout in seconds for connecting to the remote device. 
+# state: (required) Specifies if address need to be added 
+# timeout: Timeout in seconds for connecting to the remote 
 # type: Type of the address. 
-# username: Configures the username used to authenticate to the remote device. Required when `file_mode' is True. 
-# value: Address value, based on type. If type=fqdn, somthing like www.google.com. If type=ipmask, you can use 
+# username: Configures the username used to authenticate to 
+# value: Address value, based on type. If type=fqdn, 
 # vdom: Specifies on which vdom to apply configuration 
 }- name: ${2:Name for fortios_address module.}
   fortios_address:

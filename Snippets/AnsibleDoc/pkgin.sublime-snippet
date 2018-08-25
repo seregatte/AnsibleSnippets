@@ -3,9 +3,9 @@
 ${1:# clean: Clean packages cache 
 # force: Force package reinstall 
 # full_upgrade: Upgrade all packages to their newer versions 
-# name: Name of package to install/remove; multiple names may be given, separated by commas 
+# name: Name of package to install/remove; multiple 
 # state: Intended state of the package 
-# update_cache: Update repository database. Can be run with other steps or on it's own. 
+# update_cache: Update repository database. Can be run with 
 # upgrade: Upgrade main packages to their newer versions 
 }- name: ${2:Name for pkgin module.}
   pkgin:

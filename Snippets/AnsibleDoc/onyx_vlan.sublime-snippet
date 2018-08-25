@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of VLANs definitions. 
+# name: Name of the VLAN. 
+# purge: Purge VLANs not defined in the `aggregate' 
+# state: State of the VLAN configuration. 
+# vlan_id: ID of the VLAN. 
+}- name: ${2:Name for onyx_vlan module.}
+  onyx_vlan:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:purge}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:vlan_id}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>onyx_vlan</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

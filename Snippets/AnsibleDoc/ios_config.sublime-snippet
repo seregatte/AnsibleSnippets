@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# after: The ordered set of commands to append to the end of the command stack if a change needs to be made. 
-# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# backup: This argument will cause the module to create a full backup of the current `running-config' from the 
-# before: The ordered set of commands to push on to the command stack if a change needs to be made.  This allows 
-# defaults: This argument specifies whether or not to collect all defaults when getting the remote device running 
-# diff_against: When using the `ansible-playbook --diff' command line argument the module can generate diffs against 
-# diff_ignore_lines: Use this argument to specify one or more lines that should be ignored during the diff.  This is used for 
-# force: The force argument instructs the module to not consider the current devices running-config.  When set to 
-# intended_config: The `intended_config' provides the master configuration that the node should conform to and is used to 
-# lines: The ordered set of commands that should be configured in the section.  The commands must be the exact 
-# match: Instructs the module on the way to perform the matching of the set of commands against the current 
-# multiline_delimiter: This argument is used when pushing a multiline configuration element to the IOS device.  It specifies 
-# parents: The ordered set of parents that uniquely identify the section the commands should be checked against. 
-# provider: A dict object containing connection details. 
-# replace: Instructs the module on the way to perform the configuration on the device.  If the replace argument is 
-# running_config: The module, by default, will connect to the remote device and retrieve the current running-config to use 
-# save: The `save' argument instructs the module to save the running- config to the startup-config at the 
-# save_when: When changes are made to the device running-configuration, the changes are not copied to non-volatile 
-# src: Specifies the source path to the file that contains the configuration or configuration template to load. 
+${1:# after: The ordered set of commands to append to the end 
+# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# backup: This argument will cause the module to create a 
+# before: The ordered set of commands to push on to the 
+# defaults: This argument specifies whether or not to 
+# diff_against: When using the `ansible-playbook --diff' command 
+# diff_ignore_lines: Use this argument to specify one or more lines 
+# force: The force argument instructs the module to not 
+# intended_config: The `intended_config' provides the master 
+# lines: The ordered set of commands that should be 
+# match: Instructs the module on the way to perform the 
+# multiline_delimiter: This argument is used when pushing a multiline 
+# parents: The ordered set of parents that uniquely 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# replace: Instructs the module on the way to perform the 
+# running_config: The module, by default, will connect to the 
+# save: The `save' argument instructs the module to save 
+# save_when: When changes are made to the device running- 
+# src: Specifies the source path to the file that 
 }- name: ${2:Name for ios_config module.}
   ios_config:
 ${3:   ${4:after}: ${5:"#"}}

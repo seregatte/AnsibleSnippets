@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# category_file: For one or more sources specified, the path to a custom category resource file. 
-# maximum_size: The maximum size of the event log. Value must be between 64KB and 4GB, and divisible by 64KB. Size can 
-# message_file: For one or more sources specified, the path to a custom event message resource file. 
+${1:# category_file: For one or more sources specified, the path to a 
+# maximum_size: The maximum size of the event log. Value must be 
+# message_file: For one or more sources specified, the path to a 
 # name: (required) Name of the event log to manage. 
-# overflow_action: The action for the log to take once it reaches its maximum size. For `OverwriteOlder', new log entries 
-# parameter_file: For one or more sources specified, the path to a custom parameter resource file. 
-# retention_days: The minimum number of days event entries must remain in the log. This option is only used when 
-# sources: A list of one or more sources to ensure are present/absent in the log. When `category_file', 
-# state: Desired state of the log and/or sources. When `sources' is populated, state is checked for sources. When 
+# overflow_action: The action for the log to take once it reaches 
+# parameter_file: For one or more sources specified, the path to a 
+# retention_days: The minimum number of days event entries must 
+# sources: A list of one or more sources to ensure are 
+# state: Desired state of the log and/or sources. When 
 }- name: ${2:Name for win_eventlog module.}
   win_eventlog:
 ${3:   ${4:category_file}: ${5:"#"}}

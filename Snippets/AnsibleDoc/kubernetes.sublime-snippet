@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# api_endpoint: (required) The IPv4 API endpoint of the Kubernetes cluster. 
-# certificate_authority_data: Certificate Authority data for Kubernetes server. Should be in either standard PEM format or base64 
-# file_reference: Specify full path to a Kubernets YAML file to send to API `endpoint'. This option is mutually exclusive 
-# inline_data: (required) The Kubernetes YAML data to send to the API `endpoint'. This option is mutually exclusive 
-# insecure: Reverts the connection to using HTTP instead of HTTPS. This option should only be used when execuing the 
-# patch_operation: - Specify patch operation for Kubernetes resource update. For details, see the description of PATCH 
-# conventions: patch-operations. 
-# state: (required) The desired action to take on the Kubernetes data. 
-# url_password: The HTTP Basic Auth password for the API `endpoint'. This should be set unless using the `'insecure'' 
-# url_username: The HTTP Basic Auth username for the API `endpoint'. This should be set unless using the `'insecure'' 
-# validate_certs: Enable/disable certificate validation. Note that this is set to `false' until Ansible can support IP 
+${1:# api_endpoint: (required) The IPv4 API endpoint of the 
+# certificate_authority_data: Certificate Authority data for Kubernetes 
+# file_reference: Specify full path to a Kubernets YAML file to 
+# inline_data: (required) The Kubernetes YAML data to send to 
+# insecure: Reverts the connection to using HTTP instead of 
+# patch_operation: Specify patch operation for Kubernetes resource 
+# : patch- 
+# state: (required) The desired action to take on the 
+# url_password: The HTTP Basic Auth password for the API 
+# url_username: The HTTP Basic Auth username for the API 
+# validate_certs: Enable/disable certificate validation. Note that 
 }- name: ${2:Name for kubernetes module.}
   kubernetes:
 ${3:   ${4:api_endpoint}: ${5:"#"}}
@@ -19,7 +19,7 @@ ${9:   ${10:file_reference}: ${11:"#"}}
 ${12:   ${13:inline_data}: ${14:"#"}}
 ${15:   ${16:insecure}: ${17:"#"}}
 ${18:   ${19:patch_operation}: ${20:"#"}}
-${21:   ${22:conventions}: ${23:"#"}}
+${21:   ${22:}: ${23:"#"}}
 ${24:   ${25:state}: ${26:"#"}}
 ${27:   ${28:url_password}: ${29:"#"}}
 ${30:   ${31:url_username}: ${32:"#"}}

@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# client_list: List of dictionaries with client entries. See examples. Check infini_export_client module to modify 
+${1:# client_list: List of dictionaries with client entries. See 
 # filesystem: (required) Name of exported file system. 
 # inner_path: Internal path of the export. 
-# name: (required) Export name. Should always start with `/'. (ex. name=/data) 
+# name: (required) Export name. Should always start with 
 # password: Infinibox User password. 
-# state: Creates/Modifies export when present and removes when absent. 
+# state: Creates/Modifies export when present and removes 
 # system: (required) Infinibox Hostname or IPv4 Address. 
-# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# user: Infinibox User username with sufficient 
 }- name: ${2:Name for infini_export module.}
   infini_export:
 ${3:   ${4:client_list}: ${5:"#"}}

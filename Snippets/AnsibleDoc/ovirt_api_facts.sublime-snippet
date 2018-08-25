@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
+# nested_attributes: Specifies list of the attributes which should be 
+}- name: ${2:Name for ovirt_api_facts module.}
+  ovirt_api_facts:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:fetch_nested}: ${8:"#"}}
+${9:   ${10:nested_attributes}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>ovirt_api_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

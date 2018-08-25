@@ -1,65 +1,71 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# bootable: `True' if the disk should be bootable. By default when disk is created it isn't bootable. 
-# download_image_path: Path on a file system where disk should be downloaded. Note that you must have an valid oVirt/RHV engine 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# force: Please take a look at `image_path' documentation to see the correct usage of this parameter. 
-# format: Specify format of the disk. If (cow) format is used, disk will by created as sparse, so space will be 
-# id: ID of the disk to manage. Either `id' or `name' is required. 
-# image_provider: When `state' is `exported' disk is exported to given Glance image provider. `**IMPORTANT**' There is no 
-# interface: Driver of the storage interface. 
-# logical_unit: Dictionary which describes LUN to be directly attached to VM: `address' - Address of the storage server. 
-# name: Name of the disk to manage. Either `id' or `name'/`alias' is required. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# openstack_volume_type: Name of the openstack volume type. This is valid when working with cinder. 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
-# profile: Disk profile name to be attached to disk. By default profile is chosen by oVirt/RHV engine. 
-# shareable: `True' if the disk should be shareable. By default when disk is created it isn't shareable. 
-# size: Size of the disk. Size should be specified using IEC standard units. For example 10GiB, 1024MiB, etc. 
-# sparsify: `True' if the disk should be sparsified. Sparsification frees space in the disk image that is not used 
-# state: Should the Virtual Machine disk be present/absent/attached/detached. 
-# storage_domain: Storage domain name where disk should be created. By default storage is chosen by oVirt/RHV engine. 
-# storage_domains: Storage domain names where disk should be copied. `**IMPORTANT**' There is no reliable way to achieve 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# upload_image_path: Path to disk image, which should be uploaded. Note that currently we support only compatibility version 
-# vm_id: ID of the Virtual Machine to manage. Either `vm_id' or `vm_name' is required if `state' is `attached' or 
-# vm_name: Name of the Virtual Machine to manage. Either `vm_id' or `vm_name' is required if `state' is `attached' 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+${1:# auth: (required) Dictionary with values needed to 
+# bootable: `True' if the disk should be bootable. By 
+# description: Description of the disk image to manage. 
+# download_image_path: Path on a file system where disk should be 
+# fetch_nested: If `True' the module will fetch additional data 
+# force: Please take a look at `image_path' documentation 
+# format: Specify format of the disk. Note that this 
+# id: ID of the disk to manage. Either `id' or `name' 
+# image_provider: When `state' is `exported' disk is exported to 
+# interface: Driver of the storage interface. It's required 
+# logical_unit: Dictionary which describes LUN to be directly 
+# name: Name of the disk to manage. Either `id' or 
+# nested_attributes: Specifies list of the attributes which should be 
+# openstack_volume_type: Name of the openstack volume type. This is valid 
+# poll_interval: Number of the seconds the module waits until 
+# profile: Disk profile name to be attached to disk. By 
+# quota_id: Disk quota ID to be used for disk. By default 
+# shareable: `True' if the disk should be shareable. By 
+# size: Size of the disk. Size should be specified using 
+# sparse: `True' if the disk should be sparse (also known 
+# sparsify: `True' if the disk should be sparsified. 
+# state: Should the Virtual Machine disk be 
+# storage_domain: Storage domain name where disk should be 
+# storage_domains: Storage domain names where disk should be 
+# timeout: The amount of time in seconds the module should 
+# upload_image_path: Path to disk image, which should be uploaded. 
+# vm_id: ID of the Virtual Machine to manage. Either 
+# vm_name: Name of the Virtual Machine to manage. Either 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_disk module.}
   ovirt_disk:
 ${3:   ${4:auth}: ${5:"#"}}
 ${6:   ${7:bootable}: ${8:"#"}}
-${9:   ${10:download_image_path}: ${11:"#"}}
-${12:   ${13:fetch_nested}: ${14:"#"}}
-${15:   ${16:force}: ${17:"#"}}
-${18:   ${19:format}: ${20:"#"}}
-${21:   ${22:id}: ${23:"#"}}
-${24:   ${25:image_provider}: ${26:"#"}}
-${27:   ${28:interface}: ${29:"#"}}
-${30:   ${31:logical_unit}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:nested_attributes}: ${38:"#"}}
-${39:   ${40:openstack_volume_type}: ${41:"#"}}
-${42:   ${43:poll_interval}: ${44:"#"}}
-${45:   ${46:profile}: ${47:"#"}}
-${48:   ${49:shareable}: ${50:"#"}}
-${51:   ${52:size}: ${53:"#"}}
-${54:   ${55:sparsify}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:storage_domain}: ${62:"#"}}
-${63:   ${64:storage_domains}: ${65:"#"}}
-${66:   ${67:timeout}: ${68:"#"}}
-${69:   ${70:upload_image_path}: ${71:"#"}}
-${72:   ${73:vm_id}: ${74:"#"}}
-${75:   ${76:vm_name}: ${77:"#"}}
-${78:   ${79:wait}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:download_image_path}: ${14:"#"}}
+${15:   ${16:fetch_nested}: ${17:"#"}}
+${18:   ${19:force}: ${20:"#"}}
+${21:   ${22:format}: ${23:"#"}}
+${24:   ${25:id}: ${26:"#"}}
+${27:   ${28:image_provider}: ${29:"#"}}
+${30:   ${31:interface}: ${32:"#"}}
+${33:   ${34:logical_unit}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:nested_attributes}: ${41:"#"}}
+${42:   ${43:openstack_volume_type}: ${44:"#"}}
+${45:   ${46:poll_interval}: ${47:"#"}}
+${48:   ${49:profile}: ${50:"#"}}
+${51:   ${52:quota_id}: ${53:"#"}}
+${54:   ${55:shareable}: ${56:"#"}}
+${57:   ${58:size}: ${59:"#"}}
+${60:   ${61:sparse}: ${62:"#"}}
+${63:   ${64:sparsify}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:storage_domain}: ${71:"#"}}
+${72:   ${73:storage_domains}: ${74:"#"}}
+${75:   ${76:timeout}: ${77:"#"}}
+${78:   ${79:upload_image_path}: ${80:"#"}}
+${81:   ${82:vm_id}: ${83:"#"}}
+${84:   ${85:vm_name}: ${86:"#"}}
+${87:   ${88:wait}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>ovirt_disk</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

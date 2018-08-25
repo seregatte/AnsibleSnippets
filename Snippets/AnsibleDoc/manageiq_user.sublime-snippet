@@ -2,11 +2,12 @@
 <content><![CDATA[
 ${1:# email: The users' E-mail address. 
 # group: The name of the group to which the user belongs. 
-# manageiq_connection: (required) ManageIQ connection configuration information. 
+# manageiq_connection: (required) ManageIQ connection configuration 
 # name: The users' full name. 
 # password: The users' password. 
-# state: absent - user should not exist, present - user should be. 
-# userid: (required) The unique userid in manageiq, often mentioned as username. 
+# state: absent - user should not exist, present - user 
+# update_password: `always' will update passwords unconditionally. 
+# userid: (required) The unique userid in manageiq, often 
 }- name: ${2:Name for manageiq_user module.}
   manageiq_user:
 ${3:   ${4:email}: ${5:"#"}}
@@ -15,13 +16,14 @@ ${9:   ${10:manageiq_connection}: ${11:"#"}}
 ${12:   ${13:name}: ${14:"#"}}
 ${15:   ${16:password}: ${17:"#"}}
 ${18:   ${19:state}: ${20:"#"}}
-${21:   ${22:userid}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${21:   ${22:update_password}: ${23:"#"}}
+${24:   ${25:userid}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>manageiq_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

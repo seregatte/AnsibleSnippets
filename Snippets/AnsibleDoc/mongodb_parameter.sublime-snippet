@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# database: (required) The name of the database to add/remove the user from 
+${1:# database: (required) The name of the database to 
 # login_database: The database where login credentials are stored 
 # login_host: The host running the database 
 # login_password: The password used to authenticate with 
 # login_port: The port to connect to 
 # login_user: The username used to authenticate with 
-# param: (required) MongoDB administrative parameter to modify 
+# param: (required) MongoDB administrative parameter to 
 # param_type: Define the parameter value (str, int) 
-# replica_set: Replica set to connect to (automatically connects to primary for writes) 
-# ssl: Whether to use an SSL connection when connecting to the database 
-# value: (required) MongoDB administrative parameter value to set 
+# replica_set: Replica set to connect to (automatically 
+# ssl: Whether to use an SSL connection when connecting 
+# value: (required) MongoDB administrative parameter 
 }- name: ${2:Name for mongodb_parameter module.}
   mongodb_parameter:
 ${3:   ${4:database}: ${5:"#"}}

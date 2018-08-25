@@ -1,28 +1,28 @@
 <snippet>
 <content><![CDATA[
-${1:# api_timeout: How long should the socket layer wait before timing out for API calls. If this is omitted, nothing will 
-# auth: Dictionary containing auth information as needed by the cloud's auth plugin strategy. For the default 
-# auth_type: Name of the auth plugin to use. If the cloud uses something other than password authentication, the name 
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as part of verifying SSL API requests. 
-# cert: A path to a client certificate to use as part of the SSL transaction. 
+# cacert: A path to a CA Cert bundle that can be used as 
+# cert: A path to a client certificate to use as part of 
 # chassis_uuid: Associate the node with a pre-defined chassis. 
-# cloud: Named cloud to operate against. Provides default values for `auth' and `auth_type'. This parameter is 
-# driver: (required) The name of the Ironic Driver to use with this node. 
-# driver_info: Information for this server's driver. Will vary based on which driver is in use. Any sub-field which is 
-# endpoint_type: Endpoint URL type to fetch from the service catalog. 
-# ironic_url: If noauth mode is utilized, this is required to be set to the endpoint URL for the Ironic API.  Use with 
-# key: A path to a client key to use as part of the SSL transaction. 
-# name: unique name identifier to be given to the resource. 
-# nics: (required) A list of network interface cards, eg, " - mac: aa:bb:cc:aa:bb:cc" 
-# properties: Definition of the physical characteristics of this server, used for scheduling purposes 
+# cloud: Named cloud or cloud config to operate against. 
+# driver: (required) The name of the Ironic Driver to use 
+# driver_info: Information for this server's driver. Will vary 
+# interface: Endpoint URL type to fetch from the service 
+# ironic_url: If noauth mode is utilized, this is required to 
+# key: A path to a client key to use as part of the SSL 
+# name: unique name identifier to be given to the 
+# nics: (required) A list of network interface cards, 
+# properties: Definition of the physical characteristics of 
 # region_name: Name of the region. 
-# skip_update_of_driver_password: Allows the code that would assert changes to nodes to skip the update if the change is a single line 
+# skip_update_of_driver_password: Allows the code that would assert changes to 
 # state: Indicates desired state of the resource 
-# timeout: How long should ansible wait for the requested resource. 
-# uuid: globally unique identifier (UUID) to be given to the resource. Will be auto-generated if not specified, 
-# validate_certs: Whether or not SSL API requests should be verified. Before 2.3 this defaulted to True. 
-# wait: Should ansible wait until the requested resource is complete. 
+# timeout: How long should ansible wait for the requested 
+# uuid: globally unique identifier (UUID) to be given to 
+# verify: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_ironic module.}
   os_ironic:
 ${3:   ${4:api_timeout}: ${5:"#"}}
@@ -35,7 +35,7 @@ ${21:   ${22:chassis_uuid}: ${23:"#"}}
 ${24:   ${25:cloud}: ${26:"#"}}
 ${27:   ${28:driver}: ${29:"#"}}
 ${30:   ${31:driver_info}: ${32:"#"}}
-${33:   ${34:endpoint_type}: ${35:"#"}}
+${33:   ${34:interface}: ${35:"#"}}
 ${36:   ${37:ironic_url}: ${38:"#"}}
 ${39:   ${40:key}: ${41:"#"}}
 ${42:   ${43:name}: ${44:"#"}}
@@ -46,7 +46,7 @@ ${54:   ${55:skip_update_of_driver_password}: ${56:"#"}}
 ${57:   ${58:state}: ${59:"#"}}
 ${60:   ${61:timeout}: ${62:"#"}}
 ${63:   ${64:uuid}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
+${66:   ${67:verify}: ${68:"#"}}
 ${69:   ${70:wait}: ${71:"#"}}
 ${72:${73:   become: ${74:true}} 
 ${75:   become_method: ${76:su}} 

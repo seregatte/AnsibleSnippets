@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# config_sync_ip: Local IP address that the system uses for 
+# failover_multicast: When `yes', ensures that the Failover Multicast 
+# mirror_primary_address: Specifies the primary IP address for the system 
+# mirror_secondary_address: Specifies the secondary IP address for the 
+# multicast_address: IP address for the system to send multicast 
+# multicast_interface: Interface over which the system sends multicast 
+# multicast_port: Port for the system to send multicast messages 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# unicast_failover: Desired addresses to use for failover 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigip_device_connectivity module.}
+  bigip_device_connectivity:
+${3:   ${4:config_sync_ip}: ${5:"#"}}
+${6:   ${7:failover_multicast}: ${8:"#"}}
+${9:   ${10:mirror_primary_address}: ${11:"#"}}
+${12:   ${13:mirror_secondary_address}: ${14:"#"}}
+${15:   ${16:multicast_address}: ${17:"#"}}
+${18:   ${19:multicast_interface}: ${20:"#"}}
+${21:   ${22:multicast_port}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:provider}: ${29:"#"}}
+${30:   ${31:server}: ${32:"#"}}
+${33:   ${34:server_port}: ${35:"#"}}
+${36:   ${37:unicast_failover}: ${38:"#"}}
+${39:   ${40:user}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>bigip_device_connectivity</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

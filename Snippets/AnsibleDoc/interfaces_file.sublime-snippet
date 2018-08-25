@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# backup: Create a backup file including the timestamp information so you can get the original file back if you 
+${1:# attributes: Attributes the file or directory should have. To 
+# backup: Create a backup file including the timestamp 
 # dest: Path to the interfaces file 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# iface: Name of the interface, required for value changes or option remove 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# option: Name of the option, required for value changes or option remove 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# state: If set to `absent' the option or section will be removed if present instead of created. 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# value: If `option' is not presented for the `interface' and `state' is `present' option will be added. If 
+# group: Name of the group that should own the 
+# iface: Name of the interface, required for value 
+# mode: Mode the file or directory should be. For those 
+# option: Name of the option, required for value changes 
+# owner: Name of the user that should own the 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# state: If set to `absent' the option or section will be 
+# unsafe_writes: Normally this module uses atomic operations to 
+# value: If `option' is not presented for the `interface' 
 }- name: ${2:Name for interfaces_file module.}
   interfaces_file:
 ${3:   ${4:attributes}: ${5:"#"}}

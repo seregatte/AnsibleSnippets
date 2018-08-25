@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# data: The keyfile contents to add to the keyring. 
-# file: The path to a keyfile on the remote server to add to the keyring. 
-# id: The identifier of the key. Including this allows check mode to correctly report the changed state. If 
-# keyring: -The path to specific keyring file in /etc/apt/trusted.gpg.d/ 
+# file: The path to a keyfile on the remote server to 
+# id: The identifier of the key. Including this allows 
+# keyring: The full path to specific keyring file in 
 # keyserver: The keyserver to retrieve key from. 
-# state: Ensures that the key is present (added) or absent (revoked). 
+# state: Ensures that the key is present (added) or 
 # url: The URL to retrieve key from. 
-# validate_certs: If `no', SSL certificates for the target url will not be validated. This should only be used on 
+# validate_certs: If `no', SSL certificates for the target url 
 }- name: ${2:Name for apt_key module.}
   apt_key:
 ${3:   ${4:data}: ${5:"#"}}

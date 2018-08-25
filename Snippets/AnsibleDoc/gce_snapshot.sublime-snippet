@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# credentials_file: (required) The path to the credentials file associated with the service account 
-# disks: A list of disks to create snapshots for. If none is provided, all of the volumes will be snapshotted 
+${1:# credentials_file: (required) The path to the credentials file 
+# disks: A list of disks to create snapshots for. If none 
 # instance_name: (required) The GCE instance to snapshot 
 # project_id: (required) The GCP project ID to use 
-# service_account_email: (required) GCP service account email for the project where the instance resides 
+# service_account_email: (required) GCP service account email for the 
 # snapshot_name: The name of the snapshot to manage 
-# state: Whether a snapshot should be `present' or `absent' 
+# state: Whether a snapshot should be `present' or 
 }- name: ${2:Name for gce_snapshot module.}
   gce_snapshot:
 ${3:   ${4:credentials_file}: ${5:"#"}}

@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# config_file: Specify a config file from which user and password are to be read. 
-# connect_timeout: The connection timeout when connecting to the MySQL server. 
+${1:# config_file: Specify a config file from which user and 
+# connect_timeout: The connection timeout when connecting to the 
 # login_host: Host running the database. 
 # login_password: The password used to authenticate with. 
-# login_port: Port of the MySQL server. Requires `login_host' be defined as other then localhost if login_port is 
-# login_unix_socket: The path to a Unix domain socket for local connections. 
+# login_port: Port of the MySQL server. Requires `login_host' 
+# login_unix_socket: The path to a Unix domain socket for local 
 # login_user: The username used to authenticate with. 
 # master_auto_position: does the host uses GTID based replication or not 
 # master_connect_retry: same as mysql variable 
@@ -21,10 +21,10 @@ ${1:# config_file: Specify a config file from which user and password are to be 
 # master_ssl_cipher: same as mysql variable 
 # master_ssl_key: same as mysql variable 
 # master_user: same as mysql variable 
-# mode: module operating mode. Could be getslave (SHOW SLAVE STATUS), getmaster (SHOW MASTER STATUS), 
+# mode: module operating mode. Could be getslave (SHOW 
 # relay_log_file: same as mysql variable 
 # relay_log_pos: same as mysql variable 
-# ssl_ca: The path to a Certificate Authority (CA) certificate. This option, if used, must specify the same 
+# ssl_ca: The path to a Certificate Authority (CA) 
 # ssl_cert: The path to a client public key certificate. 
 # ssl_key: The path to the client private key. 
 }- name: ${2:Name for mysql_replication module.}

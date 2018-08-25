@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# host: Name of the host, which affinity labels should be listed. 
-# name: Name of the affinity labels which should be listed. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# vm: Name of the VM, which affinity labels should be listed. 
+${1:# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
+# host: Name of the host, which affinity labels should 
+# name: Name of the affinity labels which should be 
+# nested_attributes: Specifies list of the attributes which should be 
+# vm: Name of the VM, which affinity labels should be 
 }- name: ${2:Name for ovirt_affinity_label_facts module.}
   ovirt_affinity_label_facts:
 ${3:   ${4:auth}: ${5:"#"}}

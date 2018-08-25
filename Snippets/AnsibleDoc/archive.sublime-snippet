@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# dest: The file name of the destination archive. This is required when `path' refers to multiple files by 
-# exclude_path: Remote absolute path, glob, or list of paths or globs for the file or files to exclude from the archive 
-# format: The type of compression to use. 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# path: (required) Remote absolute path, glob, or list of paths or globs for the file or files to compress or 
-# remove: Remove any added source files and trees after adding to archive. 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
+${1:# attributes: Attributes the file or directory should have. To 
+# dest: The file name of the destination archive. This 
+# exclude_path: Remote absolute path, glob, or list of paths or 
+# format: The type of compression to use. Support for xz 
+# group: Name of the group that should own the 
+# mode: Mode the file or directory should be. For those 
+# owner: Name of the user that should own the 
+# path: (required) Remote absolute path, glob, or list 
+# remove: Remove any added source files and trees after 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# unsafe_writes: Normally this module uses atomic operations to 
 }- name: ${2:Name for archive module.}
   archive:
 ${3:   ${4:attributes}: ${5:"#"}}

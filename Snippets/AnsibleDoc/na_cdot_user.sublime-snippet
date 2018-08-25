@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
 ${1:# application: (required) Applications to grant access to. 
-# authentication_method: (required) Authentication method for the application. Not all authentication methods are valid for an 
-# hostname: (required) The hostname or IP address of the ONTAP instance. 
+# authentication_method: (required) Authentication method for the 
+# hostname: (required) The hostname or IP address of the 
 # name: (required) The name of the user to manage. 
 # password: (required) Password for the specified user. 
-# role_name: The name of the role. Required when `state=present' 
-# set_password: Password for the user account. It is ignored for creating snmp users, but is required for creating non- 
-# state: (required) Whether the specified user should exist or not. 
-# username: (required) This can be a Cluster-scoped or SVM-scoped account, depending on whether a Cluster-level or 
+# role_name: The name of the role. Required when 
+# set_password: Password for the user account. It is ignored for 
+# state: (required) Whether the specified user should 
+# username: (required) This can be a Cluster-scoped or SVM- 
 # vserver: (required) The name of the vserver to use. 
 }- name: ${2:Name for na_cdot_user module.}
   na_cdot_user:

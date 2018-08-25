@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# channel_id: Number of a channel. The value is an integer ranging from 0 to 9. The default value is 0. 
-# module_name: Module name of the rule. The value is a string of 1 to 31 case-insensitive characters. The default value 
+${1:# channel_id: Number of a channel. The value is an integer 
+# module_name: Module name of the rule. The value is a string 
 # state: Specify desired state of the resource. 
-# trap_buff_enable: Whether a trap buffer is enabled to output information. 
-# trap_buff_size: Size of a trap buffer. The value is an integer ranging from 0 to 1024. The default value is 256. 
+# trap_buff_enable: Whether a trap buffer is enabled to output 
+# trap_buff_size: Size of a trap buffer. The value is an integer 
 # trap_enable: Whether a device is enabled to output alarms. 
 # trap_level: Trap level permitted to output. 
 # trap_time_stamp: Timestamp format of alarm information. 

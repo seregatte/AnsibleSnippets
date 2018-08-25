@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Package name, e.g. (`CSWnrpe') 
-# site: Specifies the repository path to install the package from. Its global definition is done in 
-# state: (required) Whether to install (`present'), or remove (`absent') a package. The upgrade (`latest') 
-# update_catalog: If you want to refresh your catalog from the mirror, set this to (`yes'). 
+# site: Specifies the repository path to install the 
+# state: (required) Whether to install (`present'), or 
+# update_catalog: If you want to refresh your catalog from the 
 }- name: ${2:Name for pkgutil module.}
   pkgutil:
 ${3:   ${4:name}: ${5:"#"}}

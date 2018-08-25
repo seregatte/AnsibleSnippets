@@ -1,47 +1,33 @@
 <snippet>
 <content><![CDATA[
 ${1:# admin_state: Used to enable or disable the VRRP process. 
-# authentication: Clear text authentication string. 
+# authentication: Clear text authentication string or 'default' 
 # group: (required) VRRP group number. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# interface: (required) Full name of interface that is being managed for VRRP. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# priority: VRRP priority. 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# interface: (required) Full name of interface that is being 
+# interval: Time interval between advertisement or 'default' 
+# preempt: Enable/Disable preempt. 
+# priority: VRRP priority or 'default' keyword 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: Specify desired state of the resource. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vip: VRRP virtual IP address. 
+# vip: VRRP virtual IP address or 'default' keyword 
 }- name: ${2:Name for nxos_vrrp module.}
   nxos_vrrp:
 ${3:   ${4:admin_state}: ${5:"#"}}
 ${6:   ${7:authentication}: ${8:"#"}}
 ${9:   ${10:group}: ${11:"#"}}
-${12:   ${13:host}: ${14:"#"}}
-${15:   ${16:interface}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:port}: ${23:"#"}}
-${24:   ${25:priority}: ${26:"#"}}
-${27:   ${28:provider}: ${29:"#"}}
-${30:   ${31:ssh_keyfile}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:timeout}: ${38:"#"}}
-${39:   ${40:transport}: ${41:"#"}}
-${42:   ${43:use_ssl}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:vip}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${12:   ${13:interface}: ${14:"#"}}
+${15:   ${16:interval}: ${17:"#"}}
+${18:   ${19:preempt}: ${20:"#"}}
+${21:   ${22:priority}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:vip}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>nxos_vrrp</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

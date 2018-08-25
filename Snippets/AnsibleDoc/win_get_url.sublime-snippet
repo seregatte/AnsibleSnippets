@@ -1,39 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:# dest: (required) The location to save the file at the URL. Be sure to include a filename and extension as 
-# force: If `yes', will always download the file. If `no', will only download the file if it does not exist or 
-# headers: Add custom HTTP headers to a request (as a dictionary). 
+${1:# dest: (required) The location to save the file at the 
+# force: If `yes', will always download the file. If 
+# force_basic_auth: If `yes', will add a Basic authentication header 
+# headers: Add custom HTTP headers to a request (as a 
 # proxy_password: Proxy authentication password. 
-# proxy_url: The full URL of the proxy server to download through. 
+# proxy_url: The full URL of the proxy server to download 
 # proxy_username: Proxy authentication username. 
-# skip_certificate_validation: This option is deprecated since v2.4, please use `validate_certs' instead. If `yes', SSL certificates 
+# skip_certificate_validation: This option is deprecated since v2.4, please use 
 # timeout: Timeout in seconds for URL request. 
 # url: (required) The full URL of a file to download. 
 # url_password: Basic authentication password. 
 # url_username: Basic authentication username. 
-# use_proxy: If `no', it will not use a proxy, even if one is defined in an environment variable on the target hosts. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for win_get_url module.}
   win_get_url:
 ${3:   ${4:dest}: ${5:"#"}}
 ${6:   ${7:force}: ${8:"#"}}
-${9:   ${10:headers}: ${11:"#"}}
-${12:   ${13:proxy_password}: ${14:"#"}}
-${15:   ${16:proxy_url}: ${17:"#"}}
-${18:   ${19:proxy_username}: ${20:"#"}}
-${21:   ${22:skip_certificate_validation}: ${23:"#"}}
-${24:   ${25:timeout}: ${26:"#"}}
-${27:   ${28:url}: ${29:"#"}}
-${30:   ${31:url_password}: ${32:"#"}}
-${33:   ${34:url_username}: ${35:"#"}}
-${36:   ${37:use_proxy}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${9:   ${10:force_basic_auth}: ${11:"#"}}
+${12:   ${13:headers}: ${14:"#"}}
+${15:   ${16:proxy_password}: ${17:"#"}}
+${18:   ${19:proxy_url}: ${20:"#"}}
+${21:   ${22:proxy_username}: ${23:"#"}}
+${24:   ${25:skip_certificate_validation}: ${26:"#"}}
+${27:   ${28:timeout}: ${29:"#"}}
+${30:   ${31:url}: ${32:"#"}}
+${33:   ${34:url_password}: ${35:"#"}}
+${36:   ${37:url_username}: ${38:"#"}}
+${39:   ${40:use_proxy}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>win_get_url</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# controller: IP address or hostname of the controller. The 
+# created_by: Creator name. Field introduced in 17.2.4. 
+# crs_groups: Waf rules are categorized in to groups based on 
+# description: Field introduced in 17.2.1. 
+# mode: (required) Waf policy mode. This can be 
+# name: (required) Field introduced in 17.2.1. 
+# paranoia_level: Waf ruleset paranoia  mode. This is used to 
+# password: Password of Avi user in Avi controller. The 
+# post_crs_groups: Waf rules are categorized in to groups based on 
+# pre_crs_groups: Waf rules are categorized in to groups based on 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and 
+# tenant_ref: It is a reference to an object of type tenant. 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
+# url: Avi controller URL of the object. 
+# username: Username used for accessing Avi controller. The 
+# uuid: Field introduced in 17.2.1. 
+# waf_profile_ref: (required) Waf profile for waf policy. It is a 
+}- name: ${2:Name for avi_wafpolicy module.}
+  avi_wafpolicy:
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_api_patch_op}: ${11:"#"}}
+${12:   ${13:avi_api_update_method}: ${14:"#"}}
+${15:   ${16:avi_credentials}: ${17:"#"}}
+${18:   ${19:controller}: ${20:"#"}}
+${21:   ${22:created_by}: ${23:"#"}}
+${24:   ${25:crs_groups}: ${26:"#"}}
+${27:   ${28:description}: ${29:"#"}}
+${30:   ${31:mode}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:paranoia_level}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:post_crs_groups}: ${44:"#"}}
+${45:   ${46:pre_crs_groups}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:tenant}: ${53:"#"}}
+${54:   ${55:tenant_ref}: ${56:"#"}}
+${57:   ${58:tenant_uuid}: ${59:"#"}}
+${60:   ${61:url}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:   ${67:uuid}: ${68:"#"}}
+${69:   ${70:waf_profile_ref}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>avi_wafpolicy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

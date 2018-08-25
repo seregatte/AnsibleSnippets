@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) name of package to install/remove 
-# state: state of the package, you can use "installed" as an alias for `present' and removed as one for `absent'. 
+# state: state of the package, you can use "installed" as 
 # update_cache: update the package database first 
 }- name: ${2:Name for slackpkg module.}
   slackpkg:

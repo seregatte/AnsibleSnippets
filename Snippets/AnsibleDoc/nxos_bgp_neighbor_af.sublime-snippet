@@ -1,49 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:# additional_paths_receive: Valid values are enable for basic command enablement; disable for disabling the command at the neighbor 
-# additional_paths_send: Valid values are enable for basic command enablement; disable for disabling the command at the neighbor 
-# advertise_map_exist: Conditional route advertisement. This property requires two route maps, an advertise-map and an exist- 
-# advertise_map_non_exist: Conditional route advertisement. This property requires two route maps, an advertise-map and an exist- 
+${1:# additional_paths_receive: Valid values are enable for basic command 
+# additional_paths_send: Valid values are enable for basic command 
+# advertise_map_exist: Conditional route advertisement. This property 
+# advertise_map_non_exist: Conditional route advertisement. This property 
 # afi: (required) Address Family Identifier. 
 # allowas_in: Activate allowas-in property 
-# allowas_in_max: Optional max-occurrences value for allowas_in. Valid values are an integer value or 'default'. Can be 
+# allowas_in_max: Max-occurrences value for allowas_in. Valid 
 # as_override: Activate the as-override feature. 
-# asn: (required) BGP autonomous system number. Valid values are String, Integer in ASPLAIN or ASDOT notation. 
+# asn: (required) BGP autonomous system number. Valid 
 # default_originate: Activate the default-originate feature. 
-# default_originate_route_map: Optional route-map for the default_originate property. Can be used independently or in conjunction with 
-# filter_list_in: Valid values are a string defining a filter-list name, or 'default'. 
-# filter_list_out: Valid values are a string defining a filter-list name, or 'default'. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# max_prefix_interval: Optional restart interval. Valid values are an integer. Requires max_prefix_limit. May not be combined 
-# max_prefix_limit: maximum-prefix limit value. Valid values are an integer value or 'default'. 
-# max_prefix_threshold: Optional threshold percentage at which to generate a warning. Valid values are an integer value. 
-# max_prefix_warning: Optional warning-only keyword. Requires max_prefix_limit. May not be combined with max_prefix_interval. 
-# neighbor: (required) Neighbor Identifier. Valid values are string. Neighbors may use IPv4 or IPv6 notation, with 
+# default_originate_route_map: Route-map for the default_originate property. 
+# disable_peer_as_check: Disable checking of peer AS-number while 
+# filter_list_in: Valid values are a string defining a filter-list 
+# filter_list_out: Valid values are a string defining a filter-list 
+# max_prefix_interval: Optional restart interval. Valid values are an 
+# max_prefix_limit: maximum-prefix limit value. Valid values are an 
+# max_prefix_threshold: Optional threshold percentage at which to 
+# max_prefix_warning: Optional warning-only keyword. Requires 
+# neighbor: (required) Neighbor Identifier. Valid values are 
 # next_hop_self: Activate the next-hop-self feature. 
 # next_hop_third_party: Activate the next-hop-third-party feature. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# prefix_list_in: Valid values are a string defining a prefix-list name, or 'default'. 
-# prefix_list_out: Valid values are a string defining a prefix-list name, or 'default'. 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# route_map_in: Valid values are a string defining a route-map name, or 'default'. 
-# route_map_out: Valid values are a string defining a route-map name, or 'default'. 
+# prefix_list_in: Valid values are a string defining a prefix-list 
+# prefix_list_out: Valid values are a string defining a prefix-list 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# route_map_in: Valid values are a string defining a route-map 
+# route_map_out: Valid values are a string defining a route-map 
 # route_reflector_client: Router reflector client. 
 # safi: (required) Sub Address Family Identifier. 
 # send_community: send-community attribute. 
-# soft_reconfiguration_in: Valid values are 'enable' for basic command enablement; 'always' to add the always keyword to the basic 
-# soo: Site-of-origin. Valid values are a string defining a VPN extcommunity or 'default'. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: Determines whether the config should be present or not on the device. 
+# soft_reconfiguration_in: Valid values are 'enable' for basic command 
+# soo: Site-of-origin. Valid values are a string 
+# state: Determines whether the config should be present 
 # suppress_inactive: suppress-inactive feature. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# unsuppress_map: unsuppress-map. Valid values are a string defining a route-map name or 'default'. 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vrf: Name of the VRF. The name 'default' is a valid VRF representing the global bgp. 
-# weight: Weight value. Valid values are an integer value or 'default'. 
+# unsuppress_map: unsuppress-map. Valid values are a string 
+# vrf: Name of the VRF. The name 'default' is a valid 
+# weight: Weight value. Valid values are an integer value 
 }- name: ${2:Name for nxos_bgp_neighbor_af module.}
   nxos_bgp_neighbor_af:
 ${3:   ${4:additional_paths_receive}: ${5:"#"}}
@@ -57,9 +49,9 @@ ${24:   ${25:as_override}: ${26:"#"}}
 ${27:   ${28:asn}: ${29:"#"}}
 ${30:   ${31:default_originate}: ${32:"#"}}
 ${33:   ${34:default_originate_route_map}: ${35:"#"}}
-${36:   ${37:filter_list_in}: ${38:"#"}}
-${39:   ${40:filter_list_out}: ${41:"#"}}
-${42:   ${43:host}: ${44:"#"}}
+${36:   ${37:disable_peer_as_check}: ${38:"#"}}
+${39:   ${40:filter_list_in}: ${41:"#"}}
+${42:   ${43:filter_list_out}: ${44:"#"}}
 ${45:   ${46:max_prefix_interval}: ${47:"#"}}
 ${48:   ${49:max_prefix_limit}: ${50:"#"}}
 ${51:   ${52:max_prefix_threshold}: ${53:"#"}}
@@ -67,35 +59,27 @@ ${54:   ${55:max_prefix_warning}: ${56:"#"}}
 ${57:   ${58:neighbor}: ${59:"#"}}
 ${60:   ${61:next_hop_self}: ${62:"#"}}
 ${63:   ${64:next_hop_third_party}: ${65:"#"}}
-${66:   ${67:password}: ${68:"#"}}
-${69:   ${70:port}: ${71:"#"}}
-${72:   ${73:prefix_list_in}: ${74:"#"}}
-${75:   ${76:prefix_list_out}: ${77:"#"}}
-${78:   ${79:provider}: ${80:"#"}}
-${81:   ${82:route_map_in}: ${83:"#"}}
-${84:   ${85:route_map_out}: ${86:"#"}}
-${87:   ${88:route_reflector_client}: ${89:"#"}}
-${90:   ${91:safi}: ${92:"#"}}
-${93:   ${94:send_community}: ${95:"#"}}
-${96:   ${97:soft_reconfiguration_in}: ${98:"#"}}
-${99:   ${100:soo}: ${101:"#"}}
-${102:   ${103:ssh_keyfile}: ${104:"#"}}
-${105:   ${106:state}: ${107:"#"}}
-${108:   ${109:suppress_inactive}: ${110:"#"}}
-${111:   ${112:timeout}: ${113:"#"}}
-${114:   ${115:transport}: ${116:"#"}}
-${117:   ${118:unsuppress_map}: ${119:"#"}}
-${120:   ${121:use_ssl}: ${122:"#"}}
-${123:   ${124:username}: ${125:"#"}}
-${126:   ${127:validate_certs}: ${128:"#"}}
-${129:   ${130:vrf}: ${131:"#"}}
-${132:   ${133:weight}: ${134:"#"}}
-${135:${136:   become: ${137:true}} 
-${138:   become_method: ${139:su}} 
-${140:   become_user: ${141:nobody}} 
-${142:   become_flags: ${143:"-s /bin/sh"}}} 
-${144:   when: ${145:variable is defined}} 
-${146:   with_items: ${147:array}} 
+${66:   ${67:prefix_list_in}: ${68:"#"}}
+${69:   ${70:prefix_list_out}: ${71:"#"}}
+${72:   ${73:provider}: ${74:"#"}}
+${75:   ${76:route_map_in}: ${77:"#"}}
+${78:   ${79:route_map_out}: ${80:"#"}}
+${81:   ${82:route_reflector_client}: ${83:"#"}}
+${84:   ${85:safi}: ${86:"#"}}
+${87:   ${88:send_community}: ${89:"#"}}
+${90:   ${91:soft_reconfiguration_in}: ${92:"#"}}
+${93:   ${94:soo}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:   ${100:suppress_inactive}: ${101:"#"}}
+${102:   ${103:unsuppress_map}: ${104:"#"}}
+${105:   ${106:vrf}: ${107:"#"}}
+${108:   ${109:weight}: ${110:"#"}}
+${111:${112:   become: ${113:true}} 
+${114:   become_method: ${115:su}} 
+${116:   become_user: ${117:nobody}} 
+${118:   become_flags: ${119:"-s /bin/sh"}}} 
+${120:   when: ${121:variable is defined}} 
+${122:   with_items: ${123:array}} 
 ]]></content>
 	<tabTrigger>nxos_bgp_neighbor_af</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

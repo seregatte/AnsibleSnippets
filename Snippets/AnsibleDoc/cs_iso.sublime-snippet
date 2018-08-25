@@ -1,30 +1,30 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the ISO is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# bootable: Register the ISO to be bootable. Only used if `state' is present. 
-# checksum: The MD5 checksum value of this ISO. If set, we search by checksum instead of name. 
-# cross_zones: Whether the ISO should be synced or removed across zones. Mutually exclusive with `zone'. 
-# display_text: Display text of the ISO. If not specified, `name' will be used. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# bootable: Register the ISO to be bootable. Only used if 
+# checksum: The MD5 checksum value of this ISO. If set, we 
+# cross_zones: Whether the ISO should be synced or removed 
+# display_text: Display text of the ISO. If not specified, 
 # domain: Domain the ISO is related to. 
-# is_dynamically_scalable: Register the ISO having XS/VMWare tools installed inorder to support dynamic scaling of VM cpu/memory. 
-# is_featured: Register the ISO to be featured. Only used if `state' is present. 
-# is_public: Register the ISO to be publicly available to all users. Only used if `state' is present. 
-# is_ready: This flag is used for searching existing ISOs. If set to `true', it will only list ISO ready for 
+# is_dynamically_scalable: Register the ISO having XS/VMWare tools 
+# is_featured: Register the ISO to be featured. Only used if 
+# is_public: Register the ISO to be publicly available to all 
+# is_ready: This flag is used for searching existing ISOs. 
 # iso_filter: Name of the filter used to search for the ISO. 
 # name: (required) Name of the ISO. 
-# os_type: Name of the OS that best represents the OS of this ISO. If the iso is bootable this parameter needs to 
+# os_type: Name of the OS that best represents the OS of 
 # poll_async: Poll async jobs until job has finished. 
 # project: Name of the project the ISO to be registered in. 
 # state: State of the ISO. 
-# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. To delete all tags, set a 
-# url: URL where the ISO can be downloaded from. Required if `state' is present. 
-# zone: Name of the zone you wish the ISO to be registered or deleted from. If not specified, first zone found 
+# tags: List of tags. Tags are a list of dictionaries 
+# url: URL where the ISO can be downloaded from. 
+# zone: Name of the zone you wish the ISO to be 
 }- name: ${2:Name for cs_iso module.}
   cs_iso:
 ${3:   ${4:account}: ${5:"#"}}

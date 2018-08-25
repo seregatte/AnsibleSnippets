@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# dns_domain_name: when `state' is `domain', the DNS name of the domain to which the targeted Windows host should be joined 
-# domain_admin_password: password for the specified `domain_admin_user' 
-# domain_admin_user: (required) username of a domain admin for the target domain (required to join or leave the domain) 
-# domain_ou_path: The desired OU path for adding the computer object. This is only used when adding the target host to a 
-# hostname: the desired hostname for the Windows host 
-# state: whether the target host should be a member of a domain or workgroup 
-# workgroup_name: when `state' is `workgroup', the name of the workgroup that the Windows host should be in 
+${1:# dns_domain_name: When `state' is `domain', the DNS name of the 
+# domain_admin_password: Password for the specified `domain_admin_user'. 
+# domain_admin_user: (required) Username of a domain admin for the 
+# domain_ou_path: The desired OU path for adding the computer 
+# hostname: The desired hostname for the Windows host. 
+# state: Whether the target host should be a member of a 
+# workgroup_name: When `state' is `workgroup', the name of the 
 }- name: ${2:Name for win_domain_membership module.}
   win_domain_membership:
 ${3:   ${4:dns_domain_name}: ${5:"#"}}

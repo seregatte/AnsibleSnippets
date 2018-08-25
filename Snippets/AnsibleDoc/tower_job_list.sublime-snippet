@@ -2,13 +2,13 @@
 <content><![CDATA[
 ${1:# all_pages: Fetch all the pages and return a single result. 
 # page: Page number of the results to fetch. 
-# query: Query used to further filter the list of jobs. {"foo":"bar"} will be passed at ?foo=bar 
+# query: Query used to further filter the list of jobs. 
 # status: Only list jobs with this status. 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 }- name: ${2:Name for tower_job_list module.}
   tower_job_list:
 ${3:   ${4:all_pages}: ${5:"#"}}

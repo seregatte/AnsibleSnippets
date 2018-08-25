@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_duplicates: Overrides the role's metadata setting to allow using a role more than once with the same parameters. 
-# defaults_from: File to load from a Role's defaults/ directory. 
+${1:# allow_duplicates: Overrides the role's metadata setting to allow 
+# defaults_from: File to load from a role's `defaults/' 
 # name: (required) The name of the role to be executed. 
-# private: If True the variables from defaults/ and vars/ in a role will not be made available to the rest of the 
-# tasks_from: File to load from a Role's tasks/ directory. 
-# vars_from: File to load from a Role's vars/ directory. 
+# private: This option is a no op, and the functionality 
+# tasks_from: File to load from a role's `tasks/' directory. 
+# vars_from: File to load from a role's `vars/' directory. 
 }- name: ${2:Name for include_role module.}
   include_role:
 ${3:   ${4:allow_duplicates}: ${5:"#"}}

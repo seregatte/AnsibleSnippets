@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# gather_subset: When supplied, this argument will restrict the facts collected to a given subset.  Possible values for 
+${1:# gather_subset: When supplied, this argument will restrict the 
 }- name: ${2:Name for ce_facts module.}
   ce_facts:
 ${3:   ${4:gather_subset}: ${5:"#"}}

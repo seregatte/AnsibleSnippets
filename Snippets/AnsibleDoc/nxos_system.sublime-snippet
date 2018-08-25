@@ -1,47 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# domain_lookup: Enables or disables the DNS lookup feature in Cisco NXOS.  This argument accepts boolean values.  When 
-# domain_name: Configures the default domain name suffix to be used when referencing this node by its FQDN.  This 
-# domain_search: Configures a list of domain name suffixes to search when performing DNS name resolution. This argument 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# hostname: Configure the device hostname parameter. This option takes an ASCII string value. 
-# name_servers: List of DNS name servers by IP address to use to perform name resolution lookups.  This argument accepts 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: State of the configuration values in the device's current active configuration.  When set to `present', 
-# system_mtu: Specifies the mtu, must be an integer. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+${1:# domain_lookup: Enables or disables the DNS lookup feature in 
+# domain_name: Configures the default domain name suffix to be 
+# domain_search: Configures a list of domain name suffixes to 
+# hostname: Configure the device hostname parameter. This 
+# name_servers: List of DNS name servers by IP address to use to 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# state: State of the configuration values in the 
+# system_mtu: Specifies the mtu, must be an integer or keyword 
 }- name: ${2:Name for nxos_system module.}
   nxos_system:
 ${3:   ${4:domain_lookup}: ${5:"#"}}
 ${6:   ${7:domain_name}: ${8:"#"}}
 ${9:   ${10:domain_search}: ${11:"#"}}
-${12:   ${13:host}: ${14:"#"}}
-${15:   ${16:hostname}: ${17:"#"}}
-${18:   ${19:name_servers}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:port}: ${26:"#"}}
-${27:   ${28:provider}: ${29:"#"}}
-${30:   ${31:ssh_keyfile}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:system_mtu}: ${38:"#"}}
-${39:   ${40:timeout}: ${41:"#"}}
-${42:   ${43:transport}: ${44:"#"}}
-${45:   ${46:use_ssl}: ${47:"#"}}
-${48:   ${49:username}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:name_servers}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:system_mtu}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>nxos_system</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

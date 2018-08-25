@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# checksum_algorithm: Algorithm to determine checksum of file. Will throw an error if the host is unable to use specified 
+${1:# checksum_algorithm: Algorithm to determine checksum of file. Will 
 # follow: Whether to follow symlinks. 
-# get_attributes: Get file attributes using lsattr tool if present. 
-# get_checksum: Whether to return a checksum of the file (default sha1). 
-# get_md5: Whether to return the md5 sum of the file. Will return None if not a regular file or if we're unable to 
-# get_mime: Use file magic and return data about the nature of the file. this uses the 'file' utility found on most 
-# path: (required) The full path of the file/object to get the facts of. 
+# get_attributes: Get file attributes using lsattr tool if 
+# get_checksum: Whether to return a checksum of the file 
+# get_md5: Whether to return the md5 sum of the file. Will 
+# get_mime: Use file magic and return data about the nature 
+# path: (required) The full path of the file/object to 
 }- name: ${2:Name for stat module.}
   stat:
 ${3:   ${4:checksum_algorithm}: ${5:"#"}}

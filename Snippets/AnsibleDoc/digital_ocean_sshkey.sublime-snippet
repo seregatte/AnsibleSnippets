@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# fingerprint: This is a unique identifier for the SSH key used to delete a key 
+${1:# fingerprint: This is a unique identifier for the SSH key used 
 # name: The name for the SSH key 
 # oauth_token: (required) DigitalOcean OAuth token. 
 # ssh_pub_key: The Public SSH key to add. 

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# array_add: Add new elements to the array for a key which has an array as its value. 
-# domain: The domain is a domain name of the form com.companyname.appname. 
-# host: The host on which the preference should apply. The special value "currentHost" corresponds to the 
+${1:# array_add: Add new elements to the array for a key which 
+# domain: The domain is a domain name of the form 
+# host: The host on which the preference should apply. 
 # key: (required) The key of the user preference 
 # state: The state of the user defaults 
 # type: The type of value to write. 
-# value: The value to write. Only required when state = present. 
+# value: The value to write. Only required when state = 
 }- name: ${2:Name for osx_defaults module.}
   osx_defaults:
 ${3:   ${4:array_add}: ${5:"#"}}

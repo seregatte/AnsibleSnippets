@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# depot: The source repository from which install or upgrade a package. 
+${1:# depot: The source repository from which install or 
 # name: (required) package name. 
-# state: (required) whether to install (`present', `latest'), or remove (`absent') a package. 
+# state: (required) whether to install (`present', 
 }- name: ${2:Name for swdepot module.}
   swdepot:
 ${3:   ${4:depot}: ${5:"#"}}

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# backend: (required) The name of the backend on which the property needs to be updated. 
+${1:# backend: (required) The name of the backend on which the 
 # hostname: (required) The hostname of the OpenDJ server. 
 # name: (required) The configuration setting to update. 
 # opendj_bindir: The path to the bin directory of OpenDJ. 
-# password: The password for the cn=Directory Manager user. Either password or passwordfile is needed. 
-# passwordfile: Location to the password file which holds the password for the cn=Directory Manager user. Either 
-# port: (required) The Admin port on which the OpenDJ instance is available. 
+# password: The password for the cn=Directory Manager user. 
+# passwordfile: Location to the password file which holds the 
+# port: (required) The Admin port on which the OpenDJ 
 # state: If configuration needs to be added/updated 
 # username: The username to connect to. 
 # value: (required) The value for the configuration item. 

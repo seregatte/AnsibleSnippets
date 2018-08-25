@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# action: (required) Action to perform 
-# body: Description of the release when creating a release 
+# body: Description of the release when creating a 
 # draft: Sets if the release is a draft or not. (boolean) 
 # name: Name of release when creating a release 
 # password: The GitHub account password for the user 
-# prerelease: Sets if the release is a prerelease or not. (boolean) 
+# prerelease: Sets if the release is a prerelease or not. 
 # repo: (required) Repository name 
-# tag: Tag name when creating a release. Required when using action is set to `create_release'. 
+# tag: Tag name when creating a release. Required when 
 # target: Target of release when creating a release 
 # token: GitHub Personal Access Token for authenticating 
-# user: (required) The GitHub account that owns the repository 
+# user: (required) The GitHub account that owns the 
 }- name: ${2:Name for github_release module.}
   github_release:
 ${3:   ${4:action}: ${5:"#"}}

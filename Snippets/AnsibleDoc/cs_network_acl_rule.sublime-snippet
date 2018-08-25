@@ -2,29 +2,29 @@
 <content><![CDATA[
 ${1:# account: Account the VPC is related to. 
 # action_policy: Action policy of the rule. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # cidr: CIDR of the rule. 
 # domain: Domain the VPC is related to. 
-# end_port: End port for this rule. Considered if `protocol=tcp' or `protocol=udp'. If not specified, equal 
-# icmp_code: Error code for this icmp message. Considered if `protocol=icmp'. 
-# icmp_type: Type of the icmp message being sent. Considered if `protocol=icmp'. 
+# end_port: End port for this rule. Considered if 
+# icmp_code: Error code for this icmp message. Considered if 
+# icmp_type: Type of the icmp message being sent. Considered 
 # network_acl: (required) Name of the network ACL. 
 # poll_async: Poll async jobs until job has finished. 
 # project: Name of the project the VPC is related to. 
 # protocol: Protocol of the rule 
-# protocol_number: Protocol number from 1 to 256 required if `protocol=by_number'. 
+# protocol_number: Protocol number from 1 to 256 required if 
 # rule_position: (required) CIDR of the rule. 
-# start_port: Start port for this rule. Considered if `protocol=tcp' or `protocol=udp'. 
+# start_port: Start port for this rule. Considered if 
 # state: State of the network ACL rule. 
-# tags: List of tags. Tags are a list of dictionaries having keys `key' and `value'. If you want to delete all 
+# tags: List of tags. Tags are a list of dictionaries 
 # traffic_type: Traffic type of the rule. 
 # vpc: (required) VPC the network ACL is related to. 
-# zone: Name of the zone the VPC related to. If not set, default zone is used. 
+# zone: Name of the zone the VPC related to. If not set, 
 }- name: ${2:Name for cs_network_acl_rule module.}
   cs_network_acl_rule:
 ${3:   ${4:account}: ${5:"#"}}

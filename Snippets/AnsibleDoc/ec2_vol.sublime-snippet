@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# delete_on_termination: When set to "yes", the volume will be deleted upon instance termination. 
-# device_name: device id to override device mapping. Assumes /dev/sdf for Linux/UNIX and /dev/xvdf for Windows. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# delete_on_termination: When set to "yes", the volume will be deleted 
+# device_name: device id to override device mapping. Assumes 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # encrypted: Enable encryption at rest for this volume. 
-# id: volume id if you wish to attach an existing volume (requires instance) or remove an existing volume 
-# instance: instance ID if you wish to attach the volume. Since 1.9 you can set to None to detach. 
-# iops: the provisioned IOPs you want to associate with this volume (integer). 
+# id: volume id if you wish to attach an existing 
+# instance: instance ID if you wish to attach the volume. 
+# iops: the provisioned IOPs you want to associate with 
 # kms_key_id: Specify the id of the KMS key to use. 
-# name: volume Name tag if you wish to attach an existing volume (requires instance) 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# name: volume Name tag if you wish to attach an 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # snapshot: snapshot ID on which to base the volume 
-# state: whether to ensure the volume is present or absent, or to list existing volumes (The `list' option was 
-# tags: tag:value pairs to add to the volume after creation 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# state: whether to ensure the volume is present or 
+# tags: tag:value pairs to add to the volume after 
+# validate_certs: When set to "no", SSL certificates will not be 
 # volume_size: size of volume (in GB) to create. 
-# volume_type: Type of EBS volume; standard (magnetic), gp2 (SSD), io1 (Provisioned IOPS), st1 (Throughput Optimized 
-# zone: zone in which to create the volume, if unset uses the zone the instance is in (if set) 
+# volume_type: Type of EBS volume; standard (magnetic), gp2 
+# zone: zone in which to create the volume, if unset 
 }- name: ${2:Name for ec2_vol module.}
   ec2_vol:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -37,7 +37,7 @@ ${30:   ${31:kms_key_id}: ${32:"#"}}
 ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:profile}: ${38:"#"}}
 ${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:http}: ${44:"#"}}
+${42:   ${43:}: ${44:"#"}}
 ${45:   ${46:security_token}: ${47:"#"}}
 ${48:   ${49:snapshot}: ${50:"#"}}
 ${51:   ${52:state}: ${53:"#"}}

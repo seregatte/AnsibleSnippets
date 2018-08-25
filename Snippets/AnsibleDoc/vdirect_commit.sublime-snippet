@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# apply: If `no', apply action will not be performed. 
+# devices: (required) List of Radware Alteon device names 
+# save: If `no', save action will not be performed. 
+# sync: If `no', sync action will not be performed. 
+# vdirect_http_port: vDirect server HTTP port number, may be set as 
+# vdirect_https_port: vDirect server HTTPS port number, may be set as 
+# vdirect_ip: (required) Primary vDirect server IP address, 
+# vdirect_password: (required) vDirect server password, may be set 
+# vdirect_secondary_ip: Secondary vDirect server IP address, may be set 
+# vdirect_timeout: Amount of time to wait for async operation 
+# vdirect_use_ssl: If `no', an HTTP connection will be used instead 
+# vdirect_user: (required) vDirect server username, may be set 
+# vdirect_validate_certs: If `no', SSL certificates will not be validated, 
+# vdirect_wait: Wait for async operation to complete, may be set 
+}- name: ${2:Name for vdirect_commit module.}
+  vdirect_commit:
+${3:   ${4:apply}: ${5:"#"}}
+${6:   ${7:devices}: ${8:"#"}}
+${9:   ${10:save}: ${11:"#"}}
+${12:   ${13:sync}: ${14:"#"}}
+${15:   ${16:vdirect_http_port}: ${17:"#"}}
+${18:   ${19:vdirect_https_port}: ${20:"#"}}
+${21:   ${22:vdirect_ip}: ${23:"#"}}
+${24:   ${25:vdirect_password}: ${26:"#"}}
+${27:   ${28:vdirect_secondary_ip}: ${29:"#"}}
+${30:   ${31:vdirect_timeout}: ${32:"#"}}
+${33:   ${34:vdirect_use_ssl}: ${35:"#"}}
+${36:   ${37:vdirect_user}: ${38:"#"}}
+${39:   ${40:vdirect_validate_certs}: ${41:"#"}}
+${42:   ${43:vdirect_wait}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>vdirect_commit</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the instance is related to. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # domain: Domain the instance is related to. 
 # ip_address: IP address to be used for the nic. 
 # network: (required) Name of the network. 
@@ -15,7 +15,7 @@ ${1:# account: Account the instance is related to.
 # state: State of the nic. 
 # vm: (required) Name of instance. 
 # vpc: Name of the VPC the `vm' is related to. 
-# zone: Name of the zone in which the instance is deployed in. If not set, default zone is used. 
+# zone: Name of the zone in which the instance is 
 }- name: ${2:Name for cs_instance_nic module.}
   cs_instance_nic:
 ${3:   ${4:account}: ${5:"#"}}

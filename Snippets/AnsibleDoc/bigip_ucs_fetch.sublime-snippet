@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# backup: Create a backup file including the timestamp 
+# create_on_missing: Creates the UCS based on the value of `src' if 
+# dest: (required) A directory to save the UCS file 
+# encryption_password: Password to use to encrypt the UCS file if 
+# fail_on_missing: Make the module fail if the UCS file on the 
+# force: If `no', the file will only be transferred if 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# src: The name of the UCS file to create on the remote 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for bigip_ucs_fetch module.}
+  bigip_ucs_fetch:
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:create_on_missing}: ${8:"#"}}
+${9:   ${10:dest}: ${11:"#"}}
+${12:   ${13:encryption_password}: ${14:"#"}}
+${15:   ${16:fail_on_missing}: ${17:"#"}}
+${18:   ${19:force}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:server}: ${29:"#"}}
+${30:   ${31:server_port}: ${32:"#"}}
+${33:   ${34:src}: ${35:"#"}}
+${36:   ${37:user}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>bigip_ucs_fetch</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

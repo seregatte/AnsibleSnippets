@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_pass: Specifies the password to use if required to enter privileged mode on the remote device.  If `authorize' 
-# authorize: Instructs the module to enter privileged mode on the remote device before sending any commands.  If not 
-# config: The module, by default, will connect to the remote device and retrieve the current running-config to use 
-# http: The `http' argument controls the operating state of the HTTP transport protocol when eAPI is present in 
-# http_port: Configures the HTTP port that will listen for connections when the HTTP transport protocol is enabled. 
-# https: The `https' argument controls the operating state of the HTTPS transport protocol when eAPI is present 
-# https_port: Configures the HTTP port that will listen for connections when the HTTP transport protocol is enabled. 
-# local_http: The `local_http' argument controls the operating state of the local HTTP transport protocol when eAPI is 
-# local_http_port: Configures the HTTP port that will listen for connections when the HTTP transport protocol is enabled. 
-# provider: A dict object containing connection details. 
-# socket: The `socket' argument controls the operating state of the UNIX Domain Socket used to receive eAPI 
-# state: The `state' argument controls the operational state of eAPI on the remote device.  When this argument is 
-# vrf: The `vrf' argument will configure eAPI to listen for connections in the specified VRF.  By default, eAPI 
+${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# config: The module, by default, will connect to the 
+# http: The `http' argument controls the operating state 
+# http_port: Configures the HTTP port that will listen for 
+# https: The `https' argument controls the operating 
+# https_port: Configures the HTTP port that will listen for 
+# local_http: The `local_http' argument controls the operating 
+# local_http_port: Configures the HTTP port that will listen for 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# socket: The `socket' argument controls the operating 
+# state: The `state' argument controls the operational 
+# vrf: The `vrf' argument will configure eAPI to listen 
 }- name: ${2:Name for eos_eapi module.}
   eos_eapi:
 ${3:   ${4:auth_pass}: ${5:"#"}}

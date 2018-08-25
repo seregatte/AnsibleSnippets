@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# interval: interval for checking commit job 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
 # sync: if commit should be synchronous 
 # timeout: timeout for commit job 
-# username: username for authentication 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_commit module.}
   panos_commit:
 ${3:   ${4:interval}: ${5:"#"}}

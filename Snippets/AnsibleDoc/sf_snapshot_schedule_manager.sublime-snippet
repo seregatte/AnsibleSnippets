@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# hostname: (required) The hostname or IP address of the SolidFire cluster. 
+${1:# hostname: (required) The hostname or IP address of the 
 # name: (required) Name for the snapshot schedule. 
 # password: (required) Password for the specified user. 
 # paused: Pause / Resume a schedule. 
 # recurring: Should the schedule recur? 
-# retention: Retention period for the snapshot. Format is 'HH:mm:ss'. 
-# schedule_id: The schedule ID for the schedule that you want to update or delete. 
+# retention: Retention period for the snapshot. Format is 
+# schedule_id: The schedule ID for the schedule that you want 
 # snapshot_name: Name for the created snapshots. 
-# starting_date: Starting date for the schedule. Required when `state=present'. Please use two '-' in the above format, 
-# state: (required) Whether the specified schedule should exist or not. 
+# starting_date: Starting date for the schedule. Required when 
+# state: (required) Whether the specified schedule should 
 # time_interval_days: Time interval in days. 
 # time_interval_hours: Time interval in hours. 
 # time_interval_minutes: Time interval in minutes. 
-# username: (required) Please ensure that the user has the adequate permissions. For more information, please read 
-# volumes: Volume IDs that you want to set the snapshot schedule for. At least 1 volume ID is required for creating 
+# username: (required) Please ensure that the user has the 
+# volumes: Volume IDs that you want to set the snapshot 
 }- name: ${2:Name for sf_snapshot_schedule_manager module.}
   sf_snapshot_schedule_manager:
 ${3:   ${4:hostname}: ${5:"#"}}

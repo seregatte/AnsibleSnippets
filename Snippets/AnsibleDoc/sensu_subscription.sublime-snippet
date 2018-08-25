@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# backup: Create a backup file (if yes), including the timestamp information so you can get the original file back 
+${1:# backup: Create a backup file (if yes), including the 
 # name: (required) The name of the channel 
 # path: Path to the subscriptions json file 
-# state: Whether the machine should subscribe or unsubscribe from the channel 
+# state: Whether the machine should subscribe or 
 }- name: ${2:Name for sensu_subscription module.}
   sensu_subscription:
 ${3:   ${4:backup}: ${5:"#"}}

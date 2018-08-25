@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# allocation_id: The id of the elastic IP allocation. If this is not passed and the eip_address is not passed. An EIP is 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# client_token: Optional unique token to be used during create to ensure idempotency. When specifying this option, 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# eip_address: The elastic IP address of the EIP you want attached to this NAT Gateway. If this is not passed and the 
-# if_exist_do_not_create: if a NAT Gateway exists already in the subnet_id, then do not create a new one. 
-# nat_gateway_id: The id AWS dynamically allocates to the NAT Gateway on creation. This is required when the absent option 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# release_eip: Deallocate the EIP from the VPC. Option is only valid with the absent state. You should use this with 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# allocation_id: The id of the elastic IP allocation. If this is 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# client_token: Optional unique token to be used during create 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# eip_address: The elastic IP address of the EIP you want 
+# if_exist_do_not_create: if a NAT Gateway exists already in the 
+# nat_gateway_id: The id AWS dynamically allocates to the NAT 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# release_eip: Deallocate the EIP from the VPC. Option is only 
+# security_token: AWS STS security token. If not set then the 
 # state: Ensure NAT Gateway is present or absent. 
-# subnet_id: The id of the subnet to create the NAT Gateway in. This is required with the present option. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# subnet_id: The id of the subnet to create the NAT Gateway 
+# validate_certs: When set to "no", SSL certificates will not be 
 # wait: Wait for operation to complete before returning. 
-# wait_timeout: How many seconds to wait for an operation to complete before timing out. 
+# wait_timeout: How many seconds to wait for an operation to 
 }- name: ${2:Name for ec2_vpc_nat_gateway module.}
   ec2_vpc_nat_gateway:
 ${3:   ${4:allocation_id}: ${5:"#"}}
@@ -30,7 +30,7 @@ ${21:   ${22:if_exist_do_not_create}: ${23:"#"}}
 ${24:   ${25:nat_gateway_id}: ${26:"#"}}
 ${27:   ${28:profile}: ${29:"#"}}
 ${30:   ${31:region}: ${32:"#"}}
-${33:   ${34:http}: ${35:"#"}}
+${33:   ${34:}: ${35:"#"}}
 ${36:   ${37:release_eip}: ${38:"#"}}
 ${39:   ${40:security_token}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}

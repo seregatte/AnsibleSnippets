@@ -2,40 +2,31 @@
 <content><![CDATA[
 ${1:# ack: Match on the ACK bit. 
 # action: Action of the ACE. 
-# dest: Destination ip and mask using IP/MASK notation and supports the keyword 'any'. 
-# dest_port1: Port/protocol and also first (lower) port when using range operand. 
+# dest: Destination ip and mask using IP/MASK notation 
+# dest_port1: Port/protocol and also first (lower) port when 
 # dest_port2: Second (end) port when using range operand. 
-# dest_port_op: Destination port operands such as eq, neq, gt, lt, range. 
+# dest_port_op: Destination port operands such as eq, neq, gt, 
 # dscp: Match packets with given dscp value. 
 # established: Match established connections. 
 # fin: Match on the FIN bit. 
 # fragments: Check non-initial fragments. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
 # log: Log matches against this entry. 
-# name: (required) Case sensitive name of the access list (ACL). 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
+# name: (required) Case sensitive name of the access 
 # precedence: Match packets with given precedence. 
-# proto: Port number or protocol (as supported by the switch). 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
+# proto: Port number or protocol (as supported by the 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # psh: Match on the PSH bit. 
-# remark: If action is set to remark, this is the description. 
+# remark: If action is set to remark, this is the 
 # rst: Match on the RST bit. 
 # seq: Sequence number of the entry (ACE). 
-# src: Source ip and mask using IP/MASK notation and supports keyword 'any'. 
-# src_port1: Port/protocol and also first (lower) port when using range operand. 
+# src: Source ip and mask using IP/MASK notation and 
+# src_port1: Port/protocol and also first (lower) port when 
 # src_port2: Second (end) port when using range operand. 
-# src_port_op: Source port operands such as eq, neq, gt, lt, range. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+# src_port_op: Source port operands such as eq, neq, gt, lt, 
 # state: Specify desired state of the resource. 
 # syn: Match on the SYN bit. 
-# time: Name of time-range to apply. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
+# time_range: Name of time-range to apply. 
 # urg: Match on the URG bit. 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
 }- name: ${2:Name for nxos_acl module.}
   nxos_acl:
 ${3:   ${4:ack}: ${5:"#"}}
@@ -48,38 +39,29 @@ ${21:   ${22:dscp}: ${23:"#"}}
 ${24:   ${25:established}: ${26:"#"}}
 ${27:   ${28:fin}: ${29:"#"}}
 ${30:   ${31:fragments}: ${32:"#"}}
-${33:   ${34:host}: ${35:"#"}}
-${36:   ${37:log}: ${38:"#"}}
-${39:   ${40:name}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:port}: ${47:"#"}}
-${48:   ${49:precedence}: ${50:"#"}}
-${51:   ${52:proto}: ${53:"#"}}
-${54:   ${55:provider}: ${56:"#"}}
-${57:   ${58:psh}: ${59:"#"}}
-${60:   ${61:remark}: ${62:"#"}}
-${63:   ${64:rst}: ${65:"#"}}
-${66:   ${67:seq}: ${68:"#"}}
-${69:   ${70:src}: ${71:"#"}}
-${72:   ${73:src_port1}: ${74:"#"}}
-${75:   ${76:src_port2}: ${77:"#"}}
-${78:   ${79:src_port_op}: ${80:"#"}}
-${81:   ${82:ssh_keyfile}: ${83:"#"}}
-${84:   ${85:state}: ${86:"#"}}
-${87:   ${88:syn}: ${89:"#"}}
-${90:   ${91:time}: ${92:"#"}}
-${93:   ${94:timeout}: ${95:"#"}}
-${96:   ${97:transport}: ${98:"#"}}
-${99:   ${100:urg}: ${101:"#"}}
-${102:   ${103:use_ssl}: ${104:"#"}}
-${105:   ${106:username}: ${107:"#"}}
-${108:   ${109:validate_certs}: ${110:"#"}}
-${111:${112:   become: ${113:true}} 
-${114:   become_method: ${115:su}} 
-${116:   become_user: ${117:nobody}} 
-${118:   become_flags: ${119:"-s /bin/sh"}}} 
-${120:   when: ${121:variable is defined}} 
-${122:   with_items: ${123:array}} 
+${33:   ${34:log}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:precedence}: ${41:"#"}}
+${42:   ${43:proto}: ${44:"#"}}
+${45:   ${46:provider}: ${47:"#"}}
+${48:   ${49:psh}: ${50:"#"}}
+${51:   ${52:remark}: ${53:"#"}}
+${54:   ${55:rst}: ${56:"#"}}
+${57:   ${58:seq}: ${59:"#"}}
+${60:   ${61:src}: ${62:"#"}}
+${63:   ${64:src_port1}: ${65:"#"}}
+${66:   ${67:src_port2}: ${68:"#"}}
+${69:   ${70:src_port_op}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:syn}: ${77:"#"}}
+${78:   ${79:time_range}: ${80:"#"}}
+${81:   ${82:urg}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>nxos_acl</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

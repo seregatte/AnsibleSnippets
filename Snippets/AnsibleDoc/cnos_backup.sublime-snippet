@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# config: (required) This specifies what type of configuration will be backed up. The choices are the running or 
-# device: (required) This specifies the type of device where the method is executed. The choices 
-# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
-# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
-# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
-# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
-# protocol: (required) This refers to the protocol used by the network device to interact with the remote server to 
-# rcpath: (required) This specifies the full file path where the configuration file will be copied on the remote 
-# rcserverip: (required) -This specifies the IP Address of the remote server to where the configuration will be backed 
-# serverpassword: (required) Specify the password for the server relating to the protocol used. 
-# serverusername: (required) Specify the username for the server relating to the protocol used. 
-# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
+${1:# config: (required) This specifies what type of 
+# device: (required) This specifies the type of device 
+# enable: Configures the password used to enter Global 
+# host: (required) This is the variable used to search 
+# outputfile: (required) This specifies the file path where 
+# password: (required) Configures the password used to 
+# protocol: (required) This refers to the protocol used by 
+# rcpath: (required) This specifies the full file path 
+# rcserverip: (required) -This specifies the IP Address of the 
+# serverpassword: (required) Specify the password for the server 
+# serverusername: (required) Specify the username for the server 
+# username: (required) Configures the username used to 
 }- name: ${2:Name for cnos_backup module.}
   cnos_backup:
 ${3:   ${4:config}: ${5:"#"}}

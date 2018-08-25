@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
 ${1:# aggregate: List of Interfaces definitions. 
-# delay: Time in seconds to wait before checking for the operational state on remote device. This wait is 
+# delay: Time in seconds to wait before checking for the 
 # description: Description of Interface. 
 # duplex: Interface link status 
 # enabled: Configure interface link status. 
 # mtu: Maximum size of transmit packet. 
 # name: (required) Name of the Interface. 
-# purge: Purge Interfaces not defined in the aggregate parameter. This applies only for logical interface. 
-# rx_rate: Receiver rate in bits per second (bps). 
+# purge: Purge Interfaces not defined in the aggregate 
+# rx_rate: Receiver rate in bits per second (bps). This is 
 # speed: Interface link speed. 
-# state: State of the Interface configuration, `up' indicates present and operationally up and `down' indicates 
-# tx_rate: Transmit rate in bits per second (bps). 
+# state: State of the Interface configuration, `up' 
+# tx_rate: Transmit rate in bits per second (bps). This is 
 }- name: ${2:Name for net_interface module.}
   net_interface:
 ${3:   ${4:aggregate}: ${5:"#"}}

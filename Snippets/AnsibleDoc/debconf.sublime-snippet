@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Name of package to configure. 
-# question: A debconf configuration setting 
-# unseen: Do not set 'seen' flag when pre-seeding 
-# value: Value to set the configuration to 
-# vtype: The type of the value supplied. `seen' was added in 2.2. 
+# question: A debconf configuration setting. 
+# unseen: Do not set 'seen' flag when pre-seeding. 
+# value: Value to set the configuration to. 
+# vtype: The type of the value supplied. `seen' was added 
 }- name: ${2:Name for debconf module.}
   debconf:
 ${3:   ${4:name}: ${5:"#"}}

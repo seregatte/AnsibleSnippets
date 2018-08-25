@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# auto_import_keys: Automatically import the gpg signing key of the new or changed repository. Has an effect only if state 
+${1:# auto_import_keys: Automatically import the gpg signing key of the 
 # autorefresh: Enable autorefresh of the repository. 
 # description: A description of the repository 
-# disable_gpg_check: Whether to disable GPG signature checking of all packages. Has an effect only if state is `present'. 
+# disable_gpg_check: Whether to disable GPG signature checking of all 
 # enabled: Set repository to enabled (or disabled). 
-# name: A name for the repository. Not required when adding repofiles. 
-# overwrite_multiple: Overwrite multiple repository entries, if repositories with both name and URL already exist. 
-# priority: Set priority of repository. Packages will always be installed from the repository with the smallest 
-# repo: URI of the repository or .repo file. Required when state=present. 
-# runrefresh: Refresh the package list of the given repository. Can be used with repo=* to refresh all repositories. 
+# name: A name for the repository. Not required when 
+# overwrite_multiple: Overwrite multiple repository entries, if 
+# priority: Set priority of repository. Packages will always 
+# repo: URI of the repository or .repo file. Required 
+# runrefresh: Refresh the package list of the given 
 # state: A source string state. 
 }- name: ${2:Name for zypper_repository module.}
   zypper_repository:

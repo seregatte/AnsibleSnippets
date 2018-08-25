@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# args: Additional arguments for the executable defined in `src'. 
-# description: Description for the shortcut. This is usually shown when hoovering the icon. 
-# dest: (required) Destination file for the shortcuting file. File name should have a `.lnk' or `.url' 
-# directory: Working directory for executable defined in `src'. 
-# hotkey: Key combination for the shortcut. 
-# icon: Icon used for the shortcut. File name should have a `.ico' extension. The file name is followed by a 
-# src: Executable or URL the shortcut points to. The executable needs to be in your PATH, or has to be an 
-# state: When `present', creates or updates the shortcut.  When `absent', removes the shortcut if it exists. 
-# windowstyle: Influences how the application is displayed when it is launched. 
+${1:# args: Additional arguments for the executable defined 
+# description: Description for the shortcut. This is usually 
+# dest: (required) Destination file for the shortcuting 
+# directory: Working directory for executable defined in 
+# hotkey: Key combination for the shortcut. This is a 
+# icon: Icon used for the shortcut. File name should 
+# src: Executable or URL the shortcut points to. The 
+# state: When `absent', removes the shortcut if it 
+# windowstyle: Influences how the application is displayed when 
 }- name: ${2:Name for win_shortcut module.}
   win_shortcut:
 ${3:   ${4:args}: ${5:"#"}}

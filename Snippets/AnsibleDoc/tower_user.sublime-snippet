@@ -11,7 +11,7 @@ ${1:# auditor: User is a system wide auditor.
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 # username: (required) The username of the user. 
 }- name: ${2:Name for tower_user module.}
   tower_user:

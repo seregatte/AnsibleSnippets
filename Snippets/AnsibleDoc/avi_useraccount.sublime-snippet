@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# controller: IP address or hostname of the controller. The 
+# old_password: Old password for update password or default 
+# password: Password of Avi user in Avi controller. The 
+# tenant: Name of tenant used for all Avi API calls and 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
+# username: Username used for accessing Avi controller. The 
+}- name: ${2:Name for avi_useraccount module.}
+  avi_useraccount:
+${3:   ${4:api_context}: ${5:"#"}}
+${6:   ${7:api_version}: ${8:"#"}}
+${9:   ${10:avi_credentials}: ${11:"#"}}
+${12:   ${13:controller}: ${14:"#"}}
+${15:   ${16:old_password}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:tenant}: ${23:"#"}}
+${24:   ${25:tenant_uuid}: ${26:"#"}}
+${27:   ${28:username}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>avi_useraccount</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

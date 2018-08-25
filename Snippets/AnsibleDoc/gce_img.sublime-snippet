@@ -2,11 +2,11 @@
 <content><![CDATA[
 ${1:# description: an optional description 
 # family: an optional family name 
-# name: (required) the name of the image to create or delete 
-# pem_file: path to the pem file associated with the service account email 
+# name: (required) the name of the image to create or 
+# pem_file: path to the pem file associated with the service 
 # project_id: your GCE project ID 
 # service_account_email: service account email 
-# source: the source disk or the Google Cloud Storage URI to create the image from 
+# source: the source disk or the Google Cloud Storage URI 
 # state: desired state of the image 
 # timeout: timeout for the operation 
 # zone: the zone of the disk specified by source 

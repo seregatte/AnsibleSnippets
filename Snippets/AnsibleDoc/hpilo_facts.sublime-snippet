@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# host: (required) The HP iLO hostname/address that is linked to the physical system. 
-# login: The login name to authenticate to the HP iLO interface. 
-# password: The password to authenticate to the HP iLO interface. 
+${1:# host: (required) The HP iLO hostname/address that is 
+# login: The login name to authenticate to the HP iLO 
+# password: The password to authenticate to the HP iLO 
 # ssl_version: Change the ssl_version used. 
 }- name: ${2:Name for hpilo_facts module.}
   hpilo_facts:

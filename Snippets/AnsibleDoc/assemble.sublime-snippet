@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
-# backup: Create a backup file (if `yes'), including the timestamp information so you can get the original file 
-# decrypt: This option controls the autodecryption of source files using vault. 
+${1:# attributes: Attributes the file or directory should have. To 
+# backup: Create a backup file (if `yes'), including the 
+# decrypt: This option controls the autodecryption of 
 # delimiter: A delimiter to separate the file contents. 
-# dest: (required) A file to create using the concatenation of all of the source files. 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
-# ignore_hidden: A boolean that controls if files that start with a '.' will be included or not. 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# regexp: Assemble files only if `regex' matches the filename. If not set, all files are assembled. All "\" 
-# remote_src: If False, it will search for src at originating/master machine, if True it will go to the remote/target 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# src: (required) An already existing directory full of source files. 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# validate: The validation command to run before copying into place.  The path to the file to validate is passed in 
+# dest: (required) A file to create using the 
+# group: Name of the group that should own the 
+# ignore_hidden: A boolean that controls if files that start with 
+# mode: Mode the file or directory should be. For those 
+# owner: Name of the user that should own the 
+# regexp: Assemble files only if `regex' matches the 
+# remote_src: If False, it will search for src at 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# src: (required) An already existing directory full of 
+# unsafe_writes: Normally this module uses atomic operations to 
+# validate: The validation command to run before copying 
 }- name: ${2:Name for assemble module.}
   assemble:
 ${3:   ${4:attributes}: ${5:"#"}}

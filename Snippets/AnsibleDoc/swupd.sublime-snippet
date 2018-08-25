@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# contenturl: URL pointing to the contents of available bundles. If not specified, the contents are retrieved from 
-# format: The format suffix for version file downloads. For example [1,2,3,staging,etc]. If not specified, the 
-# manifest: The manifest contains information about the bundles at certaion version of the OS. Specify a Manifest 
+${1:# contenturl: URL pointing to the contents of available 
+# format: The format suffix for version file downloads. 
+# manifest: The manifest contains information about the 
 # name: Name of the (I)bundle to install or remove. 
-# state: Indicates the desired (I)bundle state. `present' ensures the bundle is installed while `absent' ensures 
+# state: Indicates the desired (I)bundle state. `present' 
 # update: Updates the OS to the latest version. 
 # url: Overrides both `contenturl' and `versionurl'. 
 # verify: Verify content for OS version. 

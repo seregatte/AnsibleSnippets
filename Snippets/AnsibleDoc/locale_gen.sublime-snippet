@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) Name and encoding of the locale, such as "en_GB.UTF-8". 
+${1:# name: (required) Name and encoding of the locale, such 
 # state: Whether the locale shall be present. 
 }- name: ${2:Name for locale_gen module.}
   locale_gen:

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of L3 interfaces definitions 
+# ipv4: IPv4 of the L3 interface. 
+# ipv6: IPv6 of the L3 interface (not supported for 
+# name: Name of the L3 interface. 
+# purge: Purge L3 interfaces not defined in the 
+# state: State of the L3 interface configuration. 
+}- name: ${2:Name for onyx_l3_interface module.}
+  onyx_l3_interface:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:ipv4}: ${8:"#"}}
+${9:   ${10:ipv6}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:purge}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>onyx_l3_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

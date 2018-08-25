@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# check_id: an ID for the service check, defaults to the check name, ignored if part of a service definition. 
-# check_name: a name for the service check, defaults to the check id. required if standalone, ignored if part of 
+${1:# check_id: an ID for the service check, defaults to the 
+# check_name: a name for the service check, defaults to the 
 # host: host of the consul agent defaults to localhost 
-# http: checks can be registered with an http endpoint. This means that consul will check that the http endpoint 
-# interval: the interval at which the service check will be run. This is a number with a s or m suffix to signify 
+# http: checks can be registered with an http endpoint. 
+# interval: the interval at which the service check will be 
 # notes: Notes to attach to check when registering it. 
 # port: the port on which the consul agent is running 
-# scheme: the protocol scheme on which the consul agent is running 
-# script: the script/command that will be run periodically to check the health of the service. Scripts require an 
-# service_address: the address to advertise that the service will be listening on. This value will be passed as the 
-# service_id: the ID for the service, must be unique per node, defaults to the service name if the service name is 
-# service_name: Unique name for the service on a node, must be unique per node, required if registering a service. May 
-# service_port: the port on which the service is listening. Can optionally be supplied for registration of a service, 
-# state: (required) register or deregister the consul service, defaults to present 
-# tags: a list of tags that will be attached to the service registration. 
-# timeout: A custom HTTP check timeout. The consul default is 10 seconds. Similar to the interval this is a number 
-# token: the token key indentifying an ACL rule set. May be required to register services. 
-# ttl: checks can be registered with a ttl instead of a script and interval this means that the service will 
-# validate_certs: whether to verify the tls certificate of the consul agent 
+# scheme: the protocol scheme on which the consul agent is 
+# script: the script/command that will be run periodically 
+# service_address: the address to advertise that the service will 
+# service_id: the ID for the service, must be unique per node, 
+# service_name: Unique name for the service on a node, must be 
+# service_port: the port on which the service is listening. Can 
+# state: (required) register or deregister the consul 
+# tags: a list of tags that will be attached to the 
+# timeout: A custom HTTP check timeout. The consul default 
+# token: the token key indentifying an ACL rule set. May 
+# ttl: checks can be registered with a ttl instead of a 
+# validate_certs: whether to verify the tls certificate of the 
 }- name: ${2:Name for consul module.}
   consul:
 ${3:   ${4:check_id}: ${5:"#"}}

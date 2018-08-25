@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# content: Datastructure of the Logical Device to create. The data can be in YAML / JSON or directly a variable. 
-# id: AOS Id of the Logical Device to manage (can't be used to create a new Logical Device), Only one of 
-# name: Name of the Logical Device to manage. Only one of `name', `id' or `content' can be set. 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Logical Device (present or not). 
+${1:# content: Datastructure of the Logical Device to create. 
+# id: AOS Id of the Logical Device to manage (can't be 
+# name: Name of the Logical Device to manage. Only one 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
 }- name: ${2:Name for aos_logical_device module.}
   aos_logical_device:
 ${3:   ${4:content}: ${5:"#"}}

@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# oauth_token: DigitalOcean OAuth token. There are several 
+# snapshot_id: To retrieve information about a snapshot, please 
+# snapshot_type: Specifies the type of snapshot facts to be 
+# timeout: The timeout in seconds used for polling 
+# validate_certs: If set to `no', the SSL certificates will not be 
+}- name: ${2:Name for digital_ocean_snapshot_facts module.}
+  digital_ocean_snapshot_facts:
+${3:   ${4:oauth_token}: ${5:"#"}}
+${6:   ${7:snapshot_id}: ${8:"#"}}
+${9:   ${10:snapshot_type}: ${11:"#"}}
+${12:   ${13:timeout}: ${14:"#"}}
+${15:   ${16:validate_certs}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>digital_ocean_snapshot_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

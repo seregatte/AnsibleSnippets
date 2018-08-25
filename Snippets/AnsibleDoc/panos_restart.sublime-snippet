@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# ip_address: (required) IP address (or hostname) of PAN-OS device 
-# password: (required) password for authentication 
-# username: username for authentication 
+${1:# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_restart module.}
   panos_restart:
 ${3:   ${4:ip_address}: ${5:"#"}}

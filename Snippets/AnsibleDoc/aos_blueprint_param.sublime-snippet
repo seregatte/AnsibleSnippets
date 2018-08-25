@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# blueprint: (required) Blueprint Name or Id as defined in AOS. 
-# get_param_list: Get the complete list of supported parameters for this blueprint and the description of those 
-# name: Name of blueprint parameter, as defined by AOS design template. You can use the option `get_param_list' 
-# param_map: Defines the aos-pyez collection that will is used to map the user-defined item name into the AOS unique 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Indicate what is the expected state of the Blueprint Parameter (present or not). 
-# value: Blueprint parameter value.  This value may be transformed by using the `param_map' field; used when the 
+${1:# blueprint: (required) Blueprint Name or Id as defined in 
+# get_param_list: Get the complete list of supported parameters 
+# name: Name of blueprint parameter, as defined by AOS 
+# param_map: Defines the aos-pyez collection that will is 
+# session: (required) An existing AOS session as obtained 
+# state: Indicate what is the expected state of the 
+# value: Blueprint parameter value.  This value may be 
 }- name: ${2:Name for aos_blueprint_param module.}
   aos_blueprint_param:
 ${3:   ${4:blueprint}: ${5:"#"}}

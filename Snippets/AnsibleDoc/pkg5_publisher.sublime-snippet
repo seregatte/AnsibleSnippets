@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# enabled: Is the repository enabled or disabled? 
-# mirror: A path or URL to the repository mirror. Multiple values may be provided. 
+# mirror: A path or URL to the repository mirror. Multiple 
 # name: (required) The publisher's name. 
-# origin: A path or URL to the repository. Multiple values may be provided. 
-# state: Whether to ensure that a publisher is present or absent. 
-# sticky: Packages installed from a sticky repository can only receive updates from that repository. 
+# origin: A path or URL to the repository. Multiple values 
+# state: Whether to ensure that a publisher is present or 
+# sticky: Packages installed from a sticky repository can 
 }- name: ${2:Name for pkg5_publisher module.}
   pkg5_publisher:
 ${3:   ${4:enabled}: ${5:"#"}}

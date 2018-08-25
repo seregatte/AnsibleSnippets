@@ -1,113 +1,95 @@
 <snippet>
 <content><![CDATA[
-${1:# asn: (required) BGP autonomous system number. Valid values are String, Integer in ASPLAIN or ASDOT notation. 
-# bestpath_always_compare_med: Enable/Disable MED comparison on paths from different autonomous systems. 
-# bestpath_aspath_multipath_relax: Enable/Disable load sharing across the providers with different (but equal-length) AS paths. 
-# bestpath_compare_routerid: Enable/Disable comparison of router IDs for identical eBGP paths. 
-# bestpath_cost_community_ignore: Enable/Disable Ignores the cost community for BGP best-path calculations. 
-# bestpath_med_confed: Enable/Disable enforcement of bestpath to do a MED comparison only between paths originated within a 
-# bestpath_med_missing_as_worst: Enable/Disable assigns the value of infinity to received routes that do not carry the MED attribute, 
-# bestpath_med_non_deterministic: Enable/Disable deterministic selection of the best MED pat from among the paths from the same autonomous 
+${1:# asn: (required) BGP autonomous system number. Valid 
+# bestpath_always_compare_med: Enable/Disable MED comparison on paths from 
+# bestpath_aspath_multipath_relax: Enable/Disable load sharing across the providers 
+# bestpath_compare_neighborid: Enable/Disable neighborid. Use this when more 
+# bestpath_compare_routerid: Enable/Disable comparison of router IDs for 
+# bestpath_cost_community_ignore: Enable/Disable Ignores the cost community for 
+# bestpath_med_confed: Enable/Disable enforcement of bestpath to do a 
+# bestpath_med_missing_as_worst: Enable/Disable assigns the value of infinity to 
+# bestpath_med_non_deterministic: Enable/Disable deterministic selection of the 
 # cluster_id: Route Reflector Cluster-ID. 
 # confederation_id: Routing domain confederation AS. 
 # confederation_peers: AS confederation parameters. 
-# disable_policy_batching: Enable/Disable the batching evaluation of prefix advertisement to all peers. 
-# disable_policy_batching_ipv4_prefix_list: Enable/Disable the batching evaluation of prefix advertisements to all peers with prefix list. 
-# disable_policy_batching_ipv6_prefix_list: Enable/Disable the batching evaluation of prefix advertisements to all peers with prefix list. 
-# enforce_first_as: Enable/Disable enforces the neighbor autonomous system to be the first AS number listed in the AS path 
+# disable_policy_batching: Enable/Disable the batching evaluation of prefix 
+# disable_policy_batching_ipv4_prefix_list: Enable/Disable the batching evaluation of prefix 
+# disable_policy_batching_ipv6_prefix_list: Enable/Disable the batching evaluation of prefix 
+# enforce_first_as: Enable/Disable enforces the neighbor autonomous 
 # event_history_cli: Enable/Disable cli event history buffer. 
 # event_history_detail: Enable/Disable detail event history buffer. 
 # event_history_events: Enable/Disable event history buffer. 
 # event_history_periodic: Enable/Disable periodic event history buffer. 
-# fast_external_fallover: Enable/Disable immediately reset the session if the link to a directly connected BGP peer goes down. 
-# flush_routes: Enable/Disable flush routes in RIB upon controlled restart. On NX-OS, this property is only supported in 
+# fast_external_fallover: Enable/Disable immediately reset the session if 
+# flush_routes: Enable/Disable flush routes in RIB upon 
 # graceful_restart: Enable/Disable graceful restart. 
 # graceful_restart_helper: Enable/Disable graceful restart helper mode. 
-# graceful_restart_timers_restart: Set maximum time for a restart sent to the BGP peer. 
-# graceful_restart_timers_stalepath_time: Set maximum time that BGP keeps the stale routes from the restarting BGP peer. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# isolate: Enable/Disable isolate this router from BGP perspective. 
-# local_as: Local AS number to be used within a VRF instance. 
-# log_neighbor_changes: Enable/Disable message logging for neighbor up/down event. 
-# maxas_limit: Specify Maximum number of AS numbers allowed in the AS-path attribute. Valid values are between 1 and 
-# neighbor_down_fib_accelerate: Enable/Disable handle BGP neighbor down event, due to various reasons. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# reconnect_interval: The BGP reconnection interval for dropped sessions. Valid values are between 1 and 60. 
-# router_id: Router Identifier (ID) of the BGP router VRF instance. 
+# graceful_restart_timers_restart: Set maximum time for a restart sent to the BGP 
+# graceful_restart_timers_stalepath_time: Set maximum time that BGP keeps the stale routes 
+# isolate: Enable/Disable isolate this router from BGP 
+# local_as: Local AS number to be used within a VRF 
+# log_neighbor_changes: Enable/Disable message logging for neighbor 
+# maxas_limit: Specify Maximum number of AS numbers allowed in 
+# neighbor_down_fib_accelerate: Enable/Disable handle BGP neighbor down event, 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# reconnect_interval: The BGP reconnection interval for dropped 
+# router_id: Router Identifier (ID) of the BGP router VRF 
 # shutdown: Administratively shutdown the BGP protocol. 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
-# state: Determines whether the config should be present or not on the device. 
-# suppress_fib_pending: Enable/Disable advertise only routes programmed in hardware to peers. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# timer_bestpath_limit: Specify timeout for the first best path after a restart, in seconds. 
-# timer_bestpath_limit_always: Enable/Disable update-delay-always option. 
+# state: Determines whether the config should be present 
+# suppress_fib_pending: Enable/Disable advertise only routes programmed 
+# timer_bestpath_limit: Specify timeout for the first best path after a 
 # timer_bgp_hold: Set BGP hold timer. 
 # timer_bgp_keepalive: Set BGP keepalive timer. 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
-# vrf: Name of the VRF. The name 'default' is a valid VRF representing the global BGP. 
+# vrf: Name of the VRF. The name 'default' is a valid 
 }- name: ${2:Name for nxos_bgp module.}
   nxos_bgp:
 ${3:   ${4:asn}: ${5:"#"}}
 ${6:   ${7:bestpath_always_compare_med}: ${8:"#"}}
 ${9:   ${10:bestpath_aspath_multipath_relax}: ${11:"#"}}
-${12:   ${13:bestpath_compare_routerid}: ${14:"#"}}
-${15:   ${16:bestpath_cost_community_ignore}: ${17:"#"}}
-${18:   ${19:bestpath_med_confed}: ${20:"#"}}
-${21:   ${22:bestpath_med_missing_as_worst}: ${23:"#"}}
-${24:   ${25:bestpath_med_non_deterministic}: ${26:"#"}}
-${27:   ${28:cluster_id}: ${29:"#"}}
-${30:   ${31:confederation_id}: ${32:"#"}}
-${33:   ${34:confederation_peers}: ${35:"#"}}
-${36:   ${37:disable_policy_batching}: ${38:"#"}}
-${39:   ${40:disable_policy_batching_ipv4_prefix_list}: ${41:"#"}}
-${42:   ${43:disable_policy_batching_ipv6_prefix_list}: ${44:"#"}}
-${45:   ${46:enforce_first_as}: ${47:"#"}}
-${48:   ${49:event_history_cli}: ${50:"#"}}
-${51:   ${52:event_history_detail}: ${53:"#"}}
-${54:   ${55:event_history_events}: ${56:"#"}}
-${57:   ${58:event_history_periodic}: ${59:"#"}}
-${60:   ${61:fast_external_fallover}: ${62:"#"}}
-${63:   ${64:flush_routes}: ${65:"#"}}
-${66:   ${67:graceful_restart}: ${68:"#"}}
-${69:   ${70:graceful_restart_helper}: ${71:"#"}}
-${72:   ${73:graceful_restart_timers_restart}: ${74:"#"}}
-${75:   ${76:graceful_restart_timers_stalepath_time}: ${77:"#"}}
-${78:   ${79:host}: ${80:"#"}}
+${12:   ${13:bestpath_compare_neighborid}: ${14:"#"}}
+${15:   ${16:bestpath_compare_routerid}: ${17:"#"}}
+${18:   ${19:bestpath_cost_community_ignore}: ${20:"#"}}
+${21:   ${22:bestpath_med_confed}: ${23:"#"}}
+${24:   ${25:bestpath_med_missing_as_worst}: ${26:"#"}}
+${27:   ${28:bestpath_med_non_deterministic}: ${29:"#"}}
+${30:   ${31:cluster_id}: ${32:"#"}}
+${33:   ${34:confederation_id}: ${35:"#"}}
+${36:   ${37:confederation_peers}: ${38:"#"}}
+${39:   ${40:disable_policy_batching}: ${41:"#"}}
+${42:   ${43:disable_policy_batching_ipv4_prefix_list}: ${44:"#"}}
+${45:   ${46:disable_policy_batching_ipv6_prefix_list}: ${47:"#"}}
+${48:   ${49:enforce_first_as}: ${50:"#"}}
+${51:   ${52:event_history_cli}: ${53:"#"}}
+${54:   ${55:event_history_detail}: ${56:"#"}}
+${57:   ${58:event_history_events}: ${59:"#"}}
+${60:   ${61:event_history_periodic}: ${62:"#"}}
+${63:   ${64:fast_external_fallover}: ${65:"#"}}
+${66:   ${67:flush_routes}: ${68:"#"}}
+${69:   ${70:graceful_restart}: ${71:"#"}}
+${72:   ${73:graceful_restart_helper}: ${74:"#"}}
+${75:   ${76:graceful_restart_timers_restart}: ${77:"#"}}
+${78:   ${79:graceful_restart_timers_stalepath_time}: ${80:"#"}}
 ${81:   ${82:isolate}: ${83:"#"}}
 ${84:   ${85:local_as}: ${86:"#"}}
 ${87:   ${88:log_neighbor_changes}: ${89:"#"}}
 ${90:   ${91:maxas_limit}: ${92:"#"}}
 ${93:   ${94:neighbor_down_fib_accelerate}: ${95:"#"}}
-${96:   ${97:password}: ${98:"#"}}
-${99:   ${100:port}: ${101:"#"}}
-${102:   ${103:provider}: ${104:"#"}}
-${105:   ${106:reconnect_interval}: ${107:"#"}}
-${108:   ${109:router_id}: ${110:"#"}}
-${111:   ${112:shutdown}: ${113:"#"}}
-${114:   ${115:ssh_keyfile}: ${116:"#"}}
-${117:   ${118:state}: ${119:"#"}}
-${120:   ${121:suppress_fib_pending}: ${122:"#"}}
-${123:   ${124:timeout}: ${125:"#"}}
-${126:   ${127:timer_bestpath_limit}: ${128:"#"}}
-${129:   ${130:timer_bestpath_limit_always}: ${131:"#"}}
-${132:   ${133:timer_bgp_hold}: ${134:"#"}}
-${135:   ${136:timer_bgp_keepalive}: ${137:"#"}}
-${138:   ${139:transport}: ${140:"#"}}
-${141:   ${142:use_ssl}: ${143:"#"}}
-${144:   ${145:username}: ${146:"#"}}
-${147:   ${148:validate_certs}: ${149:"#"}}
-${150:   ${151:vrf}: ${152:"#"}}
-${153:${154:   become: ${155:true}} 
-${156:   become_method: ${157:su}} 
-${158:   become_user: ${159:nobody}} 
-${160:   become_flags: ${161:"-s /bin/sh"}}} 
-${162:   when: ${163:variable is defined}} 
-${164:   with_items: ${165:array}} 
+${96:   ${97:provider}: ${98:"#"}}
+${99:   ${100:reconnect_interval}: ${101:"#"}}
+${102:   ${103:router_id}: ${104:"#"}}
+${105:   ${106:shutdown}: ${107:"#"}}
+${108:   ${109:state}: ${110:"#"}}
+${111:   ${112:suppress_fib_pending}: ${113:"#"}}
+${114:   ${115:timer_bestpath_limit}: ${116:"#"}}
+${117:   ${118:timer_bgp_hold}: ${119:"#"}}
+${120:   ${121:timer_bgp_keepalive}: ${122:"#"}}
+${123:   ${124:vrf}: ${125:"#"}}
+${126:${127:   become: ${128:true}} 
+${129:   become_method: ${130:su}} 
+${131:   become_user: ${132:nobody}} 
+${133:   become_flags: ${134:"-s /bin/sh"}}} 
+${135:   when: ${136:variable is defined}} 
+${137:   with_items: ${138:array}} 
 ]]></content>
 	<tabTrigger>nxos_bgp</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

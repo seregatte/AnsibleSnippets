@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_mode: Specifies authentication algorithm of DLDP. 
-# auth_pwd: Specifies authentication password. The value is a string of 1 to 16 case-sensitive plaintexts or 
+# auth_pwd: Specifies authentication password. The value is 
 # enable: Set global DLDP enable state. 
-# reset: Specify whether reset DLDP state of disabled interfaces. 
-# time_internal: Specifies the interval for sending Advertisement packets. The value is an integer ranging from 1 to 100, 
+# reset: Specify whether reset DLDP state of disabled 
+# time_internal: Specifies the interval for sending Advertisement 
 # work_mode: Set global DLDP work-mode. 
 }- name: ${2:Name for ce_dldp module.}
   ce_dldp:

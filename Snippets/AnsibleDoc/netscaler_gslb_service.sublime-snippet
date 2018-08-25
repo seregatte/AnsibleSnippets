@@ -1,38 +1,38 @@
 <snippet>
 <content><![CDATA[
 ${1:# appflowlog: Enable logging appflow flow information. 
-# cip: In the request that is forwarded to the GSLB service, insert a header that stores the client's IP 
-# cipheader: Name for the HTTP header that stores the client's IP address. Used with the Client IP option. If client 
-# clttimeout: Idle time, in seconds, after which a client connection is terminated. Applicable if connection proxy 
-# cnameentry: Canonical name of the GSLB service. Used in CNAME-based GSLB. Minimum length = 1 
-# comment: Any comments that you might want to associate with the GSLB service. 
-# downstateflush: Flush all active transactions associated with the GSLB service when its state transitions from UP to 
-# hashid: Unique hash identifier for the GSLB service, used by hash based load balancing methods. Minimum value = 
+# cip: In the request that is forwarded to the GSLB 
+# cipheader: Name for the HTTP header that stores the 
+# clttimeout: Idle time, in seconds, after which a client 
+# cnameentry: Canonical name of the GSLB service. Used in 
+# comment: Any comments that you might want to associate 
+# downstateflush: Flush all active transactions associated with 
+# hashid: Unique hash identifier for the GSLB service, 
 # healthmonitor: Monitor the health of the GSLB service. 
-# ipaddress: IP address for the GSLB service. Should represent a load balancing, content switching, or VPN virtual 
-# maxaaausers: Maximum number of SSL VPN users that can be logged on concurrently to the VPN virtual server that is 
-# maxbandwidth: Integer specifying the maximum bandwidth allowed for the service. A GSLB service whose bandwidth reaches 
-# maxclient: The maximum number of open connections that the service can support at any given time. A GSLB service 
+# ipaddress: IP address for the GSLB service. Should 
+# maxaaausers: Maximum number of SSL VPN users that can be 
+# maxbandwidth: Integer specifying the maximum bandwidth allowed 
+# maxclient: The maximum number of open connections that the 
 # monitor_bindings: Bind monitors to this gslb service 
-# monthreshold: Monitoring threshold value for the GSLB service. If the sum of the weights of the monitors that are 
-# nitro_pass: (required) The password with which to authenticate to the netscaler node. 
-# nitro_protocol: Which protocol to use when accessing the nitro API objects. 
-# nitro_timeout: Time in seconds until a timeout error is thrown when establishing a new session with Netscaler 
-# nitro_user: (required) The username with which to authenticate to the netscaler node. 
-# nsip: (required) The ip address of the netscaler appliance where the nitro API calls will be made. The port 
-# port: Port on which the load balancing entity represented by this GSLB service listens. Minimum value = 1 
-# publicip: The public IP address that a NAT device translates to the GSLB service's private IP address. Optional. 
-# publicport: The public port associated with the GSLB service's public IP address. The port is mapped to the 
-# save_config: If true the module will save the configuration on the netscaler node if it makes any changes. The module 
-# servername: Name of the server hosting the GSLB service. Minimum length = 1 
-# servicename: Name for the GSLB service. Must begin with an ASCII alphanumeric or underscore `_' character, and must 
-# contain: ', period `.', 
+# monthreshold: Monitoring threshold value for the GSLB service. 
+# nitro_pass: (required) The password with which to 
+# nitro_protocol: Which protocol to use when accessing the nitro 
+# nitro_timeout: Time in seconds until a timeout error is thrown 
+# nitro_user: (required) The username with which to 
+# nsip: (required) The ip address of the netscaler 
+# port: Port on which the load balancing entity 
+# publicip: The public IP address that a NAT device 
+# publicport: The public port associated with the GSLB 
+# save_config: If true the module will save the configuration 
+# servername: Name of the server hosting the GSLB service. 
+# servicename: Name for the GSLB service. Must begin with an 
+# hash: ', period 
 # servicetype: Type of service to create. 
-# sitename: Name of the GSLB site to which the service belongs. Minimum length = 1 
-# sitepersistence: Use cookie-based site persistence. Applicable only to `HTTP' and `SSL' GSLB services. 
-# siteprefix: The site's prefix string. When the service is bound to a GSLB virtual server, a GSLB site domain is 
-# state: The state of the resource being configured by the module on the netscaler node. When present the 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# sitename: Name of the GSLB site to which the service 
+# sitepersistence: Use cookie-based site persistence. Applicable 
+# siteprefix: The site's prefix string. When the service is 
+# state: The state of the resource being configured by 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_gslb_service module.}
   netscaler_gslb_service:
 ${3:   ${4:appflowlog}: ${5:"#"}}
@@ -61,7 +61,7 @@ ${69:   ${70:publicport}: ${71:"#"}}
 ${72:   ${73:save_config}: ${74:"#"}}
 ${75:   ${76:servername}: ${77:"#"}}
 ${78:   ${79:servicename}: ${80:"#"}}
-${81:   ${82:contain}: ${83:"#"}}
+${81:   ${82:hash}: ${83:"#"}}
 ${84:   ${85:servicetype}: ${86:"#"}}
 ${87:   ${88:sitename}: ${89:"#"}}
 ${90:   ${91:sitepersistence}: ${92:"#"}}

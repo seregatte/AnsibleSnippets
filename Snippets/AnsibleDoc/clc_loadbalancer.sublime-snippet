@@ -2,13 +2,13 @@
 <content><![CDATA[
 ${1:# alias: (required) The alias of your CLC Account 
 # description: A description for the loadbalancer 
-# location: (required) The location of the datacenter where the load balancer resides in 
+# location: (required) The location of the datacenter where 
 # method: -The balancing method for the load balancer pool 
 # name: (required) The name of the loadbalancer 
-# nodes: A list of nodes that needs to be added to the load balancer pool 
+# nodes: A list of nodes that needs to be added to the 
 # persistence: The persistence method for the load balancer 
-# port: Port to configure on the public-facing side of the load balancer pool 
-# state: Whether to create or delete the load balancer pool 
+# port: Port to configure on the public-facing side of 
+# state: Whether to create or delete the load balancer 
 # status: The status of the loadbalancer 
 }- name: ${2:Name for clc_loadbalancer module.}
   clc_loadbalancer:

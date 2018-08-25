@@ -1,43 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
+${1:# asn: the BGP ASN of the amazon side 
 # name: name of the vgw to be created or deleted 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
-# state: present to ensure resource is created. absent to remove resource 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# state: present to ensure resource is created. absent to 
 # tags: dictionary of resource tags 
 # type: type of the virtual gateway to be created 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
 # vpc_id: the vpc-id of a vpc to attach or detach 
 # vpn_gateway_id: vpn gateway id of an existing virtual gateway 
-# wait_timeout: number of seconds to wait for status during vpc attach and detach 
+# wait_timeout: number of seconds to wait for status during vpc 
 }- name: ${2:Name for ec2_vpc_vgw module.}
   ec2_vpc_vgw:
-${3:   ${4:aws_access_key}: ${5:"#"}}
-${6:   ${7:aws_secret_key}: ${8:"#"}}
-${9:   ${10:ec2_url}: ${11:"#"}}
-${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:profile}: ${17:"#"}}
-${18:   ${19:region}: ${20:"#"}}
-${21:   ${22:http}: ${23:"#"}}
-${24:   ${25:security_token}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:tags}: ${32:"#"}}
-${33:   ${34:type}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:vpc_id}: ${41:"#"}}
-${42:   ${43:vpn_gateway_id}: ${44:"#"}}
-${45:   ${46:wait_timeout}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${3:   ${4:asn}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:region}: ${11:"#"}}
+${12:   ${13:}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:tags}: ${20:"#"}}
+${21:   ${22:type}: ${23:"#"}}
+${24:   ${25:vpc_id}: ${26:"#"}}
+${27:   ${28:vpn_gateway_id}: ${29:"#"}}
+${30:   ${31:wait_timeout}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_vgw</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

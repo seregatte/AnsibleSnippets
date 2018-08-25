@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
 # group: the group you want the host to be a member of 
-# host_type_index: (required) The index that maps to host type you wish to create. It is recommended to use the 
-# name: (required) If the host doesn't yet exist, the label to assign at creation time. If the hosts already 
-# ports: a list of of dictionaries of host ports you wish to associate with the newly created host 
-# ssid: (required) The ID of the array to manage. This value must be unique for each array. 
+# host_type_index: (required) The index that maps to host type you 
+# name: (required) If the host doesn't yet exist, the 
+# ports: a list of of dictionaries of host ports you wish 
+# ssid: (required) The ID of the array to manage. This 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_host module.}
   netapp_e_host:

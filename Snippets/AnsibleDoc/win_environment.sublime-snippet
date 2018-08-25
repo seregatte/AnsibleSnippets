@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# level: (required) The level at which to set the environment variable. Use 'machine' to set for all users. Use 
-# name: (required) The name of the environment variable 
-# state: present to ensure environment variable is set, or absent to ensure it is removed 
-# value: The value to store in the environment variable. Can be omitted for state=absent 
+${1:# level: (required) The level at which to set the 
+# name: (required) The name of the environment variable. 
+# state: Set to `present' to ensure environment variable 
+# value: The value to store in the environment variable. 
 }- name: ${2:Name for win_environment module.}
   win_environment:
 ${3:   ${4:level}: ${5:"#"}}

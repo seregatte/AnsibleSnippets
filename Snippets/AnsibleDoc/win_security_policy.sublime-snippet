@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# key: (required) The ini key of the section or policy name to modify. The module will return an error if this 
-# section: (required) The ini section the key exists in. If the section does not exist then the module will return 
-# value: (required) The value for the ini key or policy name. If the key takes in a boolean value then 0 = False 
+${1:# key: (required) The ini key of the section or policy 
+# section: (required) The ini section the key exists in. If 
+# value: (required) The value for the ini key or policy 
 }- name: ${2:Name for win_security_policy module.}
   win_security_policy:
 ${3:   ${4:key}: ${5:"#"}}

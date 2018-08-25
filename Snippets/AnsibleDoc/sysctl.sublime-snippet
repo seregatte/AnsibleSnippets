@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# ignoreerrors: Use this option to ignore errors about unknown keys. 
-# name: (required) The dot-separated path (aka `key') specifying the sysctl variable. 
-# reload: If `yes', performs a `/sbin/sysctl -p' if the `sysctl_file' is updated. If `no', does not reload 
-# state: Whether the entry should be present or absent in the sysctl file. 
-# sysctl_file: Specifies the absolute path to `sysctl.conf', if not `/etc/sysctl.conf'. 
-# sysctl_set: Verify token value with the sysctl command and set with -w if necessary 
+${1:# ignoreerrors: Use this option to ignore errors about unknown 
+# name: (required) The dot-separated path (aka `key') 
+# reload: If `yes', performs a `/sbin/sysctl -p' if the 
+# state: Whether the entry should be present or absent in 
+# sysctl_file: Specifies the absolute path to `sysctl.conf', if 
+# sysctl_set: Verify token value with the sysctl command and 
 # value: Desired value of the sysctl key. 
 }- name: ${2:Name for sysctl module.}
   sysctl:

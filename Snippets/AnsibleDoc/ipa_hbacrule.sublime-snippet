@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# cn: (required) Canonical name. Can not be changed as it is the unique identifier. 
+${1:# cn: (required) Canonical name. Can not be changed as 
 # description: Description 
-# host: List of host names to assign. If an empty list is passed all hosts will be removed from the rule. If 
+# host: List of host names to assign. If an empty list 
 # hostcategory: Host category 
-# hostgroup: List of hostgroup names to assign. If an empty list is passed all hostgroups will be removed. from the 
-# ipa_host: IP or hostname of IPA server 
-# ipa_pass: (required) Password of administrative user 
-# ipa_port: Port of IPA server 
-# ipa_prot: Protocol used by IPA server 
-# ipa_user: Administrative account used on IPA server 
-# service: List of service names to assign. If an empty list is passed all services will be removed from the rule. 
+# hostgroup: List of hostgroup names to assign. If an empty 
+# ipa_host: IP or hostname of IPA server. If the value is 
+# ipa_pass: (required) Password of administrative user. If 
+# ipa_port: Port of FreeIPA / IPA server. If the value is 
+# ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_user: Administrative account used on IPA server. If 
+# service: List of service names to assign. If an empty 
 # servicecategory: Service category 
-# servicegroup: List of service group names to assign. If an empty list is passed all assigned service groups will be 
-# sourcehost: List of source host names to assign. If an empty list if passed all assigned source hosts will be 
+# servicegroup: List of service group names to assign. If an 
+# sourcehost: List of source host names to assign. If an empty 
 # sourcehostcategory: Source host category 
-# sourcehostgroup: List of source host group names to assign. If an empty list if passed all assigned source host groups 
+# sourcehostgroup: List of source host group names to assign. If an 
 # state: State to ensure 
-# user: List of user names to assign. If an empty list if passed all assigned users will be removed from the 
+# user: List of user names to assign. If an empty list 
 # usercategory: User category 
-# usergroup: List of user group names to assign. If an empty list if passed all assigned user groups will be removed 
-# validate_certs: This only applies if `ipa_prot' is `https'. If set to `no', the SSL certificates will not be validated. 
+# usergroup: List of user group names to assign. If an empty 
+# validate_certs: This only applies if `ipa_prot' is `https'. If 
 }- name: ${2:Name for ipa_hbacrule module.}
   ipa_hbacrule:
 ${3:   ${4:cn}: ${5:"#"}}

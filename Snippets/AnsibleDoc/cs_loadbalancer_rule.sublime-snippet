@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the rule is related to. 
-# algorithm: Load balancer algorithm Required when using `state=present'. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# cidr: CIDR (full notation) to be used for firewall rule if required. 
+# algorithm: Load balancer algorithm Required when using 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# cidr: CIDR (full notation) to be used for firewall 
 # description: The description of the load balancer rule. 
 # domain: Domain the rule is related to. 
-# ip_address: (required) Public IP address from where the network traffic will be load balanced from. 
+# ip_address: (required) Public IP address from where the 
 # name: (required) The name of the load balancer rule. 
-# open_firewall: Whether the firewall rule for public port should be created, while creating the new rule. Use 
-# private_port: The private port of the private ip address/virtual machine where the network traffic will be load 
-# project: Name of the project the load balancer IP address is related to. 
+# open_firewall: Whether the firewall rule for public port should 
+# private_port: The private port of the private ip 
+# project: Name of the project the load balancer IP address 
 # protocol: The protocol to be used on the load balancer 
-# public_port: (required) The public port from where the network traffic will be load balanced from. Required when 
-# state: (required) State of the rule. 
-# zone: Name of the zone in which the rule should be created. If not set, default zone is used. 
+# public_port: (required) The public port from where the 
+# state: State of the rule. 
+# zone: Name of the zone in which the rule should be 
 }- name: ${2:Name for cs_loadbalancer_rule module.}
   cs_loadbalancer_rule:
 ${3:   ${4:account}: ${5:"#"}}

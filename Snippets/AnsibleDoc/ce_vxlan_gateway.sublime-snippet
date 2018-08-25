@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
 ${1:# arp_direct_route: Enable VLINK direct route on VBDIF interface. 
-# arp_distribute_gateway: Enable the distributed gateway function on VBDIF interface. 
+# arp_distribute_gateway: Enable the distributed gateway function on VBDIF 
 # dfs_all_active: Creates all-active gateways. 
-# dfs_id: Specifies the ID of a DFS group. The value must be 1. 
-# dfs_peer_ip: Configure the IP address of an all-active gateway peer. The value is in dotted decimal notation. 
-# dfs_peer_vpn: Specifies the name of the VPN instance that is associated with all-active gateway peer. The value is a 
-# dfs_source_ip: Specifies the IPv4 address bound to a DFS group. The value is in dotted decimal notation. 
-# dfs_source_vpn: Specifies the name of a VPN instance bound to a DFS group. The value is a string of 1 to 31 case- 
-# dfs_udp_port: Specifies the UDP port number of the DFS group. The value is an integer that ranges from 1025 to 65535. 
-# state: Determines whether the config should be present or not on the device. 
-# vbdif_bind_vpn: Specifies the name of the VPN instance that is associated with the interface. The value is a string of 1 
-# vbdif_mac: Specifies a MAC address for a VBDIF interface. The value is in the format of H-H-H. Each H is a 4-digit 
+# dfs_id: Specifies the ID of a DFS group. The value must 
+# dfs_peer_ip: Configure the IP address of an all-active 
+# dfs_peer_vpn: Specifies the name of the VPN instance that is 
+# dfs_source_ip: Specifies the IPv4 address bound to a DFS group. 
+# dfs_source_vpn: Specifies the name of a VPN instance bound to a 
+# dfs_udp_port: Specifies the UDP port number of the DFS group. 
+# state: Determines whether the config should be present 
+# vbdif_bind_vpn: Specifies the name of the VPN instance that is 
+# vbdif_mac: Specifies a MAC address for a VBDIF interface. 
 # vbdif_name: Full name of VBDIF interface, i.e. Vbdif100. 
-# vpn_instance: Specifies the name of a VPN instance. The value is a string of 1 to 31 case-sensitive characters, spaces 
-# vpn_vni: Specifies a VNI ID. Binds a VXLAN network identifier (VNI) to a virtual private network (VPN) instance. 
+# vpn_instance: Specifies the name of a VPN instance. The value 
+# vpn_vni: Specifies a VNI ID. Binds a VXLAN network 
 }- name: ${2:Name for ce_vxlan_gateway module.}
   ce_vxlan_gateway:
 ${3:   ${4:arp_direct_route}: ${5:"#"}}

@@ -1,37 +1,41 @@
 <snippet>
 <content><![CDATA[
 ${1:# full_name: Full name of the user. 
-# partition_access: Specifies the administrative partition to which the user has access. `partition_access' is required when 
-# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
-# password_credential: Set the users password to this unencrypted value. `password_credential' is required when creating a new 
-# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
-# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
+# partition: Device partition to manage resources on. 
+# partition_access: Specifies the administrative partition to which 
+# password: (required) The password for the user account 
+# password_credential: Set the users password to this unencrypted 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
 # shell: Optionally set the users shell. 
-# state: Whether the account should exist or not, taking action if the state is different from what is stated. 
-# update_password: `always' will allow to update passwords if the user chooses to do so. `on_create' will only set the 
-# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
-# username_credential: (required) Name of the user to create, remove or modify. 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# state: Whether the account should exist or not, taking 
+# update_password: `always' will allow to update passwords if the 
+# user: (required) The username to connect to the BIG-IP 
+# username_credential: (required) Name of the user to create, remove or 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for bigip_user module.}
   bigip_user:
 ${3:   ${4:full_name}: ${5:"#"}}
-${6:   ${7:partition_access}: ${8:"#"}}
-${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:password_credential}: ${14:"#"}}
-${15:   ${16:server}: ${17:"#"}}
-${18:   ${19:server_port}: ${20:"#"}}
-${21:   ${22:shell}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:update_password}: ${29:"#"}}
-${30:   ${31:user}: ${32:"#"}}
-${33:   ${34:username_credential}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${6:   ${7:partition}: ${8:"#"}}
+${9:   ${10:partition_access}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:password_credential}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:server}: ${23:"#"}}
+${24:   ${25:server_port}: ${26:"#"}}
+${27:   ${28:shell}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:update_password}: ${35:"#"}}
+${36:   ${37:user}: ${38:"#"}}
+${39:   ${40:username_credential}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>bigip_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

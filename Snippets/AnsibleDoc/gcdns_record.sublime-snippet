@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# credentials_file: The path to the JSON file associated with the service account email. 
-# overwrite: Whether an attempt to overwrite an existing record should succeed or fail. The behavior of this option 
-# pem_file: The path to the PEM file associated with the service account email. This option is deprecated and may be 
+${1:# credentials_file: The path to the JSON file associated with the 
+# overwrite: Whether an attempt to overwrite an existing 
+# pem_file: The path to the PEM file associated with the 
 # project_id: The Google Cloud Platform project ID to use. 
-# record: (required) The fully-qualified domain name of the resource record. 
-# record_data: The record_data to use for the resource record. `record_data' must be specified if `state' is `present' 
-# service_account_email: The e-mail address for a service account with access to Google Cloud DNS. 
-# state: Whether the given resource record should or should not be present. 
-# ttl: The amount of time in seconds that a resource record will remain cached by a caching resolver. 
+# record: (required) The fully-qualified domain name of 
+# record_data: The record_data to use for the resource record. 
+# service_account_email: The e-mail address for a service account with 
+# state: Whether the given resource record should or 
+# ttl: The amount of time in seconds that a resource 
 # type: (required) The type of resource record to add. 
-# zone: The DNS domain name of the zone (e.g., example.com). One of either `zone' or `zone_id' must be specified 
-# zone_id: The Google Cloud ID of the zone (e.g., example-com). One of either `zone' or `zone_id' must be specified 
+# zone: The DNS domain name of the zone (e.g., 
+# zone_id: The Google Cloud ID of the zone (e.g., example- 
 }- name: ${2:Name for gcdns_record module.}
   gcdns_record:
 ${3:   ${4:credentials_file}: ${5:"#"}}

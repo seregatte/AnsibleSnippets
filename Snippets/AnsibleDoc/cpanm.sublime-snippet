@@ -4,12 +4,12 @@ ${1:# executable: Override the path to the cpanm executable
 # from_path: The local directory from where to install 
 # installdeps: Only install dependencies 
 # locallib: Specify the install base to install modules 
-# mirror: Specifies the base URL for the CPAN mirror to use 
-# mirror_only: Use the mirror's index file instead of the CPAN Meta DB 
-# name: The name of the Perl library to install. You may use the "full distribution path", e.g. 
+# mirror: Specifies the base URL for the CPAN mirror to 
+# mirror_only: Use the mirror's index file instead of the CPAN 
+# name: The name of the Perl library to install. You may 
 # notest: Do not run unit tests 
-# system_lib: Use this if you want to install modules to the system perl include path. You must be root or have 
-# version: minimum version of perl module to consider acceptable 
+# system_lib: Use this if you want to install modules to the 
+# version: minimum version of perl module to consider 
 }- name: ${2:Name for cpanm module.}
   cpanm:
 ${3:   ${4:executable}: ${5:"#"}}

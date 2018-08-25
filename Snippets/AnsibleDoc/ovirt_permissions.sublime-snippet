@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# auth: (required) Dictionary with values needed to create HTTP/HTTPS connection to oVirt: 
-# authz_name: (required) Authorization provider of the user/group. In previous versions of oVirt/RHV known as domain. 
-# fetch_nested: If `True' the module will fetch additional data from the API. It will fetch IDs of the VMs disks, 
-# group_name: Name of the group to manage. Note that if group don't exist in the system this module will fail, you 
-# namespace: Namespace of the authorization provider, where user/group resides. 
-# nested_attributes: Specifies list of the attributes which should be fetched from the API. This parameter apply only when 
-# object_id: ID of the object where the permissions should be managed. 
-# object_name: Name of the object where the permissions should be managed. 
-# object_type: The object where the permissions should be managed. 
-# poll_interval: Number of the seconds the module waits until another poll request on entity status is sent. 
-# role: Name of the role to be assigned to user/group on specific object. 
+${1:# auth: (required) Dictionary with values needed to 
+# authz_name: (required) Authorization provider of the 
+# fetch_nested: If `True' the module will fetch additional data 
+# group_name: Name of the group to manage. Note that if group 
+# namespace: Namespace of the authorization provider, where 
+# nested_attributes: Specifies list of the attributes which should be 
+# object_id: ID of the object where the permissions should be 
+# object_name: Name of the object where the permissions should 
+# object_type: The object where the permissions should be 
+# poll_interval: Number of the seconds the module waits until 
+# role: Name of the role to be assigned to user/group on 
 # state: Should the permission be present/absent. 
-# timeout: The amount of time in seconds the module should wait for the instance to get into desired state. 
-# user_name: Username of the user to manage. In most LDAPs it's `uid' of the user, but in Active Directory you must 
-# wait: `True' if the module should wait for the entity to get into desired state. 
+# timeout: The amount of time in seconds the module should 
+# user_name: Username of the user to manage. In most LDAPs 
+# wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_permissions module.}
   ovirt_permissions:
 ${3:   ${4:auth}: ${5:"#"}}

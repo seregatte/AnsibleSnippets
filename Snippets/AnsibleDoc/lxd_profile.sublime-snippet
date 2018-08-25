@@ -1,39 +1,41 @@
 <snippet>
 <content><![CDATA[
 ${1:# cert_file: The client certificate file path. 
-# config: The config for the container (e.g. {"limits.memory": "4GB"}). See 
-# https: patch-3 If the 
-# api: get-19 are different, they this module tries to apply the 
-# devices: The devices for the profile (e.g. {"rootfs": {"path": "/dev/kvm", "type": "unix-char"}). See 
-# https: patch-3 
+# config: The config for the container (e.g. 
+# api: patch-3 If 
+# api: get-19 are 
+# description: Description of the profile. 
+# devices: The devices for the profile (e.g. {"rootfs": 
+# api: patch-3 
 # key_file: The client certificate key file path. 
 # name: (required) Name of a profile. 
-# new_name: A new name of a profile. If this parameter is specified a profile will be renamed to this name. See 
-# https: post-11 
+# new_name: A new name of a profile. If this parameter is 
+# api: post-11 
 # state: Define the state of a profile. 
-# trust_password: The client trusted password. You need to set this password on the LXD server before running this module 
-# url: The unix domain socket path or the https URL for the LXD server. 
+# trust_password: The client trusted password. You need to set 
+# url: The unix domain socket path or the https URL for 
 }- name: ${2:Name for lxd_profile module.}
   lxd_profile:
 ${3:   ${4:cert_file}: ${5:"#"}}
 ${6:   ${7:config}: ${8:"#"}}
-${9:   ${10:https}: ${11:"#"}}
+${9:   ${10:api}: ${11:"#"}}
 ${12:   ${13:api}: ${14:"#"}}
-${15:   ${16:devices}: ${17:"#"}}
-${18:   ${19:https}: ${20:"#"}}
-${21:   ${22:key_file}: ${23:"#"}}
-${24:   ${25:name}: ${26:"#"}}
-${27:   ${28:new_name}: ${29:"#"}}
-${30:   ${31:https}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:trust_password}: ${38:"#"}}
-${39:   ${40:url}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:devices}: ${20:"#"}}
+${21:   ${22:api}: ${23:"#"}}
+${24:   ${25:key_file}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:new_name}: ${32:"#"}}
+${33:   ${34:api}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:trust_password}: ${41:"#"}}
+${42:   ${43:url}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>lxd_profile</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

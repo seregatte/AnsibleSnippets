@@ -1,30 +1,30 @@
 <snippet>
 <content><![CDATA[
-${1:# pn_bfd: Specify if you want BFD protocol support for fault detection. 
+${1:# pn_bfd: Specify if you want BFD protocol support for 
 # pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch(es) to run the cli on. 
 # pn_cliusername: Provide login username if user is not root. 
-# pn_default_originate: Specify if you want announce default routes to the neighbor or not. 
-# pn_ebgp: Specify a value for external BGP to accept or attempt BGP connections to external peers, not directly 
+# pn_default_originate: Specify if you want announce default routes to 
+# pn_ebgp: Specify a value for external BGP to accept or 
 # pn_holdtime: Specify BGP neighbor holdtime in seconds. 
-# pn_keepalive: Specify BGP neighbor keepalive interval in seconds. 
+# pn_keepalive: Specify BGP neighbor keepalive interval in 
 # pn_max_prefix: Specify the maximum number of prefixes. 
-# pn_max_prefix_warn: Specify if you want a warning message when the maximum number of prefixes is exceeded. 
+# pn_max_prefix_warn: Specify if you want a warning message when the 
 # pn_multiprotocol: Specify a multi-protocol for BGP. 
-# pn_neighbor: Specify a neighbor IP address to use for BGP. Required for vrouter-bgp-add. 
-# pn_next_hop_self: Specify if the next-hop is the same router or not. 
+# pn_neighbor: Specify a neighbor IP address to use for BGP. 
+# pn_next_hop_self: Specify if the next-hop is the same router or 
 # pn_override_capability: Specify if you want to override capability. 
 # pn_password: Specify a password, if desired. 
-# pn_prefix_listin: Specify the prefix list to filter traffic inbound. 
-# pn_prefix_listout: Specify the prefix list to filter traffic outbound. 
-# pn_remote_as: Specify the remote Autonomous System(AS) number. This value is between 1 and 4294967295. Required for 
+# pn_prefix_listin: Specify the prefix list to filter traffic 
+# pn_prefix_listout: Specify the prefix list to filter traffic 
+# pn_remote_as: Specify the remote Autonomous System(AS) number. 
 # pn_route_mapin: Specify inbound route map for neighbor. 
 # pn_route_mapout: Specify outbound route map for neighbor. 
 # pn_route_reflector: Specify if a route reflector client is used. 
-# pn_soft_reconfig: Specify if you want a soft reconfiguration of inbound traffic. 
-# pn_vrouter_name: (required) Specify a name for the vRouter service. 
-# pn_weight: Specify a default weight value between 0 and 65535 for the neighbor routes. 
-# state: (required) State the action to perform. Use 'present' to add bgp, 'absent' to remove bgp and 'update' to 
+# pn_soft_reconfig: Specify if you want a soft reconfiguration of 
+# pn_vrouter_name: (required) Specify a name for the vRouter 
+# pn_weight: Specify a default weight value between 0 and 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_vrouterbgp module.}
   pn_vrouterbgp:
 ${3:   ${4:pn_bfd}: ${5:"#"}}

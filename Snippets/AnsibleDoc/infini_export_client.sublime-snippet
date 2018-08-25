@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# access_mode: Read Write or Read Only Access. 
-# client: (required) Client IP or Range. Ranges can be defined as follows 192.168.0.1-192.168.0.254. 
+# client: (required) Client IP or Range. Ranges can be 
 # export: (required) Name of the export. 
-# no_root_squash: Don't squash root user to anonymous. Will be set to "no" on creation if not specified explicitly. 
+# no_root_squash: Don't squash root user to anonymous. Will be set 
 # password: Infinibox User password. 
-# state: Creates/Modifies client when present and removes when absent. 
+# state: Creates/Modifies client when present and removes 
 # system: (required) Infinibox Hostname or IPv4 Address. 
-# user: Infinibox User username with sufficient priveledges ( see notes ). 
+# user: Infinibox User username with sufficient 
 }- name: ${2:Name for infini_export_client module.}
   infini_export_client:
 ${3:   ${4:access_mode}: ${5:"#"}}

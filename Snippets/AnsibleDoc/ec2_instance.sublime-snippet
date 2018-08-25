@@ -1,0 +1,86 @@
+<snippet>
+<content><![CDATA[
+${1:# availability_zone: Specify an availability zone to use the default 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cpu_credit_specification: For T2 series instances, choose whether to allow 
+# detailed_monitoring: Whether to allow detailed cloudwatch metrics to 
+# ebs_optimized: Whether instance is should use optimized EBS 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# filters: A dict of filters to apply when deciding whether 
+# image: An image to use for the instance. The 
+# image_id: `ami' ID to use for the instance. One of `image' 
+# instance_ids: If you specify one or more instance IDs, only 
+# instance_initiated_shutdown_behavior: Whether to stop or terminate an instance upon 
+# instance_role: The ARN or name of an EC2-enabled instance role 
+# instance_type: Instance type to use for the instance, see http: 
+# key_name: Name of the SSH access key to assign to the 
+# launch_template: The EC2 launch template to base instance 
+# name: The Name tag for the instance. 
+# network: Either a dictionary containing the key 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_tags: Delete any tags not specified in the task that 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_group: A security group ID or name. Mutually exclusive 
+# security_groups: A list of security group IDs or names (strings). 
+# security_token: AWS STS security token. If not set then the 
+# state: Goal state for the instances 
+# tags: A hash/dictionary of tags to add to the new 
+# tenancy: What type of tenancy to allow an instance to 
+# termination_protection: Whether to enable termination protection. This 
+# tower_callback: Preconfigured user-data to enable an instance to 
+# user_data: Opaque blob of data which is made available to 
+# validate_certs: When set to "no", SSL certificates will not be 
+# volumes: A list of block device mappings, by default this 
+# vpc_subnet_id: The subnet ID in which to launch the instance 
+# wait: Whether or not to wait for the desired state 
+# wait_timeout: How long to wait (in seconds) for the instance 
+}- name: ${2:Name for ec2_instance module.}
+  ec2_instance:
+${3:   ${4:availability_zone}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:cpu_credit_specification}: ${14:"#"}}
+${15:   ${16:detailed_monitoring}: ${17:"#"}}
+${18:   ${19:ebs_optimized}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:filters}: ${26:"#"}}
+${27:   ${28:image}: ${29:"#"}}
+${30:   ${31:image_id}: ${32:"#"}}
+${33:   ${34:instance_ids}: ${35:"#"}}
+${36:   ${37:instance_initiated_shutdown_behavior}: ${38:"#"}}
+${39:   ${40:instance_role}: ${41:"#"}}
+${42:   ${43:instance_type}: ${44:"#"}}
+${45:   ${46:key_name}: ${47:"#"}}
+${48:   ${49:launch_template}: ${50:"#"}}
+${51:   ${52:name}: ${53:"#"}}
+${54:   ${55:network}: ${56:"#"}}
+${57:   ${58:profile}: ${59:"#"}}
+${60:   ${61:purge_tags}: ${62:"#"}}
+${63:   ${64:region}: ${65:"#"}}
+${66:   ${67:}: ${68:"#"}}
+${69:   ${70:security_group}: ${71:"#"}}
+${72:   ${73:security_groups}: ${74:"#"}}
+${75:   ${76:security_token}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:tags}: ${83:"#"}}
+${84:   ${85:tenancy}: ${86:"#"}}
+${87:   ${88:termination_protection}: ${89:"#"}}
+${90:   ${91:tower_callback}: ${92:"#"}}
+${93:   ${94:user_data}: ${95:"#"}}
+${96:   ${97:validate_certs}: ${98:"#"}}
+${99:   ${100:volumes}: ${101:"#"}}
+${102:   ${103:vpc_subnet_id}: ${104:"#"}}
+${105:   ${106:wait}: ${107:"#"}}
+${108:   ${109:wait_timeout}: ${110:"#"}}
+${111:${112:   become: ${113:true}} 
+${114:   become_method: ${115:su}} 
+${116:   become_user: ${117:nobody}} 
+${118:   become_flags: ${119:"-s /bin/sh"}}} 
+${120:   when: ${121:variable is defined}} 
+${122:   with_items: ${123:array}} 
+]]></content>
+	<tabTrigger>ec2_instance</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

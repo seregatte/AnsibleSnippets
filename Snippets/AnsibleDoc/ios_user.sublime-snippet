@@ -1,31 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:# aggregate: The set of username objects to be configured on the remote Cisco IOS device. The list entries can either 
-# configured_password: The password to be configured on the Cisco IOS device. The password needs to be provided in clear and it 
-# name: The username to be configured on the Cisco IOS device. This argument accepts a string value and is 
-# nopassword: Defines the username without assigning a password. This will allow the user to login to the system 
-# privilege: The `privilege' argument configures the privilege level of the user when logged into the system. This 
-# purge: Instructs the module to consider the resource definition absolute. It will remove any previously 
-# state: Configures the state of the username definition as it relates to the device operational configuration. 
-# update_password: Since passwords are encrypted in the device running config, this argument will instruct the module when 
-# view: Configures the view for the username in the device running configuration. The argument accepts a string 
+${1:# aggregate: The set of username objects to be configured on 
+# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
+# authorize: *Deprecated* Starting with Ansible 2.5 we 
+# configured_password: The password to be configured on the Cisco IOS 
+# name: The username to be configured on the Cisco IOS 
+# nopassword: Defines the username without assigning a 
+# privilege: The `privilege' argument configures the 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# purge: Instructs the module to consider the resource 
+# state: Configures the state of the username definition 
+# update_password: Since passwords are encrypted in the device 
+# view: Configures the view for the username in the 
 }- name: ${2:Name for ios_user module.}
   ios_user:
 ${3:   ${4:aggregate}: ${5:"#"}}
-${6:   ${7:configured_password}: ${8:"#"}}
-${9:   ${10:name}: ${11:"#"}}
-${12:   ${13:nopassword}: ${14:"#"}}
-${15:   ${16:privilege}: ${17:"#"}}
-${18:   ${19:purge}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:update_password}: ${26:"#"}}
-${27:   ${28:view}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${6:   ${7:auth_pass}: ${8:"#"}}
+${9:   ${10:authorize}: ${11:"#"}}
+${12:   ${13:configured_password}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:nopassword}: ${20:"#"}}
+${21:   ${22:privilege}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:purge}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:update_password}: ${35:"#"}}
+${36:   ${37:view}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>ios_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

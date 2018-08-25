@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# attributes: List of Name/Value pairs in JSON object format. 
-# hostname: (required) The hostname or IP address of the SolidFire cluster. 
-# initiators: List of initiators to include in the volume access group. If unspecified, the access group will start 
-# name: (required) Name of the volume access group. It is not required to be unique, but recommended. 
+# hostname: (required) The hostname or IP address of the 
+# initiators: List of initiators to include in the volume 
+# name: (required) Name of the volume access group. It 
 # password: (required) Password for the specified user. 
-# state: (required) Whether the specified volume access group should exist or not. 
-# username: (required) Please ensure that the user has the adequate permissions. For more information, please read 
-# virtual_network_id: The ID of the SolidFire Virtual Network ID to associate the volume access group with. 
-# virtual_network_tags: The ID of the VLAN Virtual Network Tag to associate the volume access group with. 
-# volume_access_group_id: The ID of the volume access group to modify or delete. 
-# volumes: List of volumes to initially include in the volume access group. If unspecified, the access group will 
+# state: (required) Whether the specified volume access 
+# username: (required) Please ensure that the user has the 
+# virtual_network_id: The ID of the SolidFire Virtual Network ID to 
+# virtual_network_tags: The ID of the VLAN Virtual Network Tag to 
+# volume_access_group_id: The ID of the volume access group to modify or 
+# volumes: List of volumes to initially include in the 
 }- name: ${2:Name for sf_volume_access_group_manager module.}
   sf_volume_access_group_manager:
 ${3:   ${4:attributes}: ${5:"#"}}

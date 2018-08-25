@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# device: (required) This specifies the type of device where the method is executed. The choices 
-# enable: Configures the password used to enter Global Configuration command mode on the switch. If the switch 
-# host: (required) This is the variable used to search the hosts file at /etc/ansible/hosts and identify the IP 
-# outputfile: (required) This specifies the file path where the output of each command execution is saved. Each 
-# password: (required) Configures the password used to authenticate the connection to the remote device. The value 
-# username: (required) Configures the username used to authenticate the connection to the remote device. The value 
-# vlan: (required) This is an overloaded vlan first argument. Usage of this argument can be found is the User 
-# vlan: This is an overloaded vlan second argument. Usage of this argument can be found is the User Guide 
-# vlan: This is an overloaded vlan third argument. Usage of this argument can be found is the User Guide 
-# vlan: This is an overloaded vlan fourth argument. Usage of this argument can be found is the User Guide 
-# vlan: This is an overloaded vlan fifth argument. Usage of this argument can be found is the User Guide 
+${1:# device: (required) This specifies the type of device 
+# enable: Configures the password used to enter Global 
+# host: (required) This is the variable used to search 
+# outputfile: (required) This specifies the file path where 
+# password: (required) Configures the password used to 
+# username: (required) Configures the username used to 
+# vlan: (required) This is an overloaded vlan first 
+# vlan: This is an overloaded vlan second argument. 
+# vlan: This is an overloaded vlan third argument. Usage 
+# vlan: This is an overloaded vlan fourth argument. 
+# vlan: This is an overloaded vlan fifth argument. Usage 
 }- name: ${2:Name for cnos_vlan module.}
   cnos_vlan:
 ${3:   ${4:device}: ${5:"#"}}

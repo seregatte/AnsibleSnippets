@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) Action what the init has to do with this entry. 
+${1:# action: (required) Action what the init has to do with 
 # command: (required) What command has to run. 
-# insertafter: After which inittabline should the new entry inserted. 
+# insertafter: After which inittabline should the new entry 
 # name: (required) Name of the inittab entry. 
 # runlevel: (required) Runlevel of the entry. 
-# state: Whether the entry should be present or absent in the inittab file 
+# state: Whether the entry should be present or absent in 
 }- name: ${2:Name for aix_inittab module.}
   aix_inittab:
 ${3:   ${4:action}: ${5:"#"}}

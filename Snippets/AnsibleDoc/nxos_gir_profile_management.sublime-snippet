@@ -1,43 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# commands: List of commands to be included into the profile. 
-# config: Specify the configuration string to be used for module operations. 
-# host: (required) Specifies the DNS host name or address for connecting to the remote device over the specified 
-# include_defaults: Specify to retrieve or not the complete running configuration for module operations. 
-# mode: (required) Configure the profile as Maintenance or Normal mode. 
-# password: Specifies the password to use to authenticate the connection to the remote device.  This is a common 
-# port: Specifies the port to use when building the connection to the remote device.  This value applies to 
-# provider: Convenience method that allows all `nxos' arguments to be passed as a dict object.  All constraints 
-# ssh_keyfile: Specifies the SSH key to use to authenticate the connection to the remote device.  This argument is only 
+${1:# commands: List of commands to be included into the 
+# mode: (required) Configure the profile as Maintenance 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: Specify desired state of the resource. 
-# timeout: Specifies the timeout in seconds for communicating with the network device for either connecting or 
-# transport: (required) Configures the transport connection to use when connecting to the remote device.  The 
-# use_ssl: Configures the `transport' to use SSL if set to true only when the `transport=nxapi', otherwise this 
-# username: Configures the username to use to authenticate the connection to the remote device.  This value is used 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
 }- name: ${2:Name for nxos_gir_profile_management module.}
   nxos_gir_profile_management:
 ${3:   ${4:commands}: ${5:"#"}}
-${6:   ${7:config}: ${8:"#"}}
-${9:   ${10:host}: ${11:"#"}}
-${12:   ${13:include_defaults}: ${14:"#"}}
-${15:   ${16:mode}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:port}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:ssh_keyfile}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:timeout}: ${35:"#"}}
-${36:   ${37:transport}: ${38:"#"}}
-${39:   ${40:use_ssl}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${6:   ${7:mode}: ${8:"#"}}
+${9:   ${10:provider}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>nxos_gir_profile_management</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

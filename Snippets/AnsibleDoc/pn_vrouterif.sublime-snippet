@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
 ${1:# pn_alias: Specify an alias for the interface. 
-# pn_assignment: Specify the DHCP method for IP address assignment. 
+# pn_assignment: Specify the DHCP method for IP address 
 # pn_clipassword: Provide login password if user is not root. 
 # pn_cliswitch: Target switch to run the cli on. 
 # pn_cliusername: Provide login username if user is not root. 
-# pn_exclusive: Specify if the interface is exclusive to the configuration. Exclusive means that other configurations 
-# pn_interface: Specify if the interface is management, data or span interface. 
-# pn_interface_ip: Specify the IP address of the interface in x.x.x.x/n format. 
+# pn_exclusive: Specify if the interface is exclusive to the 
+# pn_interface: Specify if the interface is management, data or 
+# pn_interface_ip: Specify the IP address of the interface in 
 # pn_l3port: Specify a Layer 3 port for the interface. 
 # pn_nic_enable: Specify if the NIC is enabled or not 
-# pn_nic_str: Specify the type of NIC. Used for vrouter-interface remove/modify. 
-# pn_secondary_macs: Specify a secondary MAC address for the interface. 
-# pn_vlan: Specify the VLAN identifier. This is a value between 1 and 4092. 
-# pn_vrouter_name: (required) Specify the name of the vRouter interface. 
-# pn_vrrp_adv_int: Specify a VRRP advertisement interval in milliseconds. The range is from 30 to 40950 with a default 
-# pn_vrrp_id: Specify the ID for the VRRP interface. The IDs on both vRouters must be the same IS number. 
-# pn_vrrp_priority: Specify the priority for the VRRP interface. This is a value between 1 (lowest) and 255 (highest). 
-# pn_vxlan: Specify the VXLAN identifier. This is a value between 1 and 16777215. 
-# state: (required) State the action to perform. Use 'present' to add vrouter interface, 'absent' to remove 
+# pn_nic_str: Specify the type of NIC. Used for vrouter- 
+# pn_secondary_macs: Specify a secondary MAC address for the 
+# pn_vlan: Specify the VLAN identifier. This is a value 
+# pn_vrouter_name: (required) Specify the name of the vRouter 
+# pn_vrrp_adv_int: Specify a VRRP advertisement interval in 
+# pn_vrrp_id: Specify the ID for the VRRP interface. The IDs 
+# pn_vrrp_priority: Specify the priority for the VRRP interface. 
+# pn_vxlan: Specify the VXLAN identifier. This is a value 
+# state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_vrouterif module.}
   pn_vrouterif:
 ${3:   ${4:pn_alias}: ${5:"#"}}

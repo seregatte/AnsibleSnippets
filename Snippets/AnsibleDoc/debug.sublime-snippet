@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# msg: The customized message that is printed. If omitted, prints a generic message. 
-# var: A variable name to debug.  Mutually exclusive with the 'msg' option. 
-# verbosity: A number that controls when the debug is run, if you set to 3 it will only run debug when -vvv or above 
+${1:# msg: The customized message that is printed. If 
+# var: A variable name to debug.  Mutually exclusive 
+# verbosity: A number that controls when the debug is run, if 
 }- name: ${2:Name for debug module.}
   debug:
 ${3:   ${4:msg}: ${5:"#"}}

@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# immediate: Should this configuration be applied immediately, if set as permanent 
-# interface: The interface you would like to add/remove to/from a zone in firewalld 
-# masquerade: The masquerade setting you would like to enable/disable to/from zones within firewalld 
-# permanent: Should this configuration be in the running firewalld configuration or persist across reboots. As of 
-# port: Name of a port or port range to add/remove to/from firewalld. Must be in the form PORT/PROTOCOL or PORT- 
+${1:# immediate: Should this configuration be applied 
+# interface: The interface you would like to add/remove 
+# masquerade: The masquerade setting you would like to 
+# permanent: Should this configuration be in the running 
+# port: Name of a port or port range to add/remove 
 # rich_rule: Rich rule to add/remove to/from firewalld. 
-# service: Name of a service to add/remove to/from firewalld - service must be listed in output of firewall-cmd 
-# source: The source/network you would like to add/remove to/from firewalld 
-# state: (required) Should this port accept(enabled) or reject(disabled) connections. 
-# timeout: The amount of time the rule should be in effect for when non-permanent. 
-# zone: The firewalld zone to add/remove to/from (NOTE: default zone can be configured per system but "public" 
+# service: Name of a service to add/remove to/from 
+# source: The source/network you would like to add/remove 
+# state: (required) Enable or disable a setting. For 
+# timeout: The amount of time the rule should be in effect 
+# zone: The firewalld zone to add/remove to/from (NOTE: 
 }- name: ${2:Name for firewalld module.}
   firewalld:
 ${3:   ${4:immediate}: ${5:"#"}}

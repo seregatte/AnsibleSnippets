@@ -1,37 +1,47 @@
 <snippet>
 <content><![CDATA[
-${1:# alternate_lb_method: The load balancing mode that the system tries if the `preferred_lb_method' is unsuccessful in picking a 
-# fallback_ip: Specifies the IPv4, or IPv6 address of the server to which the system directs requests when it cannot 
-# fallback_lb_method: The load balancing mode that the system tries if both the `preferred_lb_method' and 
+${1:# alternate_lb_method: The load balancing mode that the system tries if 
+# availability_requirements: Specifies, if you activate more than one health 
+# fallback_ip: Specifies the IPv4, or IPv6 address of the 
+# fallback_lb_method: The load balancing mode that the system tries if 
+# members: Members to assign to the pool. The order of the 
+# monitors: Specifies the health monitors that the system 
 # name: (required) Name of the GTM pool. 
-# password: (required) The password for the user account used to connect to the BIG-IP. This option can be omitted 
-# preferred_lb_method: The load balancing mode that the system tries first. 
-# server: (required) The BIG-IP host. This option can be omitted if the environment variable `F5_SERVER' is set. 
-# server_port: The BIG-IP server port. This option can be omitted if the environment variable `F5_SERVER_PORT' is set. 
-# state: (required) Pool member state. When `present', ensures that the pool is created and enabled. When 
-# type: The type of GTM pool that you want to create. On BIG-IP releases prior to version 12, this parameter is 
-# user: (required) The username to connect to the BIG-IP with. This user must have administrative privileges on 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be used on personally controlled sites 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# preferred_lb_method: The load balancing mode that the system tries 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You can omit this 
+# server_port: The BIG-IP server port. You can omit this option 
+# state: Pool state. When `present', ensures that the 
+# type: The type of GTM pool that you want to create. On 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for bigip_gtm_pool module.}
   bigip_gtm_pool:
 ${3:   ${4:alternate_lb_method}: ${5:"#"}}
-${6:   ${7:fallback_ip}: ${8:"#"}}
-${9:   ${10:fallback_lb_method}: ${11:"#"}}
-${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:preferred_lb_method}: ${20:"#"}}
-${21:   ${22:server}: ${23:"#"}}
-${24:   ${25:server_port}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:type}: ${32:"#"}}
-${33:   ${34:user}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${6:   ${7:availability_requirements}: ${8:"#"}}
+${9:   ${10:fallback_ip}: ${11:"#"}}
+${12:   ${13:fallback_lb_method}: ${14:"#"}}
+${15:   ${16:members}: ${17:"#"}}
+${18:   ${19:monitors}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:partition}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:preferred_lb_method}: ${32:"#"}}
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:server}: ${38:"#"}}
+${39:   ${40:server_port}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:type}: ${47:"#"}}
+${48:   ${49:user}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>bigip_gtm_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

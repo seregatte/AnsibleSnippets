@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# access_token: Big Cloud Fabric access token. If this isn't set then the environment variable `BIGSWITCH_ACCESS_TOKEN' 
+${1:# access_token: Big Cloud Fabric access token. If this isn't set 
 # controller: (required) The controller IP address. 
 # fabric_role: (required) Fabric role of the switch. 
-# leaf_group: The leaf group of the switch if the switch is a leaf. 
+# leaf_group: The leaf group of the switch if the switch is a 
 # mac: (required) The MAC address of the switch. 
 # name: (required) The name of the switch. 
 # state: Whether the switch should be present or absent. 
-# validate_certs: If `false', SSL certificates will not be validated. This should only be used on personally controlled 
+# validate_certs: If `false', SSL certificates will not be 
 }- name: ${2:Name for bcf_switch module.}
   bcf_switch:
 ${3:   ${4:access_token}: ${5:"#"}}

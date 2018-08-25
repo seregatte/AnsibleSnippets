@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# api_token: (required) FlashArray API token for admin privilaged user. 
-# fa_url: (required) FlashArray management IPv4 address or Hostname. 
+${1:# api_token: (required) FlashArray API token for admin 
+# fa_url: (required) FlashArray management IPv4 address or 
 # host: (required) The name of the host. 
-# iqn: List of IQNs of the host if protocol is iscsi. 
-# protocol: Defines the host connection protocol for volumes. 
-# state: Define whether the host should exist or not. When removing host all connected volumes will be 
+# iqn: List of IQNs of the host if protocol is iscsi or 
+# protocol: Defines the host connection protocol for 
+# state: Define whether the host should exist or not. 
 # volume: Volume name to map to the host. 
-# wwns: List of wwns of the host if protocol is fc. 
+# wwns: List of wwns of the host if protocol is fc or 
 }- name: ${2:Name for purefa_host module.}
   purefa_host:
 ${3:   ${4:api_token}: ${5:"#"}}

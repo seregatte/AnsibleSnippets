@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# commit: Commit if changed 
-# create_default_route: Whether or not to add default route with router learned via DHCP. 
+# create_default_route: Whether or not to add default route with router 
 # if_name: (required) Name of the interface to configure. 
-# ip_address: (required) IP address (or hostname) of PAN-OS device being configured. 
-# password: (required) Password credentials to use for auth. 
-# username: Username credentials to use for auth. 
-# zone_name: (required) Name of the zone for the interface. If the zone does not exist it is created but if the zone 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# password: (required) Password for authentication. 
+# username: Username for authentication. 
+# zone_name: (required) Name of the zone for the interface. 
 }- name: ${2:Name for panos_interface module.}
   panos_interface:
 ${3:   ${4:commit}: ${5:"#"}}

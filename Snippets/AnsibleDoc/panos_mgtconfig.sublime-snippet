@@ -3,11 +3,11 @@
 ${1:# commit: commit if changed 
 # dns_server_primary: address of primary DNS server 
 # dns_server_secondary: address of secondary DNS server 
-# ip_address: (required) IP address (or hostname) of PAN-OS device 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
 # panorama_primary: address of primary Panorama server 
 # panorama_secondary: address of secondary Panorama server 
-# password: (required) password for authentication 
-# username: username for authentication 
+# password: (required) Password for authentication. 
+# username: Username for authentication. 
 }- name: ${2:Name for panos_mgtconfig module.}
   panos_mgtconfig:
 ${3:   ${4:commit}: ${5:"#"}}

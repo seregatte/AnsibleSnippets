@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# config: Path to a .json configuration file containing the OneView client configuration. The configuration file 
+${1:# config: Path to a .json configuration file containing 
 # data: (required) List with SAN Manager properties. 
-# state: Indicates the desired state for the Uplink Set resource. - `present' ensures data properties are 
-# validate_etag: When the ETag Validation is enabled, the request will be conditionally processed only if the current 
+# state: Indicates the desired state for the Uplink Set 
+# validate_etag: When the ETag Validation is enabled, the request 
 }- name: ${2:Name for oneview_san_manager module.}
   oneview_san_manager:
 ${3:   ${4:config}: ${5:"#"}}

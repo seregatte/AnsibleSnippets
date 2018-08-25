@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# account_email: The email address associated with this account. 
+# account_key_content: Content of the ACME account RSA or Elliptic 
+# account_key_src: Path to a file containing the ACME account RSA 
+# acme_directory: The ACME directory to use. This is the entry 
+# acme_version: The ACME version of the endpoint. Must be 1 for 
+# agreement: URI to a terms of service document you agree to 
+# chain_dest: If specified, the intermediate certificate will 
+# challenge: The challenge to be performed. 
+# csr: (required) File containing the CSR for the new 
+# data: The data to validate ongoing challenges. This 
+# deactivate_authzs: Deactivate authentication objects (authz) after 
+# dest: The destination file for the certificate. 
+# force: Enforces the execution of the challenge and 
+# fullchain_dest: The destination file for the full chain (i.e. 
+# modify_account: Boolean indicating whether the module should 
+# remaining_days: The number of days the certificate must have 
+# terms_agreed: Boolean indicating whether you agree to the 
+# validate_certs: Whether calls to the ACME directory will 
+}- name: ${2:Name for acme_certificate module.}
+  acme_certificate:
+${3:   ${4:account_email}: ${5:"#"}}
+${6:   ${7:account_key_content}: ${8:"#"}}
+${9:   ${10:account_key_src}: ${11:"#"}}
+${12:   ${13:acme_directory}: ${14:"#"}}
+${15:   ${16:acme_version}: ${17:"#"}}
+${18:   ${19:agreement}: ${20:"#"}}
+${21:   ${22:chain_dest}: ${23:"#"}}
+${24:   ${25:challenge}: ${26:"#"}}
+${27:   ${28:csr}: ${29:"#"}}
+${30:   ${31:data}: ${32:"#"}}
+${33:   ${34:deactivate_authzs}: ${35:"#"}}
+${36:   ${37:dest}: ${38:"#"}}
+${39:   ${40:force}: ${41:"#"}}
+${42:   ${43:fullchain_dest}: ${44:"#"}}
+${45:   ${46:modify_account}: ${47:"#"}}
+${48:   ${49:remaining_days}: ${50:"#"}}
+${51:   ${52:terms_agreed}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>acme_certificate</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

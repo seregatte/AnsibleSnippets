@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# aggregate: The set of username objects to be configured on the remote network device. The list entries can either 
-# configured_password: The password to be configured on the remote network device. The password needs to be provided in clear 
-# name: The username to be configured on the remote network device. This argument accepts a string value and is 
-# nopassword: Defines the username without assigning a password. This will allow the user to login to the system 
-# privilege: The `privilege' argument configures the privilege level of the user when logged into the system. This 
-# purge: Instructs the module to consider the resource definition absolute. It will remove any previously 
-# role: Configures the role for the username in the device running configuration. The argument accepts a string 
-# sshkey: Specifies the SSH public key to configure for the given username. This argument accepts a valid SSH key 
-# state: Configures the state of the username definition as it relates to the device operational configuration. 
-# update_password: Since passwords are encrypted in the device running config, this argument will instruct the module when 
+${1:# aggregate: The set of username objects to be configured on 
+# configured_password: The password to be configured on the remote 
+# name: The username to be configured on the remote 
+# nopassword: Defines the username without assigning a 
+# privilege: The `privilege' argument configures the 
+# purge: Instructs the module to consider the resource 
+# role: Configures the role for the username in the 
+# sshkey: Specifies the SSH public key to configure for 
+# state: Configures the state of the username definition 
+# update_password: Since passwords are encrypted in the device 
 }- name: ${2:Name for net_user module.}
   net_user:
 ${3:   ${4:aggregate}: ${5:"#"}}

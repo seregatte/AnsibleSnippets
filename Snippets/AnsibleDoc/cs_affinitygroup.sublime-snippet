@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the affinity group is related to. 
-# affinty_type: Type of the affinity group. If not specified, first found affinity type is used. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+# affinity_type: Type of the affinity group. If not specified, 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # description: Description of the affinity group. 
 # domain: Domain the affinity group is related to. 
 # name: (required) Name of the affinity group. 
 # poll_async: Poll async jobs until job has finished. 
-# project: Name of the project the affinity group is related to. 
+# project: Name of the project the affinity group is 
 # state: State of the affinity group. 
 }- name: ${2:Name for cs_affinitygroup module.}
   cs_affinitygroup:
 ${3:   ${4:account}: ${5:"#"}}
-${6:   ${7:affinty_type}: ${8:"#"}}
+${6:   ${7:affinity_type}: ${8:"#"}}
 ${9:   ${10:api_http_method}: ${11:"#"}}
 ${12:   ${13:api_key}: ${14:"#"}}
 ${15:   ${16:api_region}: ${17:"#"}}

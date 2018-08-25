@@ -1,27 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# access_logs_enabled: Whether or not to enable access logs. When true, `access_logs_s3_bucket' must be set. 
-# access_logs_s3_bucket: The name of the S3 bucket for the access logs. This attribute is required if access logs in Amazon S3 
-# access_logs_s3_prefix: The prefix for the location in the S3 bucket. If you don't specify a prefix, the access logs are stored 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
-# deletion_protection: Indicates whether deletion protection for the ELB is enabled. 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# idle_timeout: The number of seconds to wait before an idle connection is closed. 
-# listeners: A list of dicts containing listeners to attach to the ELB. See examples for detail of the dict required. 
-# name: (required) The name of the load balancer. This name must be unique within your AWS account, can have a 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# purge_listeners: If yes, existing listeners will be purged from the ELB to match exactly what is defined by `listeners' 
-# purge_tags: If yes, existing tags will be purged from the resource to match exactly what is defined by `tags' 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# scheme: Internet-facing or internal load balancer. An ELB scheme can not be modified after creation. 
-# security_groups: A list of the names or IDs of the security groups to assign to the load balancer. Required if 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+${1:# access_logs_enabled: Whether or not to enable access logs. When true, 
+# access_logs_s3_bucket: The name of the S3 bucket for the access logs. 
+# access_logs_s3_prefix: The prefix for the location in the S3 bucket. If 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# deletion_protection: Indicates whether deletion protection for the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# idle_timeout: The number of seconds to wait before an idle 
+# listeners: A list of dicts containing listeners to attach 
+# name: (required) The name of the load balancer. This 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_listeners: If yes, existing listeners will be purged from 
+# purge_tags: If yes, existing tags will be purged from the 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# scheme: Internet-facing or internal load balancer. An 
+# security_groups: A list of the names or IDs of the security 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) Create or destroy the load balancer. 
-# subnets: A list of the IDs of the subnets to attach to the load balancer. You can specify only one subnet per 
-# tags: A dictionary of one or more tags to assign to the load balancer. 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# subnets: A list of the IDs of the subnets to attach to 
+# tags: A dictionary of one or more tags to assign to 
+# validate_certs: When set to "no", SSL certificates will not be 
+# wait: Wait for the load balancer to have a state of 
+# wait_timeout: The time in seconds to use in conjunction with 
 }- name: ${2:Name for elb_application_lb module.}
   elb_application_lb:
 ${3:   ${4:access_logs_enabled}: ${5:"#"}}
@@ -38,7 +40,7 @@ ${33:   ${34:profile}: ${35:"#"}}
 ${36:   ${37:purge_listeners}: ${38:"#"}}
 ${39:   ${40:purge_tags}: ${41:"#"}}
 ${42:   ${43:region}: ${44:"#"}}
-${45:   ${46:http}: ${47:"#"}}
+${45:   ${46:}: ${47:"#"}}
 ${48:   ${49:scheme}: ${50:"#"}}
 ${51:   ${52:security_groups}: ${53:"#"}}
 ${54:   ${55:security_token}: ${56:"#"}}
@@ -46,12 +48,14 @@ ${57:   ${58:state}: ${59:"#"}}
 ${60:   ${61:subnets}: ${62:"#"}}
 ${63:   ${64:tags}: ${65:"#"}}
 ${66:   ${67:validate_certs}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${69:   ${70:wait}: ${71:"#"}}
+${72:   ${73:wait_timeout}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>elb_application_lb</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

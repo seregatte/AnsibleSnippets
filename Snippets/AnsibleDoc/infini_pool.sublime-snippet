@@ -2,12 +2,12 @@
 <content><![CDATA[
 ${1:# name: (required) Pool Name 
 # password: Infinibox User password. 
-# size: Pool Physical Capacity in MB, GB or TB units. If pool size is not set on pool creation, size will be 
+# size: Pool Physical Capacity in MB, GB or TB units. If 
 # ssd_cache: Enable/Disable SSD Cache on Pool 
-# state: Creates/Modifies Pool when present or removes when absent 
+# state: Creates/Modifies Pool when present or removes 
 # system: (required) Infinibox Hostname or IPv4 Address. 
-# user: Infinibox User username with sufficient priveledges ( see notes ). 
-# vsize: Pool Virtual Capacity in MB, GB or TB units. If pool vsize is not set on pool creation, Virtual Capacity 
+# user: Infinibox User username with sufficient 
+# vsize: Pool Virtual Capacity in MB, GB or TB units. If 
 }- name: ${2:Name for infini_pool module.}
   infini_pool:
 ${3:   ${4:name}: ${5:"#"}}

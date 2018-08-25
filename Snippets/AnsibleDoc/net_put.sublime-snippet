@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# dest: Specifies the destination file. The path to 
+# protocol: Protocol used to transfer file. 
+# src: (required) Specifies the source file. The path 
+}- name: ${2:Name for net_put module.}
+  net_put:
+${3:   ${4:dest}: ${5:"#"}}
+${6:   ${7:protocol}: ${8:"#"}}
+${9:   ${10:src}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>net_put</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -2,23 +2,23 @@
 <content><![CDATA[
 ${1:# admin_flowdown: Disable the flowdown function for service VRRP. 
 # admin_ignore_if_down: mVRRP ignores an interface Down event. 
-# admin_interface: Tracked mVRRP interface name. The value is a string of 1 to 63 characters. 
-# admin_vrid: Tracked mVRRP ID. The value is an integer ranging from 1 to 255. 
-# advertise_interval: Configured interval between sending advertisements, in milliseconds. Only the master router sends VRRP 
-# auth_key: This object is set based on the authentication type. When noAuthentication is specified, the value is 
-# auth_mode: Authentication type used for VRRP packet exchanges between virtual routers. The values are 
+# admin_interface: Tracked mVRRP interface name. The value is a 
+# admin_vrid: Tracked mVRRP ID. The value is an integer 
+# advertise_interval: Configured interval between sending 
+# auth_key: This object is set based on the authentication 
+# auth_mode: Authentication type used for VRRP packet 
 # fast_resume: mVRRP's fast resume mode. 
-# gratuitous_arp_interval: Interval at which gratuitous ARP packets are sent, in seconds. The value ranges from 30 to 1200.The 
-# holding_multiplier: The configured holdMultiplier.The value is an integer ranging from 3 to 10. The default value is 3. 
-# interface: Name of an interface. The value is a string of 1 to 63 characters. 
-# is_plain: Select the display mode of an authentication key. By default, an authentication key is displayed in 
-# preempt_timer_delay: Preemption delay. The value is an integer ranging from 0 to 3600. The default value is 0. 
-# priority: Configured VRRP priority. The value ranges from 1 to 254. The default value is 100. A larger value 
-# recover_delay: Delay in recovering after an interface goes Up. The delay is used for interface flapping suppression. 
+# gratuitous_arp_interval: Interval at which gratuitous ARP packets are 
+# holding_multiplier: The configured holdMultiplier.The value is an 
+# interface: Name of an interface. The value is a string of 1 
+# is_plain: Select the display mode of an authentication 
+# preempt_timer_delay: Preemption delay. The value is an integer 
+# priority: Configured VRRP priority. The value ranges from 
+# recover_delay: Delay in recovering after an interface goes Up. 
 # state: Specify desired state of the resource. 
 # version: VRRP version. The default version is v2. 
-# virtual_ip: Virtual IP address. The value is a string of 0 to 255 characters. 
-# vrid: VRRP backup group ID. The value is an integer ranging from 1 to 255. 
+# virtual_ip: Virtual IP address. The value is a string of 0 
+# vrid: VRRP backup group ID. The value is an integer 
 # vrrp_type: Type of a VRRP backup group. 
 }- name: ${2:Name for ce_vrrp module.}
   ce_vrrp:

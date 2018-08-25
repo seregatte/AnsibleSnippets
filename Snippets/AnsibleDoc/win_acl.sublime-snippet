@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# inherit: Inherit flags on the ACL rules. Can be specified as a comma separated list, e.g. `ContainerInherit', 
+${1:# inherit: Inherit flags on the ACL rules. Can be specified 
 # path: (required) The path to the file or directory. 
-# propagation: Propagation flag on the ACL rules. For more information on the choices see MSDN PropagationFlags 
-# rights: (required) The rights/permissions that are to be allowed/denied for the specified user or group for the 
-# state: Specify whether to add `present' or remove `absent' the specified access rule. 
-# type: (required) Specify whether to allow or deny the rights specified. 
-# user: (required) User or Group to add specified rights to act on src file/folder or registry key. 
+# propagation: Propagation flag on the ACL rules. For more 
+# rights: (required) The rights/permissions that are to be 
+# state: Specify whether to add `present' or remove 
+# type: (required) Specify whether to allow or deny the 
+# user: (required) User or Group to add specified rights 
 }- name: ${2:Name for win_acl module.}
   win_acl:
 ${3:   ${4:inherit}: ${5:"#"}}

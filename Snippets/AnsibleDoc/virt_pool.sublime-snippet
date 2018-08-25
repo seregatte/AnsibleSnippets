@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# autostart: Specify if a given storage pool should be started automatically on system boot. 
-# command: in addition to state management, various non-idempotent commands are available. See examples. 
-# mode: Pass additional parameters to 'build' or 'delete' commands. 
-# name: name of the storage pool being managed. Note that pool must be previously defined with xml. 
-# state: specify which state you want a storage pool to be in. If 'active', pool will be started. If 'present', 
+${1:# autostart: Specify if a given storage pool should be 
+# command: in addition to state management, various non- 
+# mode: Pass additional parameters to 'build' or 
+# name: name of the storage pool being managed. Note 
+# state: specify which state you want a storage pool to 
 # uri: `libvirt' connection uri. 
 # xml: XML document used with the define command. 
 }- name: ${2:Name for virt_pool module.}

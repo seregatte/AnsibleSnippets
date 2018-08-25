@@ -1,71 +1,75 @@
 <snippet>
 <content><![CDATA[
 ${1:# account: Account the network is related to. 
-# acl_type: Access control type. Only considered on create. 
-# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
-# cidr_ipv6: CIDR of IPv6 network, must be at least /64. Only considered on create. 
-# clean_up: Cleanup old network elements. Only considered on `state=restarted'. 
-# display_text: Display text of the network. If not specified, `name' will be used as `display_text'. 
+# acl: The name of the access control list for the VPC 
+# acl_type: Access control type for the VPC network tier. 
+# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
+# cidr_ipv6: CIDR of IPv6 network, must be at least /64. Only 
+# clean_up: Cleanup old network elements. Only considered on 
+# display_text: Display text of the network. If not specified, 
 # domain: Domain the network is related to. 
-# end_ip: The ending IPv4 address of the network belongs to. If not specified, value of `start_ip' is used. Only 
-# end_ipv6: The ending IPv6 address of the network belongs to. If not specified, value of `start_ipv6' is used. Only 
-# gateway: The gateway of the network. Required for shared networks and isolated networks when it belongs to a VPC. 
-# gateway_ipv6: The gateway of the IPv6 network. Required for shared networks. Only considered on create. 
+# end_ip: The ending IPv4 address of the network belongs 
+# end_ipv6: The ending IPv6 address of the network belongs 
+# gateway: The gateway of the network. Required for shared 
+# gateway_ipv6: The gateway of the IPv6 network. Required for 
 # isolated_pvlan: The isolated private VLAN for this network. 
 # name: (required) Name (case sensitive) of the network. 
-# netmask: The netmask of the network. Required for shared networks and isolated networks when it belongs to a VPC. 
+# netmask: The netmask of the network. Required for shared 
 # network_domain: The network domain. 
-# network_offering: Name of the offering for the network. Required if `state=present'. 
+# network_offering: Name of the offering for the network. Required 
 # poll_async: Poll async jobs until job has finished. 
-# project: Name of the project the network to be deployed in. 
-# start_ip: The beginning IPv4 address of the network belongs to. Only considered on create. 
-# start_ipv6: The beginning IPv6 address of the network belongs to. Only considered on create. 
+# project: Name of the project the network to be deployed 
+# start_ip: The beginning IPv4 address of the network 
+# start_ipv6: The beginning IPv6 address of the network 
 # state: State of the network. 
+# subdomain_access: Defines whether to allow subdomains to use 
 # vlan: The ID or VID of the network. 
 # vpc: Name of the VPC of the network. 
-# zone: Name of the zone in which the network should be deployed. If not set, default zone is used. 
+# zone: Name of the zone in which the network should be 
 }- name: ${2:Name for cs_network module.}
   cs_network:
 ${3:   ${4:account}: ${5:"#"}}
-${6:   ${7:acl_type}: ${8:"#"}}
-${9:   ${10:api_http_method}: ${11:"#"}}
-${12:   ${13:api_key}: ${14:"#"}}
-${15:   ${16:api_region}: ${17:"#"}}
-${18:   ${19:api_secret}: ${20:"#"}}
-${21:   ${22:api_timeout}: ${23:"#"}}
-${24:   ${25:api_url}: ${26:"#"}}
-${27:   ${28:cidr_ipv6}: ${29:"#"}}
-${30:   ${31:clean_up}: ${32:"#"}}
-${33:   ${34:display_text}: ${35:"#"}}
-${36:   ${37:domain}: ${38:"#"}}
-${39:   ${40:end_ip}: ${41:"#"}}
-${42:   ${43:end_ipv6}: ${44:"#"}}
-${45:   ${46:gateway}: ${47:"#"}}
-${48:   ${49:gateway_ipv6}: ${50:"#"}}
-${51:   ${52:isolated_pvlan}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:netmask}: ${59:"#"}}
-${60:   ${61:network_domain}: ${62:"#"}}
-${63:   ${64:network_offering}: ${65:"#"}}
-${66:   ${67:poll_async}: ${68:"#"}}
-${69:   ${70:project}: ${71:"#"}}
-${72:   ${73:start_ip}: ${74:"#"}}
-${75:   ${76:start_ipv6}: ${77:"#"}}
-${78:   ${79:state}: ${80:"#"}}
-${81:   ${82:vlan}: ${83:"#"}}
-${84:   ${85:vpc}: ${86:"#"}}
-${87:   ${88:zone}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${6:   ${7:acl}: ${8:"#"}}
+${9:   ${10:acl_type}: ${11:"#"}}
+${12:   ${13:api_http_method}: ${14:"#"}}
+${15:   ${16:api_key}: ${17:"#"}}
+${18:   ${19:api_region}: ${20:"#"}}
+${21:   ${22:api_secret}: ${23:"#"}}
+${24:   ${25:api_timeout}: ${26:"#"}}
+${27:   ${28:api_url}: ${29:"#"}}
+${30:   ${31:cidr_ipv6}: ${32:"#"}}
+${33:   ${34:clean_up}: ${35:"#"}}
+${36:   ${37:display_text}: ${38:"#"}}
+${39:   ${40:domain}: ${41:"#"}}
+${42:   ${43:end_ip}: ${44:"#"}}
+${45:   ${46:end_ipv6}: ${47:"#"}}
+${48:   ${49:gateway}: ${50:"#"}}
+${51:   ${52:gateway_ipv6}: ${53:"#"}}
+${54:   ${55:isolated_pvlan}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:netmask}: ${62:"#"}}
+${63:   ${64:network_domain}: ${65:"#"}}
+${66:   ${67:network_offering}: ${68:"#"}}
+${69:   ${70:poll_async}: ${71:"#"}}
+${72:   ${73:project}: ${74:"#"}}
+${75:   ${76:start_ip}: ${77:"#"}}
+${78:   ${79:start_ipv6}: ${80:"#"}}
+${81:   ${82:state}: ${83:"#"}}
+${84:   ${85:subdomain_access}: ${86:"#"}}
+${87:   ${88:vlan}: ${89:"#"}}
+${90:   ${91:vpc}: ${92:"#"}}
+${93:   ${94:zone}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>cs_network</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

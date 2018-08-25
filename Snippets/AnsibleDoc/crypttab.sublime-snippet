@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# backing_device: Path to the underlying block device or file, or the UUID of a block-device prefixed with `UUID=' 
-# name: (required) Name of the encrypted block device as it appears in the `/etc/crypttab' file, or optionally 
-# opts: A comma-delimited list of options. See `crypttab(5' ) for details. 
-# password: Encryption password, the path to a file containing the password, or 'none' or '-' if the password should 
-# path: Path to file to use instead of `/etc/crypttab'. This might be useful in a chroot environment. 
-# state: (required) Use `present' to add a line to `/etc/crypttab' or update it's definition if already present. 
+${1:# backing_device: Path to the underlying block device or file, or 
+# name: (required) Name of the encrypted block device as 
+# opts: A comma-delimited list of options. See 
+# password: Encryption password, the path to a file 
+# path: Path to file to use instead of `/etc/crypttab'. 
+# state: (required) Use `present' to add a line to 
 }- name: ${2:Name for crypttab module.}
   crypttab:
 ${3:   ${4:backing_device}: ${5:"#"}}

@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# api_password: (required) The password to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# api_url: (required) The url to the SANtricity WebServices Proxy or embedded REST API. 
-# api_username: (required) The username to authenticate with the SANtricity WebServices Proxy or embedded REST API. 
-# criteria_drive_count: The number of disks to use for building the storage pool. The pool will be expanded if this number 
-# criteria_drive_interface_type: The interface type to use when selecting drives for the storage pool (no value means all interface types 
-# criteria_drive_min_size: The minimum individual drive size (in size_unit) to consider when choosing drives for the storage pool. 
-# criteria_drive_require_fde: Whether full disk encryption ability is required for drives to be added to the storage pool 
-# criteria_drive_type: The type of disk (hdd or ssd) to use when searching for candidates to use. 
-# criteria_min_usable_capacity: The minimum size of the storage pool (in size_unit). The pool will be expanded if this value exceeds 
+${1:# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity WebServices 
+# api_username: (required) The username to authenticate with the 
+# criteria_drive_count: The number of disks to use for building the 
+# criteria_drive_interface_type: The interface type to use when selecting drives 
+# criteria_drive_min_size: The minimum individual drive size (in size_unit) 
+# criteria_drive_require_fde: Whether full disk encryption ability is required 
+# criteria_drive_type: The type of disk (hdd or ssd) to use when 
+# criteria_min_usable_capacity: The minimum size of the storage pool (in 
 # criteria_size_unit: The unit used to interpret size parameters 
-# erase_secured_drives: Whether to erase secured disks before adding to storage pool 
-# name: (required) The name of the storage pool to manage 
-# raid_level: (required) Only required when the requested state is 'present'.  The RAID level of the storage pool to 
-# remove_volumes: Prior to removing a storage pool, delete all volumes in the pool. 
-# reserve_drive_count: Set the number of drives reserved by the storage pool for reconstruction operations. Only valide on raid 
-# secure_pool: Whether to convert to a secure storage pool. Will only work if all drives in the pool are security 
-# ssid: (required) The ID of the array to manage (as configured on the web services proxy). 
-# state: (required) Whether the specified storage pool should exist or not. Note that removing a storage pool 
+# erase_secured_drives: Whether to erase secured disks before adding to 
+# name: (required) The name of the storage pool to 
+# raid_level: (required) Only required when the requested 
+# remove_volumes: Prior to removing a storage pool, delete all 
+# reserve_drive_count: Set the number of drives reserved by the storage 
+# secure_pool: Whether to convert to a secure storage pool. 
+# ssid: (required) The ID of the array to manage. This 
+# state: (required) Whether the specified storage pool 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_storagepool module.}
   netapp_e_storagepool:

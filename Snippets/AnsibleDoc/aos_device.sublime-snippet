@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# approve: The approve argument instruct the module to convert a device in quarantine mode into approved mode. 
-# id: The AOS internal id for a device; i.e. uniquely identifies the device in the AOS system. Only one of 
-# location: When approving a device using the `approve' argument, it's possible define the location of the device. 
-# name: The device serial-number; i.e. uniquely identifies the device in the AOS system. Only one of `name' or 
-# session: (required) An existing AOS session as obtained by [aos_login] module. 
-# state: Define in which state the device should be. Currently only `normal' is supported but the goal is to add 
+${1:# approve: The approve argument instruct the module to 
+# id: The AOS internal id for a device; i.e. uniquely 
+# location: When approving a device using the `approve' 
+# name: The device serial-number; i.e. uniquely 
+# session: (required) An existing AOS session as obtained 
+# state: Define in which state the device should be. 
 }- name: ${2:Name for aos_device module.}
   aos_device:
 ${3:   ${4:approve}: ${5:"#"}}

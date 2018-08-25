@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# default_service: (required) Default Backend Service if no host rules match. 
-# host_rules: The list of HostRules to use against the URL. Contains a list of hosts and an associated path_matcher. 
-# path_matchers: The list of named PathMatchers to use against the URL. Contains path_rules, which is a list of paths and 
+${1:# default_service: (required) Default Backend Service if no host 
+# host_rules: The list of HostRules to use against the URL. 
+# path_matchers: The list of named PathMatchers to use against 
 # url_map_name: (required) Name of the Url_Map. 
 }- name: ${2:Name for gcp_url_map module.}
   gcp_url_map:

@@ -7,7 +7,7 @@ ${1:# description: The description to use for the organization.
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If `no', SSL certificates will not be validated. This should 
+# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 }- name: ${2:Name for tower_organization module.}
   tower_organization:
 ${3:   ${4:description}: ${5:"#"}}

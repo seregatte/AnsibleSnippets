@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# banner: (required) Specifies which banner that should be configured on the remote device. 
-# state: Specifies whether or not the configuration is present in the current devices active running 
-# text: The banner text that should be present in the remote device running configuration.  This argument 
+${1:# banner: (required) Specifies which banner that should be 
+# state: Specifies whether or not the configuration is 
+# text: The banner text that should be present in the 
 }- name: ${2:Name for net_banner module.}
   net_banner:
 ${3:   ${4:banner}: ${5:"#"}}

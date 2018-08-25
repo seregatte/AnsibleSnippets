@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# column: (required) Identifies the column in the record. 
-# key: (required) Identifies the key in the record column 
+${1:# col: (required) Identifies the column in the record. 
+# key: Identifies the key in the record column, when 
 # record: (required) Identifies the recoard in the table. 
-# state: Configures the state of the key. When set to `present', the `key' and `value' pair will be set on the 
+# state: Configures the state of the key. When set to 
 # table: (required) Identifies the table in the database. 
 # timeout: How long to wait for ovs-vswitchd to respond 
-# value: (required) Expected value for the table, record, column and key. 
+# value: (required) Expected value for the table, record, 
 }- name: ${2:Name for openvswitch_db module.}
   openvswitch_db:
-${3:   ${4:column}: ${5:"#"}}
+${3:   ${4:col}: ${5:"#"}}
 ${6:   ${7:key}: ${8:"#"}}
 ${9:   ${10:record}: ${11:"#"}}
 ${12:   ${13:state}: ${14:"#"}}

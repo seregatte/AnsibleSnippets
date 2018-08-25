@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# description: Specify VLAN description, in the range from 1 to 80. 
+${1:# description: Specify VLAN description, in the range from 1 to 
 # name: Name of VLAN, in the range from 1 to 31. 
 # state: Manage the state of the resource. 
 # vlan_id: Single VLAN ID, in the range from 1 to 4094. 
-# vlan_range: Range of VLANs such as `2-10' or `2,5,10-15', etc. 
+# vlan_range: Range of VLANs such as `2-10' or `2,5,10-15', 
 }- name: ${2:Name for ce_vlan module.}
   ce_vlan:
 ${3:   ${4:description}: ${5:"#"}}

@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# autostart: Specify if a given storage pool should be started automatically on system boot. 
-# command: in addition to state management, various non-idempotent commands are available. See examples. Modify was 
-# name: (required) name of the network being managed. Note that network must be previously defined with xml. 
-# state: specify which state you want a network to be in. If 'active', network will be started. If 'present', 
+${1:# autostart: Specify if a given network should be started 
+# command: in addition to state management, various non- 
+# name: (required) name of the network being managed. 
+# state: specify which state you want a network to be in. 
 # uri: libvirt connection uri. 
 # xml: XML document used with the define command. 
 }- name: ${2:Name for virt_net module.}

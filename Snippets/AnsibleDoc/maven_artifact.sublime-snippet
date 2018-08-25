@@ -1,26 +1,27 @@
 <snippet>
 <content><![CDATA[
 ${1:# artifact_id: (required) The maven artifactId coordinate 
-# attributes: Attributes the file or directory should have. To get supported flags look at the man page for `chattr' 
+# attributes: Attributes the file or directory should have. To 
 # classifier: The maven classifier coordinate 
-# dest: (required) The path where the artifact should be written to If file mode or ownerships are specified and 
+# dest: (required) The path where the artifact should be 
 # extension: The maven type/extension coordinate 
-# group: Name of the group that should own the file/directory, as would be fed to `chown'. 
+# group: Name of the group that should own the 
 # group_id: (required) The Maven groupId coordinate 
-# keep_name: If `yes', the downloaded artifact's name is preserved, i.e the version number remains part of it. This 
-# mode: Mode the file or directory should be. For those used to `/usr/bin/chmod' remember that modes are 
-# owner: Name of the user that should own the file/directory, as would be fed to `chown'. 
-# password: The password to authenticate with to the Maven Repository. Use AWS secret access key of the repository 
-# repository_url: The URL of the Maven Repository to download from. Use s3://... if the repository is hosted on Amazon S3, 
-# selevel: Level part of the SELinux file context. This is the MLS/MCS attribute, sometimes known as the `range'. 
-# serole: Role part of SELinux file context, `_default' feature works as for `seuser'. 
-# setype: Type part of SELinux file context, `_default' feature works as for `seuser'. 
-# seuser: User part of SELinux file context. Will default to system policy, if applicable. If set to `_default', 
-# state: (required) The desired state of the artifact 
-# timeout: Specifies a timeout in seconds for the connection attempt 
-# unsafe_writes: Normally this module uses atomic operations to prevent data corruption or inconsistent reads from the 
-# username: The username to authenticate as to the Maven Repository. Use AWS secret key of the repository is hosted 
-# validate_certs: If `no', SSL certificates will not be validated. This should only be set to `no' when no other option 
+# keep_name: If `yes', the downloaded artifact's name is 
+# mode: Mode the file or directory should be. For those 
+# owner: Name of the user that should own the 
+# password: The password to authenticate with to the Maven 
+# repository_url: The URL of the Maven Repository to download 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# state: The desired state of the artifact 
+# timeout: Specifies a timeout in seconds for the 
+# unsafe_writes: Normally this module uses atomic operations to 
+# username: The username to authenticate as to the Maven 
+# validate_certs: If `no', SSL certificates will not be validated. 
+# verify_checksum: If `never', the md5 checksum will never be 
 # version: The maven version coordinate 
 }- name: ${2:Name for maven_artifact module.}
   maven_artifact:
@@ -45,13 +46,14 @@ ${54:   ${55:timeout}: ${56:"#"}}
 ${57:   ${58:unsafe_writes}: ${59:"#"}}
 ${60:   ${61:username}: ${62:"#"}}
 ${63:   ${64:validate_certs}: ${65:"#"}}
-${66:   ${67:version}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${66:   ${67:verify_checksum}: ${68:"#"}}
+${69:   ${70:version}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>maven_artifact</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

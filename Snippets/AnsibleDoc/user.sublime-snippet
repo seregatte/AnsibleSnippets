@@ -1,71 +1,75 @@
 <snippet>
 <content><![CDATA[
-${1:# append: If `yes', will only add groups, not set them to just the list in `groups'. 
-# comment: Optionally sets the description (aka `GECOS') of user account. 
-# createhome: Unless set to `no', a home directory will be made for the user when the account is created or if the 
-# expires: An expiry time for the user in epoch, it will be ignored on platforms that do not support this. 
-# force: When used with `state=absent', behavior is as with `userdel --force'. 
-# generate_ssh_key: Whether to generate a SSH key for the user in question. This will *not* overwrite an existing SSH key. 
-# group: Optionally sets the user's primary group (takes a group name). 
-# groups: Puts the user in  list of groups. When set to the empty string ('groups='), the user is removed from all 
+${1:# append: If `yes', add the user to the groups specified 
+# comment: Optionally sets the description (aka `GECOS') of 
+# create_home: Unless set to `no', a home directory will be 
+# expires: An expiry time for the user in epoch, it will be 
+# force: This only affects `state=absent', it forces 
+# generate_ssh_key: Whether to generate a SSH key for the user in 
+# group: Optionally sets the user's primary group (takes 
+# groups: List of groups user will be added to. When set 
+# hidden: Darwin/OS X only, optionally hide the user from 
 # home: Optionally set the user's home directory. 
-# local: Forces the use of "local" command alternatives on platforms that implement it. This is useful in 
-# login_class: Optionally sets the user's login class for FreeBSD, OpenBSD and NetBSD systems. 
-# move_home: If set to `yes' when used with `home=', attempt to move the user's home directory to the specified 
-# name: (required) Name of the user to create, remove or modify. 
-# non_unique: Optionally when used with the -u option, this option allows to change the user ID to a non-unique value. 
-# password: Optionally set the user's password to this crypted value.  See the user example in the github examples 
-# http: how-do-i-generate-crypted- 
-# remove: When used with `state=absent', behavior is as with `userdel --remove'. 
-# seuser: Optionally sets the seuser type (user_u) on selinux enabled systems. 
-# shell: Optionally set the user's shell. 
-# skeleton: Optionally set a home skeleton directory. Requires createhome option! 
-# ssh_key_bits: Optionally specify number of bits in SSH key to create. 
+# local: Forces the use of "local" command alternatives 
+# login_class: Optionally sets the user's login class, a 
+# move_home: If set to `yes' when used with `home=', attempt 
+# name: (required) Name of the user to create, remove or 
+# non_unique: Optionally when used with the -u option, this 
+# password: Optionally set the user's password to this 
+# ml: how-do-i 
+# password_lock: Lock the password (usermod -L, pw lock, usermod 
+# remove: This only affects `state=absent', it attempts to 
+# seuser: Optionally sets the seuser type (user_u) on 
+# shell: Optionally set the user's shell. On Mac OS X, 
+# skeleton: Optionally set a home skeleton directory. 
+# ssh_key_bits: Optionally specify number of bits in SSH key to 
 # ssh_key_comment: Optionally define the comment for the SSH key. 
-# ssh_key_file: Optionally specify the SSH key filename. If this is a relative filename then it will be relative to the 
-# ssh_key_passphrase: Set a passphrase for the SSH key.  If no passphrase is provided, the SSH key will default to having no 
-# ssh_key_type: Optionally specify the type of SSH key to generate. Available SSH key types will depend on 
-# state: Whether the account should exist or not, taking action if the state is different from what is stated. 
-# system: When creating an account, setting this to `yes' makes the user a system account.  This setting cannot be 
+# ssh_key_file: Optionally specify the SSH key filename. If this 
+# ssh_key_passphrase: Set a passphrase for the SSH key.  If no 
+# ssh_key_type: Optionally specify the type of SSH key to 
+# state: Whether the account should exist or not, taking 
+# system: When creating an account `state=present', 
 # uid: Optionally sets the `UID' of the user. 
-# update_password: `always' will update passwords if they differ.  `on_create' will only set the password for newly created 
+# update_password: `always' will update passwords if they differ. 
 }- name: ${2:Name for user module.}
   user:
 ${3:   ${4:append}: ${5:"#"}}
 ${6:   ${7:comment}: ${8:"#"}}
-${9:   ${10:createhome}: ${11:"#"}}
+${9:   ${10:create_home}: ${11:"#"}}
 ${12:   ${13:expires}: ${14:"#"}}
 ${15:   ${16:force}: ${17:"#"}}
 ${18:   ${19:generate_ssh_key}: ${20:"#"}}
 ${21:   ${22:group}: ${23:"#"}}
 ${24:   ${25:groups}: ${26:"#"}}
-${27:   ${28:home}: ${29:"#"}}
-${30:   ${31:local}: ${32:"#"}}
-${33:   ${34:login_class}: ${35:"#"}}
-${36:   ${37:move_home}: ${38:"#"}}
-${39:   ${40:name}: ${41:"#"}}
-${42:   ${43:non_unique}: ${44:"#"}}
-${45:   ${46:password}: ${47:"#"}}
-${48:   ${49:http}: ${50:"#"}}
-${51:   ${52:remove}: ${53:"#"}}
-${54:   ${55:seuser}: ${56:"#"}}
-${57:   ${58:shell}: ${59:"#"}}
-${60:   ${61:skeleton}: ${62:"#"}}
-${63:   ${64:ssh_key_bits}: ${65:"#"}}
-${66:   ${67:ssh_key_comment}: ${68:"#"}}
-${69:   ${70:ssh_key_file}: ${71:"#"}}
-${72:   ${73:ssh_key_passphrase}: ${74:"#"}}
-${75:   ${76:ssh_key_type}: ${77:"#"}}
-${78:   ${79:state}: ${80:"#"}}
-${81:   ${82:system}: ${83:"#"}}
-${84:   ${85:uid}: ${86:"#"}}
-${87:   ${88:update_password}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${27:   ${28:hidden}: ${29:"#"}}
+${30:   ${31:home}: ${32:"#"}}
+${33:   ${34:local}: ${35:"#"}}
+${36:   ${37:login_class}: ${38:"#"}}
+${39:   ${40:move_home}: ${41:"#"}}
+${42:   ${43:name}: ${44:"#"}}
+${45:   ${46:non_unique}: ${47:"#"}}
+${48:   ${49:password}: ${50:"#"}}
+${51:   ${52:ml}: ${53:"#"}}
+${54:   ${55:password_lock}: ${56:"#"}}
+${57:   ${58:remove}: ${59:"#"}}
+${60:   ${61:seuser}: ${62:"#"}}
+${63:   ${64:shell}: ${65:"#"}}
+${66:   ${67:skeleton}: ${68:"#"}}
+${69:   ${70:ssh_key_bits}: ${71:"#"}}
+${72:   ${73:ssh_key_comment}: ${74:"#"}}
+${75:   ${76:ssh_key_file}: ${77:"#"}}
+${78:   ${79:ssh_key_passphrase}: ${80:"#"}}
+${81:   ${82:ssh_key_type}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:system}: ${89:"#"}}
+${90:   ${91:uid}: ${92:"#"}}
+${93:   ${94:update_password}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

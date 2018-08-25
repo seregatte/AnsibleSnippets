@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# config_format: The `config_format' argument specifies the format of the configuration when serializing output from the 
-# gather_subset: When supplied, this argument will restrict the facts collected to a given subset.  Possible values for 
-# provider: A dict object containing connection details. 
+${1:# config_format: The `config_format' argument specifies the 
+# gather_subset: When supplied, this argument will restrict the 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
 }- name: ${2:Name for junos_facts module.}
   junos_facts:
 ${3:   ${4:config_format}: ${5:"#"}}

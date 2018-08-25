@@ -1,28 +1,28 @@
 <snippet>
 <content><![CDATA[
-${1:# alarm_actions: A list of the names action(s) taken when the alarm is in the 'alarm' status 
-# aws_access_key: AWS access key. If not set then the value of the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY or EC2_ACCESS_KEY 
-# aws_secret_key: AWS secret key. If not set then the value of the AWS_SECRET_ACCESS_KEY, AWS_SECRET_KEY, or 
+${1:# alarm_actions: A list of the names action(s) taken when the 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
 # comparison: Determines how the threshold value is compared 
 # description: A longer description of the alarm 
 # dimensions: Describes to what the alarm is applied 
-# ec2_url: Url to use to connect to EC2 or your Eucalyptus cloud (by default the module will use EC2 endpoints). 
-# evaluation_periods: The number of times in which the metric is evaluated before final calculation 
-# insufficient_data_actions: A list of the names of action(s) to take when the alarm is in the 'insufficient_data' status 
-# metric: Name of the monitored metric (e.g. CPUUtilization) Metric must already exist 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# evaluation_periods: The number of times in which the metric is 
+# insufficient_data_actions: A list of the names of action(s) to take when 
+# metric: Name of the monitored metric (e.g. 
 # name: (required) Unique name for the alarm 
-# namespace: Name of the appropriate namespace ('AWS/EC2', 'System/Linux', etc.), which determines the category it 
-# ok_actions: A list of the names of action(s) to take when the alarm is in the 'ok' status 
+# namespace: Name of the appropriate namespace ('AWS/EC2', 
+# ok_actions: A list of the names of action(s) to take when 
 # period: The time (in seconds) between metric evaluations 
-# profile: Uses a boto profile. Only works with boto >= 2.24.0. 
-# region: The AWS region to use. If not specified then the value of the AWS_REGION or EC2_REGION environment 
-# http: ec2_region 
-# security_token: AWS STS security token. If not set then the value of the AWS_SECURITY_TOKEN or EC2_SECURITY_TOKEN 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
 # state: (required) register or deregister the alarm 
-# statistic: Operation applied to the metric Works in conjunction with period and evaluation_periods to determine the 
+# statistic: Operation applied to the metric Works in 
 # threshold: Sets the min/max bound for triggering the alarm 
 # unit: The threshold's unit of measurement 
-# validate_certs: When set to "no", SSL certificates will not be validated for boto versions >= 2.6.0. 
+# validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ec2_metric_alarm module.}
   ec2_metric_alarm:
 ${3:   ${4:alarm_actions}: ${5:"#"}}
@@ -41,7 +41,7 @@ ${39:   ${40:ok_actions}: ${41:"#"}}
 ${42:   ${43:period}: ${44:"#"}}
 ${45:   ${46:profile}: ${47:"#"}}
 ${48:   ${49:region}: ${50:"#"}}
-${51:   ${52:http}: ${53:"#"}}
+${51:   ${52:}: ${53:"#"}}
 ${54:   ${55:security_token}: ${56:"#"}}
 ${57:   ${58:state}: ${59:"#"}}
 ${60:   ${61:statistic}: ${62:"#"}}

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# force: When true it forces Eth-Trunk members to match what is declared in the members param. This can be used 
-# hash_type: Hash algorithm used for load balancing among Eth-Trunk member interfaces. 
-# members: List of interfaces that will be managed in a given Eth-Trunk. The interface name must be full name. 
-# min_links: Specifies the minimum number of Eth-Trunk member links in the Up state. The value is an integer ranging 
-# mode: Specifies the working mode of an Eth-Trunk interface. 
+${1:# force: When true it forces Eth-Trunk members to match 
+# hash_type: Hash algorithm used for load balancing among 
+# members: List of interfaces that will be managed in a 
+# min_links: Specifies the minimum number of Eth-Trunk member 
+# mode: Specifies the working mode of an Eth-Trunk 
 # state: Manage the state of the resource. 
-# trunk_id: (required) Eth-Trunk interface number. The value is an integer. The value range depends on the assign 
+# trunk_id: (required) Eth-Trunk interface number. The value 
 }- name: ${2:Name for ce_eth_trunk module.}
   ce_eth_trunk:
 ${3:   ${4:force}: ${5:"#"}}

@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# aggregate: boolean that indicates if the provided value is aggregated to the existing stat `yes' or will replace it 
-# data: (required) A dictionary of which each key represents a stat (or variable) you want to keep track of 
-# per_host: boolean that indicates if the stats is per host or for all hosts in the run. 
+${1:# aggregate: boolean that indicates if the provided value is 
+# data: (required) A dictionary of which each key 
+# per_host: boolean that indicates if the stats is per host 
 }- name: ${2:Name for set_stats module.}
   set_stats:
 ${3:   ${4:aggregate}: ${5:"#"}}

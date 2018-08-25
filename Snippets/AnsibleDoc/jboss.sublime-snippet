@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# deploy_path: The location in the filesystem where the deployment scanner listens 
+${1:# deploy_path: The location in the filesystem where the 
 # deployment: (required) The name of the deployment 
-# src: The remote path of the application ear or war to deploy 
-# state: Whether the application should be deployed or undeployed 
+# src: The remote path of the application ear or war to 
+# state: Whether the application should be deployed or 
 }- name: ${2:Name for jboss module.}
   jboss:
 ${3:   ${4:deploy_path}: ${5:"#"}}

@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# cert_cn: (required) Certificate CN (common name) embedded in the certificate signature. 
-# cert_friendly_name: (required) Human friendly certificate name (not CN but just a friendly name). 
-# ip_address: (required) IP address (or hostname) of PAN-OS device being configured. 
-# key_filename: (required) Location of the filename that is used for the auth. Either `key_filename' or `password' is 
-# password: (required) Password credentials to use for auth. Either `key_filename' or `password' is required. 
-# rsa_nbits: Number of bits used by the RSA algorithm for the certificate generation. 
-# signed_by: (required) Undersigning authority (CA) that MUST already be presents on the device. 
+${1:# cert_cn: (required) Certificate CN (common name) embedded 
+# cert_friendly_name: (required) Human friendly certificate name (not 
+# ip_address: (required) IP address (or hostname) of PAN-OS 
+# key_filename: (required) Location of the filename that is used 
+# password: (required) Password credentials to use for auth. 
+# rsa_nbits: Number of bits used by the RSA algorithm for the 
+# signed_by: (required) Undersigning authority (CA) that MUST 
 }- name: ${2:Name for panos_cert_gen_ssh module.}
   panos_cert_gen_ssh:
 ${3:   ${4:cert_cn}: ${5:"#"}}

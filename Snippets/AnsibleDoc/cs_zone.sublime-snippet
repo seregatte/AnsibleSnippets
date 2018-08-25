@@ -1,20 +1,20 @@
 <snippet>
 <content><![CDATA[
-${1:# api_http_method: HTTP method used. 
-# api_key: API key of the CloudStack API. 
-# api_region: Name of the ini section in the `cloustack.ini' file. 
-# api_secret: Secret key of the CloudStack API. 
-# api_timeout: HTTP timeout. 
-# api_url: URL of the CloudStack API e.g. https://cloud.example.com/client/api. 
+${1:# api_http_method: HTTP method used to query the API endpoint. If 
+# api_key: API key of the CloudStack API. If not given, the 
+# api_region: Name of the ini section in the `cloustack.ini' 
+# api_secret: Secret key of the CloudStack API. If not set, 
+# api_timeout: HTTP timeout in seconds. If not given, the 
+# api_url: URL of the CloudStack API e.g. 
 # dhcp_provider: DHCP provider for the Zone. 
-# dns1: First DNS for the zone. Required if `state=present' 
+# dns1: First DNS for the zone. Required if 
 # dns1_ipv6: First DNS for IPv6 for the zone. 
 # dns2: Second DNS for the zone. 
 # dns2_ipv6: Second DNS for IPv6 for the zone. 
-# domain: Domain the zone is related to. Zone is a public zone if not set. 
+# domain: Domain the zone is related to. Zone is a public 
 # guest_cidr_address: Guest CIDR address for the zone. 
 # id: uuid of the existing zone. 
-# internal_dns1: First internal DNS for the zone. If not set `dns1' will be used on `state=present'. 
+# internal_dns1: First internal DNS for the zone. If not set 
 # internal_dns2: Second internal DNS for the zone. 
 # name: (required) Name of the zone. 
 # network_domain: Network domain for the zone. 

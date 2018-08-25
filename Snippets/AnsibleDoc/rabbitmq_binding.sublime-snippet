@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# arguments: extra arguments for exchange. If defined this argument is a key/value dictionary 
-# destination: (required) destination exchange or queue for the binding 
-# destination_type: (required) Either queue or exchange 
-# login_host: rabbitMQ host for connection 
-# login_password: rabbitMQ password for connection 
-# login_port: rabbitMQ management api port 
-# login_user: rabbitMQ user for connection 
-# name: (required) source exchange to create binding on 
-# routing_key: routing key for the binding default is 
-# state: Whether the exchange should be present or absent Only present implemented atm 
-# vhost: rabbitMQ virtual host default vhost is / 
+${1:# arguments: extra arguments for exchange. If defined this 
+# destination: (required) destination exchange or queue for the 
+# destination_type: (required) Either queue or exchange. 
+# login_host: rabbitMQ host for the connection. 
+# login_password: rabbitMQ password for the connection. 
+# login_port: rabbitMQ management API port. 
+# login_user: rabbitMQ user for the connection. 
+# name: (required) source exchange to create binding on. 
+# routing_key: routing key for the binding. 
+# state: Whether the bindings should be present or 
+# vhost: rabbitMQ virtual host. 
 }- name: ${2:Name for rabbitmq_binding module.}
   rabbitmq_binding:
 ${3:   ${4:arguments}: ${5:"#"}}

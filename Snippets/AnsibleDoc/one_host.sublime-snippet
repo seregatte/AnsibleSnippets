@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# api_password: The password or token for XMLRPC authentication. 
+# api_url: The ENDPOINT URL of the XMLRPC server. If not 
+# api_username: The name of the user for XMLRPC authentication. 
+# cluster_id: The cluster ID. 
+# cluster_name: The cluster specified by name. 
+# im_mad_name: The name of the information manager, this values 
+# labels: The labels for this host. 
+# name: (required) Hostname of the machine to manage. 
+# state: Takes the host to the desired lifecycle state. 
+# template: The template or attribute changes to merge into 
+# validate_certs: Whether to validate the SSL certificates or not. 
+# vmm_mad_name: The name of the virtual machine manager mad 
+# wait_timeout: time to wait for the desired state to be reached 
+}- name: ${2:Name for one_host module.}
+  one_host:
+${3:   ${4:api_password}: ${5:"#"}}
+${6:   ${7:api_url}: ${8:"#"}}
+${9:   ${10:api_username}: ${11:"#"}}
+${12:   ${13:cluster_id}: ${14:"#"}}
+${15:   ${16:cluster_name}: ${17:"#"}}
+${18:   ${19:im_mad_name}: ${20:"#"}}
+${21:   ${22:labels}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:template}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:vmm_mad_name}: ${38:"#"}}
+${39:   ${40:wait_timeout}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>one_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# letter: (required) The letter of the network path to map to. This letter must not already be in use with 
+${1:# letter: (required) The letter of the network path to map 
 # password: The password for `username'. 
-# path: The UNC path to map the drive to. This is required if `state=present'. If `state=absent' and path is not 
-# state: If `state=present' will ensure the mapped drive exists. If `state=absent' will ensure the mapped drive 
-# username: Credentials to map the drive with. The username MUST include the domain or servername like SERVER\user, 
+# path: The UNC path to map the drive to. This is 
+# state: If `present' will ensure the mapped drive 
+# username: Credentials to map the drive with. The username 
 }- name: ${2:Name for win_mapped_drive module.}
   win_mapped_drive:
 ${3:   ${4:letter}: ${5:"#"}}
