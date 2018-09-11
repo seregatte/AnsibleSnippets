@@ -7,7 +7,7 @@ ${1:# active: Specifies whether or not the configuration is
 # name: (required) Name of the VLAN. 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: State of the VLAN configuration. 
-# vlan_id: (required) ID of the VLAN. 
+# vlan_id: (required) ID of the VLAN. Range 1-4094. 
 }- name: ${2:Name for junos_vlan module.}
   junos_vlan:
 ${3:   ${4:active}: ${5:"#"}}

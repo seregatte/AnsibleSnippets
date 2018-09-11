@@ -4,14 +4,14 @@ ${1:# api_version: The version of the Docker API running on the
 # archive_path: Use with state `present' to archive an image to 
 # buildargs: Provide a dictionary of `key:value' build 
 # cacert_path: Use a CA certificate when performing server 
-# cert_path: Path to the client's TLS certificate file. 
+# cert_path: Path to the client's TLS certificate file. If 
 # container_limits: A dictionary of limits applied to each container 
 # debug: Debug mode 
 # docker_host: The URL or Unix socket path used to connect to 
 # dockerfile: Use with state `present' to provide an alternate 
 # force: Use with state `absent' to un-tag and remove all 
 # http_timeout: Timeout for HTTP requests during the image build 
-# key_path: Path to the client's TLS key file. 
+# key_path: Path to the client's TLS key file. If the value 
 # load_path: Use with state `present' to load an image from a 
 # name: (required) Image name. Name format will be one 
 # nocache: Do not use cache when building an image. 

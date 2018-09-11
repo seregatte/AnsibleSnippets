@@ -2,12 +2,12 @@
 <content><![CDATA[
 ${1:# api_version: The version of the Docker API running on the 
 # cacert_path: Use a CA certificate when performing server 
-# cert_path: Path to the client's TLS certificate file. 
+# cert_path: Path to the client's TLS certificate file. If 
 # config_path: Custom path to the Docker CLI configuration 
 # debug: Debug mode 
 # docker_host: The URL or Unix socket path used to connect to 
 # email: The email address for the registry account. 
-# key_path: Path to the client's TLS key file. 
+# key_path: Path to the client's TLS key file. If the value 
 # password: (required) The plaintext password for the 
 # reauthorize: Refresh exiting authentication found in the 
 # registry_url: The registry URL. 
