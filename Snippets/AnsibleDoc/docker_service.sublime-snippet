@@ -3,14 +3,14 @@
 ${1:# api_version: The version of the Docker API running on the 
 # build: Use with state `present' to always build images 
 # cacert_path: Use a CA certificate when performing server 
-# cert_path: Path to the client's TLS certificate file. 
+# cert_path: Path to the client's TLS certificate file. If 
 # debug: Debug mode 
 # definition: Provide docker-compose yaml describing one or 
 # dependencies: When `state' is `present' specify whether or not 
 # docker_host: The URL or Unix socket path used to connect to 
 # files: List of file names relative to `project_src'. 
 # hostname_check: Whether or not to check the Docker daemon's 
-# key_path: Path to the client's TLS key file. 
+# key_path: Path to the client's TLS key file. If the value 
 # nocache: Use with the build option to ignore the cache 
 # project_name: Provide a project name. If not provided, the 
 # project_src: Path to a directory containing a docker- 

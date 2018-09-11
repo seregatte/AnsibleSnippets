@@ -3,7 +3,7 @@
 ${1:# api_version: The version of the Docker API running on the 
 # appends: By default the connected list is canonical, 
 # cacert_path: Use a CA certificate when performing server 
-# cert_path: Path to the client's TLS certificate file. 
+# cert_path: Path to the client's TLS certificate file. If 
 # connected: List of container names or container IDs to 
 # debug: Debug mode 
 # docker_host: The URL or Unix socket path used to connect to 
@@ -12,7 +12,7 @@ ${1:# api_version: The version of the Docker API running on the
 # force: With state `absent' forces disconnecting all 
 # ipam_driver: Specify an IPAM driver. 
 # ipam_options: Dictionary of IPAM options. 
-# key_path: Path to the client's TLS key file. 
+# key_path: Path to the client's TLS key file. If the value 
 # name: (required) Name of the network to operate on. 
 # ssl_version: Provide a valid SSL version number. Default 
 # state: `absent' deletes the network. If a network has 
