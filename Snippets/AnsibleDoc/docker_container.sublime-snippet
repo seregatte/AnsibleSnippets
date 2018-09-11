@@ -5,7 +5,7 @@ ${1:# api_version: The version of the Docker API running on the
 # blkio_weight: Block IO (relative weight), between 10 and 1000. 
 # cacert_path: Use a CA certificate when performing server 
 # capabilities: List of capabilities to add to the container. 
-# cert_path: Path to the client's TLS certificate file. 
+# cert_path: Path to the client's TLS certificate file. If 
 # cleanup: Use with `detach=false' to remove the container 
 # command: Command to execute when the container starts. A 
 # cpu_period: Limit CPU CFS (Completely Fair Scheduler) period 
@@ -23,7 +23,7 @@ ${1:# api_version: The version of the Docker API running on the
 # domainname: Container domainname. 
 # entrypoint: Command that overwrites the default ENTRYPOINT 
 # env: Dictionary of key,value pairs. 
-# env_file: Path to a file containing environment variables 
+# env_file: Path to a file, present on the target, 
 # etc_hosts: Dict of host-to-IP mappings, where each host 
 # exposed_ports: List of additional container ports which informs 
 # force_kill: Use the kill command when stopping a running 
@@ -35,17 +35,17 @@ ${1:# api_version: The version of the Docker API running on the
 # interactive: Keep stdin open after a container is launched, 
 # ipc_mode: Set the IPC mode for the container. Can be one 
 # keep_volumes: Retain volumes associated with a removed 
-# kernel_memory: Kernel memory limit (format: <number>[<unit>]). 
-# key_path: Path to the client's TLS key file. 
+# kernel_memory: Kernel memory limit (format: 
+# key_path: Path to the client's TLS key file. If the value 
 # kill_signal: Override default signal used to kill a running 
 # labels: Dictionary of key value pairs. 
 # links: List of name aliases for linked containers in 
-# log_driver: Specify the logging driver. Docker uses json- 
+# log_driver: Specify the logging driver. Docker uses `json- 
 # log_options: Dictionary of options specific to the chosen 
 # mac_address: Container MAC address (e.g. 92:d0:c6:0a:29:33) 
-# memory: Memory limit (format: <number>[<unit>]). Number 
-# memory_reservation: Memory soft limit (format: <number>[<unit>]). 
-# memory_swap: Total memory limit (memory + swap, 
+# memory: Memory limit (format: `<number>[<unit>]'). 
+# memory_reservation: Memory soft limit (format: `<number>[<unit>]'). 
+# memory_swap: Total memory limit (memory + swap, format: 
 # memory_swappiness: Tune a container's memory swappiness behavior. 
 # name: (required) Assign a name to a new container or 
 # network_mode: Connect the container to a network. Choices are 
@@ -64,7 +64,7 @@ ${1:# api_version: The version of the Docker API running on the
 # restart_policy: Container restart policy. Place quotes around 
 # restart_retries: Use with restart policy to control maximum 
 # security_opts: List of security options in the form of 
-# shm_size: Size of `/dev/shm`. The format is 
+# shm_size: Size of `/dev/shm' (format: `<number>[<unit>]'). 
 # ssl_version: Provide a valid SSL version number. Default 
 # state: `absent' - A container matching the specified 
 # stop_signal: Override default signal used to stop the 
