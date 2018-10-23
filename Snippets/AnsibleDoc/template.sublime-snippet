@@ -11,6 +11,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # lstrip_blocks: If this is set to True leading spaces and tabs 
 # mode: Mode the file or directory should be. For those 
 # newline_sequence: Specify the newline sequence to use for 
+# output_encoding: Overrides the encoding used to write the 
 # owner: Name of the user that should own the 
 # selevel: Level part of the SELinux file context. This is 
 # serole: Role part of SELinux file context, `_default' 
@@ -18,7 +19,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # seuser: User part of SELinux file context. Will default 
 # src: (required) Path of a Jinja2 formatted template 
 # trim_blocks: If this is set to True the first newline after a 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # validate: The validation command to run before copying 
 # variable_end_string: The string marking the end of a print statement. 
 # variable_start_string: The string marking the beginning of a print 
@@ -35,23 +36,24 @@ ${24:   ${25:group}: ${26:"#"}}
 ${27:   ${28:lstrip_blocks}: ${29:"#"}}
 ${30:   ${31:mode}: ${32:"#"}}
 ${33:   ${34:newline_sequence}: ${35:"#"}}
-${36:   ${37:owner}: ${38:"#"}}
-${39:   ${40:selevel}: ${41:"#"}}
-${42:   ${43:serole}: ${44:"#"}}
-${45:   ${46:setype}: ${47:"#"}}
-${48:   ${49:seuser}: ${50:"#"}}
-${51:   ${52:src}: ${53:"#"}}
-${54:   ${55:trim_blocks}: ${56:"#"}}
-${57:   ${58:unsafe_writes}: ${59:"#"}}
-${60:   ${61:validate}: ${62:"#"}}
-${63:   ${64:variable_end_string}: ${65:"#"}}
-${66:   ${67:variable_start_string}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${36:   ${37:output_encoding}: ${38:"#"}}
+${39:   ${40:owner}: ${41:"#"}}
+${42:   ${43:selevel}: ${44:"#"}}
+${45:   ${46:serole}: ${47:"#"}}
+${48:   ${49:setype}: ${50:"#"}}
+${51:   ${52:seuser}: ${53:"#"}}
+${54:   ${55:src}: ${56:"#"}}
+${57:   ${58:trim_blocks}: ${59:"#"}}
+${60:   ${61:unsafe_writes}: ${62:"#"}}
+${63:   ${64:validate}: ${65:"#"}}
+${66:   ${67:variable_end_string}: ${68:"#"}}
+${69:   ${70:variable_start_string}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

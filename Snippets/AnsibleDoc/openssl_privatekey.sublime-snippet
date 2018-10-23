@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# attributes: Attributes the file or directory should have. To 
 # cipher: The cipher to encrypt the private key. (cipher 
-# force: Should the key be regenerated even it it already 
+# force: Should the key be regenerated even if it already 
 # group: Name of the group that should own the 
 # mode: Mode the file or directory should be. For those 
 # owner: Name of the user that should own the 
@@ -15,7 +15,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # size: Size (in bits) of the TLS/SSL key to generate 
 # state: Whether the private key should exist or not, 
 # type: The algorithm used to generate the TLS/SSL 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 }- name: ${2:Name for openssl_privatekey module.}
   openssl_privatekey:
 ${3:   ${4:attributes}: ${5:"#"}}

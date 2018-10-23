@@ -19,7 +19,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # setype: Type part of SELinux file context, `_default' 
 # seuser: User part of SELinux file context. Will default 
 # src: Local path to a file to copy to the remote 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # validate: The validation command to run before copying 
 }- name: ${2:Name for copy module.}
   copy:

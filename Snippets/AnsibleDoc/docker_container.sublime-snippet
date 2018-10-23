@@ -4,6 +4,7 @@ ${1:# api_version: The version of the Docker API running on the
 # auto_remove: enable auto-removal of the container on daemon 
 # blkio_weight: Block IO (relative weight), between 10 and 1000. 
 # cacert_path: Use a CA certificate when performing server 
+# cap_drop: List of capabilities to drop from the container. 
 # capabilities: List of capabilities to add to the container. 
 # cert_path: Path to the client's TLS certificate file. If 
 # cleanup: Use with `detach=false' to remove the container 
@@ -52,6 +53,7 @@ ${1:# api_version: The version of the Docker API running on the
 # networks: List of networks the container belongs to. Each 
 # oom_killer: Whether or not to disable OOM Killer for the 
 # oom_score_adj: An integer value containing the score given to 
+# output_logs: If set to true, output of the container command 
 # paused: Use with the started state to pause running 
 # pid_mode: Set the PID namespace mode for the container. 
 # privileged: Give extended privileges to the container. 
@@ -91,93 +93,95 @@ ${3:   ${4:api_version}: ${5:"#"}}
 ${6:   ${7:auto_remove}: ${8:"#"}}
 ${9:   ${10:blkio_weight}: ${11:"#"}}
 ${12:   ${13:cacert_path}: ${14:"#"}}
-${15:   ${16:capabilities}: ${17:"#"}}
-${18:   ${19:cert_path}: ${20:"#"}}
-${21:   ${22:cleanup}: ${23:"#"}}
-${24:   ${25:command}: ${26:"#"}}
-${27:   ${28:cpu_period}: ${29:"#"}}
-${30:   ${31:cpu_quota}: ${32:"#"}}
-${33:   ${34:cpu_shares}: ${35:"#"}}
-${36:   ${37:cpuset_cpus}: ${38:"#"}}
-${39:   ${40:cpuset_mems}: ${41:"#"}}
-${42:   ${43:debug}: ${44:"#"}}
-${45:   ${46:detach}: ${47:"#"}}
-${48:   ${49:devices}: ${50:"#"}}
-${51:   ${52:dns_opts}: ${53:"#"}}
-${54:   ${55:dns_search_domains}: ${56:"#"}}
-${57:   ${58:dns_servers}: ${59:"#"}}
-${60:   ${61:docker_host}: ${62:"#"}}
-${63:   ${64:domainname}: ${65:"#"}}
-${66:   ${67:entrypoint}: ${68:"#"}}
-${69:   ${70:env}: ${71:"#"}}
-${72:   ${73:env_file}: ${74:"#"}}
-${75:   ${76:etc_hosts}: ${77:"#"}}
-${78:   ${79:exposed_ports}: ${80:"#"}}
-${81:   ${82:force_kill}: ${83:"#"}}
-${84:   ${85:groups}: ${86:"#"}}
-${87:   ${88:hostname}: ${89:"#"}}
-${90:   ${91:ignore_image}: ${92:"#"}}
-${93:   ${94:image}: ${95:"#"}}
-${96:   ${97:init}: ${98:"#"}}
-${99:   ${100:interactive}: ${101:"#"}}
-${102:   ${103:ipc_mode}: ${104:"#"}}
-${105:   ${106:keep_volumes}: ${107:"#"}}
-${108:   ${109:kernel_memory}: ${110:"#"}}
-${111:   ${112:key_path}: ${113:"#"}}
-${114:   ${115:kill_signal}: ${116:"#"}}
-${117:   ${118:labels}: ${119:"#"}}
-${120:   ${121:links}: ${122:"#"}}
-${123:   ${124:log_driver}: ${125:"#"}}
-${126:   ${127:log_options}: ${128:"#"}}
-${129:   ${130:mac_address}: ${131:"#"}}
-${132:   ${133:memory}: ${134:"#"}}
-${135:   ${136:memory_reservation}: ${137:"#"}}
-${138:   ${139:memory_swap}: ${140:"#"}}
-${141:   ${142:memory_swappiness}: ${143:"#"}}
-${144:   ${145:name}: ${146:"#"}}
-${147:   ${148:network_mode}: ${149:"#"}}
-${150:   ${151:networks}: ${152:"#"}}
-${153:   ${154:oom_killer}: ${155:"#"}}
-${156:   ${157:oom_score_adj}: ${158:"#"}}
-${159:   ${160:paused}: ${161:"#"}}
-${162:   ${163:pid_mode}: ${164:"#"}}
-${165:   ${166:privileged}: ${167:"#"}}
-${168:   ${169:published_ports}: ${170:"#"}}
-${171:   ${172:pull}: ${173:"#"}}
-${174:   ${175:purge_networks}: ${176:"#"}}
-${177:   ${178:read_only}: ${179:"#"}}
-${180:   ${181:recreate}: ${182:"#"}}
-${183:   ${184:restart}: ${185:"#"}}
-${186:   ${187:restart_policy}: ${188:"#"}}
-${189:   ${190:restart_retries}: ${191:"#"}}
-${192:   ${193:security_opts}: ${194:"#"}}
-${195:   ${196:shm_size}: ${197:"#"}}
-${198:   ${199:ssl_version}: ${200:"#"}}
-${201:   ${202:state}: ${203:"#"}}
-${204:   ${205:stop_signal}: ${206:"#"}}
-${207:   ${208:stop_timeout}: ${209:"#"}}
-${210:   ${211:sysctls}: ${212:"#"}}
-${213:   ${214:timeout}: ${215:"#"}}
-${216:   ${217:tls}: ${218:"#"}}
-${219:   ${220:tls_hostname}: ${221:"#"}}
-${222:   ${223:tls_verify}: ${224:"#"}}
-${225:   ${226:tmpfs}: ${227:"#"}}
-${228:   ${229:trust_image_content}: ${230:"#"}}
-${231:   ${232:tty}: ${233:"#"}}
-${234:   ${235:ulimits}: ${236:"#"}}
-${237:   ${238:user}: ${239:"#"}}
-${240:   ${241:userns_mode}: ${242:"#"}}
-${243:   ${244:uts}: ${245:"#"}}
-${246:   ${247:volume_driver}: ${248:"#"}}
-${249:   ${250:volumes}: ${251:"#"}}
-${252:   ${253:volumes_from}: ${254:"#"}}
-${255:   ${256:working_dir}: ${257:"#"}}
-${258:${259:   become: ${260:true}} 
-${261:   become_method: ${262:su}} 
-${263:   become_user: ${264:nobody}} 
-${265:   become_flags: ${266:"-s /bin/sh"}}} 
-${267:   when: ${268:variable is defined}} 
-${269:   with_items: ${270:array}} 
+${15:   ${16:cap_drop}: ${17:"#"}}
+${18:   ${19:capabilities}: ${20:"#"}}
+${21:   ${22:cert_path}: ${23:"#"}}
+${24:   ${25:cleanup}: ${26:"#"}}
+${27:   ${28:command}: ${29:"#"}}
+${30:   ${31:cpu_period}: ${32:"#"}}
+${33:   ${34:cpu_quota}: ${35:"#"}}
+${36:   ${37:cpu_shares}: ${38:"#"}}
+${39:   ${40:cpuset_cpus}: ${41:"#"}}
+${42:   ${43:cpuset_mems}: ${44:"#"}}
+${45:   ${46:debug}: ${47:"#"}}
+${48:   ${49:detach}: ${50:"#"}}
+${51:   ${52:devices}: ${53:"#"}}
+${54:   ${55:dns_opts}: ${56:"#"}}
+${57:   ${58:dns_search_domains}: ${59:"#"}}
+${60:   ${61:dns_servers}: ${62:"#"}}
+${63:   ${64:docker_host}: ${65:"#"}}
+${66:   ${67:domainname}: ${68:"#"}}
+${69:   ${70:entrypoint}: ${71:"#"}}
+${72:   ${73:env}: ${74:"#"}}
+${75:   ${76:env_file}: ${77:"#"}}
+${78:   ${79:etc_hosts}: ${80:"#"}}
+${81:   ${82:exposed_ports}: ${83:"#"}}
+${84:   ${85:force_kill}: ${86:"#"}}
+${87:   ${88:groups}: ${89:"#"}}
+${90:   ${91:hostname}: ${92:"#"}}
+${93:   ${94:ignore_image}: ${95:"#"}}
+${96:   ${97:image}: ${98:"#"}}
+${99:   ${100:init}: ${101:"#"}}
+${102:   ${103:interactive}: ${104:"#"}}
+${105:   ${106:ipc_mode}: ${107:"#"}}
+${108:   ${109:keep_volumes}: ${110:"#"}}
+${111:   ${112:kernel_memory}: ${113:"#"}}
+${114:   ${115:key_path}: ${116:"#"}}
+${117:   ${118:kill_signal}: ${119:"#"}}
+${120:   ${121:labels}: ${122:"#"}}
+${123:   ${124:links}: ${125:"#"}}
+${126:   ${127:log_driver}: ${128:"#"}}
+${129:   ${130:log_options}: ${131:"#"}}
+${132:   ${133:mac_address}: ${134:"#"}}
+${135:   ${136:memory}: ${137:"#"}}
+${138:   ${139:memory_reservation}: ${140:"#"}}
+${141:   ${142:memory_swap}: ${143:"#"}}
+${144:   ${145:memory_swappiness}: ${146:"#"}}
+${147:   ${148:name}: ${149:"#"}}
+${150:   ${151:network_mode}: ${152:"#"}}
+${153:   ${154:networks}: ${155:"#"}}
+${156:   ${157:oom_killer}: ${158:"#"}}
+${159:   ${160:oom_score_adj}: ${161:"#"}}
+${162:   ${163:output_logs}: ${164:"#"}}
+${165:   ${166:paused}: ${167:"#"}}
+${168:   ${169:pid_mode}: ${170:"#"}}
+${171:   ${172:privileged}: ${173:"#"}}
+${174:   ${175:published_ports}: ${176:"#"}}
+${177:   ${178:pull}: ${179:"#"}}
+${180:   ${181:purge_networks}: ${182:"#"}}
+${183:   ${184:read_only}: ${185:"#"}}
+${186:   ${187:recreate}: ${188:"#"}}
+${189:   ${190:restart}: ${191:"#"}}
+${192:   ${193:restart_policy}: ${194:"#"}}
+${195:   ${196:restart_retries}: ${197:"#"}}
+${198:   ${199:security_opts}: ${200:"#"}}
+${201:   ${202:shm_size}: ${203:"#"}}
+${204:   ${205:ssl_version}: ${206:"#"}}
+${207:   ${208:state}: ${209:"#"}}
+${210:   ${211:stop_signal}: ${212:"#"}}
+${213:   ${214:stop_timeout}: ${215:"#"}}
+${216:   ${217:sysctls}: ${218:"#"}}
+${219:   ${220:timeout}: ${221:"#"}}
+${222:   ${223:tls}: ${224:"#"}}
+${225:   ${226:tls_hostname}: ${227:"#"}}
+${228:   ${229:tls_verify}: ${230:"#"}}
+${231:   ${232:tmpfs}: ${233:"#"}}
+${234:   ${235:trust_image_content}: ${236:"#"}}
+${237:   ${238:tty}: ${239:"#"}}
+${240:   ${241:ulimits}: ${242:"#"}}
+${243:   ${244:user}: ${245:"#"}}
+${246:   ${247:userns_mode}: ${248:"#"}}
+${249:   ${250:uts}: ${251:"#"}}
+${252:   ${253:volume_driver}: ${254:"#"}}
+${255:   ${256:volumes}: ${257:"#"}}
+${258:   ${259:volumes_from}: ${260:"#"}}
+${261:   ${262:working_dir}: ${263:"#"}}
+${264:${265:   become: ${266:true}} 
+${267:   become_method: ${268:su}} 
+${269:   become_user: ${270:nobody}} 
+${271:   become_flags: ${272:"-s /bin/sh"}}} 
+${273:   when: ${274:variable is defined}} 
+${275:   with_items: ${276:array}} 
 ]]></content>
 	<tabTrigger>docker_container</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

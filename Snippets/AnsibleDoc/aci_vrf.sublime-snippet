@@ -6,7 +6,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # policy_control_direction: Determines if the policy should be enforced by 
-# policy_control_preference: Determines if the Fabric should enforce Contrac 
+# policy_control_preference: Determines if the fabric should enforce contract 
 # port: Port number to be used for REST connection. The 
 # private_key: (required) PEM formatted file that contains your 
 # state: Use `present' or `absent' for adding or 

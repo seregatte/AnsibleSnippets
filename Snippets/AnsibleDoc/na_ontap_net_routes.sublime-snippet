@@ -3,7 +3,8 @@
 ${1:# destination: (required) Specify the route destination. 
 # gateway: (required) Specify the route gateway. Example 
 # hostname: (required) The hostname or IP address of the 
-# https: Enable and disabled https 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
 # metric: Specify the route metric. If this field is not 
 # new_destination: Specify the new route destination. 
 # new_gateway: Specify the new route gateway. 
@@ -11,27 +12,30 @@ ${1:# destination: (required) Specify the route destination.
 # password: (required) Password for the specified user. 
 # state: Whether you want to create or delete a network 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# vserver: (required) The name of the vserver 
+# validate_certs: If set to `False', the SSL certificates will not 
+# vserver: (required) The name of the vserver. 
 }- name: ${2:Name for na_ontap_net_routes module.}
   na_ontap_net_routes:
 ${3:   ${4:destination}: ${5:"#"}}
 ${6:   ${7:gateway}: ${8:"#"}}
 ${9:   ${10:hostname}: ${11:"#"}}
-${12:   ${13:https}: ${14:"#"}}
-${15:   ${16:metric}: ${17:"#"}}
-${18:   ${19:new_destination}: ${20:"#"}}
-${21:   ${22:new_gateway}: ${23:"#"}}
-${24:   ${25:new_metric}: ${26:"#"}}
-${27:   ${28:password}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:vserver}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${12:   ${13:http_port}: ${14:"#"}}
+${15:   ${16:https}: ${17:"#"}}
+${18:   ${19:metric}: ${20:"#"}}
+${21:   ${22:new_destination}: ${23:"#"}}
+${24:   ${25:new_gateway}: ${26:"#"}}
+${27:   ${28:new_metric}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vserver}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_net_routes</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

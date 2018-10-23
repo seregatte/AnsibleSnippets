@@ -5,11 +5,11 @@ ${1:# ack_deadline_seconds: This value is the maximum time after a
 # name: Name of the subscription. 
 # project: The Google Cloud Platform project to use. 
 # push_config: If push delivery is used with this subscription, 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
-# topic: A reference to Topic resource. 
+# state: Whether the given object should exist in GCP 
+# topic: A reference to a Topic resource. 
 }- name: ${2:Name for gcp_pubsub_subscription module.}
   gcp_pubsub_subscription:
 ${3:   ${4:ack_deadline_seconds}: ${5:"#"}}

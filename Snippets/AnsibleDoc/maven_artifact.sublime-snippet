@@ -18,7 +18,7 @@ ${1:# artifact_id: (required) The maven artifactId coordinate
 # seuser: User part of SELinux file context. Will default 
 # state: The desired state of the artifact 
 # timeout: Specifies a timeout in seconds for the 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # username: The username to authenticate as to the Maven 
 # validate_certs: If `no', SSL certificates will not be validated. 
 # verify_checksum: If `never', the md5 checksum will never be 

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
+# max: Sets the maximum number of templates to return. 
+# nested_attributes: Specifies list of the attributes which should be 
+# storage_domain: The storage domain name where the templates 
+# unregistered: Flag which indicates whether to get unregistered 
+}- name: ${2:Name for ovirt_storage_template_facts module.}
+  ovirt_storage_template_facts:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:fetch_nested}: ${8:"#"}}
+${9:   ${10:max}: ${11:"#"}}
+${12:   ${13:nested_attributes}: ${14:"#"}}
+${15:   ${16:storage_domain}: ${17:"#"}}
+${18:   ${19:unregistered}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ovirt_storage_template_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# authentication: Specifies the process the system employs when 
+# password: (required) The password for the user account 
+# protocol_name: Specifies the protocol associated with the value 
+# provider: A dict object containing connection details. 
+# secret: Secret key used to encrypt and decrypt packets 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# servers: Specifies a list of the IPv4 addresses for 
+# service_name: Specifies the name of the service that the user 
+# state: The state of the authentication configuration on 
+# type: The authentication type to manage with this 
+# update_secret: `always' will allow to update secrets if the 
+# use_for_auth: Specifies whether or not this auth source is put 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigip_device_auth module.}
+  bigip_device_auth:
+${3:   ${4:authentication}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:protocol_name}: ${11:"#"}}
+${12:   ${13:provider}: ${14:"#"}}
+${15:   ${16:secret}: ${17:"#"}}
+${18:   ${19:server}: ${20:"#"}}
+${21:   ${22:server_port}: ${23:"#"}}
+${24:   ${25:servers}: ${26:"#"}}
+${27:   ${28:service_name}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:type}: ${35:"#"}}
+${36:   ${37:update_secret}: ${38:"#"}}
+${39:   ${40:use_for_auth}: ${41:"#"}}
+${42:   ${43:user}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>bigip_device_auth</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

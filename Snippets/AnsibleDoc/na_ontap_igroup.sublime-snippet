@@ -2,38 +2,42 @@
 <content><![CDATA[
 ${1:# bind_portset: Name of a current portset to bind to the newly 
 # force_remove_initiator: Forcibly remove the initiator even if there are 
+# from_name: Name of igroup to rename to name. 
 # hostname: (required) The hostname or IP address of the 
-# https: Enable and disabled https 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
 # initiator: WWPN, WWPN Alias, or iSCSI name of Initiator to 
 # initiator_group_type: Type of the initiator group. Required when 
-# name: (required) The name of the lun to manage. 
-# new_name: New name to be given to initiator group. 
+# name: (required) The name of the igroup to manage. 
 # ostype: OS type of the initiators within the group. 
 # password: (required) Password for the specified user. 
 # state: Whether the specified Igroup should exist or 
 # username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `False', the SSL certificates will not 
 # vserver: (required) The name of the vserver to use. 
 }- name: ${2:Name for na_ontap_igroup module.}
   na_ontap_igroup:
 ${3:   ${4:bind_portset}: ${5:"#"}}
 ${6:   ${7:force_remove_initiator}: ${8:"#"}}
-${9:   ${10:hostname}: ${11:"#"}}
-${12:   ${13:https}: ${14:"#"}}
-${15:   ${16:initiator}: ${17:"#"}}
-${18:   ${19:initiator_group_type}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:new_name}: ${26:"#"}}
-${27:   ${28:ostype}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:vserver}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${9:   ${10:from_name}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:http_port}: ${17:"#"}}
+${18:   ${19:https}: ${20:"#"}}
+${21:   ${22:initiator}: ${23:"#"}}
+${24:   ${25:initiator_group_type}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:ostype}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:vserver}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_igroup</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

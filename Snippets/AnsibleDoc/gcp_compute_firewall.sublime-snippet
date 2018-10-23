@@ -6,12 +6,12 @@ ${1:# allowed: The list of ALLOW rules specified by this
 # name: Name of the resource. Provided by the client 
 # network: URL of the network resource for this firewall 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # source_ranges: If source ranges are specified, the firewall 
 # source_tags: If source tags are specified, the firewall will 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # target_tags: A list of instance tags indicating sets of 
 }- name: ${2:Name for gcp_compute_firewall module.}
   gcp_compute_firewall:

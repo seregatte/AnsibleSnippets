@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# fact_path: path used for local ansible facts (*.fact) - 
+${1:# fact_path: path used for local ansible facts (`*.fact') - 
 # filter: if supplied, only return facts that match this 
 # gather_subset: if supplied, restrict the additional facts 
 # gather_timeout: Set the default timeout in seconds for 

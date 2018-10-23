@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# authorize: Instructs the module to enter privileged mode on 
+${1:# authorize: *Deprecated* Starting with Ansible 2.7 we 
 # gather_subset: When supplied, this argument will restrict the 
-# provider: A dict object containing connection details. 
+# provider: *Deprecated* Starting with Ansible 2.7 we 
 }- name: ${2:Name for ironware_facts module.}
   ironware_facts:
 ${3:   ${4:authorize}: ${5:"#"}}

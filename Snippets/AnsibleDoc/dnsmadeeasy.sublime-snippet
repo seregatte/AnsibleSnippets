@@ -22,6 +22,7 @@ ${1:# account_key: (required) Account API Key.
 # record_ttl: record's "Time to live".  Number of seconds the 
 # record_type: Record type. 
 # record_value: Record value. HTTPRED: <redirection URL>, MX: 
+# sandbox: Decides if the sandbox API should be used. 
 # sensitivity: (required) Number of checks the monitor performs 
 # state: (required) whether the record should exist or 
 # system: (required) Description used by the monitor. 
@@ -50,16 +51,17 @@ ${57:   ${58:record_name}: ${59:"#"}}
 ${60:   ${61:record_ttl}: ${62:"#"}}
 ${63:   ${64:record_type}: ${65:"#"}}
 ${66:   ${67:record_value}: ${68:"#"}}
-${69:   ${70:sensitivity}: ${71:"#"}}
-${72:   ${73:state}: ${74:"#"}}
-${75:   ${76:system}: ${77:"#"}}
-${78:   ${79:validate_certs}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${69:   ${70:sandbox}: ${71:"#"}}
+${72:   ${73:sensitivity}: ${74:"#"}}
+${75:   ${76:state}: ${77:"#"}}
+${78:   ${79:system}: ${80:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>dnsmadeeasy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# data: Key-value pairs that should be sent as body 
+# filters: Key-value dict that represents equality filters. 
+# operation: (required) The name of the operation to execute. 
+# path_params: Key-value pairs that should be sent as path 
+# query_params: Key-value pairs that should be sent as query 
+# register_as: Specifies Ansible fact name that is used to 
+}- name: ${2:Name for ftd_configuration module.}
+  ftd_configuration:
+${3:   ${4:data}: ${5:"#"}}
+${6:   ${7:filters}: ${8:"#"}}
+${9:   ${10:operation}: ${11:"#"}}
+${12:   ${13:path_params}: ${14:"#"}}
+${15:   ${16:query_params}: ${17:"#"}}
+${18:   ${19:register_as}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ftd_configuration</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

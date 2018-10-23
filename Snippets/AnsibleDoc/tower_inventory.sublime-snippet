@@ -1,6 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# description: The description to use for the inventory. 
+# host_filter: The host_filter field. Only useful when 
+# kind: The kind field. Cannot be modified after 
 # name: (required) The name to use for the inventory. 
 # organization: (required) Organization the inventory belongs 
 # state: Desired state of the resource. 
@@ -13,21 +15,23 @@ ${1:# description: The description to use for the inventory.
 }- name: ${2:Name for tower_inventory module.}
   tower_inventory:
 ${3:   ${4:description}: ${5:"#"}}
-${6:   ${7:name}: ${8:"#"}}
-${9:   ${10:organization}: ${11:"#"}}
-${12:   ${13:state}: ${14:"#"}}
-${15:   ${16:tower_config_file}: ${17:"#"}}
-${18:   ${19:tower_host}: ${20:"#"}}
-${21:   ${22:tower_password}: ${23:"#"}}
-${24:   ${25:tower_username}: ${26:"#"}}
-${27:   ${28:tower_verify_ssl}: ${29:"#"}}
-${30:   ${31:variables}: ${32:"#"}}
-${33:${34:   become: ${35:true}} 
-${36:   become_method: ${37:su}} 
-${38:   become_user: ${39:nobody}} 
-${40:   become_flags: ${41:"-s /bin/sh"}}} 
-${42:   when: ${43:variable is defined}} 
-${44:   with_items: ${45:array}} 
+${6:   ${7:host_filter}: ${8:"#"}}
+${9:   ${10:kind}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:organization}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:tower_config_file}: ${23:"#"}}
+${24:   ${25:tower_host}: ${26:"#"}}
+${27:   ${28:tower_password}: ${29:"#"}}
+${30:   ${31:tower_username}: ${32:"#"}}
+${33:   ${34:tower_verify_ssl}: ${35:"#"}}
+${36:   ${37:variables}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>tower_inventory</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -14,7 +14,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # setype: Type part of SELinux file context, `_default' 
 # seuser: User part of SELinux file context. Will default 
 # state: Whether the public key should exist or not, 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 }- name: ${2:Name for openssl_publickey module.}
   openssl_publickey:
 ${3:   ${4:attributes}: ${5:"#"}}

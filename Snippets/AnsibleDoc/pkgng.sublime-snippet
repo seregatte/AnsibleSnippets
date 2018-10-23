@@ -8,7 +8,7 @@ ${1:# annotation: A comma-separated list of keyvalue-pairs of the
 # name: (required) Name or list of names of packages to 
 # pkgsite: For pkgng versions before 1.1.4, specify 
 # rootdir: For pkgng versions 1.5 and later, pkg will 
-# state: State of the package. 
+# state: State of the package. Note: "latest" added in 
 }- name: ${2:Name for pkgng module.}
   pkgng:
 ${3:   ${4:annotation}: ${5:"#"}}

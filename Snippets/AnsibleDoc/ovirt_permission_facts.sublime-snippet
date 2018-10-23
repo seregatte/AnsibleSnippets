@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to 
+# authz_name: (required) Authorization provider of the 
+# fetch_nested: If `True' the module will fetch additional data 
+# group_name: Name of the group to manage. 
+# namespace: Namespace of the authorization provider, where 
+# nested_attributes: Specifies list of the attributes which should be 
+# user_name: Username of the user to manage. In most LDAPs 
+}- name: ${2:Name for ovirt_permission_facts module.}
+  ovirt_permission_facts:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:authz_name}: ${8:"#"}}
+${9:   ${10:fetch_nested}: ${11:"#"}}
+${12:   ${13:group_name}: ${14:"#"}}
+${15:   ${16:namespace}: ${17:"#"}}
+${18:   ${19:nested_attributes}: ${20:"#"}}
+${21:   ${22:user_name}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>ovirt_permission_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

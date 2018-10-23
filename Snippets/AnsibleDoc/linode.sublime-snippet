@@ -18,7 +18,7 @@ ${1:# additional_disks: List of dictionaries for creating additional
 # distribution: distribution to use for the instance (Linode 
 # kernel_id: kernel to use for the instance (Linode Kernel) 
 # linode_id: Unique ID of a linode server 
-# name: Name to give the instance (alphanumeric, dashes, 
+# name: (required) Name to give the instance 
 # password: root password to apply to a new server (auto 
 # payment_term: payment term to use for the instance (payment 
 # plan: plan to use for the instance (Linode plan) 

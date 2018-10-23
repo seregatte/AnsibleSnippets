@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# dest_account: (required) Destination account name or ID 
+# dest_mvip: (required) Destination IP address of the paired 
+# dest_password: Destination password for the paired cluster 
+# dest_username: Destination username for the paired cluster 
+# dest_volume: (required) Destination volume name or volume ID 
+# hostname: (required) The hostname or IP address of the 
+# mode: Mode to start the volume pairing 
+# password: (required) Password for the specified user. 
+# src_account: (required) Source account name or ID 
+# src_volume: (required) Source volume name or volume ID 
+# state: Whether the specified volume pair should exist 
+# username: (required) Please ensure that the user has the 
+}- name: ${2:Name for na_elementsw_volume_pair module.}
+  na_elementsw_volume_pair:
+${3:   ${4:dest_account}: ${5:"#"}}
+${6:   ${7:dest_mvip}: ${8:"#"}}
+${9:   ${10:dest_password}: ${11:"#"}}
+${12:   ${13:dest_username}: ${14:"#"}}
+${15:   ${16:dest_volume}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:mode}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:src_account}: ${29:"#"}}
+${30:   ${31:src_volume}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>na_elementsw_volume_pair</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

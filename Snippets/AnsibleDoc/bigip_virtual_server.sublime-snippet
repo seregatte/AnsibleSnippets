@@ -22,14 +22,15 @@ ${1:# address_translation: Specifies, when `enabled', that the system
 # profiles: List of profiles (HTTP, ClientSSL, ServerSSL, 
 # provider: A dict object containing connection details. 
 # security_log_profiles: Specifies the log profile applied to the virtual 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# security_nat_policy: Specify the Firewall NAT policies for the 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # snat: Source network address policy. When `type' is 
 # source: Specifies an IP address or network from which 
 # state: The virtual server state. If `absent', delete 
 # type: Specifies the network service provided by this 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_virtual_server module.}
   bigip_virtual_server:
 ${3:   ${4:address_translation}: ${5:"#"}}
@@ -54,20 +55,21 @@ ${57:   ${58:port_translation}: ${59:"#"}}
 ${60:   ${61:profiles}: ${62:"#"}}
 ${63:   ${64:provider}: ${65:"#"}}
 ${66:   ${67:security_log_profiles}: ${68:"#"}}
-${69:   ${70:server}: ${71:"#"}}
-${72:   ${73:server_port}: ${74:"#"}}
-${75:   ${76:snat}: ${77:"#"}}
-${78:   ${79:source}: ${80:"#"}}
-${81:   ${82:state}: ${83:"#"}}
-${84:   ${85:type}: ${86:"#"}}
-${87:   ${88:user}: ${89:"#"}}
-${90:   ${91:validate_certs}: ${92:"#"}}
-${93:${94:   become: ${95:true}} 
-${96:   become_method: ${97:su}} 
-${98:   become_user: ${99:nobody}} 
-${100:   become_flags: ${101:"-s /bin/sh"}}} 
-${102:   when: ${103:variable is defined}} 
-${104:   with_items: ${105:array}} 
+${69:   ${70:security_nat_policy}: ${71:"#"}}
+${72:   ${73:server}: ${74:"#"}}
+${75:   ${76:server_port}: ${77:"#"}}
+${78:   ${79:snat}: ${80:"#"}}
+${81:   ${82:source}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:type}: ${89:"#"}}
+${90:   ${91:user}: ${92:"#"}}
+${93:   ${94:validate_certs}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>bigip_virtual_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

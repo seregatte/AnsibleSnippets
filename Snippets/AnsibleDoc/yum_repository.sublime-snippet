@@ -29,7 +29,7 @@ ${1:# async: If set to `yes' Yum will download packages and
 # mirrorlist: Specifies a URL to a file containing a list of 
 # mirrorlist_expire: Time (in seconds) after which the mirrorlist 
 # mode: Mode the file or directory should be. For those 
-# name: (required) Unique repository ID. This parameter 
+# name: (required) Unique repository ID. This option 
 # owner: Name of the user that should own the 
 # password: Password to use with the username for basic 
 # priority: Enforce ordered protection of repositories. The 
@@ -55,7 +55,7 @@ ${1:# async: If set to `yes' Yum will download packages and
 # throttle: Enable bandwidth throttling for downloads. This 
 # timeout: Number of seconds to wait for a connection 
 # ui_repoid_vars: When a repository id is displayed, append these 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # username: Username to use for basic authentication to a 
 }- name: ${2:Name for yum_repository module.}
   yum_repository:

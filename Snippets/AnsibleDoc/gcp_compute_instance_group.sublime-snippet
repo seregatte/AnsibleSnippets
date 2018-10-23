@@ -4,15 +4,15 @@ ${1:# auth_kind: (required) The type of credential used.
 # description: An optional description of this resource. 
 # name: The name of the instance group. The name must be 
 # named_ports: Assigns a name to a port number. For example: 
-# network: A reference to Network resource. 
+# network: The network to which all instances in the 
 # project: The Google Cloud Platform project to use. 
-# region: A reference to Region resource. 
-# scopes: (required) Array of scopes to be used. 
+# region: The region where the instance group is located 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
-# subnetwork: A reference to Subnetwork resource. 
-# zone: (required) A reference to Zone resource. 
+# state: Whether the given object should exist in GCP 
+# subnetwork: The subnetwork to which all instances in the 
+# zone: (required) A reference to the zone where the 
 }- name: ${2:Name for gcp_compute_instance_group module.}
   gcp_compute_instance_group:
 ${3:   ${4:auth_kind}: ${5:"#"}}

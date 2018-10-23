@@ -1,0 +1,56 @@
+<snippet>
+<content><![CDATA[
+${1:# address: The IPv4 address to assign to the interface. 
+# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity Web 
+# api_username: (required) The username to authenticate with the 
+# channel: The port to modify the configuration for. The 
+# config_method: The configuration method type to use for network 
+# controller: (required) The controller that owns the port you 
+# dns_address: Primary IPv4 DNS server address 
+# dns_address_backup: Backup IPv4 DNS server address Queried when 
+# dns_config_method: The configuration method type to use for DNS 
+# gateway: The IPv4 gateway address to utilize for the 
+# log_path: A local path to a file to be used for debug 
+# name: The port to modify the configuration for. The 
+# ntp_address: Primary IPv4 NTP server address 
+# ntp_address_backup: Backup IPv4 NTP server address Queried when 
+# ntp_config_method: The configuration method type to use for NTP 
+# ssh: Enable ssh access to the controller for debug 
+# ssid: (required) The ID of the array to manage. This 
+# state: Enable or disable IPv4 network interface 
+# subnet_mask: The subnet mask to utilize for the interface. 
+# validate_certs: Should https certificates be validated? 
+}- name: ${2:Name for netapp_e_mgmt_interface module.}
+  netapp_e_mgmt_interface:
+${3:   ${4:address}: ${5:"#"}}
+${6:   ${7:api_password}: ${8:"#"}}
+${9:   ${10:api_url}: ${11:"#"}}
+${12:   ${13:api_username}: ${14:"#"}}
+${15:   ${16:channel}: ${17:"#"}}
+${18:   ${19:config_method}: ${20:"#"}}
+${21:   ${22:controller}: ${23:"#"}}
+${24:   ${25:dns_address}: ${26:"#"}}
+${27:   ${28:dns_address_backup}: ${29:"#"}}
+${30:   ${31:dns_config_method}: ${32:"#"}}
+${33:   ${34:gateway}: ${35:"#"}}
+${36:   ${37:log_path}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:ntp_address}: ${44:"#"}}
+${45:   ${46:ntp_address_backup}: ${47:"#"}}
+${48:   ${49:ntp_config_method}: ${50:"#"}}
+${51:   ${52:ssh}: ${53:"#"}}
+${54:   ${55:ssid}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:subnet_mask}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
+]]></content>
+	<tabTrigger>netapp_e_mgmt_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

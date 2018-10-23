@@ -12,6 +12,7 @@ ${1:# add_children: Add additional child-element(s) to a selected
 # print_match: Search for a given `xpath' and print out any 
 # set_children: Set the child-element(s) of a selected element 
 # state: Set or remove an xpath selection (node(s), 
+# strip_cdata_tags: Remove CDATA tags surrounding text values. Note 
 # value: Desired state of the selected attribute. Either 
 # xmlstring: (required) A string containing XML on which to 
 # xpath: A valid XPath expression describing the item(s) 
@@ -29,15 +30,16 @@ ${27:   ${28:pretty_print}: ${29:"#"}}
 ${30:   ${31:print_match}: ${32:"#"}}
 ${33:   ${34:set_children}: ${35:"#"}}
 ${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:value}: ${41:"#"}}
-${42:   ${43:xmlstring}: ${44:"#"}}
-${45:   ${46:xpath}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${39:   ${40:strip_cdata_tags}: ${41:"#"}}
+${42:   ${43:value}: ${44:"#"}}
+${45:   ${46:xmlstring}: ${47:"#"}}
+${48:   ${49:xpath}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>xml</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

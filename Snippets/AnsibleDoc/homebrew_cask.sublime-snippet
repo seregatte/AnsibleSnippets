@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# accept_external_apps: allow external apps 
+# greedy: upgrade casks that auto update; passes --greedy 
 # install_options: options flags to install a package 
 # name: (required) name of cask to install/remove 
 # path: ':' separated list of paths to search for 'brew' 
@@ -11,19 +12,20 @@ ${1:# accept_external_apps: allow external apps
 }- name: ${2:Name for homebrew_cask module.}
   homebrew_cask:
 ${3:   ${4:accept_external_apps}: ${5:"#"}}
-${6:   ${7:install_options}: ${8:"#"}}
-${9:   ${10:name}: ${11:"#"}}
-${12:   ${13:path}: ${14:"#"}}
-${15:   ${16:state}: ${17:"#"}}
-${18:   ${19:update_homebrew}: ${20:"#"}}
-${21:   ${22:upgrade}: ${23:"#"}}
-${24:   ${25:upgrade_all}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${6:   ${7:greedy}: ${8:"#"}}
+${9:   ${10:install_options}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:update_homebrew}: ${23:"#"}}
+${24:   ${25:upgrade}: ${26:"#"}}
+${27:   ${28:upgrade_all}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>homebrew_cask</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

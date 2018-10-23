@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
-# managed_zone: (required) A reference to ManagedZone resource. 
+# managed_zone: (required) Identifies the managed zone addressed 
 # name: (required) For example, www.example.com. 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # target: As defined in RFC 1035 (section 5) and RFC 1034 
 # ttl: Number of seconds that this ResourceRecordSet 
 # type: (required) One of valid DNS resource types. 

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# name: (required) Package name, or package specifier 
-# state: (required) Whether to install (`present', or 
+# state: (required) Whether to install (`present'), or 
 # use: The required package manager module to use (yum, 
 }- name: ${2:Name for package module.}
   package:

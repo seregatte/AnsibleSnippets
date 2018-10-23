@@ -20,7 +20,7 @@ ${1:# archive: Mirrors the rsync archive flag, enables
 # recursive: Recurse into directories. 
 # rsync_opts: Specify additional rsync options by passing in 
 # rsync_path: Specify the rsync command to run on the remote 
-# rsync_timeout: Specify a --timeout for the rsync command in 
+# rsync_timeout: Specify a `--timeout' for the rsync command in 
 # set_remote_user: put user@ for the remote paths. If you have a 
 # src: (required) Path on the source host that will be 
 # times: Preserve modification times 

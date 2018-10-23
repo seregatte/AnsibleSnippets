@@ -12,6 +12,7 @@ ${1:# allocation_pool_end: From the subnet pool the last IP that should be
 # cloud: Named cloud or cloud config to operate against. 
 # dns_nameservers: List of DNS nameservers for this subnet. 
 # enable_dhcp: Whether DHCP should be enabled for this subnet. 
+# extra_specs: Dictionary with extra key/value pairs passed to 
 # gateway_ip: The ip that would be assigned to the gateway for 
 # host_routes: A list of host route dictionaries for the 
 # interface: Endpoint URL type to fetch from the service 
@@ -43,29 +44,30 @@ ${27:   ${28:cidr}: ${29:"#"}}
 ${30:   ${31:cloud}: ${32:"#"}}
 ${33:   ${34:dns_nameservers}: ${35:"#"}}
 ${36:   ${37:enable_dhcp}: ${38:"#"}}
-${39:   ${40:gateway_ip}: ${41:"#"}}
-${42:   ${43:host_routes}: ${44:"#"}}
-${45:   ${46:interface}: ${47:"#"}}
-${48:   ${49:ip_version}: ${50:"#"}}
-${51:   ${52:ipv6_address_mode}: ${53:"#"}}
-${54:   ${55:ipv6_ra_mode}: ${56:"#"}}
-${57:   ${58:key}: ${59:"#"}}
-${60:   ${61:name}: ${62:"#"}}
-${63:   ${64:network_name}: ${65:"#"}}
-${66:   ${67:no_gateway_ip}: ${68:"#"}}
-${69:   ${70:project}: ${71:"#"}}
-${72:   ${73:region_name}: ${74:"#"}}
-${75:   ${76:state}: ${77:"#"}}
-${78:   ${79:timeout}: ${80:"#"}}
-${81:   ${82:use_default_subnetpool}: ${83:"#"}}
-${84:   ${85:verify}: ${86:"#"}}
-${87:   ${88:wait}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${39:   ${40:extra_specs}: ${41:"#"}}
+${42:   ${43:gateway_ip}: ${44:"#"}}
+${45:   ${46:host_routes}: ${47:"#"}}
+${48:   ${49:interface}: ${50:"#"}}
+${51:   ${52:ip_version}: ${53:"#"}}
+${54:   ${55:ipv6_address_mode}: ${56:"#"}}
+${57:   ${58:ipv6_ra_mode}: ${59:"#"}}
+${60:   ${61:key}: ${62:"#"}}
+${63:   ${64:name}: ${65:"#"}}
+${66:   ${67:network_name}: ${68:"#"}}
+${69:   ${70:no_gateway_ip}: ${71:"#"}}
+${72:   ${73:project}: ${74:"#"}}
+${75:   ${76:region_name}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:timeout}: ${83:"#"}}
+${84:   ${85:use_default_subnetpool}: ${86:"#"}}
+${87:   ${88:verify}: ${89:"#"}}
+${90:   ${91:wait}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
 ]]></content>
 	<tabTrigger>os_subnet</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

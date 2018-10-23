@@ -8,11 +8,11 @@ ${1:# auth_kind: (required) The type of credential used.
 # https_health_check: A nested object resource. 
 # name: Name of the resource. Provided by the client 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # ssl_health_check: A nested object resource. 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # tcp_health_check: A nested object resource. 
 # timeout_sec: How long (in seconds) to wait before claiming 
 # type: Specifies the type of the healthCheck, either 

@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# destination_path: Specifies the destination endpoint of the 
+# destination_volume: Specifies the name of the destination volume for 
+# destination_vserver: Name of the destination vserver for the 
+# hostname: (required) The hostname or IP address of the 
+# password: (required) Password for the specified user. 
+# relationship_type: Specify the type of SnapMirror relationship. 
+# schedule: Specify the name of the current schedule, which 
+# source_hostname: Source hostname or IP address. Required for 
+# source_password: Source password. Optional if this is same as 
+# source_path: Specifies the source endpoint of the SnapMirror 
+# source_username: Source username. Optional if this is same as 
+# source_volume: Specifies the name of the source volume for the 
+# source_vserver: Name of the source vserver for the SnapMirror. 
+# state: Whether the specified relationship should exist 
+# username: (required) This can be a Cluster-scoped or SVM- 
+}- name: ${2:Name for na_ontap_snapmirror module.}
+  na_ontap_snapmirror:
+${3:   ${4:destination_path}: ${5:"#"}}
+${6:   ${7:destination_volume}: ${8:"#"}}
+${9:   ${10:destination_vserver}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:relationship_type}: ${20:"#"}}
+${21:   ${22:schedule}: ${23:"#"}}
+${24:   ${25:source_hostname}: ${26:"#"}}
+${27:   ${28:source_password}: ${29:"#"}}
+${30:   ${31:source_path}: ${32:"#"}}
+${33:   ${34:source_username}: ${35:"#"}}
+${36:   ${37:source_volume}: ${38:"#"}}
+${39:   ${40:source_vserver}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>na_ontap_snapmirror</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

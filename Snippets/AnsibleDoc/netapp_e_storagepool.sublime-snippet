@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_password: (required) The password to authenticate with the 
-# api_url: (required) The url to the SANtricity WebServices 
+# api_url: (required) The url to the SANtricity Web 
 # api_username: (required) The username to authenticate with the 
 # criteria_drive_count: The number of disks to use for building the 
 # criteria_drive_interface_type: The interface type to use when selecting drives 

@@ -21,7 +21,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # timeout: Timeout in seconds for URL request. 
 # tmp_dest: Absolute path of where temporary file is 
 # tml: tempfile.temp 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # url: (required) HTTP, HTTPS, or FTP URL in the form ( 
 # url_password: The password for use in HTTP basic 
 # url_username: The username for use in HTTP basic 

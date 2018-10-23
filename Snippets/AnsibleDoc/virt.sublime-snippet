@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# autostart: start VM at host startup. 
 # command: In addition to state management, various non- 
-# name: (required) name of the guest VM being managed. 
+# name: name of the guest VM being managed. Note that VM 
 # state: Note that there may be some lag for state 
 # uri: libvirt connection uri. 
 # xml: XML document used with the define command. Must 

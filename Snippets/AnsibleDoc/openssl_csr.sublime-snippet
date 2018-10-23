@@ -34,7 +34,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # subject_alt_name: SAN extension to attach to the certificate 
 # 5280: section-4.2. 
 # subject_alt_name_critical: Should the subjectAltName extension be 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # version: Version of the certificate signing request 
 }- name: ${2:Name for openssl_csr module.}
   openssl_csr:

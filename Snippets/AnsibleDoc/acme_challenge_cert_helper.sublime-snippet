@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# challenge: (required) The challenge type. 
+# challenge_data: (required) The `challenge_data' entry provided 
+# private_key_content: Content of the private key to use for this 
+# private_key_src: Path to a file containing the private key file 
+}- name: ${2:Name for acme_challenge_cert_helper module.}
+  acme_challenge_cert_helper:
+${3:   ${4:challenge}: ${5:"#"}}
+${6:   ${7:challenge_data}: ${8:"#"}}
+${9:   ${10:private_key_content}: ${11:"#"}}
+${12:   ${13:private_key_src}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>acme_challenge_cert_helper</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

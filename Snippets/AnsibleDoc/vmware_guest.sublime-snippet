@@ -7,6 +7,7 @@ ${1:# annotation: A note or annotation to include in the virtual
 # customization_spec: Unique name identifying the requested 
 # customvalues: Define a list of custom values to set on virtual 
 # datacenter: Destination datacenter for the deploy operation. 
+# datastore: Specify datastore or datastore cluster to 
 # disk: A list of disks to add. This parameter is case 
 # esxi_hostname: The ESXi hostname where the virtual machine will 
 # folder: Destination folder, absolute path to find an 
@@ -40,36 +41,37 @@ ${12:   ${13:customization}: ${14:"#"}}
 ${15:   ${16:customization_spec}: ${17:"#"}}
 ${18:   ${19:customvalues}: ${20:"#"}}
 ${21:   ${22:datacenter}: ${23:"#"}}
-${24:   ${25:disk}: ${26:"#"}}
-${27:   ${28:esxi_hostname}: ${29:"#"}}
-${30:   ${31:folder}: ${32:"#"}}
-${33:   ${34:force}: ${35:"#"}}
-${36:   ${37:guest_id}: ${38:"#"}}
-${39:   ${40:hardware}: ${41:"#"}}
-${42:   ${43:hostname}: ${44:"#"}}
-${45:   ${46:is_template}: ${47:"#"}}
-${48:   ${49:linked_clone}: ${50:"#"}}
-${51:   ${52:name}: ${53:"#"}}
-${54:   ${55:name_match}: ${56:"#"}}
-${57:   ${58:networks}: ${59:"#"}}
-${60:   ${61:password}: ${62:"#"}}
-${63:   ${64:port}: ${65:"#"}}
-${66:   ${67:resource_pool}: ${68:"#"}}
-${69:   ${70:snapshot_src}: ${71:"#"}}
-${72:   ${73:state}: ${74:"#"}}
-${75:   ${76:state_change_timeout}: ${77:"#"}}
-${78:   ${79:template}: ${80:"#"}}
-${81:   ${82:username}: ${83:"#"}}
-${84:   ${85:uuid}: ${86:"#"}}
-${87:   ${88:validate_certs}: ${89:"#"}}
-${90:   ${91:vapp_properties}: ${92:"#"}}
-${93:   ${94:wait_for_ip_address}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${24:   ${25:datastore}: ${26:"#"}}
+${27:   ${28:disk}: ${29:"#"}}
+${30:   ${31:esxi_hostname}: ${32:"#"}}
+${33:   ${34:folder}: ${35:"#"}}
+${36:   ${37:force}: ${38:"#"}}
+${39:   ${40:guest_id}: ${41:"#"}}
+${42:   ${43:hardware}: ${44:"#"}}
+${45:   ${46:hostname}: ${47:"#"}}
+${48:   ${49:is_template}: ${50:"#"}}
+${51:   ${52:linked_clone}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:name_match}: ${59:"#"}}
+${60:   ${61:networks}: ${62:"#"}}
+${63:   ${64:password}: ${65:"#"}}
+${66:   ${67:port}: ${68:"#"}}
+${69:   ${70:resource_pool}: ${71:"#"}}
+${72:   ${73:snapshot_src}: ${74:"#"}}
+${75:   ${76:state}: ${77:"#"}}
+${78:   ${79:state_change_timeout}: ${80:"#"}}
+${81:   ${82:template}: ${83:"#"}}
+${84:   ${85:username}: ${86:"#"}}
+${87:   ${88:uuid}: ${89:"#"}}
+${90:   ${91:validate_certs}: ${92:"#"}}
+${93:   ${94:vapp_properties}: ${95:"#"}}
+${96:   ${97:wait_for_ip_address}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>vmware_guest</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

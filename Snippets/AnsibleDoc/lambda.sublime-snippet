@@ -20,7 +20,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # security_token: AWS STS security token. If not set then the 
 # state: Create or delete Lambda function 
 # tags: tag dict to apply to the function (requires 
-# timeout: The function execution time at which Lambda 
+# timeout: The function maximum execution time in seconds 
 # validate_certs: When set to "no", SSL certificates will not be 
 # vpc_security_group_ids: List of VPC security group IDs to associate with 
 # vpc_subnet_ids: List of subnet IDs to run Lambda function in. 

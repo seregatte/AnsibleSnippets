@@ -2,11 +2,16 @@
 <content><![CDATA[
 ${1:# account_api_token: (required) Account API token. You can obtain 
 # account_email: (required) Account email. 
-# port: Service port. Required for `type=SRV' 
+# algorithm: Algorithm number. Required for `type=DS' and 
+# cert_usage: Certificate usage number. Required for 
+# hash_type: Hash type number. Required for `type=DS', 
+# key_tag: DNSSEC key tag. Needed for `type=DS' when 
+# port: Service port. Required for `type=SRV' and 
 # priority: Record priority. Required for `type=MX' and 
-# proto: Service protocol. Required for `type=SRV'. 
+# proto: Service protocol. Required for `type=SRV' and 
 # proxied: Proxy through cloudflare network or just use DNS 
 # record: Record to add. Required if `state=present'. 
+# selector: Selector number. Required for `type=TLSA' when 
 # service: Record service. Required for `type=SRV' 
 # solo: Whether the record should be the only one for 
 # state: Whether the record(s) should exist or not 
@@ -20,26 +25,31 @@ ${1:# account_api_token: (required) Account API token. You can obtain
   cloudflare_dns:
 ${3:   ${4:account_api_token}: ${5:"#"}}
 ${6:   ${7:account_email}: ${8:"#"}}
-${9:   ${10:port}: ${11:"#"}}
-${12:   ${13:priority}: ${14:"#"}}
-${15:   ${16:proto}: ${17:"#"}}
-${18:   ${19:proxied}: ${20:"#"}}
-${21:   ${22:record}: ${23:"#"}}
-${24:   ${25:service}: ${26:"#"}}
-${27:   ${28:solo}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:timeout}: ${35:"#"}}
-${36:   ${37:ttl}: ${38:"#"}}
-${39:   ${40:type}: ${41:"#"}}
-${42:   ${43:value}: ${44:"#"}}
-${45:   ${46:weight}: ${47:"#"}}
-${48:   ${49:zone}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${9:   ${10:algorithm}: ${11:"#"}}
+${12:   ${13:cert_usage}: ${14:"#"}}
+${15:   ${16:hash_type}: ${17:"#"}}
+${18:   ${19:key_tag}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:priority}: ${26:"#"}}
+${27:   ${28:proto}: ${29:"#"}}
+${30:   ${31:proxied}: ${32:"#"}}
+${33:   ${34:record}: ${35:"#"}}
+${36:   ${37:selector}: ${38:"#"}}
+${39:   ${40:service}: ${41:"#"}}
+${42:   ${43:solo}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:timeout}: ${50:"#"}}
+${51:   ${52:ttl}: ${53:"#"}}
+${54:   ${55:type}: ${56:"#"}}
+${57:   ${58:value}: ${59:"#"}}
+${60:   ${61:weight}: ${62:"#"}}
+${63:   ${64:zone}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>cloudflare_dns</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

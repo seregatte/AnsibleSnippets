@@ -4,11 +4,11 @@ ${1:# level: Sets the provisioning level for the requested
 # module: (required) The module to provision in BIG-IP. 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the provisioned module on the 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_provision module.}
   bigip_provision:
 ${3:   ${4:level}: ${5:"#"}}

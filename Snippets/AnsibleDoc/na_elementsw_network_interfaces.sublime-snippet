@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# bond_mode_10g: Bond mode for 10GbE configuration. 
+# bond_mode_1g: Bond mode for 1GbE configuration. 
+# dns_nameservers: List of addresses for domain name servers. 
+# dns_search_domains: List of DNS search domains. 
+# gateway_address_10g: (required) Router network address to send 
+# gateway_address_1g: (required) Router network address to send 
+# hostname: (required) The hostname or IP address of the 
+# ip_address_10g: (required) IP address for the 10G network. 
+# ip_address_1g: (required) IP address for the 1G network. 
+# lacp_10g: Link Aggregation Control Protocol useful only if 
+# lacp_1g: Link Aggregation Control Protocol useful only if 
+# method: (required) Type of Method used to configure the 
+# mtu_10g: Maximum Transmission Unit for 10GbE, Largest 
+# mtu_1g: Maximum Transmission Unit for 1GbE, Largest 
+# password: (required) Password for the specified user. 
+# subnet_10g: (required) 10GbE Subnet Mask. 
+# subnet_1g: (required) 1GbE Subnet Mask. 
+# username: (required) Please ensure that the user has the 
+# virtual_network_tag: This is the primary network tag. All nodes in a 
+}- name: ${2:Name for na_elementsw_network_interfaces module.}
+  na_elementsw_network_interfaces:
+${3:   ${4:bond_mode_10g}: ${5:"#"}}
+${6:   ${7:bond_mode_1g}: ${8:"#"}}
+${9:   ${10:dns_nameservers}: ${11:"#"}}
+${12:   ${13:dns_search_domains}: ${14:"#"}}
+${15:   ${16:gateway_address_10g}: ${17:"#"}}
+${18:   ${19:gateway_address_1g}: ${20:"#"}}
+${21:   ${22:hostname}: ${23:"#"}}
+${24:   ${25:ip_address_10g}: ${26:"#"}}
+${27:   ${28:ip_address_1g}: ${29:"#"}}
+${30:   ${31:lacp_10g}: ${32:"#"}}
+${33:   ${34:lacp_1g}: ${35:"#"}}
+${36:   ${37:method}: ${38:"#"}}
+${39:   ${40:mtu_10g}: ${41:"#"}}
+${42:   ${43:mtu_1g}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:subnet_10g}: ${50:"#"}}
+${51:   ${52:subnet_1g}: ${53:"#"}}
+${54:   ${55:username}: ${56:"#"}}
+${57:   ${58:virtual_network_tag}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>na_elementsw_network_interfaces</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

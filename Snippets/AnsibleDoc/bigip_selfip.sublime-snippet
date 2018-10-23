@@ -8,12 +8,12 @@ ${1:# address: The IP addresses for the new self IP. This value
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # route_domain: The route domain id of the system. When creating 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', guarantees that the Self-IP 
 # traffic_group: The traffic group for the Self IP addresses in 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # vlan: The VLAN that the new self IPs will be on. When 
 }- name: ${2:Name for bigip_selfip module.}
   bigip_selfip:

@@ -5,11 +5,11 @@ ${1:# local_ip: Specifies the local IP address of the system
 # provider: A dict object containing connection details. 
 # remote_host: (required) Specifies the IP address, or 
 # remote_port: Specifies the port that the system uses to send 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', guarantees that the remote 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_remote_syslog module.}
   bigip_remote_syslog:
 ${3:   ${4:local_ip}: ${5:"#"}}

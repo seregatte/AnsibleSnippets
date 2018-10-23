@@ -12,13 +12,13 @@ ${1:# description: Specifies descriptive text that identifies the
 # provider: A dict object containing connection details. 
 # quorum: Monitor quorum value when `monitor_type' is 
 # reselect_tries: Sets the number of times the system tries to 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # service_down_action: Sets the action to take when node goes down in 
 # slow_ramp_time: Sets the ramp-up time (in seconds) to gradually 
 # state: When `present', guarantees that the pool exists 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_pool module.}
   bigip_pool:
 ${3:   ${4:description}: ${5:"#"}}

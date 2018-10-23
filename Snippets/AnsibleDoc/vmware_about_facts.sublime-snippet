@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: The hostname or IP address of the vSphere 
+# password: The password of the vSphere vCenter or ESXi 
+# port: The port number of the vSphere vCenter or ESXi 
+# username: The username of the vSphere vCenter or ESXi 
+# validate_certs: Allows connection when SSL certificates are not 
+}- name: ${2:Name for vmware_about_facts module.}
+  vmware_about_facts:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:port}: ${11:"#"}}
+${12:   ${13:username}: ${14:"#"}}
+${15:   ${16:validate_certs}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>vmware_about_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
