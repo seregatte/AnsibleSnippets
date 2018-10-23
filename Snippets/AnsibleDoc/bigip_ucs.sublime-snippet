@@ -8,12 +8,12 @@ ${1:# force: If `yes' will upload the file every time and
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # reset_trust: When specified, the device and trust domain 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `installed', ensures that the UCS is 
 # ucs: The path to the UCS file to install. The 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_ucs module.}
   bigip_ucs:
 ${3:   ${4:force}: ${5:"#"}}

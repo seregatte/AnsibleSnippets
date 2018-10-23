@@ -6,8 +6,8 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # graceful_convergence: Determines if Graceful Convergence is enabled. 
 # host: (required) IP Address or hostname of APIC 
 # load_defer: Determines if Load Defer is enabled. This makes 
-# max_links: Maximum links (range 1-16). The APIC defaults to 
-# min_links: Minimum links (range 1-16). The APIC defaults to 
+# max_links: Maximum links. Accepted values range between 1 
+# min_links: Minimum links. Accepted values range between 1 
 # mode: Port channel interface policy mode. Determines 
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 

@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# account_api_token: Account API token. See `account_email' for info. 
-# account_email: Account email. If omitted, the env variables 
+${1:# account_api_token: Account API token. See `account_email' for more 
+# account_email: Account email. If omitted, the environment 
 # python: getting- 
 # domain: Domain to work with. Can be the domain name 
-# priority: Record priority 
+# priority: Record priority. 
 # record: Record to add, if blank a record for the domain 
 # record_ids: List of records to ensure they either exist or 
 # solo: Whether the record should be the only one for 
-# state: whether the record should exist or not 
-# ttl: The TTL to give the new record 
-# type: The type of DNS record to create 
-# value: Record value Must be specified when trying to 
+# state: whether the record should exist or not. 
+# ttl: The TTL to give the new record in seconds. 
+# type: The type of DNS record to create. 
+# value: Record value. Must be specified when trying to 
 }- name: ${2:Name for dnsimple module.}
   dnsimple:
 ${3:   ${4:account_api_token}: ${5:"#"}}

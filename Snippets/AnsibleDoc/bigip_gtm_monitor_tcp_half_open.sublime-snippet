@@ -12,13 +12,13 @@ ${1:# ignore_down_response: Specifies that the monitor allows more than one
 # probe_interval: Specifies the number of seconds the big3d 
 # probe_timeout: Specifies the number of seconds after which the 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # timeout: Specifies the number of seconds the target has 
 # transparent: Specifies whether the monitor operates in 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_monitor_tcp_half_open module.}
   bigip_gtm_monitor_tcp_half_open:
 ${3:   ${4:ignore_down_response}: ${5:"#"}}

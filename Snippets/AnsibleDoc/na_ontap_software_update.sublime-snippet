@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# ignore_validation_warning: Allows the update to continue if warnings are 
+# node: List of nodes to be updated, the nodes have to 
+# package_url: (required) Specifies the package URL. 
+# package_version: (required) Specifies the package version. 
+# password: (required) Password for the specified user. 
+# state: Whether the specified ONTAP package should 
+# username: (required) This can be a Cluster-scoped or SVM- 
+}- name: ${2:Name for na_ontap_software_update module.}
+  na_ontap_software_update:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:ignore_validation_warning}: ${8:"#"}}
+${9:   ${10:node}: ${11:"#"}}
+${12:   ${13:package_url}: ${14:"#"}}
+${15:   ${16:package_version}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:username}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>na_ontap_software_update</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

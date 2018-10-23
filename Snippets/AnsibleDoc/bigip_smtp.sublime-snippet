@@ -8,8 +8,8 @@ ${1:# authentication: Credentials can be set on an SMTP server's
 # partition: Device partition to manage resources on. 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # smtp_server: SMTP server host name in the format of a fully 
 # smtp_server_password: Password that the SMTP server requires when 
 # smtp_server_port: Specifies the SMTP port number. When creating a 
@@ -17,7 +17,7 @@ ${1:# authentication: Credentials can be set on an SMTP server's
 # state: When `present', ensures that the SMTP 
 # update_password: Passwords are stored encrypted, so the module 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_smtp module.}
   bigip_smtp:
 ${3:   ${4:authentication}: ${5:"#"}}

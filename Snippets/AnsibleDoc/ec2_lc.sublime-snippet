@@ -23,7 +23,7 @@ ${1:# assign_public_ip: Used for Auto Scaling groups that launch
 # security_groups: A list of security groups to apply to the 
 # security_token: AWS STS security token. If not set then the 
 # spot_price: The spot price you are bidding. Only applies for 
-# state: (required) Register or deregister the instance 
+# state: Register or deregister the instance 
 # user_data: Opaque blob of data which is made available to 
 # user_data_path: Path to the file that contains userdata for the 
 # validate_certs: When set to "no", SSL certificates will not be 

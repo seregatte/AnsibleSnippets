@@ -17,7 +17,6 @@ ${1:# body: The body of the HTTP request/response to the web
 # status_code: A valid, numeric, HTTP status code that 
 # timeout: Specifies how long the request can be pending 
 # url: (required) Supports FTP, HTTP or HTTPS URLs in 
-# use_basic_parsing: As of Ansible 2.5, this option is no longer 
 # user: Username to use for authentication. 
 # validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for win_uri module.}
@@ -39,15 +38,14 @@ ${42:   ${43:return_content}: ${44:"#"}}
 ${45:   ${46:status_code}: ${47:"#"}}
 ${48:   ${49:timeout}: ${50:"#"}}
 ${51:   ${52:url}: ${53:"#"}}
-${54:   ${55:use_basic_parsing}: ${56:"#"}}
-${57:   ${58:user}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
-${63:${64:   become: ${65:true}} 
-${66:   become_method: ${67:su}} 
-${68:   become_user: ${69:nobody}} 
-${70:   become_flags: ${71:"-s /bin/sh"}}} 
-${72:   when: ${73:variable is defined}} 
-${74:   with_items: ${75:array}} 
+${54:   ${55:user}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>win_uri</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

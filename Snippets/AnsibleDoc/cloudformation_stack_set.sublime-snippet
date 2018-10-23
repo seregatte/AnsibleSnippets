@@ -1,0 +1,64 @@
+<snippet>
+<content><![CDATA[
+${1:# accounts: A list of AWS accounts in which to create 
+# administration_role_arn: ARN of the administration role, meaning the role 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# capabilities: Capabilities allow stacks to create and modify 
+# description: A description of what this stack set creates 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# execution_role_name: ARN of the execution role, meaning the role that 
+# failure_tolerance: Settings to change what is considered "failed" 
+# name: (required) name of the cloudformation stack set 
+# parameters: A list of hashes of all the template variables 
+# profile: Uses a boto profile. Only works with boto >= 
+# purge_stacks: Only applicable when `state=absent'. Sets 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# regions: A list of AWS regions to create instances of a 
+# security_token: AWS STS security token. If not set then the 
+# state: If state is "present", stack will be created. 
+# tags: Dictionary of tags to associate with stack and 
+# template: The local path of the cloudformation template. 
+# template_body: Template body. Use this to pass in the actual 
+# template_url: Location of file containing the template body. 
+# validate_certs: When set to "no", SSL certificates will not be 
+# wait: Whether or not to wait for stack operation to 
+# wait_timeout: How long to wait (in seconds) for stacks to 
+}- name: ${2:Name for cloudformation_stack_set module.}
+  cloudformation_stack_set:
+${3:   ${4:accounts}: ${5:"#"}}
+${6:   ${7:administration_role_arn}: ${8:"#"}}
+${9:   ${10:aws_access_key}: ${11:"#"}}
+${12:   ${13:aws_secret_key}: ${14:"#"}}
+${15:   ${16:capabilities}: ${17:"#"}}
+${18:   ${19:description}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:execution_role_name}: ${26:"#"}}
+${27:   ${28:failure_tolerance}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:parameters}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:purge_stacks}: ${41:"#"}}
+${42:   ${43:region}: ${44:"#"}}
+${45:   ${46:}: ${47:"#"}}
+${48:   ${49:regions}: ${50:"#"}}
+${51:   ${52:security_token}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:tags}: ${59:"#"}}
+${60:   ${61:template}: ${62:"#"}}
+${63:   ${64:template_body}: ${65:"#"}}
+${66:   ${67:template_url}: ${68:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
+${72:   ${73:wait}: ${74:"#"}}
+${75:   ${76:wait_timeout}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
+]]></content>
+	<tabTrigger>cloudformation_stack_set</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

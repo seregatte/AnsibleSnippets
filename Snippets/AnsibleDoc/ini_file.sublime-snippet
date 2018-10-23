@@ -17,7 +17,7 @@ ${1:# allow_no_value: allow option without value and without '='
 # setype: Type part of SELinux file context, `_default' 
 # seuser: User part of SELinux file context. Will default 
 # state: If set to `absent' the option or section will be 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # value: The string value to be associated with an 
 }- name: ${2:Name for ini_file module.}
   ini_file:

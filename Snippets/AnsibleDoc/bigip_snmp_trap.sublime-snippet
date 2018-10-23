@@ -8,12 +8,12 @@ ${1:# community: Specifies the community name for the trap
 # password: (required) The password for the user account 
 # port: Specifies the port for the trap destination. 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # snmp_version: Specifies to which Simple Network Management 
 # state: When `present', ensures that the resource 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_snmp_trap module.}
   bigip_snmp_trap:
 ${3:   ${4:community}: ${5:"#"}}

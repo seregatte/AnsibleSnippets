@@ -6,10 +6,10 @@ ${1:# auth_kind: (required) The type of credential used.
 # name: Name of the resource. Provided by the client 
 # private_key: The private key in PEM format. 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_compute_ssl_certificate module.}
   gcp_compute_ssl_certificate:
 ${3:   ${4:auth_kind}: ${5:"#"}}

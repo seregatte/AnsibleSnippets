@@ -12,7 +12,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # nested_attributes: Specifies list of the attributes which should be 
 # poll_interval: Number of the seconds the module waits until 
 # quota_mode: Quota mode of the data center. One of 
-# state: Should the data center be present or absent 
+# state: Should the data center be present or absent. 
 # timeout: The amount of time in seconds the module should 
 # wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_datacenter module.}

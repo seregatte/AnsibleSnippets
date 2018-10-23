@@ -6,7 +6,7 @@ ${1:# config: config in XML format. Required if job does not
 # password: Password to authenticate with the Jenkins 
 # state: Attribute that specifies if the job has to be 
 # token: API token used to authenticate alternatively to 
-# url: Url where the Jenkins server is accessible. 
+# url: URL where the Jenkins server is accessible. 
 # user: User to authenticate with the Jenkins server. 
 }- name: ${2:Name for jenkins_job module.}
   jenkins_job:

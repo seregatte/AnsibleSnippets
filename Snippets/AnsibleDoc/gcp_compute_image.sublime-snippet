@@ -10,14 +10,14 @@ ${1:# auth_kind: (required) The type of credential used.
 # name: (required) Name of the resource; provided by the 
 # project: The Google Cloud Platform project to use. 
 # raw_disk: The parameters of the raw disk image. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# source_disk: A reference to Disk resource. 
+# source_disk: Refers to a gcompute_disk object You must 
 # source_disk_encryption_key: The customer-supplied encryption key of the 
 # source_disk_id: The ID value of the disk used to create this 
 # source_type: The type of the image used to create this disk. 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_compute_image module.}
   gcp_compute_image:
 ${3:   ${4:auth_kind}: ${5:"#"}}

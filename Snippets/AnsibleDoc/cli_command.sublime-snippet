@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# answer: The answer to reply with if `prompt' is matched. 
+# check_all: By default if any one of the prompts mentioned 
+# command: (required) The command to send to the remote 
+# prompt: A single regex pattern or a sequence of patterns 
+# sendonly: The boolean value, that when set to true will 
+}- name: ${2:Name for cli_command module.}
+  cli_command:
+${3:   ${4:answer}: ${5:"#"}}
+${6:   ${7:check_all}: ${8:"#"}}
+${9:   ${10:command}: ${11:"#"}}
+${12:   ${13:prompt}: ${14:"#"}}
+${15:   ${16:sendonly}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>cli_command</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

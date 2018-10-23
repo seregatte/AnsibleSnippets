@@ -1,27 +1,31 @@
 <snippet>
 <content><![CDATA[
 ${1:# deploy: Whether or not to deploy artifacts after 
+# force: Whether or not to force full deployment, 
 # functions: A list of specific functions to deploy. If this 
 # region: AWS region to deploy the service to 
 # serverless_bin_path: The path of a serverless framework binary 
 # service_path: (required) The path to the root of the 
 # stage: The name of the serverless framework project 
 # state: Goal state of given stage/project 
+# verbose: Shows all stack events during deployment, and 
 }- name: ${2:Name for serverless module.}
   serverless:
 ${3:   ${4:deploy}: ${5:"#"}}
-${6:   ${7:functions}: ${8:"#"}}
-${9:   ${10:region}: ${11:"#"}}
-${12:   ${13:serverless_bin_path}: ${14:"#"}}
-${15:   ${16:service_path}: ${17:"#"}}
-${18:   ${19:stage}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:functions}: ${11:"#"}}
+${12:   ${13:region}: ${14:"#"}}
+${15:   ${16:serverless_bin_path}: ${17:"#"}}
+${18:   ${19:service_path}: ${20:"#"}}
+${21:   ${22:stage}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:verbose}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>serverless</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

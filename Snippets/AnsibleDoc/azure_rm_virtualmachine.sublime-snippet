@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# ad_user: Active Directory username. Use when 
+${1:# accept_terms: Accept terms for marketplace images that require 
+# ad_user: Active Directory username. Use when 
 # adfs_authority_url: Azure AD authority url. Use when authenticating 
 # admin_password: Password for the admin username. Not required if 
 # admin_username: Admin username used to access the host after it 
@@ -21,6 +22,7 @@ ${1:# ad_user: Active Directory username. Use when
 # network_interface_names: List of existing network interface names to add 
 # open_ports: If a network interface is created when creating 
 # os_disk_caching: Type of OS disk caching. 
+# os_disk_size_gb: Type of OS disk size in GB. 
 # os_type: Base type of operating system. 
 # password: Active Directory user password. Use when 
 # plan: A dictionary describing a third-party billing 
@@ -47,57 +49,59 @@ ${1:# ad_user: Active Directory username. Use when
 # vm_size: A valid Azure VM size value. For example, 
 }- name: ${2:Name for azure_rm_virtualmachine module.}
   azure_rm_virtualmachine:
-${3:   ${4:ad_user}: ${5:"#"}}
-${6:   ${7:adfs_authority_url}: ${8:"#"}}
-${9:   ${10:admin_password}: ${11:"#"}}
-${12:   ${13:admin_username}: ${14:"#"}}
-${15:   ${16:allocated}: ${17:"#"}}
-${18:   ${19:api_profile}: ${20:"#"}}
-${21:   ${22:append_tags}: ${23:"#"}}
-${24:   ${25:auth_source}: ${26:"#"}}
-${27:   ${28:availability_set}: ${29:"#"}}
-${30:   ${31:cert_validation_mode}: ${32:"#"}}
-${33:   ${34:client_id}: ${35:"#"}}
-${36:   ${37:cloud_environment}: ${38:"#"}}
-${39:   ${40:custom_data}: ${41:"#"}}
-${42:   ${43:data_disks}: ${44:"#"}}
-${45:   ${46:image}: ${47:"#"}}
-${48:   ${49:location}: ${50:"#"}}
-${51:   ${52:managed_disk_type}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:network_interface_names}: ${59:"#"}}
-${60:   ${61:open_ports}: ${62:"#"}}
-${63:   ${64:os_disk_caching}: ${65:"#"}}
-${66:   ${67:os_type}: ${68:"#"}}
-${69:   ${70:password}: ${71:"#"}}
-${72:   ${73:plan}: ${74:"#"}}
-${75:   ${76:profile}: ${77:"#"}}
-${78:   ${79:public_ip_allocation_method}: ${80:"#"}}
-${81:   ${82:remove_on_absent}: ${83:"#"}}
-${84:   ${85:resource_group}: ${86:"#"}}
-${87:   ${88:restarted}: ${89:"#"}}
-${90:   ${91:secret}: ${92:"#"}}
-${93:   ${94:short_hostname}: ${95:"#"}}
-${96:   ${97:ssh_password_enabled}: ${98:"#"}}
-${99:   ${100:ssh_public_keys}: ${101:"#"}}
-${102:   ${103:started}: ${104:"#"}}
-${105:   ${106:state}: ${107:"#"}}
-${108:   ${109:storage_account_name}: ${110:"#"}}
-${111:   ${112:storage_blob_name}: ${113:"#"}}
-${114:   ${115:storage_container_name}: ${116:"#"}}
-${117:   ${118:subnet_name}: ${119:"#"}}
-${120:   ${121:subscription_id}: ${122:"#"}}
-${123:   ${124:tags}: ${125:"#"}}
-${126:   ${127:tenant}: ${128:"#"}}
-${129:   ${130:virtual_network_name}: ${131:"#"}}
-${132:   ${133:virtual_network_resource_group}: ${134:"#"}}
-${135:   ${136:vm_size}: ${137:"#"}}
-${138:${139:   become: ${140:true}} 
-${141:   become_method: ${142:su}} 
-${143:   become_user: ${144:nobody}} 
-${145:   become_flags: ${146:"-s /bin/sh"}}} 
-${147:   when: ${148:variable is defined}} 
-${149:   with_items: ${150:array}} 
+${3:   ${4:accept_terms}: ${5:"#"}}
+${6:   ${7:ad_user}: ${8:"#"}}
+${9:   ${10:adfs_authority_url}: ${11:"#"}}
+${12:   ${13:admin_password}: ${14:"#"}}
+${15:   ${16:admin_username}: ${17:"#"}}
+${18:   ${19:allocated}: ${20:"#"}}
+${21:   ${22:api_profile}: ${23:"#"}}
+${24:   ${25:append_tags}: ${26:"#"}}
+${27:   ${28:auth_source}: ${29:"#"}}
+${30:   ${31:availability_set}: ${32:"#"}}
+${33:   ${34:cert_validation_mode}: ${35:"#"}}
+${36:   ${37:client_id}: ${38:"#"}}
+${39:   ${40:cloud_environment}: ${41:"#"}}
+${42:   ${43:custom_data}: ${44:"#"}}
+${45:   ${46:data_disks}: ${47:"#"}}
+${48:   ${49:image}: ${50:"#"}}
+${51:   ${52:location}: ${53:"#"}}
+${54:   ${55:managed_disk_type}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:network_interface_names}: ${62:"#"}}
+${63:   ${64:open_ports}: ${65:"#"}}
+${66:   ${67:os_disk_caching}: ${68:"#"}}
+${69:   ${70:os_disk_size_gb}: ${71:"#"}}
+${72:   ${73:os_type}: ${74:"#"}}
+${75:   ${76:password}: ${77:"#"}}
+${78:   ${79:plan}: ${80:"#"}}
+${81:   ${82:profile}: ${83:"#"}}
+${84:   ${85:public_ip_allocation_method}: ${86:"#"}}
+${87:   ${88:remove_on_absent}: ${89:"#"}}
+${90:   ${91:resource_group}: ${92:"#"}}
+${93:   ${94:restarted}: ${95:"#"}}
+${96:   ${97:secret}: ${98:"#"}}
+${99:   ${100:short_hostname}: ${101:"#"}}
+${102:   ${103:ssh_password_enabled}: ${104:"#"}}
+${105:   ${106:ssh_public_keys}: ${107:"#"}}
+${108:   ${109:started}: ${110:"#"}}
+${111:   ${112:state}: ${113:"#"}}
+${114:   ${115:storage_account_name}: ${116:"#"}}
+${117:   ${118:storage_blob_name}: ${119:"#"}}
+${120:   ${121:storage_container_name}: ${122:"#"}}
+${123:   ${124:subnet_name}: ${125:"#"}}
+${126:   ${127:subscription_id}: ${128:"#"}}
+${129:   ${130:tags}: ${131:"#"}}
+${132:   ${133:tenant}: ${134:"#"}}
+${135:   ${136:virtual_network_name}: ${137:"#"}}
+${138:   ${139:virtual_network_resource_group}: ${140:"#"}}
+${141:   ${142:vm_size}: ${143:"#"}}
+${144:${145:   become: ${146:true}} 
+${147:   become_method: ${148:su}} 
+${149:   become_user: ${150:nobody}} 
+${151:   become_flags: ${152:"-s /bin/sh"}}} 
+${153:   when: ${154:variable is defined}} 
+${155:   with_items: ${156:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_virtualmachine</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

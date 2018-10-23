@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# chdir: cd into this directory on the remote node before 
-# creates: a filename, when it already exists, this step 
+${1:# chdir: Change into this directory on the remote node 
+# creates: A filename on the remote node, when it already 
 # decrypt: This option controls the autodecryption of 
 # executable: Name or path of a executable to invoke the 
 # free_form: (required) Path to the local script file 
-# removes: a filename, when it does not exist, this step 
+# removes: A filename on the remote node, when it does not 
 }- name: ${2:Name for script module.}
   script:
 ${3:   ${4:chdir}: ${5:"#"}}

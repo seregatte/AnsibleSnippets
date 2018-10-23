@@ -5,10 +5,10 @@ ${1:# auth_kind: (required) The type of credential used.
 # ip_version: The IP Version that will be used by this 
 # name: (required) Name of the resource. Provided by the 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_compute_global_address module.}
   gcp_compute_global_address:
 ${3:   ${4:auth_kind}: ${5:"#"}}

@@ -1,0 +1,168 @@
+<snippet>
+<content><![CDATA[
+${1:# allocated_storage: The amount of storage (in gibibytes) to allocate 
+# allow_major_version_upgrade: Whether to allow major version upgrades. 
+# apply_immediately: A value that specifies whether modifying a 
+# auto_minor_version_upgrade: Whether minor version upgrades are applied 
+# availability_zone: A list of EC2 Availability Zones that instances 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# backup_retention_period: The number of days for which automated backups 
+# ca_certificate_identifier: The identifier of the CA certificate for the DB 
+# character_set_name: The character set to associate with the DB 
+# copy_tags_to_snapshot: Whether or not to copy all tags from the DB 
+# creation_source: Which source to use if restoring from a template 
+# db_cluster_identifier: The DB cluster (lowercase) identifier to add the 
+# db_instance_class: The compute and memory capacity of the DB 
+# db_instance_identifier: (required) The DB instance (lowercase) 
+# db_name: The name for your database. If a name is not 
+# db_parameter_group_name: The name of the DB parameter group to associate 
+# db_security_groups: (EC2-Classic platform) A list of DB security 
+# db_snapshot_identifier: The identifier for the DB snapshot to restore 
+# db_subnet_group_name: The DB subnet group name to use for the DB 
+# domain: The Active Directory Domain to restore the 
+# domain_iam_role_name: The name of the IAM role to be used when making 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# enable_cloudwatch_logs_exports: A list of log types that need to be enabled for 
+# enable_iam_database_authentication: Enable mapping of AWS Identity and Access 
+# enable_performance_insights: Whether to enable Performance Insights for the 
+# engine: The name of the database engine to be used for 
+# engine_version: The version number of the database engine to 
+# final_db_snapshot_identifier: The DB instance snapshot identifier of the new 
+# force_failover: Set to true to conduct the reboot through a 
+# force_update_password: Set to True to update your cluster password with 
+# iops: The Provisioned IOPS (I/O operations per second) 
+# kms_key_id: The ARN of the AWS KMS key identifier for an 
+# license_model: The license model for the DB instance. 
+# master_user_password: An 8-41 character password for the master 
+# master_username: The name of the master user for the DB cluster. 
+# monitoring_interval: The interval, in seconds, when Enhanced 
+# monitoring_role_arn: The ARN for the IAM role that permits RDS to 
+# multi_az: Specifies if the DB instance is a Multi-AZ 
+# new_db_instance_identifier: The new DB cluster (lowercase) identifier for 
+# option_group_name: The option group to associate with the DB 
+# performance_insights_kms_key_id: The AWS KMS key identifier (ARN, name, or alias) 
+# performance_insights_retention_period: The amount of time, in days, to retain 
+# port: The port number on which the instances accept 
+# preferred_backup_window: The daily time range (in UTC) of at least 30 
+# preferred_maintenance_window: The weekly time range (in UTC) of at least 30 
+# processor_features: A dictionary of Name, Value pairs to indicate 
+# profile: Uses a boto profile. Only works with boto >= 
+# promotion_tier: An integer that specifies the order in which an 
+# publicly_accessible: Specifies the accessibility options for the DB 
+# purge_cloudwatch_logs_exports: Set to False to retain any enabled cloudwatch 
+# purge_tags: Set to False to retain any tags that aren't 
+# read_replica: Set to False to promote a read replica cluster 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# restore_time: If using `creation_source=instance' this 
+# s3_bucket_name: The name of the Amazon S3 bucket that contains 
+# s3_ingestion_role_arn: The Amazon Resource Name (ARN) of the AWS 
+# s3_prefix: The prefix for all of the file names that 
+# security_token: AWS STS security token. If not set then the 
+# skip_final_snapshot: Whether a final DB cluster snapshot is created 
+# snapshot_identifier: The ARN of the DB snapshot to restore from when 
+# source_db_instance_identifier: The identifier or ARN of the source DB instance 
+# source_engine: The identifier for the database engine that was 
+# source_engine_version: The version of the database that the backup 
+# source_region: The region of the DB instance from which the 
+# state: Whether the snapshot should exist or not. 
+# storage_encrypted: Whether the DB instance is encrypted. 
+# storage_type: The storage type to be associated with the DB 
+# tags: A dictionary of key value pairs to assign the DB 
+# tde_credential_arn: The ARN from the key store with which to 
+# tde_credential_password: The password for the given ARN from the key 
+# timezone: The time zone of the DB instance. 
+# use_latest_restorable_time: Whether to restore the DB instance to the latest 
+# validate_certs: When set to "no", SSL certificates will not be 
+# vpc_security_group_ids: A list of EC2 VPC security groups to associate 
+# wait: Whether to wait for the cluster to be available, 
+}- name: ${2:Name for rds_instance module.}
+  rds_instance:
+${3:   ${4:allocated_storage}: ${5:"#"}}
+${6:   ${7:allow_major_version_upgrade}: ${8:"#"}}
+${9:   ${10:apply_immediately}: ${11:"#"}}
+${12:   ${13:auto_minor_version_upgrade}: ${14:"#"}}
+${15:   ${16:availability_zone}: ${17:"#"}}
+${18:   ${19:aws_access_key}: ${20:"#"}}
+${21:   ${22:aws_secret_key}: ${23:"#"}}
+${24:   ${25:backup_retention_period}: ${26:"#"}}
+${27:   ${28:ca_certificate_identifier}: ${29:"#"}}
+${30:   ${31:character_set_name}: ${32:"#"}}
+${33:   ${34:copy_tags_to_snapshot}: ${35:"#"}}
+${36:   ${37:creation_source}: ${38:"#"}}
+${39:   ${40:db_cluster_identifier}: ${41:"#"}}
+${42:   ${43:db_instance_class}: ${44:"#"}}
+${45:   ${46:db_instance_identifier}: ${47:"#"}}
+${48:   ${49:db_name}: ${50:"#"}}
+${51:   ${52:db_parameter_group_name}: ${53:"#"}}
+${54:   ${55:db_security_groups}: ${56:"#"}}
+${57:   ${58:db_snapshot_identifier}: ${59:"#"}}
+${60:   ${61:db_subnet_group_name}: ${62:"#"}}
+${63:   ${64:domain}: ${65:"#"}}
+${66:   ${67:domain_iam_role_name}: ${68:"#"}}
+${69:   ${70:ec2_url}: ${71:"#"}}
+${72:   ${73:enable_cloudwatch_logs_exports}: ${74:"#"}}
+${75:   ${76:enable_iam_database_authentication}: ${77:"#"}}
+${78:   ${79:enable_performance_insights}: ${80:"#"}}
+${81:   ${82:engine}: ${83:"#"}}
+${84:   ${85:engine_version}: ${86:"#"}}
+${87:   ${88:final_db_snapshot_identifier}: ${89:"#"}}
+${90:   ${91:force_failover}: ${92:"#"}}
+${93:   ${94:force_update_password}: ${95:"#"}}
+${96:   ${97:iops}: ${98:"#"}}
+${99:   ${100:kms_key_id}: ${101:"#"}}
+${102:   ${103:license_model}: ${104:"#"}}
+${105:   ${106:master_user_password}: ${107:"#"}}
+${108:   ${109:master_username}: ${110:"#"}}
+${111:   ${112:monitoring_interval}: ${113:"#"}}
+${114:   ${115:monitoring_role_arn}: ${116:"#"}}
+${117:   ${118:multi_az}: ${119:"#"}}
+${120:   ${121:new_db_instance_identifier}: ${122:"#"}}
+${123:   ${124:option_group_name}: ${125:"#"}}
+${126:   ${127:performance_insights_kms_key_id}: ${128:"#"}}
+${129:   ${130:performance_insights_retention_period}: ${131:"#"}}
+${132:   ${133:port}: ${134:"#"}}
+${135:   ${136:preferred_backup_window}: ${137:"#"}}
+${138:   ${139:preferred_maintenance_window}: ${140:"#"}}
+${141:   ${142:processor_features}: ${143:"#"}}
+${144:   ${145:profile}: ${146:"#"}}
+${147:   ${148:promotion_tier}: ${149:"#"}}
+${150:   ${151:publicly_accessible}: ${152:"#"}}
+${153:   ${154:purge_cloudwatch_logs_exports}: ${155:"#"}}
+${156:   ${157:purge_tags}: ${158:"#"}}
+${159:   ${160:read_replica}: ${161:"#"}}
+${162:   ${163:region}: ${164:"#"}}
+${165:   ${166:}: ${167:"#"}}
+${168:   ${169:restore_time}: ${170:"#"}}
+${171:   ${172:s3_bucket_name}: ${173:"#"}}
+${174:   ${175:s3_ingestion_role_arn}: ${176:"#"}}
+${177:   ${178:s3_prefix}: ${179:"#"}}
+${180:   ${181:security_token}: ${182:"#"}}
+${183:   ${184:skip_final_snapshot}: ${185:"#"}}
+${186:   ${187:snapshot_identifier}: ${188:"#"}}
+${189:   ${190:source_db_instance_identifier}: ${191:"#"}}
+${192:   ${193:source_engine}: ${194:"#"}}
+${195:   ${196:source_engine_version}: ${197:"#"}}
+${198:   ${199:source_region}: ${200:"#"}}
+${201:   ${202:state}: ${203:"#"}}
+${204:   ${205:storage_encrypted}: ${206:"#"}}
+${207:   ${208:storage_type}: ${209:"#"}}
+${210:   ${211:tags}: ${212:"#"}}
+${213:   ${214:tde_credential_arn}: ${215:"#"}}
+${216:   ${217:tde_credential_password}: ${218:"#"}}
+${219:   ${220:timezone}: ${221:"#"}}
+${222:   ${223:use_latest_restorable_time}: ${224:"#"}}
+${225:   ${226:validate_certs}: ${227:"#"}}
+${228:   ${229:vpc_security_group_ids}: ${230:"#"}}
+${231:   ${232:wait}: ${233:"#"}}
+${234:${235:   become: ${236:true}} 
+${237:   become_method: ${238:su}} 
+${239:   become_user: ${240:nobody}} 
+${241:   become_flags: ${242:"-s /bin/sh"}}} 
+${243:   when: ${244:variable is defined}} 
+${245:   with_items: ${246:array}} 
+]]></content>
+	<tabTrigger>rds_instance</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# password: (required) Password for the specified user. 
+# state: Whether the FCP should be enabled or not. 
+# status: Whether the FCP should be up or down 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `False', the SSL certificates will not 
+# vserver: (required) The name of the vserver to use. 
+}- name: ${2:Name for na_ontap_fcp module.}
+  na_ontap_fcp:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:http_port}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:status}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:   ${28:vserver}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>na_ontap_fcp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

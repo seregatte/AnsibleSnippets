@@ -9,7 +9,7 @@ ${1:# api_version: The version of the Docker API running on the
 # email: The email address for the registry account. 
 # key_path: Path to the client's TLS key file. If the value 
 # password: (required) The plaintext password for the 
-# reauthorize: Refresh exiting authentication found in the 
+# reauthorize: Refresh existing authentication found in the 
 # registry_url: The registry URL. 
 # ssl_version: Provide a valid SSL version number. Default 
 # state: This controls the current state of the user. 

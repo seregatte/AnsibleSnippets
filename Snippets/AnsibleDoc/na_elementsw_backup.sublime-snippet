@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# dest_hostname: hostname for the backup source cluster will be 
+# dest_password: password for the backup destination cluster will 
+# dest_username: username for the backup destination cluster will 
+# dest_volume_id: (required) ID of the backup destination volume 
+# format: Backup format to use 
+# hostname: (required) The hostname or IP address of the 
+# password: (required) Password for the specified user. 
+# script: the backup script to be executed 
+# script_parameters: the backup script parameters 
+# src_hostname: (required) hostname for the backup source 
+# src_password: (required) password for the backup source 
+# src_username: (required) username for the backup source 
+# src_volume_id: (required) ID of the backup source volume. 
+# username: (required) Please ensure that the user has the 
+}- name: ${2:Name for na_elementsw_backup module.}
+  na_elementsw_backup:
+${3:   ${4:dest_hostname}: ${5:"#"}}
+${6:   ${7:dest_password}: ${8:"#"}}
+${9:   ${10:dest_username}: ${11:"#"}}
+${12:   ${13:dest_volume_id}: ${14:"#"}}
+${15:   ${16:format}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:script}: ${26:"#"}}
+${27:   ${28:script_parameters}: ${29:"#"}}
+${30:   ${31:src_hostname}: ${32:"#"}}
+${33:   ${34:src_password}: ${35:"#"}}
+${36:   ${37:src_username}: ${38:"#"}}
+${39:   ${40:src_volume_id}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>na_elementsw_backup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

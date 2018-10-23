@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# : 12 archive. 
+# action: 12. 
+# attributes: Attributes the file or directory should have. To 
+# ca_certificates: List of CA certificate to include. 
+# certificate_path: The path to read certificates and private keys 
+# force: Should the file be regenerated even if it 
+# friendly_name: Specifies the friendly name for the certificate 
+# group: Name of the group that should own the 
+# iter_size: Number of times to repeat the encryption step. 
+# maciter_size: Number of times to repeat the MAC step. 
+# mode: Mode the file or directory should be. For those 
+# owner: Name of the user that should own the 
+# passphrase: 12 password. 
+# path: 12 file 
+# privatekey_passphrase: Passphrase source to decrypt any input private 
+# privatekey_path: File to read private key from. 
+# selevel: Level part of the SELinux file context. This is 
+# serole: Role part of SELinux file context, `_default' 
+# setype: Type part of SELinux file context, `_default' 
+# seuser: User part of SELinux file context. Will default 
+# src: 12 file path to parse. 
+# state: Whether the file should exist or not. All 
+# unsafe_writes: By default this module uses atomic operations to 
+}- name: ${2:Name for openssl_pkcs12 module.}
+  openssl_pkcs12:
+${3:   ${4:}: ${5:"#"}}
+${6:   ${7:action}: ${8:"#"}}
+${9:   ${10:attributes}: ${11:"#"}}
+${12:   ${13:ca_certificates}: ${14:"#"}}
+${15:   ${16:certificate_path}: ${17:"#"}}
+${18:   ${19:force}: ${20:"#"}}
+${21:   ${22:friendly_name}: ${23:"#"}}
+${24:   ${25:group}: ${26:"#"}}
+${27:   ${28:iter_size}: ${29:"#"}}
+${30:   ${31:maciter_size}: ${32:"#"}}
+${33:   ${34:mode}: ${35:"#"}}
+${36:   ${37:owner}: ${38:"#"}}
+${39:   ${40:passphrase}: ${41:"#"}}
+${42:   ${43:path}: ${44:"#"}}
+${45:   ${46:privatekey_passphrase}: ${47:"#"}}
+${48:   ${49:privatekey_path}: ${50:"#"}}
+${51:   ${52:selevel}: ${53:"#"}}
+${54:   ${55:serole}: ${56:"#"}}
+${57:   ${58:setype}: ${59:"#"}}
+${60:   ${61:seuser}: ${62:"#"}}
+${63:   ${64:src}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:unsafe_writes}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>openssl_pkcs12</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

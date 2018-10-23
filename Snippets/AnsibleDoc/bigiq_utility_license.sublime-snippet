@@ -4,11 +4,11 @@ ${1:# accept_eula: A key that signifies that you accept the F5 EULA
 # license_key: (required) The license key to install and 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the utility license on the system. 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigiq_utility_license module.}
   bigiq_utility_license:
 ${3:   ${4:accept_eula}: ${5:"#"}}

@@ -2,6 +2,7 @@
 <content><![CDATA[
 ${1:# follow: If `yes', dereferences symlinks and sets/gets 
 # key: The name of a specific Extended attribute key to 
+# namespace: Namespace of the named name/key. 
 # path: (required) The full path of the file/object to 
 # state: defines which state you want to do. `read' 
 # value: The value to set the named name/key to, it 
@@ -9,15 +10,16 @@ ${1:# follow: If `yes', dereferences symlinks and sets/gets
   xattr:
 ${3:   ${4:follow}: ${5:"#"}}
 ${6:   ${7:key}: ${8:"#"}}
-${9:   ${10:path}: ${11:"#"}}
-${12:   ${13:state}: ${14:"#"}}
-${15:   ${16:value}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${9:   ${10:namespace}: ${11:"#"}}
+${12:   ${13:path}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:value}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>xattr</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

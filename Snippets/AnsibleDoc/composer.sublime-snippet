@@ -1,6 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# arguments: Composer arguments like required package, 
+${1:# apcu_autoloader: Uses APCu to cache found/not-found classes 
+# arguments: Composer arguments like required package, 
+# classmap_authoritative: Autoload classes from classmap only. Implicitely 
 # command: Composer command like "install", "update" and so 
 # executable: Path to PHP Executable on the remote host, if 
 # global_command: Runs the specified command globally. 
@@ -14,24 +16,26 @@ ${1:# arguments: Composer arguments like required package,
 # working_dir: Directory of your project (see --working-dir). 
 }- name: ${2:Name for composer module.}
   composer:
-${3:   ${4:arguments}: ${5:"#"}}
-${6:   ${7:command}: ${8:"#"}}
-${9:   ${10:executable}: ${11:"#"}}
-${12:   ${13:global_command}: ${14:"#"}}
-${15:   ${16:ignore_platform_reqs}: ${17:"#"}}
-${18:   ${19:no_dev}: ${20:"#"}}
-${21:   ${22:no_plugins}: ${23:"#"}}
-${24:   ${25:no_scripts}: ${26:"#"}}
-${27:   ${28:optimize_autoloader}: ${29:"#"}}
-${30:   ${31:prefer_dist}: ${32:"#"}}
-${33:   ${34:prefer_source}: ${35:"#"}}
-${36:   ${37:working_dir}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${3:   ${4:apcu_autoloader}: ${5:"#"}}
+${6:   ${7:arguments}: ${8:"#"}}
+${9:   ${10:classmap_authoritative}: ${11:"#"}}
+${12:   ${13:command}: ${14:"#"}}
+${15:   ${16:executable}: ${17:"#"}}
+${18:   ${19:global_command}: ${20:"#"}}
+${21:   ${22:ignore_platform_reqs}: ${23:"#"}}
+${24:   ${25:no_dev}: ${26:"#"}}
+${27:   ${28:no_plugins}: ${29:"#"}}
+${30:   ${31:no_scripts}: ${32:"#"}}
+${33:   ${34:optimize_autoloader}: ${35:"#"}}
+${36:   ${37:prefer_dist}: ${38:"#"}}
+${39:   ${40:prefer_source}: ${41:"#"}}
+${42:   ${43:working_dir}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>composer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# mail_hosts: List of mail server(s) used to deliver 
+# node_name: (required) The name fo the filer that owns the 
+# noteto: Specifies up to five recipients of full 
+# password: (required) Password for the specified user. 
+# post_url: The URL used to deliver AutoSupport messages via 
+# state: Specifies whether the AutoSupport daemon is 
+# support: Specifies whether AutoSupport notification to 
+# transport: The name of the transport protocol used to 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `False', the SSL certificates will not 
+}- name: ${2:Name for na_ontap_autosupport module.}
+  na_ontap_autosupport:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:http_port}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:mail_hosts}: ${14:"#"}}
+${15:   ${16:node_name}: ${17:"#"}}
+${18:   ${19:noteto}: ${20:"#"}}
+${21:   ${22:password}: ${23:"#"}}
+${24:   ${25:post_url}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:support}: ${32:"#"}}
+${33:   ${34:transport}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>na_ontap_autosupport</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

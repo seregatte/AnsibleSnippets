@@ -13,7 +13,7 @@ ${1:# age: Select files whose age is equal to or greater
 # patterns: One or more (shell or regex) patterns, which 
 # recurse: If target is a directory, recursively descend 
 # size: Select files whose size is equal to or greater 
-# use_regex: If false the patterns are file globs (shell) if 
+# use_regex: If false, the patterns are file globs (shell). 
 }- name: ${2:Name for find module.}
   find:
 ${3:   ${4:age}: ${5:"#"}}

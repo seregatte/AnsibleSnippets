@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_key: Authentication key provided by the dashboard. 
+# auto_bind: Optional boolean indicating whether the 
+# config_template: Name of the configuration template within an 
+# host: Hostname for Meraki dashboard Only useful for 
+# net_id: ID of the network to bind or unbind 
+# net_name: Name of the network to bind or unbind 
+# org_id: ID of organization associated to a configuration 
+# org_name: Name of organization containing the 
+# output_level: Set amount of debug output during module 
+# state: Specifies whether configuration template 
+# timeout: Time to timeout for HTTP requests. 
+# use_https: If `no', it will use HTTP. Otherwise it will use 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# validate_certs: Whether to validate HTTP certificates. 
+}- name: ${2:Name for meraki_config_template module.}
+  meraki_config_template:
+${3:   ${4:auth_key}: ${5:"#"}}
+${6:   ${7:auto_bind}: ${8:"#"}}
+${9:   ${10:config_template}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:net_id}: ${17:"#"}}
+${18:   ${19:net_name}: ${20:"#"}}
+${21:   ${22:org_id}: ${23:"#"}}
+${24:   ${25:org_name}: ${26:"#"}}
+${27:   ${28:output_level}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:timeout}: ${35:"#"}}
+${36:   ${37:use_https}: ${38:"#"}}
+${39:   ${40:use_proxy}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>meraki_config_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

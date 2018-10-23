@@ -3,6 +3,7 @@
 ${1:# app_path: (required) The path to the root of the Django 
 # apps: A list of space-delimited apps to target. Used 
 # cache_table: The name of the table used for database-backed 
+# clear: Clear the existing files before trying to copy 
 # command: (required) The name of the Django management 
 # database: The database to target. Used by the 
 # failfast: Fail the command immediately if a test fails. 
@@ -18,22 +19,23 @@ ${1:# app_path: (required) The path to the root of the Django
 ${3:   ${4:app_path}: ${5:"#"}}
 ${6:   ${7:apps}: ${8:"#"}}
 ${9:   ${10:cache_table}: ${11:"#"}}
-${12:   ${13:command}: ${14:"#"}}
-${15:   ${16:database}: ${17:"#"}}
-${18:   ${19:failfast}: ${20:"#"}}
-${21:   ${22:fixtures}: ${23:"#"}}
-${24:   ${25:link}: ${26:"#"}}
-${27:   ${28:merge}: ${29:"#"}}
-${30:   ${31:pythonpath}: ${32:"#"}}
-${33:   ${34:settings}: ${35:"#"}}
-${36:   ${37:skip}: ${38:"#"}}
-${39:   ${40:virtualenv}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${12:   ${13:clear}: ${14:"#"}}
+${15:   ${16:command}: ${17:"#"}}
+${18:   ${19:database}: ${20:"#"}}
+${21:   ${22:failfast}: ${23:"#"}}
+${24:   ${25:fixtures}: ${26:"#"}}
+${27:   ${28:link}: ${29:"#"}}
+${30:   ${31:merge}: ${32:"#"}}
+${33:   ${34:pythonpath}: ${35:"#"}}
+${36:   ${37:settings}: ${38:"#"}}
+${39:   ${40:skip}: ${41:"#"}}
+${42:   ${43:virtualenv}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>django_manage</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

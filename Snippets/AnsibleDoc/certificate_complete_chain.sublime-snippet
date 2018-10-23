@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# input_chain: (required) A concatenated set of certificates in 
+# intermediate_certificates: A list of filenames or directories. A filename 
+# root_certificates: (required) A list of filenames or directories. A 
+}- name: ${2:Name for certificate_complete_chain module.}
+  certificate_complete_chain:
+${3:   ${4:input_chain}: ${5:"#"}}
+${6:   ${7:intermediate_certificates}: ${8:"#"}}
+${9:   ${10:root_certificates}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>certificate_complete_chain</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

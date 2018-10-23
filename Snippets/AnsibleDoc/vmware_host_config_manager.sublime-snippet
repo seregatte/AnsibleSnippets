@@ -3,7 +3,7 @@
 ${1:# cluster_name: Name of the cluster. Settings are applied to 
 # esxi_hostname: ESXi hostname. Settings are applied to this ESXi 
 # hostname: The hostname or IP address of the vSphere 
-# options: A dictionary of advance configuration parameter. 
+# options: A dictionary of advance configuration 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
 # username: The username of the vSphere vCenter or ESXi 

@@ -11,13 +11,13 @@ ${1:# bwc_policy: The bandwidth controller for the route domain.
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # routing_protocol: Dynamic routing protocols for the system to use 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # service_policy: Service policy to associate with the route 
 # state: Whether the route domain should exist or not. 
 # strict: Specifies whether the system enforces cross- 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # vlans: VLANs for the system to use in the route domain. 
 }- name: ${2:Name for bigip_routedomain module.}
   bigip_routedomain:

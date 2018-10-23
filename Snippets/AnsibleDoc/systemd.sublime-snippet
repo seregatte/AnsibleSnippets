@@ -6,8 +6,9 @@ ${1:# daemon_reload: run daemon-reload before doing any other
 # masked: Whether the unit should be masked or not, a 
 # name: Name of the service. When using in a chroot 
 # no_block: Do not synchronously wait for the requested 
+# scope: run systemctl within a given service manager 
 # state: `started'/`stopped' are idempotent actions that 
-# user: run systemctl talking to the service manager of 
+# user: (deprecated) run ``systemctl`` talking to the 
 }- name: ${2:Name for systemd module.}
   systemd:
 ${3:   ${4:daemon_reload}: ${5:"#"}}
@@ -16,14 +17,15 @@ ${9:   ${10:force}: ${11:"#"}}
 ${12:   ${13:masked}: ${14:"#"}}
 ${15:   ${16:name}: ${17:"#"}}
 ${18:   ${19:no_block}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:user}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${21:   ${22:scope}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:user}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>systemd</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

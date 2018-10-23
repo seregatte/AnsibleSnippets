@@ -5,7 +5,6 @@ ${1:# address: IP address of the pool member. This can be
 # description: Pool member description. 
 # fqdn: FQDN name of the pool member. This can be any 
 # fqdn_auto_populate: Specifies whether the system automatically 
-# monitor_state: Set monitor availability status for pool member. 
 # name: Name of the node to create, or re-use, when 
 # partition: Partition 
 # password: (required) The password for the user account 
@@ -17,12 +16,11 @@ ${1:# address: IP address of the pool member. This can be
 # rate_limit: Pool member rate limit (connections-per-second). 
 # ratio: Pool member ratio weight. Valid values range 
 # reuse_nodes: Reuses node definitions if requested. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
-# session_state: Set new session availability status for pool 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: (required) Pool member state. 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_pool_member module.}
   bigip_pool_member:
 ${3:   ${4:address}: ${5:"#"}}
@@ -30,30 +28,28 @@ ${6:   ${7:connection_limit}: ${8:"#"}}
 ${9:   ${10:description}: ${11:"#"}}
 ${12:   ${13:fqdn}: ${14:"#"}}
 ${15:   ${16:fqdn_auto_populate}: ${17:"#"}}
-${18:   ${19:monitor_state}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:partition}: ${26:"#"}}
-${27:   ${28:password}: ${29:"#"}}
-${30:   ${31:pool}: ${32:"#"}}
-${33:   ${34:port}: ${35:"#"}}
-${36:   ${37:preserve_node}: ${38:"#"}}
-${39:   ${40:priority_group}: ${41:"#"}}
-${42:   ${43:provider}: ${44:"#"}}
-${45:   ${46:rate_limit}: ${47:"#"}}
-${48:   ${49:ratio}: ${50:"#"}}
-${51:   ${52:reuse_nodes}: ${53:"#"}}
-${54:   ${55:server}: ${56:"#"}}
-${57:   ${58:server_port}: ${59:"#"}}
-${60:   ${61:session_state}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:user}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:partition}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:pool}: ${29:"#"}}
+${30:   ${31:port}: ${32:"#"}}
+${33:   ${34:preserve_node}: ${35:"#"}}
+${36:   ${37:priority_group}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:rate_limit}: ${44:"#"}}
+${45:   ${46:ratio}: ${47:"#"}}
+${48:   ${49:reuse_nodes}: ${50:"#"}}
+${51:   ${52:server}: ${53:"#"}}
+${54:   ${55:server_port}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:user}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>bigip_pool_member</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

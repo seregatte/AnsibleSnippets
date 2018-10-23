@@ -15,13 +15,13 @@ ${1:# agent_type: Specifies the SNMP agent running on the
 # partition: Device partition to manage resources on. 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # time_until_up: Specifies the number of seconds to wait after a 
 # timeout: Specifies the number of seconds the target has 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # version: Specifies the version of SNMP that the host 
 }- name: ${2:Name for bigip_monitor_snmp_dca module.}
   bigip_monitor_snmp_dca:

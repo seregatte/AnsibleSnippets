@@ -7,6 +7,7 @@ ${1:# admin: Enters into administration configuration mode
 # comment: Allows a commit description to be specified to 
 # config: The module, by default, will connect to the 
 # force: The force argument instructs the module to not 
+# label: Allows a commit label to be specified to be 
 # lines: The ordered set of commands that should be 
 # match: Instructs the module on the way to perform the 
 # parents: The ordered set of parents that uniquely 
@@ -23,19 +24,20 @@ ${12:   ${13:before}: ${14:"#"}}
 ${15:   ${16:comment}: ${17:"#"}}
 ${18:   ${19:config}: ${20:"#"}}
 ${21:   ${22:force}: ${23:"#"}}
-${24:   ${25:lines}: ${26:"#"}}
-${27:   ${28:match}: ${29:"#"}}
-${30:   ${31:parents}: ${32:"#"}}
-${33:   ${34:provider}: ${35:"#"}}
-${36:   ${37:}: ${38:"#"}}
-${39:   ${40:replace}: ${41:"#"}}
-${42:   ${43:src}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${24:   ${25:label}: ${26:"#"}}
+${27:   ${28:lines}: ${29:"#"}}
+${30:   ${31:match}: ${32:"#"}}
+${33:   ${34:parents}: ${35:"#"}}
+${36:   ${37:provider}: ${38:"#"}}
+${39:   ${40:}: ${41:"#"}}
+${42:   ${43:replace}: ${44:"#"}}
+${45:   ${46:src}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>iosxr_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>
