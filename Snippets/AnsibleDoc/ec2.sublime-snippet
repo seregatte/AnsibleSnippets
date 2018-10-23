@@ -14,7 +14,7 @@ ${1:# assign_public_ip: when provisioning within vpc, assign a public IP
 # image: (required) `ami' ID to use for the instance 
 # instance_ids: list of instance ids, currently used for states: 
 # instance_initiated_shutdown_behavior: Set whether AWS will Stop or Terminate an 
-# instance_profile_name: Name of the IAM instance profile to use. Boto 
+# instance_profile_name: Name of the IAM instance profile (i.e. what the 
 # instance_tags: a hash/dictionary of tags to add to the new 
 # instance_type: (required) instance type to use for the 
 # kernel: kernel `eki' to use for the instance 

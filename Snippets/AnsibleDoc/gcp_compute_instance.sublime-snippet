@@ -5,20 +5,20 @@ ${1:# auth_kind: (required) The type of credential used.
 # disks: An array of disks that are associated with the 
 # guest_accelerators: List of the type and count of accelerator cards 
 # label_fingerprint: A fingerprint for this request, which is 
-# machine_type: A reference to MachineType resource. 
+# machine_type: A reference to a machine type which defines VM 
 # metadata: The metadata key/value pairs to assign to 
 # min_cpu_platform: Specifies a minimum CPU platform for the VM 
 # name: The name of the resource, provided by the client 
 # network_interfaces: An array of configurations for this interface. 
 # project: The Google Cloud Platform project to use. 
 # scheduling: Sets the scheduling options for this instance. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # service_accounts: A list of service accounts, with their specified 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # tags: A list of tags to apply to this instance. Tags 
-# zone: (required) A reference to Zone resource. 
+# zone: (required) A reference to the zone where the 
 }- name: ${2:Name for gcp_compute_instance module.}
   gcp_compute_instance:
 ${3:   ${4:auth_kind}: ${5:"#"}}

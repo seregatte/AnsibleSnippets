@@ -5,11 +5,11 @@ ${1:# accept_eula: Declares whether you accept the BIG-IP EULA or
 # license_server: The F5 license server to use when getting a 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the license on the system. When 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_device_license module.}
   bigip_device_license:
 ${3:   ${4:accept_eula}: ${5:"#"}}

@@ -4,13 +4,13 @@ ${1:# key_algorithm: Specify key algorithm used by `key_secret'.
 # key_name: Use TSIG key name to authenticate against DNS 
 # key_secret: Use TSIG key secret, associated with `key_name', 
 # port: Use this TCP port when connecting to `server'. 
-# record: (required) Sets the DNS record to modify. 
+# record: (required) Sets the DNS record to modify. When 
 # server: (required) Apply DNS modification on this 
 # state: Manage DNS record. 
 # ttl: Sets the record TTL. 
 # type: Sets the record type. 
 # value: Sets the record value. 
-# zone: (required) DNS record will be modified on this 
+# zone: DNS record will be modified on this `zone'. When 
 }- name: ${2:Name for nsupdate module.}
   nsupdate:
 ${3:   ${4:key_algorithm}: ${5:"#"}}

@@ -7,11 +7,11 @@ ${1:# chdir: Change into this directory before running the
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # retries: Specifies the number of retries a command should 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # transport: (required) Configures the transport connection 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # wait_for: Specifies what to evaluate from the output of 
 # warn: Whether the module should raise warnings related 
 }- name: ${2:Name for bigip_command module.}

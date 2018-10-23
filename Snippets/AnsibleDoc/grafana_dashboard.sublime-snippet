@@ -1,35 +1,43 @@
 <snippet>
 <content><![CDATA[
-${1:# grafana_api_key: The Grafana API key. If set, `grafana_user' and 
-# grafana_password: The Grafana API password. 
-# grafana_url: (required) The Grafana URL. 
-# grafana_user: The Grafana API user. 
+${1:# client_cert: PEM formatted certificate chain file to be used 
+# client_key: PEM formatted file that contains your private 
+# grafana_api_key: The Grafana API key. If set, `grafana_user' and 
 # message: Set a commit message for the version history. 
 # org_id: The Grafana Organisation ID where the dashboard 
 # overwrite: Override existing dashboard when state is 
 # path: The path to the json file containing the Grafana 
-# slug: slug of the dashboard. It's the friendly url 
+# slug: Deprecated since Grafana 5. Use grafana 
 # state: (required) State of the dashboard. 
+# uid: uid of the dasboard to export when `state' is 
+# url: (required) The Grafana URL. 
+# url_password: The Grafana API password. 
+# url_username: The Grafana API user. 
+# use_proxy: Boolean of whether or not to use proxy. 
 # validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for grafana_dashboard module.}
   grafana_dashboard:
-${3:   ${4:grafana_api_key}: ${5:"#"}}
-${6:   ${7:grafana_password}: ${8:"#"}}
-${9:   ${10:grafana_url}: ${11:"#"}}
-${12:   ${13:grafana_user}: ${14:"#"}}
-${15:   ${16:message}: ${17:"#"}}
-${18:   ${19:org_id}: ${20:"#"}}
-${21:   ${22:overwrite}: ${23:"#"}}
-${24:   ${25:path}: ${26:"#"}}
-${27:   ${28:slug}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:validate_certs}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${3:   ${4:client_cert}: ${5:"#"}}
+${6:   ${7:client_key}: ${8:"#"}}
+${9:   ${10:grafana_api_key}: ${11:"#"}}
+${12:   ${13:message}: ${14:"#"}}
+${15:   ${16:org_id}: ${17:"#"}}
+${18:   ${19:overwrite}: ${20:"#"}}
+${21:   ${22:path}: ${23:"#"}}
+${24:   ${25:slug}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:uid}: ${32:"#"}}
+${33:   ${34:url}: ${35:"#"}}
+${36:   ${37:url_password}: ${38:"#"}}
+${39:   ${40:url_username}: ${41:"#"}}
+${42:   ${43:use_proxy}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>grafana_dashboard</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -9,6 +9,9 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # create_with_security_group: Specifies whether a default security group 
+# dns_servers: Which DNS servers should the NIC lookup List of 
+# enable_accelerated_networking: Specifies whether the network interface should 
+# enable_ip_forwarding: Whether to enable IP forwarding 
 # ip_configurations: List of ip configuration if contains mutilple 
 # location: Valid azure location. Defaults to location of 
 # name: (required) Name of the network interface. 
@@ -41,33 +44,36 @@ ${18:   ${19:cert_validation_mode}: ${20:"#"}}
 ${21:   ${22:client_id}: ${23:"#"}}
 ${24:   ${25:cloud_environment}: ${26:"#"}}
 ${27:   ${28:create_with_security_group}: ${29:"#"}}
-${30:   ${31:ip_configurations}: ${32:"#"}}
-${33:   ${34:location}: ${35:"#"}}
-${36:   ${37:name}: ${38:"#"}}
-${39:   ${40:open_ports}: ${41:"#"}}
-${42:   ${43:os_type}: ${44:"#"}}
-${45:   ${46:password}: ${47:"#"}}
-${48:   ${49:private_ip_address}: ${50:"#"}}
-${51:   ${52:private_ip_allocation_method}: ${53:"#"}}
-${54:   ${55:profile}: ${56:"#"}}
-${57:   ${58:public_ip}: ${59:"#"}}
-${60:   ${61:public_ip_address_name}: ${62:"#"}}
-${63:   ${64:public_ip_allocation_method}: ${65:"#"}}
-${66:   ${67:resource_group}: ${68:"#"}}
-${69:   ${70:secret}: ${71:"#"}}
-${72:   ${73:security_group}: ${74:"#"}}
-${75:   ${76:state}: ${77:"#"}}
-${78:   ${79:subnet_name}: ${80:"#"}}
-${81:   ${82:subscription_id}: ${83:"#"}}
-${84:   ${85:tags}: ${86:"#"}}
-${87:   ${88:tenant}: ${89:"#"}}
-${90:   ${91:virtual_network}: ${92:"#"}}
-${93:${94:   become: ${95:true}} 
-${96:   become_method: ${97:su}} 
-${98:   become_user: ${99:nobody}} 
-${100:   become_flags: ${101:"-s /bin/sh"}}} 
-${102:   when: ${103:variable is defined}} 
-${104:   with_items: ${105:array}} 
+${30:   ${31:dns_servers}: ${32:"#"}}
+${33:   ${34:enable_accelerated_networking}: ${35:"#"}}
+${36:   ${37:enable_ip_forwarding}: ${38:"#"}}
+${39:   ${40:ip_configurations}: ${41:"#"}}
+${42:   ${43:location}: ${44:"#"}}
+${45:   ${46:name}: ${47:"#"}}
+${48:   ${49:open_ports}: ${50:"#"}}
+${51:   ${52:os_type}: ${53:"#"}}
+${54:   ${55:password}: ${56:"#"}}
+${57:   ${58:private_ip_address}: ${59:"#"}}
+${60:   ${61:private_ip_allocation_method}: ${62:"#"}}
+${63:   ${64:profile}: ${65:"#"}}
+${66:   ${67:public_ip}: ${68:"#"}}
+${69:   ${70:public_ip_address_name}: ${71:"#"}}
+${72:   ${73:public_ip_allocation_method}: ${74:"#"}}
+${75:   ${76:resource_group}: ${77:"#"}}
+${78:   ${79:secret}: ${80:"#"}}
+${81:   ${82:security_group}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:subnet_name}: ${89:"#"}}
+${90:   ${91:subscription_id}: ${92:"#"}}
+${93:   ${94:tags}: ${95:"#"}}
+${96:   ${97:tenant}: ${98:"#"}}
+${99:   ${100:virtual_network}: ${101:"#"}}
+${102:${103:   become: ${104:true}} 
+${105:   become_method: ${106:su}} 
+${107:   become_user: ${108:nobody}} 
+${109:   become_flags: ${110:"-s /bin/sh"}}} 
+${111:   when: ${112:variable is defined}} 
+${113:   with_items: ${114:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_networkinterface</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

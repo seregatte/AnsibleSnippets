@@ -13,15 +13,15 @@ ${1:# cipher_list: Specifies the list of ciphers for this monitor.
 # port: Port address part of the IP/port definition. If 
 # probe_timeout: Specifies the number of seconds after which the 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # target_password: Specifies the password, if the monitored target 
 # target_username: Specifies the user name, if the monitored target 
 # timeout: The number of seconds in which the node or 
 # update_password: `always' will update passwords if the 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_monitor_firepass module.}
   bigip_gtm_monitor_firepass:
 ${3:   ${4:cipher_list}: ${5:"#"}}

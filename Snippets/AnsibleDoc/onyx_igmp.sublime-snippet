@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# default_version: Configure the default operating version of the 
+# last_member_query_interval: Configure the last member query interval, range 
+# mrouter_timeout: Configure the mrouter timeout, range 60-600 
+# port_purge_timeout: Configure the host port purge timeout, range 
+# proxy_reporting: Configure ip igmp snooping proxy and enable 
+# report_suppression_interval: Configure the report suppression interval, range 
+# state: (required) IGMP state. 
+# unregistered_multicast: Configure the unregistered multicast mode Flood 
+}- name: ${2:Name for onyx_igmp module.}
+  onyx_igmp:
+${3:   ${4:default_version}: ${5:"#"}}
+${6:   ${7:last_member_query_interval}: ${8:"#"}}
+${9:   ${10:mrouter_timeout}: ${11:"#"}}
+${12:   ${13:port_purge_timeout}: ${14:"#"}}
+${15:   ${16:proxy_reporting}: ${17:"#"}}
+${18:   ${19:report_suppression_interval}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:unregistered_multicast}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>onyx_igmp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -9,10 +9,10 @@ ${1:# auth_kind: (required) The type of credential used.
 # port: The TCP port number for the HTTPS health check 
 # project: The Google Cloud Platform project to use. 
 # request_path: The request path of the HTTPS health check 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # timeout_sec: How long (in seconds) to wait before claiming 
 # unhealthy_threshold: A so-far healthy instance will be marked 
 }- name: ${2:Name for gcp_compute_https_health_check module.}

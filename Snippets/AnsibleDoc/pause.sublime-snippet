@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# echo: Contols whether or not keyboard input is shown 
+${1:# echo: Controls whether or not keyboard input is shown 
 # minutes: A positive number of minutes to pause for. 
 # prompt: Optional text to use for the prompt message. 
 # seconds: A positive number of seconds to pause for. 

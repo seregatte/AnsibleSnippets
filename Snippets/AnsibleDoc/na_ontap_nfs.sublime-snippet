@@ -1,41 +1,61 @@
 <snippet>
 <content><![CDATA[
 ${1:# hostname: (required) The hostname or IP address of the 
-# https: Enable and disabled https 
-# nfsv3: status of nfsv3. 
-# nfsv4: status of nfsv4. 
-# nfsv41: status of nfsv41. 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# nfsv3: status of NFSv3. 
+# nfsv3_fsid_change: status of if NFSv3 clients see change in FSID as 
+# nfsv4: status of NFSv4. 
+# nfsv40_acl: status of NFS v4.0 ACL feature 
+# nfsv40_read_delegation: status for NFS v4.0 read delegation feature. 
+# nfsv40_write_delegation: status for NFS v4.0 write delegation feature. 
+# nfsv41: status of NFSv41. 
+# nfsv41_acl: status of NFS v4.1 ACL feature 
+# nfsv41_read_delegation: status for NFS v4.1 read delegation feature. 
+# nfsv41_write_delegation: status for NFS v4.1 write delegation feature. 
 # nfsv4_id_domain: Name of the nfsv4_id_domain to use. 
 # password: (required) Password for the specified user. 
-# service_state: Whether the specified nfs should be enabled or 
-# state: Whether nfs should exist or not. 
-# tcp: Enable TCP. 
-# udp: Enable UDP. 
+# service_state: Whether the specified NFS should be enabled or 
+# showmount: Whether SVM allows showmount 
+# state: Whether NFS should exist or not. 
+# tcp: Enable TCP (support from ONTAP 9.3 onward). 
+# udp: Enable UDP (support from ONTAP 9.3 onward). 
 # username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `False', the SSL certificates will not 
 # vserver: (required) Name of the vserver to use. 
 # vstorage_state: status of vstorage_state. 
 }- name: ${2:Name for na_ontap_nfs module.}
   na_ontap_nfs:
 ${3:   ${4:hostname}: ${5:"#"}}
-${6:   ${7:https}: ${8:"#"}}
-${9:   ${10:nfsv3}: ${11:"#"}}
-${12:   ${13:nfsv4}: ${14:"#"}}
-${15:   ${16:nfsv41}: ${17:"#"}}
-${18:   ${19:nfsv4_id_domain}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:service_state}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:tcp}: ${32:"#"}}
-${33:   ${34:udp}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:vserver}: ${41:"#"}}
-${42:   ${43:vstorage_state}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${6:   ${7:http_port}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:nfsv3}: ${14:"#"}}
+${15:   ${16:nfsv3_fsid_change}: ${17:"#"}}
+${18:   ${19:nfsv4}: ${20:"#"}}
+${21:   ${22:nfsv40_acl}: ${23:"#"}}
+${24:   ${25:nfsv40_read_delegation}: ${26:"#"}}
+${27:   ${28:nfsv40_write_delegation}: ${29:"#"}}
+${30:   ${31:nfsv41}: ${32:"#"}}
+${33:   ${34:nfsv41_acl}: ${35:"#"}}
+${36:   ${37:nfsv41_read_delegation}: ${38:"#"}}
+${39:   ${40:nfsv41_write_delegation}: ${41:"#"}}
+${42:   ${43:nfsv4_id_domain}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:service_state}: ${50:"#"}}
+${51:   ${52:showmount}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:tcp}: ${59:"#"}}
+${60:   ${61:udp}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:   ${70:vserver}: ${71:"#"}}
+${72:   ${73:vstorage_state}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_nfs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

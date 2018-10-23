@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# active: Enable active/proactive monitoring for ASUP. 
+# api_password: (required) The password to authenticate with the 
+# api_url: (required) The url to the SANtricity Web 
+# api_username: (required) The username to authenticate with the 
+# days: A list of days of the week that ASUP bundles 
+# end: An end hour may be specified in a range from 1 
+# log_path: A local path to a file to be used for debug 
+# ssid: (required) The ID of the array to manage. This 
+# start: A start hour may be specified in a range from 0 
+# state: Enable/disable the E-Series auto-support 
+# validate_certs: Should https certificates be validated? 
+# verbose: Provide the full ASUP configuration in the 
+}- name: ${2:Name for netapp_e_asup module.}
+  netapp_e_asup:
+${3:   ${4:active}: ${5:"#"}}
+${6:   ${7:api_password}: ${8:"#"}}
+${9:   ${10:api_url}: ${11:"#"}}
+${12:   ${13:api_username}: ${14:"#"}}
+${15:   ${16:days}: ${17:"#"}}
+${18:   ${19:end}: ${20:"#"}}
+${21:   ${22:log_path}: ${23:"#"}}
+${24:   ${25:ssid}: ${26:"#"}}
+${27:   ${28:start}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:verbose}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>netapp_e_asup</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

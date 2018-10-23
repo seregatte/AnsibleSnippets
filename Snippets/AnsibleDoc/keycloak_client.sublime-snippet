@@ -31,6 +31,7 @@ ${1:# admin_url: URL to the admin interface of the client This is
 # protocol: Type of client (either `openid-connect' or 
 # protocol_mappers: a list of dicts defining protocol mappers for 
 # public_client: Is the access type for this client public or 
+# realm: The realm to create the client in. 
 # redirect_uris: Acceptable redirect URIs for this client. This 
 # registered_nodes: dict of registered cluster nodes (with 
 # registration_access_token: The registration access token provides access 
@@ -78,26 +79,27 @@ ${84:   ${85:not_before}: ${86:"#"}}
 ${87:   ${88:protocol}: ${89:"#"}}
 ${90:   ${91:protocol_mappers}: ${92:"#"}}
 ${93:   ${94:public_client}: ${95:"#"}}
-${96:   ${97:redirect_uris}: ${98:"#"}}
-${99:   ${100:registered_nodes}: ${101:"#"}}
-${102:   ${103:registration_access_token}: ${104:"#"}}
-${105:   ${106:root_url}: ${107:"#"}}
-${108:   ${109:secret}: ${110:"#"}}
-${111:   ${112:service_accounts_enabled}: ${113:"#"}}
-${114:   ${115:standard_flow_enabled}: ${116:"#"}}
-${117:   ${118:state}: ${119:"#"}}
-${120:   ${121:surrogate_auth_required}: ${122:"#"}}
-${123:   ${124:use_template_config}: ${125:"#"}}
-${126:   ${127:use_template_mappers}: ${128:"#"}}
-${129:   ${130:use_template_scope}: ${131:"#"}}
-${132:   ${133:validate_certs}: ${134:"#"}}
-${135:   ${136:web_origins}: ${137:"#"}}
-${138:${139:   become: ${140:true}} 
-${141:   become_method: ${142:su}} 
-${143:   become_user: ${144:nobody}} 
-${145:   become_flags: ${146:"-s /bin/sh"}}} 
-${147:   when: ${148:variable is defined}} 
-${149:   with_items: ${150:array}} 
+${96:   ${97:realm}: ${98:"#"}}
+${99:   ${100:redirect_uris}: ${101:"#"}}
+${102:   ${103:registered_nodes}: ${104:"#"}}
+${105:   ${106:registration_access_token}: ${107:"#"}}
+${108:   ${109:root_url}: ${110:"#"}}
+${111:   ${112:secret}: ${113:"#"}}
+${114:   ${115:service_accounts_enabled}: ${116:"#"}}
+${117:   ${118:standard_flow_enabled}: ${119:"#"}}
+${120:   ${121:state}: ${122:"#"}}
+${123:   ${124:surrogate_auth_required}: ${125:"#"}}
+${126:   ${127:use_template_config}: ${128:"#"}}
+${129:   ${130:use_template_mappers}: ${131:"#"}}
+${132:   ${133:use_template_scope}: ${134:"#"}}
+${135:   ${136:validate_certs}: ${137:"#"}}
+${138:   ${139:web_origins}: ${140:"#"}}
+${141:${142:   become: ${143:true}} 
+${144:   become_method: ${145:su}} 
+${146:   become_user: ${147:nobody}} 
+${148:   become_flags: ${149:"-s /bin/sh"}}} 
+${150:   when: ${151:variable is defined}} 
+${152:   with_items: ${153:array}} 
 ]]></content>
 	<tabTrigger>keycloak_client</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

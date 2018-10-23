@@ -11,6 +11,7 @@ ${1:# after: The ordered set of commands to append to the end
 # provider: A dict object containing connection details. 
 # running_config: The module, by default, will connect to the 
 # save: The `save' argument instructs the module to save 
+# save_when: When changes are made to the device running- 
 # src: Specifies the source path to the file that 
 }- name: ${2:Name for aireos_config module.}
   aireos_config:
@@ -25,13 +26,14 @@ ${24:   ${25:match}: ${26:"#"}}
 ${27:   ${28:provider}: ${29:"#"}}
 ${30:   ${31:running_config}: ${32:"#"}}
 ${33:   ${34:save}: ${35:"#"}}
-${36:   ${37:src}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${36:   ${37:save_when}: ${38:"#"}}
+${39:   ${40:src}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>aireos_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

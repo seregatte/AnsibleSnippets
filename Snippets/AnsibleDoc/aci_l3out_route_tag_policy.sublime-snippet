@@ -9,7 +9,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # private_key: (required) PEM formatted file that contains your 
 # rtp: (required) The name of the route tag policy. 
 # state: Use `present' or `absent' for adding or 
-# tag: The value of the route tag (range 0-4294967295). 
+# tag: The value of the route tag. Accepted values 
 # tenant: (required) The name of the tenant. 
 # timeout: The socket level timeout in seconds. 
 # use_proxy: If `no', it will not use a proxy, even if one is 

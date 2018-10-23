@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# description: Description of the profile. 
+# dns_resolver: Specifies the name of a configured DNS resolver, 
+# encrypt_cookie_secret: Passphrase for cookie encryption. When creating 
+# encrypt_cookies: Cookie names for the system to encrypt. To 
+# insert_xforwarded_for: When specified system inserts an X-Forwarded-For 
+# name: (required) Specifies the name of the profile. 
+# parent: Specifies the profile from which this profile 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# proxy_type: Specifies the proxy mode for the profile. When 
+# redirect_rewrite: Specifies whether the system rewrites the URIs 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# state: When `present', ensures that the profile exists. 
+# update_password: `always' will update passwords if the 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigip_profile_http module.}
+  bigip_profile_http:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:dns_resolver}: ${8:"#"}}
+${9:   ${10:encrypt_cookie_secret}: ${11:"#"}}
+${12:   ${13:encrypt_cookies}: ${14:"#"}}
+${15:   ${16:insert_xforwarded_for}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:parent}: ${23:"#"}}
+${24:   ${25:partition}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:provider}: ${32:"#"}}
+${33:   ${34:proxy_type}: ${35:"#"}}
+${36:   ${37:redirect_rewrite}: ${38:"#"}}
+${39:   ${40:server}: ${41:"#"}}
+${42:   ${43:server_port}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:update_password}: ${50:"#"}}
+${51:   ${52:user}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>bigip_profile_http</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

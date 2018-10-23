@@ -6,12 +6,12 @@ ${1:# description: Description of the service policy.
 # password: (required) The password for the user account 
 # port_misuse_policy: The port misuse policy to attach to the service 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: Whether the resource should exist or not. 
 # timer_policy: The timer policy to attach to the service 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_service_policy module.}
   bigip_service_policy:
 ${3:   ${4:description}: ${5:"#"}}

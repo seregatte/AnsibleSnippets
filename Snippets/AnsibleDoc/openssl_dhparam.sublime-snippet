@@ -12,7 +12,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # seuser: User part of SELinux file context. Will default 
 # size: Size (in bits) of the generated DH-params 
 # state: Whether the parameters should exist or not, 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 }- name: ${2:Name for openssl_dhparam module.}
   openssl_dhparam:
 ${3:   ${4:attributes}: ${5:"#"}}

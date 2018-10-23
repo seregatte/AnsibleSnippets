@@ -1,17 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# msg: The customized message used for a failing 
+${1:# fail_msg: The customized message used for a failing 
+# success_msg: The customized message used for a successful 
 # that: (required) A string expression of the same form 
 }- name: ${2:Name for assert module.}
   assert:
-${3:   ${4:msg}: ${5:"#"}}
-${6:   ${7:that}: ${8:"#"}}
-${9:${10:   become: ${11:true}} 
-${12:   become_method: ${13:su}} 
-${14:   become_user: ${15:nobody}} 
-${16:   become_flags: ${17:"-s /bin/sh"}}} 
-${18:   when: ${19:variable is defined}} 
-${20:   with_items: ${21:array}} 
+${3:   ${4:fail_msg}: ${5:"#"}}
+${6:   ${7:success_msg}: ${8:"#"}}
+${9:   ${10:that}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>assert</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

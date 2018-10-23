@@ -18,6 +18,13 @@ ${1:# acme_accountkey_path: Path to the accountkey for the `acme' provider
 # mode: Mode the file or directory should be. For those 
 # not_after: The certificate must expire at this point in 
 # not_before: The certificate must start to become valid at 
+# ownca_digest: Digest algorithm to be used for the `ownca' 
+# ownca_not_after: The timestamp at which the certificate stops 
+# ownca_not_before: The timestamp at which the certificate starts 
+# ownca_path: Remote absolute path of the CA (Certificate 
+# ownca_privatekey_passphrase: The passphrase for the `ownca_privatekey_path'. 
+# ownca_privatekey_path: Path to the CA (Certificate Authority) private 
+# ownca_version: Version of the `ownca' certificate. Nowadays it 
 # owner: Name of the user that should own the 
 # path: (required) Remote absolute path where the 
 # privatekey_passphrase: The passphrase for the `privatekey_path'. 
@@ -37,7 +44,7 @@ ${1:# acme_accountkey_path: Path to the accountkey for the `acme' provider
 # subject_alt_name: The `subject_alt_name' extension field must 
 # subject_alt_name_strict: If set to True, the `subject_alt_name' extension 
 # subject_strict: If set to True, the `subject' field must contain 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # valid_at: The certificate must be valid at this point in 
 # valid_in: The certificate must still be valid in 
 # version: Version of the certificate. Nowadays it should 
@@ -61,35 +68,42 @@ ${45:   ${46:key_usage_strict}: ${47:"#"}}
 ${48:   ${49:mode}: ${50:"#"}}
 ${51:   ${52:not_after}: ${53:"#"}}
 ${54:   ${55:not_before}: ${56:"#"}}
-${57:   ${58:owner}: ${59:"#"}}
-${60:   ${61:path}: ${62:"#"}}
-${63:   ${64:privatekey_passphrase}: ${65:"#"}}
-${66:   ${67:privatekey_path}: ${68:"#"}}
-${69:   ${70:provider}: ${71:"#"}}
-${72:   ${73:selevel}: ${74:"#"}}
-${75:   ${76:selfsigned_digest}: ${77:"#"}}
-${78:   ${79:selfsigned_not_after}: ${80:"#"}}
-${81:   ${82:selfsigned_not_before}: ${83:"#"}}
-${84:   ${85:selfsigned_version}: ${86:"#"}}
-${87:   ${88:serole}: ${89:"#"}}
-${90:   ${91:setype}: ${92:"#"}}
-${93:   ${94:seuser}: ${95:"#"}}
-${96:   ${97:signature_algorithms}: ${98:"#"}}
-${99:   ${100:state}: ${101:"#"}}
-${102:   ${103:subject}: ${104:"#"}}
-${105:   ${106:subject_alt_name}: ${107:"#"}}
-${108:   ${109:subject_alt_name_strict}: ${110:"#"}}
-${111:   ${112:subject_strict}: ${113:"#"}}
-${114:   ${115:unsafe_writes}: ${116:"#"}}
-${117:   ${118:valid_at}: ${119:"#"}}
-${120:   ${121:valid_in}: ${122:"#"}}
-${123:   ${124:version}: ${125:"#"}}
-${126:${127:   become: ${128:true}} 
-${129:   become_method: ${130:su}} 
-${131:   become_user: ${132:nobody}} 
-${133:   become_flags: ${134:"-s /bin/sh"}}} 
-${135:   when: ${136:variable is defined}} 
-${137:   with_items: ${138:array}} 
+${57:   ${58:ownca_digest}: ${59:"#"}}
+${60:   ${61:ownca_not_after}: ${62:"#"}}
+${63:   ${64:ownca_not_before}: ${65:"#"}}
+${66:   ${67:ownca_path}: ${68:"#"}}
+${69:   ${70:ownca_privatekey_passphrase}: ${71:"#"}}
+${72:   ${73:ownca_privatekey_path}: ${74:"#"}}
+${75:   ${76:ownca_version}: ${77:"#"}}
+${78:   ${79:owner}: ${80:"#"}}
+${81:   ${82:path}: ${83:"#"}}
+${84:   ${85:privatekey_passphrase}: ${86:"#"}}
+${87:   ${88:privatekey_path}: ${89:"#"}}
+${90:   ${91:provider}: ${92:"#"}}
+${93:   ${94:selevel}: ${95:"#"}}
+${96:   ${97:selfsigned_digest}: ${98:"#"}}
+${99:   ${100:selfsigned_not_after}: ${101:"#"}}
+${102:   ${103:selfsigned_not_before}: ${104:"#"}}
+${105:   ${106:selfsigned_version}: ${107:"#"}}
+${108:   ${109:serole}: ${110:"#"}}
+${111:   ${112:setype}: ${113:"#"}}
+${114:   ${115:seuser}: ${116:"#"}}
+${117:   ${118:signature_algorithms}: ${119:"#"}}
+${120:   ${121:state}: ${122:"#"}}
+${123:   ${124:subject}: ${125:"#"}}
+${126:   ${127:subject_alt_name}: ${128:"#"}}
+${129:   ${130:subject_alt_name_strict}: ${131:"#"}}
+${132:   ${133:subject_strict}: ${134:"#"}}
+${135:   ${136:unsafe_writes}: ${137:"#"}}
+${138:   ${139:valid_at}: ${140:"#"}}
+${141:   ${142:valid_in}: ${143:"#"}}
+${144:   ${145:version}: ${146:"#"}}
+${147:${148:   become: ${149:true}} 
+${150:   become_method: ${151:su}} 
+${152:   become_user: ${153:nobody}} 
+${154:   become_flags: ${155:"-s /bin/sh"}}} 
+${156:   when: ${157:variable is defined}} 
+${158:   with_items: ${159:array}} 
 ]]></content>
 	<tabTrigger>openssl_certificate</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# baseuri: (required) Base URI of OOB controller 
+# category: List of categories to execute on OOB controller 
+# command: List of commands to execute on OOB controller 
+# password: (required) Password for authentication with OOB 
+# user: (required) User for authentication with OOB 
+}- name: ${2:Name for redfish_facts module.}
+  redfish_facts:
+${3:   ${4:baseuri}: ${5:"#"}}
+${6:   ${7:category}: ${8:"#"}}
+${9:   ${10:command}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:user}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>redfish_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

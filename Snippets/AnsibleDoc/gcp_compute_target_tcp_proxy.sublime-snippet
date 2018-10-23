@@ -2,14 +2,14 @@
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
 # description: An optional description of this resource. 
-# name: Name of the resource. Provided by the client 
+# name: (required) Name of the resource. Provided by the 
 # project: The Google Cloud Platform project to use. 
 # proxy_header: Specifies the type of proxy header to append 
-# scopes: (required) Array of scopes to be used. 
-# service: A reference to BackendService resource. 
+# scopes: Array of scopes to be used. 
+# service: (required) A reference to the BackendService 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_compute_target_tcp_proxy module.}
   gcp_compute_target_tcp_proxy:
 ${3:   ${4:auth_kind}: ${5:"#"}}

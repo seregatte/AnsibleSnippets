@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
-# backup_pool: A reference to TargetPool resource. 
+# backup_pool: This field is applicable only when the 
 # description: An optional description of this resource. 
 # failover_ratio: This field is applicable only when the 
-# health_check: A reference to HttpHealthCheck resource. 
+# health_check: A reference to a HttpHealthCheck resource. A 
 # instances: A list of virtual machine instances serving this 
 # name: (required) Name of the resource. Provided by the 
 # project: The Google Cloud Platform project to use. 
-# region: (required) A reference to Region resource. 
-# scopes: (required) Array of scopes to be used. 
+# region: (required) The region where the target pool 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # session_affinity: Session affinity option. Must be one of these 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_compute_target_pool module.}
   gcp_compute_target_pool:
 ${3:   ${4:auth_kind}: ${5:"#"}}

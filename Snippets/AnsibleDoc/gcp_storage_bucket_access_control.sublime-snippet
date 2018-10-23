@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
-# bucket: (required) A reference to Bucket resource. 
+# bucket: (required) The name of the bucket. 
 # entity: (required) The entity holding the permission, in 
 # entity_id: The ID for the entity. 
 # project: The Google Cloud Platform project to use. 
 # project_team: The project team associated with the entity. 
 # role: The access permission for the entity. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_storage_bucket_access_control module.}
   gcp_storage_bucket_access_control:
 ${3:   ${4:auth_kind}: ${5:"#"}}

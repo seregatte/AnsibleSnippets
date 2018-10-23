@@ -18,7 +18,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # setype: Type part of SELinux file context, `_default' 
 # seuser: User part of SELinux file context. Will default 
 # src: (required) If `remote_src=no' (default), local 
-# unsafe_writes: Normally this module uses atomic operations to 
+# unsafe_writes: By default this module uses atomic operations to 
 # validate_certs: This only applies if using a https URL as the 
 }- name: ${2:Name for unarchive module.}
   unarchive:

@@ -11,12 +11,12 @@ ${1:# alternate_lb_method: The load balancing mode that the system tries if
 # password: (required) The password for the user account 
 # preferred_lb_method: The load balancing mode that the system tries 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: Pool state. When `present', ensures that the 
 # type: The type of GTM pool that you want to create. On 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_pool module.}
   bigip_gtm_pool:
 ${3:   ${4:alternate_lb_method}: ${5:"#"}}

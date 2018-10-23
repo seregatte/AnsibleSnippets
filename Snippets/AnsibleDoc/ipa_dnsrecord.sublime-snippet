@@ -4,8 +4,10 @@ ${1:# ipa_host: IP or hostname of IPA server. If the value is
 # ipa_pass: (required) Password of administrative user. If 
 # ipa_port: Port of FreeIPA / IPA server. If the value is 
 # ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_timeout: Specifies idle timeout (in seconds) for the 
 # ipa_user: Administrative account used on IPA server. If 
 # record_name: (required) The DNS record name to manage. 
+# record_ttl: Set the TTL for the record. Applies only when 
 # record_type: The type of DNS record name. Currently, 'A', 
 # record_value: (required) Manage DNS record name with this 
 # state: State to ensure 
@@ -17,19 +19,21 @@ ${3:   ${4:ipa_host}: ${5:"#"}}
 ${6:   ${7:ipa_pass}: ${8:"#"}}
 ${9:   ${10:ipa_port}: ${11:"#"}}
 ${12:   ${13:ipa_prot}: ${14:"#"}}
-${15:   ${16:ipa_user}: ${17:"#"}}
-${18:   ${19:record_name}: ${20:"#"}}
-${21:   ${22:record_type}: ${23:"#"}}
-${24:   ${25:record_value}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:validate_certs}: ${32:"#"}}
-${33:   ${34:zone_name}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${15:   ${16:ipa_timeout}: ${17:"#"}}
+${18:   ${19:ipa_user}: ${20:"#"}}
+${21:   ${22:record_name}: ${23:"#"}}
+${24:   ${25:record_ttl}: ${26:"#"}}
+${27:   ${28:record_type}: ${29:"#"}}
+${30:   ${31:record_value}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:zone_name}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>ipa_dnsrecord</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

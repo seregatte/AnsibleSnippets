@@ -2,16 +2,16 @@
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
 # autoscaling: Autoscaler configuration for this NodePool. 
-# cluster: (required) A reference to Cluster resource. 
+# cluster: (required) The cluster this node pool belongs 
 # config: The node configuration of the pool. 
 # initial_node_count: (required) The initial node count for the pool. 
 # management: Management configuration for this NodePool. 
 # name: The name of the node pool. 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # zone: (required) The zone where the node pool is 
 }- name: ${2:Name for gcp_container_node_pool module.}
   gcp_container_node_pool:

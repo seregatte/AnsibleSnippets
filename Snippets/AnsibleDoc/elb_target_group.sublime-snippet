@@ -30,6 +30,8 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # unhealthy_threshold_count: The number of consecutive health check failures 
 # validate_certs: When set to "no", SSL certificates will not be 
 # vpc_id: The identifier of the virtual private cloud 
+# wait: Whether or not to wait for the target group. 
+# wait_timeout: The time to wait for the target group. 
 }- name: ${2:Name for elb_target_group module.}
   elb_target_group:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -62,12 +64,14 @@ ${81:   ${82:targets}: ${83:"#"}}
 ${84:   ${85:unhealthy_threshold_count}: ${86:"#"}}
 ${87:   ${88:validate_certs}: ${89:"#"}}
 ${90:   ${91:vpc_id}: ${92:"#"}}
-${93:${94:   become: ${95:true}} 
-${96:   become_method: ${97:su}} 
-${98:   become_user: ${99:nobody}} 
-${100:   become_flags: ${101:"-s /bin/sh"}}} 
-${102:   when: ${103:variable is defined}} 
-${104:   with_items: ${105:array}} 
+${93:   ${94:wait}: ${95:"#"}}
+${96:   ${97:wait_timeout}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>elb_target_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

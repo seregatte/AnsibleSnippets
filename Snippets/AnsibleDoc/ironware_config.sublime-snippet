@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# after: The ordered set of commands to append to the end 
-# authorize: Instructs the module to enter privileged mode on 
+# authorize: *Deprecated* Starting with Ansible 2.7 we 
 # backup: This argument will cause the module to create a 
 # before: The ordered set of commands to push on to the 
 # commit: This argument specifies the update method to use 
@@ -9,7 +9,7 @@ ${1:# after: The ordered set of commands to append to the end
 # lines: The ordered set of commands that should be 
 # match: Instructs the module on the way to perform the 
 # parents: The ordered set of parents that uniquely 
-# provider: A dict object containing connection details. 
+# provider: *Deprecated* Starting with Ansible 2.7 we 
 # replace: Instructs the module on the way to perform the 
 # save_when: When changes are made to the device running- 
 # src: Specifies the source path to the file that 

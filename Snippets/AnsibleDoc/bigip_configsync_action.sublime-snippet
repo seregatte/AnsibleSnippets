@@ -4,12 +4,12 @@ ${1:# device_group: (required) The device group that you want to
 # overwrite_config: Indicates that the sync operation overwrites the 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # sync_device_to_group: Specifies that the system synchronizes 
 # sync_most_recent_to_device: Specifies that the system synchronizes 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_configsync_action module.}
   bigip_configsync_action:
 ${3:   ${4:device_group}: ${5:"#"}}

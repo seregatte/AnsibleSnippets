@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# certificate_name: The X.509 certificate name attached to the APIC 
-# description: The description to assign to the `leaf' 
-# from: Start of Node Block Range 
+# description: The description to assign to the `leaf'. 
+# from: Start of Node Block range. 
 # host: (required) IP Address or hostname of APIC 
 # leaf: Name of Leaf Selector. 
 # leaf_node_blk: Name of Node Block range to be added to Leaf 
@@ -15,7 +15,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # private_key: (required) PEM formatted file that contains your 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 
-# to: Start of Node Block Range 
+# to: Start of Node Block range. 
 # use_proxy: If `no', it will not use a proxy, even if one is 
 # use_ssl: If `no', an HTTP connection will be used instead 
 # username: The username to use for authentication. 

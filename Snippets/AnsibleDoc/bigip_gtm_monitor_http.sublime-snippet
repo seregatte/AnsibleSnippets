@@ -13,8 +13,8 @@ ${1:# ignore_down_response: Specifies that the monitor allows more than one
 # receive: The receive string for the monitor call. 
 # reverse: Instructs the system to mark the target resource 
 # send: The send string for the monitor call. When 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # target_password: Specifies the password, if the monitored target 
 # target_username: Specifies the user name, if the monitored target 
@@ -22,7 +22,7 @@ ${1:# ignore_down_response: Specifies that the monitor allows more than one
 # transparent: Specifies whether the monitor operates in 
 # update_password: `always' will update passwords if the 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_monitor_http module.}
   bigip_gtm_monitor_http:
 ${3:   ${4:ignore_down_response}: ${5:"#"}}

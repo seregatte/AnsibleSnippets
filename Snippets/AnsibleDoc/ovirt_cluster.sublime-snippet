@@ -15,10 +15,10 @@ ${1:# auth: (required) Dictionary with values needed to
 # fence_skip_if_sd_active: If `True' any hosts in the cluster that are Non 
 # fetch_nested: If `True' the module will fetch additional data 
 # gluster: If `True', hosts in this cluster will be used as 
-# ha_reservation: If `True' enable the oVirt/RHV to monitor 
-# host_reason: If `True' enable an optional reason field when a 
+# ha_reservation: If `True' enables the oVirt/RHV to monitor 
+# host_reason: If `True' enables an optional reason field when 
 # ksm: I `True' MoM enables to run Kernel Same-page 
-# ksm_numa: If `True' enables KSM `ksm' for best berformance 
+# ksm_numa: If `True' enables KSM `ksm' for best performance 
 # mac_pool: MAC pool to be used by this cluster. `Note:' 
 # memory_policy: `disabled' - Disables memory page sharing. 
 # migration_auto_converge: If `True' auto-convergence is used during live 
@@ -37,13 +37,13 @@ ${1:# auth: (required) Dictionary with values needed to
 # serial_policy: Specify a serial number policy for the virtual 
 # serial_policy_value: Allows you to specify a custom serial number. 
 # spice_proxy: The proxy by which the SPICE client will connect 
-# state: Should the cluster be present or absent 
+# state: Should the cluster be present or absent. 
 # switch_type: Type of switch to be used by all networks in 
 # threads_as_cores: If `True' the exposed host threads would be 
 # timeout: The amount of time in seconds the module should 
-# trusted_service: If (True) enable integration with an 
+# trusted_service: If `True' enables integration with an 
 # virt: If `True', hosts in this cluster will be used to 
-# vm_reason: If `True' enable an optional reason field when a 
+# vm_reason: If `True' enables an optional reason field when 
 # wait: `True' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_cluster module.}
   ovirt_cluster:

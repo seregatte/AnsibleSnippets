@@ -5,12 +5,12 @@ ${1:# auth_kind: (required) The type of credential used.
 # name: (required) Name of the resource. Provided by the 
 # project: The Google Cloud Platform project to use. 
 # proxy_header: Specifies the type of proxy header to append 
-# scopes: (required) Array of scopes to be used. 
-# service: (required) A reference to BackendService 
+# scopes: Array of scopes to be used. 
+# service: (required) A reference to the BackendService 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # ssl_certificates: (required) A list of SslCertificate resources 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 }- name: ${2:Name for gcp_compute_target_ssl_proxy module.}
   gcp_compute_target_ssl_proxy:
 ${3:   ${4:auth_kind}: ${5:"#"}}

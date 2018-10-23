@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# password: (required) Password for the specified user. 
+# snapmirror_label: A human readable SnapMirror label to be attached 
+# snapshot: (required) The provided name of the snapshot 
+# state: If you want to create a snapshot. 
+# timeout: Timeout selector. 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `False', the SSL certificates will not 
+# volumes: (required) A list of volumes in this filer that 
+# vserver: (required) Name of the vserver. 
+}- name: ${2:Name for na_ontap_cg_snapshot module.}
+  na_ontap_cg_snapshot:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:http_port}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:snapmirror_label}: ${17:"#"}}
+${18:   ${19:snapshot}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:timeout}: ${26:"#"}}
+${27:   ${28:username}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:   ${34:volumes}: ${35:"#"}}
+${36:   ${37:vserver}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>na_ontap_cg_snapshot</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

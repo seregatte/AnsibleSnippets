@@ -9,8 +9,8 @@ ${1:# config: (required) This refers to the type of
 # protocol: (required) This refers to the protocol used by 
 # rcpath: (required) This specifies the full file path of 
 # rcserverip: (required) This specifies the IP Address of the 
-# serverpassword: (required) Specify the password for the server 
-# serverusername: (required) Specify the username for the server 
+# serverpassword: (required) Specify password for the server 
+# serverusername: (required) Specify username for the server 
 # username: (required) Configures the username used to 
 }- name: ${2:Name for cnos_rollback module.}
   cnos_rollback:

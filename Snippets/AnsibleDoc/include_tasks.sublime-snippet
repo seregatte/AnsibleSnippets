@@ -1,15 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# free: The name of the imported file is specified 
+${1:# apply: Accepts a hash of task keywords (e.g. `tags', 
+# file: The name of the imported file is specified 
+# free: Supplying a file name via free-form `- 
 }- name: ${2:Name for include_tasks module.}
   include_tasks:
-${3:   ${4:free}: ${5:"#"}}
-${6:${7:   become: ${8:true}} 
-${9:   become_method: ${10:su}} 
-${11:   become_user: ${12:nobody}} 
-${13:   become_flags: ${14:"-s /bin/sh"}}} 
-${15:   when: ${16:variable is defined}} 
-${17:   with_items: ${18:array}} 
+${3:   ${4:apply}: ${5:"#"}}
+${6:   ${7:file}: ${8:"#"}}
+${9:   ${10:free}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>include_tasks</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

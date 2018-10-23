@@ -1,23 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# entity: (required) The Foreman resource that the action 
+${1:# action: action associated to the entity resource to set 
+# entity: (required) The Foreman resource that the action 
 # params: (required) Parameters associated to the entity 
 # password: (required) Password for user accessing Foreman 
 # server_url: (required) URL of Foreman server. 
+# task_timeout: The timeout in seconds to wait for the started 
 # username: (required) Username on Foreman server. 
+# verify_ssl: verify the ssl/https connection (e.g for a valid 
 }- name: ${2:Name for katello module.}
   katello:
-${3:   ${4:entity}: ${5:"#"}}
-${6:   ${7:params}: ${8:"#"}}
-${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:server_url}: ${14:"#"}}
-${15:   ${16:username}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:entity}: ${8:"#"}}
+${9:   ${10:params}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:server_url}: ${17:"#"}}
+${18:   ${19:task_timeout}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:   ${25:verify_ssl}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>katello</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

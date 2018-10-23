@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# dest_mvip: (required) Destination IP address of the cluster 
+# dest_password: Destination password for the cluster to be 
+# dest_username: Destination username for the cluster to be 
+# hostname: (required) The hostname or IP address of the 
+# password: (required) Password for the specified user. 
+# state: Whether the specified cluster pair should exist 
+# username: (required) Please ensure that the user has the 
+}- name: ${2:Name for na_elementsw_cluster_pair module.}
+  na_elementsw_cluster_pair:
+${3:   ${4:dest_mvip}: ${5:"#"}}
+${6:   ${7:dest_password}: ${8:"#"}}
+${9:   ${10:dest_username}: ${11:"#"}}
+${12:   ${13:hostname}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>na_elementsw_cluster_pair</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

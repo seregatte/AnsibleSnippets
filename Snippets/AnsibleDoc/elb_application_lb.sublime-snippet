@@ -7,18 +7,20 @@ ${1:# access_logs_enabled: Whether or not to enable access logs. When true,
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # deletion_protection: Indicates whether deletion protection for the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# http2: Indicates whether to enable HTTP2 routing. 
 # idle_timeout: The number of seconds to wait before an idle 
 # listeners: A list of dicts containing listeners to attach 
 # name: (required) The name of the load balancer. This 
 # profile: Uses a boto profile. Only works with boto >= 
 # purge_listeners: If yes, existing listeners will be purged from 
+# purge_rules: When set to no, keep the existing load balancer 
 # purge_tags: If yes, existing tags will be purged from the 
 # region: The AWS region to use. If not specified then the 
 # : ec2_region 
 # scheme: Internet-facing or internal load balancer. An 
 # security_groups: A list of the names or IDs of the security 
 # security_token: AWS STS security token. If not set then the 
-# state: (required) Create or destroy the load balancer. 
+# state: Create or destroy the load balancer. 
 # subnets: A list of the IDs of the subnets to attach to 
 # tags: A dictionary of one or more tags to assign to 
 # validate_certs: When set to "no", SSL certificates will not be 
@@ -33,29 +35,31 @@ ${12:   ${13:aws_access_key}: ${14:"#"}}
 ${15:   ${16:aws_secret_key}: ${17:"#"}}
 ${18:   ${19:deletion_protection}: ${20:"#"}}
 ${21:   ${22:ec2_url}: ${23:"#"}}
-${24:   ${25:idle_timeout}: ${26:"#"}}
-${27:   ${28:listeners}: ${29:"#"}}
-${30:   ${31:name}: ${32:"#"}}
-${33:   ${34:profile}: ${35:"#"}}
-${36:   ${37:purge_listeners}: ${38:"#"}}
-${39:   ${40:purge_tags}: ${41:"#"}}
-${42:   ${43:region}: ${44:"#"}}
-${45:   ${46:}: ${47:"#"}}
-${48:   ${49:scheme}: ${50:"#"}}
-${51:   ${52:security_groups}: ${53:"#"}}
-${54:   ${55:security_token}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:subnets}: ${62:"#"}}
-${63:   ${64:tags}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:   ${70:wait}: ${71:"#"}}
-${72:   ${73:wait_timeout}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${24:   ${25:http2}: ${26:"#"}}
+${27:   ${28:idle_timeout}: ${29:"#"}}
+${30:   ${31:listeners}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:purge_listeners}: ${41:"#"}}
+${42:   ${43:purge_rules}: ${44:"#"}}
+${45:   ${46:purge_tags}: ${47:"#"}}
+${48:   ${49:region}: ${50:"#"}}
+${51:   ${52:}: ${53:"#"}}
+${54:   ${55:scheme}: ${56:"#"}}
+${57:   ${58:security_groups}: ${59:"#"}}
+${60:   ${61:security_token}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:subnets}: ${68:"#"}}
+${69:   ${70:tags}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:   ${76:wait}: ${77:"#"}}
+${78:   ${79:wait_timeout}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>elb_application_lb</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

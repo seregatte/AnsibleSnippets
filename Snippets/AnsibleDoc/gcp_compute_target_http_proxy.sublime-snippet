@@ -4,11 +4,11 @@ ${1:# auth_kind: (required) The type of credential used.
 # description: An optional description of this resource. 
 # name: (required) Name of the resource. Provided by the 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
-# url_map: (required) A reference to UrlMap resource. 
+# state: Whether the given object should exist in GCP 
+# url_map: (required) A reference to the UrlMap resource 
 }- name: ${2:Name for gcp_compute_target_http_proxy module.}
   gcp_compute_target_http_proxy:
 ${3:   ${4:auth_kind}: ${5:"#"}}

@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# bounce_age: Bounce Entry Aging Interval (range 150secs - 
+${1:# bounce_age: Bounce entry aging interval in seconds. Accepted 
 # bounce_trigger: Determines if the bounce entries are installed 
 # certificate_name: The X.509 certificate name attached to the APIC 
 # description: Description for the End point rentention policy. 
 # epr_policy: The name of the end point retention policy. 
-# hold_interval: Hold Interval (range 5secs - 65535secs). The 
+# hold_interval: Hold interval in seconds. Accepted values range 
 # host: (required) IP Address or hostname of APIC 
-# local_ep_interval: Local end point Aging Interval (range 120secs - 
-# move_frequency: Move frequency per second (range 0secs - 
+# local_ep_interval: Local end point aging interval in seconds. 
+# move_frequency: Move frequency per second. Accepted values range 
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # private_key: (required) PEM formatted file that contains your 
-# remote_ep_interval: Remote end point Aging Interval (range 120secs - 
+# remote_ep_interval: Remote end point aging interval in seconds. 
 # state: Use `present' or `absent' for adding or 
 # tenant: The name of an existing tenant. 
 # timeout: The socket level timeout in seconds. 

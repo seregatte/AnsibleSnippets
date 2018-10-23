@@ -3,7 +3,7 @@
 ${1:# certificate_name: The X.509 certificate name attached to the APIC 
 # description: The description for the contract. 
 # host: (required) IP Address or hostname of APIC 
-# max_end_points: Maximum number of end points (range 0-12000). 
+# max_end_points: Maximum number of end points. Accepted values 
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 

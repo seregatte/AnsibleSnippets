@@ -13,7 +13,7 @@ ${1:# api_key: Token used to authenticate with the API. Can
 # namespace: Use to specify an object namespace. Useful when 
 # password: Provide a password for authenticating with the 
 # replicas: The desired number of replicas. 
-# resource_definition: Provide a valid YAML definition for an object 
+# resource_definition: Provide a valid YAML definition (either as a 
 # resource_version: Only attempt to scale, if the current object 
 # src: Provide a path to a file containing a valid YAML 
 # ssl_ca_cert: Path to a CA certificate used to authenticate 

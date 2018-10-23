@@ -4,8 +4,11 @@ ${1:# aws_access_key: AWS access key id. If not set then the value of
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # bucket: (required) Bucket name. 
 # dest: The destination file path when downloading an 
+# dualstack: Enables Amazon S3 Dual-Stack Endpoints, allowing 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # encrypt: When set for PUT mode, asks for server-side 
+# encryption_kms_key_id: KMS key id to use when encrypting objects using 
+# encryption_mode: What encryption mode to use if `encrypt' is set 
 # expiration: Time limit (in seconds) for the URL generated 
 # headers: Custom headers for PUT operation, as a 
 # ignore_nonexistent_bucket: Overrides initial bucket lookups in case bucket 
@@ -32,34 +35,37 @@ ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:bucket}: ${11:"#"}}
 ${12:   ${13:dest}: ${14:"#"}}
-${15:   ${16:ec2_url}: ${17:"#"}}
-${18:   ${19:encrypt}: ${20:"#"}}
-${21:   ${22:expiration}: ${23:"#"}}
-${24:   ${25:headers}: ${26:"#"}}
-${27:   ${28:ignore_nonexistent_bucket}: ${29:"#"}}
-${30:   ${31:marker}: ${32:"#"}}
-${33:   ${34:max_keys}: ${35:"#"}}
-${36:   ${37:metadata}: ${38:"#"}}
-${39:   ${40:mode}: ${41:"#"}}
-${42:   ${43:object}: ${44:"#"}}
-${45:   ${46:overwrite}: ${47:"#"}}
-${48:   ${49:permission}: ${50:"#"}}
-${51:   ${52:prefix}: ${53:"#"}}
-${54:   ${55:profile}: ${56:"#"}}
-${57:   ${58:region}: ${59:"#"}}
-${60:   ${61:retries}: ${62:"#"}}
-${63:   ${64:rgw}: ${65:"#"}}
-${66:   ${67:s3_url}: ${68:"#"}}
-${69:   ${70:security_token}: ${71:"#"}}
-${72:   ${73:src}: ${74:"#"}}
-${75:   ${76:validate_certs}: ${77:"#"}}
-${78:   ${79:version}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${15:   ${16:dualstack}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:encrypt}: ${23:"#"}}
+${24:   ${25:encryption_kms_key_id}: ${26:"#"}}
+${27:   ${28:encryption_mode}: ${29:"#"}}
+${30:   ${31:expiration}: ${32:"#"}}
+${33:   ${34:headers}: ${35:"#"}}
+${36:   ${37:ignore_nonexistent_bucket}: ${38:"#"}}
+${39:   ${40:marker}: ${41:"#"}}
+${42:   ${43:max_keys}: ${44:"#"}}
+${45:   ${46:metadata}: ${47:"#"}}
+${48:   ${49:mode}: ${50:"#"}}
+${51:   ${52:object}: ${53:"#"}}
+${54:   ${55:overwrite}: ${56:"#"}}
+${57:   ${58:permission}: ${59:"#"}}
+${60:   ${61:prefix}: ${62:"#"}}
+${63:   ${64:profile}: ${65:"#"}}
+${66:   ${67:region}: ${68:"#"}}
+${69:   ${70:retries}: ${71:"#"}}
+${72:   ${73:rgw}: ${74:"#"}}
+${75:   ${76:s3_url}: ${77:"#"}}
+${78:   ${79:security_token}: ${80:"#"}}
+${81:   ${82:src}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:   ${88:version}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>aws_s3</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

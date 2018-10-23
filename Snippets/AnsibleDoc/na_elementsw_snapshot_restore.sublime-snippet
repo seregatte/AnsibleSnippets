@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# account_id: (required) Account ID or Name of Parent/Source 
+# dest_volume_name: (required) New Name of destination for restoring 
+# hostname: (required) The hostname or IP address of the 
+# password: (required) Password for the specified user. 
+# src_snapshot_id: (required) ID or Name of an existing snapshot. 
+# src_volume_id: (required) ID or Name of source active volume. 
+# username: (required) Please ensure that the user has the 
+}- name: ${2:Name for na_elementsw_snapshot_restore module.}
+  na_elementsw_snapshot_restore:
+${3:   ${4:account_id}: ${5:"#"}}
+${6:   ${7:dest_volume_name}: ${8:"#"}}
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:src_snapshot_id}: ${17:"#"}}
+${18:   ${19:src_volume_id}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>na_elementsw_snapshot_restore</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

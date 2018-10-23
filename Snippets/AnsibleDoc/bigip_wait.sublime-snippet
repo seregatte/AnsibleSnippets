@@ -4,12 +4,12 @@ ${1:# delay: Number of seconds to wait before starting to
 # msg: This overrides the normal error message from a 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # sleep: Number of seconds to sleep between checks, 
 # timeout: Maximum number of seconds to wait for. When used 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_wait module.}
   bigip_wait:
 ${3:   ${4:delay}: ${5:"#"}}

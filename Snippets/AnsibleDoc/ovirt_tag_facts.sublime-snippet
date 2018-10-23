@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to 
+# fetch_nested: If `True' the module will fetch additional data 
+# host: Name of the host, which tags should be listed. 
+# name: Name of the tag which should be listed. 
+# nested_attributes: Specifies list of the attributes which should be 
+# vm: Name of the VM, which tags should be listed. 
+}- name: ${2:Name for ovirt_tag_facts module.}
+  ovirt_tag_facts:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:fetch_nested}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:nested_attributes}: ${17:"#"}}
+${18:   ${19:vm}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ovirt_tag_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

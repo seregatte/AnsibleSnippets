@@ -9,6 +9,7 @@ ${1:# cn: (required) Role name. Can not be changed as it
 # ipa_pass: (required) Password of administrative user. If 
 # ipa_port: Port of FreeIPA / IPA server. If the value is 
 # ipa_prot: Protocol used by IPA server. If the value is not 
+# ipa_timeout: Specifies idle timeout (in seconds) for the 
 # ipa_user: Administrative account used on IPA server. If 
 # privilege: List of privileges granted to the role. If an 
 # service: List of service names to assign. If an empty 
@@ -26,18 +27,19 @@ ${18:   ${19:ipa_host}: ${20:"#"}}
 ${21:   ${22:ipa_pass}: ${23:"#"}}
 ${24:   ${25:ipa_port}: ${26:"#"}}
 ${27:   ${28:ipa_prot}: ${29:"#"}}
-${30:   ${31:ipa_user}: ${32:"#"}}
-${33:   ${34:privilege}: ${35:"#"}}
-${36:   ${37:service}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:user}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${30:   ${31:ipa_timeout}: ${32:"#"}}
+${33:   ${34:ipa_user}: ${35:"#"}}
+${36:   ${37:privilege}: ${38:"#"}}
+${39:   ${40:service}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:user}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>ipa_role</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,19 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# name: (required) name of package to install/remove 
-# state: state of the package 
-# update_cache: update the package db first 
+${1:# name: (required) A list of port names. 
+# state: Indicates the desired state of the port. 
+# update_ports: Update the ports tree first. 
+# variant: A port variant specification. `variant' is only 
 }- name: ${2:Name for macports module.}
   macports:
 ${3:   ${4:name}: ${5:"#"}}
 ${6:   ${7:state}: ${8:"#"}}
-${9:   ${10:update_cache}: ${11:"#"}}
-${12:${13:   become: ${14:true}} 
-${15:   become_method: ${16:su}} 
-${17:   become_user: ${18:nobody}} 
-${19:   become_flags: ${20:"-s /bin/sh"}}} 
-${21:   when: ${22:variable is defined}} 
-${23:   with_items: ${24:array}} 
+${9:   ${10:update_ports}: ${11:"#"}}
+${12:   ${13:variant}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>macports</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

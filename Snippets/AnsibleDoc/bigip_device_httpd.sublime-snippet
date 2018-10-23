@@ -12,13 +12,13 @@ ${1:# allow: Specifies, if you have enabled HTTPD access, the
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # redirect_http_to_https: Whether or not to redirect http requests to the 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # ssl_cipher_suite: Specifies the ciphers that the system uses. The 
 # ssl_port: The HTTPS port to listen on. 
 # ssl_protocols: The list of SSL protocols to accept on the 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_device_httpd module.}
   bigip_device_httpd:
 ${3:   ${4:allow}: ${5:"#"}}

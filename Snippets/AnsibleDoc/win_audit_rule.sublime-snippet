@@ -4,7 +4,7 @@ ${1:# audit_flags: (required) Defines whether to log on failure,
 # inheritance_flags: Defines what objects inside of a folder or 
 # path: (required) Path to the file, folder, or registry 
 # propagation_flags: Propagation flag on the audit rules. This value 
-# rights: (required) Comma seperated list of the rights 
+# rights: (required) Comma separated list of the rights 
 # state: Whether the rule should be `present' or 
 # user: (required) The user or group to adjust rules 
 }- name: ${2:Name for win_audit_rule module.}

@@ -12,11 +12,11 @@ ${1:# description: Descriptive text that identifies the route.
 # provider: A dict object containing connection details. 
 # reject: Specifies that the system drops packets sent to 
 # route_domain: The route domain id of the system. When creating 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the static route 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # vlan: Specifies the VLAN or Tunnel through which the 
 }- name: ${2:Name for bigip_static_route module.}
   bigip_static_route:

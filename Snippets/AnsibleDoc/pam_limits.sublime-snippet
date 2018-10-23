@@ -5,7 +5,7 @@ ${1:# backup: Create a backup file including the timestamp
 # dest: Modify the limits.conf path. 
 # domain: (required) A username, @groupname, wildcard, 
 # limit_item: (required) The limit to be set 
-# limit_type: (required) Limit type, see `man limits' for an 
+# limit_type: (required) Limit type, see `man 5 limits.conf' 
 # use_max: If set to `yes', the maximal value will be used 
 # use_min: If set to `yes', the minimal value will be used 
 # value: (required) The value of the limit. 

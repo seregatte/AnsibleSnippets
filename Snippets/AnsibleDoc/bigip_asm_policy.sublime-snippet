@@ -6,12 +6,12 @@ ${1:# active: If `yes' will apply and activate existing
 # partition: Device partition to manage resources on. 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: When `state' is `present', and `file' or 
 # template: An ASM policy built-in template. If the template 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_asm_policy module.}
   bigip_asm_policy:
 ${3:   ${4:active}: ${5:"#"}}

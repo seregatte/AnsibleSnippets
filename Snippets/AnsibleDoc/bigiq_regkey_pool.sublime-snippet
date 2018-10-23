@@ -4,11 +4,11 @@ ${1:# description: A description to attach to the pool.
 # name: (required) Specifies the name of the 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the regkey pool on the system. When 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigiq_regkey_pool module.}
   bigiq_regkey_pool:
 ${3:   ${4:description}: ${5:"#"}}

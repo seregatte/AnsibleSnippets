@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# ftype: File type. 
-# reload: Reload SELinux policy after commit. 
+${1:# ftype: File type. The following file type options can 
+# reload: Reload SELinux policy after commit. Note that 
 # selevel: SELinux range for the specified target. 
 # setype: (required) SELinux type for the specified 
 # seuser: SELinux user for the specified target. 
-# state: Desired boolean value. 
+# state: Whether the SELinux file context must be 
 # target: (required) Target path (expression). 
 }- name: ${2:Name for sefcontext module.}
   sefcontext:

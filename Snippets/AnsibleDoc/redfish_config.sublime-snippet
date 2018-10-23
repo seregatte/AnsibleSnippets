@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# baseuri: (required) Base URI of OOB controller 
+# bios_attr_name: name of BIOS attribute to update 
+# bios_attr_value: value of BIOS attribute to update 
+# category: (required) Category to execute on OOB controller 
+# command: (required) List of commands to execute on OOB 
+# mgr_attr_name: name of Manager attribute to update 
+# mgr_attr_value: value of Manager attribute to update 
+# password: (required) Password for authentication with OOB 
+# user: (required) User for authentication with OOB 
+}- name: ${2:Name for redfish_config module.}
+  redfish_config:
+${3:   ${4:baseuri}: ${5:"#"}}
+${6:   ${7:bios_attr_name}: ${8:"#"}}
+${9:   ${10:bios_attr_value}: ${11:"#"}}
+${12:   ${13:category}: ${14:"#"}}
+${15:   ${16:command}: ${17:"#"}}
+${18:   ${19:mgr_attr_name}: ${20:"#"}}
+${21:   ${22:mgr_attr_value}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:user}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>redfish_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

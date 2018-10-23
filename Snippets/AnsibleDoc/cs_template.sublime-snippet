@@ -13,27 +13,28 @@ ${1:# account: Account the template, snapshot or VM is related
 # details: Template details in key/value pairs. 
 # display_text: Display text of the template. 
 # domain: Domain the template, snapshot or VM is related 
-# format: The format for the template. Relevant when using 
+# format: The format for the template. Only considered if 
 # hypervisor: Name the hypervisor to be used for creating the 
 # is_dynamically_scalable: Register the template having XS/VMWare tools 
-# is_extractable: True if the template or its derivatives are 
+# is_extractable: Allows the template or its derivatives to be 
 # is_featured: Register the template to be featured. Only used 
 # is_public: Register the template to be publicly available 
-# is_ready: This flag is used for searching existing 
-# is_routing: True if the template type is routing i.e., if 
+# is_ready: Note: this flag was not implemented and 
+# is_routing: Sets the template type to routing, i.e. if 
 # mode: Mode for the template extraction. Only used if 
 # name: (required) Name of the template. 
 # os_type: OS type that best represents the OS of this 
-# password_enabled: True if the template supports the password reset 
+# password_enabled: Enable template password reset support. 
 # poll_async: Poll async jobs until job has finished. 
 # project: Name of the project the template to be 
-# requires_hvm: true if this template requires HVM. 
+# requires_hvm: Whether the template requires HVM or not. Only 
 # snapshot: Name of the snapshot, created from the VM ROOT 
 # sshkey_enabled: True if the template supports the sshkey upload 
 # state: State of the template. 
 # tags: List of tags. Tags are a list of dictionaries 
 # template_filter: Name of the filter used to search for the 
-# template_tag: the tag for this template. 
+# template_find_options: Options to find a template uniquely. More than 
+# template_tag: The tag for this template. 
 # url: URL of where the template is hosted on 
 # vm: VM name the template will be created from its 
 # zone: Name of the zone you wish the template to be 
@@ -72,16 +73,17 @@ ${90:   ${91:sshkey_enabled}: ${92:"#"}}
 ${93:   ${94:state}: ${95:"#"}}
 ${96:   ${97:tags}: ${98:"#"}}
 ${99:   ${100:template_filter}: ${101:"#"}}
-${102:   ${103:template_tag}: ${104:"#"}}
-${105:   ${106:url}: ${107:"#"}}
-${108:   ${109:vm}: ${110:"#"}}
-${111:   ${112:zone}: ${113:"#"}}
-${114:${115:   become: ${116:true}} 
-${117:   become_method: ${118:su}} 
-${119:   become_user: ${120:nobody}} 
-${121:   become_flags: ${122:"-s /bin/sh"}}} 
-${123:   when: ${124:variable is defined}} 
-${125:   with_items: ${126:array}} 
+${102:   ${103:template_find_options}: ${104:"#"}}
+${105:   ${106:template_tag}: ${107:"#"}}
+${108:   ${109:url}: ${110:"#"}}
+${111:   ${112:vm}: ${113:"#"}}
+${114:   ${115:zone}: ${116:"#"}}
+${117:${118:   become: ${119:true}} 
+${120:   become_method: ${121:su}} 
+${122:   become_user: ${123:nobody}} 
+${124:   become_flags: ${125:"-s /bin/sh"}}} 
+${126:   when: ${127:variable is defined}} 
+${128:   with_items: ${129:array}} 
 ]]></content>
 	<tabTrigger>cs_template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

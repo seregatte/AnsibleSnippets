@@ -1,0 +1,90 @@
+<snippet>
+<content><![CDATA[
+${1:# ap_tags_vlan_ids: List of VLAN tags. 
+# auth_key: Authentication key provided by the dashboard. 
+# auth_mode: Set authentication mode of network. 
+# band_selection: Set band selection mode. 
+# concentrator_network_id: The concentrator to use for 'Layer 3 roaming 
+# default_vlan_id: Default VLAN ID. 
+# enabled: Enable or disable SSID network. 
+# encryption_mode: Set encryption mode of network. 
+# host: Hostname for Meraki dashboard Only useful for 
+# ip_assignment_mode: Method of which SSID uses to assign IP 
+# min_bitrate: Minimum bitrate (Mbps) allowed on SSID. 
+# name: Name of SSID. 
+# net_id: ID of network. 
+# net_name: Name of network. 
+# number: SSID number within network. 
+# org_id: ID of organization. 
+# org_name: Name of organization. 
+# output_level: Set amount of debug output during module 
+# per_client_bandwidth_limit_down: Maximum bandwidth in Mbps devices on SSID can 
+# per_client_bandwidth_limit_up: Maximum bandwidth in Mbps devices on SSID can 
+# psk: Password for wireless network. Requires 
+# radius_accounting_enabled: Enable or disable RADIUS accounting. 
+# radius_accounting_servers: List of RADIUS servers for RADIUS accounting. 
+# radius_coa_enabled: Enable or disable RADIUS CoA (Change of 
+# radius_failover_policy: Set client access policy in case RADIUS servers 
+# radius_load_balancing_policy: Set load balancing policy when multiple RADIUS 
+# radius_servers: List of RADIUS servers. 
+# splash_page: Set to enable splash page and specify type of 
+# state: Specifies whether SNMP information should be 
+# timeout: Time to timeout for HTTP requests. 
+# use_https: If `no', it will use HTTP. Otherwise it will use 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# use_vlan_tagging: Set whether to use VLAN tagging. 
+# validate_certs: Whether to validate HTTP certificates. 
+# vlan_id: ID number of VLAN on SSID. 
+# walled_garden_enabled: Enable or disable walled garden functionality. 
+# walled_garden_ranges: List of walled garden ranges. 
+# wpa_encryption_mode: Encryption mode within WPA2 specification. 
+}- name: ${2:Name for meraki_ssid module.}
+  meraki_ssid:
+${3:   ${4:ap_tags_vlan_ids}: ${5:"#"}}
+${6:   ${7:auth_key}: ${8:"#"}}
+${9:   ${10:auth_mode}: ${11:"#"}}
+${12:   ${13:band_selection}: ${14:"#"}}
+${15:   ${16:concentrator_network_id}: ${17:"#"}}
+${18:   ${19:default_vlan_id}: ${20:"#"}}
+${21:   ${22:enabled}: ${23:"#"}}
+${24:   ${25:encryption_mode}: ${26:"#"}}
+${27:   ${28:host}: ${29:"#"}}
+${30:   ${31:ip_assignment_mode}: ${32:"#"}}
+${33:   ${34:min_bitrate}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:net_id}: ${41:"#"}}
+${42:   ${43:net_name}: ${44:"#"}}
+${45:   ${46:number}: ${47:"#"}}
+${48:   ${49:org_id}: ${50:"#"}}
+${51:   ${52:org_name}: ${53:"#"}}
+${54:   ${55:output_level}: ${56:"#"}}
+${57:   ${58:per_client_bandwidth_limit_down}: ${59:"#"}}
+${60:   ${61:per_client_bandwidth_limit_up}: ${62:"#"}}
+${63:   ${64:psk}: ${65:"#"}}
+${66:   ${67:radius_accounting_enabled}: ${68:"#"}}
+${69:   ${70:radius_accounting_servers}: ${71:"#"}}
+${72:   ${73:radius_coa_enabled}: ${74:"#"}}
+${75:   ${76:radius_failover_policy}: ${77:"#"}}
+${78:   ${79:radius_load_balancing_policy}: ${80:"#"}}
+${81:   ${82:radius_servers}: ${83:"#"}}
+${84:   ${85:splash_page}: ${86:"#"}}
+${87:   ${88:state}: ${89:"#"}}
+${90:   ${91:timeout}: ${92:"#"}}
+${93:   ${94:use_https}: ${95:"#"}}
+${96:   ${97:use_proxy}: ${98:"#"}}
+${99:   ${100:use_vlan_tagging}: ${101:"#"}}
+${102:   ${103:validate_certs}: ${104:"#"}}
+${105:   ${106:vlan_id}: ${107:"#"}}
+${108:   ${109:walled_garden_enabled}: ${110:"#"}}
+${111:   ${112:walled_garden_ranges}: ${113:"#"}}
+${114:   ${115:wpa_encryption_mode}: ${116:"#"}}
+${117:${118:   become: ${119:true}} 
+${120:   become_method: ${121:su}} 
+${122:   become_user: ${123:nobody}} 
+${124:   become_flags: ${125:"-s /bin/sh"}}} 
+${126:   when: ${127:variable is defined}} 
+${128:   with_items: ${129:array}} 
+]]></content>
+	<tabTrigger>meraki_ssid</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

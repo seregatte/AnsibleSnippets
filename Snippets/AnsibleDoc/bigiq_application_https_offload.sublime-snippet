@@ -8,13 +8,13 @@ ${1:# add_analytics: Collects statistics of the BIG-IP that the
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # redirect_virtual: Settings to configure the virtual which will 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # servers: A list of servers that the application is hosted 
-# service_environment: Specifies the name of service environment that 
+# service_environment: Specifies the name of service environment or the 
 # state: The state of the resource on the system. When 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # wait: If the module should wait for the application to 
 }- name: ${2:Name for bigiq_application_https_offload module.}
   bigiq_application_https_offload:

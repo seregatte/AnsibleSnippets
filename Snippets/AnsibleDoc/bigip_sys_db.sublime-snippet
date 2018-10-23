@@ -3,11 +3,11 @@
 ${1:# key: (required) The database variable to manipulate. 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the variable on the system. When 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # value: The value to set the key to. At least one of 
 }- name: ${2:Name for bigip_sys_db module.}
   bigip_sys_db:

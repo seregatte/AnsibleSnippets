@@ -11,6 +11,7 @@ ${1:# chdir: Run the command from this (remote) directory.
 # noprofile: Run the command without loading the account's 
 # password: The password for the (remote) user to run the 
 # priority: Used to run the command at a different priority. 
+# session: Specifies the session ID to use. This parameter 
 # system: Run the remote command in the System account. 
 # timeout: The connection timeout in seconds 
 # username: The (remote) user to run the command as. If not 
@@ -28,16 +29,17 @@ ${24:   ${25:nobanner}: ${26:"#"}}
 ${27:   ${28:noprofile}: ${29:"#"}}
 ${30:   ${31:password}: ${32:"#"}}
 ${33:   ${34:priority}: ${35:"#"}}
-${36:   ${37:system}: ${38:"#"}}
-${39:   ${40:timeout}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:wait}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${36:   ${37:session}: ${38:"#"}}
+${39:   ${40:system}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:wait}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>win_psexec</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

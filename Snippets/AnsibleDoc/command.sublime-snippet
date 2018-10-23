@@ -2,9 +2,9 @@
 <content><![CDATA[
 ${1:# argv: Allows the user to provide the command as a list 
 # chdir: Change into this directory before running the 
-# creates: A filename or (since 2.0) glob pattern, when it 
+# creates: A filename or (since 2.0) glob pattern. If it 
 # free_form: (required) The command module takes a free form 
-# removes: A filename or (since 2.0) glob pattern, when it 
+# removes: A filename or (since 2.0) glob pattern. If it 
 # stdin: Set the stdin of the command directly to the 
 # warn: If command_warnings are on in ansible.cfg, do 
 }- name: ${2:Name for command module.}

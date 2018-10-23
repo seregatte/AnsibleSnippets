@@ -3,8 +3,8 @@
 ${1:# access_port_selector: (required) The name of the Fabric access policy 
 # certificate_name: The X.509 certificate name attached to the APIC 
 # description: The description to assign to the 
-# from_card: The beggining (from range) of the card range 
-# from_port: (required) The beggining (from range) of the 
+# from_card: The beginning (from-range) of the card range 
+# from_port: (required) The beginning (from-range) of the 
 # host: (required) IP Address or hostname of APIC 
 # interface_type: The type of interface for the static EPG 
 # leaf_interface_profile: (required) The name of the Fabric access policy 
@@ -17,8 +17,8 @@ ${1:# access_port_selector: (required) The name of the Fabric access policy
 # private_key: (required) PEM formatted file that contains your 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 
-# to_card: The end (to range) of the card range block for 
-# to_port: (required) The end (to range) of the port range 
+# to_card: The end (to-range) of the card range block for 
+# to_port: (required) The end (to-range) of the port range 
 # use_proxy: If `no', it will not use a proxy, even if one is 
 # use_ssl: If `no', an HTTP connection will be used instead 
 # username: The username to use for authentication. 

@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# authorize: Instructs the module to enter privileged mode on 
+${1:# authorize: *Deprecated* Starting with Ansible 2.7 we 
 # commands: (required) List of commands to send to the 
 # interval: Configures the interval in seconds to wait 
 # match: The `match' argument is used in conjunction with 
-# provider: A dict object containing connection details. 
+# provider: *Deprecated* Starting with Ansible 2.7 we 
 # retries: Specifies the number of retries a command should 
 # wait_for: List of conditions to evaluate against the 
 }- name: ${2:Name for ironware_command module.}

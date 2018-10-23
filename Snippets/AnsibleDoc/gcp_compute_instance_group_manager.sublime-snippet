@@ -3,17 +3,17 @@
 ${1:# auth_kind: (required) The type of credential used. 
 # base_instance_name: (required) The base instance name to use for 
 # description: An optional description of this resource. 
-# instance_template: (required) A reference to InstanceTemplate 
+# instance_template: (required) The instance template that is 
 # name: (required) The name of the managed instance 
 # named_ports: Named ports configured for the Instance Groups 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
+# state: Whether the given object should exist in GCP 
 # target_pools: TargetPool resources to which instances in the 
 # target_size: The target number of running instances for this 
-# zone: (required) A reference to Zone resource. 
+# zone: (required) The zone the managed instance group 
 }- name: ${2:Name for gcp_compute_instance_group_manager module.}
   gcp_compute_instance_group_manager:
 ${3:   ${4:auth_kind}: ${5:"#"}}

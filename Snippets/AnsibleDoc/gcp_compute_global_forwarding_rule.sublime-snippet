@@ -1,22 +1,22 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
-# backend_service: A reference to BackendService resource. 
+# backend_service: A reference to a BackendService to receive the 
 # description: An optional description of this resource. 
 # ip_address: The IP address that this forwarding rule is 
 # ip_protocol: The IP protocol to which this rule applies. 
 # ip_version: The IP Version that will be used by this 
 # load_balancing_scheme: This signifies what the ForwardingRule will be 
 # name: (required) Name of the resource; provided by the 
-# network: A reference to Network resource. 
+# network: For internal load balancing, this field 
 # port_range: This field is used along with the target field 
 # ports: This field is used along with the 
 # project: The Google Cloud Platform project to use. 
-# scopes: (required) Array of scopes to be used. 
+# scopes: Array of scopes to be used. 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
-# state: (required) Whether the given object should exist 
-# subnetwork: A reference to Subnetwork resource. 
+# state: Whether the given object should exist in GCP 
+# subnetwork: A reference to a subnetwork. For internal load 
 # target: This target must be a global load balancing 
 }- name: ${2:Name for gcp_compute_global_forwarding_rule module.}
   gcp_compute_global_forwarding_rule:

@@ -8,7 +8,7 @@ ${1:# append: If `yes', add the user to the groups specified
 # generate_ssh_key: Whether to generate a SSH key for the user in 
 # group: Optionally sets the user's primary group (takes 
 # groups: List of groups user will be added to. When set 
-# hidden: Darwin/OS X only, optionally hide the user from 
+# hidden: macOS only, optionally hide the user from the 
 # home: Optionally set the user's home directory. 
 # local: Forces the use of "local" command alternatives 
 # login_class: Optionally sets the user's login class, a 
@@ -16,11 +16,11 @@ ${1:# append: If `yes', add the user to the groups specified
 # name: (required) Name of the user to create, remove or 
 # non_unique: Optionally when used with the -u option, this 
 # password: Optionally set the user's password to this 
-# ml: how-do-i 
+# le: how- 
 # password_lock: Lock the password (usermod -L, pw lock, usermod 
 # remove: This only affects `state=absent', it attempts to 
 # seuser: Optionally sets the seuser type (user_u) on 
-# shell: Optionally set the user's shell. On Mac OS X, 
+# shell: Optionally set the user's shell. On macOS, 
 # skeleton: Optionally set a home skeleton directory. 
 # ssh_key_bits: Optionally specify number of bits in SSH key to 
 # ssh_key_comment: Optionally define the comment for the SSH key. 
@@ -49,7 +49,7 @@ ${39:   ${40:move_home}: ${41:"#"}}
 ${42:   ${43:name}: ${44:"#"}}
 ${45:   ${46:non_unique}: ${47:"#"}}
 ${48:   ${49:password}: ${50:"#"}}
-${51:   ${52:ml}: ${53:"#"}}
+${51:   ${52:le}: ${53:"#"}}
 ${54:   ${55:password_lock}: ${56:"#"}}
 ${57:   ${58:remove}: ${59:"#"}}
 ${60:   ${61:seuser}: ${62:"#"}}

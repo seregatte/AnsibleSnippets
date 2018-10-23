@@ -9,13 +9,13 @@ ${1:# description: The description of the pool member.
 # pool: (required) Name of the GTM pool. 
 # provider: A dict object containing connection details. 
 # ratio: Specifies the weight of the pool member for load 
-# server: (required) The BIG-IP host. You can omit this 
+# server: (required) The BIG-IP host. You may omit this 
 # server_name: (required) Specifies the GTM server which 
-# server_port: The BIG-IP server port. You can omit this option 
+# server_port: The BIG-IP server port. You may omit this option 
 # state: Pool member state. When `present', ensures that 
 # type: (required) The type of GTM pool that the member 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 # virtual_server: (required) Specifies the name of the GTM virtual 
 }- name: ${2:Name for bigip_gtm_pool_member module.}
   bigip_gtm_pool_member:

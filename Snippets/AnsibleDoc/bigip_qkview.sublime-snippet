@@ -10,10 +10,10 @@ ${1:# asm_request_log: When `True', includes the ASM request log data.
 # max_file_size: Max file size, in bytes, of the qkview to 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You can omit this 
-# server_port: The BIG-IP server port. You can omit this option 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
 # user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_qkview module.}
   bigip_qkview:
 ${3:   ${4:asm_request_log}: ${5:"#"}}

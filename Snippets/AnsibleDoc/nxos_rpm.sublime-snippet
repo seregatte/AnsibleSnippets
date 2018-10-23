@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of RPM/patch definitions. 
+# file_system: The remote file system of the device. If 
+# pkg: (required) Name of the RPM package. 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# state: If the state is present, the rpm will be 
+}- name: ${2:Name for nxos_rpm module.}
+  nxos_rpm:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:file_system}: ${8:"#"}}
+${9:   ${10:pkg}: ${11:"#"}}
+${12:   ${13:provider}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>nxos_rpm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
