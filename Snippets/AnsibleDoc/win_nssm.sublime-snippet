@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# app_parameters: Parameters to be passed to the application when 
+${1:# app_parameters: A string representing a dictionary of parameters 
 # app_parameters_free_form: Single string of parameters to be passed to the 
 # application: The application binary to run as a service 
 # dependencies: Service dependencies that has to be started to 
