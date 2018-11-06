@@ -15,7 +15,7 @@ ${1:# allow_downgrade: Specify if the named package and version is
 # install_repoquery: This is effectively a no-op in DNF as it is not 
 # installroot: Specifies an alternative installroot, relative 
 # list: Various (non-idempotent) commands for usage with 
-# name: (required) A list of package names, or package 
+# name: (required) A package name or package specifier 
 # releasever: Specifies an alternative release from which all 
 # security: If set to `yes', and `state=latest' then only 
 # skip_broken: Skip packages with broken dependencies(devsolve) 
