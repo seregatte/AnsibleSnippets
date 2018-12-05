@@ -2,6 +2,7 @@
 <?php
 
 $modules = array_filter(array_map(function($item){
+	echo "New module found..." . PHP_EOL;
 	return preg_replace('%^([a-z_0-9]*).*%', "$1", $item);
 }
 ,preg_split('%\n%',shell_exec('ansible-doc -l'))));
@@ -9,6 +10,7 @@ $modules = array_filter(array_map(function($item){
 $snippets = array();
 foreach ($modules as $module) {
 	$snippets[$module] = array_filter(array_map(function($item){
+		echo sprintf( "Module %s encontrado...%s", $module, PHP_EOL );
 		preg_match_all('%^[\ ]*([a-z_0-9]*).*#(.*)$%', $item, $options);
 		return (isset($options[1][0]) && count($options[1] > 0))? array($options[1][0], trim($options[2][0])): NULL;
 	}, preg_split('%\n%',shell_exec('ansible-doc ' . $module . ' -s'))));	
