@@ -4,7 +4,7 @@ sudo apt-get install git-core --no-install-recommends --no-install-suggests -y
 git config --global user.email "seregatte@gmail.com"
 git config --global user.name "João Paulo Seregatte Costa"
 git fetch --all
-docker build generator/ -t builder:latest
+# docker build generator/ -t builder:latest
 # export ANSIBLE_VERSION=`docker run --rm -it builder:latest ansible --version | head -1 | cut -d' ' -f2`
 export CI_BRANCH=`date +%Y-%m-%d`-ci
 export CI_NEXT_TAG=$(printf '%s.%0d' `git tag -l | tail -1 | cut -d'.' -f1-2` $(echo `git tag -l | tail -1 | cut -d'.' -f3`+1 | bc))
