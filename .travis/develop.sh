@@ -12,8 +12,11 @@ git checkout -b ${CI_BRANCH} || git checkout ${CI_BRANCH}
 git pull --rebase origin ${CI_BRANCH} && true
 docker run --rm -it -v `pwd`:/var/www/html builder:latest make
 git add . *.sublime-snippet
+head -1 README.md
 mv README.md README.md.tpl; cat README.md.tpl | sed -E "s%(Ansible\ Snippets).*%\1 ${CI_NEXT_TAG}%" > README.md ; rm README.md.tpl
-git add README.md
+head -1 README.md
+echo "git diff" && git diff
+git add *.md
 git commit -am "Travis build: ${TRAVIS_BUILD_NUMBER} for ${ANSIBLE_VERSION}"
 git remote add origin-ci https://${GITHUB_TOKEN}@github.com/seregatte/AnsibleSnippets.git > /dev/null 2>&1
 git push --quiet --set-upstream origin-ci ${CI_BRANCH}
