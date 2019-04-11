@@ -22,8 +22,8 @@ ${1:# attributes: Attributes the file or directory should have. To
 # organizational_unit_name: organizationalUnitName field of the certificate 
 # owner: Name of the user that should own the 
 # path: (required) Name of the file into which the 
-# privatekey_passphrase: The passphrase for the privatekey. 
-# privatekey_path: (required) Path to the privatekey to use when 
+# privatekey_passphrase: The passphrase for the private key. This is 
+# privatekey_path: (required) The path to the private key to use 
 # selevel: Level part of the SELinux file context. This is 
 # serole: Role part of SELinux file context, `_default' 
 # setype: Type part of SELinux file context, `_default' 

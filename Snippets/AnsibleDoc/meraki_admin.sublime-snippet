@@ -9,7 +9,7 @@ ${1:# auth_key: Authentication key provided by the dashboard.
 # org_id: ID of organization. 
 # org_name: Name of organization. Used when `name' should 
 # output_level: Set amount of debug output during module 
-# state: (required) Create or modify an organization 
+# state: (required) Create or modify, or delete an 
 # tags: Tags the administrator has privileges on. When 
 # timeout: Time to timeout for HTTP requests. 
 # use_https: If `no', it will use HTTP. Otherwise it will use 

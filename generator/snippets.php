@@ -1,16 +1,12 @@
 #!/usr/bin/env php
 <?php
 
-$modules = array_filter(array_map(function($item){
-	return preg_replace('%^([a-z_0-9]*).*%', "$1", $item);
-}
-,preg_split('%\n%',shell_exec('ansible-doc -l'))));
-
 $snippets = array();
+$modules = array($argv[1]);
 foreach ($modules as $module) {
 	$snippets[$module] = array_filter(array_map(function($item){
 		preg_match_all('%^[\ ]*([a-z_0-9]*).*#(.*)$%', $item, $options);
-		return (isset($options[1][0]) && count($options[1] > 0))? array($options[1][0], trim($options[2][0])): NULL;
+		return (is_array($options) && (count($options[1]) > 0) && isset($options[1][0]))? array($options[1][0], trim($options[2][0])): NULL;
 	}, preg_split('%\n%',shell_exec('ansible-doc ' . $module . ' -s'))));	
 }
 
