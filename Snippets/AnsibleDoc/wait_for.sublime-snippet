@@ -7,7 +7,7 @@ ${1:# active_connection_states: The list of TCP connection states which are
 # host: A resolvable hostname or IP address to wait for. 
 # msg: This overrides the normal error message from a 
 # path: Path to a file on the filesystem that must exist 
-# port: Port number to poll. 
+# port: Port number to poll. `path' and `port' are 
 # search_regex: Can be used to match a string in either a file 
 # sleep: Number of seconds to sleep between checks, 
 # state: Either `present', `started', or `stopped', 

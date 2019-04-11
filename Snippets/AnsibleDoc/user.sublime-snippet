@@ -16,7 +16,7 @@ ${1:# append: If `yes', add the user to the groups specified
 # name: (required) Name of the user to create, remove or 
 # non_unique: Optionally when used with the -u option, this 
 # password: Optionally set the user's password to this 
-# le: how- 
+# html: how-do-i 
 # password_lock: Lock the password (usermod -L, pw lock, usermod 
 # remove: This only affects `state=absent', it attempts to 
 # seuser: Optionally sets the seuser type (user_u) on 
@@ -49,7 +49,7 @@ ${39:   ${40:move_home}: ${41:"#"}}
 ${42:   ${43:name}: ${44:"#"}}
 ${45:   ${46:non_unique}: ${47:"#"}}
 ${48:   ${49:password}: ${50:"#"}}
-${51:   ${52:le}: ${53:"#"}}
+${51:   ${52:html}: ${53:"#"}}
 ${54:   ${55:password_lock}: ${56:"#"}}
 ${57:   ${58:remove}: ${59:"#"}}
 ${60:   ${61:seuser}: ${62:"#"}}

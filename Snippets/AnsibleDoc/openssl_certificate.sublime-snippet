@@ -27,7 +27,7 @@ ${1:# acme_accountkey_path: Path to the accountkey for the `acme' provider
 # ownca_version: Version of the `ownca' certificate. Nowadays it 
 # owner: Name of the user that should own the 
 # path: (required) Remote absolute path where the 
-# privatekey_passphrase: The passphrase for the `privatekey_path'. 
+# privatekey_passphrase: The passphrase for the `privatekey_path'. This 
 # privatekey_path: Path to the private key to use when signing the 
 # provider: (required) Name of the provider to use to 
 # selevel: Level part of the SELinux file context. This is 
@@ -47,7 +47,7 @@ ${1:# acme_accountkey_path: Path to the accountkey for the `acme' provider
 # unsafe_writes: By default this module uses atomic operations to 
 # valid_at: The certificate must be valid at this point in 
 # valid_in: The certificate must still be valid in 
-# version: Version of the certificate. Nowadays it should 
+# version: The version of the certificate. Nowadays it 
 }- name: ${2:Name for openssl_certificate module.}
   openssl_certificate:
 ${3:   ${4:acme_accountkey_path}: ${5:"#"}}
