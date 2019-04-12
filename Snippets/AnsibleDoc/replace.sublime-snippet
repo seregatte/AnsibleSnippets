@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# after: If specified, the line after the replace/remove 
+${1:# after: If specified, only content after this match will 
 # attributes: Attributes the file or directory should have. To 
 # backup: Create a backup file including the timestamp 
-# before: If specified, the line before the replace/remove 
+# before: If specified, only content before this match 
 # encoding: The character encoding for reading and writing 
 # group: Name of the group that should own the 
 # mode: Mode the file or directory should be. For those 
@@ -12,7 +12,7 @@ ${1:# after: If specified, the line after the replace/remove
 # path: (required) The file to modify. Before 2.3 this 
 # regexp: (required) The regular expression to look for in 
 # set: ]' 
-# like: \n]'. 
+# like: \\n]'. 
 # replace: The string to replace regexp matches. May 
 # selevel: Level part of the SELinux file context. This is 
 # serole: Role part of SELinux file context, `_default' 

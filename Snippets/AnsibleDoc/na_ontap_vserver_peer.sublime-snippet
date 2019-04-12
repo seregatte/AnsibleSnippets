@@ -5,11 +5,14 @@ ${1:# applications: List of applications which can make use of the
 # dest_password: Destination password. Optional if this is same 
 # dest_username: Destination username. Optional if this is same 
 # hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
 # password: (required) Password for the specified user. 
 # peer_cluster: Specifies name of the peer Cluster. If peer 
 # peer_vserver: Specifies name of the peer Vserver in the 
 # state: Whether the specified vserver peer should exist 
 # username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `False', the SSL certificates will not 
 # vserver: Specifies name of the source Vserver in the 
 }- name: ${2:Name for na_ontap_vserver_peer module.}
   na_ontap_vserver_peer:
@@ -18,18 +21,21 @@ ${6:   ${7:dest_hostname}: ${8:"#"}}
 ${9:   ${10:dest_password}: ${11:"#"}}
 ${12:   ${13:dest_username}: ${14:"#"}}
 ${15:   ${16:hostname}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:peer_cluster}: ${23:"#"}}
-${24:   ${25:peer_vserver}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:username}: ${32:"#"}}
-${33:   ${34:vserver}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${18:   ${19:http_port}: ${20:"#"}}
+${21:   ${22:https}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:peer_cluster}: ${29:"#"}}
+${30:   ${31:peer_vserver}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vserver}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_vserver_peer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

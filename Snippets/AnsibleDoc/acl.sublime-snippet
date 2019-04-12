@@ -10,6 +10,7 @@ ${1:# default: if the target is a directory, setting this to
 # recalculate_mask: Select if and when to recalculate the effective 
 # recursive: Recursively sets the specified ACL (added in 
 # state: defines whether the ACL should be present or 
+# use_nfsv4_acls: Use NFSv4 ACLs instead of POSIX ACLs. 
 }- name: ${2:Name for acl module.}
   acl:
 ${3:   ${4:default}: ${5:"#"}}
@@ -22,12 +23,13 @@ ${21:   ${22:permissions}: ${23:"#"}}
 ${24:   ${25:recalculate_mask}: ${26:"#"}}
 ${27:   ${28:recursive}: ${29:"#"}}
 ${30:   ${31:state}: ${32:"#"}}
-${33:${34:   become: ${35:true}} 
-${36:   become_method: ${37:su}} 
-${38:   become_user: ${39:nobody}} 
-${40:   become_flags: ${41:"-s /bin/sh"}}} 
-${42:   when: ${43:variable is defined}} 
-${44:   with_items: ${45:array}} 
+${33:   ${34:use_nfsv4_acls}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
 ]]></content>
 	<tabTrigger>acl</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

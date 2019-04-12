@@ -6,7 +6,7 @@ ${1:# api_version: The version of the Docker API running on the
 # cert_path: Path to the client's TLS certificate file. If 
 # configs: List of dictionaries describing the service 
 # constraints: List of the service constraints. Maps docker 
-# container_labels: List of the service containers labels. Maps 
+# container_labels: Dictionary of key value pairs. Maps docker 
 # debug: Debug mode 
 # dns: List of custom DNS servers. Maps docker service 
 # dns_options: List of custom DNS options. Maps docker service 
@@ -18,9 +18,9 @@ ${1:# api_version: The version of the Docker API running on the
 # hostname: Container hostname Maps docker service 
 # image: (required) Service image path and tag. Maps 
 # key_path: Path to the client's TLS key file. If the value 
-# labels: List of the service labels. Maps docker service 
+# labels: Dictionary of key value pairs. Maps docker 
 # limit_cpu: Service CPU limit. 0 equals no limit. Maps 
-# limit_memory: Service memory limit in MB. 0 equals no limit. 
+# limit_memory: Service memory limit (format: 
 # log_driver: Configure the logging driver for a service 
 # log_driver_options: Options for service logging driver 
 # mode: Service replication mode. Maps docker service 
@@ -30,7 +30,7 @@ ${1:# api_version: The version of the Docker API running on the
 # publish: List of dictionaries describing the service 
 # replicas: Number of containers instantiated in the 
 # reserve_cpu: Service CPU reservation. 0 equals no 
-# reserve_memory: Service memory reservation in MB. 0 equals no 
+# reserve_memory: Service memory reservation (format: 
 # restart_policy: Restart condition of the service. Maps docker 
 # restart_policy_attempts: Maximum number of service restarts. Maps docker 
 # restart_policy_delay: Delay between restarts. Maps docker service 
@@ -49,7 +49,7 @@ ${1:# api_version: The version of the Docker API running on the
 # update_monitor: Time to monitor updated tasks for failures, in 
 # update_order: Specifies the order of operations when rolling 
 # update_parallelism: Rolling update parallelism Maps docker service 
-# user: username or UID 
+# user: username or UID. If set to `null' the image 
 }- name: ${2:Name for docker_swarm_service module.}
   docker_swarm_service:
 ${3:   ${4:api_version}: ${5:"#"}}

@@ -20,7 +20,7 @@ ${1:# allow_downgrade: Specify if the named package and version is
 # security: If set to `yes', and `state=latest' then only 
 # skip_broken: Skip packages with broken dependencies(devsolve) 
 # state: Whether to install (`present', `latest'), or 
-# update_cache: Force yum to check if cache is out of date and 
+# update_cache: Force dnf to check if cache is out of date and 
 # update_only: When using latest, only update installed 
 # validate_certs: This only applies if using a https url as the 
 }- name: ${2:Name for dnf module.}

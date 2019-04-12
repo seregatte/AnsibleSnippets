@@ -7,7 +7,7 @@ ${1:# attributes: Attributes the file or directory should have. To
 # mode: Mode the file or directory should be. For those 
 # owner: Name of the user that should own the 
 # path: (required) Name of the file in which the 
-# privatekey_passphrase: The passphrase for the privatekey. 
+# privatekey_passphrase: The passphrase for the private key. 
 # privatekey_path: (required) Path to the TLS/SSL private key from 
 # selevel: Level part of the SELinux file context. This is 
 # serole: Role part of SELinux file context, `_default' 

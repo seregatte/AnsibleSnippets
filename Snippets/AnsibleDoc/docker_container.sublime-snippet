@@ -23,7 +23,7 @@ ${1:# api_version: The version of the Docker API running on the
 # docker_host: The URL or Unix socket path used to connect to 
 # domainname: Container domainname. 
 # entrypoint: Command that overwrites the default ENTRYPOINT 
-# env: Dictionary of key,value pairs. 
+# env: Dictionary of key,value pairs. Values which 
 # env_file: Path to a file, present on the target, 
 # etc_hosts: Dict of host-to-IP mappings, where each host 
 # exposed_ports: List of additional container ports which informs 
@@ -50,7 +50,7 @@ ${1:# api_version: The version of the Docker API running on the
 # memory_swappiness: Tune a container's memory swappiness behavior. 
 # name: (required) Assign a name to a new container or 
 # network_mode: Connect the container to a network. Choices are 
-# networks: List of networks the container belongs to. Each 
+# networks: List of networks the container belongs to. For 
 # oom_killer: Whether or not to disable OOM Killer for the 
 # oom_score_adj: An integer value containing the score given to 
 # output_logs: If set to true, output of the container command 
@@ -81,7 +81,7 @@ ${1:# api_version: The version of the Docker API running on the
 # tty: Allocate a pseudo-TTY. 
 # ulimits: List of ulimit options. A ulimit is specified as 
 # user: Sets the username or UID used and optionally the 
-# userns_mode: User namespace to use 
+# userns_mode: Set the user namespace mode for the container. 
 # uts: Set the UTS namespace mode for the container. 
 # volume_driver: The container volume driver. 
 # volumes: List of volumes to mount within the container. 
