@@ -1,12 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# name: Name of setting to get/modify 
+${1:# name: (required) Name of setting to modify 
 # tower_config_file: Path to the Tower config file. See notes. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
 # tower_verify_ssl: Dis/allow insecure connections to Tower. If 
-# value: Value to be modified for given setting. 
+# value: (required) Value to be modified for given 
 }- name: ${2:Name for tower_settings module.}
   tower_settings:
 ${3:   ${4:name}: ${5:"#"}}

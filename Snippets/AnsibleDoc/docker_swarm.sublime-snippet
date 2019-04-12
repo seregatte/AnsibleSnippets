@@ -15,13 +15,13 @@ ${1:# advertise_addr: Externally reachable address advertised to other
 # join_token: Swarm token used to join a swarm cluster. Used 
 # keep_old_snapshots: Number of snapshots to keep beyond the current 
 # key_path: Path to the client's TLS key file. If the value 
-# labels: User-defined key/value metadata. 
+# labels: User-defined key/value metadata. Label 
 # listen_addr: Listen address used for inter-manager 
 # log_entries_for_slow_followers: Number of log entries to keep around to sync up 
 # name: The name of the swarm. 
 # node_cert_expiry: Automatic expiry for nodes certificates. Docker 
 # node_id: Swarm id of the node to remove. Used with 
-# remote_addrs: Remote address of a manager to connect to. Used 
+# remote_addrs: Remote address of one or more manager nodes of 
 # rotate_manager_token: Rotate the manager join token. 
 # rotate_worker_token: Rotate the worker join token. 
 # signing_ca_cert: The desired signing CA certificate for all swarm 
