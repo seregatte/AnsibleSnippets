@@ -14,7 +14,7 @@ ${1:# cert: Name of and, optionally, path to the X509
 # nsip: (required) The ip address of the netscaler 
 # passplain: Pass phrase used to encrypt the private-key. 
 # password: Passphrase that was used to encrypt the private- 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # state: The state of the resource being configured by 
 # validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for netscaler_ssl_certkey module.}

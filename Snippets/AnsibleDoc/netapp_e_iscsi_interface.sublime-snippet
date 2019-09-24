@@ -10,7 +10,7 @@ ${1:# address: The IPv4 address to assign to the interface.
 # log_path: A local path to a file to be used for debug 
 # mtu: The maximum transmission units (MTU), in bytes. 
 # name: (required) The channel of the port to modify the 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: When enabled, the provided configuration will be 
 # subnet_mask: The subnet mask to utilize for the interface. 
 # validate_certs: Should https certificates be validated? 

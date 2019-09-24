@@ -8,7 +8,7 @@ ${1:# client_cert: PEM formatted certificate chain file to be used
 # http_agent: Header to identify as, generally appears in web 
 # jenkins_home: Home directory of the Jenkins user. 
 # mode: File mode applied on versioned plugins. 
-# name: Plugin name. 
+# name: (required) Plugin name. 
 # owner: Name of the Jenkins user on the OS. 
 # state: Desired plugin state. If the `latest' is set, 
 # timeout: Server connection timeout in secs. 

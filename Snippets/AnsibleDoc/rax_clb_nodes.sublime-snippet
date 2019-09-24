@@ -17,7 +17,7 @@ ${1:# address: IP address or domain name of the node
 # tenant_name: The tenant name used for authentication. 
 # type: Type of node 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 # wait: Wait for the load balancer to become active 
 # wait_timeout: How long to wait before giving up and returning 
 # weight: Weight of node 
@@ -40,7 +40,7 @@ ${42:   ${43:tenant_id}: ${44:"#"}}
 ${45:   ${46:tenant_name}: ${47:"#"}}
 ${48:   ${49:type}: ${50:"#"}}
 ${51:   ${52:username}: ${53:"#"}}
-${54:   ${55:verify_ssl}: ${56:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
 ${57:   ${58:wait}: ${59:"#"}}
 ${60:   ${61:wait_timeout}: ${62:"#"}}
 ${63:   ${64:weight}: ${65:"#"}}

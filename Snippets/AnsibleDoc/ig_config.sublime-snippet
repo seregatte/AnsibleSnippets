@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# add: Add a row to a table. 
+# client: A dict object containing connection details. 
+# columns: A dict containing column names/values. 
+# delete: Delete all rows in a table or a specific row. 
+# download: Download the configuration database from the 
+# factory: Reset the preliminary configuration to its 
+# filename: The name of the file to store the downloaded 
+# get: Return all rows in a table or a specific row. 
+# modify: Modify a row in a table. 
+# no_response: Expect no response when storing the preliminary 
+# path: Where in the filesystem to store the downloaded 
+# return_rowid: Get rowid(s) from a table where the columns 
+# revert: Reset the preliminary configuration. 
+# rowid: A row id. 
+# store: Store the preliminary configuration. 
+# store_download: If the downloaded configuration should be stored 
+# table: The name of the table. 
+}- name: ${2:Name for ig_config module.}
+  ig_config:
+${3:   ${4:add}: ${5:"#"}}
+${6:   ${7:client}: ${8:"#"}}
+${9:   ${10:columns}: ${11:"#"}}
+${12:   ${13:delete}: ${14:"#"}}
+${15:   ${16:download}: ${17:"#"}}
+${18:   ${19:factory}: ${20:"#"}}
+${21:   ${22:filename}: ${23:"#"}}
+${24:   ${25:get}: ${26:"#"}}
+${27:   ${28:modify}: ${29:"#"}}
+${30:   ${31:no_response}: ${32:"#"}}
+${33:   ${34:path}: ${35:"#"}}
+${36:   ${37:return_rowid}: ${38:"#"}}
+${39:   ${40:revert}: ${41:"#"}}
+${42:   ${43:rowid}: ${44:"#"}}
+${45:   ${46:store}: ${47:"#"}}
+${48:   ${49:store_download}: ${50:"#"}}
+${51:   ${52:table}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>ig_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# folder: Destination folder, absolute or relative path to 
+${1:# folder: Destination folder path to find an existing 
 # force: Ignore warnings and complete the actions. This 
 # hostname: The hostname or IP address of the vSphere 
 # name: Name of the virtual machine to work with. 
@@ -10,6 +10,7 @@ ${1:# folder: Destination folder, absolute or relative path to
 # scheduled_at: Date and time in string format at which 
 # state: Set the state of the virtual machine. 
 # state_change_timeout: If the `state' is set to `shutdown-guest', by 
+# use_instance_uuid: Whether to use the VMWare instance UUID rather 
 # username: The username of the vSphere vCenter or ESXi 
 # uuid: UUID of the instance to manage if known, this is 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -25,15 +26,16 @@ ${21:   ${22:port}: ${23:"#"}}
 ${24:   ${25:scheduled_at}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:state_change_timeout}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:uuid}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${33:   ${34:use_instance_uuid}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:uuid}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>vmware_guest_powerstate</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

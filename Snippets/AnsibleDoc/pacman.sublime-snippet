@@ -1,25 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# force: When removing package - force remove package, 
-# name: Name or list of names of the packages to 
+${1:# extra_args: Additional option to pass to pacman when 
+# force: When removing package, force remove package, 
+# name: Name or list of names of the package(s) or 
 # recurse: When removing a package, also remove its 
 # state: Desired state of the package. 
 # update_cache: Whether or not to refresh the master package 
-# upgrade: Whether or not to upgrade whole system. 
+# update_cache_extra_args: Additional option to pass to pacman when 
+# upgrade: Whether or not to upgrade the whole system. 
+# upgrade_extra_args: Additional option to pass to pacman when 
 }- name: ${2:Name for pacman module.}
   pacman:
-${3:   ${4:force}: ${5:"#"}}
-${6:   ${7:name}: ${8:"#"}}
-${9:   ${10:recurse}: ${11:"#"}}
-${12:   ${13:state}: ${14:"#"}}
-${15:   ${16:update_cache}: ${17:"#"}}
-${18:   ${19:upgrade}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${3:   ${4:extra_args}: ${5:"#"}}
+${6:   ${7:force}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:recurse}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:update_cache}: ${20:"#"}}
+${21:   ${22:update_cache_extra_args}: ${23:"#"}}
+${24:   ${25:upgrade}: ${26:"#"}}
+${27:   ${28:upgrade_extra_args}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>pacman</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

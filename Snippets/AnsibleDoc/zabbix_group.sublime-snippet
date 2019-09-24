@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# host_groups: (required) List of host groups to create or 
 # http_login_password: Basic Auth password 
-# http_login_user: Basic Auth login 
+# http_login_user: (required) Basic Auth login 
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
 # server_url: (required) URL of Zabbix server, with protocol 

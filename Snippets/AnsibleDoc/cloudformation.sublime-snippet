@@ -2,9 +2,14 @@
 <content><![CDATA[
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
+# backoff_delay: Number of seconds to wait for the next retry. 
+# backoff_max_delay: Maximum amount of time to wait between retries. 
+# backoff_retries: Number of times to retry operation. AWS API 
+# capabilities: Specify capabilites that stack template 
 # changeset_name: Name given to the changeset when creating a 
 # create_changeset: If stack already exists create a changeset 
 # create_timeout: The amount of time (in minutes) that can pass 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # disable_rollback: If a stacks fails to form, rollback will remove 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # events_limit: Maximum number of CloudFormation events to fetch 
@@ -30,36 +35,41 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
   cloudformation:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
-${9:   ${10:changeset_name}: ${11:"#"}}
-${12:   ${13:create_changeset}: ${14:"#"}}
-${15:   ${16:create_timeout}: ${17:"#"}}
-${18:   ${19:disable_rollback}: ${20:"#"}}
-${21:   ${22:ec2_url}: ${23:"#"}}
-${24:   ${25:events_limit}: ${26:"#"}}
-${27:   ${28:notification_arns}: ${29:"#"}}
-${30:   ${31:profile}: ${32:"#"}}
-${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:}: ${38:"#"}}
-${39:   ${40:role_arn}: ${41:"#"}}
-${42:   ${43:security_token}: ${44:"#"}}
-${45:   ${46:stack_name}: ${47:"#"}}
-${48:   ${49:stack_policy}: ${50:"#"}}
-${51:   ${52:sources}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:tags}: ${59:"#"}}
-${60:   ${61:template}: ${62:"#"}}
-${63:   ${64:template_body}: ${65:"#"}}
-${66:   ${67:template_format}: ${68:"#"}}
-${69:   ${70:template_parameters}: ${71:"#"}}
-${72:   ${73:template_url}: ${74:"#"}}
-${75:   ${76:termination_protection}: ${77:"#"}}
-${78:   ${79:validate_certs}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${9:   ${10:backoff_delay}: ${11:"#"}}
+${12:   ${13:backoff_max_delay}: ${14:"#"}}
+${15:   ${16:backoff_retries}: ${17:"#"}}
+${18:   ${19:capabilities}: ${20:"#"}}
+${21:   ${22:changeset_name}: ${23:"#"}}
+${24:   ${25:create_changeset}: ${26:"#"}}
+${27:   ${28:create_timeout}: ${29:"#"}}
+${30:   ${31:debug_botocore_endpoint_logs}: ${32:"#"}}
+${33:   ${34:disable_rollback}: ${35:"#"}}
+${36:   ${37:ec2_url}: ${38:"#"}}
+${39:   ${40:events_limit}: ${41:"#"}}
+${42:   ${43:notification_arns}: ${44:"#"}}
+${45:   ${46:profile}: ${47:"#"}}
+${48:   ${49:region}: ${50:"#"}}
+${51:   ${52:}: ${53:"#"}}
+${54:   ${55:role_arn}: ${56:"#"}}
+${57:   ${58:security_token}: ${59:"#"}}
+${60:   ${61:stack_name}: ${62:"#"}}
+${63:   ${64:stack_policy}: ${65:"#"}}
+${66:   ${67:sources}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:tags}: ${74:"#"}}
+${75:   ${76:template}: ${77:"#"}}
+${78:   ${79:template_body}: ${80:"#"}}
+${81:   ${82:template_format}: ${83:"#"}}
+${84:   ${85:template_parameters}: ${86:"#"}}
+${87:   ${88:template_url}: ${89:"#"}}
+${90:   ${91:termination_protection}: ${92:"#"}}
+${93:   ${94:validate_certs}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>cloudformation</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

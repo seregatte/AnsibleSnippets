@@ -2,11 +2,11 @@
 <content><![CDATA[
 ${1:# comment: Change the comment on the public key. Rewriting 
 # exclusive: Whether to remove all other non-specified keys 
-# follow: Follow path symlink instead of replacing it 
+# follow: Follow path symlink instead of replacing it. 
 # key: (required) The SSH public key(s), as a string or 
 # key_options: A string of ssh key options to be prepended to 
 # manage_dir: Whether this module should manage the directory 
-# path: Alternate path to the authorized_keys file 
+# path: Alternate path to the authorized_keys file. When 
 # state: Whether the given key (with the given 
 # user: (required) The username on the remote host whose 
 # validate_certs: This only applies if using a https url as the 

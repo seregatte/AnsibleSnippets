@@ -13,12 +13,12 @@ ${1:# credential: Credential to use for the group.
 # source_script: Inventory script to be used when group type is 
 # source_vars: Override variables from source with variables 
 # state: Desired state of the resource. 
-# tower_config_file: Path to the Tower config file. See notes. 
+# tower_config_file: Path to the Tower config file. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 # update_on_launch: Refresh inventory data from its source each time 
+# validate_certs: Whether to allow insecure connections to Tower. 
 # variables: Variables to use for the group, use `@' for a 
 }- name: ${2:Name for tower_group module.}
   tower_group:
@@ -39,8 +39,8 @@ ${42:   ${43:tower_config_file}: ${44:"#"}}
 ${45:   ${46:tower_host}: ${47:"#"}}
 ${48:   ${49:tower_password}: ${50:"#"}}
 ${51:   ${52:tower_username}: ${53:"#"}}
-${54:   ${55:tower_verify_ssl}: ${56:"#"}}
-${57:   ${58:update_on_launch}: ${59:"#"}}
+${54:   ${55:update_on_launch}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
 ${60:   ${61:variables}: ${62:"#"}}
 ${63:${64:   become: ${65:true}} 
 ${66:   become_method: ${67:su}} 

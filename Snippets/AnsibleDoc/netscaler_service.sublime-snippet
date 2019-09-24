@@ -39,7 +39,7 @@ ${1:# accessdown: Use Layer 2 mode to bridge the packets sent to
 # port: Port number of the service. Range 1 - 65535 * in 
 # processlocal: By turning on this option packets destined to a 
 # rtspsessionidremap: Enable RTSP session ID mapping for the service. 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # serverid: The identifier for the service. This is used 
 # servername: Name of the server that hosts the service. 
 # servicetype: Protocol in which data is exchanged with the 

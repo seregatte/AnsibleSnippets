@@ -3,7 +3,7 @@
 ${1:# ad_user: Active Directory username. Use when 
 # adfs_authority_url: Azure AD authority url. Use when authenticating 
 # api_profile: Selects an API profile to use when communicating 
-# api_version: (required) Specific API version to be used. 
+# api_version: Specific API version to be used. 
 # auth_source: Controls the source of the credentials to use 
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 

@@ -1,0 +1,108 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: Token used to authenticate with the API. Can 
+# bootloader: Specify the bootloader of the virtual machine. 
+# ca_cert: Path to a CA certificate used to authenticate 
+# client_cert: Path to a certificate used to authenticate with 
+# client_key: Path to a key file used to authenticate with the 
+# cloud_init_nocloud: Represents a cloud-init NoCloud user-data 
+# s: _v1_cloudi 
+# context: The name of a context found in the config file. 
+# cpu_cores: Number of CPU cores. 
+# cpu_features: List of dictionary to fine-tune features 
+# atdomain: ele 
+# cpu_limit: Is converted to its millicore value and 
+# cpu_model: CPU model. You can check list of available 
+# cpu_shares: Specify CPU shares. 
+# datavolumes: DataVolumes are a way to automate importing 
+# disks: List of dictionaries which specify disks of the 
+# html: _v1_disk 
+# s: _v1_volume 
+# ephemeral: If (true) ephemeral vitual machine will be 
+# force: If set to `no', and `state' is `present', an 
+# headless: Specify if the virtual machine should have 
+# host: Provide a URL for accessing the API. Can also be 
+# hugepage_size: Specify huge page size. 
+# interfaces: An interface defines a virtual network interface 
+# html: _v1_interfac 
+# html: _v1_network. 
+# kubeconfig: Path to an existing Kubernetes config file. If 
+# labels: Labels are key/value pairs that are attached to 
+# : /mis 
+# machine_type: QEMU machine type is the actual chipset of the 
+# memory: The amount of memory to be requested by virtual 
+# memory_limit: The maximum memory to be used by virtual 
+# merge_type: Whether to override the default patch merge 
+# patch: use-a 
+# name: (required) Name of the virtual machine. 
+# namespace: (required) Namespace where the virtual machine 
+# password: Provide a password for authenticating with the 
+# resource_definition: A partial YAML definition of the object being 
+# smbios_uuid: In order to provide a consistent view on the 
+# state: Set the virtual machine to either `present', 
+# tablets: Specify tablets to be used as input devices 
+# template: Name of Template to be used in creation of a 
+# template_parameters: New values of parameters from Template. 
+# username: Provide a username for authenticating with the 
+# validate_certs: Whether or not to verify the API server's SSL 
+# wait: `True' if the module should wait for the 
+# wait_timeout: The amount of time in seconds the module should 
+}- name: ${2:Name for kubevirt_vm module.}
+  kubevirt_vm:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:bootloader}: ${8:"#"}}
+${9:   ${10:ca_cert}: ${11:"#"}}
+${12:   ${13:client_cert}: ${14:"#"}}
+${15:   ${16:client_key}: ${17:"#"}}
+${18:   ${19:cloud_init_nocloud}: ${20:"#"}}
+${21:   ${22:s}: ${23:"#"}}
+${24:   ${25:context}: ${26:"#"}}
+${27:   ${28:cpu_cores}: ${29:"#"}}
+${30:   ${31:cpu_features}: ${32:"#"}}
+${33:   ${34:atdomain}: ${35:"#"}}
+${36:   ${37:cpu_limit}: ${38:"#"}}
+${39:   ${40:cpu_model}: ${41:"#"}}
+${42:   ${43:cpu_shares}: ${44:"#"}}
+${45:   ${46:datavolumes}: ${47:"#"}}
+${48:   ${49:disks}: ${50:"#"}}
+${51:   ${52:html}: ${53:"#"}}
+${54:   ${55:s}: ${56:"#"}}
+${57:   ${58:ephemeral}: ${59:"#"}}
+${60:   ${61:force}: ${62:"#"}}
+${63:   ${64:headless}: ${65:"#"}}
+${66:   ${67:host}: ${68:"#"}}
+${69:   ${70:hugepage_size}: ${71:"#"}}
+${72:   ${73:interfaces}: ${74:"#"}}
+${75:   ${76:html}: ${77:"#"}}
+${78:   ${79:html}: ${80:"#"}}
+${81:   ${82:kubeconfig}: ${83:"#"}}
+${84:   ${85:labels}: ${86:"#"}}
+${87:   ${88:}: ${89:"#"}}
+${90:   ${91:machine_type}: ${92:"#"}}
+${93:   ${94:memory}: ${95:"#"}}
+${96:   ${97:memory_limit}: ${98:"#"}}
+${99:   ${100:merge_type}: ${101:"#"}}
+${102:   ${103:patch}: ${104:"#"}}
+${105:   ${106:name}: ${107:"#"}}
+${108:   ${109:namespace}: ${110:"#"}}
+${111:   ${112:password}: ${113:"#"}}
+${114:   ${115:resource_definition}: ${116:"#"}}
+${117:   ${118:smbios_uuid}: ${119:"#"}}
+${120:   ${121:state}: ${122:"#"}}
+${123:   ${124:tablets}: ${125:"#"}}
+${126:   ${127:template}: ${128:"#"}}
+${129:   ${130:template_parameters}: ${131:"#"}}
+${132:   ${133:username}: ${134:"#"}}
+${135:   ${136:validate_certs}: ${137:"#"}}
+${138:   ${139:wait}: ${140:"#"}}
+${141:   ${142:wait_timeout}: ${143:"#"}}
+${144:${145:   become: ${146:true}} 
+${147:   become_method: ${148:su}} 
+${149:   become_user: ${150:nobody}} 
+${151:   become_flags: ${152:"-s /bin/sh"}}} 
+${153:   when: ${154:variable is defined}} 
+${155:   with_items: ${156:array}} 
+]]></content>
+	<tabTrigger>kubevirt_vm</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

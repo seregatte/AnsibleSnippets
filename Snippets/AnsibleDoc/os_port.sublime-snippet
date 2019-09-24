@@ -6,24 +6,26 @@ ${1:# admin_state_up: Sets admin state.
 # auth: Dictionary containing auth information as needed 
 # auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as 
-# cert: A path to a client certificate to use as part of 
+# ca_cert: A path to a CA Cert bundle that can be used as 
+# client_cert: A path to a client certificate to use as part of 
+# client_key: A path to a client key to use as part of the SSL 
 # cloud: Named cloud or cloud config to operate against. 
 # device_id: Device ID of device using this port. 
 # device_owner: The ID of the entity that uses this port. 
 # extra_dhcp_opts: Extra dhcp options to be assigned to this port. 
 # fixed_ips: Desired IP and/or subnet for this port.  Subnet 
 # interface: Endpoint URL type to fetch from the service 
-# key: A path to a client key to use as part of the SSL 
 # mac_address: MAC address of this port. 
 # name: Name that has to be given to the port. 
 # network: (required) Network ID or name this port belongs 
 # no_security_groups: Do not associate a security group with this 
+# port_security_enabled: Whether to enable or disable the port security 
 # region_name: Name of the region. 
 # security_groups: Security group(s) ID(s) or name(s) associated 
 # state: Should the resource be present or absent. 
 # timeout: How long should ansible wait for the requested 
-# verify: Whether or not SSL API requests should be 
+# validate_certs: Whether or not SSL API requests should be 
+# vnic_type: The type of the port that should be created 
 # wait: Should ansible wait until the requested resource 
 }- name: ${2:Name for os_port module.}
   os_port:
@@ -33,31 +35,33 @@ ${9:   ${10:api_timeout}: ${11:"#"}}
 ${12:   ${13:auth}: ${14:"#"}}
 ${15:   ${16:auth_type}: ${17:"#"}}
 ${18:   ${19:availability_zone}: ${20:"#"}}
-${21:   ${22:cacert}: ${23:"#"}}
-${24:   ${25:cert}: ${26:"#"}}
-${27:   ${28:cloud}: ${29:"#"}}
-${30:   ${31:device_id}: ${32:"#"}}
-${33:   ${34:device_owner}: ${35:"#"}}
-${36:   ${37:extra_dhcp_opts}: ${38:"#"}}
-${39:   ${40:fixed_ips}: ${41:"#"}}
-${42:   ${43:interface}: ${44:"#"}}
-${45:   ${46:key}: ${47:"#"}}
+${21:   ${22:ca_cert}: ${23:"#"}}
+${24:   ${25:client_cert}: ${26:"#"}}
+${27:   ${28:client_key}: ${29:"#"}}
+${30:   ${31:cloud}: ${32:"#"}}
+${33:   ${34:device_id}: ${35:"#"}}
+${36:   ${37:device_owner}: ${38:"#"}}
+${39:   ${40:extra_dhcp_opts}: ${41:"#"}}
+${42:   ${43:fixed_ips}: ${44:"#"}}
+${45:   ${46:interface}: ${47:"#"}}
 ${48:   ${49:mac_address}: ${50:"#"}}
 ${51:   ${52:name}: ${53:"#"}}
 ${54:   ${55:network}: ${56:"#"}}
 ${57:   ${58:no_security_groups}: ${59:"#"}}
-${60:   ${61:region_name}: ${62:"#"}}
-${63:   ${64:security_groups}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:timeout}: ${71:"#"}}
-${72:   ${73:verify}: ${74:"#"}}
-${75:   ${76:wait}: ${77:"#"}}
-${78:${79:   become: ${80:true}} 
-${81:   become_method: ${82:su}} 
-${83:   become_user: ${84:nobody}} 
-${85:   become_flags: ${86:"-s /bin/sh"}}} 
-${87:   when: ${88:variable is defined}} 
-${89:   with_items: ${90:array}} 
+${60:   ${61:port_security_enabled}: ${62:"#"}}
+${63:   ${64:region_name}: ${65:"#"}}
+${66:   ${67:security_groups}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:timeout}: ${74:"#"}}
+${75:   ${76:validate_certs}: ${77:"#"}}
+${78:   ${79:vnic_type}: ${80:"#"}}
+${81:   ${82:wait}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>os_port</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

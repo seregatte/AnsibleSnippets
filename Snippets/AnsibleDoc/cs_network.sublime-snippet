@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# account: Account the network is related to. 
 # acl: The name of the access control list for the VPC 
-# acl_type: Access control type for the VPC network tier. 
+# acl_type: Access control type for the network. If not 
 # api_http_method: HTTP method used to query the API endpoint. If 
 # api_key: API key of the CloudStack API. If not given, the 
 # api_region: Name of the ini section in the `cloustack.ini' 

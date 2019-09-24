@@ -23,7 +23,7 @@ ${1:# arp_flooding: Determines if the Bridge Domain should flood ARP
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # tenant: The name of the Tenant. 
 # timeout: The socket level timeout in seconds. 

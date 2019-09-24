@@ -1,0 +1,182 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# comment: Optional comments. 
+# extended_log: Enable/disable extended logging for web 
+# ftgd_wf: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# ftgd_wf_exempt_quota: Do not stop quota for these categories. 
+# ftgd_wf_filters_action: Action to take for matches. choice | block | 
+# ftgd_wf_filters_auth_usr_grp: Groups with permission to authenticate. 
+# ftgd_wf_filters_category: Categories and groups the filter examines. 
+# ftgd_wf_filters_log: Enable/disable logging. choice | disable | 
+# ftgd_wf_filters_override_replacemsg: Override replacement message. 
+# ftgd_wf_filters_warn_duration: Duration of warnings. 
+# ftgd_wf_filters_warning_duration_type: Re-display warning after closing browser or 
+# ftgd_wf_filters_warning_prompt: Warning prompts in each category or each domain. 
+# ftgd_wf_max_quota_timeout: Maximum FortiGuard quota used by single page 
+# ftgd_wf_options: Options for FortiGuard Web Filter. FLAG Based 
+# ftgd_wf_ovrd: Allow web filter profile overrides. 
+# ftgd_wf_quota_category: FortiGuard categories to apply quota to 
+# ftgd_wf_quota_duration: Duration of quota. 
+# ftgd_wf_quota_override_replacemsg: Override replacement message. 
+# ftgd_wf_quota_type: Quota type. choice | time | Use a time-based 
+# ftgd_wf_quota_unit: Traffic quota unit of measurement. choice | B | 
+# ftgd_wf_quota_value: Traffic quota value. 
+# ftgd_wf_rate_crl_urls: Enable/disable rating CRL by URL. choice | 
+# ftgd_wf_rate_css_urls: Enable/disable rating CSS by URL. choice | 
+# ftgd_wf_rate_image_urls: Enable/disable rating images by URL. choice | 
+# ftgd_wf_rate_javascript_urls: Enable/disable rating JavaScript by URL. choice 
+# https_replacemsg: Enable replacement messages for HTTPS. choice | 
+# inspection_mode: Web filtering inspection mode. choice | proxy | 
+# log_all_url: Enable/disable logging all URLs visited. choice 
+# mode: Sets one of three modes for managing the object. 
+# name: Profile name. 
+# options: FLAG Based Options. Specify multiple in list 
+# override: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# override_ovrd_cookie: Allow/deny browser-based (cookie) overrides. 
+# override_ovrd_dur: Override duration. 
+# override_ovrd_dur_mode: Override duration mode. choice | constant | 
+# override_ovrd_scope: Override scope. choice | user | Override for the 
+# override_ovrd_user_group: User groups with permission to use the override. 
+# override_profile: Web filter profile with permission to create 
+# override_profile_attribute: Profile attribute to retrieve from the RADIUS 
+# override_profile_type: Override profile type. choice | list | Profile 
+# ovrd_perm: FLAG Based Options. Specify multiple in list 
+# post_action: Action taken for HTTP POST traffic. choice | 
+# replacemsg_group: Replacement message group. 
+# url_extraction: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# url_extraction_redirect_header: HTTP header name to use for client redirect on 
+# url_extraction_redirect_no_content: Enable / Disable empty message-body entity in 
+# url_extraction_redirect_url: HTTP header value to use for client redirect on 
+# url_extraction_server_fqdn: URL extraction server FQDN (fully qualified 
+# url_extraction_status: Enable URL Extraction choice | disable | Disable 
+# web: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# web_blacklist: Enable/disable automatic addition of URLs 
+# web_bword_table: Banned word table ID. 
+# web_bword_threshold: Banned word score threshold. 
+# web_content_header_list: Content header list. 
+# web_content_log: Enable/disable logging logging blocked web 
+# web_extended_all_action_log: Enable/disable extended any filter action 
+# web_filter_activex_log: Enable/disable logging ActiveX. choice | disable 
+# web_filter_applet_log: Enable/disable logging Java applets. choice | 
+# web_filter_command_block_log: Enable/disable logging blocked commands. choice 
+# web_filter_cookie_log: Enable/disable logging cookie filtering. choice 
+# web_filter_cookie_removal_log: Enable/disable logging blocked cookies. choice | 
+# web_filter_js_log: Enable/disable logging Java scripts. choice | 
+# web_filter_jscript_log: Enable/disable logging JScripts. choice | 
+# web_filter_referer_log: Enable/disable logging referrers. choice | 
+# web_filter_unknown_log: Enable/disable logging unknown scripts. choice | 
+# web_filter_vbs_log: Enable/disable logging VBS scripts. choice | 
+# web_ftgd_err_log: Enable/disable logging rating errors. choice | 
+# web_ftgd_quota_usage: Enable/disable logging daily quota usage. choice 
+# web_invalid_domain_log: Enable/disable logging invalid domain names. 
+# web_keyword_match: Search keywords to log when match is found. 
+# web_log_search: Enable/disable logging all search phrases. 
+# web_safe_search: Safe search type. FLAG Based Options. Specify 
+# web_url_log: Enable/disable logging URL filtering. choice | 
+# web_urlfilter_table: URL filter table ID. 
+# web_whitelist: FortiGuard whitelist settings. FLAG Based 
+# web_youtube_restrict: YouTube EDU filter level. choice | strict | 
+# wisp: Enable/disable web proxy WISP. choice | disable 
+# wisp_algorithm: WISP server selection algorithm. choice | auto- 
+# wisp_servers: WISP servers. 
+# youtube_channel_filter: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# youtube_channel_filter_channel_id: YouTube channel ID to be filtered. 
+# youtube_channel_filter_comment: Comment. 
+# youtube_channel_status: YouTube channel filter status. choice | disable 
+}- name: ${2:Name for fmgr_secprof_web module.}
+  fmgr_secprof_web:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:comment}: ${8:"#"}}
+${9:   ${10:extended_log}: ${11:"#"}}
+${12:   ${13:ftgd_wf}: ${14:"#"}}
+${15:   ${16:ftgd_wf_exempt_quota}: ${17:"#"}}
+${18:   ${19:ftgd_wf_filters_action}: ${20:"#"}}
+${21:   ${22:ftgd_wf_filters_auth_usr_grp}: ${23:"#"}}
+${24:   ${25:ftgd_wf_filters_category}: ${26:"#"}}
+${27:   ${28:ftgd_wf_filters_log}: ${29:"#"}}
+${30:   ${31:ftgd_wf_filters_override_replacemsg}: ${32:"#"}}
+${33:   ${34:ftgd_wf_filters_warn_duration}: ${35:"#"}}
+${36:   ${37:ftgd_wf_filters_warning_duration_type}: ${38:"#"}}
+${39:   ${40:ftgd_wf_filters_warning_prompt}: ${41:"#"}}
+${42:   ${43:ftgd_wf_max_quota_timeout}: ${44:"#"}}
+${45:   ${46:ftgd_wf_options}: ${47:"#"}}
+${48:   ${49:ftgd_wf_ovrd}: ${50:"#"}}
+${51:   ${52:ftgd_wf_quota_category}: ${53:"#"}}
+${54:   ${55:ftgd_wf_quota_duration}: ${56:"#"}}
+${57:   ${58:ftgd_wf_quota_override_replacemsg}: ${59:"#"}}
+${60:   ${61:ftgd_wf_quota_type}: ${62:"#"}}
+${63:   ${64:ftgd_wf_quota_unit}: ${65:"#"}}
+${66:   ${67:ftgd_wf_quota_value}: ${68:"#"}}
+${69:   ${70:ftgd_wf_rate_crl_urls}: ${71:"#"}}
+${72:   ${73:ftgd_wf_rate_css_urls}: ${74:"#"}}
+${75:   ${76:ftgd_wf_rate_image_urls}: ${77:"#"}}
+${78:   ${79:ftgd_wf_rate_javascript_urls}: ${80:"#"}}
+${81:   ${82:https_replacemsg}: ${83:"#"}}
+${84:   ${85:inspection_mode}: ${86:"#"}}
+${87:   ${88:log_all_url}: ${89:"#"}}
+${90:   ${91:mode}: ${92:"#"}}
+${93:   ${94:name}: ${95:"#"}}
+${96:   ${97:options}: ${98:"#"}}
+${99:   ${100:override}: ${101:"#"}}
+${102:   ${103:override_ovrd_cookie}: ${104:"#"}}
+${105:   ${106:override_ovrd_dur}: ${107:"#"}}
+${108:   ${109:override_ovrd_dur_mode}: ${110:"#"}}
+${111:   ${112:override_ovrd_scope}: ${113:"#"}}
+${114:   ${115:override_ovrd_user_group}: ${116:"#"}}
+${117:   ${118:override_profile}: ${119:"#"}}
+${120:   ${121:override_profile_attribute}: ${122:"#"}}
+${123:   ${124:override_profile_type}: ${125:"#"}}
+${126:   ${127:ovrd_perm}: ${128:"#"}}
+${129:   ${130:post_action}: ${131:"#"}}
+${132:   ${133:replacemsg_group}: ${134:"#"}}
+${135:   ${136:url_extraction}: ${137:"#"}}
+${138:   ${139:url_extraction_redirect_header}: ${140:"#"}}
+${141:   ${142:url_extraction_redirect_no_content}: ${143:"#"}}
+${144:   ${145:url_extraction_redirect_url}: ${146:"#"}}
+${147:   ${148:url_extraction_server_fqdn}: ${149:"#"}}
+${150:   ${151:url_extraction_status}: ${152:"#"}}
+${153:   ${154:web}: ${155:"#"}}
+${156:   ${157:web_blacklist}: ${158:"#"}}
+${159:   ${160:web_bword_table}: ${161:"#"}}
+${162:   ${163:web_bword_threshold}: ${164:"#"}}
+${165:   ${166:web_content_header_list}: ${167:"#"}}
+${168:   ${169:web_content_log}: ${170:"#"}}
+${171:   ${172:web_extended_all_action_log}: ${173:"#"}}
+${174:   ${175:web_filter_activex_log}: ${176:"#"}}
+${177:   ${178:web_filter_applet_log}: ${179:"#"}}
+${180:   ${181:web_filter_command_block_log}: ${182:"#"}}
+${183:   ${184:web_filter_cookie_log}: ${185:"#"}}
+${186:   ${187:web_filter_cookie_removal_log}: ${188:"#"}}
+${189:   ${190:web_filter_js_log}: ${191:"#"}}
+${192:   ${193:web_filter_jscript_log}: ${194:"#"}}
+${195:   ${196:web_filter_referer_log}: ${197:"#"}}
+${198:   ${199:web_filter_unknown_log}: ${200:"#"}}
+${201:   ${202:web_filter_vbs_log}: ${203:"#"}}
+${204:   ${205:web_ftgd_err_log}: ${206:"#"}}
+${207:   ${208:web_ftgd_quota_usage}: ${209:"#"}}
+${210:   ${211:web_invalid_domain_log}: ${212:"#"}}
+${213:   ${214:web_keyword_match}: ${215:"#"}}
+${216:   ${217:web_log_search}: ${218:"#"}}
+${219:   ${220:web_safe_search}: ${221:"#"}}
+${222:   ${223:web_url_log}: ${224:"#"}}
+${225:   ${226:web_urlfilter_table}: ${227:"#"}}
+${228:   ${229:web_whitelist}: ${230:"#"}}
+${231:   ${232:web_youtube_restrict}: ${233:"#"}}
+${234:   ${235:wisp}: ${236:"#"}}
+${237:   ${238:wisp_algorithm}: ${239:"#"}}
+${240:   ${241:wisp_servers}: ${242:"#"}}
+${243:   ${244:youtube_channel_filter}: ${245:"#"}}
+${246:   ${247:youtube_channel_filter_channel_id}: ${248:"#"}}
+${249:   ${250:youtube_channel_filter_comment}: ${251:"#"}}
+${252:   ${253:youtube_channel_status}: ${254:"#"}}
+${255:${256:   become: ${257:true}} 
+${258:   become_method: ${259:su}} 
+${260:   become_user: ${261:nobody}} 
+${262:   become_flags: ${263:"-s /bin/sh"}}} 
+${264:   when: ${265:variable is defined}} 
+${266:   with_items: ${267:array}} 
+]]></content>
+	<tabTrigger>fmgr_secprof_web</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

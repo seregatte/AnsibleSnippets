@@ -1,43 +1,39 @@
 <snippet>
 <content><![CDATA[
-${1:# device: (required) This specifies the type of device 
-# enable: Configures the password used to enter Global 
-# host: (required) This is the variable used to search 
-# interface: (required) This is an overloaded interface first 
-# interface: This is an overloaded interface second argument. 
-# interface: This is an overloaded interface third argument. 
-# interface: This is an overloaded interface fourth argument. 
-# interface: This is an overloaded interface fifth argument. 
-# interface: This is an overloaded interface sixth argument. 
-# interface: This is an overloaded interface seventh 
-# interface: (required) This specifies the attribute you 
-# interface: (required) This specifies the interface range in 
-# outputfile: (required) This specifies the file path where 
-# password: (required) Configures the password used to 
-# username: (required) Configures the username used to 
+${1:# aggregate: List of Interfaces definitions. 
+# delay: Time in seconds to wait before checking for the 
+# description: Description of Interface. 
+# duplex: Interface link status 
+# enabled: Interface link status. 
+# mtu: Maximum size of transmit packet. 
+# name: (required) Name of the Interface. 
+# neighbors: Check operational state of given interface 
+# provider: *Deprecated* Starting with Ansible 2.5 we 
+# rx_rate: Receiver rate in bits per second (bps). This is 
+# speed: Interface link speed. 
+# state: State of the Interface configuration, `up' means 
+# tx_rate: Transmit rate in bits per second (bps). This is 
 }- name: ${2:Name for cnos_interface module.}
   cnos_interface:
-${3:   ${4:device}: ${5:"#"}}
-${6:   ${7:enable}: ${8:"#"}}
-${9:   ${10:host}: ${11:"#"}}
-${12:   ${13:interface}: ${14:"#"}}
-${15:   ${16:interface}: ${17:"#"}}
-${18:   ${19:interface}: ${20:"#"}}
-${21:   ${22:interface}: ${23:"#"}}
-${24:   ${25:interface}: ${26:"#"}}
-${27:   ${28:interface}: ${29:"#"}}
-${30:   ${31:interface}: ${32:"#"}}
-${33:   ${34:interface}: ${35:"#"}}
-${36:   ${37:interface}: ${38:"#"}}
-${39:   ${40:outputfile}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:delay}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:duplex}: ${14:"#"}}
+${15:   ${16:enabled}: ${17:"#"}}
+${18:   ${19:mtu}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:neighbors}: ${26:"#"}}
+${27:   ${28:provider}: ${29:"#"}}
+${30:   ${31:rx_rate}: ${32:"#"}}
+${33:   ${34:speed}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:tx_rate}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>cnos_interface</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

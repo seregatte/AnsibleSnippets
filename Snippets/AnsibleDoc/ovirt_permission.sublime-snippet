@@ -15,7 +15,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # state: Should the permission be present/absent. 
 # timeout: The amount of time in seconds the module should 
 # user_name: Username of the user to manage. In most LDAPs 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_permission module.}
   ovirt_permission:
 ${3:   ${4:auth}: ${5:"#"}}

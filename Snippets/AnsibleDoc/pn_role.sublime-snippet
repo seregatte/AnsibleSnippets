@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_access: type of access. 
+# pn_cliswitch: Target switch to run the CLI on. 
+# pn_delete_from_users: delete from users. 
+# pn_name: (required) role name. 
+# pn_running_config: display running configuration of switch. 
+# pn_scope: local or fabric. 
+# pn_shell: allow shell command. 
+# pn_sudo: allow sudo from shell. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_role module.}
+  pn_role:
+${3:   ${4:pn_access}: ${5:"#"}}
+${6:   ${7:pn_cliswitch}: ${8:"#"}}
+${9:   ${10:pn_delete_from_users}: ${11:"#"}}
+${12:   ${13:pn_name}: ${14:"#"}}
+${15:   ${16:pn_running_config}: ${17:"#"}}
+${18:   ${19:pn_scope}: ${20:"#"}}
+${21:   ${22:pn_shell}: ${23:"#"}}
+${24:   ${25:pn_sudo}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>pn_role</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

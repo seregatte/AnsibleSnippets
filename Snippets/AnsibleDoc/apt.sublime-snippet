@@ -12,6 +12,7 @@ ${1:# allow_unauthenticated: Ignore if packages cannot be authenticated. This
 # install_recommends: Corresponds to the `--no-install-recommends' 
 # name: A list of package names, like `foo', or package 
 # only_upgrade: Only upgrade a package if it is already 
+# policy_rc_d: Force the exit code of /usr/sbin/policy-rc.d. 
 # purge: Will force purging of configuration files if the 
 # state: Indicates the desired package state. `latest' 
 # update_cache: Run the equivalent of `apt-get update' before 
@@ -30,16 +31,17 @@ ${27:   ${28:force_apt_get}: ${29:"#"}}
 ${30:   ${31:install_recommends}: ${32:"#"}}
 ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:only_upgrade}: ${38:"#"}}
-${39:   ${40:purge}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:update_cache}: ${47:"#"}}
-${48:   ${49:upgrade}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${39:   ${40:policy_rc_d}: ${41:"#"}}
+${42:   ${43:purge}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:update_cache}: ${50:"#"}}
+${51:   ${52:upgrade}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>apt</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

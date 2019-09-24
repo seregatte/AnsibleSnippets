@@ -11,10 +11,13 @@ ${1:# account_type: Type of the account.
 # email: Email of the user to be created if account did 
 # first_name: First name of the user to be created if account 
 # last_name: Last name of the user to be created if account 
+# ldap_domain: Name of the LDAP group or OU to bind. If set, 
+# ldap_type: Type of the ldap name. GROUP or OU, defaults to 
 # name: (required) Name of account. 
 # network_domain: Network domain of the account. 
 # password: Password of the user to be created if account 
 # poll_async: Poll async jobs until job has finished. 
+# role: Creates the account under the specified role 
 # state: State of the account. `unlocked' is an alias for 
 # timezone: Timezone of the user to be created if account 
 # username: Username of the user to be created if account 
@@ -31,19 +34,22 @@ ${24:   ${25:domain}: ${26:"#"}}
 ${27:   ${28:email}: ${29:"#"}}
 ${30:   ${31:first_name}: ${32:"#"}}
 ${33:   ${34:last_name}: ${35:"#"}}
-${36:   ${37:name}: ${38:"#"}}
-${39:   ${40:network_domain}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:poll_async}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:timezone}: ${53:"#"}}
-${54:   ${55:username}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${36:   ${37:ldap_domain}: ${38:"#"}}
+${39:   ${40:ldap_type}: ${41:"#"}}
+${42:   ${43:name}: ${44:"#"}}
+${45:   ${46:network_domain}: ${47:"#"}}
+${48:   ${49:password}: ${50:"#"}}
+${51:   ${52:poll_async}: ${53:"#"}}
+${54:   ${55:role}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:timezone}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>cs_account</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

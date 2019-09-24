@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# delegate_to: Where the module will be run 
+# description: A user-defined description of the organization. 
+# hostname: (required) IP address or hostname of Cisco UCS 
+# org_name: The name of the orgranization. Enter up to 16 
+# parent_org_path: A forward slash / separated hierarchical path 
+# password: (required) Password for Cisco UCS Manager 
+# port: Port number to be used during connection (by 
+# proxy: If use_proxy is no, specfies proxy to be used 
+# state: If `absent', will remove organization. If 
+# use_proxy: If `no', will not use the proxy as defined by 
+# use_ssl: If `no', an HTTP connection will be used instead 
+# username: Username for Cisco UCS Manager authentication. 
+}- name: ${2:Name for ucs_org module.}
+  ucs_org:
+${3:   ${4:delegate_to}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:org_name}: ${14:"#"}}
+${15:   ${16:parent_org_path}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:port}: ${23:"#"}}
+${24:   ${25:proxy}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:use_proxy}: ${32:"#"}}
+${33:   ${34:use_ssl}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>ucs_org</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

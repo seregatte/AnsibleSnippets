@@ -1,113 +1,149 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_version: The version of the Docker API running on the 
-# args: List comprised of the command and the arguments 
-# cacert_path: Use a CA certificate when performing server 
-# cert_path: Path to the client's TLS certificate file. If 
+# args: List arguments to be passed to the container. 
+# ca_cert: Use a CA certificate when performing server 
+# client_cert: Path to the client's TLS certificate file. If 
+# client_key: Path to the client's TLS key file. If the value 
+# command: Command to execute when the container starts. A 
 # configs: List of dictionaries describing the service 
-# constraints: List of the service constraints. Maps docker 
-# container_labels: Dictionary of key value pairs. Maps docker 
+# constraints: List of the service constraints. Corresponds to 
+# container_labels: Dictionary of key value pairs. Corresponds to 
 # debug: Debug mode 
-# dns: List of custom DNS servers. Maps docker service 
-# dns_options: List of custom DNS options. Maps docker service 
-# dns_search: List of custom DNS search domains. Maps docker 
+# dns: List of custom DNS servers. Corresponds to the 
+# dns_options: List of custom DNS options. Corresponds to the 
+# dns_search: List of custom DNS search domains. Corresponds 
 # docker_host: The URL or Unix socket path used to connect to 
-# endpoint_mode: Service endpoint mode. Maps docker service 
-# env: List of the service environment variables. Maps 
-# force_update: Force update even if no changes require it. Maps 
-# hostname: Container hostname Maps docker service 
-# image: (required) Service image path and tag. Maps 
-# key_path: Path to the client's TLS key file. If the value 
-# labels: Dictionary of key value pairs. Maps docker 
-# limit_cpu: Service CPU limit. 0 equals no limit. Maps 
+# endpoint_mode: Service endpoint mode. Corresponds to the 
+# env: List or dictionary of the service environment 
+# env_files: List of paths to files, present on the target, 
+# force_update: Force update even if no changes require it. 
+# groups: List of additional group names and/or IDs that 
+# healthcheck: Configure a check that is run to determine 
+# der: healthcheck) 
+# hostname: Container hostname. Corresponds to the 
+# hosts: Dict of host-to-IP mappings, where each host 
+# image: (required) Service image path and tag. 
+# labels: Dictionary of key value pairs. Corresponds to 
+# limit_cpu: Service CPU limit. `0' equals no limit. 
 # limit_memory: Service memory limit (format: 
-# log_driver: Configure the logging driver for a service 
-# log_driver_options: Options for service logging driver 
-# mode: Service replication mode. Maps docker service 
+# limits: Configures service resource limits. 
+# log_driver: Configure the logging driver for a service. 
+# log_driver_options: Options for service logging driver. Corresponds 
+# logging: Logging configuration for the service. 
+# mode: Service replication mode. Service will be 
 # mounts: List of dictionaries describing the service 
-# name: (required) Service name 
-# networks: List of the service networks names. Maps docker 
+# name: (required) Service name. Corresponds to the 
+# networks: List of the service networks names. Prior to API 
+# placement: Configures service placement preferences and 
 # publish: List of dictionaries describing the service 
+# read_only: Mount the containers root filesystem as read 
 # replicas: Number of containers instantiated in the 
-# reserve_cpu: Service CPU reservation. 0 equals no 
+# reservations: Configures service resource reservations. 
+# reserve_cpu: Service CPU reservation. `0' equals no 
 # reserve_memory: Service memory reservation (format: 
-# restart_policy: Restart condition of the service. Maps docker 
-# restart_policy_attempts: Maximum number of service restarts. Maps docker 
-# restart_policy_delay: Delay between restarts. Maps docker service 
-# restart_policy_window: Restart policy evaluation window. Maps docker 
+# resolve_image: If the current image digest should be resolved 
+# restart_config: Configures if and how to restart containers when 
+# restart_policy: Restart condition of the service. Corresponds to 
+# restart_policy_attempts: Maximum number of service restarts. Corresponds 
+# restart_policy_delay: Delay between restarts. Accepts a duration as an 
+# restart_policy_window: Restart policy evaluation window. Accepts a 
+# rollback_config: Configures how the service should be rolled back 
 # secrets: List of dictionaries describing the service 
 # ssl_version: Provide a valid SSL version number. Default 
-# state: (required) Service state. 
+# state: (required) `absent' - A service matching the 
+# stop_grace_period: Time to wait before force killing a container. 
+# stop_signal: Override default signal used to stop the 
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 
 # tls_hostname: When verifying the authenticity of the Docker 
-# tls_verify: Secure the connection to the API by using TLS 
-# tty: Allocate a pseudo-TTY Maps docker service --tty 
-# update_delay: Rolling update delay Maps docker service 
-# update_failure_action: Action to take in case of container failure Maps 
+# tty: Allocate a pseudo-TTY. Corresponds to the 
+# update_config: Configures how the service should be updated. 
+# update_delay: Rolling update delay. Accepts a duration as an 
+# update_failure_action: Action to take in case of container failure. 
 # update_max_failure_ratio: Fraction of tasks that may fail during an update 
-# update_monitor: Time to monitor updated tasks for failures, in 
+# update_monitor: Time to monitor updated tasks for failures. 
 # update_order: Specifies the order of operations when rolling 
-# update_parallelism: Rolling update parallelism Maps docker service 
-# user: username or UID. If set to `null' the image 
+# update_parallelism: Rolling update parallelism. Corresponds to the 
+# user: Sets the username or UID used for the specified 
+# validate_certs: Secure the connection to the API by using TLS 
+# working_dir: Path to the working directory. Corresponds to 
 }- name: ${2:Name for docker_swarm_service module.}
   docker_swarm_service:
 ${3:   ${4:api_version}: ${5:"#"}}
 ${6:   ${7:args}: ${8:"#"}}
-${9:   ${10:cacert_path}: ${11:"#"}}
-${12:   ${13:cert_path}: ${14:"#"}}
-${15:   ${16:configs}: ${17:"#"}}
-${18:   ${19:constraints}: ${20:"#"}}
-${21:   ${22:container_labels}: ${23:"#"}}
-${24:   ${25:debug}: ${26:"#"}}
-${27:   ${28:dns}: ${29:"#"}}
-${30:   ${31:dns_options}: ${32:"#"}}
-${33:   ${34:dns_search}: ${35:"#"}}
-${36:   ${37:docker_host}: ${38:"#"}}
-${39:   ${40:endpoint_mode}: ${41:"#"}}
-${42:   ${43:env}: ${44:"#"}}
-${45:   ${46:force_update}: ${47:"#"}}
-${48:   ${49:hostname}: ${50:"#"}}
-${51:   ${52:image}: ${53:"#"}}
-${54:   ${55:key_path}: ${56:"#"}}
-${57:   ${58:labels}: ${59:"#"}}
-${60:   ${61:limit_cpu}: ${62:"#"}}
-${63:   ${64:limit_memory}: ${65:"#"}}
-${66:   ${67:log_driver}: ${68:"#"}}
-${69:   ${70:log_driver_options}: ${71:"#"}}
-${72:   ${73:mode}: ${74:"#"}}
-${75:   ${76:mounts}: ${77:"#"}}
-${78:   ${79:name}: ${80:"#"}}
-${81:   ${82:networks}: ${83:"#"}}
-${84:   ${85:publish}: ${86:"#"}}
-${87:   ${88:replicas}: ${89:"#"}}
-${90:   ${91:reserve_cpu}: ${92:"#"}}
-${93:   ${94:reserve_memory}: ${95:"#"}}
-${96:   ${97:restart_policy}: ${98:"#"}}
-${99:   ${100:restart_policy_attempts}: ${101:"#"}}
-${102:   ${103:restart_policy_delay}: ${104:"#"}}
-${105:   ${106:restart_policy_window}: ${107:"#"}}
-${108:   ${109:secrets}: ${110:"#"}}
-${111:   ${112:ssl_version}: ${113:"#"}}
-${114:   ${115:state}: ${116:"#"}}
-${117:   ${118:timeout}: ${119:"#"}}
-${120:   ${121:tls}: ${122:"#"}}
-${123:   ${124:tls_hostname}: ${125:"#"}}
-${126:   ${127:tls_verify}: ${128:"#"}}
-${129:   ${130:tty}: ${131:"#"}}
-${132:   ${133:update_delay}: ${134:"#"}}
-${135:   ${136:update_failure_action}: ${137:"#"}}
-${138:   ${139:update_max_failure_ratio}: ${140:"#"}}
-${141:   ${142:update_monitor}: ${143:"#"}}
-${144:   ${145:update_order}: ${146:"#"}}
-${147:   ${148:update_parallelism}: ${149:"#"}}
-${150:   ${151:user}: ${152:"#"}}
-${153:${154:   become: ${155:true}} 
-${156:   become_method: ${157:su}} 
-${158:   become_user: ${159:nobody}} 
-${160:   become_flags: ${161:"-s /bin/sh"}}} 
-${162:   when: ${163:variable is defined}} 
-${164:   with_items: ${165:array}} 
+${9:   ${10:ca_cert}: ${11:"#"}}
+${12:   ${13:client_cert}: ${14:"#"}}
+${15:   ${16:client_key}: ${17:"#"}}
+${18:   ${19:command}: ${20:"#"}}
+${21:   ${22:configs}: ${23:"#"}}
+${24:   ${25:constraints}: ${26:"#"}}
+${27:   ${28:container_labels}: ${29:"#"}}
+${30:   ${31:debug}: ${32:"#"}}
+${33:   ${34:dns}: ${35:"#"}}
+${36:   ${37:dns_options}: ${38:"#"}}
+${39:   ${40:dns_search}: ${41:"#"}}
+${42:   ${43:docker_host}: ${44:"#"}}
+${45:   ${46:endpoint_mode}: ${47:"#"}}
+${48:   ${49:env}: ${50:"#"}}
+${51:   ${52:env_files}: ${53:"#"}}
+${54:   ${55:force_update}: ${56:"#"}}
+${57:   ${58:groups}: ${59:"#"}}
+${60:   ${61:healthcheck}: ${62:"#"}}
+${63:   ${64:der}: ${65:"#"}}
+${66:   ${67:hostname}: ${68:"#"}}
+${69:   ${70:hosts}: ${71:"#"}}
+${72:   ${73:image}: ${74:"#"}}
+${75:   ${76:labels}: ${77:"#"}}
+${78:   ${79:limit_cpu}: ${80:"#"}}
+${81:   ${82:limit_memory}: ${83:"#"}}
+${84:   ${85:limits}: ${86:"#"}}
+${87:   ${88:log_driver}: ${89:"#"}}
+${90:   ${91:log_driver_options}: ${92:"#"}}
+${93:   ${94:logging}: ${95:"#"}}
+${96:   ${97:mode}: ${98:"#"}}
+${99:   ${100:mounts}: ${101:"#"}}
+${102:   ${103:name}: ${104:"#"}}
+${105:   ${106:networks}: ${107:"#"}}
+${108:   ${109:placement}: ${110:"#"}}
+${111:   ${112:publish}: ${113:"#"}}
+${114:   ${115:read_only}: ${116:"#"}}
+${117:   ${118:replicas}: ${119:"#"}}
+${120:   ${121:reservations}: ${122:"#"}}
+${123:   ${124:reserve_cpu}: ${125:"#"}}
+${126:   ${127:reserve_memory}: ${128:"#"}}
+${129:   ${130:resolve_image}: ${131:"#"}}
+${132:   ${133:restart_config}: ${134:"#"}}
+${135:   ${136:restart_policy}: ${137:"#"}}
+${138:   ${139:restart_policy_attempts}: ${140:"#"}}
+${141:   ${142:restart_policy_delay}: ${143:"#"}}
+${144:   ${145:restart_policy_window}: ${146:"#"}}
+${147:   ${148:rollback_config}: ${149:"#"}}
+${150:   ${151:secrets}: ${152:"#"}}
+${153:   ${154:ssl_version}: ${155:"#"}}
+${156:   ${157:state}: ${158:"#"}}
+${159:   ${160:stop_grace_period}: ${161:"#"}}
+${162:   ${163:stop_signal}: ${164:"#"}}
+${165:   ${166:timeout}: ${167:"#"}}
+${168:   ${169:tls}: ${170:"#"}}
+${171:   ${172:tls_hostname}: ${173:"#"}}
+${174:   ${175:tty}: ${176:"#"}}
+${177:   ${178:update_config}: ${179:"#"}}
+${180:   ${181:update_delay}: ${182:"#"}}
+${183:   ${184:update_failure_action}: ${185:"#"}}
+${186:   ${187:update_max_failure_ratio}: ${188:"#"}}
+${189:   ${190:update_monitor}: ${191:"#"}}
+${192:   ${193:update_order}: ${194:"#"}}
+${195:   ${196:update_parallelism}: ${197:"#"}}
+${198:   ${199:user}: ${200:"#"}}
+${201:   ${202:validate_certs}: ${203:"#"}}
+${204:   ${205:working_dir}: ${206:"#"}}
+${207:${208:   become: ${209:true}} 
+${210:   become_method: ${211:su}} 
+${212:   become_user: ${213:nobody}} 
+${214:   become_flags: ${215:"-s /bin/sh"}}} 
+${216:   when: ${217:variable is defined}} 
+${218:   with_items: ${219:array}} 
 ]]></content>
 	<tabTrigger>docker_swarm_service</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

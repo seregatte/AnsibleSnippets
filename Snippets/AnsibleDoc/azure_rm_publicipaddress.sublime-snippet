@@ -10,6 +10,8 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # domain_name: The customizable portion of the FQDN assigned to 
+# idle_timeout: Idle timeout in minutes. 
+# ip_tags: List of IpTag associated with the public IP 
 # location: Valid azure location. Defaults to location of 
 # name: (required) Name of the Public IP. 
 # password: Active Directory user password. Use when 
@@ -17,10 +19,11 @@ ${1:# ad_user: Active Directory username. Use when
 # resource_group: (required) Name of resource group with which the 
 # secret: Azure client secret. Use when authenticating 
 # sku: The public IP address SKU. 
-# state: Assert the state of the Public IP. Use 'present' 
+# state: Assert the state of the Public IP. Use `present' 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
+# version: The public IP address version. 
 }- name: ${2:Name for azure_rm_publicipaddress module.}
   azure_rm_publicipaddress:
 ${3:   ${4:ad_user}: ${5:"#"}}
@@ -33,23 +36,26 @@ ${21:   ${22:cert_validation_mode}: ${23:"#"}}
 ${24:   ${25:client_id}: ${26:"#"}}
 ${27:   ${28:cloud_environment}: ${29:"#"}}
 ${30:   ${31:domain_name}: ${32:"#"}}
-${33:   ${34:location}: ${35:"#"}}
-${36:   ${37:name}: ${38:"#"}}
-${39:   ${40:password}: ${41:"#"}}
-${42:   ${43:profile}: ${44:"#"}}
-${45:   ${46:resource_group}: ${47:"#"}}
-${48:   ${49:secret}: ${50:"#"}}
-${51:   ${52:sku}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:subscription_id}: ${59:"#"}}
-${60:   ${61:tags}: ${62:"#"}}
-${63:   ${64:tenant}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${33:   ${34:idle_timeout}: ${35:"#"}}
+${36:   ${37:ip_tags}: ${38:"#"}}
+${39:   ${40:location}: ${41:"#"}}
+${42:   ${43:name}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:profile}: ${50:"#"}}
+${51:   ${52:resource_group}: ${53:"#"}}
+${54:   ${55:secret}: ${56:"#"}}
+${57:   ${58:sku}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:   ${64:subscription_id}: ${65:"#"}}
+${66:   ${67:tags}: ${68:"#"}}
+${69:   ${70:tenant}: ${71:"#"}}
+${72:   ${73:version}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_publicipaddress</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

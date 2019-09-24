@@ -18,14 +18,16 @@ ${1:# ad_user: Active Directory username. Use when
 # location: Resource location. If not set, location from the 
 # name: (required) The name of the application gateway. 
 # password: Active Directory user password. Use when 
+# probes: Probes available to the application gateway 
 # profile: Security profile found in ~/.azure/credentials 
+# redirect_configurations: Redirect configurations of the application 
 # request_routing_rules: List of request routing rules of the application 
 # resource_group: (required) The name of the resource group. 
 # secret: Azure client secret. Use when authenticating 
 # sku: SKU of the application gateway resource. 
 # ssl_certificates: SSL certificates of the application gateway 
 # ssl_policy: SSL policy of the application gateway resource. 
-# state: Assert the state of the Public IP. Use 'present' 
+# state: Assert the state of the Public IP. Use `present' 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
@@ -49,23 +51,25 @@ ${45:   ${46:http_listeners}: ${47:"#"}}
 ${48:   ${49:location}: ${50:"#"}}
 ${51:   ${52:name}: ${53:"#"}}
 ${54:   ${55:password}: ${56:"#"}}
-${57:   ${58:profile}: ${59:"#"}}
-${60:   ${61:request_routing_rules}: ${62:"#"}}
-${63:   ${64:resource_group}: ${65:"#"}}
-${66:   ${67:secret}: ${68:"#"}}
-${69:   ${70:sku}: ${71:"#"}}
-${72:   ${73:ssl_certificates}: ${74:"#"}}
-${75:   ${76:ssl_policy}: ${77:"#"}}
-${78:   ${79:state}: ${80:"#"}}
-${81:   ${82:subscription_id}: ${83:"#"}}
-${84:   ${85:tags}: ${86:"#"}}
-${87:   ${88:tenant}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${57:   ${58:probes}: ${59:"#"}}
+${60:   ${61:profile}: ${62:"#"}}
+${63:   ${64:redirect_configurations}: ${65:"#"}}
+${66:   ${67:request_routing_rules}: ${68:"#"}}
+${69:   ${70:resource_group}: ${71:"#"}}
+${72:   ${73:secret}: ${74:"#"}}
+${75:   ${76:sku}: ${77:"#"}}
+${78:   ${79:ssl_certificates}: ${80:"#"}}
+${81:   ${82:ssl_policy}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:subscription_id}: ${89:"#"}}
+${90:   ${91:tags}: ${92:"#"}}
+${93:   ${94:tenant}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_appgateway</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# address: Postal address of device's location. 
 # auth_key: Authentication key provided by the dashboard. 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # hostname: Hostname of network device to search for. 
 # lat: Latitude of device's geographic location. Use 
 # lldp_cdp_timespan: Timespan, in seconds, used to query LLDP and CDP 
@@ -11,6 +11,7 @@ ${1:# address: Postal address of device's location.
 # move_map_marker: Whether or not to set the latitude and longitude 
 # net_id: ID of a network. 
 # net_name: Name of a network. 
+# note: Informational notes about a device. Limited to 
 # org_id: ID of organization. 
 # org_name: Name of organization. If `clone' is specified, 
 # output_level: Set amount of debug output during module 
@@ -36,24 +37,25 @@ ${24:   ${25:model}: ${26:"#"}}
 ${27:   ${28:move_map_marker}: ${29:"#"}}
 ${30:   ${31:net_id}: ${32:"#"}}
 ${33:   ${34:net_name}: ${35:"#"}}
-${36:   ${37:org_id}: ${38:"#"}}
-${39:   ${40:org_name}: ${41:"#"}}
-${42:   ${43:output_level}: ${44:"#"}}
-${45:   ${46:serial}: ${47:"#"}}
-${48:   ${49:serial_lldp_cdp}: ${50:"#"}}
-${51:   ${52:serial_uplink}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:tags}: ${59:"#"}}
-${60:   ${61:timeout}: ${62:"#"}}
-${63:   ${64:use_https}: ${65:"#"}}
-${66:   ${67:use_proxy}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${36:   ${37:note}: ${38:"#"}}
+${39:   ${40:org_id}: ${41:"#"}}
+${42:   ${43:org_name}: ${44:"#"}}
+${45:   ${46:output_level}: ${47:"#"}}
+${48:   ${49:serial}: ${50:"#"}}
+${51:   ${52:serial_lldp_cdp}: ${53:"#"}}
+${54:   ${55:serial_uplink}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:tags}: ${62:"#"}}
+${63:   ${64:timeout}: ${65:"#"}}
+${66:   ${67:use_https}: ${68:"#"}}
+${69:   ${70:use_proxy}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>meraki_device</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

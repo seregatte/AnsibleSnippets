@@ -8,7 +8,7 @@ ${1:# address: The syslog server's IPv4 address or a fully
 # log_path: This argument specifies a local path for logging 
 # port: This is the port the syslog server is using. 
 # protocol: This is the transmission protocol the syslog 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: Add or remove the syslog server configuration 
 # test: This forces a test syslog message to be sent to 
 # validate_certs: Should https certificates be validated? 

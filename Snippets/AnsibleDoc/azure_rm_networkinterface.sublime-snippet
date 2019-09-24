@@ -8,7 +8,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# create_with_security_group: Specifies whether a default security group 
+# create_with_security_group: Specifies whether a security group should be be 
 # dns_servers: Which DNS servers should the NIC lookup List of 
 # enable_accelerated_networking: Specifies whether the network interface should 
 # enable_ip_forwarding: Whether to enable IP forwarding 

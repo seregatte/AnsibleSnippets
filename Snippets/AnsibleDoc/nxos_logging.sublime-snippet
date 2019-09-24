@@ -3,33 +3,45 @@
 ${1:# aggregate: List of logging definitions. 
 # dest: Destination of the logs. 
 # dest_level: Set logging severity levels. 
+# event: Link/trunk enable/default interface 
 # facility: Facility name for logging. 
 # facility_level: Set logging serverity levels for facility based 
+# facility_link_status: Set logging facility ethpm link status. Not 
+# file_size: Set logfile size 
 # interface: Interface to be used while configuring source- 
+# interface_message: Add interface description to interface syslogs. 
 # name: If value of `dest' is `logfile' it indicates 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
+# purge: Remove any switch logging configuration that 
 # remote_server: Hostname or IP Address for remote logging (when 
 # state: State of the logging configuration. 
+# timestamp: Set logging timestamp format 
 # use_vrf: VRF to be used while configuring remote logging 
 }- name: ${2:Name for nxos_logging module.}
   nxos_logging:
 ${3:   ${4:aggregate}: ${5:"#"}}
 ${6:   ${7:dest}: ${8:"#"}}
 ${9:   ${10:dest_level}: ${11:"#"}}
-${12:   ${13:facility}: ${14:"#"}}
-${15:   ${16:facility_level}: ${17:"#"}}
-${18:   ${19:interface}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:remote_server}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:use_vrf}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${12:   ${13:event}: ${14:"#"}}
+${15:   ${16:facility}: ${17:"#"}}
+${18:   ${19:facility_level}: ${20:"#"}}
+${21:   ${22:facility_link_status}: ${23:"#"}}
+${24:   ${25:file_size}: ${26:"#"}}
+${27:   ${28:interface}: ${29:"#"}}
+${30:   ${31:interface_message}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:provider}: ${38:"#"}}
+${39:   ${40:purge}: ${41:"#"}}
+${42:   ${43:remote_server}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:timestamp}: ${50:"#"}}
+${51:   ${52:use_vrf}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>nxos_logging</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

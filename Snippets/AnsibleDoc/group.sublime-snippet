@@ -3,6 +3,7 @@
 ${1:# gid: Optional `GID' to set for the group. 
 # local: Forces the use of "local" command alternatives 
 # name: (required) Name of the group to manage. 
+# non_unique: This option allows to change the group ID to a 
 # state: Whether the group should be present or not on 
 # system: If `yes', indicates that the group created is a 
 }- name: ${2:Name for group module.}
@@ -10,14 +11,15 @@ ${1:# gid: Optional `GID' to set for the group.
 ${3:   ${4:gid}: ${5:"#"}}
 ${6:   ${7:local}: ${8:"#"}}
 ${9:   ${10:name}: ${11:"#"}}
-${12:   ${13:state}: ${14:"#"}}
-${15:   ${16:system}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${12:   ${13:non_unique}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:system}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
 ]]></content>
 	<tabTrigger>group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

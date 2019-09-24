@@ -1,11 +1,12 @@
 <snippet>
 <content><![CDATA[
-${1:# description: Description of the host in Zabbix. 
+${1:# ca_cert: Required certificate issuer. Works only with >= 
+# description: Description of the host in Zabbix. 
 # force: Overwrite the host configuration, even if 
 # host_groups: List of host groups the host is part of. 
 # host_name: (required) Name of the host in Zabbix. host_name 
 # http_login_password: Basic Auth password 
-# http_login_user: Basic Auth login 
+# http_login_user: (required) Basic Auth login 
 # interfaces: List of interfaces to be created for the host 
 # : host 
 # inventory_mode: Configure the inventory mode. 
@@ -25,7 +26,6 @@ ${1:# description: Description of the host in Zabbix.
 # timeout: The timeout of API request (seconds). 
 # tls_accept: Specifies what types of connections are allowed 
 # tls_connect: Specifies what encryption to use for outgoing 
-# tls_issuer: Required certificate issuer. Works only with >= 
 # tls_psk: PSK value is a hard to guess string of 
 # tls_psk_identity: It is a unique name by which this specific PSK 
 # tls_subject: Required certificate subject. Works only with >= 
@@ -33,32 +33,32 @@ ${1:# description: Description of the host in Zabbix.
 # visible_name: Visible name of the host in Zabbix. 
 }- name: ${2:Name for zabbix_host module.}
   zabbix_host:
-${3:   ${4:description}: ${5:"#"}}
-${6:   ${7:force}: ${8:"#"}}
-${9:   ${10:host_groups}: ${11:"#"}}
-${12:   ${13:host_name}: ${14:"#"}}
-${15:   ${16:http_login_password}: ${17:"#"}}
-${18:   ${19:http_login_user}: ${20:"#"}}
-${21:   ${22:interfaces}: ${23:"#"}}
-${24:   ${25:}: ${26:"#"}}
-${27:   ${28:inventory_mode}: ${29:"#"}}
-${30:   ${31:inventory_zabbix}: ${32:"#"}}
-${33:   ${34:ence}: ${35:"#"}}
-${36:   ${37:ipmi_authtype}: ${38:"#"}}
-${39:   ${40:ipmi_password}: ${41:"#"}}
-${42:   ${43:ipmi_privilege}: ${44:"#"}}
-${45:   ${46:ipmi_username}: ${47:"#"}}
-${48:   ${49:link_templates}: ${50:"#"}}
-${51:   ${52:login_password}: ${53:"#"}}
-${54:   ${55:login_user}: ${56:"#"}}
-${57:   ${58:proxy}: ${59:"#"}}
-${60:   ${61:server_url}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:status}: ${68:"#"}}
-${69:   ${70:timeout}: ${71:"#"}}
-${72:   ${73:tls_accept}: ${74:"#"}}
-${75:   ${76:tls_connect}: ${77:"#"}}
-${78:   ${79:tls_issuer}: ${80:"#"}}
+${3:   ${4:ca_cert}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:force}: ${11:"#"}}
+${12:   ${13:host_groups}: ${14:"#"}}
+${15:   ${16:host_name}: ${17:"#"}}
+${18:   ${19:http_login_password}: ${20:"#"}}
+${21:   ${22:http_login_user}: ${23:"#"}}
+${24:   ${25:interfaces}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:inventory_mode}: ${32:"#"}}
+${33:   ${34:inventory_zabbix}: ${35:"#"}}
+${36:   ${37:ence}: ${38:"#"}}
+${39:   ${40:ipmi_authtype}: ${41:"#"}}
+${42:   ${43:ipmi_password}: ${44:"#"}}
+${45:   ${46:ipmi_privilege}: ${47:"#"}}
+${48:   ${49:ipmi_username}: ${50:"#"}}
+${51:   ${52:link_templates}: ${53:"#"}}
+${54:   ${55:login_password}: ${56:"#"}}
+${57:   ${58:login_user}: ${59:"#"}}
+${60:   ${61:proxy}: ${62:"#"}}
+${63:   ${64:server_url}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:status}: ${71:"#"}}
+${72:   ${73:timeout}: ${74:"#"}}
+${75:   ${76:tls_accept}: ${77:"#"}}
+${78:   ${79:tls_connect}: ${80:"#"}}
 ${81:   ${82:tls_psk}: ${83:"#"}}
 ${84:   ${85:tls_psk_identity}: ${86:"#"}}
 ${87:   ${88:tls_subject}: ${89:"#"}}

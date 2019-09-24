@@ -17,7 +17,7 @@ ${1:# ap: Name of an existing application network profile,
 # pod_id: The pod number part of the tDn. `pod_id' is 
 # port: Port number to be used for REST connection. The 
 # primary_encap_id: Determines the primary encapsulation ID 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # tenant: Name of an existing tenant. 
 # timeout: The socket level timeout in seconds. 

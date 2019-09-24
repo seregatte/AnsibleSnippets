@@ -1,10 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# downed: Should a 'down' file exist or not, if it exists 
-# enabled: Wheater the service is enabled or not, if 
+# enabled: Whether the service is enabled or not, if 
 # name: (required) Name of the service to manage. 
-# service_dir: directory svscan watches for services 
-# service_src: directory where services are defined, the source 
+# service_dir: Directory svscan watches for services 
+# service_src: Directory where services are defined, the source 
 # state: `Started'/`stopped' are idempotent actions that 
 }- name: ${2:Name for svc module.}
   svc:

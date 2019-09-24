@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# conf: path to the SELinux configuration file, if non- 
-# policy: name of the SELinux policy to use (example: 
-# state: (required) The SELinux mode 
+${1:# configfile: The path to the SELinux configuration file, if 
+# policy: The name of the SELinux policy to use (e.g. 
+# state: (required) The SELinux mode. 
 }- name: ${2:Name for selinux module.}
   selinux:
-${3:   ${4:conf}: ${5:"#"}}
+${3:   ${4:configfile}: ${5:"#"}}
 ${6:   ${7:policy}: ${8:"#"}}
 ${9:   ${10:state}: ${11:"#"}}
 ${12:${13:   become: ${14:true}} 

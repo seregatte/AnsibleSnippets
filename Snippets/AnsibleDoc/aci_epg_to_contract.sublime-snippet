@@ -10,7 +10,7 @@ ${1:# ap: Name of an existing application network profile,
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # priority: QoS class. The APIC defaults to `unspecified' 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # provider_match: The matching algorithm for Provided Contracts. 
 # state: Use `present' or `absent' for adding or 
 # tenant: Name of an existing tenant. 

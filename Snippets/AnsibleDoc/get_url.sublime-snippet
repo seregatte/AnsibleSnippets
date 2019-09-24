@@ -1,27 +1,27 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
+${1:# attributes: The attributes the resulting file or directory 
 # backup: Create a backup file including the timestamp 
 # checksum: If a checksum is passed to this parameter, the 
 # client_cert: PEM formatted certificate chain file to be used 
 # client_key: PEM formatted file that contains your private 
 # dest: (required) Absolute path of where to download 
 # force: If `yes' and `dest' is not a directory, will 
-# force_basic_auth: httplib2, the library used by the uri module 
+# force_basic_auth: Force the sending of the Basic authentication 
 # group: Name of the group that should own the 
 # headers: Add custom HTTP headers to a request in 
-# mode: Mode the file or directory should be. For those 
-# others: all arguments accepted by the [file] module also 
+# http_agent: Header to identify as, generally appears in web 
+# mode: The permissions the resulting file or directory 
 # owner: Name of the user that should own the 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # sha256sum: If a SHA-256 checksum is passed to this 
 # timeout: Timeout in seconds for URL request. 
 # tmp_dest: Absolute path of where temporary file is 
 # tml: tempfile.temp 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 # url: (required) HTTP, HTTPS, or FTP URL in the form ( 
 # url_password: The password for use in HTTP basic 
 # url_username: The username for use in HTTP basic 
@@ -39,8 +39,8 @@ ${21:   ${22:force}: ${23:"#"}}
 ${24:   ${25:force_basic_auth}: ${26:"#"}}
 ${27:   ${28:group}: ${29:"#"}}
 ${30:   ${31:headers}: ${32:"#"}}
-${33:   ${34:mode}: ${35:"#"}}
-${36:   ${37:others}: ${38:"#"}}
+${33:   ${34:http_agent}: ${35:"#"}}
+${36:   ${37:mode}: ${38:"#"}}
 ${39:   ${40:owner}: ${41:"#"}}
 ${42:   ${43:selevel}: ${44:"#"}}
 ${45:   ${46:serole}: ${47:"#"}}

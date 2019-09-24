@@ -2,10 +2,10 @@
 <content><![CDATA[
 ${1:# auth_key: Authentication key provided by the dashboard. 
 # email: Email address for the dashboard administrator. 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # name: Name of the dashboard administrator. Required 
 # networks: List of networks the administrator has 
-# org: Privileges assigned to the administrator in the 
+# org_access: Privileges assigned to the administrator in the 
 # org_id: ID of organization. 
 # org_name: Name of organization. Used when `name' should 
 # output_level: Set amount of debug output during module 
@@ -22,7 +22,7 @@ ${6:   ${7:email}: ${8:"#"}}
 ${9:   ${10:host}: ${11:"#"}}
 ${12:   ${13:name}: ${14:"#"}}
 ${15:   ${16:networks}: ${17:"#"}}
-${18:   ${19:org}: ${20:"#"}}
+${18:   ${19:org_access}: ${20:"#"}}
 ${21:   ${22:org_id}: ${23:"#"}}
 ${24:   ${25:org_name}: ${26:"#"}}
 ${27:   ${28:output_level}: ${29:"#"}}

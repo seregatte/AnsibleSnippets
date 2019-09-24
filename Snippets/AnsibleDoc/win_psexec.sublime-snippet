@@ -4,6 +4,7 @@ ${1:# chdir: Run the command from this (remote) directory.
 # command: (required) The command line to run through 
 # elevated: Run the command with elevated privileges. 
 # executable: The location of the PsExec utility (in case it 
+# extra_opts: Specify additional options to add onto the 
 # hostnames: The hostnames to run the command. If not 
 # interactive: Run the program so that it interacts with the 
 # limited: Run the command as limited user (strips the 
@@ -22,24 +23,25 @@ ${3:   ${4:chdir}: ${5:"#"}}
 ${6:   ${7:command}: ${8:"#"}}
 ${9:   ${10:elevated}: ${11:"#"}}
 ${12:   ${13:executable}: ${14:"#"}}
-${15:   ${16:hostnames}: ${17:"#"}}
-${18:   ${19:interactive}: ${20:"#"}}
-${21:   ${22:limited}: ${23:"#"}}
-${24:   ${25:nobanner}: ${26:"#"}}
-${27:   ${28:noprofile}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:priority}: ${35:"#"}}
-${36:   ${37:session}: ${38:"#"}}
-${39:   ${40:system}: ${41:"#"}}
-${42:   ${43:timeout}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:wait}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${15:   ${16:extra_opts}: ${17:"#"}}
+${18:   ${19:hostnames}: ${20:"#"}}
+${21:   ${22:interactive}: ${23:"#"}}
+${24:   ${25:limited}: ${26:"#"}}
+${27:   ${28:nobanner}: ${29:"#"}}
+${30:   ${31:noprofile}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:priority}: ${38:"#"}}
+${39:   ${40:session}: ${41:"#"}}
+${42:   ${43:system}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:wait}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>win_psexec</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

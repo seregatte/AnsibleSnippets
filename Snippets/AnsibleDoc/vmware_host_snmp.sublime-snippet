@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# community: List of SNMP community strings. 
+# hostname: The hostname or IP address of the vSphere 
+# hw_source: Source hardware events from IPMI sensors or CIM 
+# log_level: Syslog logging level. 
+# password: The password of the vSphere vCenter or ESXi 
+# port: The port number of the vSphere vCenter or ESXi 
+# send_trap: Send a test trap to validate the configuration. 
+# snmp_port: Port used by the SNMP agent. 
+# state: Enable, disable, or reset the SNMP agent. 
+# trap_filter: A list of trap oids for traps not to be sent by 
+# trap_targets: A list of trap targets. You need to use 
+# username: The username of the vSphere vCenter or ESXi 
+# validate_certs: Allows connection when SSL certificates are not 
+}- name: ${2:Name for vmware_host_snmp module.}
+  vmware_host_snmp:
+${3:   ${4:community}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:hw_source}: ${11:"#"}}
+${12:   ${13:log_level}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:port}: ${20:"#"}}
+${21:   ${22:send_trap}: ${23:"#"}}
+${24:   ${25:snmp_port}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:trap_filter}: ${32:"#"}}
+${33:   ${34:trap_targets}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>vmware_host_snmp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

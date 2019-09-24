@@ -68,7 +68,7 @@ ${1:# : SNMP OID for `SNMP' monitors. Minimum length = 1
 # retries: Maximum number of probes to send to establish 
 # reverse: Mark a service as DOWN, instead of UP, when 
 # rtsprequest: RTSP request to send to the server (for example, 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # scriptargs: String of arguments for the script. The string 
 # scriptname: Path and name of the script to execute. The 
 # secondarypassword: Secondary password that users might have to 

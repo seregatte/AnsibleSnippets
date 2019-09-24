@@ -1,0 +1,76 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: Token used to authenticate with the API. Can 
+# ca_cert: Path to a CA certificate used to authenticate 
+# client_cert: Path to a certificate used to authenticate with 
+# client_key: Path to a key file used to authenticate with the 
+# context: The name of a context found in the config file. 
+# default_disk: The goal of default disk is to define what kind 
+# default_network: The goal of default network is similar to 
+# default_nic: The goal of default network is similar to 
+# default_volume: The goal of default volume is to be able to 
+# description: A description of the template. Include enough 
+# display_name: A brief, user-friendly name, which can be 
+# documentation_url: A URL referencing further documentation for the 
+# editable: Extension for hinting at which elements should 
+# force: If set to `yes', and `state' is `present', an 
+# host: Provide a URL for accessing the API. Can also be 
+# icon_class: An icon to be displayed with your template in 
+# kubeconfig: Path to an existing Kubernetes config file. If 
+# long_description: Additional template description. This may be 
+# merge_type: Whether to override the default patch merge 
+# name: (required) Name of the Template object. 
+# namespace: (required) Namespace where the Template object 
+# objects: List of any valid API objects, such as a 
+# parameters: Parameters allow a value to be supplied by the 
+# l: writing- 
+# password: Provide a password for authenticating with the 
+# provider_display_name: The name of the person or organization providing 
+# state: Determines if an object should be created, 
+# support_url: A URL where support can be obtained for the 
+# username: Provide a username for authenticating with the 
+# validate_certs: Whether or not to verify the API server's SSL 
+# version: Template structure version. This is parameter 
+}- name: ${2:Name for kubevirt_template module.}
+  kubevirt_template:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:ca_cert}: ${8:"#"}}
+${9:   ${10:client_cert}: ${11:"#"}}
+${12:   ${13:client_key}: ${14:"#"}}
+${15:   ${16:context}: ${17:"#"}}
+${18:   ${19:default_disk}: ${20:"#"}}
+${21:   ${22:default_network}: ${23:"#"}}
+${24:   ${25:default_nic}: ${26:"#"}}
+${27:   ${28:default_volume}: ${29:"#"}}
+${30:   ${31:description}: ${32:"#"}}
+${33:   ${34:display_name}: ${35:"#"}}
+${36:   ${37:documentation_url}: ${38:"#"}}
+${39:   ${40:editable}: ${41:"#"}}
+${42:   ${43:force}: ${44:"#"}}
+${45:   ${46:host}: ${47:"#"}}
+${48:   ${49:icon_class}: ${50:"#"}}
+${51:   ${52:kubeconfig}: ${53:"#"}}
+${54:   ${55:long_description}: ${56:"#"}}
+${57:   ${58:merge_type}: ${59:"#"}}
+${60:   ${61:name}: ${62:"#"}}
+${63:   ${64:namespace}: ${65:"#"}}
+${66:   ${67:objects}: ${68:"#"}}
+${69:   ${70:parameters}: ${71:"#"}}
+${72:   ${73:l}: ${74:"#"}}
+${75:   ${76:password}: ${77:"#"}}
+${78:   ${79:provider_display_name}: ${80:"#"}}
+${81:   ${82:state}: ${83:"#"}}
+${84:   ${85:support_url}: ${86:"#"}}
+${87:   ${88:username}: ${89:"#"}}
+${90:   ${91:validate_certs}: ${92:"#"}}
+${93:   ${94:version}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
+]]></content>
+	<tabTrigger>kubevirt_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

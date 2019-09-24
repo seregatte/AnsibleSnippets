@@ -3,7 +3,7 @@
 ${1:# checksum_algorithm: Algorithm to determine checksum of file. Will 
 # follow: Whether to follow symlinks. 
 # get_attributes: Get file attributes using lsattr tool if 
-# get_checksum: Whether to return a checksum of the file 
+# get_checksum: Whether to return a checksum of the file. 
 # get_md5: Whether to return the md5 sum of the file. Will 
 # get_mime: Use file magic and return data about the nature 
 # path: (required) The full path of the file/object to 

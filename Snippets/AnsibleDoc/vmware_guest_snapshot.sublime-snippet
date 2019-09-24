@@ -15,6 +15,7 @@ ${1:# datacenter: (required) Destination datacenter for the deploy
 # remove_children: If set to `true' and state is set to `absent', 
 # snapshot_name: Sets the snapshot name to manage. This param is 
 # state: (required) Manage snapshot(s) attached to a 
+# use_instance_uuid: Whether to use the VMWare instance UUID rather 
 # username: The username of the vSphere vCenter or ESXi 
 # uuid: UUID of the instance to manage if known, this is 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -35,15 +36,16 @@ ${36:   ${37:quiesce}: ${38:"#"}}
 ${39:   ${40:remove_children}: ${41:"#"}}
 ${42:   ${43:snapshot_name}: ${44:"#"}}
 ${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:username}: ${50:"#"}}
-${51:   ${52:uuid}: ${53:"#"}}
-${54:   ${55:validate_certs}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${48:   ${49:use_instance_uuid}: ${50:"#"}}
+${51:   ${52:username}: ${53:"#"}}
+${54:   ${55:uuid}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>vmware_guest_snapshot</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

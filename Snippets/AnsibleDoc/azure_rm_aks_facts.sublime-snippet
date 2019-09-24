@@ -12,6 +12,7 @@ ${1:# ad_user: Active Directory username. Use when
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: The resource group to search for the desired 
 # secret: Azure client secret. Use when authenticating 
+# show_kubeconfig: Show kubeconfig of the AKS cluster. Note the 
 # subscription_id: Your Azure subscription Id. 
 # tags: Limit results by providing a list of tags. 
 # tenant: Azure tenant ID. Use when authenticating with a 
@@ -29,15 +30,16 @@ ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:profile}: ${32:"#"}}
 ${33:   ${34:resource_group}: ${35:"#"}}
 ${36:   ${37:secret}: ${38:"#"}}
-${39:   ${40:subscription_id}: ${41:"#"}}
-${42:   ${43:tags}: ${44:"#"}}
-${45:   ${46:tenant}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${39:   ${40:show_kubeconfig}: ${41:"#"}}
+${42:   ${43:subscription_id}: ${44:"#"}}
+${45:   ${46:tags}: ${47:"#"}}
+${48:   ${49:tenant}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_aks_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

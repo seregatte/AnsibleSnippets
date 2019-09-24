@@ -12,7 +12,7 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # clone_permissions: If `yes' then the permissions of the template 
 # cloud_init: Dictionary with values for Unix-like Virtual 
 # cloud_init_nics: List of dictionaries representing network 
-# cloud_init_persist: If `true' the `cloud_init' or `sysprep' 
+# cloud_init_persist: If `yes' the `cloud_init' or `sysprep' 
 # cluster: Name of the cluster, where Virtual Machine 
 # cluster_mappings: Mapper which maps cluster name between VM's OVF 
 # comment: Comment of the Virtual Machine. 
@@ -29,8 +29,12 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # disk_format: Specify format of the disk. If `cow' format is 
 # disks: List of disks, which should be attached to 
 # domain_mappings: Mapper which maps aaa domain name between VM's 
+# exclusive: When `state' is `exported' this parameter 
+# export_domain: When `state' is `exported'this parameter 
+# export_ova: Dictionary of values to be used to export VM as 
 # fetch_nested: If `True' the module will fetch additional data 
 # force: Please check to `Synopsis' to more detailed 
+# force_migrate: If `true', the VM will migrate when 
 # graphical_console: Assign graphical console to the virtual machine. 
 # high_availability: If `yes' Virtual Machine will be set as highly 
 # high_availability_priority: Indicates the priority of the virtual machine 
@@ -41,6 +45,7 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # instance_type: Name of virtual machine's hardware 
 # io_threads: Number of IO threads used by virtual machine. 
 # kernel_params: Kernel command line parameters (formatted as 
+# kernel_params_persist: If `true' `kernel_params', `initrd_path' and 
 # kernel_path: Path to a kernel image used to boot the virtual 
 # kvm: Dictionary of values to be used to connect to 
 # lease: Name of the storage domain this virtual machine 
@@ -48,8 +53,10 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # memory: Amount of memory of the Virtual Machine. Prefix 
 # memory_guaranteed: Amount of minimal guaranteed memory of the 
 # memory_max: Upper bound of virtual machine memory up to 
+# migrate: If `true', the VM will migrate to any available 
 # name: Name of the Virtual Machine to manage. If VM 
 # nested_attributes: Specifies list of the attributes which should be 
+# next_run: If `true', the update will not be applied to the 
 # nics: List of NICs, which should be attached to 
 # numa_nodes: List of vNUMA Nodes to set for this VM and pin 
 # numa_tune_mode: Set how the memory allocation for NUMA nodes of 
@@ -80,7 +87,7 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # use_latest_template_version: Specify if latest template version should be 
 # vmware: Dictionary of values to be used to connect to 
 # vnic_profile_mappings: Mapper which maps an external virtual NIC 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 # watchdog: Assign watchdog device for the virtual machine. 
 # xen: Dictionary of values to be used to connect to 
 }- name: ${2:Name for ovirt_vm module.}
@@ -114,66 +121,73 @@ ${78:   ${79:description}: ${80:"#"}}
 ${81:   ${82:disk_format}: ${83:"#"}}
 ${84:   ${85:disks}: ${86:"#"}}
 ${87:   ${88:domain_mappings}: ${89:"#"}}
-${90:   ${91:fetch_nested}: ${92:"#"}}
-${93:   ${94:force}: ${95:"#"}}
-${96:   ${97:graphical_console}: ${98:"#"}}
-${99:   ${100:high_availability}: ${101:"#"}}
-${102:   ${103:high_availability_priority}: ${104:"#"}}
-${105:   ${106:host}: ${107:"#"}}
-${108:   ${109:host_devices}: ${110:"#"}}
-${111:   ${112:id}: ${113:"#"}}
-${114:   ${115:initrd_path}: ${116:"#"}}
-${117:   ${118:instance_type}: ${119:"#"}}
-${120:   ${121:io_threads}: ${122:"#"}}
-${123:   ${124:kernel_params}: ${125:"#"}}
-${126:   ${127:kernel_path}: ${128:"#"}}
-${129:   ${130:kvm}: ${131:"#"}}
-${132:   ${133:lease}: ${134:"#"}}
-${135:   ${136:lun_mappings}: ${137:"#"}}
-${138:   ${139:memory}: ${140:"#"}}
-${141:   ${142:memory_guaranteed}: ${143:"#"}}
-${144:   ${145:memory_max}: ${146:"#"}}
-${147:   ${148:name}: ${149:"#"}}
-${150:   ${151:nested_attributes}: ${152:"#"}}
-${153:   ${154:nics}: ${155:"#"}}
-${156:   ${157:numa_nodes}: ${158:"#"}}
-${159:   ${160:numa_tune_mode}: ${161:"#"}}
-${162:   ${163:operating_system}: ${164:"#"}}
-${165:   ${166:placement_policy}: ${167:"#"}}
-${168:   ${169:poll_interval}: ${170:"#"}}
-${171:   ${172:quota_id}: ${173:"#"}}
-${174:   ${175:reassign_bad_macs}: ${176:"#"}}
-${177:   ${178:rng_device}: ${179:"#"}}
-${180:   ${181:role_mappings}: ${182:"#"}}
-${183:   ${184:serial_console}: ${185:"#"}}
-${186:   ${187:serial_policy}: ${188:"#"}}
-${189:   ${190:serial_policy_value}: ${191:"#"}}
-${192:   ${193:smartcard_enabled}: ${194:"#"}}
-${195:   ${196:soundcard_enabled}: ${197:"#"}}
-${198:   ${199:sso}: ${200:"#"}}
-${201:   ${202:state}: ${203:"#"}}
-${204:   ${205:stateless}: ${206:"#"}}
-${207:   ${208:storage_domain}: ${209:"#"}}
-${210:   ${211:sysprep}: ${212:"#"}}
-${213:   ${214:template}: ${215:"#"}}
-${216:   ${217:template_version}: ${218:"#"}}
-${219:   ${220:ticket}: ${221:"#"}}
-${222:   ${223:timeout}: ${224:"#"}}
-${225:   ${226:timezone}: ${227:"#"}}
-${228:   ${229:type}: ${230:"#"}}
-${231:   ${232:usb_support}: ${233:"#"}}
-${234:   ${235:use_latest_template_version}: ${236:"#"}}
-${237:   ${238:vmware}: ${239:"#"}}
-${240:   ${241:vnic_profile_mappings}: ${242:"#"}}
-${243:   ${244:wait}: ${245:"#"}}
-${246:   ${247:watchdog}: ${248:"#"}}
-${249:   ${250:xen}: ${251:"#"}}
-${252:${253:   become: ${254:true}} 
-${255:   become_method: ${256:su}} 
-${257:   become_user: ${258:nobody}} 
-${259:   become_flags: ${260:"-s /bin/sh"}}} 
-${261:   when: ${262:variable is defined}} 
-${263:   with_items: ${264:array}} 
+${90:   ${91:exclusive}: ${92:"#"}}
+${93:   ${94:export_domain}: ${95:"#"}}
+${96:   ${97:export_ova}: ${98:"#"}}
+${99:   ${100:fetch_nested}: ${101:"#"}}
+${102:   ${103:force}: ${104:"#"}}
+${105:   ${106:force_migrate}: ${107:"#"}}
+${108:   ${109:graphical_console}: ${110:"#"}}
+${111:   ${112:high_availability}: ${113:"#"}}
+${114:   ${115:high_availability_priority}: ${116:"#"}}
+${117:   ${118:host}: ${119:"#"}}
+${120:   ${121:host_devices}: ${122:"#"}}
+${123:   ${124:id}: ${125:"#"}}
+${126:   ${127:initrd_path}: ${128:"#"}}
+${129:   ${130:instance_type}: ${131:"#"}}
+${132:   ${133:io_threads}: ${134:"#"}}
+${135:   ${136:kernel_params}: ${137:"#"}}
+${138:   ${139:kernel_params_persist}: ${140:"#"}}
+${141:   ${142:kernel_path}: ${143:"#"}}
+${144:   ${145:kvm}: ${146:"#"}}
+${147:   ${148:lease}: ${149:"#"}}
+${150:   ${151:lun_mappings}: ${152:"#"}}
+${153:   ${154:memory}: ${155:"#"}}
+${156:   ${157:memory_guaranteed}: ${158:"#"}}
+${159:   ${160:memory_max}: ${161:"#"}}
+${162:   ${163:migrate}: ${164:"#"}}
+${165:   ${166:name}: ${167:"#"}}
+${168:   ${169:nested_attributes}: ${170:"#"}}
+${171:   ${172:next_run}: ${173:"#"}}
+${174:   ${175:nics}: ${176:"#"}}
+${177:   ${178:numa_nodes}: ${179:"#"}}
+${180:   ${181:numa_tune_mode}: ${182:"#"}}
+${183:   ${184:operating_system}: ${185:"#"}}
+${186:   ${187:placement_policy}: ${188:"#"}}
+${189:   ${190:poll_interval}: ${191:"#"}}
+${192:   ${193:quota_id}: ${194:"#"}}
+${195:   ${196:reassign_bad_macs}: ${197:"#"}}
+${198:   ${199:rng_device}: ${200:"#"}}
+${201:   ${202:role_mappings}: ${203:"#"}}
+${204:   ${205:serial_console}: ${206:"#"}}
+${207:   ${208:serial_policy}: ${209:"#"}}
+${210:   ${211:serial_policy_value}: ${212:"#"}}
+${213:   ${214:smartcard_enabled}: ${215:"#"}}
+${216:   ${217:soundcard_enabled}: ${218:"#"}}
+${219:   ${220:sso}: ${221:"#"}}
+${222:   ${223:state}: ${224:"#"}}
+${225:   ${226:stateless}: ${227:"#"}}
+${228:   ${229:storage_domain}: ${230:"#"}}
+${231:   ${232:sysprep}: ${233:"#"}}
+${234:   ${235:template}: ${236:"#"}}
+${237:   ${238:template_version}: ${239:"#"}}
+${240:   ${241:ticket}: ${242:"#"}}
+${243:   ${244:timeout}: ${245:"#"}}
+${246:   ${247:timezone}: ${248:"#"}}
+${249:   ${250:type}: ${251:"#"}}
+${252:   ${253:usb_support}: ${254:"#"}}
+${255:   ${256:use_latest_template_version}: ${257:"#"}}
+${258:   ${259:vmware}: ${260:"#"}}
+${261:   ${262:vnic_profile_mappings}: ${263:"#"}}
+${264:   ${265:wait}: ${266:"#"}}
+${267:   ${268:watchdog}: ${269:"#"}}
+${270:   ${271:xen}: ${272:"#"}}
+${273:${274:   become: ${275:true}} 
+${276:   become_method: ${277:su}} 
+${278:   become_user: ${279:nobody}} 
+${280:   become_flags: ${281:"-s /bin/sh"}}} 
+${282:   when: ${283:variable is defined}} 
+${284:   with_items: ${285:array}} 
 ]]></content>
 	<tabTrigger>ovirt_vm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

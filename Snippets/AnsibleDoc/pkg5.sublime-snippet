@@ -1,19 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# accept_licenses: Accept any licences. 
+# be_name: Creates a new boot environment with the given 
 # name: (required) An FRMI of the package(s) to be 
+# refresh: Refresh publishers before execution. 
 # state: Whether to install (`present', `latest'), or 
 }- name: ${2:Name for pkg5 module.}
   pkg5:
 ${3:   ${4:accept_licenses}: ${5:"#"}}
-${6:   ${7:name}: ${8:"#"}}
-${9:   ${10:state}: ${11:"#"}}
-${12:${13:   become: ${14:true}} 
-${15:   become_method: ${16:su}} 
-${17:   become_user: ${18:nobody}} 
-${19:   become_flags: ${20:"-s /bin/sh"}}} 
-${21:   when: ${22:variable is defined}} 
-${23:   with_items: ${24:array}} 
+${6:   ${7:be_name}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:refresh}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>pkg5</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

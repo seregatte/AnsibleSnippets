@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# allow_lan_access: Sets whether devices can talk to other devices 
 # auth_key: Authentication key provided by the dashboard. 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # net_id: ID of network containing access points. 
 # net_name: Name of network containing access points. 
 # number: Number of SSID to apply firewall rule to. 

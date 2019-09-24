@@ -16,14 +16,14 @@ ${1:# credential: Credential to use to retrieve the inventory
 # source_vars: The source_vars allow to Override variables 
 # state: Desired state of the resource. 
 # timeout: Number in seconds after which the Tower API 
-# tower_config_file: Path to the Tower config file. See notes. 
+# tower_config_file: Path to the Tower config file. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Tower option to avoid certificates check. 
 # update_cache_timeout: Time in seconds to consider an inventory sync to 
 # update_on_launch: Each time a job runs using this inventory, 
 # update_on_project_update: That parameter will sync the inventory when the 
+# validate_certs: Tower option to avoid certificates check. 
 }- name: ${2:Name for tower_inventory_source module.}
   tower_inventory_source:
 ${3:   ${4:credential}: ${5:"#"}}
@@ -46,10 +46,10 @@ ${51:   ${52:tower_config_file}: ${53:"#"}}
 ${54:   ${55:tower_host}: ${56:"#"}}
 ${57:   ${58:tower_password}: ${59:"#"}}
 ${60:   ${61:tower_username}: ${62:"#"}}
-${63:   ${64:tower_verify_ssl}: ${65:"#"}}
-${66:   ${67:update_cache_timeout}: ${68:"#"}}
-${69:   ${70:update_on_launch}: ${71:"#"}}
-${72:   ${73:update_on_project_update}: ${74:"#"}}
+${63:   ${64:update_cache_timeout}: ${65:"#"}}
+${66:   ${67:update_on_launch}: ${68:"#"}}
+${69:   ${70:update_on_project_update}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
 ${75:${76:   become: ${77:true}} 
 ${78:   become_method: ${79:su}} 
 ${80:   become_user: ${81:nobody}} 

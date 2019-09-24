@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
 ${1:# after: If specified, only content after this match will 
-# attributes: Attributes the file or directory should have. To 
+# attributes: The attributes the resulting file or directory 
 # backup: Create a backup file including the timestamp 
 # before: If specified, only content before this match 
 # encoding: The character encoding for reading and writing 
 # group: Name of the group that should own the 
-# mode: Mode the file or directory should be. For those 
+# mode: The permissions the resulting file or directory 
 # others: All arguments accepted by the [file] module also 
 # owner: Name of the user that should own the 
-# path: (required) The file to modify. Before 2.3 this 
+# path: (required) The file to modify. Before Ansible 
 # regexp: (required) The regular expression to look for in 
 # set: ]' 
-# like: \\n]'. 
+# like: \n]'. 
 # replace: The string to replace regexp matches. May 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
-# unsafe_writes: By default this module uses atomic operations to 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
+# unsafe_writes: Influence when to use atomic operation to 
 # validate: The validation command to run before copying 
 }- name: ${2:Name for replace module.}
   replace:

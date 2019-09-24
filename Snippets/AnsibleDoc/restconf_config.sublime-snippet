@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# content: The configuration data in format as specififed 
+# format: The format of the configuration provided as 
+# method: The RESTCONF method to manage the configuration 
+# path: (required) URI being used to execute API calls. 
+}- name: ${2:Name for restconf_config module.}
+  restconf_config:
+${3:   ${4:content}: ${5:"#"}}
+${6:   ${7:format}: ${8:"#"}}
+${9:   ${10:method}: ${11:"#"}}
+${12:   ${13:path}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>restconf_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

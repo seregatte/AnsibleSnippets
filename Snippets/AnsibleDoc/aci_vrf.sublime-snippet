@@ -8,7 +8,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # policy_control_direction: Determines if the policy should be enforced by 
 # policy_control_preference: Determines if the fabric should enforce contract 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # tenant: The name of the Tenant the VRF should belong to. 
 # timeout: The socket level timeout in seconds. 

@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to 
+# custom_properties: Custom properties applied to the vNIC profile. 
+# data_center: (required) Datacenter name where network reside. 
+# description: A human-readable description in plain text. 
+# fetch_nested: If `True' the module will fetch additional data 
+# migratable: Marks whether pass_through NIC is migratable or 
+# name: (required) A human-readable name in plain text. 
+# nested_attributes: Specifies list of the attributes which should be 
+# network: (required) Name of network to which is vNIC 
+# network_filter: The network filter enables to filter packets 
+# pass_through: Enables passthrough to an SR-IOV-enabled host 
+# poll_interval: Number of the seconds the module waits until 
+# port_mirroring: Enables port mirroring. 
+# qos: Quality of Service attributes regulate inbound 
+# state: Should the vNIC be absent/present. 
+# timeout: The amount of time in seconds the module should 
+# wait: `yes' if the module should wait for the entity 
+}- name: ${2:Name for ovirt_vnic_profile module.}
+  ovirt_vnic_profile:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:custom_properties}: ${8:"#"}}
+${9:   ${10:data_center}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:fetch_nested}: ${17:"#"}}
+${18:   ${19:migratable}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:nested_attributes}: ${26:"#"}}
+${27:   ${28:network}: ${29:"#"}}
+${30:   ${31:network_filter}: ${32:"#"}}
+${33:   ${34:pass_through}: ${35:"#"}}
+${36:   ${37:poll_interval}: ${38:"#"}}
+${39:   ${40:port_mirroring}: ${41:"#"}}
+${42:   ${43:qos}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:timeout}: ${50:"#"}}
+${51:   ${52:wait}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>ovirt_vnic_profile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

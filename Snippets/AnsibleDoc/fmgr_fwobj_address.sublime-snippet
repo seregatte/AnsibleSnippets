@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# allow_routing: Enable/disable use of this address in the static 
+# associated_interface: Associated interface name. 
+# cache_ttl: Minimal TTL of individual IP addresses in FQDN 
+# color: Color of the object in FortiManager GUI. Takes 
+# comment: Comment for the object in FortiManager. 
+# country: Country name. Required if type = geographic. 
+# end_ip: End IP. Only used when ipv4 = iprange. 
+# fqdn: Fully qualified domain name. 
+# group_members: Address group member. If this is defined w/out 
+# group_name: Address group name. If this is defined in 
+# ipv4: Type of IPv4 Object. Must not be specified with 
+# ipv4addr: IP and network mask. If only defining one IP use 
+# ipv6: Puts module into IPv6 mode. Must not be 
+# ipv6addr: IPv6 address in full. (i.e. 
+# mode: Sets one of three modes for managing the object. 
+# multicast: Manages Multicast Address Objects. Sets either a 
+# name: Friendly Name Address object name in 
+# obj_id: Object ID for NSX. 
+# start_ip: Start IP. Only used when ipv4 = iprange. 
+# visibility: Enable/disable address visibility. 
+# wildcard: IP address and wildcard netmask. Required if 
+# wildcard_fqdn: Wildcard FQDN. Required if ipv4 = wildcard-fqdn. 
+}- name: ${2:Name for fmgr_fwobj_address module.}
+  fmgr_fwobj_address:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:allow_routing}: ${8:"#"}}
+${9:   ${10:associated_interface}: ${11:"#"}}
+${12:   ${13:cache_ttl}: ${14:"#"}}
+${15:   ${16:color}: ${17:"#"}}
+${18:   ${19:comment}: ${20:"#"}}
+${21:   ${22:country}: ${23:"#"}}
+${24:   ${25:end_ip}: ${26:"#"}}
+${27:   ${28:fqdn}: ${29:"#"}}
+${30:   ${31:group_members}: ${32:"#"}}
+${33:   ${34:group_name}: ${35:"#"}}
+${36:   ${37:ipv4}: ${38:"#"}}
+${39:   ${40:ipv4addr}: ${41:"#"}}
+${42:   ${43:ipv6}: ${44:"#"}}
+${45:   ${46:ipv6addr}: ${47:"#"}}
+${48:   ${49:mode}: ${50:"#"}}
+${51:   ${52:multicast}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:obj_id}: ${59:"#"}}
+${60:   ${61:start_ip}: ${62:"#"}}
+${63:   ${64:visibility}: ${65:"#"}}
+${66:   ${67:wildcard}: ${68:"#"}}
+${69:   ${70:wildcard_fqdn}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>fmgr_fwobj_address</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

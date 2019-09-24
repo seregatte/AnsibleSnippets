@@ -18,7 +18,7 @@ ${1:# account: Account the VPC is related to.
 # project: Name of the project the VPC is related to. 
 # protocol: Protocol of the rule 
 # protocol_number: Protocol number from 1 to 256 required if 
-# rule_position: (required) CIDR of the rule. 
+# rule_position: (required) The position of the network ACL rule. 
 # start_port: Start port for this rule. Considered if 
 # state: State of the network ACL rule. 
 # tags: List of tags. Tags are a list of dictionaries 

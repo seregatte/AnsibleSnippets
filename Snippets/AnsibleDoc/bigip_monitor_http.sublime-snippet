@@ -11,6 +11,7 @@ ${1:# description: The description of the monitor.
 # provider: A dict object containing connection details. 
 # receive: The receive string for the monitor call. 
 # receive_disable: This setting works like `receive', except that 
+# reverse: Specifies whether the monitor operates in 
 # send: The send string for the monitor call. When 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 
@@ -34,22 +35,23 @@ ${24:   ${25:port}: ${26:"#"}}
 ${27:   ${28:provider}: ${29:"#"}}
 ${30:   ${31:receive}: ${32:"#"}}
 ${33:   ${34:receive_disable}: ${35:"#"}}
-${36:   ${37:send}: ${38:"#"}}
-${39:   ${40:server}: ${41:"#"}}
-${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:target_password}: ${50:"#"}}
-${51:   ${52:target_username}: ${53:"#"}}
-${54:   ${55:time_until_up}: ${56:"#"}}
-${57:   ${58:timeout}: ${59:"#"}}
-${60:   ${61:user}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${36:   ${37:reverse}: ${38:"#"}}
+${39:   ${40:send}: ${41:"#"}}
+${42:   ${43:server}: ${44:"#"}}
+${45:   ${46:server_port}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:target_password}: ${53:"#"}}
+${54:   ${55:target_username}: ${56:"#"}}
+${57:   ${58:time_until_up}: ${59:"#"}}
+${60:   ${61:timeout}: ${62:"#"}}
+${63:   ${64:user}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
 ]]></content>
 	<tabTrigger>bigip_monitor_http</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

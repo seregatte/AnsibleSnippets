@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# force: Setting to 'true' forces the deletion of the 
+# from_name: Name of the existing policy group to be renamed 
+# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# max_throughput: Maximum throughput defined by this policy. 
+# min_throughput: Minimum throughput defined by this policy. 
+# name: The name of the policy group to manage. 
+# ontapi: The ontap api version to use 
+# password: (required) Password for the specified user. 
+# state: Whether the specified policy group should exist 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `no', the SSL certificates will not be 
+# vserver: Name of the vserver to use. 
+}- name: ${2:Name for na_ontap_qos_policy_group module.}
+  na_ontap_qos_policy_group:
+${3:   ${4:force}: ${5:"#"}}
+${6:   ${7:from_name}: ${8:"#"}}
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:http_port}: ${14:"#"}}
+${15:   ${16:https}: ${17:"#"}}
+${18:   ${19:max_throughput}: ${20:"#"}}
+${21:   ${22:min_throughput}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:ontapi}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vserver}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>na_ontap_qos_policy_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_no_value: allow option without value and without '=' 
-# attributes: Attributes the file or directory should have. To 
+${1:# allow_no_value: Allow option without value and without '=' 
+# attributes: The attributes the resulting file or directory 
 # backup: Create a backup file including the timestamp 
-# create: If set to 'no', the module will fail if the file 
+# create: If set to `no', the module will fail if the file 
 # group: Name of the group that should own the 
-# mode: Mode the file or directory should be. For those 
-# no_extra_spaces: Do not insert spaces before and after '=' symbol 
+# mode: The permissions the resulting file or directory 
+# no_extra_spaces: Do not insert spaces before and after '=' 
 # option: If set (required for changing a `value'), this 
 # others: All arguments accepted by the [file] module also 
 # owner: Name of the user that should own the 
 # path: (required) Path to the INI-style file; this file 
 # section: (required) Section name in INI file. This is 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # state: If set to `absent' the option or section will be 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 # value: The string value to be associated with an 
 }- name: ${2:Name for ini_file module.}
   ini_file:

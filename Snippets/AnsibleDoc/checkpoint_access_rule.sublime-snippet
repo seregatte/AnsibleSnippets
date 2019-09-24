@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# action: Action of the access rule (accept, drop, inform, 
+# auto_install_policy: Install the package policy if changes have been 
+# auto_publish_session: Publish the current session if changes have been 
+# destination: Destionation object of the access rule. 
+# enabled: Enabled or disabled flag. 
+# layer: (required) Layer to attach the access rule to. 
+# name: Name of the access rule. 
+# policy_package: Package policy name to be installed. 
+# position: Position of the access rule. 
+# source: Source object of the access rule. 
+# state: State of the access rule (present or absent). 
+# targets: Targets to install the package policy on. 
+}- name: ${2:Name for checkpoint_access_rule module.}
+  checkpoint_access_rule:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:auto_install_policy}: ${8:"#"}}
+${9:   ${10:auto_publish_session}: ${11:"#"}}
+${12:   ${13:destination}: ${14:"#"}}
+${15:   ${16:enabled}: ${17:"#"}}
+${18:   ${19:layer}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:policy_package}: ${26:"#"}}
+${27:   ${28:position}: ${29:"#"}}
+${30:   ${31:source}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:targets}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>checkpoint_access_rule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

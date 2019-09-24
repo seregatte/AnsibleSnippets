@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# msg: The customized message that is printed. If 
-# var: A variable name to debug.  Mutually exclusive 
+# var: A variable name to debug. Mutually exclusive 
 # verbosity: A number that controls when the debug is run, if 
 }- name: ${2:Name for debug module.}
   debug:

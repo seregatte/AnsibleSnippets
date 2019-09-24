@@ -15,7 +15,7 @@ ${1:# comment: Any information about the server.
 # nitro_timeout: Time in seconds until a timeout error is thrown 
 # nitro_user: (required) The username with which to 
 # nsip: (required) The ip address of the netscaler 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # state: The state of the resource being configured by 
 # td: Integer value that uniquely identifies the 
 # translationip: IP address used to transform the server's DNS- 

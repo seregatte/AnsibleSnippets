@@ -4,7 +4,12 @@ ${1:# description: Description of the profile.
 # dns_resolver: Specifies the name of a configured DNS resolver, 
 # encrypt_cookie_secret: Passphrase for cookie encryption. When creating 
 # encrypt_cookies: Cookie names for the system to encrypt. To 
+# header_erase: The name of a header, in an HTTP request, which 
+# header_insert: A string that the system inserts as a header in 
+# hsts_mode: When set to `yes', enables the HSTS settings. 
+# include_subdomains: When set to `yes', applies the HSTS policy to 
 # insert_xforwarded_for: When specified system inserts an X-Forwarded-For 
+# maximum_age: Specifies the maximum length of time, in 
 # name: (required) Specifies the name of the profile. 
 # parent: Specifies the profile from which this profile 
 # partition: Device partition to manage resources on. 
@@ -13,6 +18,7 @@ ${1:# description: Description of the profile.
 # proxy_type: Specifies the proxy mode for the profile. When 
 # redirect_rewrite: Specifies whether the system rewrites the URIs 
 # server: (required) The BIG-IP host. You may omit this 
+# server_agent_name: Specifies the string used as the server name in 
 # server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the profile exists. 
 # update_password: `always' will update passwords if the 
@@ -24,26 +30,32 @@ ${3:   ${4:description}: ${5:"#"}}
 ${6:   ${7:dns_resolver}: ${8:"#"}}
 ${9:   ${10:encrypt_cookie_secret}: ${11:"#"}}
 ${12:   ${13:encrypt_cookies}: ${14:"#"}}
-${15:   ${16:insert_xforwarded_for}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:parent}: ${23:"#"}}
-${24:   ${25:partition}: ${26:"#"}}
-${27:   ${28:password}: ${29:"#"}}
-${30:   ${31:provider}: ${32:"#"}}
-${33:   ${34:proxy_type}: ${35:"#"}}
-${36:   ${37:redirect_rewrite}: ${38:"#"}}
-${39:   ${40:server}: ${41:"#"}}
-${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:update_password}: ${50:"#"}}
-${51:   ${52:user}: ${53:"#"}}
-${54:   ${55:validate_certs}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${15:   ${16:header_erase}: ${17:"#"}}
+${18:   ${19:header_insert}: ${20:"#"}}
+${21:   ${22:hsts_mode}: ${23:"#"}}
+${24:   ${25:include_subdomains}: ${26:"#"}}
+${27:   ${28:insert_xforwarded_for}: ${29:"#"}}
+${30:   ${31:maximum_age}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:parent}: ${38:"#"}}
+${39:   ${40:partition}: ${41:"#"}}
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:provider}: ${47:"#"}}
+${48:   ${49:proxy_type}: ${50:"#"}}
+${51:   ${52:redirect_rewrite}: ${53:"#"}}
+${54:   ${55:server}: ${56:"#"}}
+${57:   ${58:server_agent_name}: ${59:"#"}}
+${60:   ${61:server_port}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:update_password}: ${68:"#"}}
+${69:   ${70:user}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_http</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

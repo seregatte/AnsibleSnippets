@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# gather_subset: (required) When supplied, this argument will 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigiq_device_facts module.}
+  bigiq_device_facts:
+${3:   ${4:gather_subset}: ${5:"#"}}
+${6:   ${7:password}: ${8:"#"}}
+${9:   ${10:provider}: ${11:"#"}}
+${12:   ${13:server}: ${14:"#"}}
+${15:   ${16:server_port}: ${17:"#"}}
+${18:   ${19:user}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>bigiq_device_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,47 +1,51 @@
 <snippet>
 <content><![CDATA[
-${1:# encoding: Encoding of the database 
+${1:# ca_cert: Specifies the name of a file containing SSL 
+# conn_limit: Specifies the database connection limit. 
+# encoding: Encoding of the database 
 # lc_collate: Collation order (LC_COLLATE) to use in the 
 # lc_ctype: Character classification (LC_CTYPE) to use in 
-# login_host: Host running the database 
-# login_password: The password used to authenticate with 
+# login_host: Host running the database. 
+# login_password: The password used to authenticate with. 
 # login_unix_socket: Path to a Unix domain socket for local 
-# login_user: The username used to authenticate with 
+# login_user: The username used to authenticate with. 
 # maintenance_db: The value specifies the initial database (which 
-# name: (required) name of the database to add or remove 
+# name: (required) Name of the database to add or remove 
 # owner: Name of the role to set as owner of the database 
-# port: Database port to connect to. 
+# port: Database port to connect (if needed) 
+# session_role: Switch to session_role after connecting. The 
 # ssl_mode: Determines whether or with what priority a 
-# ssl_rootcert: Specifies the name of a file containing SSL 
-# state: The database state. present implies that the 
-# target: File to back up or restore from. Used when state 
+# state: The database state. `present' implies that the 
+# target: File to back up or restore from. Used when 
 # target_opts: Further arguments for pg_dump or pg_restore. 
 # template: Template used to create the database 
 }- name: ${2:Name for postgresql_db module.}
   postgresql_db:
-${3:   ${4:encoding}: ${5:"#"}}
-${6:   ${7:lc_collate}: ${8:"#"}}
-${9:   ${10:lc_ctype}: ${11:"#"}}
-${12:   ${13:login_host}: ${14:"#"}}
-${15:   ${16:login_password}: ${17:"#"}}
-${18:   ${19:login_unix_socket}: ${20:"#"}}
-${21:   ${22:login_user}: ${23:"#"}}
-${24:   ${25:maintenance_db}: ${26:"#"}}
-${27:   ${28:name}: ${29:"#"}}
-${30:   ${31:owner}: ${32:"#"}}
-${33:   ${34:port}: ${35:"#"}}
-${36:   ${37:ssl_mode}: ${38:"#"}}
-${39:   ${40:ssl_rootcert}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:target}: ${47:"#"}}
-${48:   ${49:target_opts}: ${50:"#"}}
-${51:   ${52:template}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${3:   ${4:ca_cert}: ${5:"#"}}
+${6:   ${7:conn_limit}: ${8:"#"}}
+${9:   ${10:encoding}: ${11:"#"}}
+${12:   ${13:lc_collate}: ${14:"#"}}
+${15:   ${16:lc_ctype}: ${17:"#"}}
+${18:   ${19:login_host}: ${20:"#"}}
+${21:   ${22:login_password}: ${23:"#"}}
+${24:   ${25:login_unix_socket}: ${26:"#"}}
+${27:   ${28:login_user}: ${29:"#"}}
+${30:   ${31:maintenance_db}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:owner}: ${38:"#"}}
+${39:   ${40:port}: ${41:"#"}}
+${42:   ${43:session_role}: ${44:"#"}}
+${45:   ${46:ssl_mode}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:target}: ${53:"#"}}
+${54:   ${55:target_opts}: ${56:"#"}}
+${57:   ${58:template}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>postgresql_db</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

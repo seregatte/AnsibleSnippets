@@ -2,23 +2,23 @@
 <content><![CDATA[
 ${1:# access_time: This parameter indicates the time the file's 
 # access_time_format: When used with `access_time', indicates the time 
-# attributes: Attributes the file or directory should have. To 
+# attributes: The attributes the resulting file or directory 
 # follow: This flag indicates that filesystem links, if 
-# force: force the creation of the symlinks in two cases: 
+# force: Force the creation of the symlinks in two cases: 
 # group: Name of the group that should own the 
-# mode: Mode the file or directory should be. For those 
+# mode: The permissions the resulting file or directory 
 # modification_time: This parameter indicates the time the file's 
 # modification_time_format: When used with `modification_time', indicates 
 # owner: Name of the user that should own the 
 # path: (required) Path to the file being managed. 
-# recurse: recursively set the specified file attributes 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
-# src: path of the file to link to (applies only to 
-# state: If `directory', all intermediate subdirectories 
-# unsafe_writes: By default this module uses atomic operations to 
+# recurse: Recursively set the specified file attributes on 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
+# src: Path of the file to link to. This applies only 
+# state: If `absent', directories will be recursively 
+# unsafe_writes: Influence when to use atomic operation to 
 }- name: ${2:Name for file module.}
   file:
 ${3:   ${4:access_time}: ${5:"#"}}

@@ -3,22 +3,22 @@
 ${1:# access_port_selector: (required) The name of the Fabric access policy 
 # certificate_name: The X.509 certificate name attached to the APIC 
 # description: The description to assign to the 
-# from_card: The beginning (from-range) of the card range 
-# from_port: (required) The beginning (from-range) of the 
+# from_card: *Deprecated* Starting with Ansible 2.8 we 
+# from_port: (required) *Deprecated* Starting with Ansible 
 # host: (required) IP Address or hostname of APIC 
 # interface_type: The type of interface for the static EPG 
 # leaf_interface_profile: (required) The name of the Fabric access policy 
-# leaf_port_blk: (required) The name of the Fabric access policy 
-# leaf_port_blk_description: The description to assign to the `leaf_port_blk' 
+# leaf_port_blk: (required) *Deprecated* Starting with Ansible 
+# leaf_port_blk_description: *Deprecated* Starting with Ansible 2.8 we 
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # policy_group: The name of the fabric access policy group to be 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 
-# to_card: The end (to-range) of the card range block for 
-# to_port: (required) The end (to-range) of the port range 
+# to_card: *Deprecated* Starting with Ansible 2.8 we 
+# to_port: (required) *Deprecated* Starting with Ansible 
 # use_proxy: If `no', it will not use a proxy, even if one is 
 # use_ssl: If `no', an HTTP connection will be used instead 
 # username: The username to use for authentication. 

@@ -16,9 +16,11 @@ ${1:# api_http_method: HTTP method used to query the API endpoint. If
 # id: uuid of the existing zone. 
 # internal_dns1: First internal DNS for the zone. If not set 
 # internal_dns2: Second internal DNS for the zone. 
+# local_storage_enabled: Whether to enable local storage for the zone or 
 # name: (required) Name of the zone. 
 # network_domain: Network domain for the zone. 
 # network_type: Network type of the zone. 
+# securitygroups_enabled: Whether the zone is security group enabled or 
 # state: State of the zone. 
 }- name: ${2:Name for cs_zone module.}
   cs_zone:
@@ -38,16 +40,18 @@ ${39:   ${40:guest_cidr_address}: ${41:"#"}}
 ${42:   ${43:id}: ${44:"#"}}
 ${45:   ${46:internal_dns1}: ${47:"#"}}
 ${48:   ${49:internal_dns2}: ${50:"#"}}
-${51:   ${52:name}: ${53:"#"}}
-${54:   ${55:network_domain}: ${56:"#"}}
-${57:   ${58:network_type}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:${64:   become: ${65:true}} 
-${66:   become_method: ${67:su}} 
-${68:   become_user: ${69:nobody}} 
-${70:   become_flags: ${71:"-s /bin/sh"}}} 
-${72:   when: ${73:variable is defined}} 
-${74:   with_items: ${75:array}} 
+${51:   ${52:local_storage_enabled}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:network_domain}: ${59:"#"}}
+${60:   ${61:network_type}: ${62:"#"}}
+${63:   ${64:securitygroups_enabled}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
 ]]></content>
 	<tabTrigger>cs_zone</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

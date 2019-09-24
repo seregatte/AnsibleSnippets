@@ -15,7 +15,7 @@ ${1:# api_key: Rackspace API key, overrides `credentials'.
 # tenant_name: The tenant name used for authentication. 
 # ttl: Time to live of domain in seconds 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 }- name: ${2:Name for rax_dns module.}
   rax_dns:
 ${3:   ${4:api_key}: ${5:"#"}}
@@ -33,7 +33,7 @@ ${36:   ${37:tenant_id}: ${38:"#"}}
 ${39:   ${40:tenant_name}: ${41:"#"}}
 ${42:   ${43:ttl}: ${44:"#"}}
 ${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:verify_ssl}: ${50:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
 ${51:${52:   become: ${53:true}} 
 ${54:   become_method: ${55:su}} 
 ${56:   become_user: ${57:nobody}} 

@@ -3,6 +3,7 @@
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # client_token: Optional client token to ensure idempotency 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # policy: A properly formatted json policy as string, see 
 # : issu 
@@ -25,29 +26,30 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:client_token}: ${11:"#"}}
-${12:   ${13:ec2_url}: ${14:"#"}}
-${15:   ${16:policy}: ${17:"#"}}
-${18:   ${19:}: ${20:"#"}}
-${21:   ${22:policy_file}: ${23:"#"}}
-${24:   ${25:}: ${26:"#"}}
-${27:   ${28:profile}: ${29:"#"}}
-${30:   ${31:region}: ${32:"#"}}
-${33:   ${34:}: ${35:"#"}}
-${36:   ${37:route_table_ids}: ${38:"#"}}
-${39:   ${40:security_token}: ${41:"#"}}
-${42:   ${43:service}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:vpc_endpoint_id}: ${53:"#"}}
-${54:   ${55:vpc_id}: ${56:"#"}}
-${57:   ${58:wait}: ${59:"#"}}
-${60:   ${61:wait_timeout}: ${62:"#"}}
-${63:${64:   become: ${65:true}} 
-${66:   become_method: ${67:su}} 
-${68:   become_user: ${69:nobody}} 
-${70:   become_flags: ${71:"-s /bin/sh"}}} 
-${72:   when: ${73:variable is defined}} 
-${74:   with_items: ${75:array}} 
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:policy}: ${20:"#"}}
+${21:   ${22:}: ${23:"#"}}
+${24:   ${25:policy_file}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:profile}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:}: ${38:"#"}}
+${39:   ${40:route_table_ids}: ${41:"#"}}
+${42:   ${43:security_token}: ${44:"#"}}
+${45:   ${46:service}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:   ${55:vpc_endpoint_id}: ${56:"#"}}
+${57:   ${58:vpc_id}: ${59:"#"}}
+${60:   ${61:wait}: ${62:"#"}}
+${63:   ${64:wait_timeout}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>ec2_vpc_endpoint</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

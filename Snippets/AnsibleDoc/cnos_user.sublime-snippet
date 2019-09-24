@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: The set of username objects to be configured on 
+# configured_password: The password to be configured on the network 
+# name: The username to be configured on the remote 
+# purge: The `purge' argument instructs the module to 
+# role: The `role' argument configures the role for the 
+# sshkey: The `sshkey' argument defines the SSH public key 
+# state: The `state' argument configures the state of the 
+# update_password: Since passwords are encrypted in the device 
+}- name: ${2:Name for cnos_user module.}
+  cnos_user:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:configured_password}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:purge}: ${14:"#"}}
+${15:   ${16:role}: ${17:"#"}}
+${18:   ${19:sshkey}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:update_password}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>cnos_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

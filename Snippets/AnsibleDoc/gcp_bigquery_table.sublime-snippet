@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# dataset: Name of the dataset. 
+# description: A user-friendly description of the dataset. 
+# encryption_configuration: Custom encryption configuration. 
+# expiration_time: The time when this table expires, in 
+# external_data_configuration: Describes the data format, location, and other 
+# friendly_name: A descriptive name for this table. 
+# labels: The labels associated with this dataset. You can 
+# name: Name of the table. 
+# project: The Google Cloud Platform project to use. 
+# schema: Describes the schema of this table. 
+# scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# state: Whether the given object should exist in GCP 
+# table_reference: Reference describing the ID of this table. 
+# time_partitioning: If specified, configures time-based partitioning 
+# view: The view definition. 
+}- name: ${2:Name for gcp_bigquery_table module.}
+  gcp_bigquery_table:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:dataset}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:encryption_configuration}: ${14:"#"}}
+${15:   ${16:expiration_time}: ${17:"#"}}
+${18:   ${19:external_data_configuration}: ${20:"#"}}
+${21:   ${22:friendly_name}: ${23:"#"}}
+${24:   ${25:labels}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:project}: ${32:"#"}}
+${33:   ${34:schema}: ${35:"#"}}
+${36:   ${37:scopes}: ${38:"#"}}
+${39:   ${40:service_account_contents}: ${41:"#"}}
+${42:   ${43:service_account_email}: ${44:"#"}}
+${45:   ${46:service_account_file}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:table_reference}: ${53:"#"}}
+${54:   ${55:time_partitioning}: ${56:"#"}}
+${57:   ${58:view}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>gcp_bigquery_table</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

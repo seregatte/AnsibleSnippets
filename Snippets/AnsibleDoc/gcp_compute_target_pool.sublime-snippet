@@ -10,6 +10,7 @@ ${1:# auth_kind: (required) The type of credential used.
 # project: The Google Cloud Platform project to use. 
 # region: (required) The region where the target pool 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # session_affinity: Session affinity option. Must be one of these 
@@ -26,16 +27,17 @@ ${21:   ${22:name}: ${23:"#"}}
 ${24:   ${25:project}: ${26:"#"}}
 ${27:   ${28:region}: ${29:"#"}}
 ${30:   ${31:scopes}: ${32:"#"}}
-${33:   ${34:service_account_email}: ${35:"#"}}
-${36:   ${37:service_account_file}: ${38:"#"}}
-${39:   ${40:session_affinity}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${33:   ${34:service_account_contents}: ${35:"#"}}
+${36:   ${37:service_account_email}: ${38:"#"}}
+${39:   ${40:service_account_file}: ${41:"#"}}
+${42:   ${43:session_affinity}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_target_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

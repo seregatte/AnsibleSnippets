@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# cross_junction: Specifies whether the On-Demand task is allowed 
+# directory_recursion: Specifies whether the On-Demand task is allowed 
+# file_ext_to_exclude: File-Extensions for which scanning must not be 
+# file_ext_to_include: File extensions for which scanning is 
+# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# max_file_size: Max file-size (in bytes) allowed for scanning. 
+# ontapi: The ontap api version to use 
+# password: (required) Password for the specified user. 
+# paths_to_exclude: File-paths for which scanning must not be 
+# report_directory: Path from the vserver root where task report is 
+# report_log_level: Log level for the On-Demand report. 
+# request_timeout: Total request-service time-limit in seconds. If 
+# scan_files_with_no_ext: Specifies whether files without any extension 
+# scan_paths: List of paths that need to be scanned. The path 
+# scan_priority: Priority of the On-Demand scan requests 
+# schedule: Schedule of the task. The task will be run as 
+# state: Whether a Vscan on demand task is present or not 
+# task_name: (required) Name of the task. 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `no', the SSL certificates will not be 
+# vserver: (required) the name of the data vserver to use. 
+}- name: ${2:Name for na_ontap_vscan_on_demand_task module.}
+  na_ontap_vscan_on_demand_task:
+${3:   ${4:cross_junction}: ${5:"#"}}
+${6:   ${7:directory_recursion}: ${8:"#"}}
+${9:   ${10:file_ext_to_exclude}: ${11:"#"}}
+${12:   ${13:file_ext_to_include}: ${14:"#"}}
+${15:   ${16:hostname}: ${17:"#"}}
+${18:   ${19:http_port}: ${20:"#"}}
+${21:   ${22:https}: ${23:"#"}}
+${24:   ${25:max_file_size}: ${26:"#"}}
+${27:   ${28:ontapi}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:paths_to_exclude}: ${35:"#"}}
+${36:   ${37:report_directory}: ${38:"#"}}
+${39:   ${40:report_log_level}: ${41:"#"}}
+${42:   ${43:request_timeout}: ${44:"#"}}
+${45:   ${46:scan_files_with_no_ext}: ${47:"#"}}
+${48:   ${49:scan_paths}: ${50:"#"}}
+${51:   ${52:scan_priority}: ${53:"#"}}
+${54:   ${55:schedule}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:task_name}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:   ${70:vserver}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>na_ontap_vscan_on_demand_task</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

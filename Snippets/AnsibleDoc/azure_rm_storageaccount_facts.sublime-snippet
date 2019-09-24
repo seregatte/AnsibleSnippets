@@ -12,6 +12,8 @@ ${1:# ad_user: Active Directory username. Use when
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: Limit results to a resource group. Required when 
 # secret: Azure client secret. Use when authenticating 
+# show_blob_cors: Show the blob CORS settings for each of the 
+# show_connection_string: Show the connection string for each of the 
 # subscription_id: Your Azure subscription Id. 
 # tags: Limit results by providing a list of tags. 
 # tenant: Azure tenant ID. Use when authenticating with a 
@@ -29,15 +31,17 @@ ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:profile}: ${32:"#"}}
 ${33:   ${34:resource_group}: ${35:"#"}}
 ${36:   ${37:secret}: ${38:"#"}}
-${39:   ${40:subscription_id}: ${41:"#"}}
-${42:   ${43:tags}: ${44:"#"}}
-${45:   ${46:tenant}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${39:   ${40:show_blob_cors}: ${41:"#"}}
+${42:   ${43:show_connection_string}: ${44:"#"}}
+${45:   ${46:subscription_id}: ${47:"#"}}
+${48:   ${49:tags}: ${50:"#"}}
+${51:   ${52:tenant}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_storageaccount_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

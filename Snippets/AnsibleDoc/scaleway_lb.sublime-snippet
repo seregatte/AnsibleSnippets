@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# api_timeout: HTTP timeout to Scaleway API in seconds. 
+# api_token: Scaleway OAuth token. 
+# api_url: Scaleway API URL. 
+# description: (required) Description of the load-balancer 
+# name: (required) Name of the load-balancer 
+# organization_id: (required) Organization identifier 
+# query_parameters: List of parameters passed to the query string. 
+# region: (required) Scaleway zone 
+# state: Indicate desired state of the instance. 
+# tags: List of tags to apply to the load-balancer 
+# validate_certs: Validate SSL certs of the Scaleway API. 
+# wait: Wait for the load-balancer to reach its desired 
+# wait_sleep_time: Time to wait before every attempt to check the 
+# wait_timeout: Time to wait for the load-balancer to reach the 
+}- name: ${2:Name for scaleway_lb module.}
+  scaleway_lb:
+${3:   ${4:api_timeout}: ${5:"#"}}
+${6:   ${7:api_token}: ${8:"#"}}
+${9:   ${10:api_url}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:organization_id}: ${20:"#"}}
+${21:   ${22:query_parameters}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:tags}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:wait}: ${38:"#"}}
+${39:   ${40:wait_sleep_time}: ${41:"#"}}
+${42:   ${43:wait_timeout}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>scaleway_lb</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -5,6 +5,7 @@ ${1:# availability_zone: Specify an availability zone to use the default
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # cpu_credit_specification: For T2 series instances, choose whether to allow 
 # cpu_options: Reduce the number of vCPU exposed to the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # detailed_monitoring: Whether to allow detailed cloudwatch metrics to 
 # ebs_optimized: Whether instance is should use optimized EBS 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
@@ -14,11 +15,12 @@ ${1:# availability_zone: Specify an availability zone to use the default
 # instance_ids: If you specify one or more instance IDs, only 
 # instance_initiated_shutdown_behavior: Whether to stop or terminate an instance upon 
 # instance_role: The ARN or name of an EC2-enabled instance role 
-# instance_type: Instance type to use for the instance, see http: 
+# instance_type: Instance type to use for the instance, see https 
 # key_name: Name of the SSH access key to assign to the 
 # launch_template: The EC2 launch template to base instance 
 # name: The Name tag for the instance. 
 # network: Either a dictionary containing the key 
+# placement_group: The placement group that needs to be assigned to 
 # profile: Uses a boto profile. Only works with boto >= 
 # purge_tags: Delete any tags not specified in the task that 
 # region: The AWS region to use. If not specified then the 
@@ -26,7 +28,7 @@ ${1:# availability_zone: Specify an availability zone to use the default
 # security_group: A security group ID or name. Mutually exclusive 
 # security_groups: A list of security group IDs or names (strings). 
 # security_token: AWS STS security token. If not set then the 
-# state: Goal state for the instances 
+# state: Goal state for the instances. 
 # tags: A hash/dictionary of tags to add to the new 
 # tenancy: What type of tenancy to allow an instance to 
 # termination_protection: Whether to enable termination protection. This 
@@ -44,44 +46,46 @@ ${6:   ${7:aws_access_key}: ${8:"#"}}
 ${9:   ${10:aws_secret_key}: ${11:"#"}}
 ${12:   ${13:cpu_credit_specification}: ${14:"#"}}
 ${15:   ${16:cpu_options}: ${17:"#"}}
-${18:   ${19:detailed_monitoring}: ${20:"#"}}
-${21:   ${22:ebs_optimized}: ${23:"#"}}
-${24:   ${25:ec2_url}: ${26:"#"}}
-${27:   ${28:filters}: ${29:"#"}}
-${30:   ${31:image}: ${32:"#"}}
-${33:   ${34:image_id}: ${35:"#"}}
-${36:   ${37:instance_ids}: ${38:"#"}}
-${39:   ${40:instance_initiated_shutdown_behavior}: ${41:"#"}}
-${42:   ${43:instance_role}: ${44:"#"}}
-${45:   ${46:instance_type}: ${47:"#"}}
-${48:   ${49:key_name}: ${50:"#"}}
-${51:   ${52:launch_template}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:network}: ${59:"#"}}
-${60:   ${61:profile}: ${62:"#"}}
-${63:   ${64:purge_tags}: ${65:"#"}}
-${66:   ${67:region}: ${68:"#"}}
-${69:   ${70:}: ${71:"#"}}
-${72:   ${73:security_group}: ${74:"#"}}
-${75:   ${76:security_groups}: ${77:"#"}}
-${78:   ${79:security_token}: ${80:"#"}}
-${81:   ${82:state}: ${83:"#"}}
-${84:   ${85:tags}: ${86:"#"}}
-${87:   ${88:tenancy}: ${89:"#"}}
-${90:   ${91:termination_protection}: ${92:"#"}}
-${93:   ${94:tower_callback}: ${95:"#"}}
-${96:   ${97:user_data}: ${98:"#"}}
-${99:   ${100:validate_certs}: ${101:"#"}}
-${102:   ${103:volumes}: ${104:"#"}}
-${105:   ${106:vpc_subnet_id}: ${107:"#"}}
-${108:   ${109:wait}: ${110:"#"}}
-${111:   ${112:wait_timeout}: ${113:"#"}}
-${114:${115:   become: ${116:true}} 
-${117:   become_method: ${118:su}} 
-${119:   become_user: ${120:nobody}} 
-${121:   become_flags: ${122:"-s /bin/sh"}}} 
-${123:   when: ${124:variable is defined}} 
-${125:   with_items: ${126:array}} 
+${18:   ${19:debug_botocore_endpoint_logs}: ${20:"#"}}
+${21:   ${22:detailed_monitoring}: ${23:"#"}}
+${24:   ${25:ebs_optimized}: ${26:"#"}}
+${27:   ${28:ec2_url}: ${29:"#"}}
+${30:   ${31:filters}: ${32:"#"}}
+${33:   ${34:image}: ${35:"#"}}
+${36:   ${37:image_id}: ${38:"#"}}
+${39:   ${40:instance_ids}: ${41:"#"}}
+${42:   ${43:instance_initiated_shutdown_behavior}: ${44:"#"}}
+${45:   ${46:instance_role}: ${47:"#"}}
+${48:   ${49:instance_type}: ${50:"#"}}
+${51:   ${52:key_name}: ${53:"#"}}
+${54:   ${55:launch_template}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:network}: ${62:"#"}}
+${63:   ${64:placement_group}: ${65:"#"}}
+${66:   ${67:profile}: ${68:"#"}}
+${69:   ${70:purge_tags}: ${71:"#"}}
+${72:   ${73:region}: ${74:"#"}}
+${75:   ${76:}: ${77:"#"}}
+${78:   ${79:security_group}: ${80:"#"}}
+${81:   ${82:security_groups}: ${83:"#"}}
+${84:   ${85:security_token}: ${86:"#"}}
+${87:   ${88:state}: ${89:"#"}}
+${90:   ${91:tags}: ${92:"#"}}
+${93:   ${94:tenancy}: ${95:"#"}}
+${96:   ${97:termination_protection}: ${98:"#"}}
+${99:   ${100:tower_callback}: ${101:"#"}}
+${102:   ${103:user_data}: ${104:"#"}}
+${105:   ${106:validate_certs}: ${107:"#"}}
+${108:   ${109:volumes}: ${110:"#"}}
+${111:   ${112:vpc_subnet_id}: ${113:"#"}}
+${114:   ${115:wait}: ${116:"#"}}
+${117:   ${118:wait_timeout}: ${119:"#"}}
+${120:${121:   become: ${122:true}} 
+${123:   become_method: ${124:su}} 
+${125:   become_user: ${126:nobody}} 
+${127:   become_flags: ${128:"-s /bin/sh"}}} 
+${129:   when: ${130:variable is defined}} 
+${131:   with_items: ${132:array}} 
 ]]></content>
 	<tabTrigger>ec2_instance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

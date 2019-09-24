@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# datacenter: The datacenter name to which virtual machine 
+# display_number: The number of display. Valid value from 1 to 10. 
+# enable_3: Enable 3D for guest operating systems on which 
+# folder: Destination folder, absolute or relative path to 
+# gather_video_facts: If set to True, return settings of the video 
+# hostname: The hostname or IP address of the vSphere 
+# memory_3: The value of 3D Memory must be power of 2 and 
+# name: Name of the virtual machine. This is a required 
+# password: The password of the vSphere vCenter or ESXi 
+# port: The port number of the vSphere vCenter or ESXi 
+# renderer_3: If set to `automatic', selects the appropriate 
+# use_auto_detect: If set to True, applies common video settings to 
+# username: The username of the vSphere vCenter or ESXi 
+# uuid: UUID of the instance to gather facts if known, 
+# validate_certs: Allows connection when SSL certificates are not 
+# video_memory_mb: Valid total MB of video memory range of virtual 
+}- name: ${2:Name for vmware_guest_video module.}
+  vmware_guest_video:
+${3:   ${4:datacenter}: ${5:"#"}}
+${6:   ${7:display_number}: ${8:"#"}}
+${9:   ${10:enable_3}: ${11:"#"}}
+${12:   ${13:folder}: ${14:"#"}}
+${15:   ${16:gather_video_facts}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:memory_3}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:port}: ${32:"#"}}
+${33:   ${34:renderer_3}: ${35:"#"}}
+${36:   ${37:use_auto_detect}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:uuid}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:   ${49:video_memory_mb}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>vmware_guest_video</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

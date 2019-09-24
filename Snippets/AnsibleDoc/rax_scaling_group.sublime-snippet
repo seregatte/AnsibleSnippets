@@ -26,7 +26,7 @@ ${1:# api_key: Rackspace API key, overrides `credentials'.
 # tenant_name: The tenant name used for authentication. 
 # user_data: Data to be uploaded to the servers config drive. 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 # wait: wait for the scaling group to finish 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for rax_scaling_group module.}
@@ -57,7 +57,7 @@ ${69:   ${70:tenant_id}: ${71:"#"}}
 ${72:   ${73:tenant_name}: ${74:"#"}}
 ${75:   ${76:user_data}: ${77:"#"}}
 ${78:   ${79:username}: ${80:"#"}}
-${81:   ${82:verify_ssl}: ${83:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
 ${84:   ${85:wait}: ${86:"#"}}
 ${87:   ${88:wait_timeout}: ${89:"#"}}
 ${90:${91:   become: ${92:true}} 

@@ -8,6 +8,7 @@ ${1:# api_token: (required) FlashArray API token for admin
 # hostgroup: List of existing hostgroups to add to protection 
 # pgroup: (required) The name of the protection group. 
 # state: Define whether the protection group should exist 
+# target: List of remote arrays or offload target for 
 # volume: List of existing volumes to add to protection 
 }- name: ${2:Name for purefa_pg module.}
   purefa_pg:
@@ -19,13 +20,14 @@ ${15:   ${16:host}: ${17:"#"}}
 ${18:   ${19:hostgroup}: ${20:"#"}}
 ${21:   ${22:pgroup}: ${23:"#"}}
 ${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:volume}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${27:   ${28:target}: ${29:"#"}}
+${30:   ${31:volume}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>purefa_pg</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

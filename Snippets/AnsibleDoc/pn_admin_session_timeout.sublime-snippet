@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_cliswitch: Target switch to run the CLI on. 
+# pn_timeout: Maximum time to wait for user activity before 
+# state: (required) State the action to perform. `update' 
+}- name: ${2:Name for pn_admin_session_timeout module.}
+  pn_admin_session_timeout:
+${3:   ${4:pn_cliswitch}: ${5:"#"}}
+${6:   ${7:pn_timeout}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>pn_admin_session_timeout</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# state: Action to perform on the session object. Valid 
+# uid: (required) UID of the session. 
+}- name: ${2:Name for checkpoint_session module.}
+  checkpoint_session:
+${3:   ${4:state}: ${5:"#"}}
+${6:   ${7:uid}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>checkpoint_session</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

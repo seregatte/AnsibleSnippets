@@ -8,6 +8,7 @@ ${1:# input: NSO action parameters.
 # timeout: JSON-RPC request timeout in seconds 
 # url: (required) NSO JSON-RPC URL, 
 # username: (required) NSO username 
+# validate_certs: When set to true, validates the SSL certificate 
 # validate_strict: If set to true, the task will fail if any output 
 }- name: ${2:Name for nso_action module.}
   nso_action:
@@ -19,13 +20,14 @@ ${15:   ${16:path}: ${17:"#"}}
 ${18:   ${19:timeout}: ${20:"#"}}
 ${21:   ${22:url}: ${23:"#"}}
 ${24:   ${25:username}: ${26:"#"}}
-${27:   ${28:validate_strict}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:   ${31:validate_strict}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>nso_action</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

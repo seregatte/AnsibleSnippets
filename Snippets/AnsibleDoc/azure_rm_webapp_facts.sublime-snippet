@@ -11,7 +11,7 @@ ${1:# ad_user: Active Directory username. Use when
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: Limit results by resource group. 
-# return_publish_profile: Indicate wheather to return publishing profile 
+# return_publish_profile: Indicate whether to return publishing profile of 
 # secret: Azure client secret. Use when authenticating 
 # subscription_id: Your Azure subscription Id. 
 # tags: Limit results by providing a list of tags. 

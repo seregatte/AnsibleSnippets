@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# ca_certs: The path to the Certificate Authority 
-# certfile: The path pointing to the PEM encoded client 
+${1:# ca_cert: The path to the Certificate Authority 
+# client_cert: The path pointing to the PEM encoded client 
 # client_id: MQTT client identifier 
-# keyfile: The path pointing to the PEM encoded client 
+# client_key: The path pointing to the PEM encoded client 
 # password: Password for `username' to authenticate against 
 # payload: (required) Payload. The special string `"None"' 
 # port: MQTT broker port number 
@@ -14,10 +14,10 @@ ${1:# ca_certs: The path to the Certificate Authority
 # username: Username to authenticate against the broker. 
 }- name: ${2:Name for mqtt module.}
   mqtt:
-${3:   ${4:ca_certs}: ${5:"#"}}
-${6:   ${7:certfile}: ${8:"#"}}
+${3:   ${4:ca_cert}: ${5:"#"}}
+${6:   ${7:client_cert}: ${8:"#"}}
 ${9:   ${10:client_id}: ${11:"#"}}
-${12:   ${13:keyfile}: ${14:"#"}}
+${12:   ${13:client_key}: ${14:"#"}}
 ${15:   ${16:password}: ${17:"#"}}
 ${18:   ${19:payload}: ${20:"#"}}
 ${21:   ${22:port}: ${23:"#"}}

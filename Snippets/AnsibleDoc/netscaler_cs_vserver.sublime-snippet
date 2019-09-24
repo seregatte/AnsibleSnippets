@@ -55,7 +55,7 @@ ${1:# appflowlog: Enable logging appflow flow information.
 # redirecturl: URL to which traffic is redirected if the 
 # rhistate: A host route is injected according to the 
 # rtspnat: Enable network address translation (NAT) for 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # servicetype: Protocol used by the virtual server. 
 # sitedomainttl: . Minimum value = `1' 
 # sobackupaction: Action to be performed if spillover is to take 

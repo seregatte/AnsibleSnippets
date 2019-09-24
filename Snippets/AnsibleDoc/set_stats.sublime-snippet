@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# aggregate: boolean that indicates if the provided value is 
+${1:# aggregate: Whether the provided value is aggregated to the 
 # data: (required) A dictionary of which each key 
-# per_host: boolean that indicates if the stats is per host 
+# per_host: whether the stats are per host or for all hosts 
 }- name: ${2:Name for set_stats module.}
   set_stats:
 ${3:   ${4:aggregate}: ${5:"#"}}

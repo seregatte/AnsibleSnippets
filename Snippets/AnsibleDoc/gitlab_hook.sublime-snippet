@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# api_password: The password to use for authentication against 
+# api_token: Gitlab token for logging in. 
+# api_url: The resolvable endpoint for the API 
+# api_username: The username to use for authentication against 
+# hook_url: (required) The url that you want GitLab to post 
+# hook_validate_certs: Whether GitLab will do SSL verification when 
+# issues_events: Trigger hook on issues events 
+# job_events: Trigger hook on job events 
+# merge_requests_events: Trigger hook on merge requests events 
+# note_events: Trigger hook on note events 
+# pipeline_events: Trigger hook on pipeline events 
+# project: (required) Id or Full path of the project in the 
+# push_events: Trigger hook on push events 
+# state: (required) When `present' the hook will be 
+# tag_push_events: Trigger hook on tag push events 
+# token: Secret token to validate hook messages at the 
+# validate_certs: Whether or not to validate SSL certs when 
+# wiki_page_events: Trigger hook on wiki events 
+}- name: ${2:Name for gitlab_hook module.}
+  gitlab_hook:
+${3:   ${4:api_password}: ${5:"#"}}
+${6:   ${7:api_token}: ${8:"#"}}
+${9:   ${10:api_url}: ${11:"#"}}
+${12:   ${13:api_username}: ${14:"#"}}
+${15:   ${16:hook_url}: ${17:"#"}}
+${18:   ${19:hook_validate_certs}: ${20:"#"}}
+${21:   ${22:issues_events}: ${23:"#"}}
+${24:   ${25:job_events}: ${26:"#"}}
+${27:   ${28:merge_requests_events}: ${29:"#"}}
+${30:   ${31:note_events}: ${32:"#"}}
+${33:   ${34:pipeline_events}: ${35:"#"}}
+${36:   ${37:project}: ${38:"#"}}
+${39:   ${40:push_events}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:tag_push_events}: ${47:"#"}}
+${48:   ${49:token}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:   ${55:wiki_page_events}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>gitlab_hook</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

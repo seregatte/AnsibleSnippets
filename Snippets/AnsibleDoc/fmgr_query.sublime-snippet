@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# custom_dict: ADVANCED USERS ONLY! REQUIRES KNOWLEDGE OF FMGR 
+# custom_endpoint: ADVANCED USERS ONLY! REQUIRES KNOWLEDGE OF FMGR 
+# device_ip: The IP of the device you want to query. 
+# device_serial: The serial number of the device you want to 
+# device_unique_name: The desired "friendly" name of the device you 
+# nodes: A LIST of firewalls in the cluster you want to 
+# object: (required) The data object we wish to query 
+# task_id: The ID of the task you wish to query status on. 
+}- name: ${2:Name for fmgr_query module.}
+  fmgr_query:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:custom_dict}: ${8:"#"}}
+${9:   ${10:custom_endpoint}: ${11:"#"}}
+${12:   ${13:device_ip}: ${14:"#"}}
+${15:   ${16:device_serial}: ${17:"#"}}
+${18:   ${19:device_unique_name}: ${20:"#"}}
+${21:   ${22:nodes}: ${23:"#"}}
+${24:   ${25:object}: ${26:"#"}}
+${27:   ${28:task_id}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>fmgr_query</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

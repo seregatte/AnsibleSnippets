@@ -6,7 +6,7 @@ ${1:# accept_eula: Required to indicate your acceptance of the End
 # cluster_admin_username: Username for the cluster admin. If not provided, 
 # hostname: (required) The hostname or IP address of the 
 # management_virtual_ip: (required) Floating (virtual) IP address for the 
-# nodes: Storage IP (SIP) addresses of the initial set of 
+# nodes: (required) Storage IP (SIP) addresses of the 
 # password: (required) Password for the specified user. 
 # replica_count: Number of replicas of each piece of data to 
 # storage_virtual_ip: (required) Floating (virtual) IP address for the 

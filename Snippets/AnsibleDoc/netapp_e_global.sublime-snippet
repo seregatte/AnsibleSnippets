@@ -5,7 +5,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # api_username: (required) The username to authenticate with the 
 # log_path: A local path to a file to be used for debug 
 # name: Set the name of the E-Series storage-system This 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_global module.}
   netapp_e_global:

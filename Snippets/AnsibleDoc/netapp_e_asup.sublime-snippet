@@ -7,7 +7,7 @@ ${1:# active: Enable active/proactive monitoring for ASUP.
 # days: A list of days of the week that ASUP bundles 
 # end: An end hour may be specified in a range from 1 
 # log_path: A local path to a file to be used for debug 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # start: A start hour may be specified in a range from 0 
 # state: Enable/disable the E-Series auto-support 
 # validate_certs: Should https certificates be validated? 

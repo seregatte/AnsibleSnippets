@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# datacenter_name: (required) Name of the datacenter to add the 
+${1:# datacenter_name: Name of the datacenter to add the datastore. The 
 # datastore_name: (required) Name of the datastore to add/remove. 
 # datastore_type: (required) Type of the datastore to configure 
 # esxi_hostname: (required) ESXi hostname to manage the 

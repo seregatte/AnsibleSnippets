@@ -1,41 +1,43 @@
 <snippet>
 <content><![CDATA[
 ${1:# destination: (required) Specify the route destination. 
+# from_destination: Specify the route destination that should be 
+# from_gateway: Specify the route gateway that should be 
+# from_metric: Specify the route metric that should be changed. 
 # gateway: (required) Specify the route gateway. Example 
 # hostname: (required) The hostname or IP address of the 
 # http_port: Override the default port (80 or 443) with this 
 # https: Enable and disable https 
 # metric: Specify the route metric. If this field is not 
-# new_destination: Specify the new route destination. 
-# new_gateway: Specify the new route gateway. 
-# new_metric: Specify the new route metric. 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # state: Whether you want to create or delete a network 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) The name of the vserver. 
 }- name: ${2:Name for na_ontap_net_routes module.}
   na_ontap_net_routes:
 ${3:   ${4:destination}: ${5:"#"}}
-${6:   ${7:gateway}: ${8:"#"}}
-${9:   ${10:hostname}: ${11:"#"}}
-${12:   ${13:http_port}: ${14:"#"}}
-${15:   ${16:https}: ${17:"#"}}
-${18:   ${19:metric}: ${20:"#"}}
-${21:   ${22:new_destination}: ${23:"#"}}
-${24:   ${25:new_gateway}: ${26:"#"}}
-${27:   ${28:new_metric}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:vserver}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${6:   ${7:from_destination}: ${8:"#"}}
+${9:   ${10:from_gateway}: ${11:"#"}}
+${12:   ${13:from_metric}: ${14:"#"}}
+${15:   ${16:gateway}: ${17:"#"}}
+${18:   ${19:hostname}: ${20:"#"}}
+${21:   ${22:http_port}: ${23:"#"}}
+${24:   ${25:https}: ${26:"#"}}
+${27:   ${28:metric}: ${29:"#"}}
+${30:   ${31:ontapi}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:vserver}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_net_routes</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

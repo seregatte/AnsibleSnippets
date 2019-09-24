@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# device: Device to work with (e.g. `/dev/sda1'). Needed 
+# force_remove_last_key: If set to `yes', allows removing the last key 
+# keyfile: Used to unlock the container and needed for most 
+# name: Sets container name when `state=opened'. Can be 
+# new_keyfile: Adds additional key to given container on 
+# remove_keyfile: Removes given key from the container on 
+# state: Desired state of the LUKS container. Based on 
+}- name: ${2:Name for luks_device module.}
+  luks_device:
+${3:   ${4:device}: ${5:"#"}}
+${6:   ${7:force_remove_last_key}: ${8:"#"}}
+${9:   ${10:keyfile}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:new_keyfile}: ${17:"#"}}
+${18:   ${19:remove_keyfile}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>luks_device</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

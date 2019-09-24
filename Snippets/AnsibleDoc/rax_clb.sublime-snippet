@@ -18,7 +18,7 @@ ${1:# algorithm: algorithm for the balancer being created
 # timeout: timeout for communication between the balancer 
 # type: type of interface for the balancer being created 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 # vip_id: Virtual IP ID to use when creating the load 
 # wait: wait for the balancer to be in state 'running' 
 # wait_timeout: how long before wait gives up, in seconds 
@@ -42,7 +42,7 @@ ${45:   ${46:tenant_name}: ${47:"#"}}
 ${48:   ${49:timeout}: ${50:"#"}}
 ${51:   ${52:type}: ${53:"#"}}
 ${54:   ${55:username}: ${56:"#"}}
-${57:   ${58:verify_ssl}: ${59:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
 ${60:   ${61:vip_id}: ${62:"#"}}
 ${63:   ${64:wait}: ${65:"#"}}
 ${66:   ${67:wait_timeout}: ${68:"#"}}

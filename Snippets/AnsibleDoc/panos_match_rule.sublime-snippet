@@ -9,7 +9,7 @@ ${1:# api_key: API key that can be used instead of
 # ip_address: (required) IP address (or hostname) of PAN-OS 
 # password: (required) Password credentials to use for auth 
 # protocol: The IP protocol number from 1 to 255. 
-# rule_type: Type of rule. Valid types are `security' or 
+# rule_type: (required) Type of rule. Valid types are 
 # source_ip: (required) The source IP address. 
 # source_port: The source port. 
 # source_user: The source user or group. 

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# memory_percent: memory percent. 
+# name: (required) pool name. 
+# pool_type: pool type. 
+# switch_priority: switch priority, range 1-7. 
+}- name: ${2:Name for onyx_buffer_pool module.}
+  onyx_buffer_pool:
+${3:   ${4:memory_percent}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:pool_type}: ${11:"#"}}
+${12:   ${13:switch_priority}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>onyx_buffer_pool</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

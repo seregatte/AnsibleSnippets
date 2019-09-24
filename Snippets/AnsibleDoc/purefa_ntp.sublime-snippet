@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: (required) FlashArray API token for admin 
+# fa_url: (required) FlashArray management IPv4 address or 
+# ntp_servers: A list of up to 4 alternate NTP servers. These 
+# state: Create or delete NTP servers configuration 
+}- name: ${2:Name for purefa_ntp module.}
+  purefa_ntp:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:fa_url}: ${8:"#"}}
+${9:   ${10:ntp_servers}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>purefa_ntp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

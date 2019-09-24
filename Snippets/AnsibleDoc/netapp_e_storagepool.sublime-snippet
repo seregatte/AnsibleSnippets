@@ -16,7 +16,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # remove_volumes: Prior to removing a storage pool, delete all 
 # reserve_drive_count: Set the number of drives reserved by the storage 
 # secure_pool: Whether to convert to a secure storage pool. 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: (required) Whether the specified storage pool 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_storagepool module.}

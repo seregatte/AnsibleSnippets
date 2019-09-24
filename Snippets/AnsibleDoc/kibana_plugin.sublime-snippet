@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# force: Delete and re-install the plugin. Can be useful 
-# name: (required) Name of the plugin to install 
-# plugin_bin: Location of the plugin binary 
+# name: (required) Name of the plugin to install. 
+# plugin_bin: Location of the Kibana binary. 
 # plugin_dir: Your configured plugin directory specified in 
 # state: Desired state of a plugin. 
-# timeout: Timeout setting: 30s, 1m, 1h... 
+# timeout: Timeout setting: 30s, 1m, 1h etc. 
 # url: Set exact URL to download the plugin from. For 
 # version: Version of the plugin to be installed. If plugin 
 }- name: ${2:Name for kibana_plugin module.}

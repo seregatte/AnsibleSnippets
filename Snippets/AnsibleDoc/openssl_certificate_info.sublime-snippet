@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# path: (required) Remote absolute path where the 
+# select_crypto_backend: Determines which crypto backend to use. The 
+# valid_at: A dict of names mapping to time specifications. 
+}- name: ${2:Name for openssl_certificate_info module.}
+  openssl_certificate_info:
+${3:   ${4:path}: ${5:"#"}}
+${6:   ${7:select_crypto_backend}: ${8:"#"}}
+${9:   ${10:valid_at}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>openssl_certificate_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

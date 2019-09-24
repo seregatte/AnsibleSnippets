@@ -12,7 +12,7 @@ ${1:# bd: The name of the Bridge Domain.
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # preferred: Determines if the Subnet is preferred over all 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # route_profile: The Route Profile to the associate with the 
 # route_profile_l3_out: The L3 Out that contains the assocated Route 
 # scope: Determines the scope of the Subnet. The 

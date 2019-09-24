@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# key: (required) The variables whose values will be 
-# parents: The list of the parent groups 
+# parents: The list of the parent groups. 
 }- name: ${2:Name for group_by module.}
   group_by:
 ${3:   ${4:key}: ${5:"#"}}

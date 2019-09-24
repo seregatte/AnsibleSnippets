@@ -4,28 +4,38 @@ ${1:# admin_distance: Admin distance of the static route.
 # aggregate: List of static route definitions. 
 # auth_pass: *Deprecated* Starting with Ansible 2.5 we 
 # authorize: *Deprecated* Starting with Ansible 2.5 we 
+# interface: Interface of the static route. 
 # mask: Network prefix mask of the static route. 
+# name: Name of the static route 
 # next_hop: Next hop IP of the static route. 
 # prefix: Network prefix of the static route. 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: State of the static route configuration. 
+# tag: Set tag of the static route. 
+# track: Tracked item to depend on for the static route. 
+# vrf: VRF of the static route. 
 }- name: ${2:Name for ios_static_route module.}
   ios_static_route:
 ${3:   ${4:admin_distance}: ${5:"#"}}
 ${6:   ${7:aggregate}: ${8:"#"}}
 ${9:   ${10:auth_pass}: ${11:"#"}}
 ${12:   ${13:authorize}: ${14:"#"}}
-${15:   ${16:mask}: ${17:"#"}}
-${18:   ${19:next_hop}: ${20:"#"}}
-${21:   ${22:prefix}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:state}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${15:   ${16:interface}: ${17:"#"}}
+${18:   ${19:mask}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:next_hop}: ${26:"#"}}
+${27:   ${28:prefix}: ${29:"#"}}
+${30:   ${31:provider}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:tag}: ${38:"#"}}
+${39:   ${40:track}: ${41:"#"}}
+${42:   ${43:vrf}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>ios_static_route</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

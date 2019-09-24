@@ -13,9 +13,9 @@ ${1:# api_version: The api version to be used with the vca
 # state: Configures the state of the vApp. 
 # template_name: The name of the vApp template to use to create 
 # username: The vCloud Air username to use during 
+# validate_certs: If the certificates of the authentication is to 
 # vapp_name: (required) The name of the vCloud Air vApp 
 # vdc_name: The name of the virtual data center (VDC) where 
-# verify_certs: If the certificates of the authentication is to 
 # vm_cpus: The number of vCPUs to configure for the VM in 
 # vm_memory: The amount of memory in MB to allocate to VMs in 
 # vm_name: The name of the virtual machine instance in the 
@@ -34,9 +34,9 @@ ${30:   ${31:service_type}: ${32:"#"}}
 ${33:   ${34:state}: ${35:"#"}}
 ${36:   ${37:template_name}: ${38:"#"}}
 ${39:   ${40:username}: ${41:"#"}}
-${42:   ${43:vapp_name}: ${44:"#"}}
-${45:   ${46:vdc_name}: ${47:"#"}}
-${48:   ${49:verify_certs}: ${50:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:vapp_name}: ${47:"#"}}
+${48:   ${49:vdc_name}: ${50:"#"}}
 ${51:   ${52:vm_cpus}: ${53:"#"}}
 ${54:   ${55:vm_memory}: ${56:"#"}}
 ${57:   ${58:vm_name}: ${59:"#"}}
