@@ -14,14 +14,16 @@ ${1:# hostname: (required) The hostname or IP address of the
 # nfsv41_read_delegation: status for NFS v4.1 read delegation feature. 
 # nfsv41_write_delegation: status for NFS v4.1 write delegation feature. 
 # nfsv4_id_domain: Name of the nfsv4_id_domain to use. 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # service_state: Whether the specified NFS should be enabled or 
 # showmount: Whether SVM allows showmount 
 # state: Whether NFS should exist or not. 
 # tcp: Enable TCP (support from ONTAP 9.3 onward). 
+# tcp_max_xfer_size: TCP Maximum Transfer Size (bytes). The default 
 # udp: Enable UDP (support from ONTAP 9.3 onward). 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) Name of the vserver to use. 
 # vstorage_state: status of vstorage_state. 
 }- name: ${2:Name for na_ontap_nfs module.}
@@ -40,22 +42,24 @@ ${33:   ${34:nfsv41_acl}: ${35:"#"}}
 ${36:   ${37:nfsv41_read_delegation}: ${38:"#"}}
 ${39:   ${40:nfsv41_write_delegation}: ${41:"#"}}
 ${42:   ${43:nfsv4_id_domain}: ${44:"#"}}
-${45:   ${46:password}: ${47:"#"}}
-${48:   ${49:service_state}: ${50:"#"}}
-${51:   ${52:showmount}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:tcp}: ${59:"#"}}
-${60:   ${61:udp}: ${62:"#"}}
-${63:   ${64:username}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:   ${70:vserver}: ${71:"#"}}
-${72:   ${73:vstorage_state}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${45:   ${46:ontapi}: ${47:"#"}}
+${48:   ${49:password}: ${50:"#"}}
+${51:   ${52:service_state}: ${53:"#"}}
+${54:   ${55:showmount}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:tcp}: ${62:"#"}}
+${63:   ${64:tcp_max_xfer_size}: ${65:"#"}}
+${66:   ${67:udp}: ${68:"#"}}
+${69:   ${70:username}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:   ${76:vserver}: ${77:"#"}}
+${78:   ${79:vstorage_state}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_nfs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

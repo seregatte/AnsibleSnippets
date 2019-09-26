@@ -21,7 +21,7 @@ ${1:# address: Address of the storage server. E.g.:
 # type: Storage type. For example: `nfs', `iscsi', etc. 
 # username: A CHAP username for logging into a target. 
 # vfs_type: Virtual File System type. 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_storage_connection module.}
   ovirt_storage_connection:
 ${3:   ${4:address}: ${5:"#"}}

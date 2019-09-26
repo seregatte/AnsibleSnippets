@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# api_token: FlashBlade API token for admin privilaed user. 
+${1:# api_token: FlashBlade API token for admin privileged user. 
 # eradicate: Define whether to eradicate the snapshot on 
 # fb_url: FlashBlade management IP address or Hostname. 
 # name: (required) The name of the source filesystem. 

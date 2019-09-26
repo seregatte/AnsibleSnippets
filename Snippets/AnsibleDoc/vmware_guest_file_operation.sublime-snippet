@@ -3,7 +3,7 @@
 ${1:# cluster: The cluster hosting the virtual machine. If set, 
 # copy: Copy file to vm without requiring network. Valid 
 # datacenter: The datacenter hosting the virtual machine. If 
-# directory: Create or delete directory. Valid attributes 
+# directory: Create or delete a directory. Can be used to 
 # fetch: Get file from virtual machine without requiring 
 # folder: Destination folder, absolute path to find an 
 # hostname: The hostname or IP address of the vSphere 

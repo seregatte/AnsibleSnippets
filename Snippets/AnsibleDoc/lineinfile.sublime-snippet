@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
+${1:# attributes: The attributes the resulting file or directory 
 # backrefs: Used with `state=present'. If set, `line' can 
 # backup: Create a backup file including the timestamp 
 # create: Used with `state=present'. If specified, the 
@@ -8,18 +8,18 @@ ${1:# attributes: Attributes the file or directory should have. To
 # group: Name of the group that should own the 
 # insertafter: Used with `state=present'. If specified, the 
 # insertbefore: Used with `state=present'. If specified, the 
-# line: Required for `state=present'. The line to 
-# mode: Mode the file or directory should be. For those 
+# line: The line to insert/replace into the file. 
+# mode: The permissions the resulting file or directory 
 # others: All arguments accepted by the [file] module also 
 # owner: Name of the user that should own the 
-# path: (required) The file to modify. Before 2.3 this 
+# path: (required) The file to modify. Before Ansible 
 # regexp: The regular expression to look for in every line 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # state: Whether the line should be there or not. 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 # validate: The validation command to run before copying 
 }- name: ${2:Name for lineinfile module.}
   lineinfile:

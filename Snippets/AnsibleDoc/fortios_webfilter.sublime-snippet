@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# host: (required) FortiOS or FortiGate ip adress. 
+${1:# host: (required) FortiOS or FortiGate ip address. 
 # password: FortiOS or FortiGate password. 
 # username: (required) FortiOS or FortiGate username. 
 # vdom: Virtual domain, among those defined previously. 

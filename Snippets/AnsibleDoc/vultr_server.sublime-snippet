@@ -17,6 +17,7 @@ ${1:# api_account: Name of the ini section in the `vultr.ini' file.
 # private_network_enabled: Whether to enable private networking or not. 
 # region: Region the server is deployed into. Required if 
 # reserved_ip_v4: IP address of the floating IP to use as the main 
+# snapshot: Name of snapshot to restore server from. 
 # ssh_keys: List of SSH keys passed to the server on 
 # startup_script: Name of the startup script to execute on boot. 
 # state: State of the server. 
@@ -42,18 +43,19 @@ ${42:   ${43:plan}: ${44:"#"}}
 ${45:   ${46:private_network_enabled}: ${47:"#"}}
 ${48:   ${49:region}: ${50:"#"}}
 ${51:   ${52:reserved_ip_v4}: ${53:"#"}}
-${54:   ${55:ssh_keys}: ${56:"#"}}
-${57:   ${58:startup_script}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:tag}: ${65:"#"}}
-${66:   ${67:user_data}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${54:   ${55:snapshot}: ${56:"#"}}
+${57:   ${58:ssh_keys}: ${59:"#"}}
+${60:   ${61:startup_script}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:tag}: ${68:"#"}}
+${69:   ${70:user_data}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>vultr_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

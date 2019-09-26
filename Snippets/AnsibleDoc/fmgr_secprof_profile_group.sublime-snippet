@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# application_list: Name of an existing Application list. 
+# av_profile: Name of an existing Antivirus profile. 
+# dlp_sensor: Name of an existing DLP sensor. 
+# dnsfilter_profile: Name of an existing DNS filter profile. 
+# icap_profile: Name of an existing ICAP profile. 
+# ips_sensor: Name of an existing IPS sensor. 
+# mms_profile: Name of an existing MMS profile. 
+# mode: Sets one of three modes for managing the object. 
+# name: Profile group name. 
+# profile_protocol_options: Name of an existing Protocol options profile. 
+# spamfilter_profile: Name of an existing Spam filter profile. 
+# ssh_filter_profile: Name of an existing SSH filter profile. 
+# ssl_ssh_profile: Name of an existing SSL SSH profile. 
+# voip_profile: Name of an existing VoIP profile. 
+# waf_profile: Name of an existing Web application firewall 
+# webfilter_profile: Name of an existing Web filter profile. 
+}- name: ${2:Name for fmgr_secprof_profile_group module.}
+  fmgr_secprof_profile_group:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:application_list}: ${8:"#"}}
+${9:   ${10:av_profile}: ${11:"#"}}
+${12:   ${13:dlp_sensor}: ${14:"#"}}
+${15:   ${16:dnsfilter_profile}: ${17:"#"}}
+${18:   ${19:icap_profile}: ${20:"#"}}
+${21:   ${22:ips_sensor}: ${23:"#"}}
+${24:   ${25:mms_profile}: ${26:"#"}}
+${27:   ${28:mode}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:profile_protocol_options}: ${35:"#"}}
+${36:   ${37:spamfilter_profile}: ${38:"#"}}
+${39:   ${40:ssh_filter_profile}: ${41:"#"}}
+${42:   ${43:ssl_ssh_profile}: ${44:"#"}}
+${45:   ${46:voip_profile}: ${47:"#"}}
+${48:   ${49:waf_profile}: ${50:"#"}}
+${51:   ${52:webfilter_profile}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>fmgr_secprof_profile_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

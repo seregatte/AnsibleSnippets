@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# central_nat: Central NAT setting. 
+# fwpolicy6_implicit_log: Implicit Log setting for all IPv6 policies in 
+# fwpolicy_implicit_log: Implicit Log setting for all IPv4 policies in 
+# inspection_mode: Inspection mode setting for the policies flow or 
+# mode: Sets one of three modes for managing the object. 
+# name: (required) Name of the FortiManager package or 
+# ngfw_mode: NGFW mode setting for the policies flow or 
+# object_type: (required) Are we managing packages or folders, 
+# package_folder: Name of the folder you want to put the package 
+# parent_folder: The parent folder name you want to add this 
+# scope_members: The devices or scope that you want to assign 
+# scope_members_vdom: The members VDOM you want to assign the package 
+# ssl_ssh_profile: if policy-based ngfw-mode, refer to firewall 
+}- name: ${2:Name for fmgr_fwpol_package module.}
+  fmgr_fwpol_package:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:central_nat}: ${8:"#"}}
+${9:   ${10:fwpolicy6_implicit_log}: ${11:"#"}}
+${12:   ${13:fwpolicy_implicit_log}: ${14:"#"}}
+${15:   ${16:inspection_mode}: ${17:"#"}}
+${18:   ${19:mode}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:ngfw_mode}: ${26:"#"}}
+${27:   ${28:object_type}: ${29:"#"}}
+${30:   ${31:package_folder}: ${32:"#"}}
+${33:   ${34:parent_folder}: ${35:"#"}}
+${36:   ${37:scope_members}: ${38:"#"}}
+${39:   ${40:scope_members_vdom}: ${41:"#"}}
+${42:   ${43:ssl_ssh_profile}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>fmgr_fwpol_package</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

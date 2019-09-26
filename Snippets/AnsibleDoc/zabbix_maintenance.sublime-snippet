@@ -5,7 +5,7 @@ ${1:# collect_data: Type of maintenance. With data collection, or
 # host_groups: Host groups to manage maintenance window for. 
 # host_names: Hosts to manage maintenance window for. Separate 
 # http_login_password: Basic Auth password 
-# http_login_user: Basic Auth login 
+# http_login_user: (required) Basic Auth login 
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
 # minutes: Length of maintenance window in minutes. 

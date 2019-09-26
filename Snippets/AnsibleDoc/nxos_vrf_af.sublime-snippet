@@ -3,7 +3,6 @@
 ${1:# afi: (required) Address-Family Identifier (AFI). 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # route_target_both_auto_evpn: Enable/Disable the EVPN route-target 'auto' 
-# safi: (required) Sub Address-Family Identifier (SAFI). 
 # state: Determines whether the config should be present 
 # vrf: (required) Name of the VRF. 
 }- name: ${2:Name for nxos_vrf_af module.}
@@ -11,15 +10,14 @@ ${1:# afi: (required) Address-Family Identifier (AFI).
 ${3:   ${4:afi}: ${5:"#"}}
 ${6:   ${7:provider}: ${8:"#"}}
 ${9:   ${10:route_target_both_auto_evpn}: ${11:"#"}}
-${12:   ${13:safi}: ${14:"#"}}
-${15:   ${16:state}: ${17:"#"}}
-${18:   ${19:vrf}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:vrf}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>nxos_vrf_af</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

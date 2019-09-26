@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# description: Specifies descriptive text that identifies the 
+${1:# aggregate: List of pool definitions to be created, modified 
+# description: Specifies descriptive text that identifies the 
 # lb_method: Load balancing method. When creating a new pool, 
 # metadata: Arbitrary key/value pairs that you can attach to 
 # monitor_type: Monitor rule type when `monitors' is specified. 
@@ -11,6 +12,7 @@ ${1:# description: Specifies descriptive text that identifies the
 # priority_group_activation: Specifies whether the system load balances 
 # provider: A dict object containing connection details. 
 # quorum: Monitor quorum value when `monitor_type' is 
+# replace_all_with: Remove pools not defined in the `aggregate' 
 # reselect_tries: Sets the number of times the system tries to 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 
@@ -21,31 +23,33 @@ ${1:# description: Specifies descriptive text that identifies the
 # validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_pool module.}
   bigip_pool:
-${3:   ${4:description}: ${5:"#"}}
-${6:   ${7:lb_method}: ${8:"#"}}
-${9:   ${10:metadata}: ${11:"#"}}
-${12:   ${13:monitor_type}: ${14:"#"}}
-${15:   ${16:monitors}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:partition}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:priority_group_activation}: ${29:"#"}}
-${30:   ${31:provider}: ${32:"#"}}
-${33:   ${34:quorum}: ${35:"#"}}
-${36:   ${37:reselect_tries}: ${38:"#"}}
-${39:   ${40:server}: ${41:"#"}}
-${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:service_down_action}: ${47:"#"}}
-${48:   ${49:slow_ramp_time}: ${50:"#"}}
-${51:   ${52:state}: ${53:"#"}}
-${54:   ${55:user}: ${56:"#"}}
-${57:   ${58:validate_certs}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:lb_method}: ${11:"#"}}
+${12:   ${13:metadata}: ${14:"#"}}
+${15:   ${16:monitor_type}: ${17:"#"}}
+${18:   ${19:monitors}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:partition}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:priority_group_activation}: ${32:"#"}}
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:quorum}: ${38:"#"}}
+${39:   ${40:replace_all_with}: ${41:"#"}}
+${42:   ${43:reselect_tries}: ${44:"#"}}
+${45:   ${46:server}: ${47:"#"}}
+${48:   ${49:server_port}: ${50:"#"}}
+${51:   ${52:service_down_action}: ${53:"#"}}
+${54:   ${55:slow_ramp_time}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:user}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>bigip_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

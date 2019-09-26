@@ -8,7 +8,7 @@ ${1:# admin_state: Enable or disable the span sources. The APIC
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # src_group: The name of the Span source group. 
 # state: Use `present' or `absent' for adding or 
 # tenant: The name of the Tenant. 

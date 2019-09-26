@@ -1,19 +1,19 @@
 <snippet>
 <content><![CDATA[
-${1:# action: (required) What to do with the items this rule 
+${1:# action: What to do with the items this rule is for. 
 # description: Description for the firewall rule. 
-# direction: (required) Is this rule for inbound or outbound 
-# enabled: Is this firewall rule enabled or disabled. 
+# direction: Whether this rule is for inbound or outbound 
+# enabled: Whether this firewall rule is enabled or 
 # force: Replace any existing rule by removing it first. 
-# localip: The local ip address this rule applies to. 
-# localport: The local port this rule applies to. 
-# name: (required) The rules name 
-# profiles: The profile this rule applies to. 
-# program: The program this rule applies to. 
-# protocol: The protocol this rule applies to. 
+# localip: The local ip address this rule applies to. Set 
+# localport: The local port this rule applies to. Set to 
+# name: (required) The rule's display name. 
+# profiles: The profile this rule applies to. Defaults to 
+# program: The program this rule applies to. Set to `any' 
+# protocol: The protocol this rule applies to. Set to `any' 
 # remoteip: The remote ip address/range this rule applies 
-# remoteport: The remote port this rule applies to. 
-# service: The service this rule applies to. 
+# remoteport: The remote port this rule applies to. Set to 
+# service: The service this rule applies to. Set to `any' 
 # state: Should this rule be added or removed. 
 }- name: ${2:Name for win_firewall_rule module.}
   win_firewall_rule:

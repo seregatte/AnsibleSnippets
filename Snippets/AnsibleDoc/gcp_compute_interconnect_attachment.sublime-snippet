@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# candidate_subnets: Up to 16 candidate prefixes that can be used to 
+# description: An optional description of this resource. 
+# edge_availability_domain: Desired availability domain for the attachment. 
+# interconnect: URL of the underlying Interconnect object that 
+# name: (required) Name of the resource. Provided by the 
+# project: The Google Cloud Platform project to use. 
+# region: (required) Region where the regional 
+# router: (required) URL of the cloud router to be used 
+# scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# state: Whether the given object should exist in GCP 
+# type: The type of InterconnectAttachment you wish to 
+# vlan_tag8021q: The IEEE 802.1Q VLAN tag for this attachment, in 
+}- name: ${2:Name for gcp_compute_interconnect_attachment module.}
+  gcp_compute_interconnect_attachment:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:candidate_subnets}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:edge_availability_domain}: ${14:"#"}}
+${15:   ${16:interconnect}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:project}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:router}: ${29:"#"}}
+${30:   ${31:scopes}: ${32:"#"}}
+${33:   ${34:service_account_contents}: ${35:"#"}}
+${36:   ${37:service_account_email}: ${38:"#"}}
+${39:   ${40:service_account_file}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:type}: ${47:"#"}}
+${48:   ${49:vlan_tag8021q}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>gcp_compute_interconnect_attachment</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

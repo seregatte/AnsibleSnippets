@@ -22,7 +22,7 @@ ${1:# appflowlog: Enable logging appflow flow information.
 # persistenceid: The persistence ID for the GSLB virtual server. 
 # persistencetype: Use source IP address based persistence for the 
 # persistmask: The optional IPv4 network mask applied to IPv4 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # service_bindings: List of bindings for gslb services bound to this 
 # servicetype: Protocol used by services bound to the virtual 
 # sobackupaction: Action to be performed if spillover is to take 

@@ -2,42 +2,44 @@
 <content><![CDATA[
 ${1:# dest_cluster_name: The name of the destination cluster name in the 
 # dest_hostname: (required) Destination cluster IP or hostname 
-# dest_intercluster_lif: Intercluster address of the destination cluster. 
+# dest_intercluster_lifs: List of intercluster addresses of the 
 # dest_password: Destination password. Optional if this is same 
 # dest_username: Destination username. Optional if this is same 
 # hostname: (required) The hostname or IP address of the 
 # http_port: Override the default port (80 or 443) with this 
 # https: Enable and disable https 
+# ontapi: The ontap api version to use 
 # passphrase: The arbitrary passphrase that matches the one 
 # password: (required) Password for the specified user. 
 # source_cluster_name: The name of the source cluster name in the peer 
-# source_intercluster_lif: Intercluster address of the source cluster. Used 
+# source_intercluster_lifs: List of intercluster addresses of the source 
 # state: Whether the specified cluster peer should exist 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_cluster_peer module.}
   na_ontap_cluster_peer:
 ${3:   ${4:dest_cluster_name}: ${5:"#"}}
 ${6:   ${7:dest_hostname}: ${8:"#"}}
-${9:   ${10:dest_intercluster_lif}: ${11:"#"}}
+${9:   ${10:dest_intercluster_lifs}: ${11:"#"}}
 ${12:   ${13:dest_password}: ${14:"#"}}
 ${15:   ${16:dest_username}: ${17:"#"}}
 ${18:   ${19:hostname}: ${20:"#"}}
 ${21:   ${22:http_port}: ${23:"#"}}
 ${24:   ${25:https}: ${26:"#"}}
-${27:   ${28:passphrase}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:source_cluster_name}: ${35:"#"}}
-${36:   ${37:source_intercluster_lif}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${27:   ${28:ontapi}: ${29:"#"}}
+${30:   ${31:passphrase}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:source_cluster_name}: ${38:"#"}}
+${39:   ${40:source_intercluster_lifs}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cluster_peer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

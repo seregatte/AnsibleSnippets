@@ -23,7 +23,7 @@ ${1:# appflowlog: Enable logging appflow flow information.
 # port: Port on which the load balancing entity 
 # publicip: The public IP address that a NAT device 
 # publicport: The public port associated with the GSLB 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # servername: Name of the server hosting the GSLB service. 
 # servicename: Name for the GSLB service. Must begin with an 
 # hash: ', period 

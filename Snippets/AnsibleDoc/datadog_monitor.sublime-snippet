@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: (required) Your DataDog API key. 
-# app_key: (required) Your DataDog app key. 
+${1:# api_key: (required) Your Datadog API key. 
+# app_key: (required) Your Datadog app key. 
 # escalation_message: A message to include with a re-notification. 
-# evaluation_delay: Time to delay evaluation (in seconds). It is 
-# id: The id of the alert. If set, will be used 
-# locked: A boolean indicating whether changes to this 
+# evaluation_delay: Time to delay evaluation (in seconds). Effective 
+# id: The ID of the alert. If set, will be used 
+# locked: Whether changes to this monitor should be 
 # message: A message to include with notifications for this 
 # name: (required) The name of the alert. 
 # new_host_delay: A positive integer representing the number of 
 # no_data_timeframe: The number of minutes before a monitor will 
-# notify_audit: A boolean indicating whether tagged users will 
-# notify_no_data: A boolean indicating whether this monitor will 
-# query: The monitor query to notify on with syntax 
+# notify_audit: Whether tagged users will be notified on changes 
+# notify_no_data: Whether this monitor will notify when data stops 
+# query: The monitor query to notify on. Syntax varies 
 # renotify_interval: The number of minutes after the last 
-# require_full_window: A boolean indicating whether this monitor needs 
-# silenced: Dictionary of scopes to timestamps or None. Each 
+# require_full_window: Whether this monitor needs a full window of data 
+# silenced: Dictionary of scopes to silence, with timestamps 
 # state: (required) The designated state of the monitor. 
 # tags: A list of tags to associate with your monitor 
-# thresholds: A dictionary of thresholds by status. This 
+# thresholds: A dictionary of thresholds by status. Only 
 # timeout_h: The number of hours of the monitor not reporting 
-# type: The type of the monitor. The 'event alert'is 
+# type: The type of the monitor. 
 }- name: ${2:Name for datadog_monitor module.}
   datadog_monitor:
 ${3:   ${4:api_key}: ${5:"#"}}

@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: (required) FlashArray API token for admin 
+# fa_url: (required) FlashArray management IPv4 address or 
+# state: Define state of remote assist When set to 
+}- name: ${2:Name for purefa_ra module.}
+  purefa_ra:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:fa_url}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>purefa_ra</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

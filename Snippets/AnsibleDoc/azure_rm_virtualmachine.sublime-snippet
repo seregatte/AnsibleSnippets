@@ -15,13 +15,16 @@ ${1:# accept_terms: Accept terms for marketplace images that require
 # cloud_environment: For cloud environments other than the US public 
 # custom_data: Data which is made available to the virtual 
 # data_disks: Describes list of data disks. 
+# generalized: Use with state `present' to generalize the 
 # image: (required) Specifies the image used to build the 
+# license_type: Specifies that the image or disk that is being 
 # location: Valid Azure location. Defaults to location of 
 # managed_disk_type: Managed OS disk type 
 # name: (required) Name of the virtual machine. 
 # network_interface_names: List of existing network interface names to add 
 # open_ports: If a network interface is created when creating 
 # os_disk_caching: Type of OS disk caching. 
+# os_disk_name: OS disk name 
 # os_disk_size_gb: Type of OS disk size in GB. 
 # os_type: Base type of operating system. 
 # password: Active Directory user password. Use when 
@@ -30,15 +33,15 @@ ${1:# accept_terms: Accept terms for marketplace images that require
 # public_ip_allocation_method: If a public IP address is created when creating 
 # remove_on_absent: When removing a VM using state 'absent', also 
 # resource_group: (required) Name of the resource group containing 
-# restarted: Use with state 'present' to restart a running 
+# restarted: Use with state `present' to restart a running 
 # secret: Azure client secret. Use when authenticating 
 # short_hostname: Name assigned internally to the host. On a linux 
 # ssh_password_enabled: When the os_type is Linux, setting 
 # ssh_public_keys: For os_type Linux provide a list of SSH keys. 
-# started: Use with state 'present' to start the machine. 
+# started: Use with state `present' to start the machine. 
 # state: Assert the state of the virtual machine. State 
 # storage_account_name: Name of an existing storage account that 
-# storage_blob_name: Name fo the storage blob used to hold the VM's 
+# storage_blob_name: Name of the storage blob used to hold the VM's 
 # storage_container_name: Name of the container to use within the storage 
 # subnet_name: When creating a virtual machine, if a network 
 # subscription_id: Your Azure subscription Id. 
@@ -46,7 +49,10 @@ ${1:# accept_terms: Accept terms for marketplace images that require
 # tenant: Azure tenant ID. Use when authenticating with a 
 # virtual_network_name: When creating a virtual machine, if a network 
 # virtual_network_resource_group: When creating a virtual machine, if a specific 
+# vm_identity: Identity for the virtual machine. 
 # vm_size: A valid Azure VM size value. For example, 
+# winrm: List of Windows Remote Management configurations 
+# zones: A list of Availability Zones for your virtual 
 }- name: ${2:Name for azure_rm_virtualmachine module.}
   azure_rm_virtualmachine:
 ${3:   ${4:accept_terms}: ${5:"#"}}
@@ -64,44 +70,50 @@ ${36:   ${37:client_id}: ${38:"#"}}
 ${39:   ${40:cloud_environment}: ${41:"#"}}
 ${42:   ${43:custom_data}: ${44:"#"}}
 ${45:   ${46:data_disks}: ${47:"#"}}
-${48:   ${49:image}: ${50:"#"}}
-${51:   ${52:location}: ${53:"#"}}
-${54:   ${55:managed_disk_type}: ${56:"#"}}
-${57:   ${58:name}: ${59:"#"}}
-${60:   ${61:network_interface_names}: ${62:"#"}}
-${63:   ${64:open_ports}: ${65:"#"}}
-${66:   ${67:os_disk_caching}: ${68:"#"}}
-${69:   ${70:os_disk_size_gb}: ${71:"#"}}
-${72:   ${73:os_type}: ${74:"#"}}
-${75:   ${76:password}: ${77:"#"}}
-${78:   ${79:plan}: ${80:"#"}}
-${81:   ${82:profile}: ${83:"#"}}
-${84:   ${85:public_ip_allocation_method}: ${86:"#"}}
-${87:   ${88:remove_on_absent}: ${89:"#"}}
-${90:   ${91:resource_group}: ${92:"#"}}
-${93:   ${94:restarted}: ${95:"#"}}
-${96:   ${97:secret}: ${98:"#"}}
-${99:   ${100:short_hostname}: ${101:"#"}}
-${102:   ${103:ssh_password_enabled}: ${104:"#"}}
-${105:   ${106:ssh_public_keys}: ${107:"#"}}
-${108:   ${109:started}: ${110:"#"}}
-${111:   ${112:state}: ${113:"#"}}
-${114:   ${115:storage_account_name}: ${116:"#"}}
-${117:   ${118:storage_blob_name}: ${119:"#"}}
-${120:   ${121:storage_container_name}: ${122:"#"}}
-${123:   ${124:subnet_name}: ${125:"#"}}
-${126:   ${127:subscription_id}: ${128:"#"}}
-${129:   ${130:tags}: ${131:"#"}}
-${132:   ${133:tenant}: ${134:"#"}}
-${135:   ${136:virtual_network_name}: ${137:"#"}}
-${138:   ${139:virtual_network_resource_group}: ${140:"#"}}
-${141:   ${142:vm_size}: ${143:"#"}}
-${144:${145:   become: ${146:true}} 
-${147:   become_method: ${148:su}} 
-${149:   become_user: ${150:nobody}} 
-${151:   become_flags: ${152:"-s /bin/sh"}}} 
-${153:   when: ${154:variable is defined}} 
-${155:   with_items: ${156:array}} 
+${48:   ${49:generalized}: ${50:"#"}}
+${51:   ${52:image}: ${53:"#"}}
+${54:   ${55:license_type}: ${56:"#"}}
+${57:   ${58:location}: ${59:"#"}}
+${60:   ${61:managed_disk_type}: ${62:"#"}}
+${63:   ${64:name}: ${65:"#"}}
+${66:   ${67:network_interface_names}: ${68:"#"}}
+${69:   ${70:open_ports}: ${71:"#"}}
+${72:   ${73:os_disk_caching}: ${74:"#"}}
+${75:   ${76:os_disk_name}: ${77:"#"}}
+${78:   ${79:os_disk_size_gb}: ${80:"#"}}
+${81:   ${82:os_type}: ${83:"#"}}
+${84:   ${85:password}: ${86:"#"}}
+${87:   ${88:plan}: ${89:"#"}}
+${90:   ${91:profile}: ${92:"#"}}
+${93:   ${94:public_ip_allocation_method}: ${95:"#"}}
+${96:   ${97:remove_on_absent}: ${98:"#"}}
+${99:   ${100:resource_group}: ${101:"#"}}
+${102:   ${103:restarted}: ${104:"#"}}
+${105:   ${106:secret}: ${107:"#"}}
+${108:   ${109:short_hostname}: ${110:"#"}}
+${111:   ${112:ssh_password_enabled}: ${113:"#"}}
+${114:   ${115:ssh_public_keys}: ${116:"#"}}
+${117:   ${118:started}: ${119:"#"}}
+${120:   ${121:state}: ${122:"#"}}
+${123:   ${124:storage_account_name}: ${125:"#"}}
+${126:   ${127:storage_blob_name}: ${128:"#"}}
+${129:   ${130:storage_container_name}: ${131:"#"}}
+${132:   ${133:subnet_name}: ${134:"#"}}
+${135:   ${136:subscription_id}: ${137:"#"}}
+${138:   ${139:tags}: ${140:"#"}}
+${141:   ${142:tenant}: ${143:"#"}}
+${144:   ${145:virtual_network_name}: ${146:"#"}}
+${147:   ${148:virtual_network_resource_group}: ${149:"#"}}
+${150:   ${151:vm_identity}: ${152:"#"}}
+${153:   ${154:vm_size}: ${155:"#"}}
+${156:   ${157:winrm}: ${158:"#"}}
+${159:   ${160:zones}: ${161:"#"}}
+${162:${163:   become: ${164:true}} 
+${165:   become_method: ${166:su}} 
+${167:   become_user: ${168:nobody}} 
+${169:   become_flags: ${170:"-s /bin/sh"}}} 
+${171:   when: ${172:variable is defined}} 
+${173:   with_items: ${174:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_virtualmachine</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

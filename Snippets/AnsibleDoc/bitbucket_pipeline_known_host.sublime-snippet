@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# client_id: The OAuth consumer key. If not set the 
+# client_secret: The OAuth consumer secret. If not set the 
+# key: The public key. 
+# name: (required) The FQDN of the known host. 
+# repository: (required) The repository name. 
+# state: (required) Indicates desired state of the 
+# username: (required) The repository owner. 
+}- name: ${2:Name for bitbucket_pipeline_known_host module.}
+  bitbucket_pipeline_known_host:
+${3:   ${4:client_id}: ${5:"#"}}
+${6:   ${7:client_secret}: ${8:"#"}}
+${9:   ${10:key}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:repository}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>bitbucket_pipeline_known_host</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

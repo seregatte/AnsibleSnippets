@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# announce_interval: configure PTP announce setting for interval, 
+# announce_timeout: configure PTP announce setting for timeout, 
+# delay_request: configure PTP delay request interval, Range 0-5 
+# name: (required) ethernet or vlan interface name that 
+# state: Enable/Disable PTP on Interface 
+# sync_interval: configure PTP sync interval, Range -7--1 
+}- name: ${2:Name for onyx_ptp_interface module.}
+  onyx_ptp_interface:
+${3:   ${4:announce_interval}: ${5:"#"}}
+${6:   ${7:announce_timeout}: ${8:"#"}}
+${9:   ${10:delay_request}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:sync_interval}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>onyx_ptp_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

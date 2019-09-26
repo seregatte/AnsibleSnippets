@@ -9,7 +9,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # log_path: A local path to a file to be used for debug 
 # name: (required) If the host doesn't yet exist, the 
 # ports: A list of host ports you wish to associate with 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: Set to absent to remove an existing host Set to 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_host module.}

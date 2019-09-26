@@ -16,7 +16,7 @@ ${1:# ad_user: Active Directory username. Use when
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) Name of the resource group to which 
 # secret: Azure client secret. Use when authenticating 
-# sku: The pricing tiers, e.g., F1, D1, B1, B2, B3, S1, 
+# sku: The pricing tiers, e.g., `F1', `D1', `B1', `B2', 
 # state: Assert the state of the app service plan. Use 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

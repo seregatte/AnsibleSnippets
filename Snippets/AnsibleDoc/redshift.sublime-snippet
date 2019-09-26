@@ -12,6 +12,7 @@ ${1:# allow_version_upgrade: flag to determinate if upgrade of version is
 # cluster_version: which version the cluster should have 
 # command: (required) Specifies the action to take. 
 # db_name: Name of the database. 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # elastic_ip: if the cluster has an elastic IP or not 
 # encrypted: if the cluster is encrypted or not 
@@ -48,34 +49,35 @@ ${27:   ${28:cluster_type}: ${29:"#"}}
 ${30:   ${31:cluster_version}: ${32:"#"}}
 ${33:   ${34:command}: ${35:"#"}}
 ${36:   ${37:db_name}: ${38:"#"}}
-${39:   ${40:ec2_url}: ${41:"#"}}
-${42:   ${43:elastic_ip}: ${44:"#"}}
-${45:   ${46:encrypted}: ${47:"#"}}
-${48:   ${49:final_cluster_snapshot_identifier}: ${50:"#"}}
-${51:   ${52:identifier}: ${53:"#"}}
-${54:   ${55:new_cluster_identifier}: ${56:"#"}}
-${57:   ${58:node_type}: ${59:"#"}}
-${60:   ${61:number_of_nodes}: ${62:"#"}}
-${63:   ${64:password}: ${65:"#"}}
-${66:   ${67:port}: ${68:"#"}}
-${69:   ${70:preferred_maintenance_window}: ${71:"#"}}
-${72:   ${73:profile}: ${74:"#"}}
-${75:   ${76:publicly_accessible}: ${77:"#"}}
-${78:   ${79:region}: ${80:"#"}}
-${81:   ${82:}: ${83:"#"}}
-${84:   ${85:security_token}: ${86:"#"}}
-${87:   ${88:skip_final_cluster_snapshot}: ${89:"#"}}
-${90:   ${91:username}: ${92:"#"}}
-${93:   ${94:validate_certs}: ${95:"#"}}
-${96:   ${97:vpc_security_group_ids}: ${98:"#"}}
-${99:   ${100:wait}: ${101:"#"}}
-${102:   ${103:wait_timeout}: ${104:"#"}}
-${105:${106:   become: ${107:true}} 
-${108:   become_method: ${109:su}} 
-${110:   become_user: ${111:nobody}} 
-${112:   become_flags: ${113:"-s /bin/sh"}}} 
-${114:   when: ${115:variable is defined}} 
-${116:   with_items: ${117:array}} 
+${39:   ${40:debug_botocore_endpoint_logs}: ${41:"#"}}
+${42:   ${43:ec2_url}: ${44:"#"}}
+${45:   ${46:elastic_ip}: ${47:"#"}}
+${48:   ${49:encrypted}: ${50:"#"}}
+${51:   ${52:final_cluster_snapshot_identifier}: ${53:"#"}}
+${54:   ${55:identifier}: ${56:"#"}}
+${57:   ${58:new_cluster_identifier}: ${59:"#"}}
+${60:   ${61:node_type}: ${62:"#"}}
+${63:   ${64:number_of_nodes}: ${65:"#"}}
+${66:   ${67:password}: ${68:"#"}}
+${69:   ${70:port}: ${71:"#"}}
+${72:   ${73:preferred_maintenance_window}: ${74:"#"}}
+${75:   ${76:profile}: ${77:"#"}}
+${78:   ${79:publicly_accessible}: ${80:"#"}}
+${81:   ${82:region}: ${83:"#"}}
+${84:   ${85:}: ${86:"#"}}
+${87:   ${88:security_token}: ${89:"#"}}
+${90:   ${91:skip_final_cluster_snapshot}: ${92:"#"}}
+${93:   ${94:username}: ${95:"#"}}
+${96:   ${97:validate_certs}: ${98:"#"}}
+${99:   ${100:vpc_security_group_ids}: ${101:"#"}}
+${102:   ${103:wait}: ${104:"#"}}
+${105:   ${106:wait_timeout}: ${107:"#"}}
+${108:${109:   become: ${110:true}} 
+${111:   become_method: ${112:su}} 
+${113:   become_user: ${114:nobody}} 
+${115:   become_flags: ${116:"-s /bin/sh"}}} 
+${117:   when: ${118:variable is defined}} 
+${119:   with_items: ${120:array}} 
 ]]></content>
 	<tabTrigger>redshift</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

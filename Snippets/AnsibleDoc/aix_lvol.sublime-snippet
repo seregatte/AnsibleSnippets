@@ -5,7 +5,7 @@ ${1:# copies: The number of copies of the logical volume.
 # lv_type: The type of the logical volume. 
 # opts: Free-form options to be passed to the mklv 
 # policy: Sets the interphysical volume allocation policy. 
-# pvs: Comma separated list of physical volumes e.g. 
+# pvs: A list of physical volumes e.g. `hdisk1,hdisk2'. 
 # size: The size of the logical volume with one of the 
 # state: Control if the logical volume exists. If 
 # vg: (required) The volume group this logical volume 

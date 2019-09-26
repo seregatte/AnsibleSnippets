@@ -3,7 +3,7 @@
 ${1:# ad_user: Active Directory username. Use when 
 # adfs_authority_url: Azure AD authority url. Use when authenticating 
 # api_profile: Selects an API profile to use when communicating 
-# api_version: (required) Specific API version to be used. 
+# api_version: Specific API version to be used. 
 # auth_source: Controls the source of the credentials to use 
 # body: The body of the http request/response to the web 
 # cert_validation_mode: Controls the certificate validation behavior for 
@@ -12,6 +12,8 @@ ${1:# ad_user: Active Directory username. Use when
 # idempotency: If enabled, idempotency check will be done by 
 # method: The HTTP method of the request or response. It 
 # password: Active Directory user password. Use when 
+# polling_interval: If enabled, idempotency check will be done by 
+# polling_timeout: If enabled, idempotency check will be done by 
 # profile: Security profile found in ~/.azure/credentials 
 # provider: Provider type. Required if URL is not specified. 
 # resource_group: Resource group to be used. Required if URL is 
@@ -38,24 +40,26 @@ ${27:   ${28:cloud_environment}: ${29:"#"}}
 ${30:   ${31:idempotency}: ${32:"#"}}
 ${33:   ${34:method}: ${35:"#"}}
 ${36:   ${37:password}: ${38:"#"}}
-${39:   ${40:profile}: ${41:"#"}}
-${42:   ${43:provider}: ${44:"#"}}
-${45:   ${46:resource_group}: ${47:"#"}}
-${48:   ${49:resource_name}: ${50:"#"}}
-${51:   ${52:resource_type}: ${53:"#"}}
-${54:   ${55:secret}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:status_code}: ${62:"#"}}
-${63:   ${64:subresource}: ${65:"#"}}
-${66:   ${67:subscription_id}: ${68:"#"}}
-${69:   ${70:tenant}: ${71:"#"}}
-${72:   ${73:url}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${39:   ${40:polling_interval}: ${41:"#"}}
+${42:   ${43:polling_timeout}: ${44:"#"}}
+${45:   ${46:profile}: ${47:"#"}}
+${48:   ${49:provider}: ${50:"#"}}
+${51:   ${52:resource_group}: ${53:"#"}}
+${54:   ${55:resource_name}: ${56:"#"}}
+${57:   ${58:resource_type}: ${59:"#"}}
+${60:   ${61:secret}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:status_code}: ${68:"#"}}
+${69:   ${70:subresource}: ${71:"#"}}
+${72:   ${73:subscription_id}: ${74:"#"}}
+${75:   ${76:tenant}: ${77:"#"}}
+${78:   ${79:url}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_resource</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

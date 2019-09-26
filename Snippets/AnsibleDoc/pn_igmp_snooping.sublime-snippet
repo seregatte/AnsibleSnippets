@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_cliswitch: Target switch to run the CLI on. 
+# pn_enable: enable or disable IGMP snooping. 
+# pn_enable_vlans: enable per VLAN IGMP snooping. 
+# pn_igmpv2_vlans: VLANs on which to use IGMPv2 protocol. 
+# pn_igmpv3_vlans: VLANs on which to use IGMPv3 protocol. 
+# pn_no_snoop_linklocal_vlans: Remove snooping of link-local 
+# pn_query_interval: IGMP query interval in seconds. 
+# pn_query_max_response_time: maximum response time, in seconds, advertised in 
+# pn_scope: IGMP snooping scope - fabric or local. 
+# pn_snoop_linklocal_vlans: Allow snooping of link-local 
+# pn_vxlan: enable or disable IGMP snooping on vxlans. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_igmp_snooping module.}
+  pn_igmp_snooping:
+${3:   ${4:pn_cliswitch}: ${5:"#"}}
+${6:   ${7:pn_enable}: ${8:"#"}}
+${9:   ${10:pn_enable_vlans}: ${11:"#"}}
+${12:   ${13:pn_igmpv2_vlans}: ${14:"#"}}
+${15:   ${16:pn_igmpv3_vlans}: ${17:"#"}}
+${18:   ${19:pn_no_snoop_linklocal_vlans}: ${20:"#"}}
+${21:   ${22:pn_query_interval}: ${23:"#"}}
+${24:   ${25:pn_query_max_response_time}: ${26:"#"}}
+${27:   ${28:pn_scope}: ${29:"#"}}
+${30:   ${31:pn_snoop_linklocal_vlans}: ${32:"#"}}
+${33:   ${34:pn_vxlan}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>pn_igmp_snooping</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

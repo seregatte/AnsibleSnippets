@@ -4,7 +4,7 @@ ${1:# access_policy_number: Number of the access policy to apply. Only
 # allowed_vlans: List of VLAN numbers to be allowed on 
 # auth_key: Authentication key provided by the dashboard. 
 # enabled: Whether a switchport should be enabled or 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # isolation_enabled: Isolation status of switchport. 
 # link_negotiation: Link speed for the switchport. 
 # name: Switchport description. 

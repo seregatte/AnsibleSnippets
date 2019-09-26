@@ -1,27 +1,31 @@
 <snippet>
 <content><![CDATA[
-${1:# force: (required) The `force' argument instructs the 
+${1:# force: The `force' argument instructs the module to 
+# force_host: The `force_host' argument controls the way 
+# issu: The `issu' argument is a boolean flag when set 
 # no_copy: The `no_copy' argument is responsible for 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
-# reboot: (required) In order for a package to take 
+# reboot: In order for a package to take effect, the 
 # src: (required) The `src' argument specifies the path 
 # validate: The `validate' argument is responsible for 
 # version: The `version' argument can be used to explicitly 
 }- name: ${2:Name for junos_package module.}
   junos_package:
 ${3:   ${4:force}: ${5:"#"}}
-${6:   ${7:no_copy}: ${8:"#"}}
-${9:   ${10:provider}: ${11:"#"}}
-${12:   ${13:reboot}: ${14:"#"}}
-${15:   ${16:src}: ${17:"#"}}
-${18:   ${19:validate}: ${20:"#"}}
-${21:   ${22:version}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${6:   ${7:force_host}: ${8:"#"}}
+${9:   ${10:issu}: ${11:"#"}}
+${12:   ${13:no_copy}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:reboot}: ${20:"#"}}
+${21:   ${22:src}: ${23:"#"}}
+${24:   ${25:validate}: ${26:"#"}}
+${27:   ${28:version}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>junos_package</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

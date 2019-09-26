@@ -10,7 +10,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # state: Should the affinity label be present or absent. 
 # timeout: The amount of time in seconds the module should 
 # vms: List of the VMs names, which should have 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_affinity_label module.}
   ovirt_affinity_label:
 ${3:   ${4:auth}: ${5:"#"}}

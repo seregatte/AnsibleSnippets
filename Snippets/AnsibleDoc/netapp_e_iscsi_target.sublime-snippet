@@ -7,7 +7,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # log_path: A local path (on the Ansible controller), to a 
 # name: The name/alias to assign to the iSCSI target. 
 # ping: Enable ICMP ping responses from the configured 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # unnamed_discovery: When an initiator initiates a discovery session 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_iscsi_target module.}

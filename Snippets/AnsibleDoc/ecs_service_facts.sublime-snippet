@@ -3,6 +3,7 @@
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # cluster: The cluster ARNS in which to list the services. 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # details: Set this to true if you want detailed 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # events: Whether to return ECS service events. Only has 
@@ -17,21 +18,22 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:cluster}: ${11:"#"}}
-${12:   ${13:details}: ${14:"#"}}
-${15:   ${16:ec2_url}: ${17:"#"}}
-${18:   ${19:events}: ${20:"#"}}
-${21:   ${22:profile}: ${23:"#"}}
-${24:   ${25:region}: ${26:"#"}}
-${27:   ${28:}: ${29:"#"}}
-${30:   ${31:security_token}: ${32:"#"}}
-${33:   ${34:service}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:details}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:events}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:service}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>ecs_service_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

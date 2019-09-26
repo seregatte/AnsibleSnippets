@@ -3,7 +3,7 @@
 ${1:# link: The path to the symbolic link that should point 
 # name: (required) The generic name of the link. 
 # path: (required) The path to the real executable that 
-# priority: The priority of the alternative 
+# priority: The priority of the alternative. 
 }- name: ${2:Name for alternatives module.}
   alternatives:
 ${3:   ${4:link}: ${5:"#"}}

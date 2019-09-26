@@ -24,7 +24,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # posixfs: Dictionary with values for PosixFS storage type: 
 # state: Should the storage domain be present/absent/main 
 # timeout: The amount of time in seconds the module should 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 # warning_low_space: Indicates the minimum percentage of a free space 
 # wipe_after_delete: Boolean flag which indicates whether the storage 
 }- name: ${2:Name for ovirt_storage_domain module.}

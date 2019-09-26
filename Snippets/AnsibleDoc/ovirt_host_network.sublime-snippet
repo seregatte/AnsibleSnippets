@@ -12,8 +12,9 @@ ${1:# auth: (required) Dictionary with values needed to
 # poll_interval: Number of the seconds the module waits until 
 # save: If `true' network configuration will be 
 # state: Should the host be present/absent. 
+# sync_networks: If `true' all networks will be synchronized 
 # timeout: The amount of time in seconds the module should 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_host_network module.}
   ovirt_host_network:
 ${3:   ${4:auth}: ${5:"#"}}
@@ -28,14 +29,15 @@ ${27:   ${28:networks}: ${29:"#"}}
 ${30:   ${31:poll_interval}: ${32:"#"}}
 ${33:   ${34:save}: ${35:"#"}}
 ${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:timeout}: ${41:"#"}}
-${42:   ${43:wait}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${39:   ${40:sync_networks}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:wait}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>ovirt_host_network</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

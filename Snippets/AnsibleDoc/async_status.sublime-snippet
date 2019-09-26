@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# jid: (required) Job or task identifier 
-# mode: if `status', obtain the status; if `cleanup', 
+# mode: If `status', obtain the status. If `cleanup', 
 }- name: ${2:Name for async_status module.}
   async_status:
 ${3:   ${4:jid}: ${5:"#"}}

@@ -3,10 +3,10 @@
 ${1:# force: Only updates an existing macro if set to `yes'. 
 # host_name: (required) Name of the host. 
 # http_login_password: Basic Auth password 
-# http_login_user: Basic Auth login 
+# http_login_user: (required) Basic Auth login 
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
-# macro_name: (required) Name of the host macro. 
+# macro_name: (required) Name of the host macro without the 
 # macro_value: (required) Value of the host macro. 
 # server_url: (required) URL of Zabbix server, with protocol 
 # state: State of the macro. On `present', it will create 

@@ -1,13 +1,14 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_kind: (required) The type of credential used. 
-# config: A reference to the instance configuration. 
+# config: (required) The name of the instance's 
 # display_name: (required) The descriptive name for this 
-# labels: Cloud Labels are a flexible and lightweight 
-# name: A unique identifier for the instance, which 
+# labels: An object containing a list of "key": value 
+# name: (required) A unique identifier for the instance, 
 # node_count: The number of nodes allocated to this instance. 
 # project: The Google Cloud Platform project to use. 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # state: Whether the given object should exist in GCP 
@@ -21,15 +22,16 @@ ${15:   ${16:name}: ${17:"#"}}
 ${18:   ${19:node_count}: ${20:"#"}}
 ${21:   ${22:project}: ${23:"#"}}
 ${24:   ${25:scopes}: ${26:"#"}}
-${27:   ${28:service_account_email}: ${29:"#"}}
-${30:   ${31:service_account_file}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${27:   ${28:service_account_contents}: ${29:"#"}}
+${30:   ${31:service_account_email}: ${32:"#"}}
+${33:   ${34:service_account_file}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>gcp_spanner_instance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

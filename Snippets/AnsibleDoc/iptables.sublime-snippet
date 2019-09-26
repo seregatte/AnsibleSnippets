@@ -1,13 +1,15 @@
 <snippet>
 <content><![CDATA[
 ${1:# action: Whether the rule should be appended at the 
-# chain: Chain to operate on. This option can either be 
+# chain: Specify the iptables chain to modify. This could 
 # comment: This specifies a comment that will be added to 
 # ctstate: `ctstate' is a list of the connection states to 
 # destination: Destination specification. Address can be either 
 # destination_port: Destination port or port range specification. 
+# dst_range: Specifies the destination IP range to match in 
 # flush: Flushes the specified table and chain of all 
 # fragment: This means that the rule only refers to second 
+# gateway: This specifies the IP address of host to send 
 # goto: This specifies that the processing should 
 # icmp_type: This allows specification of the ICMP type, 
 # in_interface: Name of an interface via which a packet was 
@@ -15,6 +17,7 @@ ${1:# action: Whether the rule should be appended at the
 # jump: This specifies the target of the rule; i.e., 
 # limit: Specifies the maximum average number of matches 
 # limit_burst: Specifies the maximum burst before the above 
+# log_level: Logging level according to the syslogd-defined 
 # log_prefix: Specifies a log text for the rule. Only make 
 # match: Specifies a match to use, that is, an extension 
 # out_interface: Name of an interface via which a packet is going 
@@ -27,6 +30,7 @@ ${1:# action: Whether the rule should be appended at the
 # set_dscp_mark_class: This allows specifying a predefined DiffServ 
 # source: Source specification. Address can be either a 
 # source_port: Source port or port range specification. This 
+# src_range: Specifies the source IP range to match in the 
 # state: Whether the rule should be absent or present. 
 # syn: This allows matching packets that have the SYN 
 # table: This option specifies the packet matching table 
@@ -43,41 +47,45 @@ ${9:   ${10:comment}: ${11:"#"}}
 ${12:   ${13:ctstate}: ${14:"#"}}
 ${15:   ${16:destination}: ${17:"#"}}
 ${18:   ${19:destination_port}: ${20:"#"}}
-${21:   ${22:flush}: ${23:"#"}}
-${24:   ${25:fragment}: ${26:"#"}}
-${27:   ${28:goto}: ${29:"#"}}
-${30:   ${31:icmp_type}: ${32:"#"}}
-${33:   ${34:in_interface}: ${35:"#"}}
-${36:   ${37:ip_version}: ${38:"#"}}
-${39:   ${40:jump}: ${41:"#"}}
-${42:   ${43:limit}: ${44:"#"}}
-${45:   ${46:limit_burst}: ${47:"#"}}
-${48:   ${49:log_prefix}: ${50:"#"}}
-${51:   ${52:match}: ${53:"#"}}
-${54:   ${55:out_interface}: ${56:"#"}}
-${57:   ${58:policy}: ${59:"#"}}
-${60:   ${61:protocol}: ${62:"#"}}
-${63:   ${64:reject_with}: ${65:"#"}}
-${66:   ${67:rule_num}: ${68:"#"}}
-${69:   ${70:set_counters}: ${71:"#"}}
-${72:   ${73:set_dscp_mark}: ${74:"#"}}
-${75:   ${76:set_dscp_mark_class}: ${77:"#"}}
-${78:   ${79:source}: ${80:"#"}}
-${81:   ${82:source_port}: ${83:"#"}}
-${84:   ${85:state}: ${86:"#"}}
-${87:   ${88:syn}: ${89:"#"}}
-${90:   ${91:table}: ${92:"#"}}
-${93:   ${94:tcp_flags}: ${95:"#"}}
-${96:   ${97:to_destination}: ${98:"#"}}
-${99:   ${100:to_ports}: ${101:"#"}}
-${102:   ${103:to_source}: ${104:"#"}}
-${105:   ${106:uid_owner}: ${107:"#"}}
-${108:${109:   become: ${110:true}} 
-${111:   become_method: ${112:su}} 
-${113:   become_user: ${114:nobody}} 
-${115:   become_flags: ${116:"-s /bin/sh"}}} 
-${117:   when: ${118:variable is defined}} 
-${119:   with_items: ${120:array}} 
+${21:   ${22:dst_range}: ${23:"#"}}
+${24:   ${25:flush}: ${26:"#"}}
+${27:   ${28:fragment}: ${29:"#"}}
+${30:   ${31:gateway}: ${32:"#"}}
+${33:   ${34:goto}: ${35:"#"}}
+${36:   ${37:icmp_type}: ${38:"#"}}
+${39:   ${40:in_interface}: ${41:"#"}}
+${42:   ${43:ip_version}: ${44:"#"}}
+${45:   ${46:jump}: ${47:"#"}}
+${48:   ${49:limit}: ${50:"#"}}
+${51:   ${52:limit_burst}: ${53:"#"}}
+${54:   ${55:log_level}: ${56:"#"}}
+${57:   ${58:log_prefix}: ${59:"#"}}
+${60:   ${61:match}: ${62:"#"}}
+${63:   ${64:out_interface}: ${65:"#"}}
+${66:   ${67:policy}: ${68:"#"}}
+${69:   ${70:protocol}: ${71:"#"}}
+${72:   ${73:reject_with}: ${74:"#"}}
+${75:   ${76:rule_num}: ${77:"#"}}
+${78:   ${79:set_counters}: ${80:"#"}}
+${81:   ${82:set_dscp_mark}: ${83:"#"}}
+${84:   ${85:set_dscp_mark_class}: ${86:"#"}}
+${87:   ${88:source}: ${89:"#"}}
+${90:   ${91:source_port}: ${92:"#"}}
+${93:   ${94:src_range}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:   ${100:syn}: ${101:"#"}}
+${102:   ${103:table}: ${104:"#"}}
+${105:   ${106:tcp_flags}: ${107:"#"}}
+${108:   ${109:to_destination}: ${110:"#"}}
+${111:   ${112:to_ports}: ${113:"#"}}
+${114:   ${115:to_source}: ${116:"#"}}
+${117:   ${118:uid_owner}: ${119:"#"}}
+${120:${121:   become: ${122:true}} 
+${123:   become_method: ${124:su}} 
+${125:   become_user: ${126:nobody}} 
+${127:   become_flags: ${128:"-s /bin/sh"}}} 
+${129:   when: ${130:variable is defined}} 
+${131:   with_items: ${132:array}} 
 ]]></content>
 	<tabTrigger>iptables</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

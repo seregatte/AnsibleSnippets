@@ -18,7 +18,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # type: Type of the external provider. 
 # url: URL where external provider is hosted. 
 # username: Username to be used for login to external 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_external_provider module.}
   ovirt_external_provider:
 ${3:   ${4:auth}: ${5:"#"}}

@@ -7,8 +7,8 @@ ${1:# api_key: API key that can be used instead of
 # ip_address: (required) IP address (or hostname) of PAN-OS 
 # operation: (required) The operation to perform Supported 
 # password: (required) Password for authentication. 
+# sag_match_filter: Static filter user by the address group 
 # sag_name: (required) name of the dynamic address group 
-# static_match_filter: (required) Static filter user by the address 
 # tags: Tags to be associated with the address group 
 # username: Username for authentication. 
 }- name: ${2:Name for panos_sag module.}
@@ -20,8 +20,8 @@ ${12:   ${13:devicegroup}: ${14:"#"}}
 ${15:   ${16:ip_address}: ${17:"#"}}
 ${18:   ${19:operation}: ${20:"#"}}
 ${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:sag_name}: ${26:"#"}}
-${27:   ${28:static_match_filter}: ${29:"#"}}
+${24:   ${25:sag_match_filter}: ${26:"#"}}
+${27:   ${28:sag_name}: ${29:"#"}}
 ${30:   ${31:tags}: ${32:"#"}}
 ${33:   ${34:username}: ${35:"#"}}
 ${36:${37:   become: ${38:true}} 

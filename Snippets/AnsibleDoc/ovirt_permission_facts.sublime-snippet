@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# auth: (required) Dictionary with values needed to 
 # authz_name: (required) Authorization provider of the 
-# fetch_nested: If `True' the module will fetch additional data 
+# fetch_nested: If `yes' the module will fetch additional data 
 # group_name: Name of the group to manage. 
 # namespace: Namespace of the authorization provider, where 
 # nested_attributes: Specifies list of the attributes which should be 

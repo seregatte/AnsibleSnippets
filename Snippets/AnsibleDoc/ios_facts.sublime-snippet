@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
 # authorize: *Deprecated* Starting with Ansible 2.5 we 
-# gather_subset: When supplied, this argument will restrict the 
+# gather_subset: When supplied, this argument restricts the facts 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 }- name: ${2:Name for ios_facts module.}
   ios_facts:

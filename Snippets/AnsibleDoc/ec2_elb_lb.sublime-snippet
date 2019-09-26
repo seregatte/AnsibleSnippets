@@ -5,6 +5,7 @@ ${1:# access_logs: An associative array of access logs
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # connection_draining_timeout: Wait a specified timeout allowing connections to 
 # cross_az_load_balancing: Distribute load across all configured 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # health_check: An associative array of health check 
 # idle_timeout: ELB connections from clients and to servers are 
@@ -26,7 +27,7 @@ ${1:# access_logs: An associative array of access logs
 # stickiness: An associative array of stickiness policy 
 # subnets: A list of VPC subnets to use when creating ELB. 
 # tags: An associative array of tags. To delete all 
-# validate_certs: When set to "no", SSL certificates will not be 
+# validate_certs: When set to `no', SSL certificates will not be 
 # wait: When specified, Ansible will check the status of 
 # wait_timeout: Used in conjunction with wait. Number of seconds 
 # zones: List of availability zones to enable on this ELB 
@@ -37,37 +38,38 @@ ${6:   ${7:aws_access_key}: ${8:"#"}}
 ${9:   ${10:aws_secret_key}: ${11:"#"}}
 ${12:   ${13:connection_draining_timeout}: ${14:"#"}}
 ${15:   ${16:cross_az_load_balancing}: ${17:"#"}}
-${18:   ${19:ec2_url}: ${20:"#"}}
-${21:   ${22:health_check}: ${23:"#"}}
-${24:   ${25:idle_timeout}: ${26:"#"}}
-${27:   ${28:instance_ids}: ${29:"#"}}
-${30:   ${31:listeners}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:profile}: ${38:"#"}}
-${39:   ${40:purge_instance_ids}: ${41:"#"}}
-${42:   ${43:purge_listeners}: ${44:"#"}}
-${45:   ${46:purge_subnets}: ${47:"#"}}
-${48:   ${49:purge_zones}: ${50:"#"}}
-${51:   ${52:region}: ${53:"#"}}
-${54:   ${55:}: ${56:"#"}}
-${57:   ${58:scheme}: ${59:"#"}}
-${60:   ${61:security_group_ids}: ${62:"#"}}
-${63:   ${64:security_group_names}: ${65:"#"}}
-${66:   ${67:security_token}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:stickiness}: ${74:"#"}}
-${75:   ${76:subnets}: ${77:"#"}}
-${78:   ${79:tags}: ${80:"#"}}
-${81:   ${82:validate_certs}: ${83:"#"}}
-${84:   ${85:wait}: ${86:"#"}}
-${87:   ${88:wait_timeout}: ${89:"#"}}
-${90:   ${91:zones}: ${92:"#"}}
-${93:${94:   become: ${95:true}} 
-${96:   become_method: ${97:su}} 
-${98:   become_user: ${99:nobody}} 
-${100:   become_flags: ${101:"-s /bin/sh"}}} 
-${102:   when: ${103:variable is defined}} 
-${104:   with_items: ${105:array}} 
+${18:   ${19:debug_botocore_endpoint_logs}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:health_check}: ${26:"#"}}
+${27:   ${28:idle_timeout}: ${29:"#"}}
+${30:   ${31:instance_ids}: ${32:"#"}}
+${33:   ${34:listeners}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:profile}: ${41:"#"}}
+${42:   ${43:purge_instance_ids}: ${44:"#"}}
+${45:   ${46:purge_listeners}: ${47:"#"}}
+${48:   ${49:purge_subnets}: ${50:"#"}}
+${51:   ${52:purge_zones}: ${53:"#"}}
+${54:   ${55:region}: ${56:"#"}}
+${57:   ${58:}: ${59:"#"}}
+${60:   ${61:scheme}: ${62:"#"}}
+${63:   ${64:security_group_ids}: ${65:"#"}}
+${66:   ${67:security_group_names}: ${68:"#"}}
+${69:   ${70:security_token}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:stickiness}: ${77:"#"}}
+${78:   ${79:subnets}: ${80:"#"}}
+${81:   ${82:tags}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:   ${88:wait}: ${89:"#"}}
+${90:   ${91:wait_timeout}: ${92:"#"}}
+${93:   ${94:zones}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>ec2_elb_lb</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

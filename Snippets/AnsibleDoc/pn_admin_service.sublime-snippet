@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# pn__if: administrative service interface. 
+# pn_cliswitch: Target switch to run the CLI on. 
+# pn_icmp: Internet Message Control Protocol (ICMP) to 
+# pn_net_api: Netvisor API to enable or disable APIs. 
+# pn_nfs: Network File System (NFS) to enable or disable. 
+# pn_snmp: Simple Network Monitoring Protocol (SNMP) to 
+# pn_ssh: Secure Shell to enable or disable. 
+# pn_web: Web (HTTP) to enable or disable. 
+# pn_web_log: Web logging to enable or disable. 
+# pn_web_port: Web (HTTP) port to enable or disable. 
+# pn_web_ssl: Web SSL (HTTPS) to enable or disable. 
+# pn_web_ssl_port: Web SSL (HTTPS) port to enable or disable. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_admin_service module.}
+  pn_admin_service:
+${3:   ${4:pn__if}: ${5:"#"}}
+${6:   ${7:pn_cliswitch}: ${8:"#"}}
+${9:   ${10:pn_icmp}: ${11:"#"}}
+${12:   ${13:pn_net_api}: ${14:"#"}}
+${15:   ${16:pn_nfs}: ${17:"#"}}
+${18:   ${19:pn_snmp}: ${20:"#"}}
+${21:   ${22:pn_ssh}: ${23:"#"}}
+${24:   ${25:pn_web}: ${26:"#"}}
+${27:   ${28:pn_web_log}: ${29:"#"}}
+${30:   ${31:pn_web_port}: ${32:"#"}}
+${33:   ${34:pn_web_ssl}: ${35:"#"}}
+${36:   ${37:pn_web_ssl_port}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>pn_admin_service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -10,7 +10,7 @@ ${1:# action: Content switching action that names the target
 # policyname: Name for the content switching policy. Must 
 # : ', period `.', 
 # rule: Expression, or name of a named expression, 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # state: The state of the resource being configured by 
 # url: URL string that is matched with the URL of a 
 # validate_certs: If `no', SSL certificates will not be validated. 

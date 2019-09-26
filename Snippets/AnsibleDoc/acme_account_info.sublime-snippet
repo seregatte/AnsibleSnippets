@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# account_key_content: Content of the ACME account RSA or Elliptic 
+# account_key_src: Path to a file containing the ACME account RSA 
+# account_uri: If specified, assumes that the account URI is as 
+# acme_directory: The ACME directory to use. This is the entry 
+# acme_version: The ACME version of the endpoint. Must be 1 for 
+# select_crypto_backend: Determines which crypto backend to use. The 
+# validate_certs: Whether calls to the ACME directory will 
+}- name: ${2:Name for acme_account_info module.}
+  acme_account_info:
+${3:   ${4:account_key_content}: ${5:"#"}}
+${6:   ${7:account_key_src}: ${8:"#"}}
+${9:   ${10:account_uri}: ${11:"#"}}
+${12:   ${13:acme_directory}: ${14:"#"}}
+${15:   ${16:acme_version}: ${17:"#"}}
+${18:   ${19:select_crypto_backend}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>acme_account_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

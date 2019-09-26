@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# accept_license: Whether to accept the license for the 
+# name: (required) One or more packages to install or 
+# repository_path: Path with AIX packages (required to install). 
+# state: Whether the package needs to be present on or 
+}- name: ${2:Name for installp module.}
+  installp:
+${3:   ${4:accept_license}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:repository_path}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>installp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

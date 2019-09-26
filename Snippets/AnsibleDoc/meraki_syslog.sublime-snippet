@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_key: Authentication key provided by the dashboard. 
+# host: Hostname for Meraki dashboard. Can be used to 
+# net_id: ID number of a network. 
+# net_name: Name of a network. 
+# org_id: ID of organization associated to a network. 
+# org_name: Name of organization associated to a network. 
+# output_level: Set amount of debug output during module 
+# servers: List of syslog server settings 
+# state: Query or edit syslog servers To delete a syslog 
+# timeout: Time to timeout for HTTP requests. 
+# use_https: If `no', it will use HTTP. Otherwise it will use 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# validate_certs: Whether to validate HTTP certificates. 
+}- name: ${2:Name for meraki_syslog module.}
+  meraki_syslog:
+${3:   ${4:auth_key}: ${5:"#"}}
+${6:   ${7:host}: ${8:"#"}}
+${9:   ${10:net_id}: ${11:"#"}}
+${12:   ${13:net_name}: ${14:"#"}}
+${15:   ${16:org_id}: ${17:"#"}}
+${18:   ${19:org_name}: ${20:"#"}}
+${21:   ${22:output_level}: ${23:"#"}}
+${24:   ${25:servers}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:   ${34:use_https}: ${35:"#"}}
+${36:   ${37:use_proxy}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>meraki_syslog</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -11,12 +11,15 @@ ${1:# ad_user: Active Directory username. Use when
 # name: (required) name of the DNS Zone. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
+# registration_virtual_networks: A list of references to virtual networks that 
+# resolution_virtual_networks: A list of references to virtual networks that 
 # resource_group: (required) name of resource group. 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the zone. Use 'present' to 
+# state: Assert the state of the zone. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
+# type: The type of this DNS zone (public or private) 
 }- name: ${2:Name for azure_rm_dnszone module.}
   azure_rm_dnszone:
 ${3:   ${4:ad_user}: ${5:"#"}}
@@ -30,18 +33,21 @@ ${24:   ${25:cloud_environment}: ${26:"#"}}
 ${27:   ${28:name}: ${29:"#"}}
 ${30:   ${31:password}: ${32:"#"}}
 ${33:   ${34:profile}: ${35:"#"}}
-${36:   ${37:resource_group}: ${38:"#"}}
-${39:   ${40:secret}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:subscription_id}: ${47:"#"}}
-${48:   ${49:tags}: ${50:"#"}}
-${51:   ${52:tenant}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${36:   ${37:registration_virtual_networks}: ${38:"#"}}
+${39:   ${40:resolution_virtual_networks}: ${41:"#"}}
+${42:   ${43:resource_group}: ${44:"#"}}
+${45:   ${46:secret}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:subscription_id}: ${53:"#"}}
+${54:   ${55:tags}: ${56:"#"}}
+${57:   ${58:tenant}: ${59:"#"}}
+${60:   ${61:type}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_dnszone</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

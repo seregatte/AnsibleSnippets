@@ -15,7 +15,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # vm_enforcing: If `yes' VM cannot start if it does not satisfy 
 # vm_rule: If `positive' `all' VMs in this group should run 
 # vms: List of the VMs names, which should have 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_affinity_group module.}
   ovirt_affinity_group:
 ${3:   ${4:auth}: ${5:"#"}}

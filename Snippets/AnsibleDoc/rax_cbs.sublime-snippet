@@ -17,7 +17,7 @@ ${1:# api_key: Rackspace API key, overrides `credentials'.
 # tenant_id: The tenant ID used for authentication. 
 # tenant_name: The tenant name used for authentication. 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 # volume_type: (required) Type of the volume being created 
 # wait: wait for the volume to be in state 'available' 
 # wait_timeout: how long before wait gives up, in seconds 
@@ -40,7 +40,7 @@ ${42:   ${43:state}: ${44:"#"}}
 ${45:   ${46:tenant_id}: ${47:"#"}}
 ${48:   ${49:tenant_name}: ${50:"#"}}
 ${51:   ${52:username}: ${53:"#"}}
-${54:   ${55:verify_ssl}: ${56:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
 ${57:   ${58:volume_type}: ${59:"#"}}
 ${60:   ${61:wait}: ${62:"#"}}
 ${63:   ${64:wait_timeout}: ${65:"#"}}

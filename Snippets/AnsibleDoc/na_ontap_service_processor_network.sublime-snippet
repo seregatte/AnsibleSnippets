@@ -10,11 +10,13 @@ ${1:# address_type: (required) Specify address class.
 # is_enabled: (required) Specify whether to enable or disable 
 # netmask: Specify the service processor netmask. 
 # node: (required) The node where the service processor 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # prefix_length: Specify the service processor prefix_length. 
 # state: Whether the specified service processor network 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
+# wait_for_completion: Set this parameter to 'true' for synchronous 
 }- name: ${2:Name for na_ontap_service_processor_network module.}
   na_ontap_service_processor_network:
 ${3:   ${4:address_type}: ${5:"#"}}
@@ -27,17 +29,19 @@ ${21:   ${22:ip_address}: ${23:"#"}}
 ${24:   ${25:is_enabled}: ${26:"#"}}
 ${27:   ${28:netmask}: ${29:"#"}}
 ${30:   ${31:node}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:prefix_length}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${33:   ${34:ontapi}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:prefix_length}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:wait_for_completion}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_service_processor_network</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

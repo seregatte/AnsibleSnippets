@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_cliswitch: Target switch to run the CLI on. 
+# pn_dsmap: DSCP value(s). 
+# pn_name: Name for the DSCP map. 
+# pn_pri: CoS priority. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_dscp_map_pri_map module.}
+  pn_dscp_map_pri_map:
+${3:   ${4:pn_cliswitch}: ${5:"#"}}
+${6:   ${7:pn_dsmap}: ${8:"#"}}
+${9:   ${10:pn_name}: ${11:"#"}}
+${12:   ${13:pn_pri}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>pn_dscp_map_pri_map</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

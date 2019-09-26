@@ -2,38 +2,54 @@
 <content><![CDATA[
 ${1:# allowed: The list of ALLOW rules specified by this 
 # auth_kind: (required) The type of credential used. 
+# denied: The list of DENY rules specified by this 
 # description: An optional description of this resource. 
-# name: Name of the resource. Provided by the client 
+# destination_ranges: If destination ranges are specified, the 
+# direction: Direction of traffic to which this firewall 
+# disabled: Denotes whether the firewall rule is disabled, 
+# name: (required) Name of the resource. Provided by the 
 # network: URL of the network resource for this firewall 
+# priority: Priority for this rule. This is an integer 
 # project: The Google Cloud Platform project to use. 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # source_ranges: If source ranges are specified, the firewall 
+# source_service_accounts: If source service accounts are specified, the 
 # source_tags: If source tags are specified, the firewall will 
 # state: Whether the given object should exist in GCP 
+# target_service_accounts: A list of service accounts indicating sets of 
 # target_tags: A list of instance tags indicating sets of 
 }- name: ${2:Name for gcp_compute_firewall module.}
   gcp_compute_firewall:
 ${3:   ${4:allowed}: ${5:"#"}}
 ${6:   ${7:auth_kind}: ${8:"#"}}
-${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:network}: ${17:"#"}}
-${18:   ${19:project}: ${20:"#"}}
-${21:   ${22:scopes}: ${23:"#"}}
-${24:   ${25:service_account_email}: ${26:"#"}}
-${27:   ${28:service_account_file}: ${29:"#"}}
-${30:   ${31:source_ranges}: ${32:"#"}}
-${33:   ${34:source_tags}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:target_tags}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${9:   ${10:denied}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:destination_ranges}: ${17:"#"}}
+${18:   ${19:direction}: ${20:"#"}}
+${21:   ${22:disabled}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:network}: ${29:"#"}}
+${30:   ${31:priority}: ${32:"#"}}
+${33:   ${34:project}: ${35:"#"}}
+${36:   ${37:scopes}: ${38:"#"}}
+${39:   ${40:service_account_contents}: ${41:"#"}}
+${42:   ${43:service_account_email}: ${44:"#"}}
+${45:   ${46:service_account_file}: ${47:"#"}}
+${48:   ${49:source_ranges}: ${50:"#"}}
+${51:   ${52:source_service_accounts}: ${53:"#"}}
+${54:   ${55:source_tags}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:target_service_accounts}: ${62:"#"}}
+${63:   ${64:target_tags}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_firewall</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -5,11 +5,11 @@ ${1:# address: The IP address of the member.
 # auth: Dictionary containing auth information as needed 
 # auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as 
-# cert: A path to a client certificate to use as part of 
+# ca_cert: A path to a CA Cert bundle that can be used as 
+# client_cert: A path to a client certificate to use as part of 
+# client_key: A path to a client key to use as part of the SSL 
 # cloud: Named cloud or cloud config to operate against. 
 # interface: Endpoint URL type to fetch from the service 
-# key: A path to a client key to use as part of the SSL 
 # name: (required) Name that has to be given to the 
 # pool: (required) The name or id of the pool that this 
 # protocol_port: The protocol port number for the member. 
@@ -17,7 +17,7 @@ ${1:# address: The IP address of the member.
 # state: Should the resource be present or absent. 
 # subnet_id: The subnet ID the member service is accessible 
 # timeout: The amount of time the module should wait for 
-# verify: Whether or not SSL API requests should be 
+# validate_certs: Whether or not SSL API requests should be 
 # wait: If the module should wait for the load balancer 
 }- name: ${2:Name for os_member module.}
   os_member:
@@ -26,11 +26,11 @@ ${6:   ${7:api_timeout}: ${8:"#"}}
 ${9:   ${10:auth}: ${11:"#"}}
 ${12:   ${13:auth_type}: ${14:"#"}}
 ${15:   ${16:availability_zone}: ${17:"#"}}
-${18:   ${19:cacert}: ${20:"#"}}
-${21:   ${22:cert}: ${23:"#"}}
-${24:   ${25:cloud}: ${26:"#"}}
-${27:   ${28:interface}: ${29:"#"}}
-${30:   ${31:key}: ${32:"#"}}
+${18:   ${19:ca_cert}: ${20:"#"}}
+${21:   ${22:client_cert}: ${23:"#"}}
+${24:   ${25:client_key}: ${26:"#"}}
+${27:   ${28:cloud}: ${29:"#"}}
+${30:   ${31:interface}: ${32:"#"}}
 ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:pool}: ${38:"#"}}
 ${39:   ${40:protocol_port}: ${41:"#"}}
@@ -38,7 +38,7 @@ ${42:   ${43:region_name}: ${44:"#"}}
 ${45:   ${46:state}: ${47:"#"}}
 ${48:   ${49:subnet_id}: ${50:"#"}}
 ${51:   ${52:timeout}: ${53:"#"}}
-${54:   ${55:verify}: ${56:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
 ${57:   ${58:wait}: ${59:"#"}}
 ${60:${61:   become: ${62:true}} 
 ${63:   become_method: ${64:su}} 

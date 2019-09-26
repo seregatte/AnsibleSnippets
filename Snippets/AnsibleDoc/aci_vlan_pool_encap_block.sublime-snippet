@@ -12,7 +12,7 @@ ${1:# allocation_mode: The method used for allocating encaps to
 # pool: The name of the pool that the encap block should 
 # pool_allocation_mode: The method used for allocating encaps to 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 
 # use_proxy: If `no', it will not use a proxy, even if one is 

@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# child_node: (required) To defined the second node of the 
+# host: To define the host of the node. 
+# metadata: To define metadata for the edge. 
+# parent_node: (required) To defined the first node of the 
+# provider: A dict object containing connection details. 
+# relation_type: (required) To define relation type of the node 
+# state: State of the Skydive Edge. If value is `present' 
+}- name: ${2:Name for skydive_edge module.}
+  skydive_edge:
+${3:   ${4:child_node}: ${5:"#"}}
+${6:   ${7:host}: ${8:"#"}}
+${9:   ${10:metadata}: ${11:"#"}}
+${12:   ${13:parent_node}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:relation_type}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>skydive_edge</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

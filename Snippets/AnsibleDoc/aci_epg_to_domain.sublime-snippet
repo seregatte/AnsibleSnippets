@@ -5,7 +5,7 @@ ${1:# allow_useg: Allows micro-segmentation. The APIC defaults to
 # certificate_name: The X.509 certificate name attached to the APIC 
 # deploy_immediacy: Determines when the policy is pushed to hardware 
 # domain: Name of the physical or virtual domain being 
-# domain_type: Determines if the Domain is physical (phys) or 
+# domain_type: Specify whether the Domain is a physical (phys), 
 # encap: The VLAN encapsulation for the EPG when binding 
 # encap_mode: The ecapsulataion method to be used. The APIC 
 # epg: Name of the end point group. 
@@ -15,7 +15,7 @@ ${1:# allow_useg: Allows micro-segmentation. The APIC defaults to
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # primary_encap: Determines the primary VLAN ID when using useg. 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # resolution_immediacy: Determines when the policies should be resolved 
 # state: Use `present' or `absent' for adding or 
 # tenant: Name of an existing tenant. 

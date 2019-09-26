@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# description: An optional description of this resource. 
+# disk_encryption_key: Encrypts the disk using a customer-supplied 
+# labels: Labels to apply to this disk. A list of 
+# licenses: Any applicable publicly visible licenses. 
+# name: (required) Name of the resource. Provided by the 
+# physical_block_size_bytes: Physical block size of the persistent disk, in 
+# project: The Google Cloud Platform project to use. 
+# region: (required) A reference to the region where the 
+# replica_zones: (required) URLs of the zones where the disk 
+# scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# size_gb: Size of the persistent disk, specified in GB. 
+# source_snapshot: The source snapshot used to create this disk. 
+# source_snapshot_encryption_key: The customer-supplied encryption key of the 
+# state: Whether the given object should exist in GCP 
+# type: URL of the disk type resource describing which 
+}- name: ${2:Name for gcp_compute_region_disk module.}
+  gcp_compute_region_disk:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:disk_encryption_key}: ${11:"#"}}
+${12:   ${13:labels}: ${14:"#"}}
+${15:   ${16:licenses}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:physical_block_size_bytes}: ${23:"#"}}
+${24:   ${25:project}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:replica_zones}: ${32:"#"}}
+${33:   ${34:scopes}: ${35:"#"}}
+${36:   ${37:service_account_contents}: ${38:"#"}}
+${39:   ${40:service_account_email}: ${41:"#"}}
+${42:   ${43:service_account_file}: ${44:"#"}}
+${45:   ${46:size_gb}: ${47:"#"}}
+${48:   ${49:source_snapshot}: ${50:"#"}}
+${51:   ${52:source_snapshot_encryption_key}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:type}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>gcp_compute_region_disk</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

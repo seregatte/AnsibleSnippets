@@ -1,0 +1,64 @@
+<snippet>
+<content><![CDATA[
+${1:# always_send: Send the cookie persistence entry on every 
+# cookie_encryption: Specifies the way in which the cookie encryption 
+# cookie_method: Specifies the type of cookie processing that the 
+# cookie_name: Specifies a unique name for the cookie. 
+# description: Description of the profile. 
+# encrypt_cookie_pool_name: Specifies whether the pool-name in the inserted 
+# encryption_passphrase: Specifies a passphrase to be used for cookie 
+# expiration: Specifies the expiration time of the cookie. By 
+# http_only: Specifies whether the httponly attribute should 
+# match_across_pools: When `yes', specifies that the system can use 
+# match_across_services: When `yes', specifies that all persistent 
+# match_across_virtuals: When `yes', specifies that all persistent 
+# name: (required) Specifies the name of the profile. 
+# override_connection_limit: When `yes', specifies that the system allows you 
+# parent: Specifies the profile from which this profile 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# secure: Specifies whether the secure attribute should be 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# state: When `present', ensures that the profile exists. 
+# update_password: `always' will allow to update passphrases if the 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigip_profile_persistence_cookie module.}
+  bigip_profile_persistence_cookie:
+${3:   ${4:always_send}: ${5:"#"}}
+${6:   ${7:cookie_encryption}: ${8:"#"}}
+${9:   ${10:cookie_method}: ${11:"#"}}
+${12:   ${13:cookie_name}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:encrypt_cookie_pool_name}: ${20:"#"}}
+${21:   ${22:encryption_passphrase}: ${23:"#"}}
+${24:   ${25:expiration}: ${26:"#"}}
+${27:   ${28:http_only}: ${29:"#"}}
+${30:   ${31:match_across_pools}: ${32:"#"}}
+${33:   ${34:match_across_services}: ${35:"#"}}
+${36:   ${37:match_across_virtuals}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:override_connection_limit}: ${44:"#"}}
+${45:   ${46:parent}: ${47:"#"}}
+${48:   ${49:partition}: ${50:"#"}}
+${51:   ${52:password}: ${53:"#"}}
+${54:   ${55:provider}: ${56:"#"}}
+${57:   ${58:secure}: ${59:"#"}}
+${60:   ${61:server}: ${62:"#"}}
+${63:   ${64:server_port}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:update_password}: ${71:"#"}}
+${72:   ${73:user}: ${74:"#"}}
+${75:   ${76:validate_certs}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
+]]></content>
+	<tabTrigger>bigip_profile_persistence_cookie</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

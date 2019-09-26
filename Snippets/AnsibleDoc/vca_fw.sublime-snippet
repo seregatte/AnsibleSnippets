@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: The api version to be used with the vca. 
+${1:# api_version: The API version to be used with the vca. 
 # fw_rules: (required) A list of firewall rules to be added 
 # gateway_name: The name of the gateway of the vdc where the 
 # host: The authentication host to be used when service 
-# instance_id: The instance id in a vchs environment to be used 
+# instance_id: The instance ID in a vchs environment to be used 
 # org: The org to login to for creating vapp. This 
 # password: The vca password, if not set the environment 
 # service_type: The type of service we are authenticating 
-# state: If the object should be added or removed. 
+# state: Whether the object should be added or removed. 
 # username: The vca username or email address, if not set 
+# validate_certs: If the certificates of the authentication is to 
 # vdc_name: The name of the vdc where the gateway is 
-# verify_certs: If the certificates of the authentication is to 
 }- name: ${2:Name for vca_fw module.}
   vca_fw:
 ${3:   ${4:api_version}: ${5:"#"}}
@@ -24,8 +24,8 @@ ${21:   ${22:password}: ${23:"#"}}
 ${24:   ${25:service_type}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:username}: ${32:"#"}}
-${33:   ${34:vdc_name}: ${35:"#"}}
-${36:   ${37:verify_certs}: ${38:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:vdc_name}: ${38:"#"}}
 ${39:${40:   become: ${41:true}} 
 ${42:   become_method: ${43:su}} 
 ${44:   become_user: ${45:nobody}} 

@@ -1,35 +1,43 @@
 <snippet>
 <content><![CDATA[
 ${1:# app_parameters: A string representing a dictionary of parameters 
-# app_parameters_free_form: Single string of parameters to be passed to the 
 # application: The application binary to run as a service 
+# arguments: Parameters to be passed to the application when 
 # dependencies: Service dependencies that has to be started to 
+# description: The description to set for the service. 
+# display_name: The display name to set for the service. 
+# executable: The location of the NSSM utility (in case it is 
 # name: (required) Name of the service to operate on. 
 # password: Password to be used for service startup. 
 # start_mode: If `auto' is selected, the service will start at 
-# state: State of the service on the system. Note that 
+# state: State of the service on the system. Values 
 # stderr_file: Path to receive error output. 
 # stdout_file: Path to receive output. 
-# user: User to be used for service startup. 
+# user: User to be used for service startup. DEPRECATED 
+# working_directory: The working directory to run the service 
 }- name: ${2:Name for win_nssm module.}
   win_nssm:
 ${3:   ${4:app_parameters}: ${5:"#"}}
-${6:   ${7:app_parameters_free_form}: ${8:"#"}}
-${9:   ${10:application}: ${11:"#"}}
+${6:   ${7:application}: ${8:"#"}}
+${9:   ${10:arguments}: ${11:"#"}}
 ${12:   ${13:dependencies}: ${14:"#"}}
-${15:   ${16:name}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:start_mode}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:stderr_file}: ${29:"#"}}
-${30:   ${31:stdout_file}: ${32:"#"}}
-${33:   ${34:user}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:display_name}: ${20:"#"}}
+${21:   ${22:executable}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:start_mode}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:stderr_file}: ${38:"#"}}
+${39:   ${40:stdout_file}: ${41:"#"}}
+${42:   ${43:user}: ${44:"#"}}
+${45:   ${46:working_directory}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>win_nssm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

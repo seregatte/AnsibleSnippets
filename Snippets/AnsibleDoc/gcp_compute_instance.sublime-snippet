@@ -13,10 +13,12 @@ ${1:# auth_kind: (required) The type of credential used.
 # project: The Google Cloud Platform project to use. 
 # scheduling: Sets the scheduling options for this instance. 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # service_accounts: A list of service accounts, with their specified 
 # state: Whether the given object should exist in GCP 
+# status: The status of the instance. One of the following 
 # tags: A list of tags to apply to this instance. Tags 
 # zone: (required) A reference to the zone where the 
 }- name: ${2:Name for gcp_compute_instance module.}
@@ -34,18 +36,20 @@ ${30:   ${31:network_interfaces}: ${32:"#"}}
 ${33:   ${34:project}: ${35:"#"}}
 ${36:   ${37:scheduling}: ${38:"#"}}
 ${39:   ${40:scopes}: ${41:"#"}}
-${42:   ${43:service_account_email}: ${44:"#"}}
-${45:   ${46:service_account_file}: ${47:"#"}}
-${48:   ${49:service_accounts}: ${50:"#"}}
-${51:   ${52:state}: ${53:"#"}}
-${54:   ${55:tags}: ${56:"#"}}
-${57:   ${58:zone}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${42:   ${43:service_account_contents}: ${44:"#"}}
+${45:   ${46:service_account_email}: ${47:"#"}}
+${48:   ${49:service_account_file}: ${50:"#"}}
+${51:   ${52:service_accounts}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:status}: ${59:"#"}}
+${60:   ${61:tags}: ${62:"#"}}
+${63:   ${64:zone}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_instance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

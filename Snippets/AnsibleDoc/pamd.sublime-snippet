@@ -2,14 +2,14 @@
 <content><![CDATA[
 ${1:# backup: Create a backup file including the timestamp 
 # control: (required) The control of the PAM rule being 
-# module_arguments: When state is 'updated', the module_arguments 
+# module_arguments: When state is `updated', the module_arguments 
 # module_path: (required) The module path of the PAM rule being 
 # name: (required) The name generally refers to the PAM 
 # new_control: The new control to assign to the new rule. 
 # new_module_path: The new module path to be assigned to the new 
 # new_type: The new type to assign to the new rule. 
-# path: This is the path to the PAM service files 
-# state: The default of 'updated' will modify an existing 
+# path: This is the path to the PAM service files. 
+# state: The default of `updated' will modify an existing 
 # type: (required) The type of the PAM rule being 
 }- name: ${2:Name for pamd module.}
   pamd:

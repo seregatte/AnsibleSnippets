@@ -7,24 +7,24 @@ ${1:# archive: Mirrors the rsync archive flag, enables
 # delete: Delete files in `dest' that don't exist (after 
 # dest: (required) Path on the destination host that 
 # dest_port: Port number for ssh on the destination host. 
-# dirs: Transfer directories without recursing 
+# dirs: Transfer directories without recursing. 
 # existing_only: Skip creating new files on receiver. 
-# group: Preserve group 
-# link_dest: add a destination to hard link against during 
-# links: Copy symlinks as symlinks. 
+# group: Preserve group. This parameter defaults to the 
+# link_dest: Add a destination to hard link against during 
+# links: Copy symlinks as symlinks. This parameter 
 # mode: Specify the direction of the synchronization. In 
-# owner: Preserve owner (super user only) 
+# owner: Preserve owner (super user only). This parameter 
 # partial: Tells rsync to keep the partial file which 
-# perms: Preserve permissions. 
+# perms: Preserve permissions. This parameter defaults to 
 # private_key: Specify the private key to use for SSH-based 
-# recursive: Recurse into directories. 
+# recursive: Recurse into directories. This parameter 
 # rsync_opts: Specify additional rsync options by passing in 
 # rsync_path: Specify the rsync command to run on the remote 
 # rsync_timeout: Specify a `--timeout' for the rsync command in 
-# set_remote_user: put user@ for the remote paths. If you have a 
+# set_remote_user: Put user@ for the remote paths. If you have a 
 # src: (required) Path on the source host that will be 
-# times: Preserve modification times 
-# use_ssh_args: Use the ssh_args specified in ansible.cfg 
+# times: Preserve modification times. This parameter 
+# use_ssh_args: Use the ssh_args specified in ansible.cfg. 
 # verify_host: Verify destination host key. 
 }- name: ${2:Name for synchronize module.}
   synchronize:

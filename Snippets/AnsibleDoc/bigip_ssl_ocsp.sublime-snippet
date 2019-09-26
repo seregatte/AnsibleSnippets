@@ -1,0 +1,66 @@
+<snippet>
+<content><![CDATA[
+${1:# cache_error_timeout: Specifies the lifetime of an error response in 
+# cache_timeout: Specifies the lifetime of the OCSP response in 
+# certificate: Specifies a certificate used to sign an OCSP 
+# clock_skew: Specifies the tolerable absolute difference in 
+# connection_timeout: Specifies the time interval that the BIG-IP 
+# connections_limit: Specifies the maximum number of connections per 
+# dns_resolver: Specifies the internal DNS resolver the BIG-IP 
+# hash_algorithm: Specifies a hash algorithm used to sign an OCSP 
+# key: Specifies a key used to sign an OCSP request. 
+# name: (required) Specifies the name of the OCSP 
+# partition: Device partition to manage resources on. 
+# passphrase: Specifies a passphrase used to sign an OCSP 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# proxy_server_pool: Specifies the proxy server pool the BIG-IP 
+# responder_url: Specifies the absolute URL that overrides the 
+# route_domain: Specifies the route domain for fetching an OCSP 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# state: When `present', ensures that the resource 
+# status_age: Specifies the maximum allowed lag time that the 
+# strict_responder_checking: Specifies whether the responder's certificate is 
+# trusted_responders: Specifies the certificates used for validating 
+# update_password: `always' will allow to update passwords if the 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigip_ssl_ocsp module.}
+  bigip_ssl_ocsp:
+${3:   ${4:cache_error_timeout}: ${5:"#"}}
+${6:   ${7:cache_timeout}: ${8:"#"}}
+${9:   ${10:certificate}: ${11:"#"}}
+${12:   ${13:clock_skew}: ${14:"#"}}
+${15:   ${16:connection_timeout}: ${17:"#"}}
+${18:   ${19:connections_limit}: ${20:"#"}}
+${21:   ${22:dns_resolver}: ${23:"#"}}
+${24:   ${25:hash_algorithm}: ${26:"#"}}
+${27:   ${28:key}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:partition}: ${35:"#"}}
+${36:   ${37:passphrase}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:provider}: ${44:"#"}}
+${45:   ${46:proxy_server_pool}: ${47:"#"}}
+${48:   ${49:responder_url}: ${50:"#"}}
+${51:   ${52:route_domain}: ${53:"#"}}
+${54:   ${55:server}: ${56:"#"}}
+${57:   ${58:server_port}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:   ${64:status_age}: ${65:"#"}}
+${66:   ${67:strict_responder_checking}: ${68:"#"}}
+${69:   ${70:trusted_responders}: ${71:"#"}}
+${72:   ${73:update_password}: ${74:"#"}}
+${75:   ${76:user}: ${77:"#"}}
+${78:   ${79:validate_certs}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
+]]></content>
+	<tabTrigger>bigip_ssl_ocsp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

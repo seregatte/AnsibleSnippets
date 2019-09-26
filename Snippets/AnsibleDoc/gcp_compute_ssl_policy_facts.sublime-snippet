@@ -4,6 +4,7 @@ ${1:# auth_kind: (required) The type of credential used.
 # filters: A list of filter value pairs. Available filters 
 # project: The Google Cloud Platform project to use. 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 }- name: ${2:Name for gcp_compute_ssl_policy_facts module.}
@@ -12,14 +13,15 @@ ${3:   ${4:auth_kind}: ${5:"#"}}
 ${6:   ${7:filters}: ${8:"#"}}
 ${9:   ${10:project}: ${11:"#"}}
 ${12:   ${13:scopes}: ${14:"#"}}
-${15:   ${16:service_account_email}: ${17:"#"}}
-${18:   ${19:service_account_file}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${15:   ${16:service_account_contents}: ${17:"#"}}
+${18:   ${19:service_account_email}: ${20:"#"}}
+${21:   ${22:service_account_file}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_ssl_policy_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

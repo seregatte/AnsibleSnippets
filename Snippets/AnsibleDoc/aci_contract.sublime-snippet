@@ -9,7 +9,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # priority: The desired QoS class to be used. The APIC 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # scope: The scope of a service contract. The APIC 
 # state: Use `present' or `absent' for adding or 
 # tenant: (required) The name of the tenant. 

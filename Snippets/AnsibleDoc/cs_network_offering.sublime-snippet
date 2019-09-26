@@ -11,6 +11,7 @@ ${1:# api_http_method: HTTP method used to query the API endpoint. If
 # details: Network offering details in key/value pairs. 
 # display_text: Display text of the network offerings. 
 # egress_default_policy: Whether the default egress policy is allow or to 
+# for_vpc: Whether the offering is meant to be used for VPC 
 # guest_ip_type: Guest type of the network offering. 
 # keepalive_enabled: If true keepalive will be turned on in the 
 # max_connections: Maximum number of concurrent connections 
@@ -19,11 +20,11 @@ ${1:# api_http_method: HTTP method used to query the API endpoint. If
 # persistent: True if network offering supports persistent 
 # service_capabilities: Desired service capabilities as part of network 
 # service_offering: The service offering name or ID used by virtual 
-# service_provider: Provider to service mapping. If not specified, 
+# service_providers: Provider to service mapping. If not specified, 
 # specify_ip_ranges: Wheter the network offering supports specifying 
 # specify_vlan: Whether the network offering supports vlans or 
 # state: State of the network offering. 
-# supported_services: Services supported by the network offering. One 
+# supported_services: Services supported by the network offering. A 
 # traffic_type: The traffic type for the network offering. 
 }- name: ${2:Name for cs_network_offering module.}
   cs_network_offering:
@@ -38,26 +39,27 @@ ${24:   ${25:conserve_mode}: ${26:"#"}}
 ${27:   ${28:details}: ${29:"#"}}
 ${30:   ${31:display_text}: ${32:"#"}}
 ${33:   ${34:egress_default_policy}: ${35:"#"}}
-${36:   ${37:guest_ip_type}: ${38:"#"}}
-${39:   ${40:keepalive_enabled}: ${41:"#"}}
-${42:   ${43:max_connections}: ${44:"#"}}
-${45:   ${46:name}: ${47:"#"}}
-${48:   ${49:network_rate}: ${50:"#"}}
-${51:   ${52:persistent}: ${53:"#"}}
-${54:   ${55:service_capabilities}: ${56:"#"}}
-${57:   ${58:service_offering}: ${59:"#"}}
-${60:   ${61:service_provider}: ${62:"#"}}
-${63:   ${64:specify_ip_ranges}: ${65:"#"}}
-${66:   ${67:specify_vlan}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:supported_services}: ${74:"#"}}
-${75:   ${76:traffic_type}: ${77:"#"}}
-${78:${79:   become: ${80:true}} 
-${81:   become_method: ${82:su}} 
-${83:   become_user: ${84:nobody}} 
-${85:   become_flags: ${86:"-s /bin/sh"}}} 
-${87:   when: ${88:variable is defined}} 
-${89:   with_items: ${90:array}} 
+${36:   ${37:for_vpc}: ${38:"#"}}
+${39:   ${40:guest_ip_type}: ${41:"#"}}
+${42:   ${43:keepalive_enabled}: ${44:"#"}}
+${45:   ${46:max_connections}: ${47:"#"}}
+${48:   ${49:name}: ${50:"#"}}
+${51:   ${52:network_rate}: ${53:"#"}}
+${54:   ${55:persistent}: ${56:"#"}}
+${57:   ${58:service_capabilities}: ${59:"#"}}
+${60:   ${61:service_offering}: ${62:"#"}}
+${63:   ${64:service_providers}: ${65:"#"}}
+${66:   ${67:specify_ip_ranges}: ${68:"#"}}
+${69:   ${70:specify_vlan}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:supported_services}: ${77:"#"}}
+${78:   ${79:traffic_type}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>cs_network_offering</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

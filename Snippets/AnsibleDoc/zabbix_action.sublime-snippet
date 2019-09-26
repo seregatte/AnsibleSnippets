@@ -1,0 +1,66 @@
+<snippet>
+<content><![CDATA[
+${1:# acknowledge_default_message: Update operation (known as "Acknowledge 
+# acknowledge_default_subject: Update operation (known as "Acknowledge 
+# acknowledge_operations: List of acknowledge operations. `Suboptions' are 
+# conditions: List of dictionaries of conditions to evaluate. 
+# ject: action_filte 
+# default_message: Problem message default text. 
+# default_subject: Problem message default subject. 
+# esc_period: Default operation step duration. Must be greater 
+# eval_type: Filter condition evaluation method. Defaults to 
+# event_source: (required) Type of events that the action will 
+# formula: User-defined expression to be used for 
+# http_login_password: Basic Auth password 
+# http_login_user: (required) Basic Auth login 
+# login_password: (required) Zabbix user password. 
+# login_user: (required) Zabbix user name. 
+# name: (required) Name of the action 
+# operations: List of action operations 
+# pause_in_maintenance: Whether to pause escalation during maintenance 
+# recovery_default_message: Recovery message text. Works only with >= Zabbix 
+# recovery_default_subject: Recovery message subject. Works only with >= 
+# recovery_operations: List of recovery operations. `Suboptions' are 
+# server_url: (required) URL of Zabbix server, with protocol 
+# state: State of the action. On `present', it will 
+# status: Status of the action. 
+# timeout: The timeout of API request (seconds). 
+# validate_certs: If set to False, SSL certificates will not be 
+}- name: ${2:Name for zabbix_action module.}
+  zabbix_action:
+${3:   ${4:acknowledge_default_message}: ${5:"#"}}
+${6:   ${7:acknowledge_default_subject}: ${8:"#"}}
+${9:   ${10:acknowledge_operations}: ${11:"#"}}
+${12:   ${13:conditions}: ${14:"#"}}
+${15:   ${16:ject}: ${17:"#"}}
+${18:   ${19:default_message}: ${20:"#"}}
+${21:   ${22:default_subject}: ${23:"#"}}
+${24:   ${25:esc_period}: ${26:"#"}}
+${27:   ${28:eval_type}: ${29:"#"}}
+${30:   ${31:event_source}: ${32:"#"}}
+${33:   ${34:formula}: ${35:"#"}}
+${36:   ${37:http_login_password}: ${38:"#"}}
+${39:   ${40:http_login_user}: ${41:"#"}}
+${42:   ${43:login_password}: ${44:"#"}}
+${45:   ${46:login_user}: ${47:"#"}}
+${48:   ${49:name}: ${50:"#"}}
+${51:   ${52:operations}: ${53:"#"}}
+${54:   ${55:pause_in_maintenance}: ${56:"#"}}
+${57:   ${58:recovery_default_message}: ${59:"#"}}
+${60:   ${61:recovery_default_subject}: ${62:"#"}}
+${63:   ${64:recovery_operations}: ${65:"#"}}
+${66:   ${67:server_url}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:status}: ${74:"#"}}
+${75:   ${76:timeout}: ${77:"#"}}
+${78:   ${79:validate_certs}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
+]]></content>
+	<tabTrigger>zabbix_action</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

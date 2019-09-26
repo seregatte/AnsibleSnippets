@@ -8,10 +8,11 @@ ${1:# cluster_ip_address: IP address of cluster to be joined
 # license_code: License code to be applied to the cluster 
 # license_package: License package name of the license to be 
 # node_serial_number: Serial number of the cluster node 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # state: Whether the specified cluster should exist or 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_cluster module.}
   na_ontap_cluster:
 ${3:   ${4:cluster_ip_address}: ${5:"#"}}
@@ -22,16 +23,17 @@ ${15:   ${16:https}: ${17:"#"}}
 ${18:   ${19:license_code}: ${20:"#"}}
 ${21:   ${22:license_package}: ${23:"#"}}
 ${24:   ${25:node_serial_number}: ${26:"#"}}
-${27:   ${28:password}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${27:   ${28:ontapi}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cluster</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

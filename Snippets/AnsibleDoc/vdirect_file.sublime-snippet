@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# file_name: (required) vDirect runnable file name to be 
+# validate_certs: If `no', SSL certificates will not be validated, 
 # vdirect_http_port: vDirect server HTTP port number, may be set as 
 # vdirect_https_port: vDirect server HTTPS port number, may be set as 
 # vdirect_ip: (required) Primary vDirect server IP address, 
@@ -9,20 +10,19 @@ ${1:# file_name: (required) vDirect runnable file name to be
 # vdirect_timeout: Amount of time to wait for async operation 
 # vdirect_use_ssl: If `no', an HTTP connection will be used instead 
 # vdirect_user: (required) vDirect server username, may be set 
-# vdirect_validate_certs: If `no', SSL certificates will not be validated, 
 # vdirect_wait: Wait for async operation to complete, may be set 
 }- name: ${2:Name for vdirect_file module.}
   vdirect_file:
 ${3:   ${4:file_name}: ${5:"#"}}
-${6:   ${7:vdirect_http_port}: ${8:"#"}}
-${9:   ${10:vdirect_https_port}: ${11:"#"}}
-${12:   ${13:vdirect_ip}: ${14:"#"}}
-${15:   ${16:vdirect_password}: ${17:"#"}}
-${18:   ${19:vdirect_secondary_ip}: ${20:"#"}}
-${21:   ${22:vdirect_timeout}: ${23:"#"}}
-${24:   ${25:vdirect_use_ssl}: ${26:"#"}}
-${27:   ${28:vdirect_user}: ${29:"#"}}
-${30:   ${31:vdirect_validate_certs}: ${32:"#"}}
+${6:   ${7:validate_certs}: ${8:"#"}}
+${9:   ${10:vdirect_http_port}: ${11:"#"}}
+${12:   ${13:vdirect_https_port}: ${14:"#"}}
+${15:   ${16:vdirect_ip}: ${17:"#"}}
+${18:   ${19:vdirect_password}: ${20:"#"}}
+${21:   ${22:vdirect_secondary_ip}: ${23:"#"}}
+${24:   ${25:vdirect_timeout}: ${26:"#"}}
+${27:   ${28:vdirect_use_ssl}: ${29:"#"}}
+${30:   ${31:vdirect_user}: ${32:"#"}}
 ${33:   ${34:vdirect_wait}: ${35:"#"}}
 ${36:${37:   become: ${38:true}} 
 ${39:   become_method: ${40:su}} 

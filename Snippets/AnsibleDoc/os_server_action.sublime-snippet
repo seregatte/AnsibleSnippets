@@ -5,16 +5,16 @@ ${1:# action: Perform the given action. The lock and unlock
 # auth: Dictionary containing auth information as needed 
 # auth_type: Name of the auth plugin to use. If the cloud 
 # availability_zone: Ignored. Present for backwards compatibility 
-# cacert: A path to a CA Cert bundle that can be used as 
-# cert: A path to a client certificate to use as part of 
+# ca_cert: A path to a CA Cert bundle that can be used as 
+# client_cert: A path to a client certificate to use as part of 
+# client_key: A path to a client key to use as part of the SSL 
 # cloud: Named cloud or cloud config to operate against. 
 # image: Image the server should be rebuilt with 
 # interface: Endpoint URL type to fetch from the service 
-# key: A path to a client key to use as part of the SSL 
 # region_name: Name of the region. 
 # server: (required) Name or ID of the instance 
 # timeout: The amount of time the module should wait for 
-# verify: Whether or not SSL API requests should be 
+# validate_certs: Whether or not SSL API requests should be 
 # wait: If the module should wait for the instance 
 }- name: ${2:Name for os_server_action module.}
   os_server_action:
@@ -23,16 +23,16 @@ ${6:   ${7:api_timeout}: ${8:"#"}}
 ${9:   ${10:auth}: ${11:"#"}}
 ${12:   ${13:auth_type}: ${14:"#"}}
 ${15:   ${16:availability_zone}: ${17:"#"}}
-${18:   ${19:cacert}: ${20:"#"}}
-${21:   ${22:cert}: ${23:"#"}}
-${24:   ${25:cloud}: ${26:"#"}}
-${27:   ${28:image}: ${29:"#"}}
-${30:   ${31:interface}: ${32:"#"}}
-${33:   ${34:key}: ${35:"#"}}
+${18:   ${19:ca_cert}: ${20:"#"}}
+${21:   ${22:client_cert}: ${23:"#"}}
+${24:   ${25:client_key}: ${26:"#"}}
+${27:   ${28:cloud}: ${29:"#"}}
+${30:   ${31:image}: ${32:"#"}}
+${33:   ${34:interface}: ${35:"#"}}
 ${36:   ${37:region_name}: ${38:"#"}}
 ${39:   ${40:server}: ${41:"#"}}
 ${42:   ${43:timeout}: ${44:"#"}}
-${45:   ${46:verify}: ${47:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
 ${48:   ${49:wait}: ${50:"#"}}
 ${51:${52:   become: ${53:true}} 
 ${54:   become_method: ${55:su}} 

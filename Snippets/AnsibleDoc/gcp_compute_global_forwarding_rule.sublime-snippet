@@ -13,6 +13,7 @@ ${1:# auth_kind: (required) The type of credential used.
 # ports: This field is used along with the 
 # project: The Google Cloud Platform project to use. 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # state: Whether the given object should exist in GCP 
@@ -33,17 +34,18 @@ ${30:   ${31:port_range}: ${32:"#"}}
 ${33:   ${34:ports}: ${35:"#"}}
 ${36:   ${37:project}: ${38:"#"}}
 ${39:   ${40:scopes}: ${41:"#"}}
-${42:   ${43:service_account_email}: ${44:"#"}}
-${45:   ${46:service_account_file}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:subnetwork}: ${53:"#"}}
-${54:   ${55:target}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${42:   ${43:service_account_contents}: ${44:"#"}}
+${45:   ${46:service_account_email}: ${47:"#"}}
+${48:   ${49:service_account_file}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:subnetwork}: ${56:"#"}}
+${57:   ${58:target}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_global_forwarding_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -22,7 +22,7 @@ ${1:# api_key: Rackspace API key, overrides `credentials'.
 # tenant_name: The tenant name used for authentication. 
 # timeout: The number of seconds this check will wait when 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 }- name: ${2:Name for rax_mon_check module.}
   rax_mon_check:
 ${3:   ${4:api_key}: ${5:"#"}}
@@ -47,7 +47,7 @@ ${57:   ${58:tenant_id}: ${59:"#"}}
 ${60:   ${61:tenant_name}: ${62:"#"}}
 ${63:   ${64:timeout}: ${65:"#"}}
 ${66:   ${67:username}: ${68:"#"}}
-${69:   ${70:verify_ssl}: ${71:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
 ${72:${73:   become: ${74:true}} 
 ${75:   become_method: ${76:su}} 
 ${77:   become_user: ${78:nobody}} 

@@ -9,7 +9,7 @@ ${1:# active_connection_states: The list of TCP connection states which are
 # path: Path to a file on the filesystem that must exist 
 # port: Port number to poll. `path' and `port' are 
 # search_regex: Can be used to match a string in either a file 
-# sleep: Number of seconds to sleep between checks, 
+# sleep: Number of seconds to sleep between checks. 
 # state: Either `present', `started', or `stopped', 
 # timeout: Maximum number of seconds to wait for, when used 
 }- name: ${2:Name for wait_for module.}

@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# description: (required) The tenant description. 
+# manageiq_connection: (required) ManageIQ connection configuration 
+# name: (required) The tenant name. 
+# parent: The name of the parent tenant. If not supplied 
+# parent_id: The id of the parent tenant. If not supplied the 
+# quotas: The tenant quotas. All parameters case 
+# state: absent - tenant should not exist, present - 
+}- name: ${2:Name for manageiq_tenant module.}
+  manageiq_tenant:
+${3:   ${4:description}: ${5:"#"}}
+${6:   ${7:manageiq_connection}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:parent}: ${14:"#"}}
+${15:   ${16:parent_id}: ${17:"#"}}
+${18:   ${19:quotas}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>manageiq_tenant</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

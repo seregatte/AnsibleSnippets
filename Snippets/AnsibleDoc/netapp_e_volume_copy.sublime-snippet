@@ -7,7 +7,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # destination_volume_id: The id of the volume copy destination. If used, 
 # search_volume_id: Searches for all valid potential target and 
 # source_volume_id: The id of the volume copy source. If used, must 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # start_stop_copy: starts a re-copy or stops a copy in progress 
 # state: (required) Whether the specified volume copy 
 # validate_certs: Should https certificates be validated? 

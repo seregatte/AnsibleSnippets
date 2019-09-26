@@ -1,85 +1,91 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
+${1:# attributes: The attributes the resulting file or directory 
+# backup: Create a backup file including a timestamp so 
 # basic_constraints: Indicates basic constraints, such as if the 
 # basic_constraints_critical: Should the basicConstraints extension be 
-# common_name: commonName field of the certificate signing 
-# country_name: countryName field of the certificate signing 
-# digest: Digest used when signing the certificate signing 
-# email_address: emailAddress field of the certificate signing 
+# common_name: The commonName field of the certificate signing 
+# country_name: The countryName field of the certificate signing 
+# digest: The digest used when signing the certificate 
+# email_address: The emailAddress field of the certificate 
 # extended_key_usage: Additional restrictions (e.g. client 
 # extended_key_usage_critical: Should the extkeyUsage extension be considered 
 # force: Should the certificate signing request be forced 
 # group: Name of the group that should own the 
 # key_usage: This defines the purpose (e.g. encipherment, 
 # key_usage_critical: Should the keyUsage extension be considered as 
-# locality_name: localityName field of the certificate signing 
-# mode: Mode the file or directory should be. For those 
+# locality_name: The localityName field of the certificate 
+# mode: The permissions the resulting file or directory 
 # ocsp_must_staple: Indicates that the certificate should contain 
 # ocsp_must_staple_critical: Should the OCSP Must Staple extension be 
 # 3: section-4). 
-# organization_name: organizationName field of the certificate 
-# organizational_unit_name: organizationalUnitName field of the certificate 
+# organization_name: The organizationName field of the certificate 
+# organizational_unit_name: The organizationalUnitName field of the 
 # owner: Name of the user that should own the 
-# path: (required) Name of the file into which the 
+# path: (required) The name of the file into which the 
 # privatekey_passphrase: The passphrase for the private key. This is 
 # privatekey_path: (required) The path to the private key to use 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# select_crypto_backend: Determines which crypto backend to use. The 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # state: Whether the certificate signing request should 
-# state_or_province_name: stateOrProvinceName field of the certificate 
+# state_or_province_name: The stateOrProvinceName field of the certificate 
 # subject: Key/value pairs that will be present in the 
 # subject_alt_name: SAN extension to attach to the certificate 
-# 5280: section-4.2. 
+# l: section 
 # subject_alt_name_critical: Should the subjectAltName extension be 
-# unsafe_writes: By default this module uses atomic operations to 
-# version: Version of the certificate signing request 
+# unsafe_writes: Influence when to use atomic operation to 
+# use_common_name_for_san: If set to `yes', the module will fill the common 
+# version: The version of the certificate signing request. 
 }- name: ${2:Name for openssl_csr module.}
   openssl_csr:
 ${3:   ${4:attributes}: ${5:"#"}}
-${6:   ${7:basic_constraints}: ${8:"#"}}
-${9:   ${10:basic_constraints_critical}: ${11:"#"}}
-${12:   ${13:common_name}: ${14:"#"}}
-${15:   ${16:country_name}: ${17:"#"}}
-${18:   ${19:digest}: ${20:"#"}}
-${21:   ${22:email_address}: ${23:"#"}}
-${24:   ${25:extended_key_usage}: ${26:"#"}}
-${27:   ${28:extended_key_usage_critical}: ${29:"#"}}
-${30:   ${31:force}: ${32:"#"}}
-${33:   ${34:group}: ${35:"#"}}
-${36:   ${37:key_usage}: ${38:"#"}}
-${39:   ${40:key_usage_critical}: ${41:"#"}}
-${42:   ${43:locality_name}: ${44:"#"}}
-${45:   ${46:mode}: ${47:"#"}}
-${48:   ${49:ocsp_must_staple}: ${50:"#"}}
-${51:   ${52:ocsp_must_staple_critical}: ${53:"#"}}
-${54:   ${55:3}: ${56:"#"}}
-${57:   ${58:organization_name}: ${59:"#"}}
-${60:   ${61:organizational_unit_name}: ${62:"#"}}
-${63:   ${64:owner}: ${65:"#"}}
-${66:   ${67:path}: ${68:"#"}}
-${69:   ${70:privatekey_passphrase}: ${71:"#"}}
-${72:   ${73:privatekey_path}: ${74:"#"}}
-${75:   ${76:selevel}: ${77:"#"}}
-${78:   ${79:serole}: ${80:"#"}}
-${81:   ${82:setype}: ${83:"#"}}
-${84:   ${85:seuser}: ${86:"#"}}
-${87:   ${88:state}: ${89:"#"}}
-${90:   ${91:state_or_province_name}: ${92:"#"}}
-${93:   ${94:subject}: ${95:"#"}}
-${96:   ${97:subject_alt_name}: ${98:"#"}}
-${99:   ${100:5280}: ${101:"#"}}
-${102:   ${103:subject_alt_name_critical}: ${104:"#"}}
-${105:   ${106:unsafe_writes}: ${107:"#"}}
-${108:   ${109:version}: ${110:"#"}}
-${111:${112:   become: ${113:true}} 
-${114:   become_method: ${115:su}} 
-${116:   become_user: ${117:nobody}} 
-${118:   become_flags: ${119:"-s /bin/sh"}}} 
-${120:   when: ${121:variable is defined}} 
-${122:   with_items: ${123:array}} 
+${6:   ${7:backup}: ${8:"#"}}
+${9:   ${10:basic_constraints}: ${11:"#"}}
+${12:   ${13:basic_constraints_critical}: ${14:"#"}}
+${15:   ${16:common_name}: ${17:"#"}}
+${18:   ${19:country_name}: ${20:"#"}}
+${21:   ${22:digest}: ${23:"#"}}
+${24:   ${25:email_address}: ${26:"#"}}
+${27:   ${28:extended_key_usage}: ${29:"#"}}
+${30:   ${31:extended_key_usage_critical}: ${32:"#"}}
+${33:   ${34:force}: ${35:"#"}}
+${36:   ${37:group}: ${38:"#"}}
+${39:   ${40:key_usage}: ${41:"#"}}
+${42:   ${43:key_usage_critical}: ${44:"#"}}
+${45:   ${46:locality_name}: ${47:"#"}}
+${48:   ${49:mode}: ${50:"#"}}
+${51:   ${52:ocsp_must_staple}: ${53:"#"}}
+${54:   ${55:ocsp_must_staple_critical}: ${56:"#"}}
+${57:   ${58:3}: ${59:"#"}}
+${60:   ${61:organization_name}: ${62:"#"}}
+${63:   ${64:organizational_unit_name}: ${65:"#"}}
+${66:   ${67:owner}: ${68:"#"}}
+${69:   ${70:path}: ${71:"#"}}
+${72:   ${73:privatekey_passphrase}: ${74:"#"}}
+${75:   ${76:privatekey_path}: ${77:"#"}}
+${78:   ${79:select_crypto_backend}: ${80:"#"}}
+${81:   ${82:selevel}: ${83:"#"}}
+${84:   ${85:serole}: ${86:"#"}}
+${87:   ${88:setype}: ${89:"#"}}
+${90:   ${91:seuser}: ${92:"#"}}
+${93:   ${94:state}: ${95:"#"}}
+${96:   ${97:state_or_province_name}: ${98:"#"}}
+${99:   ${100:subject}: ${101:"#"}}
+${102:   ${103:subject_alt_name}: ${104:"#"}}
+${105:   ${106:l}: ${107:"#"}}
+${108:   ${109:subject_alt_name_critical}: ${110:"#"}}
+${111:   ${112:unsafe_writes}: ${113:"#"}}
+${114:   ${115:use_common_name_for_san}: ${116:"#"}}
+${117:   ${118:version}: ${119:"#"}}
+${120:${121:   become: ${122:true}} 
+${123:   become_method: ${124:su}} 
+${125:   become_user: ${126:nobody}} 
+${127:   become_flags: ${128:"-s /bin/sh"}}} 
+${129:   when: ${130:variable is defined}} 
+${131:   with_items: ${132:array}} 
 ]]></content>
 	<tabTrigger>openssl_csr</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

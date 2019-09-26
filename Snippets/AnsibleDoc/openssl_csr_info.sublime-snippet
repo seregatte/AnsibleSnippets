@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# path: (required) Remote absolute path where the CSR 
+# select_crypto_backend: Determines which crypto backend to use. The 
+}- name: ${2:Name for openssl_csr_info module.}
+  openssl_csr_info:
+${3:   ${4:path}: ${5:"#"}}
+${6:   ${7:select_crypto_backend}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>openssl_csr_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# http_login_password: Basic Auth password 
-# http_login_user: Basic Auth login 
+# http_login_user: (required) Basic Auth login 
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
 # screens: (required) List of screens to be 

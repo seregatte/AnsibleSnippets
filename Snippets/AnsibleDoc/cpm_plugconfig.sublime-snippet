@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# cpm_action: (required) This is the Action to send the 
+# cpm_password: This is the Password of the WTI device to send 
+# cpm_url: (required) This is the URL of the WTI device to 
+# cpm_username: This is the Username of the WTI device to send 
+# plug_bootdelay: On a reboot command, this is the time when a 
+# plug_bootpriority: Prioritizes which plug gets its state changed 
+# plug_default: What the Plugs default state is when the device 
+# plug_id: (required) This is the plug number that is to be 
+# plug_name: The new name of the Plug. 
+# use_https: Designates to use an https connection or http 
+# use_proxy: Flag to control if the lookup will observe HTTP 
+# validate_certs: If false, SSL certificates will not be 
+}- name: ${2:Name for cpm_plugconfig module.}
+  cpm_plugconfig:
+${3:   ${4:cpm_action}: ${5:"#"}}
+${6:   ${7:cpm_password}: ${8:"#"}}
+${9:   ${10:cpm_url}: ${11:"#"}}
+${12:   ${13:cpm_username}: ${14:"#"}}
+${15:   ${16:plug_bootdelay}: ${17:"#"}}
+${18:   ${19:plug_bootpriority}: ${20:"#"}}
+${21:   ${22:plug_default}: ${23:"#"}}
+${24:   ${25:plug_id}: ${26:"#"}}
+${27:   ${28:plug_name}: ${29:"#"}}
+${30:   ${31:use_https}: ${32:"#"}}
+${33:   ${34:use_proxy}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>cpm_plugconfig</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

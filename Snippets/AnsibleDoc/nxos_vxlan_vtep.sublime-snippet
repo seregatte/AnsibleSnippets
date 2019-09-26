@@ -1,6 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# description: Description of the NVE interface. 
+# global_ingress_replication_bgp: Configures ingress replication protocol as bgp 
+# global_mcast_group_: Global multicast ip prefix for L2 VNIs or the 
+# global_mcast_group_: Global multicast ip prefix for L3 VNIs or the 
+# global_suppress_arp: Enables ARP suppression for all VNIs This is 
 # host_reachability: Specify mechanism for host reachability 
 # interface: (required) Interface name for the VXLAN Network 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
@@ -11,19 +15,23 @@ ${1:# description: Description of the NVE interface.
 }- name: ${2:Name for nxos_vxlan_vtep module.}
   nxos_vxlan_vtep:
 ${3:   ${4:description}: ${5:"#"}}
-${6:   ${7:host_reachability}: ${8:"#"}}
-${9:   ${10:interface}: ${11:"#"}}
-${12:   ${13:provider}: ${14:"#"}}
-${15:   ${16:shutdown}: ${17:"#"}}
-${18:   ${19:source_interface}: ${20:"#"}}
-${21:   ${22:source_interface_hold_down_time}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${6:   ${7:global_ingress_replication_bgp}: ${8:"#"}}
+${9:   ${10:global_mcast_group_}: ${11:"#"}}
+${12:   ${13:global_mcast_group_}: ${14:"#"}}
+${15:   ${16:global_suppress_arp}: ${17:"#"}}
+${18:   ${19:host_reachability}: ${20:"#"}}
+${21:   ${22:interface}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:shutdown}: ${29:"#"}}
+${30:   ${31:source_interface}: ${32:"#"}}
+${33:   ${34:source_interface_hold_down_time}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>nxos_vxlan_vtep</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

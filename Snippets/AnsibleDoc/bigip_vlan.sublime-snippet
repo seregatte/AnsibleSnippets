@@ -4,6 +4,10 @@ ${1:# cmp_hash: Specifies how the traffic on the VLAN will be
 # dag_round_robin: Specifies whether some of the stateless traffic 
 # dag_tunnel: Specifies how the disaggregator (DAG) 
 # description: The description to give to the VLAN. 
+# fail_safe: When `yes', specifies that the VLAN takes the 
+# fail_safe_action: Specifies the action that the system takes when 
+# fail_safe_timeout: Specifies the number of seconds that a system 
+# interfaces: Interfaces that you want added to the VLAN. This 
 # mtu: Specifies the maximum transmission unit (MTU) 
 # name: (required) The VLAN to manage. If the special 
 # partition: Device partition to manage resources on. 
@@ -11,6 +15,9 @@ ${1:# cmp_hash: Specifies how the traffic on the VLAN will be
 # provider: A dict object containing connection details. 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 
+# sflow_poll_interval: Specifies the maximum interval in seconds 
+# sflow_sampling_rate: Specifies the ratio of packets observed to the 
+# source_check: When `yes', specifies that the system verifies 
 # state: The state of the VLAN on the system. When 
 # tag: Tag number for the VLAN. The tag number can be 
 # tagged_interfaces: Specifies a list of tagged interfaces and trunks 
@@ -23,25 +30,32 @@ ${3:   ${4:cmp_hash}: ${5:"#"}}
 ${6:   ${7:dag_round_robin}: ${8:"#"}}
 ${9:   ${10:dag_tunnel}: ${11:"#"}}
 ${12:   ${13:description}: ${14:"#"}}
-${15:   ${16:mtu}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:partition}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:provider}: ${29:"#"}}
-${30:   ${31:server}: ${32:"#"}}
-${33:   ${34:server_port}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:tag}: ${41:"#"}}
-${42:   ${43:tagged_interfaces}: ${44:"#"}}
-${45:   ${46:untagged_interfaces}: ${47:"#"}}
-${48:   ${49:user}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${15:   ${16:fail_safe}: ${17:"#"}}
+${18:   ${19:fail_safe_action}: ${20:"#"}}
+${21:   ${22:fail_safe_timeout}: ${23:"#"}}
+${24:   ${25:interfaces}: ${26:"#"}}
+${27:   ${28:mtu}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:partition}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:server}: ${44:"#"}}
+${45:   ${46:server_port}: ${47:"#"}}
+${48:   ${49:sflow_poll_interval}: ${50:"#"}}
+${51:   ${52:sflow_sampling_rate}: ${53:"#"}}
+${54:   ${55:source_check}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:tag}: ${62:"#"}}
+${63:   ${64:tagged_interfaces}: ${65:"#"}}
+${66:   ${67:untagged_interfaces}: ${68:"#"}}
+${69:   ${70:user}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>bigip_vlan</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

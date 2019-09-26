@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# include_parent: Whether to enable the parent feature and the 
+# name: (required) The name(s) of the feature to 
+# source: Specify a source to install the feature from. 
+# state: Whether to ensure the feature is absent or 
+}- name: ${2:Name for win_optional_feature module.}
+  win_optional_feature:
+${3:   ${4:include_parent}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:source}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>win_optional_feature</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,31 +1,34 @@
 <snippet>
 <content><![CDATA[
 ${1:# ageingtime: This is only used with bridge - [ageing-time 
-# arp_interval: This is only used with bond - ARP interval 
-# arp_ip_target: This is only used with bond - ARP IP target 
+# arp_interval: This is only used with bond - ARP interval. 
+# arp_ip_target: This is only used with bond - ARP IP target. 
 # autoconnect: Whether the connection should start on boot. 
 # conn_name: (required) Where conn_name will be the name used 
 # dhcp_client_id: DHCP Client Identifier sent to the DHCP server. 
-# dns4: A list of upto 3 dns servers, ipv4 format e.g. 
+# dns4: A list of up to 3 dns servers. IPv4 format e.g. 
 # dns4_search: A list of DNS search domains. 
-# dns6: A list of upto 3 dns servers, ipv6 format e.g. 
+# dns6: A list of up to 3 dns servers. IPv6 format e.g. 
 # dns6_search: A list of DNS search domains. 
-# downdelay: This is only used with bond - downdelay 
+# downdelay: This is only used with bond - downdelay. 
 # egress: This is only used with VLAN - VLAN egress 
-# flags: This is only used with VLAN - flags 
+# flags: This is only used with VLAN - flags. 
 # forwarddelay: This is only used with bridge - [forward-delay 
-# gw4: The IPv4 gateway for this interface using this 
-# gw6: The IPv6 gateway for this interface using this 
+# gw4: The IPv4 gateway for this interface. Use the 
+# gw6: The IPv6 gateway for this interface. Use the 
 # hairpin: This is only used with 'bridge-slave' - 'hairpin 
 # hellotime: This is only used with bridge - [hello-time 
-# ifname: Where IFNAME will be the what we call the 
+# ifname: The interface to bind the connection to. The 
 # ingress: This is only used with VLAN - VLAN ingress 
-# ip4: The IPv4 address to this interface using this 
-# ip6: The IPv6 address to this interface using this 
+# ip4: The IPv4 address to this interface. Use the 
+# ip6: The IPv6 address to this interface. Use the 
+# ip_tunnel_dev: This is used with IPIP/SIT - parent device this 
+# ip_tunnel_local: This is used with IPIP/SIT - IPIP/SIT local IP 
+# ip_tunnel_remote: This is used with IPIP/SIT - IPIP/SIT 
 # mac: This is only used with bridge - MAC address of 
-# master: master <master (ifname, or connection UUID or 
+# master: Master <master (ifname, or connection UUID or 
 # maxage: This is only used with bridge - [max-age <6-42>] 
-# miimon: This is only used with bond - miimon 
+# miimon: This is only used with bond - miimon. This 
 # mode: This is the type of device or network connection 
 # mtu: The connection MTU, e.g. 9000. This can't be 
 # path_cost: This is only used with 'bridge-slave' - 
@@ -35,9 +38,12 @@ ${1:# ageingtime: This is only used with bridge - [ageing-time
 # state: (required) Whether the device should exist or 
 # stp: This is only used with bridge and controls 
 # type: This is the type of device or network connection 
-# updelay: This is only used with bond - updelay 
+# updelay: This is only used with bond - updelay. 
 # vlandev: This is only used with VLAN - parent device this 
 # vlanid: This is only used with VLAN - VLAN ID in range 
+# vxlan_id: This is only used with VXLAN - VXLAN ID. 
+# vxlan_local: This is only used with VXLAN - VXLAN local IP 
+# vxlan_remote: This is only used with VXLAN - VXLAN destination 
 }- name: ${2:Name for nmcli module.}
   nmcli:
 ${3:   ${4:ageingtime}: ${5:"#"}}
@@ -62,28 +68,34 @@ ${57:   ${58:ifname}: ${59:"#"}}
 ${60:   ${61:ingress}: ${62:"#"}}
 ${63:   ${64:ip4}: ${65:"#"}}
 ${66:   ${67:ip6}: ${68:"#"}}
-${69:   ${70:mac}: ${71:"#"}}
-${72:   ${73:master}: ${74:"#"}}
-${75:   ${76:maxage}: ${77:"#"}}
-${78:   ${79:miimon}: ${80:"#"}}
-${81:   ${82:mode}: ${83:"#"}}
-${84:   ${85:mtu}: ${86:"#"}}
-${87:   ${88:path_cost}: ${89:"#"}}
-${90:   ${91:primary}: ${92:"#"}}
-${93:   ${94:priority}: ${95:"#"}}
-${96:   ${97:slavepriority}: ${98:"#"}}
-${99:   ${100:state}: ${101:"#"}}
-${102:   ${103:stp}: ${104:"#"}}
-${105:   ${106:type}: ${107:"#"}}
-${108:   ${109:updelay}: ${110:"#"}}
-${111:   ${112:vlandev}: ${113:"#"}}
-${114:   ${115:vlanid}: ${116:"#"}}
-${117:${118:   become: ${119:true}} 
-${120:   become_method: ${121:su}} 
-${122:   become_user: ${123:nobody}} 
-${124:   become_flags: ${125:"-s /bin/sh"}}} 
-${126:   when: ${127:variable is defined}} 
-${128:   with_items: ${129:array}} 
+${69:   ${70:ip_tunnel_dev}: ${71:"#"}}
+${72:   ${73:ip_tunnel_local}: ${74:"#"}}
+${75:   ${76:ip_tunnel_remote}: ${77:"#"}}
+${78:   ${79:mac}: ${80:"#"}}
+${81:   ${82:master}: ${83:"#"}}
+${84:   ${85:maxage}: ${86:"#"}}
+${87:   ${88:miimon}: ${89:"#"}}
+${90:   ${91:mode}: ${92:"#"}}
+${93:   ${94:mtu}: ${95:"#"}}
+${96:   ${97:path_cost}: ${98:"#"}}
+${99:   ${100:primary}: ${101:"#"}}
+${102:   ${103:priority}: ${104:"#"}}
+${105:   ${106:slavepriority}: ${107:"#"}}
+${108:   ${109:state}: ${110:"#"}}
+${111:   ${112:stp}: ${113:"#"}}
+${114:   ${115:type}: ${116:"#"}}
+${117:   ${118:updelay}: ${119:"#"}}
+${120:   ${121:vlandev}: ${122:"#"}}
+${123:   ${124:vlanid}: ${125:"#"}}
+${126:   ${127:vxlan_id}: ${128:"#"}}
+${129:   ${130:vxlan_local}: ${131:"#"}}
+${132:   ${133:vxlan_remote}: ${134:"#"}}
+${135:${136:   become: ${137:true}} 
+${138:   become_method: ${139:su}} 
+${140:   become_user: ${141:nobody}} 
+${142:   become_flags: ${143:"-s /bin/sh"}}} 
+${144:   when: ${145:variable is defined}} 
+${146:   with_items: ${147:array}} 
 ]]></content>
 	<tabTrigger>nmcli</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# ignore_selinux_state: Run independent of selinux runtime state 
+# login: (required) a Linux user 
+# reload: Reload SELinux policy after commit. 
+# selevel: MLS/MCS Security Range (MLS/MCS Systems only) 
+# seuser: (required) SELinux user name 
+# state: (required) Desired mapping value. 
+}- name: ${2:Name for selogin module.}
+  selogin:
+${3:   ${4:ignore_selinux_state}: ${5:"#"}}
+${6:   ${7:login}: ${8:"#"}}
+${9:   ${10:reload}: ${11:"#"}}
+${12:   ${13:selevel}: ${14:"#"}}
+${15:   ${16:seuser}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>selogin</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# async: If set to `yes' Yum will download packages and 
-# attributes: Attributes the file or directory should have. To 
+# attributes: The attributes the resulting file or directory 
 # bandwidth: Maximum available network bandwidth in 
 # baseurl: URL to the directory where the yum repository's 
 # cost: Relative cost of accessing this repository. 
@@ -28,7 +28,7 @@ ${1:# async: If set to `yes' Yum will download packages and
 # metalink: Specifies a URL to a metalink file for the 
 # mirrorlist: Specifies a URL to a file containing a list of 
 # mirrorlist_expire: Time (in seconds) after which the mirrorlist 
-# mode: Mode the file or directory should be. For those 
+# mode: The permissions the resulting file or directory 
 # name: (required) Unique repository ID. This option 
 # owner: Name of the user that should own the 
 # password: Password to use with the username for basic 
@@ -41,10 +41,10 @@ ${1:# async: If set to `yes' Yum will download packages and
 # reposdir: Directory where the `.repo' files will be 
 # retries: Set the number of times any attempt to retrieve 
 # s3_enabled: Enables support for S3 repositories. This option 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # skip_if_unavailable: If set to `yes' yum will continue running if 
 # ssl_check_cert_permissions: Whether yum should check the permissions on the 
 # sslcacert: Path to the directory containing the databases 
@@ -55,7 +55,7 @@ ${1:# async: If set to `yes' Yum will download packages and
 # throttle: Enable bandwidth throttling for downloads. This 
 # timeout: Number of seconds to wait for a connection 
 # ui_repoid_vars: When a repository id is displayed, append these 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 # username: Username to use for basic authentication to a 
 }- name: ${2:Name for yum_repository module.}
   yum_repository:

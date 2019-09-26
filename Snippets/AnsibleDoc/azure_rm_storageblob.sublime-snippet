@@ -17,14 +17,14 @@ ${1:# ad_user: Active Directory username. Use when
 # content_language: Set the blob content-language header. 
 # content_md5: Set the blob md5 hash value. 
 # content_type: Set the blob content-type header. For example, 
-# dest: Destination file path. Use with state 'present' 
+# dest: Destination file path. Use with state `present' 
 # force: Overwrite existing blob or file when uploading 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # public_access: Determine a container's level of public access. 
 # resource_group: (required) Name of the resource group to use. 
 # secret: Azure client secret. Use when authenticating 
-# src: Source file path. Use with state 'present' to 
+# src: Source file path. Use with state `present' to 
 # state: Assert the state of a container or blob. Use 
 # storage_account_name: (required) Name of the storage account to use. 
 # subscription_id: Your Azure subscription Id. 

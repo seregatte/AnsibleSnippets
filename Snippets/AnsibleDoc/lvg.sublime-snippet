@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# force: If `yes', allows to remove volume group with 
-# pesize: The size of the physical extent. pesize must be 
+# pesize: The size of the physical extent. `pesize' must 
 # pv_options: Additional options to pass to `pvcreate' when 
 # pvs: List of comma-separated devices to use as 
 # state: Control if the volume group exists. 

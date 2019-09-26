@@ -14,11 +14,13 @@ ${1:# description: The description of the monitor.
 # send: The send string for the monitor call. When 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 
+# ssl_profile: Specifies the SSL profile to use for the HTTPS 
 # state: When `present', ensures that the monitor exists. 
 # target_password: Specifies the password, if the monitored target 
 # target_username: Specifies the user name, if the monitored target 
 # time_until_up: Specifies the amount of time in seconds after 
 # timeout: The number of seconds in which the node or 
+# up_interval: Specifies the interval for the system to use to 
 # user: (required) The username to connect to the BIG-IP 
 # validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_monitor_https module.}
@@ -37,19 +39,21 @@ ${33:   ${34:receive_disable}: ${35:"#"}}
 ${36:   ${37:send}: ${38:"#"}}
 ${39:   ${40:server}: ${41:"#"}}
 ${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:target_password}: ${50:"#"}}
-${51:   ${52:target_username}: ${53:"#"}}
-${54:   ${55:time_until_up}: ${56:"#"}}
-${57:   ${58:timeout}: ${59:"#"}}
-${60:   ${61:user}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${45:   ${46:ssl_profile}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:target_password}: ${53:"#"}}
+${54:   ${55:target_username}: ${56:"#"}}
+${57:   ${58:time_until_up}: ${59:"#"}}
+${60:   ${61:timeout}: ${62:"#"}}
+${63:   ${64:up_interval}: ${65:"#"}}
+${66:   ${67:user}: ${68:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>bigip_monitor_https</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

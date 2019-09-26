@@ -17,6 +17,7 @@ ${1:# pn_bgp_as: Specify the Autonomous System Number(ASN) if the
 # pn_service_state: Specify to enable or disable vRouter service. 
 # pn_service_type: Specify if the vRouter is a dedicated or shared 
 # pn_vnet: Specify the name of the VNET. Required for 
+# pn_vrrp_track_port: Specify list of ports and port ranges. 
 # state: (required) State the action to perform. Use 
 }- name: ${2:Name for pn_vrouter module.}
   pn_vrouter:
@@ -37,13 +38,14 @@ ${42:   ${43:pn_router_type}: ${44:"#"}}
 ${45:   ${46:pn_service_state}: ${47:"#"}}
 ${48:   ${49:pn_service_type}: ${50:"#"}}
 ${51:   ${52:pn_vnet}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${54:   ${55:pn_vrrp_track_port}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>pn_vrouter</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

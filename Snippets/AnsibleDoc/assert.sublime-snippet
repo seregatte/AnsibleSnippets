@@ -1,19 +1,21 @@
 <snippet>
 <content><![CDATA[
 ${1:# fail_msg: The customized message used for a failing 
+# quiet: Set this to `yes' to avoid verbose output. 
 # success_msg: The customized message used for a successful 
-# that: (required) A string expression of the same form 
+# that: (required) A list of string expressions of the 
 }- name: ${2:Name for assert module.}
   assert:
 ${3:   ${4:fail_msg}: ${5:"#"}}
-${6:   ${7:success_msg}: ${8:"#"}}
-${9:   ${10:that}: ${11:"#"}}
-${12:${13:   become: ${14:true}} 
-${15:   become_method: ${16:su}} 
-${17:   become_user: ${18:nobody}} 
-${19:   become_flags: ${20:"-s /bin/sh"}}} 
-${21:   when: ${22:variable is defined}} 
-${23:   with_items: ${24:array}} 
+${6:   ${7:quiet}: ${8:"#"}}
+${9:   ${10:success_msg}: ${11:"#"}}
+${12:   ${13:that}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>assert</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

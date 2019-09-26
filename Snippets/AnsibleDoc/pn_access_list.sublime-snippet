@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_cliswitch: Target switch to run the CLI on. 
+# pn_name: Access List Name. 
+# pn_scope: scope. Available valid values - local or fabric. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_access_list module.}
+  pn_access_list:
+${3:   ${4:pn_cliswitch}: ${5:"#"}}
+${6:   ${7:pn_name}: ${8:"#"}}
+${9:   ${10:pn_scope}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>pn_access_list</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

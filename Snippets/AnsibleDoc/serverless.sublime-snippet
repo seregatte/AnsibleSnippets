@@ -3,11 +3,11 @@
 ${1:# deploy: Whether or not to deploy artifacts after 
 # force: Whether or not to force full deployment, 
 # functions: A list of specific functions to deploy. If this 
-# region: AWS region to deploy the service to 
+# region: AWS region to deploy the service to. This 
 # serverless_bin_path: The path of a serverless framework binary 
 # service_path: (required) The path to the root of the 
 # stage: The name of the serverless framework project 
-# state: Goal state of given stage/project 
+# state: Goal state of given stage/project. 
 # verbose: Shows all stack events during deployment, and 
 }- name: ${2:Name for serverless module.}
   serverless:

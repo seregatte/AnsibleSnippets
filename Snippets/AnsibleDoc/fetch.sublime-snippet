@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# dest: (required) A directory to save the file into. 
-# fail_on_missing: When set to 'yes', the task will fail if the 
+# fail_on_missing: When set to `yes', the task will fail if the 
 # flat: Allows you to override the default behavior of 
 # src: (required) The file on the remote system to 
 # validate_checksum: Verify that the source and destination checksums 

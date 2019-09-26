@@ -3,31 +3,37 @@
 ${1:# hostname: (required) The hostname or IP address of the 
 # http_port: Override the default port (80 or 443) with this 
 # https: Enable and disable https 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # path: The file system path that is shared through this 
 # share_name: (required) The name of the CIFS share. The CIFS 
+# share_properties: The list of properties for the CIFS share 
 # state: Whether the specified CIFS share should exist or 
+# symlink_properties: The list of symlink properties for this CIFS 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) Vserver containing the CIFS share. 
 }- name: ${2:Name for na_ontap_cifs module.}
   na_ontap_cifs:
 ${3:   ${4:hostname}: ${5:"#"}}
 ${6:   ${7:http_port}: ${8:"#"}}
 ${9:   ${10:https}: ${11:"#"}}
-${12:   ${13:password}: ${14:"#"}}
-${15:   ${16:path}: ${17:"#"}}
-${18:   ${19:share_name}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:username}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:   ${31:vserver}: ${32:"#"}}
-${33:${34:   become: ${35:true}} 
-${36:   become_method: ${37:su}} 
-${38:   become_user: ${39:nobody}} 
-${40:   become_flags: ${41:"-s /bin/sh"}}} 
-${42:   when: ${43:variable is defined}} 
-${44:   with_items: ${45:array}} 
+${12:   ${13:ontapi}: ${14:"#"}}
+${15:   ${16:password}: ${17:"#"}}
+${18:   ${19:path}: ${20:"#"}}
+${21:   ${22:share_name}: ${23:"#"}}
+${24:   ${25:share_properties}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:symlink_properties}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:vserver}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cifs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

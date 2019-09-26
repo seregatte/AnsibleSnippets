@@ -1,0 +1,32 @@
+<snippet>
+<content><![CDATA[
+${1:# datacenter: (required) The datacenter on the vCenter server 
+# datastore: (required) The datastore on the vCenter server 
+# host: (required) The vCenter server on which the 
+# password: (required) The password to authenticate on the 
+# path: (required) The file or directory on the 
+# state: The state of or the action on the provided path. 
+# timeout: The timeout in seconds for the upload to the 
+# username: (required) The user name to authenticate on the 
+# validate_certs: If `no', SSL certificates will not be validated. 
+}- name: ${2:Name for vsphere_file module.}
+  vsphere_file:
+${3:   ${4:datacenter}: ${5:"#"}}
+${6:   ${7:datastore}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:timeout}: ${23:"#"}}
+${24:   ${25:username}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
+]]></content>
+	<tabTrigger>vsphere_file</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

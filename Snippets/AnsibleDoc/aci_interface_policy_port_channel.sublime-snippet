@@ -13,7 +13,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # port_channel: (required) Name of the port channel. 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # suspend_individual: Determines if Suspend Individual is enabled. 
 # symmetric_hash: Determines if Symmetric Hashing is enabled. This 

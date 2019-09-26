@@ -9,12 +9,12 @@ ${1:# credential: Credential the role acts on.
 # state: Desired state of the resource. 
 # target_team: Team that the role acts on. 
 # team: Team that receives the permissions specified by 
-# tower_config_file: Path to the Tower config file. See notes. 
+# tower_config_file: Path to the Tower config file. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
 # user: User that receives the permissions specified by 
+# validate_certs: Whether to allow insecure connections to Tower. 
 }- name: ${2:Name for tower_role module.}
   tower_role:
 ${3:   ${4:credential}: ${5:"#"}}
@@ -30,8 +30,8 @@ ${30:   ${31:tower_config_file}: ${32:"#"}}
 ${33:   ${34:tower_host}: ${35:"#"}}
 ${36:   ${37:tower_password}: ${38:"#"}}
 ${39:   ${40:tower_username}: ${41:"#"}}
-${42:   ${43:tower_verify_ssl}: ${44:"#"}}
-${45:   ${46:user}: ${47:"#"}}
+${42:   ${43:user}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
 ${48:${49:   become: ${50:true}} 
 ${51:   become_method: ${52:su}} 
 ${53:   become_user: ${54:nobody}} 

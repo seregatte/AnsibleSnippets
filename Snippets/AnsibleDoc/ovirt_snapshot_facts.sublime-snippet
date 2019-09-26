@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# auth: (required) Dictionary with values needed to 
 # description: Description of the snapshot, can be used as glob 
-# fetch_nested: If `True' the module will fetch additional data 
+# fetch_nested: If `yes' the module will fetch additional data 
 # nested_attributes: Specifies list of the attributes which should be 
 # snapshot_id: Id of the snapshot we want to retrieve facts 
 # vm: (required) Name of the VM with snapshot. 

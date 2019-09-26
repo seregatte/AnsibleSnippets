@@ -14,7 +14,7 @@ ${1:# api_key: Rackspace API key, overrides `credentials'.
 # tenant_id: The tenant ID used for authentication. 
 # tenant_name: The tenant name used for authentication. 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 }- name: ${2:Name for rax_mon_notification module.}
   rax_mon_notification:
 ${3:   ${4:api_key}: ${5:"#"}}
@@ -31,7 +31,7 @@ ${33:   ${34:state}: ${35:"#"}}
 ${36:   ${37:tenant_id}: ${38:"#"}}
 ${39:   ${40:tenant_name}: ${41:"#"}}
 ${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:verify_ssl}: ${47:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
 ${48:${49:   become: ${50:true}} 
 ${51:   become_method: ${52:su}} 
 ${53:   become_user: ${54:nobody}} 

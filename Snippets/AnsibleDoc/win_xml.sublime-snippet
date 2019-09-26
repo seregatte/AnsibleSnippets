@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# attribute: The attribute name if the type is 'attribute'. 
-# backup: Whether to backup the remote server's XML before 
+# backup: Determine whether a backup should be created. 
 # fragment: (required) The string representation of the XML 
 # path: (required) The path of remote servers XML. 
 # type: (required) The type of XML you are working with. 

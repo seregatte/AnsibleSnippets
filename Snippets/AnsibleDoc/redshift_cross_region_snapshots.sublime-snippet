@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# cluster_name: (required) The name of the cluster to configure 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
+# destination_region: (required) The region to copy snapshots to 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: (required) The clusters region 
+# security_token: AWS STS security token. If not set then the 
+# snapshot_copy_grant: A grant for Amazon Redshift to use a master key 
+# : Re 
+# snapshot_retention_period: (required) Keep cross-region snapshots for N 
+# state: (required) Create or remove the cross-region 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for redshift_cross_region_snapshots module.}
+  redshift_cross_region_snapshots:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:cluster_name}: ${11:"#"}}
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:destination_region}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:security_token}: ${29:"#"}}
+${30:   ${31:snapshot_copy_grant}: ${32:"#"}}
+${33:   ${34:}: ${35:"#"}}
+${36:   ${37:snapshot_retention_period}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>redshift_cross_region_snapshots</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

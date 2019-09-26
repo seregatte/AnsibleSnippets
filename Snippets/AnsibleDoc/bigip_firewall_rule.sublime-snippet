@@ -4,7 +4,7 @@ ${1:# action: Specifies the action for the firewall rule. When
 # description: The rule description. 
 # destination: Specifies packet destinations to which the rule 
 # icmp_message: Specifies the Internet Control Message Protocol 
-# irule: Specifies an iRule that is applied to the rule. 
+# irule: Specifies an iRule that is applied to the 
 # logging: Specifies whether logging is enabled or disabled 
 # name: (required) Specifies the name of the rule. 
 # parent_policy: The policy which contains the rule to be 

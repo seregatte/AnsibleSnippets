@@ -8,6 +8,7 @@ ${1:# alias: The name of an alias (CNAME) that is used in a
 # caller_reference: A unique identifier for creating and updating 
 # comment: A comment that describes the cloudfront 
 # custom_error_responses: A config element that is a `list[]' of complex 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # default_cache_behavior: A config element that is a complex object 
 # default_origin_domain_name: The domain name to use for an origin if no 
 # default_origin_path: The default origin path to specify for an origin 
@@ -48,42 +49,43 @@ ${15:   ${16:cache_behaviors}: ${17:"#"}}
 ${18:   ${19:caller_reference}: ${20:"#"}}
 ${21:   ${22:comment}: ${23:"#"}}
 ${24:   ${25:custom_error_responses}: ${26:"#"}}
-${27:   ${28:default_cache_behavior}: ${29:"#"}}
-${30:   ${31:default_origin_domain_name}: ${32:"#"}}
-${33:   ${34:default_origin_path}: ${35:"#"}}
-${36:   ${37:default_root_object}: ${38:"#"}}
-${39:   ${40:distribution_id}: ${41:"#"}}
-${42:   ${43:e_tag}: ${44:"#"}}
-${45:   ${46:ec2_url}: ${47:"#"}}
-${48:   ${49:enabled}: ${50:"#"}}
-${51:   ${52:http_version}: ${53:"#"}}
-${54:   ${55:ipv6_enabled}: ${56:"#"}}
-${57:   ${58:logging}: ${59:"#"}}
-${60:   ${61:origins}: ${62:"#"}}
-${63:   ${64:price_class}: ${65:"#"}}
-${66:   ${67:profile}: ${68:"#"}}
-${69:   ${70:purge_aliases}: ${71:"#"}}
-${72:   ${73:purge_cache_behaviors}: ${74:"#"}}
-${75:   ${76:purge_custom_error_responses}: ${77:"#"}}
-${78:   ${79:purge_origins}: ${80:"#"}}
-${81:   ${82:purge_tags}: ${83:"#"}}
-${84:   ${85:region}: ${86:"#"}}
-${87:   ${88:}: ${89:"#"}}
-${90:   ${91:restrictions}: ${92:"#"}}
-${93:   ${94:security_token}: ${95:"#"}}
-${96:   ${97:state}: ${98:"#"}}
-${99:   ${100:tags}: ${101:"#"}}
-${102:   ${103:validate_certs}: ${104:"#"}}
-${105:   ${106:viewer_certificate}: ${107:"#"}}
-${108:   ${109:wait}: ${110:"#"}}
-${111:   ${112:wait_timeout}: ${113:"#"}}
-${114:   ${115:web_acl_id}: ${116:"#"}}
-${117:${118:   become: ${119:true}} 
-${120:   become_method: ${121:su}} 
-${122:   become_user: ${123:nobody}} 
-${124:   become_flags: ${125:"-s /bin/sh"}}} 
-${126:   when: ${127:variable is defined}} 
-${128:   with_items: ${129:array}} 
+${27:   ${28:debug_botocore_endpoint_logs}: ${29:"#"}}
+${30:   ${31:default_cache_behavior}: ${32:"#"}}
+${33:   ${34:default_origin_domain_name}: ${35:"#"}}
+${36:   ${37:default_origin_path}: ${38:"#"}}
+${39:   ${40:default_root_object}: ${41:"#"}}
+${42:   ${43:distribution_id}: ${44:"#"}}
+${45:   ${46:e_tag}: ${47:"#"}}
+${48:   ${49:ec2_url}: ${50:"#"}}
+${51:   ${52:enabled}: ${53:"#"}}
+${54:   ${55:http_version}: ${56:"#"}}
+${57:   ${58:ipv6_enabled}: ${59:"#"}}
+${60:   ${61:logging}: ${62:"#"}}
+${63:   ${64:origins}: ${65:"#"}}
+${66:   ${67:price_class}: ${68:"#"}}
+${69:   ${70:profile}: ${71:"#"}}
+${72:   ${73:purge_aliases}: ${74:"#"}}
+${75:   ${76:purge_cache_behaviors}: ${77:"#"}}
+${78:   ${79:purge_custom_error_responses}: ${80:"#"}}
+${81:   ${82:purge_origins}: ${83:"#"}}
+${84:   ${85:purge_tags}: ${86:"#"}}
+${87:   ${88:region}: ${89:"#"}}
+${90:   ${91:}: ${92:"#"}}
+${93:   ${94:restrictions}: ${95:"#"}}
+${96:   ${97:security_token}: ${98:"#"}}
+${99:   ${100:state}: ${101:"#"}}
+${102:   ${103:tags}: ${104:"#"}}
+${105:   ${106:validate_certs}: ${107:"#"}}
+${108:   ${109:viewer_certificate}: ${110:"#"}}
+${111:   ${112:wait}: ${113:"#"}}
+${114:   ${115:wait_timeout}: ${116:"#"}}
+${117:   ${118:web_acl_id}: ${119:"#"}}
+${120:${121:   become: ${122:true}} 
+${123:   become_method: ${124:su}} 
+${125:   become_user: ${126:nobody}} 
+${127:   become_flags: ${128:"-s /bin/sh"}}} 
+${129:   when: ${130:variable is defined}} 
+${131:   with_items: ${132:array}} 
 ]]></content>
 	<tabTrigger>cloudfront_distribution</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

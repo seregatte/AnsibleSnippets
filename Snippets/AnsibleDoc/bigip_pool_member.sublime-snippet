@@ -1,12 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# address: IP address of the pool member. This can be 
+# aggregate: List of pool member definitions to be created, 
+# availability_requirements: Specifies, if you activate more than one health 
 # connection_limit: Pool member connection limit. Setting this to 0 
 # description: Pool member description. 
 # fqdn: FQDN name of the pool member. This can be any 
 # fqdn_auto_populate: Specifies whether the system automatically 
+# ip_encapsulation: Specifies the IP encapsulation using either IPIP 
+# monitors: Specifies the health monitors that the system 
 # name: Name of the node to create, or re-use, when 
-# partition: Partition 
+# partition: Partition to manage resources on. 
 # password: (required) The password for the user account 
 # pool: (required) Pool name. This pool must exist. 
 # port: (required) Pool member port. This value cannot 
@@ -15,6 +19,7 @@ ${1:# address: IP address of the pool member. This can be
 # provider: A dict object containing connection details. 
 # rate_limit: Pool member rate limit (connections-per-second). 
 # ratio: Pool member ratio weight. Valid values range 
+# replace_all_with: Remove members not defined in the `aggregate' 
 # reuse_nodes: Reuses node definitions if requested. 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 
@@ -24,32 +29,37 @@ ${1:# address: IP address of the pool member. This can be
 }- name: ${2:Name for bigip_pool_member module.}
   bigip_pool_member:
 ${3:   ${4:address}: ${5:"#"}}
-${6:   ${7:connection_limit}: ${8:"#"}}
-${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:fqdn}: ${14:"#"}}
-${15:   ${16:fqdn_auto_populate}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:partition}: ${23:"#"}}
-${24:   ${25:password}: ${26:"#"}}
-${27:   ${28:pool}: ${29:"#"}}
-${30:   ${31:port}: ${32:"#"}}
-${33:   ${34:preserve_node}: ${35:"#"}}
-${36:   ${37:priority_group}: ${38:"#"}}
-${39:   ${40:provider}: ${41:"#"}}
-${42:   ${43:rate_limit}: ${44:"#"}}
-${45:   ${46:ratio}: ${47:"#"}}
-${48:   ${49:reuse_nodes}: ${50:"#"}}
-${51:   ${52:server}: ${53:"#"}}
-${54:   ${55:server_port}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:user}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${6:   ${7:aggregate}: ${8:"#"}}
+${9:   ${10:availability_requirements}: ${11:"#"}}
+${12:   ${13:connection_limit}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:fqdn}: ${20:"#"}}
+${21:   ${22:fqdn_auto_populate}: ${23:"#"}}
+${24:   ${25:ip_encapsulation}: ${26:"#"}}
+${27:   ${28:monitors}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:partition}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:pool}: ${41:"#"}}
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:preserve_node}: ${47:"#"}}
+${48:   ${49:priority_group}: ${50:"#"}}
+${51:   ${52:provider}: ${53:"#"}}
+${54:   ${55:rate_limit}: ${56:"#"}}
+${57:   ${58:ratio}: ${59:"#"}}
+${60:   ${61:replace_all_with}: ${62:"#"}}
+${63:   ${64:reuse_nodes}: ${65:"#"}}
+${66:   ${67:server}: ${68:"#"}}
+${69:   ${70:server_port}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:user}: ${77:"#"}}
+${78:   ${79:validate_certs}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>bigip_pool_member</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

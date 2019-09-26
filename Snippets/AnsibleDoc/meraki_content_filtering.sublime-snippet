@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# allowed_urls: List of URL patterns which should be allowed. 
+# auth_key: Authentication key provided by the dashboard. 
+# blocked_categories: List of content categories which should be 
+# blocked_urls: List of URL patterns which should be blocked. 
+# category_list_size: Determines whether a network filters fo rall 
+# host: Hostname for Meraki dashboard. Can be used to 
+# net_id: ID number of a network. 
+# net_name: Name of a network. 
+# org_id: ID of organization associated to a network. 
+# org_name: Name of organization associated to a network. 
+# output_level: Set amount of debug output during module 
+# state: States that a policy should be created or 
+# timeout: Time to timeout for HTTP requests. 
+# use_https: If `no', it will use HTTP. Otherwise it will use 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# validate_certs: Whether to validate HTTP certificates. 
+}- name: ${2:Name for meraki_content_filtering module.}
+  meraki_content_filtering:
+${3:   ${4:allowed_urls}: ${5:"#"}}
+${6:   ${7:auth_key}: ${8:"#"}}
+${9:   ${10:blocked_categories}: ${11:"#"}}
+${12:   ${13:blocked_urls}: ${14:"#"}}
+${15:   ${16:category_list_size}: ${17:"#"}}
+${18:   ${19:host}: ${20:"#"}}
+${21:   ${22:net_id}: ${23:"#"}}
+${24:   ${25:net_name}: ${26:"#"}}
+${27:   ${28:org_id}: ${29:"#"}}
+${30:   ${31:org_name}: ${32:"#"}}
+${33:   ${34:output_level}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:timeout}: ${41:"#"}}
+${42:   ${43:use_https}: ${44:"#"}}
+${45:   ${46:use_proxy}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>meraki_content_filtering</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

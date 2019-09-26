@@ -5,6 +5,7 @@ ${1:# blacklist: A list of update titles or KB numbers that can
 # log_path: If set, `win_updates' will append update 
 # reboot: Ansible will automatically reboot the remote 
 # reboot_timeout: The time in seconds to wait until the host is 
+# server_selection: Defines the Windows Update source catalog. 
 # state: Controls whether found updates are returned as a 
 # use_scheduled_task: Will not auto elevate the remote process with 
 # whitelist: A list of update titles or KB numbers that can 
@@ -15,15 +16,16 @@ ${6:   ${7:category_names}: ${8:"#"}}
 ${9:   ${10:log_path}: ${11:"#"}}
 ${12:   ${13:reboot}: ${14:"#"}}
 ${15:   ${16:reboot_timeout}: ${17:"#"}}
-${18:   ${19:state}: ${20:"#"}}
-${21:   ${22:use_scheduled_task}: ${23:"#"}}
-${24:   ${25:whitelist}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${18:   ${19:server_selection}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:use_scheduled_task}: ${26:"#"}}
+${27:   ${28:whitelist}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>win_updates</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

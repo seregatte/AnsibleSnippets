@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# append: If `yes', add the user to the groups specified 
+# authorization: Sets the authorization of the user. Does nothing 
 # comment: Optionally sets the description (aka `GECOS') of 
 # create_home: Unless set to `no', a home directory will be 
 # expires: An expiry time for the user in epoch, it will be 
@@ -12,20 +13,22 @@ ${1:# append: If `yes', add the user to the groups specified
 # home: Optionally set the user's home directory. 
 # local: Forces the use of "local" command alternatives 
 # login_class: Optionally sets the user's login class, a 
-# move_home: If set to `yes' when used with `home=', attempt 
+# move_home: If set to `yes' when used with `home: ', attempt 
 # name: (required) Name of the user to create, remove or 
 # non_unique: Optionally when used with the -u option, this 
 # password: Optionally set the user's password to this 
-# html: how-do-i 
+# : how-do-i 
 # password_lock: Lock the password (usermod -L, pw lock, usermod 
+# profile: Sets the profile of the user. Does nothing when 
 # remove: This only affects `state=absent', it attempts to 
+# role: Sets the role of the user. Does nothing when 
 # seuser: Optionally sets the seuser type (user_u) on 
 # shell: Optionally set the user's shell. On macOS, 
 # skeleton: Optionally set a home skeleton directory. 
 # ssh_key_bits: Optionally specify number of bits in SSH key to 
 # ssh_key_comment: Optionally define the comment for the SSH key. 
 # ssh_key_file: Optionally specify the SSH key filename. If this 
-# ssh_key_passphrase: Set a passphrase for the SSH key.  If no 
+# ssh_key_passphrase: Set a passphrase for the SSH key. If no 
 # ssh_key_type: Optionally specify the type of SSH key to 
 # state: Whether the account should exist or not, taking 
 # system: When creating an account `state=present', 
@@ -34,42 +37,45 @@ ${1:# append: If `yes', add the user to the groups specified
 }- name: ${2:Name for user module.}
   user:
 ${3:   ${4:append}: ${5:"#"}}
-${6:   ${7:comment}: ${8:"#"}}
-${9:   ${10:create_home}: ${11:"#"}}
-${12:   ${13:expires}: ${14:"#"}}
-${15:   ${16:force}: ${17:"#"}}
-${18:   ${19:generate_ssh_key}: ${20:"#"}}
-${21:   ${22:group}: ${23:"#"}}
-${24:   ${25:groups}: ${26:"#"}}
-${27:   ${28:hidden}: ${29:"#"}}
-${30:   ${31:home}: ${32:"#"}}
-${33:   ${34:local}: ${35:"#"}}
-${36:   ${37:login_class}: ${38:"#"}}
-${39:   ${40:move_home}: ${41:"#"}}
-${42:   ${43:name}: ${44:"#"}}
-${45:   ${46:non_unique}: ${47:"#"}}
-${48:   ${49:password}: ${50:"#"}}
-${51:   ${52:html}: ${53:"#"}}
-${54:   ${55:password_lock}: ${56:"#"}}
-${57:   ${58:remove}: ${59:"#"}}
-${60:   ${61:seuser}: ${62:"#"}}
-${63:   ${64:shell}: ${65:"#"}}
-${66:   ${67:skeleton}: ${68:"#"}}
-${69:   ${70:ssh_key_bits}: ${71:"#"}}
-${72:   ${73:ssh_key_comment}: ${74:"#"}}
-${75:   ${76:ssh_key_file}: ${77:"#"}}
-${78:   ${79:ssh_key_passphrase}: ${80:"#"}}
-${81:   ${82:ssh_key_type}: ${83:"#"}}
-${84:   ${85:state}: ${86:"#"}}
-${87:   ${88:system}: ${89:"#"}}
-${90:   ${91:uid}: ${92:"#"}}
-${93:   ${94:update_password}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${6:   ${7:authorization}: ${8:"#"}}
+${9:   ${10:comment}: ${11:"#"}}
+${12:   ${13:create_home}: ${14:"#"}}
+${15:   ${16:expires}: ${17:"#"}}
+${18:   ${19:force}: ${20:"#"}}
+${21:   ${22:generate_ssh_key}: ${23:"#"}}
+${24:   ${25:group}: ${26:"#"}}
+${27:   ${28:groups}: ${29:"#"}}
+${30:   ${31:hidden}: ${32:"#"}}
+${33:   ${34:home}: ${35:"#"}}
+${36:   ${37:local}: ${38:"#"}}
+${39:   ${40:login_class}: ${41:"#"}}
+${42:   ${43:move_home}: ${44:"#"}}
+${45:   ${46:name}: ${47:"#"}}
+${48:   ${49:non_unique}: ${50:"#"}}
+${51:   ${52:password}: ${53:"#"}}
+${54:   ${55:}: ${56:"#"}}
+${57:   ${58:password_lock}: ${59:"#"}}
+${60:   ${61:profile}: ${62:"#"}}
+${63:   ${64:remove}: ${65:"#"}}
+${66:   ${67:role}: ${68:"#"}}
+${69:   ${70:seuser}: ${71:"#"}}
+${72:   ${73:shell}: ${74:"#"}}
+${75:   ${76:skeleton}: ${77:"#"}}
+${78:   ${79:ssh_key_bits}: ${80:"#"}}
+${81:   ${82:ssh_key_comment}: ${83:"#"}}
+${84:   ${85:ssh_key_file}: ${86:"#"}}
+${87:   ${88:ssh_key_passphrase}: ${89:"#"}}
+${90:   ${91:ssh_key_type}: ${92:"#"}}
+${93:   ${94:state}: ${95:"#"}}
+${96:   ${97:system}: ${98:"#"}}
+${99:   ${100:uid}: ${101:"#"}}
+${102:   ${103:update_password}: ${104:"#"}}
+${105:${106:   become: ${107:true}} 
+${108:   become_method: ${109:su}} 
+${110:   become_user: ${111:nobody}} 
+${112:   become_flags: ${113:"-s /bin/sh"}}} 
+${114:   when: ${115:variable is defined}} 
+${116:   with_items: ${117:array}} 
 ]]></content>
 	<tabTrigger>user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

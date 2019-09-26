@@ -9,11 +9,11 @@ ${1:# allow_simultaneous: If enabled, simultaneous runs of this job
 # state: Desired state of the resource. 
 # survey: The definition of the survey associated to the 
 # survey_enabled: Setting that variable will prompt the user for 
-# tower_config_file: Path to the Tower config file. See notes. 
+# tower_config_file: Path to the Tower config file. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# validate_certs: Whether to allow insecure connections to Tower. 
 }- name: ${2:Name for tower_workflow_template module.}
   tower_workflow_template:
 ${3:   ${4:allow_simultaneous}: ${5:"#"}}
@@ -29,7 +29,7 @@ ${30:   ${31:tower_config_file}: ${32:"#"}}
 ${33:   ${34:tower_host}: ${35:"#"}}
 ${36:   ${37:tower_password}: ${38:"#"}}
 ${39:   ${40:tower_username}: ${41:"#"}}
-${42:   ${43:tower_verify_ssl}: ${44:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
 ${45:${46:   become: ${47:true}} 
 ${48:   become_method: ${49:su}} 
 ${50:   become_user: ${51:nobody}} 

@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# headers: A dictionary of additional headers to be sent to 
+# name: (required) The name of the object. Will be used 
+# state: The desired state of the object. `present' will 
+# utm_host: (required) The REST Endpoint of the Sophos UTM. 
+# utm_port: The port of the REST interface. 
+# utm_protocol: The protocol of the REST Endpoint. 
+# utm_token: (required) The token used to identify at the 
+# validate_certs: Whether the REST interface's ssl certificate 
+}- name: ${2:Name for utm_proxy_location_info module.}
+  utm_proxy_location_info:
+${3:   ${4:headers}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:utm_host}: ${14:"#"}}
+${15:   ${16:utm_port}: ${17:"#"}}
+${18:   ${19:utm_protocol}: ${20:"#"}}
+${21:   ${22:utm_token}: ${23:"#"}}
+${24:   ${25:validate_certs}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>utm_proxy_location_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

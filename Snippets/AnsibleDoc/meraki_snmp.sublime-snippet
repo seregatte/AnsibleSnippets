@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth_key: Authentication key provided by the dashboard. 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # org_id: ID of organization. 
 # org_name: Name of organization. 
 # output_level: Set amount of debug output during module 

@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# address: IP address of the node. This can be either IPv4 
+# availability_requirements: Specifies, if you activate more than one health 
 # connection_limit: Node connection limit. Setting this to 0 
 # description: Specifies descriptive text that identifies the 
 # dynamic_ratio: The dynamic ratio number for the node. Used for 
@@ -26,34 +27,35 @@ ${1:# address: IP address of the node. This can be either IPv4
 }- name: ${2:Name for bigip_node module.}
   bigip_node:
 ${3:   ${4:address}: ${5:"#"}}
-${6:   ${7:connection_limit}: ${8:"#"}}
-${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:dynamic_ratio}: ${14:"#"}}
-${15:   ${16:fqdn}: ${17:"#"}}
-${18:   ${19:fqdn_address_type}: ${20:"#"}}
-${21:   ${22:fqdn_auto_populate}: ${23:"#"}}
-${24:   ${25:fqdn_down_interval}: ${26:"#"}}
-${27:   ${28:fqdn_up_interval}: ${29:"#"}}
-${30:   ${31:monitor_type}: ${32:"#"}}
-${33:   ${34:monitors}: ${35:"#"}}
-${36:   ${37:name}: ${38:"#"}}
-${39:   ${40:partition}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:provider}: ${47:"#"}}
-${48:   ${49:quorum}: ${50:"#"}}
-${51:   ${52:rate_limit}: ${53:"#"}}
-${54:   ${55:ratio}: ${56:"#"}}
-${57:   ${58:server}: ${59:"#"}}
-${60:   ${61:server_port}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:user}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${6:   ${7:availability_requirements}: ${8:"#"}}
+${9:   ${10:connection_limit}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:dynamic_ratio}: ${17:"#"}}
+${18:   ${19:fqdn}: ${20:"#"}}
+${21:   ${22:fqdn_address_type}: ${23:"#"}}
+${24:   ${25:fqdn_auto_populate}: ${26:"#"}}
+${27:   ${28:fqdn_down_interval}: ${29:"#"}}
+${30:   ${31:fqdn_up_interval}: ${32:"#"}}
+${33:   ${34:monitor_type}: ${35:"#"}}
+${36:   ${37:monitors}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:partition}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:provider}: ${50:"#"}}
+${51:   ${52:quorum}: ${53:"#"}}
+${54:   ${55:rate_limit}: ${56:"#"}}
+${57:   ${58:ratio}: ${59:"#"}}
+${60:   ${61:server}: ${62:"#"}}
+${63:   ${64:server_port}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:user}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>bigip_node</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

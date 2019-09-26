@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# executable: The executable location for npm. This is useful 
+${1:# ci: Install packages based on package-lock file, 
+# executable: The executable location for npm. This is useful 
 # global: Install the node.js library globally 
 # ignore_scripts: Use the `--ignore-scripts' flag when installing. 
 # name: The name of a node.js library to install 
@@ -8,24 +9,27 @@ ${1:# executable: The executable location for npm. This is useful
 # production: Install dependencies in production mode, 
 # registry: The registry to install modules from. 
 # state: The state of the node.js library 
+# unsafe_perm: Use the `--unsafe-perm' flag when installing. 
 # version: The version to be installed 
 }- name: ${2:Name for npm module.}
   npm:
-${3:   ${4:executable}: ${5:"#"}}
-${6:   ${7:global}: ${8:"#"}}
-${9:   ${10:ignore_scripts}: ${11:"#"}}
-${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:path}: ${17:"#"}}
-${18:   ${19:production}: ${20:"#"}}
-${21:   ${22:registry}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:version}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${3:   ${4:ci}: ${5:"#"}}
+${6:   ${7:executable}: ${8:"#"}}
+${9:   ${10:global}: ${11:"#"}}
+${12:   ${13:ignore_scripts}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:path}: ${20:"#"}}
+${21:   ${22:production}: ${23:"#"}}
+${24:   ${25:registry}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:unsafe_perm}: ${32:"#"}}
+${33:   ${34:version}: ${35:"#"}}
+${36:${37:   become: ${38:true}} 
+${39:   become_method: ${40:su}} 
+${41:   become_user: ${42:nobody}} 
+${43:   become_flags: ${44:"-s /bin/sh"}}} 
+${45:   when: ${46:variable is defined}} 
+${47:   with_items: ${48:array}} 
 ]]></content>
 	<tabTrigger>npm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

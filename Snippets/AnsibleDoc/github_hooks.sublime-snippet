@@ -5,7 +5,7 @@ ${1:# action: (required) This tells the githooks module what
 # hookurl: When creating a new hook, this is the url that 
 # oauthkey: (required) The oauth key provided by GitHub. It 
 # repo: (required) This is the API url for the 
-# user: (required) Github username. 
+# user: (required) GitHub username. 
 # validate_certs: If `no', SSL certificates for the target repo 
 }- name: ${2:Name for github_hooks module.}
   github_hooks:

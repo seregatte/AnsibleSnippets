@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
+${1:# attributes: The attributes the resulting file or directory 
 # copy: If true, the file is copied from local 'master' 
 # creates: If the specified absolute path (file or 
 # decrypt: This option controls the autodecryption of 
@@ -10,15 +10,15 @@ ${1:# attributes: Attributes the file or directory should have. To
 # group: Name of the group that should own the 
 # keep_newer: Do not replace existing files that are newer 
 # list_files: If set to True, return the list of files that 
-# mode: Mode the file or directory should be. For those 
+# mode: The permissions the resulting file or directory 
 # owner: Name of the user that should own the 
 # remote_src: Set to `yes' to indicate the archived file is 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # src: (required) If `remote_src=no' (default), local 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 # validate_certs: This only applies if using a https URL as the 
 }- name: ${2:Name for unarchive module.}
   unarchive:

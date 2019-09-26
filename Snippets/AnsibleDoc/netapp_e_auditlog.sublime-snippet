@@ -8,7 +8,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # log_level: Filters the log messages according to the 
 # log_path: A local path to a file to be used for debug 
 # max_records: The maximum number log messages audit-log will 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # threshold: This is the memory full percent threshold that 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_auditlog module.}

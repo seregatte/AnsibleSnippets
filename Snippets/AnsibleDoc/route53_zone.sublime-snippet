@@ -3,6 +3,7 @@
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # comment: Comment associated with the zone 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # delegation_set_id: The reusable delegation set ID to be associated 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # hosted_zone_id: The unique zone identifier you want to delete or 
@@ -20,24 +21,25 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:comment}: ${11:"#"}}
-${12:   ${13:delegation_set_id}: ${14:"#"}}
-${15:   ${16:ec2_url}: ${17:"#"}}
-${18:   ${19:hosted_zone_id}: ${20:"#"}}
-${21:   ${22:profile}: ${23:"#"}}
-${24:   ${25:region}: ${26:"#"}}
-${27:   ${28:}: ${29:"#"}}
-${30:   ${31:security_token}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:vpc_id}: ${41:"#"}}
-${42:   ${43:vpc_region}: ${44:"#"}}
-${45:   ${46:zone}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:delegation_set_id}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:hosted_zone_id}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vpc_id}: ${44:"#"}}
+${45:   ${46:vpc_region}: ${47:"#"}}
+${48:   ${49:zone}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>route53_zone</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,18 +1,18 @@
 <snippet>
 <content><![CDATA[
-${1:# api_version: The api version to be used with the vca. 
+${1:# api_version: The API version to be used with the vca. 
 # gateway_name: The name of the gateway of the vdc where the 
 # host: The authentication host to be used when service 
-# instance_id: The instance id in a vchs environment to be used 
+# instance_id: The instance ID in a vchs environment to be used 
 # nat_rules: (required) A list of rules to be added to the 
 # org: The org to login to for creating vapp. This 
 # password: The vca password, if not set the environment 
 # purge_rules: If set to true, it will delete all rules in the 
 # service_type: The type of service we are authenticating 
-# state: If the object should be added or removed. 
+# state: Whether the object should be added or removed. 
 # username: The vca username or email address, if not set 
+# validate_certs: If the certificates of the authentication is to 
 # vdc_name: The name of the vdc where the gateway is 
-# verify_certs: If the certificates of the authentication is to 
 }- name: ${2:Name for vca_nat module.}
   vca_nat:
 ${3:   ${4:api_version}: ${5:"#"}}
@@ -26,8 +26,8 @@ ${24:   ${25:purge_rules}: ${26:"#"}}
 ${27:   ${28:service_type}: ${29:"#"}}
 ${30:   ${31:state}: ${32:"#"}}
 ${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:vdc_name}: ${38:"#"}}
-${39:   ${40:verify_certs}: ${41:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:vdc_name}: ${41:"#"}}
 ${42:${43:   become: ${44:true}} 
 ${45:   become_method: ${46:su}} 
 ${47:   become_user: ${48:nobody}} 

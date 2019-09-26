@@ -5,6 +5,7 @@ ${1:# assume_role_policy_document: The trust relationship policy document that
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # boundary: Add the ARN of an IAM managed policy to restrict 
 # create_instance_profile: Creates an IAM instance profile along with the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # description: Provide a description of the new role 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # managed_policy: A list of managed policy ARNs or, since Ansible 
@@ -24,24 +25,25 @@ ${6:   ${7:aws_access_key}: ${8:"#"}}
 ${9:   ${10:aws_secret_key}: ${11:"#"}}
 ${12:   ${13:boundary}: ${14:"#"}}
 ${15:   ${16:create_instance_profile}: ${17:"#"}}
-${18:   ${19:description}: ${20:"#"}}
-${21:   ${22:ec2_url}: ${23:"#"}}
-${24:   ${25:managed_policy}: ${26:"#"}}
-${27:   ${28:name}: ${29:"#"}}
-${30:   ${31:path}: ${32:"#"}}
-${33:   ${34:profile}: ${35:"#"}}
-${36:   ${37:purge_policies}: ${38:"#"}}
-${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:}: ${44:"#"}}
-${45:   ${46:security_token}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${18:   ${19:debug_botocore_endpoint_logs}: ${20:"#"}}
+${21:   ${22:description}: ${23:"#"}}
+${24:   ${25:ec2_url}: ${26:"#"}}
+${27:   ${28:managed_policy}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:path}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:purge_policies}: ${41:"#"}}
+${42:   ${43:region}: ${44:"#"}}
+${45:   ${46:}: ${47:"#"}}
+${48:   ${49:security_token}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>iam_role</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

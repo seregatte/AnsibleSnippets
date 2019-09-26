@@ -2,6 +2,7 @@
 <content><![CDATA[
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # description: A short, user-defined function alias 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # function_name: (required) The name of the function alias. 
@@ -17,23 +18,24 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
   lambda_alias:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
-${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:ec2_url}: ${14:"#"}}
-${15:   ${16:function_name}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:profile}: ${23:"#"}}
-${24:   ${25:region}: ${26:"#"}}
-${27:   ${28:}: ${29:"#"}}
-${30:   ${31:security_token}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:version}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${9:   ${10:debug_botocore_endpoint_logs}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:function_name}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:version}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>lambda_alias</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# device_hostname: The device's new hostname. 
+# device_unique_name: (required) The unique device's name that you are 
+# install_config: Tells FMGR to attempt to install the config 
+# interface: The interface/port number you are editing. 
+# interface_allow_access: Specify what protocols are allowed on the 
+# interface_ip: The IP and subnet of the interface/port you are 
+}- name: ${2:Name for fmgr_device_config module.}
+  fmgr_device_config:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:device_hostname}: ${8:"#"}}
+${9:   ${10:device_unique_name}: ${11:"#"}}
+${12:   ${13:install_config}: ${14:"#"}}
+${15:   ${16:interface}: ${17:"#"}}
+${18:   ${19:interface_allow_access}: ${20:"#"}}
+${21:   ${22:interface_ip}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>fmgr_device_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

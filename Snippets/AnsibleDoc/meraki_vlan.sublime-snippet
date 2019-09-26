@@ -4,7 +4,7 @@ ${1:# appliance_ip: IP address of appliance. Address must be within
 # auth_key: Authentication key provided by the dashboard. 
 # dns_nameservers: Semi-colon delimited list of DNS IP addresses. 
 # fixed_ip_assignments: Static IP address assignements to be distributed 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # name: Name of VLAN. 
 # net_id: ID of network which VLAN is in or should be in. 
 # net_name: Name of network which VLAN is in or should be 

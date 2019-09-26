@@ -1,26 +1,26 @@
 <snippet>
 <content><![CDATA[
-${1:# activationkey: supply an activation key for use with 
-# channels: Optionally specify a list of comma-separated 
+${1:# activationkey: Supply an activation key for use with 
+# ca_cert: Supply a custom ssl CA certificate file for use 
+# channels: Optionally specify a list of channels to 
 # enable_eus: If `no', extended update support will be 
 # nopackages: If `yes', the registered node will not upload 
-# password: Red Hat Network password 
-# profilename: supply an profilename for use with registration 
+# password: Red Hat Network password. 
+# profilename: Supply an profilename for use with registration. 
 # server_url: Specify an alternative Red Hat Network server 
-# sslcacert: supply a custom ssl CA certificate file for use 
-# state: whether to register (`present'), or unregister 
-# systemorgid: supply an organizational id for use with 
-# username: Red Hat Network username 
+# state: Whether to register (`present'), or unregister 
+# systemorgid: Supply an organizational id for use with 
+# username: Red Hat Network username. 
 }- name: ${2:Name for rhn_register module.}
   rhn_register:
 ${3:   ${4:activationkey}: ${5:"#"}}
-${6:   ${7:channels}: ${8:"#"}}
-${9:   ${10:enable_eus}: ${11:"#"}}
-${12:   ${13:nopackages}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:profilename}: ${20:"#"}}
-${21:   ${22:server_url}: ${23:"#"}}
-${24:   ${25:sslcacert}: ${26:"#"}}
+${6:   ${7:ca_cert}: ${8:"#"}}
+${9:   ${10:channels}: ${11:"#"}}
+${12:   ${13:enable_eus}: ${14:"#"}}
+${15:   ${16:nopackages}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:profilename}: ${23:"#"}}
+${24:   ${25:server_url}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:systemorgid}: ${32:"#"}}
 ${33:   ${34:username}: ${35:"#"}}

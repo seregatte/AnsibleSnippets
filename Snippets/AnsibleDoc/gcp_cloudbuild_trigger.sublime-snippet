@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# build: Contents of the build template. Either a 
+# description: Human-readable description of the trigger. 
+# disabled: Whether the trigger is disabled or not. If true, 
+# filename: Path, from the source root, to a file whose 
+# id: The unique identifier for the trigger. 
+# ignored_files: ignoredFiles and includedFiles are file glob 
+# h: Match 
+# included_files: ignoredFiles and includedFiles are file glob 
+# h: Match 
+# project: The Google Cloud Platform project to use. 
+# scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# state: Whether the given object should exist in GCP 
+# substitutions: Substitutions data for Build resource. 
+# trigger_template: Template describing the types of source changes 
+}- name: ${2:Name for gcp_cloudbuild_trigger module.}
+  gcp_cloudbuild_trigger:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:build}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:disabled}: ${14:"#"}}
+${15:   ${16:filename}: ${17:"#"}}
+${18:   ${19:id}: ${20:"#"}}
+${21:   ${22:ignored_files}: ${23:"#"}}
+${24:   ${25:h}: ${26:"#"}}
+${27:   ${28:included_files}: ${29:"#"}}
+${30:   ${31:h}: ${32:"#"}}
+${33:   ${34:project}: ${35:"#"}}
+${36:   ${37:scopes}: ${38:"#"}}
+${39:   ${40:service_account_contents}: ${41:"#"}}
+${42:   ${43:service_account_email}: ${44:"#"}}
+${45:   ${46:service_account_file}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:substitutions}: ${53:"#"}}
+${54:   ${55:trigger_template}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>gcp_cloudbuild_trigger</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

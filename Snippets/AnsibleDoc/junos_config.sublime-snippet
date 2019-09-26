@@ -1,6 +1,8 @@
 <snippet>
 <content><![CDATA[
 ${1:# backup: This argument will cause the module to create a 
+# backup_options: This is a dict object containing configurable 
+# check_commit: This argument will check correctness of syntax; 
 # comment: The `comment' argument specifies a text string 
 # confirm: The `confirm' argument will configure a time out 
 # confirm_commit: This argument will execute commit operation on 
@@ -15,23 +17,25 @@ ${1:# backup: This argument will cause the module to create a
 }- name: ${2:Name for junos_config module.}
   junos_config:
 ${3:   ${4:backup}: ${5:"#"}}
-${6:   ${7:comment}: ${8:"#"}}
-${9:   ${10:confirm}: ${11:"#"}}
-${12:   ${13:confirm_commit}: ${14:"#"}}
-${15:   ${16:lines}: ${17:"#"}}
-${18:   ${19:provider}: ${20:"#"}}
-${21:   ${22:replace}: ${23:"#"}}
-${24:   ${25:rollback}: ${26:"#"}}
-${27:   ${28:src}: ${29:"#"}}
-${30:   ${31:src_format}: ${32:"#"}}
-${33:   ${34:update}: ${35:"#"}}
-${36:   ${37:zeroize}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${6:   ${7:backup_options}: ${8:"#"}}
+${9:   ${10:check_commit}: ${11:"#"}}
+${12:   ${13:comment}: ${14:"#"}}
+${15:   ${16:confirm}: ${17:"#"}}
+${18:   ${19:confirm_commit}: ${20:"#"}}
+${21:   ${22:lines}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:replace}: ${29:"#"}}
+${30:   ${31:rollback}: ${32:"#"}}
+${33:   ${34:src}: ${35:"#"}}
+${36:   ${37:src_format}: ${38:"#"}}
+${39:   ${40:update}: ${41:"#"}}
+${42:   ${43:zeroize}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>junos_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

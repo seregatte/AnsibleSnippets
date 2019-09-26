@@ -1,39 +1,41 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
+${1:# attributes: The attributes the resulting file or directory 
+# backup: Create a backup file including a timestamp so 
 # force: Should the parameters be regenerated even it it 
 # group: Name of the group that should own the 
-# mode: Mode the file or directory should be. For those 
+# mode: The permissions the resulting file or directory 
 # owner: Name of the user that should own the 
 # path: (required) Name of the file in which the 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
-# size: Size (in bits) of the generated DH-params 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
+# size: Size (in bits) of the generated DH-params. 
 # state: Whether the parameters should exist or not, 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 }- name: ${2:Name for openssl_dhparam module.}
   openssl_dhparam:
 ${3:   ${4:attributes}: ${5:"#"}}
-${6:   ${7:force}: ${8:"#"}}
-${9:   ${10:group}: ${11:"#"}}
-${12:   ${13:mode}: ${14:"#"}}
-${15:   ${16:owner}: ${17:"#"}}
-${18:   ${19:path}: ${20:"#"}}
-${21:   ${22:selevel}: ${23:"#"}}
-${24:   ${25:serole}: ${26:"#"}}
-${27:   ${28:setype}: ${29:"#"}}
-${30:   ${31:seuser}: ${32:"#"}}
-${33:   ${34:size}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:unsafe_writes}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${6:   ${7:backup}: ${8:"#"}}
+${9:   ${10:force}: ${11:"#"}}
+${12:   ${13:group}: ${14:"#"}}
+${15:   ${16:mode}: ${17:"#"}}
+${18:   ${19:owner}: ${20:"#"}}
+${21:   ${22:path}: ${23:"#"}}
+${24:   ${25:selevel}: ${26:"#"}}
+${27:   ${28:serole}: ${29:"#"}}
+${30:   ${31:setype}: ${32:"#"}}
+${33:   ${34:seuser}: ${35:"#"}}
+${36:   ${37:size}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:unsafe_writes}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>openssl_dhparam</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

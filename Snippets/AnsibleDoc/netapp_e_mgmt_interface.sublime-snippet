@@ -17,7 +17,7 @@ ${1:# address: The IPv4 address to assign to the interface.
 # ntp_address_backup: Backup IPv4 NTP server address Queried when 
 # ntp_config_method: The configuration method type to use for NTP 
 # ssh: Enable ssh access to the controller for debug 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: Enable or disable IPv4 network interface 
 # subnet_mask: The subnet mask to utilize for the interface. 
 # validate_certs: Should https certificates be validated? 
