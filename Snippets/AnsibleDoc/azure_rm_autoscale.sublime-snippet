@@ -11,11 +11,11 @@ ${1:# ad_user: Active Directory username. Use when
 # enabled: Specifies whether automatic scaling is enabled 
 # location: location of the resource. 
 # name: (required) name of the resource. 
-# notifications: the collection of notifications. 
+# notifications: The collection of notifications. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # profiles: The collection of automatic scaling profiles 
-# resource_group: (required) resource group of the resource. 
+# resource_group: (required) Resource group of the resource. 
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the virtual network. Use 
 # subscription_id: Your Azure subscription Id. 

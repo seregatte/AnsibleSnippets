@@ -9,7 +9,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # poll_interval: Number of the seconds the module waits until 
 # state: Should the user be present/absent. 
 # timeout: The amount of time in seconds the module should 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_user module.}
   ovirt_user:
 ${3:   ${4:auth}: ${5:"#"}}

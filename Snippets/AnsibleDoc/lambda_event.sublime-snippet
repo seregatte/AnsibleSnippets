@@ -3,6 +3,7 @@
 ${1:# alias: (required) Name of the function alias. Mutually 
 # aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # event_source: Source of the event that triggers the lambda 
 # lambda_function_arn: (required) The name or ARN of the lambda 
@@ -19,23 +20,24 @@ ${1:# alias: (required) Name of the function alias. Mutually
 ${3:   ${4:alias}: ${5:"#"}}
 ${6:   ${7:aws_access_key}: ${8:"#"}}
 ${9:   ${10:aws_secret_key}: ${11:"#"}}
-${12:   ${13:ec2_url}: ${14:"#"}}
-${15:   ${16:event_source}: ${17:"#"}}
-${18:   ${19:lambda_function_arn}: ${20:"#"}}
-${21:   ${22:profile}: ${23:"#"}}
-${24:   ${25:region}: ${26:"#"}}
-${27:   ${28:}: ${29:"#"}}
-${30:   ${31:security_token}: ${32:"#"}}
-${33:   ${34:source_params}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:version}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:event_source}: ${20:"#"}}
+${21:   ${22:lambda_function_arn}: ${23:"#"}}
+${24:   ${25:profile}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:source_params}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:version}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>lambda_event</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -4,10 +4,13 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # client_token: Unique, case-sensitive identifier you provide to 
 # cluster: The name of the cluster in which the service 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # delay: The time to wait before checking that the 
 # deployment_configuration: Optional parameters that control the 
 # desired_count: The count of how many instances of the service. 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# force_new_deployment: Force deployment of service even if there are no 
+# health_check_grace_period_seconds: Seconds to wait before health checking the 
 # launch_type: The launch type on which to run your service 
 # load_balancers: The list of ELBs defined for this service 
 # name: (required) The name of the service 
@@ -19,7 +22,9 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # : ec2_region 
 # repeat: The number of times to check that the service is 
 # role: The name or full Amazon Resource Name (ARN) of 
+# scheduling_strategy: The scheduling strategy, defaults to "REPLICA" 
 # security_token: AWS STS security token. If not set then the 
+# service_registries: describes service disovery registries this 
 # state: (required) The desired state of the service 
 # task_definition: The task definition the service will run. This 
 # validate_certs: When set to "no", SSL certificates will not be 
@@ -29,31 +34,36 @@ ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:client_token}: ${11:"#"}}
 ${12:   ${13:cluster}: ${14:"#"}}
-${15:   ${16:delay}: ${17:"#"}}
-${18:   ${19:deployment_configuration}: ${20:"#"}}
-${21:   ${22:desired_count}: ${23:"#"}}
-${24:   ${25:ec2_url}: ${26:"#"}}
-${27:   ${28:launch_type}: ${29:"#"}}
-${30:   ${31:load_balancers}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:network_configuration}: ${38:"#"}}
-${39:   ${40:placement_constraints}: ${41:"#"}}
-${42:   ${43:placement_strategy}: ${44:"#"}}
-${45:   ${46:profile}: ${47:"#"}}
-${48:   ${49:region}: ${50:"#"}}
-${51:   ${52:}: ${53:"#"}}
-${54:   ${55:repeat}: ${56:"#"}}
-${57:   ${58:role}: ${59:"#"}}
-${60:   ${61:security_token}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:task_definition}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${15:   ${16:debug_botocore_endpoint_logs}: ${17:"#"}}
+${18:   ${19:delay}: ${20:"#"}}
+${21:   ${22:deployment_configuration}: ${23:"#"}}
+${24:   ${25:desired_count}: ${26:"#"}}
+${27:   ${28:ec2_url}: ${29:"#"}}
+${30:   ${31:force_new_deployment}: ${32:"#"}}
+${33:   ${34:health_check_grace_period_seconds}: ${35:"#"}}
+${36:   ${37:launch_type}: ${38:"#"}}
+${39:   ${40:load_balancers}: ${41:"#"}}
+${42:   ${43:name}: ${44:"#"}}
+${45:   ${46:network_configuration}: ${47:"#"}}
+${48:   ${49:placement_constraints}: ${50:"#"}}
+${51:   ${52:placement_strategy}: ${53:"#"}}
+${54:   ${55:profile}: ${56:"#"}}
+${57:   ${58:region}: ${59:"#"}}
+${60:   ${61:}: ${62:"#"}}
+${63:   ${64:repeat}: ${65:"#"}}
+${66:   ${67:role}: ${68:"#"}}
+${69:   ${70:scheduling_strategy}: ${71:"#"}}
+${72:   ${73:security_token}: ${74:"#"}}
+${75:   ${76:service_registries}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:task_definition}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
 ]]></content>
 	<tabTrigger>ecs_service</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

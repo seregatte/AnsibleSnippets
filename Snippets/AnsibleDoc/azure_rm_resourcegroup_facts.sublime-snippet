@@ -7,6 +7,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
+# list_resources: List all resources under the resource group. 
 # name: Limit results to a specific resource group. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
@@ -23,19 +24,20 @@ ${12:   ${13:auth_source}: ${14:"#"}}
 ${15:   ${16:cert_validation_mode}: ${17:"#"}}
 ${18:   ${19:client_id}: ${20:"#"}}
 ${21:   ${22:cloud_environment}: ${23:"#"}}
-${24:   ${25:name}: ${26:"#"}}
-${27:   ${28:password}: ${29:"#"}}
-${30:   ${31:profile}: ${32:"#"}}
-${33:   ${34:secret}: ${35:"#"}}
-${36:   ${37:subscription_id}: ${38:"#"}}
-${39:   ${40:tags}: ${41:"#"}}
-${42:   ${43:tenant}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${24:   ${25:list_resources}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:profile}: ${35:"#"}}
+${36:   ${37:secret}: ${38:"#"}}
+${39:   ${40:subscription_id}: ${41:"#"}}
+${42:   ${43:tags}: ${44:"#"}}
+${45:   ${46:tenant}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_resourcegroup_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

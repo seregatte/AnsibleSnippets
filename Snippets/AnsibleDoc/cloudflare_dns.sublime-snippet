@@ -9,17 +9,17 @@ ${1:# account_api_token: (required) Account API token. You can obtain
 # port: Service port. Required for `type=SRV' and 
 # priority: Record priority. Required for `type=MX' and 
 # proto: Service protocol. Required for `type=SRV' and 
-# proxied: Proxy through cloudflare network or just use DNS 
+# proxied: Proxy through Cloudflare network or just use 
 # record: Record to add. Required if `state=present'. 
 # selector: Selector number. Required for `type=TLSA' when 
 # service: Record service. Required for `type=SRV' 
 # solo: Whether the record should be the only one for 
-# state: Whether the record(s) should exist or not 
-# timeout: Timeout for Cloudflare API calls 
+# state: Whether the record(s) should exist or not. 
+# timeout: Timeout for Cloudflare API calls. 
 # ttl: The TTL to give the new record. Must be between 
 # type: The type of DNS record to create. Required if 
-# value: The record value. Required for `state=present' 
-# weight: Service weight. Required for `type=SRV' 
+# value: The record value. Required for `state=present'. 
+# weight: Service weight. Required for `type=SRV'. 
 # zone: (required) The name of the Zone to work with 
 }- name: ${2:Name for cloudflare_dns module.}
   cloudflare_dns:

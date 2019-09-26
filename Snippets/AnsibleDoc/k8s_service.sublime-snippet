@@ -1,0 +1,58 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: Token used to authenticate with the API. Can 
+# ca_cert: Path to a CA certificate used to authenticate 
+# client_cert: Path to a certificate used to authenticate with 
+# client_key: Path to a key file used to authenticate with the 
+# context: The name of a context found in the config file. 
+# force: If set to `True', and `state' is `present', an 
+# host: Provide a URL for accessing the API. Can also be 
+# kubeconfig: Path to an existing Kubernetes config file. If 
+# merge_type: Whether to override the default patch merge 
+# patch: use-a 
+# name: (required) Use to specify a Service object name. 
+# namespace: (required) Use to specify a Service object 
+# password: Provide a password for authenticating with the 
+# ports: A list of ports to expose. 
+# : multi-port- 
+# resource_definition: A partial YAML definition of the Service object 
+# selector: Label selectors identify objects this Service 
+# state: Determines if an object should be created, 
+# type: Specifies the type of Service to create. See 
+# : publishing- 
+# username: Provide a username for authenticating with the 
+# validate_certs: Whether or not to verify the API server's SSL 
+}- name: ${2:Name for k8s_service module.}
+  k8s_service:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:ca_cert}: ${8:"#"}}
+${9:   ${10:client_cert}: ${11:"#"}}
+${12:   ${13:client_key}: ${14:"#"}}
+${15:   ${16:context}: ${17:"#"}}
+${18:   ${19:force}: ${20:"#"}}
+${21:   ${22:host}: ${23:"#"}}
+${24:   ${25:kubeconfig}: ${26:"#"}}
+${27:   ${28:merge_type}: ${29:"#"}}
+${30:   ${31:patch}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:namespace}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:ports}: ${44:"#"}}
+${45:   ${46:}: ${47:"#"}}
+${48:   ${49:resource_definition}: ${50:"#"}}
+${51:   ${52:selector}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:type}: ${59:"#"}}
+${60:   ${61:}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
+]]></content>
+	<tabTrigger>k8s_service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

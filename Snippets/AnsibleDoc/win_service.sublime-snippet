@@ -9,8 +9,8 @@ ${1:# dependencies: A list of service dependencies to set for this
 # name: (required) Name of the service. If only the name 
 # password: The password to set the service to start as. 
 # path: The path to the executable to set for the 
-# start_mode: Set the startup type for the service. `delayed' 
-# state: `started'/`stopped'/`absent'/`pause' are 
+# start_mode: Set the startup type for the service. A newly 
+# state: The desired state of the service. 
 # username: The username to set the service to start as. 
 }- name: ${2:Name for win_service module.}
   win_service:

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# backrefs: Used with `state=present'. If set, line can 
-# backup: Create a backup file including the timestamp 
+# backup: Determine whether a backup should be created. 
 # create: Used with `state=present'. If specified, the 
 # encoding: Specifies the encoding of the source text file 
 # insertafter: Used with `state=present'. If specified, the 

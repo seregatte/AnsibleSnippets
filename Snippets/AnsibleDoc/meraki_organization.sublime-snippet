@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# auth_key: Authentication key provided by the dashboard. 
 # clone: Organization to clone to a new organization. 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # org_id: ID of organization. 
 # org_name: Name of organization. If `clone' is specified, 
 # output_level: Set amount of debug output during module 

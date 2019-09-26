@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# auth: (required) Dictionary with values needed to 
 # data_center: (required) Name of the datacenter where quota 
-# fetch_nested: If `True' the module will fetch additional data 
+# fetch_nested: If `yes' the module will fetch additional data 
 # name: Name of the quota, can be used as glob 
 # nested_attributes: Specifies list of the attributes which should be 
 }- name: ${2:Name for ovirt_quota_facts module.}

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# ap: (required) Name of an existing application 
-# bd: (required) Name of the bridge domain being 
+# bd: Name of the bridge domain being associated with 
 # certificate_name: The X.509 certificate name attached to the APIC 
 # description: Description for the EPG. 
 # epg: (required) Name of the end point group. 
@@ -13,7 +13,7 @@ ${1:# ap: (required) Name of an existing application
 # port: Port number to be used for REST connection. The 
 # preferred_group: Whether ot not the EPG is part of the Preferred 
 # priority: The QoS class. The APIC defaults to 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # tenant: Name of an existing tenant. 
 # timeout: The socket level timeout in seconds. 

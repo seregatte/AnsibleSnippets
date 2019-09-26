@@ -7,7 +7,7 @@ ${1:# ack_deadline: Subfield of subscription. Not required. Default
 # push_endpoint: Subfield of subscription.  Not required.  If 
 # advanced: push_end 
 # state: State of the topic or queue. Applies to the most 
-# subscription: Dictionary containing a subscripton name 
+# subscription: Dictionary containing a subscription name 
 # topic: (required) GCP pubsub topic name. Only the name, 
 }- name: ${2:Name for gcpubsub module.}
   gcpubsub:

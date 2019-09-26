@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# auth: (required) Dictionary with values needed to 
 # fcp: Dictionary with values for fibre channel storage 
-# fetch_nested: If `True' the module will fetch additional data 
+# fetch_nested: If `yes' the module will fetch additional data 
 # host: (required) Host to get device list from. 
 # iscsi: Dictionary with values for iSCSI storage type: 
 # nested_attributes: Specifies list of the attributes which should be 

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth: (required) Dictionary with values needed to 
-# fetch_nested: If `True' the module will fetch additional data 
+# fetch_nested: If `yes' the module will fetch additional data 
 # name: Name of the external provider, can be used as 
 # nested_attributes: Specifies list of the attributes which should be 
 # type: (required) Type of the external provider. 

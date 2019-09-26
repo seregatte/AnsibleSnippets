@@ -16,7 +16,7 @@ ${1:# arp_flag: The arp flag to use when the ether_type is arp.
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: present, absent, query 
 # stateful: Determines the statefulness of the filter entry. 
 # tenant: The name of the tenant. 

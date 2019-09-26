@@ -18,7 +18,7 @@ ${1:# aaa_password: The password of the locally-authenticated user.
 # password: (required) The password to use for 
 # phone: The phone number of the locally-authenticated 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 
 # use_proxy: If `no', it will not use a proxy, even if one is 

@@ -1,23 +1,33 @@
 <snippet>
 <content><![CDATA[
-${1:# allow_clobber: If `yes' imports all commands, even if they have 
-# name: (required) Name of the powershell module that 
-# repository: Name of the custom repository to register or 
+${1:# allow_clobber: If `yes' allows install modules that contains 
+# allow_prerelease: If `yes' installs modules marked as prereleases. 
+# maximum_version: The maximum version of the PowerShell module 
+# minimum_version: The minimum version of the PowerShell module 
+# name: (required) Name of the Windows PowerShell module 
+# repository: Name of the custom repository to use. 
+# required_version: The exact version of the PowerShell module that 
+# skip_publisher_check: If `yes', allows you to install a different 
 # state: If `present' a new module is installed. If 
-# url: URL of the custom repository to register. 
+# url: URL of the custom repository to register. This 
 }- name: ${2:Name for win_psmodule module.}
   win_psmodule:
 ${3:   ${4:allow_clobber}: ${5:"#"}}
-${6:   ${7:name}: ${8:"#"}}
-${9:   ${10:repository}: ${11:"#"}}
-${12:   ${13:state}: ${14:"#"}}
-${15:   ${16:url}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${6:   ${7:allow_prerelease}: ${8:"#"}}
+${9:   ${10:maximum_version}: ${11:"#"}}
+${12:   ${13:minimum_version}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:repository}: ${20:"#"}}
+${21:   ${22:required_version}: ${23:"#"}}
+${24:   ${25:skip_publisher_check}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:url}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>win_psmodule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -13,6 +13,7 @@ ${1:# ask_credential: Prompt user for credential on launch.
 # concurrent_jobs_enabled: Allow simultaneous runs of the job template. 
 # credential: Name of the credential to use for the job 
 # description: Description to use for the job template. 
+# diff_mode_enabled: Enable diff mode for the job template. 
 # extra_vars_path: Path to the `extra_vars' YAML file. 
 # fact_caching_enabled: Enable use of fact caching for the job template. 
 # force_handlers_enabled: Enable forcing playbook handlers to run even if 
@@ -29,11 +30,12 @@ ${1:# ask_credential: Prompt user for credential on launch.
 # start_at_task: Start the playbook at the task matching this 
 # state: Desired state of the resource. 
 # survey_enabled: Enable a survey on the job template. 
-# tower_config_file: Path to the Tower config file. See notes. 
+# survey_spec: JSON/YAML dict formatted survey definition. 
+# tower_config_file: Path to the Tower config file. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# validate_certs: Whether to allow insecure connections to Tower. 
 # vault_credential: Name of the vault credential to use for the job 
 # verbosity: Control the output level Ansible produces as the 
 }- name: ${2:Name for tower_job_template module.}
@@ -51,35 +53,37 @@ ${30:   ${31:become_enabled}: ${32:"#"}}
 ${33:   ${34:concurrent_jobs_enabled}: ${35:"#"}}
 ${36:   ${37:credential}: ${38:"#"}}
 ${39:   ${40:description}: ${41:"#"}}
-${42:   ${43:extra_vars_path}: ${44:"#"}}
-${45:   ${46:fact_caching_enabled}: ${47:"#"}}
-${48:   ${49:force_handlers_enabled}: ${50:"#"}}
-${51:   ${52:forks}: ${53:"#"}}
-${54:   ${55:host_config_key}: ${56:"#"}}
-${57:   ${58:inventory}: ${59:"#"}}
-${60:   ${61:job_tags}: ${62:"#"}}
-${63:   ${64:job_type}: ${65:"#"}}
-${66:   ${67:limit}: ${68:"#"}}
-${69:   ${70:name}: ${71:"#"}}
-${72:   ${73:playbook}: ${74:"#"}}
-${75:   ${76:project}: ${77:"#"}}
-${78:   ${79:skip_tags}: ${80:"#"}}
-${81:   ${82:start_at_task}: ${83:"#"}}
-${84:   ${85:state}: ${86:"#"}}
-${87:   ${88:survey_enabled}: ${89:"#"}}
-${90:   ${91:tower_config_file}: ${92:"#"}}
-${93:   ${94:tower_host}: ${95:"#"}}
-${96:   ${97:tower_password}: ${98:"#"}}
-${99:   ${100:tower_username}: ${101:"#"}}
-${102:   ${103:tower_verify_ssl}: ${104:"#"}}
-${105:   ${106:vault_credential}: ${107:"#"}}
-${108:   ${109:verbosity}: ${110:"#"}}
-${111:${112:   become: ${113:true}} 
-${114:   become_method: ${115:su}} 
-${116:   become_user: ${117:nobody}} 
-${118:   become_flags: ${119:"-s /bin/sh"}}} 
-${120:   when: ${121:variable is defined}} 
-${122:   with_items: ${123:array}} 
+${42:   ${43:diff_mode_enabled}: ${44:"#"}}
+${45:   ${46:extra_vars_path}: ${47:"#"}}
+${48:   ${49:fact_caching_enabled}: ${50:"#"}}
+${51:   ${52:force_handlers_enabled}: ${53:"#"}}
+${54:   ${55:forks}: ${56:"#"}}
+${57:   ${58:host_config_key}: ${59:"#"}}
+${60:   ${61:inventory}: ${62:"#"}}
+${63:   ${64:job_tags}: ${65:"#"}}
+${66:   ${67:job_type}: ${68:"#"}}
+${69:   ${70:limit}: ${71:"#"}}
+${72:   ${73:name}: ${74:"#"}}
+${75:   ${76:playbook}: ${77:"#"}}
+${78:   ${79:project}: ${80:"#"}}
+${81:   ${82:skip_tags}: ${83:"#"}}
+${84:   ${85:start_at_task}: ${86:"#"}}
+${87:   ${88:state}: ${89:"#"}}
+${90:   ${91:survey_enabled}: ${92:"#"}}
+${93:   ${94:survey_spec}: ${95:"#"}}
+${96:   ${97:tower_config_file}: ${98:"#"}}
+${99:   ${100:tower_host}: ${101:"#"}}
+${102:   ${103:tower_password}: ${104:"#"}}
+${105:   ${106:tower_username}: ${107:"#"}}
+${108:   ${109:validate_certs}: ${110:"#"}}
+${111:   ${112:vault_credential}: ${113:"#"}}
+${114:   ${115:verbosity}: ${116:"#"}}
+${117:${118:   become: ${119:true}} 
+${120:   become_method: ${121:su}} 
+${122:   become_user: ${123:nobody}} 
+${124:   become_flags: ${125:"-s /bin/sh"}}} 
+${126:   when: ${127:variable is defined}} 
+${128:   with_items: ${129:array}} 
 ]]></content>
 	<tabTrigger>tower_job_template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

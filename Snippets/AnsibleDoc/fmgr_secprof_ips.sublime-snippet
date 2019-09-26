@@ -1,0 +1,120 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# block_malicious_url: Enable/disable malicious URL blocking. 
+# comment: Comment. 
+# entries: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# entries_action: Action taken with traffic in which signatures 
+# entries_application: Applications to be protected. set application ? 
+# entries_exempt_ip_dst_ip: Destination IP address and netmask. 
+# entries_exempt_ip_src_ip: Source IP address and netmask. 
+# entries_location: Protect client or server traffic. 
+# entries_log: Enable/disable logging of signatures included in 
+# entries_log_attack_context: Enable/disable logging of attack context| URL 
+# entries_log_packet: Enable/disable packet logging. Enable to save 
+# entries_os: Operating systems to be protected.  all includes 
+# entries_protocol: Protocols to be examined. set protocol ? lists 
+# entries_quarantine: Quarantine method. 
+# entries_quarantine_expiry: Duration of quarantine. 
+# entries_quarantine_log: Enable/disable quarantine logging. 
+# entries_rate_count: Count of the rate. 
+# entries_rate_duration: Duration (sec) of the rate. 
+# entries_rate_mode: Rate limit mode. 
+# entries_rate_track: Track the packet protocol field. 
+# entries_rule: Identifies the predefined or custom IPS 
+# entries_severity: Relative severity of the signature, from info to 
+# entries_status: Status of the signatures included in filter. 
+# extended_log: Enable/disable extended logging. 
+# filter: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# filter_action: Action of selected rules. 
+# filter_application: Vulnerable application filter. 
+# filter_location: Vulnerability location filter. 
+# filter_log: Enable/disable logging of selected rules. 
+# filter_log_packet: Enable/disable packet logging of selected rules. 
+# filter_name: Filter name. 
+# filter_os: Vulnerable OS filter. 
+# filter_protocol: Vulnerable protocol filter. 
+# filter_quarantine: Quarantine IP or interface. 
+# filter_quarantine_expiry: Duration of quarantine in minute. 
+# filter_quarantine_log: Enable/disable logging of selected quarantine. 
+# filter_severity: Vulnerability severity filter. 
+# filter_status: Selected rules status. 
+# mode: Sets one of three modes for managing the object. 
+# name: Sensor name. 
+# override: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# override_action: Action of override rule. 
+# override_exempt_ip_dst_ip: Destination IP address and netmask. 
+# override_exempt_ip_src_ip: Source IP address and netmask. 
+# override_log: Enable/disable logging. 
+# override_log_packet: Enable/disable packet logging. 
+# override_quarantine: Quarantine IP or interface. 
+# override_quarantine_expiry: Duration of quarantine in minute. 
+# override_quarantine_log: Enable/disable logging of selected quarantine. 
+# override_rule_id: Override rule ID. 
+# override_status: Enable/disable status of override rule. 
+# replacemsg_group: Replacement message group. 
+}- name: ${2:Name for fmgr_secprof_ips module.}
+  fmgr_secprof_ips:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:block_malicious_url}: ${8:"#"}}
+${9:   ${10:comment}: ${11:"#"}}
+${12:   ${13:entries}: ${14:"#"}}
+${15:   ${16:entries_action}: ${17:"#"}}
+${18:   ${19:entries_application}: ${20:"#"}}
+${21:   ${22:entries_exempt_ip_dst_ip}: ${23:"#"}}
+${24:   ${25:entries_exempt_ip_src_ip}: ${26:"#"}}
+${27:   ${28:entries_location}: ${29:"#"}}
+${30:   ${31:entries_log}: ${32:"#"}}
+${33:   ${34:entries_log_attack_context}: ${35:"#"}}
+${36:   ${37:entries_log_packet}: ${38:"#"}}
+${39:   ${40:entries_os}: ${41:"#"}}
+${42:   ${43:entries_protocol}: ${44:"#"}}
+${45:   ${46:entries_quarantine}: ${47:"#"}}
+${48:   ${49:entries_quarantine_expiry}: ${50:"#"}}
+${51:   ${52:entries_quarantine_log}: ${53:"#"}}
+${54:   ${55:entries_rate_count}: ${56:"#"}}
+${57:   ${58:entries_rate_duration}: ${59:"#"}}
+${60:   ${61:entries_rate_mode}: ${62:"#"}}
+${63:   ${64:entries_rate_track}: ${65:"#"}}
+${66:   ${67:entries_rule}: ${68:"#"}}
+${69:   ${70:entries_severity}: ${71:"#"}}
+${72:   ${73:entries_status}: ${74:"#"}}
+${75:   ${76:extended_log}: ${77:"#"}}
+${78:   ${79:filter}: ${80:"#"}}
+${81:   ${82:filter_action}: ${83:"#"}}
+${84:   ${85:filter_application}: ${86:"#"}}
+${87:   ${88:filter_location}: ${89:"#"}}
+${90:   ${91:filter_log}: ${92:"#"}}
+${93:   ${94:filter_log_packet}: ${95:"#"}}
+${96:   ${97:filter_name}: ${98:"#"}}
+${99:   ${100:filter_os}: ${101:"#"}}
+${102:   ${103:filter_protocol}: ${104:"#"}}
+${105:   ${106:filter_quarantine}: ${107:"#"}}
+${108:   ${109:filter_quarantine_expiry}: ${110:"#"}}
+${111:   ${112:filter_quarantine_log}: ${113:"#"}}
+${114:   ${115:filter_severity}: ${116:"#"}}
+${117:   ${118:filter_status}: ${119:"#"}}
+${120:   ${121:mode}: ${122:"#"}}
+${123:   ${124:name}: ${125:"#"}}
+${126:   ${127:override}: ${128:"#"}}
+${129:   ${130:override_action}: ${131:"#"}}
+${132:   ${133:override_exempt_ip_dst_ip}: ${134:"#"}}
+${135:   ${136:override_exempt_ip_src_ip}: ${137:"#"}}
+${138:   ${139:override_log}: ${140:"#"}}
+${141:   ${142:override_log_packet}: ${143:"#"}}
+${144:   ${145:override_quarantine}: ${146:"#"}}
+${147:   ${148:override_quarantine_expiry}: ${149:"#"}}
+${150:   ${151:override_quarantine_log}: ${152:"#"}}
+${153:   ${154:override_rule_id}: ${155:"#"}}
+${156:   ${157:override_status}: ${158:"#"}}
+${159:   ${160:replacemsg_group}: ${161:"#"}}
+${162:${163:   become: ${164:true}} 
+${165:   become_method: ${166:su}} 
+${167:   become_user: ${168:nobody}} 
+${169:   become_flags: ${170:"-s /bin/sh"}}} 
+${171:   when: ${172:variable is defined}} 
+${173:   with_items: ${174:array}} 
+]]></content>
+	<tabTrigger>fmgr_secprof_ips</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -2,68 +2,78 @@
 <content><![CDATA[
 ${1:# api_version: The version of the Docker API running on the 
 # archive_path: Use with state `present' to archive an image to 
+# build: Specifies options used for building images. 
 # buildargs: Provide a dictionary of `key:value' build 
-# cacert_path: Use a CA certificate when performing server 
-# cert_path: Path to the client's TLS certificate file. If 
+# ca_cert: Use a CA certificate when performing server 
+# client_cert: Path to the client's TLS certificate file. If 
+# client_key: Path to the client's TLS key file. If the value 
 # container_limits: A dictionary of limits applied to each container 
 # debug: Debug mode 
 # docker_host: The URL or Unix socket path used to connect to 
-# dockerfile: Use with state `present' to provide an alternate 
+# dockerfile: Use with state `present' and source `build' to 
 # force: Use with state `absent' to un-tag and remove all 
+# force_absent: Use with state `absent' to un-tag and remove all 
+# force_source: Use with state `present' to build, load or pull 
+# force_tag: Use with state `present' to force tagging an 
 # http_timeout: Timeout for HTTP requests during the image build 
-# key_path: Path to the client's TLS key file. If the value 
 # load_path: Use with state `present' to load an image from a 
 # name: (required) Image name. Name format will be one 
-# nocache: Do not use cache when building an image. 
+# nocache: Do not use cache when building an image. Please 
 # path: Use with state 'present' to build an image. Will 
 # pull: When building an image downloads any updates to 
 # push: Push the image to the registry. Specify the 
 # repository: Full path to a repository. Use with state 
 # rm: Remove intermediate containers after build. 
+# source: Determines where the module will try to retrieve 
 # ssl_version: Provide a valid SSL version number. Default 
 # state: Make assertions about the state of an image. 
 # tag: Used to select an image when pulling. Will be 
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 
 # tls_hostname: When verifying the authenticity of the Docker 
-# tls_verify: Secure the connection to the API by using TLS 
 # use_tls: DEPRECATED. Whether to use tls to connect to the 
+# validate_certs: Secure the connection to the API by using TLS 
 }- name: ${2:Name for docker_image module.}
   docker_image:
 ${3:   ${4:api_version}: ${5:"#"}}
 ${6:   ${7:archive_path}: ${8:"#"}}
-${9:   ${10:buildargs}: ${11:"#"}}
-${12:   ${13:cacert_path}: ${14:"#"}}
-${15:   ${16:cert_path}: ${17:"#"}}
-${18:   ${19:container_limits}: ${20:"#"}}
-${21:   ${22:debug}: ${23:"#"}}
-${24:   ${25:docker_host}: ${26:"#"}}
-${27:   ${28:dockerfile}: ${29:"#"}}
-${30:   ${31:force}: ${32:"#"}}
-${33:   ${34:http_timeout}: ${35:"#"}}
-${36:   ${37:key_path}: ${38:"#"}}
-${39:   ${40:load_path}: ${41:"#"}}
-${42:   ${43:name}: ${44:"#"}}
-${45:   ${46:nocache}: ${47:"#"}}
-${48:   ${49:path}: ${50:"#"}}
-${51:   ${52:pull}: ${53:"#"}}
-${54:   ${55:push}: ${56:"#"}}
-${57:   ${58:repository}: ${59:"#"}}
-${60:   ${61:rm}: ${62:"#"}}
-${63:   ${64:ssl_version}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:tag}: ${71:"#"}}
-${72:   ${73:timeout}: ${74:"#"}}
-${75:   ${76:tls}: ${77:"#"}}
-${78:   ${79:tls_hostname}: ${80:"#"}}
-${81:   ${82:tls_verify}: ${83:"#"}}
-${84:   ${85:use_tls}: ${86:"#"}}
-${87:${88:   become: ${89:true}} 
-${90:   become_method: ${91:su}} 
-${92:   become_user: ${93:nobody}} 
-${94:   become_flags: ${95:"-s /bin/sh"}}} 
-${96:   when: ${97:variable is defined}} 
-${98:   with_items: ${99:array}} 
+${9:   ${10:build}: ${11:"#"}}
+${12:   ${13:buildargs}: ${14:"#"}}
+${15:   ${16:ca_cert}: ${17:"#"}}
+${18:   ${19:client_cert}: ${20:"#"}}
+${21:   ${22:client_key}: ${23:"#"}}
+${24:   ${25:container_limits}: ${26:"#"}}
+${27:   ${28:debug}: ${29:"#"}}
+${30:   ${31:docker_host}: ${32:"#"}}
+${33:   ${34:dockerfile}: ${35:"#"}}
+${36:   ${37:force}: ${38:"#"}}
+${39:   ${40:force_absent}: ${41:"#"}}
+${42:   ${43:force_source}: ${44:"#"}}
+${45:   ${46:force_tag}: ${47:"#"}}
+${48:   ${49:http_timeout}: ${50:"#"}}
+${51:   ${52:load_path}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:nocache}: ${59:"#"}}
+${60:   ${61:path}: ${62:"#"}}
+${63:   ${64:pull}: ${65:"#"}}
+${66:   ${67:push}: ${68:"#"}}
+${69:   ${70:repository}: ${71:"#"}}
+${72:   ${73:rm}: ${74:"#"}}
+${75:   ${76:source}: ${77:"#"}}
+${78:   ${79:ssl_version}: ${80:"#"}}
+${81:   ${82:state}: ${83:"#"}}
+${84:   ${85:tag}: ${86:"#"}}
+${87:   ${88:timeout}: ${89:"#"}}
+${90:   ${91:tls}: ${92:"#"}}
+${93:   ${94:tls_hostname}: ${95:"#"}}
+${96:   ${97:use_tls}: ${98:"#"}}
+${99:   ${100:validate_certs}: ${101:"#"}}
+${102:${103:   become: ${104:true}} 
+${105:   become_method: ${106:su}} 
+${107:   become_user: ${108:nobody}} 
+${109:   become_flags: ${110:"-s /bin/sh"}}} 
+${111:   when: ${112:variable is defined}} 
+${113:   with_items: ${114:array}} 
 ]]></content>
 	<tabTrigger>docker_image</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

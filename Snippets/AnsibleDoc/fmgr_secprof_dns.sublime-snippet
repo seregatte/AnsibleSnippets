@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# block_action: Action to take for blocked domains. choice | 
+# block_botnet: Enable/disable blocking botnet C&C; DNS lookups. 
+# comment: Comment for the security profile to show in the 
+# domain_filter_domain_filter_table: DNS domain filter table ID. 
+# external_ip_blocklist: One or more external IP block lists. 
+# ftgd_dns_filters_action: Action to take for DNS requests matching the 
+# ftgd_dns_filters_category: Category number. 
+# ftgd_dns_filters_log: Enable/disable DNS filter logging for this DNS 
+# ftgd_dns_options: FortiGuard DNS filter options. FLAG Based 
+# log_all_domain: Enable/disable logging of all domains visited 
+# mode: Sets one of three modes for managing the object. 
+# name: Profile name. 
+# redirect_portal: IP address of the SDNS redirect portal. 
+# safe_search: Enable/disable Google, Bing, and YouTube safe 
+# sdns_domain_log: Enable/disable domain filtering and botnet 
+# sdns_ftgd_err_log: Enable/disable FortiGuard SDNS rating error 
+# youtube_restrict: Set safe search for YouTube restriction level. 
+}- name: ${2:Name for fmgr_secprof_dns module.}
+  fmgr_secprof_dns:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:block_action}: ${8:"#"}}
+${9:   ${10:block_botnet}: ${11:"#"}}
+${12:   ${13:comment}: ${14:"#"}}
+${15:   ${16:domain_filter_domain_filter_table}: ${17:"#"}}
+${18:   ${19:external_ip_blocklist}: ${20:"#"}}
+${21:   ${22:ftgd_dns_filters_action}: ${23:"#"}}
+${24:   ${25:ftgd_dns_filters_category}: ${26:"#"}}
+${27:   ${28:ftgd_dns_filters_log}: ${29:"#"}}
+${30:   ${31:ftgd_dns_options}: ${32:"#"}}
+${33:   ${34:log_all_domain}: ${35:"#"}}
+${36:   ${37:mode}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:redirect_portal}: ${44:"#"}}
+${45:   ${46:safe_search}: ${47:"#"}}
+${48:   ${49:sdns_domain_log}: ${50:"#"}}
+${51:   ${52:sdns_ftgd_err_log}: ${53:"#"}}
+${54:   ${55:youtube_restrict}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>fmgr_secprof_dns</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

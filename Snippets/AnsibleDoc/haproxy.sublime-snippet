@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# backend: Name of the HAProxy backend pool. 
+${1:# backend: Name of the HAProxy backend pool. If this 
 # drain: Wait until the server has no active connections 
 # fail_on_not_found: Fail whenever trying to enable/disable a backend 
 # host: (required) Name of the backend host to change. 

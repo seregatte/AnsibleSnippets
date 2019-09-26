@@ -2,9 +2,9 @@
 <content><![CDATA[
 ${1:# boot_order: This option uses complex arguments and is a list 
 # cd_drive: The CD you wish to have mounted on the VM when 
-# cluster: The rhev/ovirt cluster in which you want you VM 
-# cpu_share: This parameter is used to configure the cpu 
-# datacenter: The rhev/ovirt datacenter in which you want you 
+# cluster: The RHEV/oVirt cluster in which you want you VM 
+# cpu_share: This parameter is used to configure the CPU 
+# datacenter: The RHEV/oVirt datacenter in which you want you 
 # del_prot: This option sets the delete protection checkbox. 
 # disks: This option uses complex arguments and is a list 
 # ifaces: This option uses complex arguments and is a list 
@@ -12,9 +12,10 @@ ${1:# boot_order: This option uses complex arguments and is a list
 # insecure_api: A boolean switch to make a secure or insecure 
 # mempol: The minimum amount of memory you wish to reserve 
 # name: The name of the VM. 
-# osver: The operationsystem option in RHEV/oVirt. 
+# osver: The operating system option in RHEV/oVirt. 
+# password: The password for user authentication. 
 # port: The port on which the API is reacheable. 
-# server: The name/ip of your RHEV-m/oVirt instance. 
+# server: The name/IP of your RHEV-m/oVirt instance. 
 # state: This serves to create/remove/update or 
 # timeout: The timeout you wish to define for power 
 # type: To define if the VM is a server or desktop. 
@@ -38,22 +39,23 @@ ${30:   ${31:insecure_api}: ${32:"#"}}
 ${33:   ${34:mempol}: ${35:"#"}}
 ${36:   ${37:name}: ${38:"#"}}
 ${39:   ${40:osver}: ${41:"#"}}
-${42:   ${43:port}: ${44:"#"}}
-${45:   ${46:server}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:timeout}: ${53:"#"}}
-${54:   ${55:type}: ${56:"#"}}
-${57:   ${58:user}: ${59:"#"}}
-${60:   ${61:vm_ha}: ${62:"#"}}
-${63:   ${64:vmcpu}: ${65:"#"}}
-${66:   ${67:vmhost}: ${68:"#"}}
-${69:   ${70:vmmem}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:port}: ${47:"#"}}
+${48:   ${49:server}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:timeout}: ${56:"#"}}
+${57:   ${58:type}: ${59:"#"}}
+${60:   ${61:user}: ${62:"#"}}
+${63:   ${64:vm_ha}: ${65:"#"}}
+${66:   ${67:vmcpu}: ${68:"#"}}
+${69:   ${70:vmhost}: ${71:"#"}}
+${72:   ${73:vmmem}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>rhevm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

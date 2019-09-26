@@ -8,6 +8,7 @@ ${1:# assoc_vrf: This attribute is used to identify and separate
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # state: Determines whether the config should be present 
 # suppress_arp: Suppress arp under layer 2 VNI. 
+# suppress_arp_disable: Overrides the global ARP suppression config. 
 # vni: (required) ID of the Virtual Network Identifier. 
 }- name: ${2:Name for nxos_vxlan_vtep_vni module.}
   nxos_vxlan_vtep_vni:
@@ -19,13 +20,14 @@ ${15:   ${16:peer_list}: ${17:"#"}}
 ${18:   ${19:provider}: ${20:"#"}}
 ${21:   ${22:state}: ${23:"#"}}
 ${24:   ${25:suppress_arp}: ${26:"#"}}
-${27:   ${28:vni}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${27:   ${28:suppress_arp_disable}: ${29:"#"}}
+${30:   ${31:vni}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>nxos_vxlan_vtep_vni</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

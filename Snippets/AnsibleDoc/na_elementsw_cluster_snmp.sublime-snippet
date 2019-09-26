@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# networks: List of networks and what type of access they 
+# password: (required) Password for the specified user. 
+# snmp_v3_enabled: Which version of SNMP has to be enabled. 
+# state: This module enables you to enable SNMP on 
+# username: (required) Please ensure that the user has the 
+# usm_users: List of users and the type of access they have 
+}- name: ${2:Name for na_elementsw_cluster_snmp module.}
+  na_elementsw_cluster_snmp:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:networks}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:snmp_v3_enabled}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:   ${22:usm_users}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>na_elementsw_cluster_snmp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

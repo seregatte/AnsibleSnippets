@@ -3,7 +3,7 @@
 ${1:# backup: Create a backup file including the timestamp 
 # boot: Determines if the filesystem should be mounted 
 # dump: Dump (see fstab(5)). Note that if set to `null' 
-# fstab: File to use instead of `/etc/fstab'. You 
+# fstab: File to use instead of `/etc/fstab'. You should 
 # fstype: Filesystem type. Required when `state' is 
 # opts: Mount options (see fstab(5), or vfstab(4) on 
 # passno: Passno (see fstab(5)). Note that if set to 

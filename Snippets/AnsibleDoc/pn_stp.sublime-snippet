@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_bpdus_bridge_ports: BPDU packets to bridge specific port. 
+# pn_bridge_id: STP bridge id. 
+# pn_bridge_priority: STP bridge priority. 
+# pn_cliswitch: Target switch to run the CLI on. 
+# pn_enable: enable or disable STP 
+# pn_forwarding_delay: STP forwarding delay between 4 and 30 secs. 
+# pn_hello_time: STP hello time between 1 and 10 secs. 
+# pn_max_age: maximum age time between 6 and 40 secs. 
+# pn_mst_config_name: Name for MST Configuration Instance. 
+# pn_mst_max_hops: maximum hop count for mstp bpdu. 
+# pn_root_guard_wait_time: root guard wait time between 0 and 300 secs. 0 
+# pn_stp_mode: STP mode. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_stp module.}
+  pn_stp:
+${3:   ${4:pn_bpdus_bridge_ports}: ${5:"#"}}
+${6:   ${7:pn_bridge_id}: ${8:"#"}}
+${9:   ${10:pn_bridge_priority}: ${11:"#"}}
+${12:   ${13:pn_cliswitch}: ${14:"#"}}
+${15:   ${16:pn_enable}: ${17:"#"}}
+${18:   ${19:pn_forwarding_delay}: ${20:"#"}}
+${21:   ${22:pn_hello_time}: ${23:"#"}}
+${24:   ${25:pn_max_age}: ${26:"#"}}
+${27:   ${28:pn_mst_config_name}: ${29:"#"}}
+${30:   ${31:pn_mst_max_hops}: ${32:"#"}}
+${33:   ${34:pn_root_guard_wait_time}: ${35:"#"}}
+${36:   ${37:pn_stp_mode}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>pn_stp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

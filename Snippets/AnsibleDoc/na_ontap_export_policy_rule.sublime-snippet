@@ -1,20 +1,21 @@
 <snippet>
 <content><![CDATA[
 ${1:# allow_suid: If 'true', NFS server will honor SetUID bits in 
-# client_match: List of Client Match Hostnames, IP Addresses, 
+# client_match: List of Client Match host names, IP Addresses, 
 # hostname: (required) The hostname or IP address of the 
 # http_port: Override the default port (80 or 443) with this 
 # https: Enable and disable https 
+# name: (required) The name of the export rule to 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
-# policy_name: (required) The name of the export rule to 
-# protocol: Client access protocol. Default value is 'any' 
-# ro_rule: Read only access specifications for the rule 
-# rule_index: rule index of the export policy for delete and 
-# rw_rule: Read Write access specifications for the rule 
+# protocol: List of Client access protocols. Default value 
+# ro_rule: List of Read only access specifications for the 
+# rule_index: rule index of the export policy 
+# rw_rule: List of Read Write access specifications for the 
 # state: Whether the specified export policy rule should 
-# super_user_security: Read Write access specifications for the rule 
+# super_user_security: List of Read Write access specifications for the 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) Name of the vserver to use. 
 }- name: ${2:Name for na_ontap_export_policy_rule module.}
   na_ontap_export_policy_rule:
@@ -23,23 +24,24 @@ ${6:   ${7:client_match}: ${8:"#"}}
 ${9:   ${10:hostname}: ${11:"#"}}
 ${12:   ${13:http_port}: ${14:"#"}}
 ${15:   ${16:https}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:policy_name}: ${23:"#"}}
-${24:   ${25:protocol}: ${26:"#"}}
-${27:   ${28:ro_rule}: ${29:"#"}}
-${30:   ${31:rule_index}: ${32:"#"}}
-${33:   ${34:rw_rule}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:super_user_security}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:   ${49:vserver}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:ontapi}: ${23:"#"}}
+${24:   ${25:password}: ${26:"#"}}
+${27:   ${28:protocol}: ${29:"#"}}
+${30:   ${31:ro_rule}: ${32:"#"}}
+${33:   ${34:rule_index}: ${35:"#"}}
+${36:   ${37:rw_rule}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:super_user_security}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:vserver}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_export_policy_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

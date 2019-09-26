@@ -2,14 +2,14 @@
 <content><![CDATA[
 ${1:# auth_key: Authentication key provided by the dashboard. 
 # disable_my_meraki: - Disables the local device status pages 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # net_id: ID number of a network. 
 # net_name: Name of a network. 
 # org_id: ID of organization associated to a network. 
 # org_name: Name of organization associated to a network. 
 # output_level: Set amount of debug output during module 
 # state: Create or modify an organization. 
-# tags: Comma delimited list of tags to assign to 
+# tags: List of tags to assign to network. `tags' name 
 # timeout: Time to timeout for HTTP requests. 
 # timezone: Timezone associated to network. See https://en.w 
 # type: Type of network device network manages. Required 

@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
 ${1:# action: (required) Action to perform 
-# ip_address: IP Address for a reservation or a release 
+# ip_address: IP Address for a reservation or a release. 
 # network_address: Network address with CIDR format (e.g., 
 # network_family: Network family defined by Infinity, e.g. IPv4, 
-# network_id: Network ID 
-# network_location: the parent network id for a given network 
-# network_name: The name of a network 
+# network_id: Network ID. 
+# network_location: The parent network id for a given network. 
+# network_name: The name of a network. 
 # network_size: Network bitmask (e.g. 255.255.255.220) or CIDR 
 # network_type: Network type defined by Infinity 
-# password: (required) Infinity password 
-# server_ip: (required) Infinity server_ip with IP address 
-# username: (required) Username to access Infinity The user 
+# password: (required) Infinity password. 
+# server_ip: (required) Infinity server_ip with IP address. 
+# username: (required) Username to access Infinity. The user 
 }- name: ${2:Name for infinity module.}
   infinity:
 ${3:   ${4:action}: ${5:"#"}}

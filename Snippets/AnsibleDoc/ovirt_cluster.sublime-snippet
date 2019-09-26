@@ -12,11 +12,16 @@ ${1:# auth: (required) Dictionary with values needed to
 # fence_connectivity_threshold: The threshold used by 
 # fence_enabled: If `True' enables fencing on the cluster. 
 # fence_skip_if_connectivity_broken: If `True' fencing will be temporarily disabled 
+# fence_skip_if_gluster_bricks_up: A flag indicating if fencing should be skipped 
+# fence_skip_if_gluster_quorum_not_met: A flag indicating if fencing should be skipped 
 # fence_skip_if_sd_active: If `True' any hosts in the cluster that are Non 
 # fetch_nested: If `True' the module will fetch additional data 
+# firewall_type: The type of firewall to be used on hosts in this 
 # gluster: If `True', hosts in this cluster will be used as 
+# gluster_tuned_profile: The name of the https://fedorahosted.org/tuned 
 # ha_reservation: If `True' enables the oVirt/RHV to monitor 
 # host_reason: If `True' enables an optional reason field when 
+# id: ID of the cluster to manage. 
 # ksm: I `True' MoM enables to run Kernel Same-page 
 # ksm_numa: If `True' enables KSM `ksm' for best performance 
 # mac_pool: MAC pool to be used by this cluster. `Note:' 
@@ -44,7 +49,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # trusted_service: If `True' enables integration with an 
 # virt: If `True', hosts in this cluster will be used to 
 # vm_reason: If `True' enables an optional reason field when 
-# wait: `True' if the module should wait for the entity 
+# wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_cluster module.}
   ovirt_cluster:
 ${3:   ${4:auth}: ${5:"#"}}
@@ -59,45 +64,50 @@ ${27:   ${28:external_network_providers}: ${29:"#"}}
 ${30:   ${31:fence_connectivity_threshold}: ${32:"#"}}
 ${33:   ${34:fence_enabled}: ${35:"#"}}
 ${36:   ${37:fence_skip_if_connectivity_broken}: ${38:"#"}}
-${39:   ${40:fence_skip_if_sd_active}: ${41:"#"}}
-${42:   ${43:fetch_nested}: ${44:"#"}}
-${45:   ${46:gluster}: ${47:"#"}}
-${48:   ${49:ha_reservation}: ${50:"#"}}
-${51:   ${52:host_reason}: ${53:"#"}}
-${54:   ${55:ksm}: ${56:"#"}}
-${57:   ${58:ksm_numa}: ${59:"#"}}
-${60:   ${61:mac_pool}: ${62:"#"}}
-${63:   ${64:memory_policy}: ${65:"#"}}
-${66:   ${67:migration_auto_converge}: ${68:"#"}}
-${69:   ${70:migration_bandwidth}: ${71:"#"}}
-${72:   ${73:migration_bandwidth_limit}: ${74:"#"}}
-${75:   ${76:migration_compressed}: ${77:"#"}}
-${78:   ${79:migration_policy}: ${80:"#"}}
-${81:   ${82:name}: ${83:"#"}}
-${84:   ${85:nested_attributes}: ${86:"#"}}
-${87:   ${88:network}: ${89:"#"}}
-${90:   ${91:poll_interval}: ${92:"#"}}
-${93:   ${94:resilience_policy}: ${95:"#"}}
-${96:   ${97:rng_sources}: ${98:"#"}}
-${99:   ${100:scheduling_policy}: ${101:"#"}}
-${102:   ${103:scheduling_policy_properties}: ${104:"#"}}
-${105:   ${106:serial_policy}: ${107:"#"}}
-${108:   ${109:serial_policy_value}: ${110:"#"}}
-${111:   ${112:spice_proxy}: ${113:"#"}}
-${114:   ${115:state}: ${116:"#"}}
-${117:   ${118:switch_type}: ${119:"#"}}
-${120:   ${121:threads_as_cores}: ${122:"#"}}
-${123:   ${124:timeout}: ${125:"#"}}
-${126:   ${127:trusted_service}: ${128:"#"}}
-${129:   ${130:virt}: ${131:"#"}}
-${132:   ${133:vm_reason}: ${134:"#"}}
-${135:   ${136:wait}: ${137:"#"}}
-${138:${139:   become: ${140:true}} 
-${141:   become_method: ${142:su}} 
-${143:   become_user: ${144:nobody}} 
-${145:   become_flags: ${146:"-s /bin/sh"}}} 
-${147:   when: ${148:variable is defined}} 
-${149:   with_items: ${150:array}} 
+${39:   ${40:fence_skip_if_gluster_bricks_up}: ${41:"#"}}
+${42:   ${43:fence_skip_if_gluster_quorum_not_met}: ${44:"#"}}
+${45:   ${46:fence_skip_if_sd_active}: ${47:"#"}}
+${48:   ${49:fetch_nested}: ${50:"#"}}
+${51:   ${52:firewall_type}: ${53:"#"}}
+${54:   ${55:gluster}: ${56:"#"}}
+${57:   ${58:gluster_tuned_profile}: ${59:"#"}}
+${60:   ${61:ha_reservation}: ${62:"#"}}
+${63:   ${64:host_reason}: ${65:"#"}}
+${66:   ${67:id}: ${68:"#"}}
+${69:   ${70:ksm}: ${71:"#"}}
+${72:   ${73:ksm_numa}: ${74:"#"}}
+${75:   ${76:mac_pool}: ${77:"#"}}
+${78:   ${79:memory_policy}: ${80:"#"}}
+${81:   ${82:migration_auto_converge}: ${83:"#"}}
+${84:   ${85:migration_bandwidth}: ${86:"#"}}
+${87:   ${88:migration_bandwidth_limit}: ${89:"#"}}
+${90:   ${91:migration_compressed}: ${92:"#"}}
+${93:   ${94:migration_policy}: ${95:"#"}}
+${96:   ${97:name}: ${98:"#"}}
+${99:   ${100:nested_attributes}: ${101:"#"}}
+${102:   ${103:network}: ${104:"#"}}
+${105:   ${106:poll_interval}: ${107:"#"}}
+${108:   ${109:resilience_policy}: ${110:"#"}}
+${111:   ${112:rng_sources}: ${113:"#"}}
+${114:   ${115:scheduling_policy}: ${116:"#"}}
+${117:   ${118:scheduling_policy_properties}: ${119:"#"}}
+${120:   ${121:serial_policy}: ${122:"#"}}
+${123:   ${124:serial_policy_value}: ${125:"#"}}
+${126:   ${127:spice_proxy}: ${128:"#"}}
+${129:   ${130:state}: ${131:"#"}}
+${132:   ${133:switch_type}: ${134:"#"}}
+${135:   ${136:threads_as_cores}: ${137:"#"}}
+${138:   ${139:timeout}: ${140:"#"}}
+${141:   ${142:trusted_service}: ${143:"#"}}
+${144:   ${145:virt}: ${146:"#"}}
+${147:   ${148:vm_reason}: ${149:"#"}}
+${150:   ${151:wait}: ${152:"#"}}
+${153:${154:   become: ${155:true}} 
+${156:   become_method: ${157:su}} 
+${158:   become_user: ${159:nobody}} 
+${160:   become_flags: ${161:"-s /bin/sh"}}} 
+${162:   when: ${163:variable is defined}} 
+${164:   with_items: ${165:array}} 
 ]]></content>
 	<tabTrigger>ovirt_cluster</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

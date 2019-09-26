@@ -3,6 +3,8 @@
 ${1:# hostname: (required) The hostname or IP address of the 
 # http_port: Override the default port (80 or 443) with this 
 # https: Enable and disable https 
+# junction_path: Junction path of the volume. 
+# ontapi: The ontap api version to use 
 # parent_snapshot: Parent snapshot in which volume clone is created 
 # parent_volume: (required) The parent volume of the volume clone 
 # parent_vserver: Vserver of parent volume in which clone is 
@@ -11,7 +13,7 @@ ${1:# hostname: (required) The hostname or IP address of the
 # space_reserve: The space_reserve setting which should be used 
 # state: Whether volume clone should be created. 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 # volume: (required) The name of the volume clone being 
 # volume_type: The volume-type setting which should be used for 
 # vserver: (required) Vserver in which the volume clone 
@@ -20,24 +22,26 @@ ${1:# hostname: (required) The hostname or IP address of the
 ${3:   ${4:hostname}: ${5:"#"}}
 ${6:   ${7:http_port}: ${8:"#"}}
 ${9:   ${10:https}: ${11:"#"}}
-${12:   ${13:parent_snapshot}: ${14:"#"}}
-${15:   ${16:parent_volume}: ${17:"#"}}
-${18:   ${19:parent_vserver}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:qos_policy_group_name}: ${26:"#"}}
-${27:   ${28:space_reserve}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:volume}: ${41:"#"}}
-${42:   ${43:volume_type}: ${44:"#"}}
-${45:   ${46:vserver}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${12:   ${13:junction_path}: ${14:"#"}}
+${15:   ${16:ontapi}: ${17:"#"}}
+${18:   ${19:parent_snapshot}: ${20:"#"}}
+${21:   ${22:parent_volume}: ${23:"#"}}
+${24:   ${25:parent_vserver}: ${26:"#"}}
+${27:   ${28:password}: ${29:"#"}}
+${30:   ${31:qos_policy_group_name}: ${32:"#"}}
+${33:   ${34:space_reserve}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:volume}: ${47:"#"}}
+${48:   ${49:volume_type}: ${50:"#"}}
+${51:   ${52:vserver}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_volume_clone</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

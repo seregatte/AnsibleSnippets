@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# groups: The groups to add the hostname to, comma 
+${1:# groups: The groups to add the hostname to. 
 # name: (required) The hostname/ip of the host to add to 
 }- name: ${2:Name for add_host module.}
   add_host:

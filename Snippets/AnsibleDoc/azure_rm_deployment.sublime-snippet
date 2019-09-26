@@ -9,15 +9,15 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # deployment_mode: In incremental mode, resources are deployed 
-# deployment_name: The name of the deployment to be tracked in the 
 # location: The geo-locations in which the resource group 
+# name: The name of the deployment to be tracked in the 
 # parameters: A hash of all the required template variables 
 # parameters_link: Uri of file containing the parameters body. This 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
-# resource_group_name: (required) The resource group name to use or 
+# resource_group: (required) The resource group name to use or 
 # secret: Azure client secret. Use when authenticating 
-# state: If state is "present", template will be created. 
+# state: If state is `present', template will be created. 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # template: A hash containing the templates inline. This 
@@ -36,13 +36,13 @@ ${18:   ${19:cert_validation_mode}: ${20:"#"}}
 ${21:   ${22:client_id}: ${23:"#"}}
 ${24:   ${25:cloud_environment}: ${26:"#"}}
 ${27:   ${28:deployment_mode}: ${29:"#"}}
-${30:   ${31:deployment_name}: ${32:"#"}}
-${33:   ${34:location}: ${35:"#"}}
+${30:   ${31:location}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:parameters}: ${38:"#"}}
 ${39:   ${40:parameters_link}: ${41:"#"}}
 ${42:   ${43:password}: ${44:"#"}}
 ${45:   ${46:profile}: ${47:"#"}}
-${48:   ${49:resource_group_name}: ${50:"#"}}
+${48:   ${49:resource_group}: ${50:"#"}}
 ${51:   ${52:secret}: ${53:"#"}}
 ${54:   ${55:state}: ${56:"#"}}
 ${57:   ${58:subscription_id}: ${59:"#"}}

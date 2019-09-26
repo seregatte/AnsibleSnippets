@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
-${1:# domain: (required) the domain that will be added or 
-# no_reload: automatically reload the policy after a change 
-# permissive: (required) indicate if the domain should or 
-# store: name of the SELinux policy store to use 
+${1:# domain: (required) The domain that will be added or 
+# no_reload: Disable reloading of the SELinux policy after 
+# permissive: (required) Indicate if the domain should or 
+# store: Name of the SELinux policy store to use. 
 }- name: ${2:Name for selinux_permissive module.}
   selinux_permissive:
 ${3:   ${4:domain}: ${5:"#"}}

@@ -11,7 +11,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # role_mappings: (required) This is where you specify which 
 # search_base: (required) The search base is used to find group 
 # server: (required) This is the LDAP server url. The 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: Enable/disable LDAP support on the system. 
 # user_attribute: This is the attribute we will use to match the 
 # username: (required) This is the user account that will be 

@@ -10,7 +10,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # snapshot: The name of the snapshot to delete. 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 

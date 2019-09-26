@@ -1,0 +1,74 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: -The ADOM the configuration should belong to. 
+# app_category: Application category ID. 
+# app_service_type: Application service type. 
+# application: Application ID. 
+# category: Service category. 
+# check_reset_range: Enable disable RST check. 
+# color: GUI icon color. 
+# comment: Comment. 
+# custom_type: Tells module what kind of custom service to be 
+# explicit_proxy: Enable/disable explicit web proxy service. 
+# fqdn: Fully qualified domain name. 
+# group_member: Comma-Seperated list of members' names. 
+# group_name: Name of the Service Group. 
+# icmp_code: ICMP code. 
+# icmp_type: ICMP type. 
+# iprange: Start IP-End IP. 
+# mode: Sets one of three modes for managing the object. 
+# name: Custom service name. 
+# object_type: Tells module if we are adding a custom service, 
+# protocol: Protocol type. 
+# protocol_number: IP protocol number. 
+# sctp_portrange: Multiple SCTP port ranges. Comma separated list 
+# session_ttl: Session TTL (300 - 604800, 0 = default). 
+# tcp_halfclose_timer: TCP half close timeout (1 - 86400 sec, 0 = 
+# tcp_halfopen_timer: TCP half close timeout (1 - 86400 sec, 0 = 
+# tcp_portrange: Comma separated list of destination ports to add 
+# tcp_timewait_timer: TCP half close timeout (1 - 300 sec, 0 = 
+# udp_idle_timer: TCP half close timeout (0 - 86400 sec, 0 = 
+# udp_portrange: Comma separated list of destination ports to add 
+# visibility: Enable/disable service visibility. 
+}- name: ${2:Name for fmgr_fwobj_service module.}
+  fmgr_fwobj_service:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:app_category}: ${8:"#"}}
+${9:   ${10:app_service_type}: ${11:"#"}}
+${12:   ${13:application}: ${14:"#"}}
+${15:   ${16:category}: ${17:"#"}}
+${18:   ${19:check_reset_range}: ${20:"#"}}
+${21:   ${22:color}: ${23:"#"}}
+${24:   ${25:comment}: ${26:"#"}}
+${27:   ${28:custom_type}: ${29:"#"}}
+${30:   ${31:explicit_proxy}: ${32:"#"}}
+${33:   ${34:fqdn}: ${35:"#"}}
+${36:   ${37:group_member}: ${38:"#"}}
+${39:   ${40:group_name}: ${41:"#"}}
+${42:   ${43:icmp_code}: ${44:"#"}}
+${45:   ${46:icmp_type}: ${47:"#"}}
+${48:   ${49:iprange}: ${50:"#"}}
+${51:   ${52:mode}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:object_type}: ${59:"#"}}
+${60:   ${61:protocol}: ${62:"#"}}
+${63:   ${64:protocol_number}: ${65:"#"}}
+${66:   ${67:sctp_portrange}: ${68:"#"}}
+${69:   ${70:session_ttl}: ${71:"#"}}
+${72:   ${73:tcp_halfclose_timer}: ${74:"#"}}
+${75:   ${76:tcp_halfopen_timer}: ${77:"#"}}
+${78:   ${79:tcp_portrange}: ${80:"#"}}
+${81:   ${82:tcp_timewait_timer}: ${83:"#"}}
+${84:   ${85:udp_idle_timer}: ${86:"#"}}
+${87:   ${88:udp_portrange}: ${89:"#"}}
+${90:   ${91:visibility}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
+]]></content>
+	<tabTrigger>fmgr_fwobj_service</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -21,7 +21,7 @@ ${1:# aep: Choice of attached_entity_profile (AEP) to be
 # port_channel_policy: Choice of port_channel_policy to be used as part 
 # port_security_policy: Choice of port_security_policy to be used as 
 # priority_flow_control_policy: Choice of priority_flow_control_policy to be 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # slow_drain_policy: Choice of slow_drain_policy to be used as part 
 # state: Use `present' or `absent' for adding or 
 # storm_control_interface_policy: Choice of storm_control_interface_policy to be 

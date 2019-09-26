@@ -2,11 +2,11 @@
 <content><![CDATA[
 ${1:# ddns: Enable dynamic DNS updates for this host. 
 # host: Sets OMAPI server host to interact with. 
+# hostname: Sets the host lease hostname (mandatory if 
 # ip: Sets the lease host IP address. 
 # key: (required) Sets the TSIG key content for 
 # key_name: (required) Sets the TSIG key name for 
 # macaddr: (required) Sets the lease host MAC address. 
-# name: Sets the host lease hostname (mandatory if 
 # port: Sets the OMAPI server port to interact with. 
 # state: (required) Create or remove OMAPI host. 
 # statements: Attach a list of OMAPI DHCP statements with host 
@@ -14,11 +14,11 @@ ${1:# ddns: Enable dynamic DNS updates for this host.
   omapi_host:
 ${3:   ${4:ddns}: ${5:"#"}}
 ${6:   ${7:host}: ${8:"#"}}
-${9:   ${10:ip}: ${11:"#"}}
-${12:   ${13:key}: ${14:"#"}}
-${15:   ${16:key_name}: ${17:"#"}}
-${18:   ${19:macaddr}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:ip}: ${14:"#"}}
+${15:   ${16:key}: ${17:"#"}}
+${18:   ${19:key_name}: ${20:"#"}}
+${21:   ${22:macaddr}: ${23:"#"}}
 ${24:   ${25:port}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:statements}: ${32:"#"}}

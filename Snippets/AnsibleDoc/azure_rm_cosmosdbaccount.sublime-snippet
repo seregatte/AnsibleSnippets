@@ -1,0 +1,74 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when 
+# adfs_authority_url: Azure AD authority url. Use when authenticating 
+# api_profile: Selects an API profile to use when communicating 
+# append_tags: Use to control if tags field is canonical or 
+# auth_source: Controls the source of the credentials to use 
+# cert_validation_mode: Controls the certificate validation behavior for 
+# client_id: Azure client ID. Use when authenticating with a 
+# cloud_environment: For cloud environments other than the US public 
+# consistency_policy: The consistency policy for the Cosmos DB 
+# database_account_offer_type: Database account offer type, for example 
+# enable_automatic_failover: Enables automatic failover of the write region 
+# enable_cassandra: Enable Cassandra. 
+# enable_gremlin: Enable Gremlin. 
+# enable_multiple_write_locations: Enables the account to write in multiple 
+# enable_table: Enable Table. 
+# geo_rep_locations: An array that contains the georeplication 
+# ip_range_filter: Cosmos DB Firewall Support: This value specifies 
+# is_virtual_network_filter_enabled: Flag to indicate whether to enable/disable 
+# kind: Indicates the type of database account. This can 
+# location: The location of the resource group to which the 
+# name: (required) Cosmos DB database account name. 
+# password: Active Directory user password. Use when 
+# profile: Security profile found in ~/.azure/credentials 
+# resource_group: (required) Name of an Azure resource group. 
+# secret: Azure client secret. Use when authenticating 
+# state: Assert the state of the Database Account. Use 
+# subscription_id: Your Azure subscription Id. 
+# tags: Dictionary of string:string pairs to assign as 
+# tenant: Azure tenant ID. Use when authenticating with a 
+# virtual_network_rules: List of Virtual Network ACL rules configured for 
+}- name: ${2:Name for azure_rm_cosmosdbaccount module.}
+  azure_rm_cosmosdbaccount:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:adfs_authority_url}: ${8:"#"}}
+${9:   ${10:api_profile}: ${11:"#"}}
+${12:   ${13:append_tags}: ${14:"#"}}
+${15:   ${16:auth_source}: ${17:"#"}}
+${18:   ${19:cert_validation_mode}: ${20:"#"}}
+${21:   ${22:client_id}: ${23:"#"}}
+${24:   ${25:cloud_environment}: ${26:"#"}}
+${27:   ${28:consistency_policy}: ${29:"#"}}
+${30:   ${31:database_account_offer_type}: ${32:"#"}}
+${33:   ${34:enable_automatic_failover}: ${35:"#"}}
+${36:   ${37:enable_cassandra}: ${38:"#"}}
+${39:   ${40:enable_gremlin}: ${41:"#"}}
+${42:   ${43:enable_multiple_write_locations}: ${44:"#"}}
+${45:   ${46:enable_table}: ${47:"#"}}
+${48:   ${49:geo_rep_locations}: ${50:"#"}}
+${51:   ${52:ip_range_filter}: ${53:"#"}}
+${54:   ${55:is_virtual_network_filter_enabled}: ${56:"#"}}
+${57:   ${58:kind}: ${59:"#"}}
+${60:   ${61:location}: ${62:"#"}}
+${63:   ${64:name}: ${65:"#"}}
+${66:   ${67:password}: ${68:"#"}}
+${69:   ${70:profile}: ${71:"#"}}
+${72:   ${73:resource_group}: ${74:"#"}}
+${75:   ${76:secret}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:subscription_id}: ${83:"#"}}
+${84:   ${85:tags}: ${86:"#"}}
+${87:   ${88:tenant}: ${89:"#"}}
+${90:   ${91:virtual_network_rules}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
+]]></content>
+	<tabTrigger>azure_rm_cosmosdbaccount</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

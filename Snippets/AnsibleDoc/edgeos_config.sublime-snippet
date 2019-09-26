@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# backup: The `backup' argument will backup the current 
+# backup_options: This is a dict object containing configurable 
 # comment: Allows a commit description to be specified to 
 # config: The `config' argument specifies the base 
 # lines: The ordered set of configuration lines to be 
@@ -10,18 +11,19 @@ ${1:# backup: The `backup' argument will backup the current
 }- name: ${2:Name for edgeos_config module.}
   edgeos_config:
 ${3:   ${4:backup}: ${5:"#"}}
-${6:   ${7:comment}: ${8:"#"}}
-${9:   ${10:config}: ${11:"#"}}
-${12:   ${13:lines}: ${14:"#"}}
-${15:   ${16:match}: ${17:"#"}}
-${18:   ${19:save}: ${20:"#"}}
-${21:   ${22:src}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${6:   ${7:backup_options}: ${8:"#"}}
+${9:   ${10:comment}: ${11:"#"}}
+${12:   ${13:config}: ${14:"#"}}
+${15:   ${16:lines}: ${17:"#"}}
+${18:   ${19:match}: ${20:"#"}}
+${21:   ${22:save}: ${23:"#"}}
+${24:   ${25:src}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>edgeos_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

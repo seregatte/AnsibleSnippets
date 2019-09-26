@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# address_translation: Specifies, when `enabled', that the system 
+# clone_pools: Specifies a pool or list of pools that the 
 # default_persistence_profile: Default Profile which manages the session 
 # description: Virtual server description. 
 # destination: Destination IP of the virtual server. Required 
@@ -9,9 +10,13 @@ ${1:# address_translation: Specifies, when `enabled', that the system
 # fallback_persistence_profile: Specifies the persistence profile you want the 
 # firewall_enforced_policy: Applies the specify AFM policy to the virtual in 
 # firewall_staged_policy: Applies the specify AFM policy to the virtual in 
+# insert_metadata: When set to `no' it will not set metadata on the 
+# ip_intelligence_policy: Specifies the IP intelligence policy applied to 
 # ip_protocol: Specifies a network protocol name you want the 
 # irules: List of rules to be applied in priority order. 
+# mask: Specifies the destination address network mask. 
 # metadata: Arbitrary key/value pairs that you can attach to 
+# mirror: Specifies that the system mirrors connections on 
 # name: (required) Virtual server name. 
 # partition: Device partition to manage resources on. 
 # password: (required) The password for the user account 
@@ -21,12 +26,17 @@ ${1:# address_translation: Specifies, when `enabled', that the system
 # port_translation: Specifies, when `enabled', that the system 
 # profiles: List of profiles (HTTP, ClientSSL, ServerSSL, 
 # provider: A dict object containing connection details. 
+# rate_limit: Virtual server rate limit (connections-per- 
+# rate_limit_dst_mask: Specifies a mask, in bits, to be applied to the 
+# rate_limit_mode: Indicates whether the rate limit is applied per 
+# rate_limit_src_mask: Specifies a mask, in bits, to be applied to the 
 # security_log_profiles: Specifies the log profile applied to the virtual 
 # security_nat_policy: Specify the Firewall NAT policies for the 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 
 # snat: Source network address policy. When `type' is 
 # source: Specifies an IP address or network from which 
+# source_port: Specifies whether the system preserves the 
 # state: The virtual server state. If `absent', delete 
 # type: Specifies the network service provided by this 
 # user: (required) The username to connect to the BIG-IP 
@@ -34,42 +44,52 @@ ${1:# address_translation: Specifies, when `enabled', that the system
 }- name: ${2:Name for bigip_virtual_server module.}
   bigip_virtual_server:
 ${3:   ${4:address_translation}: ${5:"#"}}
-${6:   ${7:default_persistence_profile}: ${8:"#"}}
-${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:destination}: ${14:"#"}}
-${15:   ${16:disabled_vlans}: ${17:"#"}}
-${18:   ${19:enabled_vlans}: ${20:"#"}}
-${21:   ${22:fallback_persistence_profile}: ${23:"#"}}
-${24:   ${25:firewall_enforced_policy}: ${26:"#"}}
-${27:   ${28:firewall_staged_policy}: ${29:"#"}}
-${30:   ${31:ip_protocol}: ${32:"#"}}
-${33:   ${34:irules}: ${35:"#"}}
-${36:   ${37:metadata}: ${38:"#"}}
-${39:   ${40:name}: ${41:"#"}}
-${42:   ${43:partition}: ${44:"#"}}
-${45:   ${46:password}: ${47:"#"}}
-${48:   ${49:policies}: ${50:"#"}}
-${51:   ${52:pool}: ${53:"#"}}
-${54:   ${55:port}: ${56:"#"}}
-${57:   ${58:port_translation}: ${59:"#"}}
-${60:   ${61:profiles}: ${62:"#"}}
-${63:   ${64:provider}: ${65:"#"}}
-${66:   ${67:security_log_profiles}: ${68:"#"}}
-${69:   ${70:security_nat_policy}: ${71:"#"}}
-${72:   ${73:server}: ${74:"#"}}
-${75:   ${76:server_port}: ${77:"#"}}
-${78:   ${79:snat}: ${80:"#"}}
-${81:   ${82:source}: ${83:"#"}}
-${84:   ${85:state}: ${86:"#"}}
-${87:   ${88:type}: ${89:"#"}}
-${90:   ${91:user}: ${92:"#"}}
-${93:   ${94:validate_certs}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${6:   ${7:clone_pools}: ${8:"#"}}
+${9:   ${10:default_persistence_profile}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:destination}: ${17:"#"}}
+${18:   ${19:disabled_vlans}: ${20:"#"}}
+${21:   ${22:enabled_vlans}: ${23:"#"}}
+${24:   ${25:fallback_persistence_profile}: ${26:"#"}}
+${27:   ${28:firewall_enforced_policy}: ${29:"#"}}
+${30:   ${31:firewall_staged_policy}: ${32:"#"}}
+${33:   ${34:insert_metadata}: ${35:"#"}}
+${36:   ${37:ip_intelligence_policy}: ${38:"#"}}
+${39:   ${40:ip_protocol}: ${41:"#"}}
+${42:   ${43:irules}: ${44:"#"}}
+${45:   ${46:mask}: ${47:"#"}}
+${48:   ${49:metadata}: ${50:"#"}}
+${51:   ${52:mirror}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:partition}: ${59:"#"}}
+${60:   ${61:password}: ${62:"#"}}
+${63:   ${64:policies}: ${65:"#"}}
+${66:   ${67:pool}: ${68:"#"}}
+${69:   ${70:port}: ${71:"#"}}
+${72:   ${73:port_translation}: ${74:"#"}}
+${75:   ${76:profiles}: ${77:"#"}}
+${78:   ${79:provider}: ${80:"#"}}
+${81:   ${82:rate_limit}: ${83:"#"}}
+${84:   ${85:rate_limit_dst_mask}: ${86:"#"}}
+${87:   ${88:rate_limit_mode}: ${89:"#"}}
+${90:   ${91:rate_limit_src_mask}: ${92:"#"}}
+${93:   ${94:security_log_profiles}: ${95:"#"}}
+${96:   ${97:security_nat_policy}: ${98:"#"}}
+${99:   ${100:server}: ${101:"#"}}
+${102:   ${103:server_port}: ${104:"#"}}
+${105:   ${106:snat}: ${107:"#"}}
+${108:   ${109:source}: ${110:"#"}}
+${111:   ${112:source_port}: ${113:"#"}}
+${114:   ${115:state}: ${116:"#"}}
+${117:   ${118:type}: ${119:"#"}}
+${120:   ${121:user}: ${122:"#"}}
+${123:   ${124:validate_certs}: ${125:"#"}}
+${126:${127:   become: ${128:true}} 
+${129:   become_method: ${130:su}} 
+${131:   become_user: ${132:nobody}} 
+${133:   become_flags: ${134:"-s /bin/sh"}}} 
+${135:   when: ${136:variable is defined}} 
+${137:   with_items: ${138:array}} 
 ]]></content>
 	<tabTrigger>bigip_virtual_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

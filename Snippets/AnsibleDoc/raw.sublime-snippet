@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# executable: change the shell used to execute the command. 
-# free_form: (required) the raw module takes a free form 
+${1:# executable: Change the shell used to execute the command. 
+# free_form: (required) The raw module takes a free form 
 }- name: ${2:Name for raw module.}
   raw:
 ${3:   ${4:executable}: ${5:"#"}}

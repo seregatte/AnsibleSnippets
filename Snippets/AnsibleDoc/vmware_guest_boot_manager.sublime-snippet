@@ -11,6 +11,8 @@ ${1:# boot_delay: Delay in milliseconds before starting the boot
 # name_match: If multiple virtual machines matching the name, 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# secure_boot_enabled: Choose if EFI secure boot should be enabled. 
+# use_instance_uuid: Whether to use the VMWare instance UUID rather 
 # username: The username of the vSphere vCenter or ESXi 
 # uuid: UUID of the instance to manage if known, this is 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -27,15 +29,17 @@ ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:name_match}: ${29:"#"}}
 ${30:   ${31:password}: ${32:"#"}}
 ${33:   ${34:port}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:uuid}: ${41:"#"}}
-${42:   ${43:validate_certs}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${36:   ${37:secure_boot_enabled}: ${38:"#"}}
+${39:   ${40:use_instance_uuid}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:   ${46:uuid}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>vmware_guest_boot_manager</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

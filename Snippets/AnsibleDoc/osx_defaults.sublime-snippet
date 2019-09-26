@@ -3,25 +3,27 @@
 ${1:# array_add: Add new elements to the array for a key which 
 # domain: The domain is a domain name of the form 
 # host: The host on which the preference should apply. 
-# key: (required) The key of the user preference 
-# state: The state of the user defaults 
+# key: (required) The key of the user preference. 
+# path: The path in which to search for `osx_defaults'. 
+# state: The state of the user defaults. If set to `list' 
 # type: The type of value to write. 
-# value: The value to write. Only required when state = 
+# value: The value to write. Only required when 
 }- name: ${2:Name for osx_defaults module.}
   osx_defaults:
 ${3:   ${4:array_add}: ${5:"#"}}
 ${6:   ${7:domain}: ${8:"#"}}
 ${9:   ${10:host}: ${11:"#"}}
 ${12:   ${13:key}: ${14:"#"}}
-${15:   ${16:state}: ${17:"#"}}
-${18:   ${19:type}: ${20:"#"}}
-${21:   ${22:value}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:type}: ${23:"#"}}
+${24:   ${25:value}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>osx_defaults</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

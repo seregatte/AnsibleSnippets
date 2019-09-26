@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# ca_cert: A PEM file containing one or more root 
+# host: (required) The host to get the cert for (IP is 
+# port: (required) The port to connect to 
+# timeout: The timeout in seconds 
+}- name: ${2:Name for get_certificate module.}
+  get_certificate:
+${3:   ${4:ca_cert}: ${5:"#"}}
+${6:   ${7:host}: ${8:"#"}}
+${9:   ${10:port}: ${11:"#"}}
+${12:   ${13:timeout}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>get_certificate</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# name: Specifies the base name for the profile path. 
+# remove_multiple: When `state' is `absent' and the value for 
+# state: Will ensure the profile exists when set to 
+# username: The account name of security identifier (SID) 
+}- name: ${2:Name for win_user_profile module.}
+  win_user_profile:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:remove_multiple}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:username}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>win_user_profile</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

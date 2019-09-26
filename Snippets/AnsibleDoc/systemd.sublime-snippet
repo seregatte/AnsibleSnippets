@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# daemon_reload: run daemon-reload before doing any other 
+${1:# daemon_reexec: Run daemon_reexec command before doing any other 
+# daemon_reload: Run daemon-reload before doing any other 
 # enabled: Whether the service should start on boot. *At 
 # force: Whether to override existing symlinks. 
 # masked: Whether the unit should be masked or not, a 
@@ -11,21 +12,22 @@ ${1:# daemon_reload: run daemon-reload before doing any other
 # user: (deprecated) run ``systemctl`` talking to the 
 }- name: ${2:Name for systemd module.}
   systemd:
-${3:   ${4:daemon_reload}: ${5:"#"}}
-${6:   ${7:enabled}: ${8:"#"}}
-${9:   ${10:force}: ${11:"#"}}
-${12:   ${13:masked}: ${14:"#"}}
-${15:   ${16:name}: ${17:"#"}}
-${18:   ${19:no_block}: ${20:"#"}}
-${21:   ${22:scope}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:user}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${3:   ${4:daemon_reexec}: ${5:"#"}}
+${6:   ${7:daemon_reload}: ${8:"#"}}
+${9:   ${10:enabled}: ${11:"#"}}
+${12:   ${13:force}: ${14:"#"}}
+${15:   ${16:masked}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:no_block}: ${23:"#"}}
+${24:   ${25:scope}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:user}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>systemd</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

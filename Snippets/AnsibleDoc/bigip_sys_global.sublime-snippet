@@ -2,13 +2,13 @@
 <content><![CDATA[
 ${1:# banner_text: Specifies the text to present in the advisory 
 # console_timeout: Specifies the number of seconds of inactivity 
-# gui_setup: `enable' or `disabled' the Setup utility in the 
-# lcd_display: Specifies, when `enabled', that the system menu 
+# gui_setup: `yes' or `no' the Setup utility in the browser- 
+# lcd_display: Specifies, when `yes', that the system menu 
 # mgmt_dhcp: Specifies whether or not to enable DHCP client 
-# net_reboot: Specifies, when `enabled', that the next time 
+# net_reboot: Specifies, when `yes', that the next time you 
 # password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# quiet_boot: Specifies, when `enabled', that the system 
+# quiet_boot: Specifies, when `yes', that the system 
 # security_banner: Specifies whether the system displays an 
 # server: (required) The BIG-IP host. You may omit this 
 # server_port: The BIG-IP server port. You may omit this option 

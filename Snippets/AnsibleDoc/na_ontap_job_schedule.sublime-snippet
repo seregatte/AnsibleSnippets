@@ -3,29 +3,39 @@
 ${1:# hostname: (required) The hostname or IP address of the 
 # http_port: Override the default port (80 or 443) with this 
 # https: Enable and disable https 
+# job_days_of_month: The day(s) of the month when the job should be 
+# job_days_of_week: The day(s) in the week when the job should be 
+# job_hours: The hour(s) of the day when the job should be 
 # job_minutes: The minute(s) of each hour when the job should 
+# job_months: The month(s) when the job should be run. Job 
 # name: (required) The name of the job-schedule to 
+# ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # state: Whether the specified job schedule should exist 
 # username: (required) This can be a Cluster-scoped or SVM- 
-# validate_certs: If set to `False', the SSL certificates will not 
+# validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_job_schedule module.}
   na_ontap_job_schedule:
 ${3:   ${4:hostname}: ${5:"#"}}
 ${6:   ${7:http_port}: ${8:"#"}}
 ${9:   ${10:https}: ${11:"#"}}
-${12:   ${13:job_minutes}: ${14:"#"}}
-${15:   ${16:name}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:username}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${12:   ${13:job_days_of_month}: ${14:"#"}}
+${15:   ${16:job_days_of_week}: ${17:"#"}}
+${18:   ${19:job_hours}: ${20:"#"}}
+${21:   ${22:job_minutes}: ${23:"#"}}
+${24:   ${25:job_months}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:ontapi}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_job_schedule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

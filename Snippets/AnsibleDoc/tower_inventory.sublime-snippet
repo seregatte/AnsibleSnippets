@@ -6,11 +6,11 @@ ${1:# description: The description to use for the inventory.
 # name: (required) The name to use for the inventory. 
 # organization: (required) Organization the inventory belongs 
 # state: Desired state of the resource. 
-# tower_config_file: Path to the Tower config file. See notes. 
+# tower_config_file: Path to the Tower config file. 
 # tower_host: URL to your Tower instance. 
 # tower_password: Password for your Tower instance. 
 # tower_username: Username for your Tower instance. 
-# tower_verify_ssl: Dis/allow insecure connections to Tower. If 
+# validate_certs: Whether to allow insecure connections to Tower. 
 # variables: Inventory variables. Use `@' to get from file. 
 }- name: ${2:Name for tower_inventory module.}
   tower_inventory:
@@ -24,7 +24,7 @@ ${21:   ${22:tower_config_file}: ${23:"#"}}
 ${24:   ${25:tower_host}: ${26:"#"}}
 ${27:   ${28:tower_password}: ${29:"#"}}
 ${30:   ${31:tower_username}: ${32:"#"}}
-${33:   ${34:tower_verify_ssl}: ${35:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
 ${36:   ${37:variables}: ${38:"#"}}
 ${39:${40:   become: ${41:true}} 
 ${42:   become_method: ${43:su}} 

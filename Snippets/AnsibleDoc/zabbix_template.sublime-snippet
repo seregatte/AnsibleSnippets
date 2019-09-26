@@ -1,17 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# clear_templates: List of templates cleared from the template. see 
+${1:# clear_templates: List of templates cleared from the template. See 
 # http_login_password: Basic Auth password 
-# http_login_user: Basic Auth login 
+# http_login_user: (required) Basic Auth login 
 # link_templates: List of templates linked to the template. 
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
-# macros: List of templates macro 
+# macros: List of template macros. 
 # server_url: (required) URL of Zabbix server, with protocol 
-# state: state present create/update template, absent 
+# state: State: present - create/update template; absent 
 # template_groups: List of template groups to create or delete. 
-# template_json: JSON dump of template to import 
-# template_name: (required) Name of zabbix template 
+# template_json: JSON dump of template to import. 
+# template_name: Name of Zabbix template. Required when 
 # timeout: The timeout of API request (seconds). 
 # validate_certs: If set to False, SSL certificates will not be 
 }- name: ${2:Name for zabbix_template module.}

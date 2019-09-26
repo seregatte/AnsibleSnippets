@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# channel: (required) A Xfconf preference channel is a top- 
+# property: (required) A Xfce preference key is an element 
+# state: The action to take upon the property/value. 
+# value: Preference properties typically have simple 
+# value_type: The type of value being set. This is ignored if 
+}- name: ${2:Name for xfconf module.}
+  xfconf:
+${3:   ${4:channel}: ${5:"#"}}
+${6:   ${7:property}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:value}: ${14:"#"}}
+${15:   ${16:value_type}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>xfconf</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

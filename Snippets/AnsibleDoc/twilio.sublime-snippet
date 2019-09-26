@@ -5,7 +5,7 @@ ${1:# account_sid: (required) user's Twilio account token found on
 # from_number: (required) the Twilio number to send the text 
 # media_url: a URL with a picture, video or sound clip to 
 # msg: (required) the body of the text message 
-# to_number: (required) one or more phone numbers to send the 
+# to_numbers: (required) one or more phone numbers to send the 
 }- name: ${2:Name for twilio module.}
   twilio:
 ${3:   ${4:account_sid}: ${5:"#"}}
@@ -13,7 +13,7 @@ ${6:   ${7:auth_token}: ${8:"#"}}
 ${9:   ${10:from_number}: ${11:"#"}}
 ${12:   ${13:media_url}: ${14:"#"}}
 ${15:   ${16:msg}: ${17:"#"}}
-${18:   ${19:to_number}: ${20:"#"}}
+${18:   ${19:to_numbers}: ${20:"#"}}
 ${21:${22:   become: ${23:true}} 
 ${24:   become_method: ${25:su}} 
 ${26:   become_user: ${27:nobody}} 

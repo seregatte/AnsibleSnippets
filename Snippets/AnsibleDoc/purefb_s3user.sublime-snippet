@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# access_key: Create secret access key. Key can be exposed 
+# account: The name of object store account associated with 
+# api_token: FlashBlade API token for admin privileged user. 
+# fb_url: FlashBlade management IP address or Hostname. 
+# name: The name of object store user 
+# state: Create or delete object store account user 
+}- name: ${2:Name for purefb_s3user module.}
+  purefb_s3user:
+${3:   ${4:access_key}: ${5:"#"}}
+${6:   ${7:account}: ${8:"#"}}
+${9:   ${10:api_token}: ${11:"#"}}
+${12:   ${13:fb_url}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>purefb_s3user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

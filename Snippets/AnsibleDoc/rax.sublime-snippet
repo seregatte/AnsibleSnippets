@@ -33,7 +33,7 @@ ${1:# api_key: Rackspace API key, overrides `credentials'.
 # tenant_name: The tenant name used for authentication. 
 # user_data: Data to be uploaded to the servers config drive. 
 # username: Rackspace username, overrides `credentials'. 
-# verify_ssl: Whether or not to require SSL validation of API 
+# validate_certs: Whether or not to require SSL validation of API 
 # wait: wait for the instance to be in state 'running' 
 # wait_timeout: how long before wait gives up, in seconds 
 }- name: ${2:Name for rax module.}
@@ -71,7 +71,7 @@ ${90:   ${91:tenant_id}: ${92:"#"}}
 ${93:   ${94:tenant_name}: ${95:"#"}}
 ${96:   ${97:user_data}: ${98:"#"}}
 ${99:   ${100:username}: ${101:"#"}}
-${102:   ${103:verify_ssl}: ${104:"#"}}
+${102:   ${103:validate_certs}: ${104:"#"}}
 ${105:   ${106:wait}: ${107:"#"}}
 ${108:   ${109:wait_timeout}: ${110:"#"}}
 ${111:${112:   become: ${113:true}} 

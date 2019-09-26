@@ -1,25 +1,25 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
-# backup: Create a backup file including the timestamp 
+${1:# attributes: The attributes the resulting file or directory 
+# backup: Determine whether a backup should be created. 
 # block_end_string: The string marking the end of a block. 
 # block_start_string: The string marking the beginning of a block. 
 # dest: (required) Location to render the template to on 
-# follow: This flag indicates that filesystem links in the 
-# force: the default is `yes', which will replace the 
+# follow: Determine whether symbolic links should be 
+# force: Determine when the file is being transferred if 
 # group: Name of the group that should own the 
-# lstrip_blocks: If this is set to True leading spaces and tabs 
-# mode: Mode the file or directory should be. For those 
+# lstrip_blocks: Determine when leading spaces and tabs should be 
+# mode: The permissions the resulting file or directory 
 # newline_sequence: Specify the newline sequence to use for 
 # output_encoding: Overrides the encoding used to write the 
 # owner: Name of the user that should own the 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # src: (required) Path of a Jinja2 formatted template 
-# trim_blocks: If this is set to True the first newline after a 
-# unsafe_writes: By default this module uses atomic operations to 
+# trim_blocks: Determine when newlines should be removed from 
+# unsafe_writes: Influence when to use atomic operation to 
 # validate: The validation command to run before copying 
 # variable_end_string: The string marking the end of a print statement. 
 # variable_start_string: The string marking the beginning of a print 

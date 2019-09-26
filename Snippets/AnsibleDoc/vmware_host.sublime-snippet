@@ -8,11 +8,14 @@ ${1:# add_connected: If set to `True', then the host should be
 # esxi_ssl_thumbprint: Specifying the hostsystem certificate's 
 # thumbprint:  
 # esxi_username: ESXi username. Required for adding a host. 
+# fetch_ssl_thumbprint: Fetch the thumbprint of the host's SSL 
 # folder: Name of the folder under which host to add. If 
+# force_connection: Force the connection if the host is already 
 # hostname: The hostname or IP address of the vSphere 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
-# state: If set to `present', then add the host if host 
+# reconnect_disconnected: Reconnect disconnected hosts. This is only used 
+# state: If set to `present', add the host if host is 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
 }- name: ${2:Name for vmware_host module.}
@@ -25,19 +28,22 @@ ${15:   ${16:esxi_password}: ${17:"#"}}
 ${18:   ${19:esxi_ssl_thumbprint}: ${20:"#"}}
 ${21:   ${22:thumbprint}: ${23:"#"}}
 ${24:   ${25:esxi_username}: ${26:"#"}}
-${27:   ${28:folder}: ${29:"#"}}
-${30:   ${31:hostname}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:port}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${27:   ${28:fetch_ssl_thumbprint}: ${29:"#"}}
+${30:   ${31:folder}: ${32:"#"}}
+${33:   ${34:force_connection}: ${35:"#"}}
+${36:   ${37:hostname}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:reconnect_disconnected}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:username}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>vmware_host</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

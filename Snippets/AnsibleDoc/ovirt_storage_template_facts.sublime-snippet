@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# auth: (required) Dictionary with values needed to 
-# fetch_nested: If `True' the module will fetch additional data 
+# fetch_nested: If `yes' the module will fetch additional data 
 # max: Sets the maximum number of templates to return. 
 # nested_attributes: Specifies list of the attributes which should be 
 # storage_domain: The storage domain name where the templates 

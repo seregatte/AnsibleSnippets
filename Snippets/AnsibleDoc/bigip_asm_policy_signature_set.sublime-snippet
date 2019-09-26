@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# alarm: Specifies if the security policy logs the 
+# block: Effective when the security policy`s enforcement 
+# learn: Specifies if the security policy learns all 
+# name: (required) Specifies the name of the signature 
+# partition: This parameter is only used when identifying ASM 
+# password: (required) The password for the user account 
+# policy_name: (required) Specifies the name of an existing ASM 
+# provider: A dict object containing connection details. 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# state: When `present', ensures that the resource 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigip_asm_policy_signature_set module.}
+  bigip_asm_policy_signature_set:
+${3:   ${4:alarm}: ${5:"#"}}
+${6:   ${7:block}: ${8:"#"}}
+${9:   ${10:learn}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:partition}: ${17:"#"}}
+${18:   ${19:password}: ${20:"#"}}
+${21:   ${22:policy_name}: ${23:"#"}}
+${24:   ${25:provider}: ${26:"#"}}
+${27:   ${28:server}: ${29:"#"}}
+${30:   ${31:server_port}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:user}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>bigip_asm_policy_signature_set</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

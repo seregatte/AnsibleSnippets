@@ -12,7 +12,7 @@ ${1:# clip: Cluster IP address. Specify this parameter to
 # parentsite: Parent site of the GSLB site, in a parent-child 
 # publicclip: IP address to be used to globally access the 
 # publicip: Public IP address for the local site. Required 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # sessionexchange: Exchange persistent session entries with other 
 # siteipaddress: IP address for the GSLB site. The GSLB site uses 
 # sitename: Name for the GSLB site. Must begin with an ASCII 

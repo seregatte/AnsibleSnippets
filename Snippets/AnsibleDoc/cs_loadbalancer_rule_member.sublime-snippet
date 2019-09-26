@@ -10,6 +10,7 @@ ${1:# account: Account the rule is related to.
 # domain: Domain the rule is related to. 
 # ip_address: Public IP address from where the network traffic 
 # name: (required) The name of the load balancer rule. 
+# poll_async: Poll async jobs until job has finished. 
 # project: Name of the project the firewall rule is related 
 # state: Should the VMs be present or absent from the 
 # vms: (required) List of VMs to assign to or remove 
@@ -26,16 +27,17 @@ ${21:   ${22:api_url}: ${23:"#"}}
 ${24:   ${25:domain}: ${26:"#"}}
 ${27:   ${28:ip_address}: ${29:"#"}}
 ${30:   ${31:name}: ${32:"#"}}
-${33:   ${34:project}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:vms}: ${41:"#"}}
-${42:   ${43:zone}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${33:   ${34:poll_async}: ${35:"#"}}
+${36:   ${37:project}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:vms}: ${44:"#"}}
+${45:   ${46:zone}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>cs_loadbalancer_rule_member</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

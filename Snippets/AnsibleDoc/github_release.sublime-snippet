@@ -4,12 +4,12 @@ ${1:# action: (required) Action to perform
 # body: Description of the release when creating a 
 # draft: Sets if the release is a draft or not. (boolean) 
 # name: Name of release when creating a release 
-# password: The GitHub account password for the user 
+# password: The GitHub account password for the user. 
 # prerelease: Sets if the release is a prerelease or not. 
 # repo: (required) Repository name 
 # tag: Tag name when creating a release. Required when 
 # target: Target of release when creating a release 
-# token: GitHub Personal Access Token for authenticating 
+# token: GitHub Personal Access Token for authenticating. 
 # user: (required) The GitHub account that owns the 
 }- name: ${2:Name for github_release module.}
   github_release:

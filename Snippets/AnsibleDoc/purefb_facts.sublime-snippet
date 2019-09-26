@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# api_token: FlashBlade API token for admin privilaed user. 
+${1:# api_token: FlashBlade API token for admin privileged user. 
 # fb_url: FlashBlade management IP address or Hostname. 
 # gather_subset: When supplied, this argument will define the 
 }- name: ${2:Name for purefb_facts module.}

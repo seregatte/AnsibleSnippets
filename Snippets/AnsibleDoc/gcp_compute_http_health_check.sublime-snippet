@@ -10,6 +10,7 @@ ${1:# auth_kind: (required) The type of credential used.
 # project: The Google Cloud Platform project to use. 
 # request_path: The request path of the HTTP health check 
 # scopes: Array of scopes to be used. 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # state: Whether the given object should exist in GCP 
@@ -27,17 +28,18 @@ ${21:   ${22:port}: ${23:"#"}}
 ${24:   ${25:project}: ${26:"#"}}
 ${27:   ${28:request_path}: ${29:"#"}}
 ${30:   ${31:scopes}: ${32:"#"}}
-${33:   ${34:service_account_email}: ${35:"#"}}
-${36:   ${37:service_account_file}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:timeout_sec}: ${44:"#"}}
-${45:   ${46:unhealthy_threshold}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${33:   ${34:service_account_contents}: ${35:"#"}}
+${36:   ${37:service_account_email}: ${38:"#"}}
+${39:   ${40:service_account_file}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:timeout_sec}: ${47:"#"}}
+${48:   ${49:unhealthy_threshold}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_http_health_check</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

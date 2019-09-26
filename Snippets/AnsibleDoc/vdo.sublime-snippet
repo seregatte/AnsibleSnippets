@@ -18,7 +18,7 @@ ${1:# ackthreads: Specifies the number of threads to use for
 # physicalthreads: Specifies the number of threads across which to 
 # readcache: Enables or disables the read cache.  The default 
 # readcachesize: Specifies the extra VDO device read cache size 
-# running: Whether this VDO volume is running.  A VDO 
+# running: Whether this VDO volume is running. A VDO volume 
 # slabsize: The size of the increment by which the physical 
 # state: (required) Whether this VDO volume should be 
 # writepolicy: Specifies the write policy of the VDO volume. 

@@ -8,7 +8,7 @@ ${1:# ap_tags_vlan_ids: List of VLAN tags.
 # default_vlan_id: Default VLAN ID. 
 # enabled: Enable or disable SSID network. 
 # encryption_mode: Set encryption mode of network. 
-# host: Hostname for Meraki dashboard Only useful for 
+# host: Hostname for Meraki dashboard. Can be used to 
 # ip_assignment_mode: Method of which SSID uses to assign IP 
 # min_bitrate: Minimum bitrate (Mbps) allowed on SSID. 
 # name: Name of SSID. 

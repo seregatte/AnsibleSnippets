@@ -1,0 +1,146 @@
+<snippet>
+<content><![CDATA[
+${1:# admin_enable_fortiguard: Enables FortiGuard security updates to their 
+# admin_fortianalyzer_target: Configures faz target. 
+# admin_fortiguard_target: Configures fortiguard target. 
+# admin_gui_theme: Changes the admin gui theme. 
+# admin_http_port: Non-SSL admin gui port number. 
+# admin_https_port: SSL admin gui port number. 
+# admin_https_redirect: Enables or disables https redirect from http. 
+# admin_language: Sets the admin gui language. 
+# admin_switch_controller: Enables or disables the switch controller. 
+# admin_timeout: Admin timeout in minutes. 
+# adom: (required) The ADOM the configuration should 
+# delete_provisioning_template: If specified, all other options are ignored. The 
+# device_unique_name: (required) The unique device's name that you are 
+# dns_primary_ipv4: primary ipv4 dns forwarder. 
+# dns_secondary_ipv4: secondary ipv4 dns forwarder. 
+# dns_suffix: Sets the local dns domain suffix. 
+# mode: Sets one of three modes for managing the object. 
+# ntp_auth: Enables or disables ntp authentication. 
+# ntp_auth_pwd: Sets the ntp auth password. 
+# ntp_server: Only used with custom ntp_type -- specifies IP 
+# ntp_status: Enables or disables ntp. 
+# ntp_sync_interval: Sets the interval in minutes for ntp sync. 
+# ntp_type: Enables fortiguard servers or custom servers are 
+# ntp_v3: Enables or disables ntpv3 (default is ntpv4). 
+# provision_targets: (required) The friendly names of devices in 
+# provisioning_template: (required) The provisioning template you want to 
+# smtp_conn_sec: defines the ssl level for smtp. 
+# smtp_password: SMTP password. 
+# smtp_port: SMTP port number. 
+# smtp_replyto: SMTP reply to address. 
+# smtp_server: SMTP server ipv4 address. 
+# smtp_source_ipv4: SMTP source ip address. 
+# smtp_username: SMTP auth username. 
+# smtp_validate_cert: Enables or disables valid certificate checking 
+# snmp_status: Enables or disables SNMP globally. 
+# snmp_v2c_id: Primary key for the snmp community. this must be 
+# snmp_v2c_name: Specifies the v2c community name. 
+# snmp_v2c_query_hosts_ipv4: - IPv4 addresses or subnets that are allowed to 
+# snmp_v2c_query_port: Sets the snmp v2c community query port. 
+# snmp_v2c_query_status: Enables or disables the v2c community specified 
+# snmp_v2c_status: Enables or disables the v2c community specified. 
+# snmp_v2c_trap_hosts_ipv4: - IPv4 addresses of the hosts that should get 
+# snmp_v2c_trap_port: Sets the snmp v2c community trap port. 
+# snmp_v2c_trap_src_ipv4: Source ip the traps should come from IPv4. 
+# snmp_v2c_trap_status: Enables or disables the v2c community specified 
+# snmpv3_auth_proto: SNMPv3 auth protocol. 
+# snmpv3_auth_pwd: SNMPv3 auth pwd __ currently not encrypted! 
+# snmpv3_name: SNMPv3 user name. 
+# snmpv3_notify_hosts: List of ipv4 hosts to send snmpv3 traps to. 
+# snmpv3_priv_proto: SNMPv3 priv protocol. 
+# snmpv3_priv_pwd: SNMPv3 priv pwd currently not encrypted! ensure 
+# snmpv3_queries: Allow snmpv3_queries. 
+# snmpv3_query_port: SNMPv3 query port. 
+# snmpv3_security_level: SNMPv3 security level. 
+# snmpv3_source_ip: SNMPv3 source ipv4 address for traps. 
+# snmpv3_status: SNMPv3 user is enabled or disabled. 
+# snmpv3_trap_rport: SNMPv3 trap remote port. 
+# snmpv3_trap_status: SNMPv3 traps is enabled or disabled. 
+# syslog_certificate: Certificate used to communicate with Syslog 
+# syslog_enc_algorithm: Enable/disable reliable syslogging with TLS 
+# syslog_facility: Remote syslog facility. choice | kernel | Kernel 
+# syslog_filter: Sets the logging level for syslog. 
+# syslog_mode: Remote syslog logging over UDP/Reliable TCP. 
+# syslog_port: Syslog port that will be set. 
+# syslog_server: Server the syslogs will be sent to. 
+# syslog_status: Enables or disables syslogs. 
+}- name: ${2:Name for fmgr_device_provision_template module.}
+  fmgr_device_provision_template:
+${3:   ${4:admin_enable_fortiguard}: ${5:"#"}}
+${6:   ${7:admin_fortianalyzer_target}: ${8:"#"}}
+${9:   ${10:admin_fortiguard_target}: ${11:"#"}}
+${12:   ${13:admin_gui_theme}: ${14:"#"}}
+${15:   ${16:admin_http_port}: ${17:"#"}}
+${18:   ${19:admin_https_port}: ${20:"#"}}
+${21:   ${22:admin_https_redirect}: ${23:"#"}}
+${24:   ${25:admin_language}: ${26:"#"}}
+${27:   ${28:admin_switch_controller}: ${29:"#"}}
+${30:   ${31:admin_timeout}: ${32:"#"}}
+${33:   ${34:adom}: ${35:"#"}}
+${36:   ${37:delete_provisioning_template}: ${38:"#"}}
+${39:   ${40:device_unique_name}: ${41:"#"}}
+${42:   ${43:dns_primary_ipv4}: ${44:"#"}}
+${45:   ${46:dns_secondary_ipv4}: ${47:"#"}}
+${48:   ${49:dns_suffix}: ${50:"#"}}
+${51:   ${52:mode}: ${53:"#"}}
+${54:   ${55:ntp_auth}: ${56:"#"}}
+${57:   ${58:ntp_auth_pwd}: ${59:"#"}}
+${60:   ${61:ntp_server}: ${62:"#"}}
+${63:   ${64:ntp_status}: ${65:"#"}}
+${66:   ${67:ntp_sync_interval}: ${68:"#"}}
+${69:   ${70:ntp_type}: ${71:"#"}}
+${72:   ${73:ntp_v3}: ${74:"#"}}
+${75:   ${76:provision_targets}: ${77:"#"}}
+${78:   ${79:provisioning_template}: ${80:"#"}}
+${81:   ${82:smtp_conn_sec}: ${83:"#"}}
+${84:   ${85:smtp_password}: ${86:"#"}}
+${87:   ${88:smtp_port}: ${89:"#"}}
+${90:   ${91:smtp_replyto}: ${92:"#"}}
+${93:   ${94:smtp_server}: ${95:"#"}}
+${96:   ${97:smtp_source_ipv4}: ${98:"#"}}
+${99:   ${100:smtp_username}: ${101:"#"}}
+${102:   ${103:smtp_validate_cert}: ${104:"#"}}
+${105:   ${106:snmp_status}: ${107:"#"}}
+${108:   ${109:snmp_v2c_id}: ${110:"#"}}
+${111:   ${112:snmp_v2c_name}: ${113:"#"}}
+${114:   ${115:snmp_v2c_query_hosts_ipv4}: ${116:"#"}}
+${117:   ${118:snmp_v2c_query_port}: ${119:"#"}}
+${120:   ${121:snmp_v2c_query_status}: ${122:"#"}}
+${123:   ${124:snmp_v2c_status}: ${125:"#"}}
+${126:   ${127:snmp_v2c_trap_hosts_ipv4}: ${128:"#"}}
+${129:   ${130:snmp_v2c_trap_port}: ${131:"#"}}
+${132:   ${133:snmp_v2c_trap_src_ipv4}: ${134:"#"}}
+${135:   ${136:snmp_v2c_trap_status}: ${137:"#"}}
+${138:   ${139:snmpv3_auth_proto}: ${140:"#"}}
+${141:   ${142:snmpv3_auth_pwd}: ${143:"#"}}
+${144:   ${145:snmpv3_name}: ${146:"#"}}
+${147:   ${148:snmpv3_notify_hosts}: ${149:"#"}}
+${150:   ${151:snmpv3_priv_proto}: ${152:"#"}}
+${153:   ${154:snmpv3_priv_pwd}: ${155:"#"}}
+${156:   ${157:snmpv3_queries}: ${158:"#"}}
+${159:   ${160:snmpv3_query_port}: ${161:"#"}}
+${162:   ${163:snmpv3_security_level}: ${164:"#"}}
+${165:   ${166:snmpv3_source_ip}: ${167:"#"}}
+${168:   ${169:snmpv3_status}: ${170:"#"}}
+${171:   ${172:snmpv3_trap_rport}: ${173:"#"}}
+${174:   ${175:snmpv3_trap_status}: ${176:"#"}}
+${177:   ${178:syslog_certificate}: ${179:"#"}}
+${180:   ${181:syslog_enc_algorithm}: ${182:"#"}}
+${183:   ${184:syslog_facility}: ${185:"#"}}
+${186:   ${187:syslog_filter}: ${188:"#"}}
+${189:   ${190:syslog_mode}: ${191:"#"}}
+${192:   ${193:syslog_port}: ${194:"#"}}
+${195:   ${196:syslog_server}: ${197:"#"}}
+${198:   ${199:syslog_status}: ${200:"#"}}
+${201:${202:   become: ${203:true}} 
+${204:   become_method: ${205:su}} 
+${206:   become_user: ${207:nobody}} 
+${208:   become_flags: ${209:"-s /bin/sh"}}} 
+${210:   when: ${211:variable is defined}} 
+${212:   with_items: ${213:array}} 
+]]></content>
+	<tabTrigger>fmgr_device_provision_template</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

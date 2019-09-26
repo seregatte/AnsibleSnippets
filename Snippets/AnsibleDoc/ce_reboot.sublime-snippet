@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# confirm: Safeguard boolean. Set to true if you're sure 
+${1:# confirm: (required) Safeguard boolean. Set to true if 
 # save_config: Flag indicating whether to save the 
 }- name: ${2:Name for ce_reboot module.}
   ce_reboot:

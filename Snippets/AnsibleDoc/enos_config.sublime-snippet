@@ -5,6 +5,7 @@ ${1:# admin: Enters into administration configuration mode
 # auth_pass: Specifies the password to use if required to 
 # authorize: Instructs the module to enter privileged mode on 
 # backup: This argument will cause the module to create a 
+# backup_options: This is a dict object containing configurable 
 # before: The ordered set of commands to push on to the 
 # comment: Allows a commit description to be specified to 
 # config: The module, by default, will connect to the 
@@ -21,21 +22,22 @@ ${6:   ${7:after}: ${8:"#"}}
 ${9:   ${10:auth_pass}: ${11:"#"}}
 ${12:   ${13:authorize}: ${14:"#"}}
 ${15:   ${16:backup}: ${17:"#"}}
-${18:   ${19:before}: ${20:"#"}}
-${21:   ${22:comment}: ${23:"#"}}
-${24:   ${25:config}: ${26:"#"}}
-${27:   ${28:lines}: ${29:"#"}}
-${30:   ${31:match}: ${32:"#"}}
-${33:   ${34:parents}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:replace}: ${41:"#"}}
-${42:   ${43:src}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${18:   ${19:backup_options}: ${20:"#"}}
+${21:   ${22:before}: ${23:"#"}}
+${24:   ${25:comment}: ${26:"#"}}
+${27:   ${28:config}: ${29:"#"}}
+${30:   ${31:lines}: ${32:"#"}}
+${33:   ${34:match}: ${35:"#"}}
+${36:   ${37:parents}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:replace}: ${44:"#"}}
+${45:   ${46:src}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>enos_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

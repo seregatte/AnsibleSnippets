@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# connect_timeout: Maximum seconds to wait for a single successful 
-# msg: Message to display to users 
-# post_reboot_delay: Seconds to wait after the reboot was successful 
-# pre_reboot_delay: Seconds for shutdown to wait before requesting 
+# msg: Message to display to users. 
+# post_reboot_delay: Seconds to wait after the reboot command was 
+# pre_reboot_delay: Seconds to wait before reboot. Passed as a 
 # reboot_timeout: Maximum seconds to wait for machine to re-appear 
-# shutdown_timeout: Maximum seconds to wait for shutdown to occur 
+# shutdown_timeout: Maximum seconds to wait for shutdown to occur. 
 # test_command: Command to expect success for to determine the 
 }- name: ${2:Name for win_reboot module.}
   win_reboot:

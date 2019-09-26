@@ -1,23 +1,29 @@
 <snippet>
 <content><![CDATA[
-${1:# database_path: The path to a directory on a fixed disk of the 
+${1:# create_dns_delegation: Whether to create a DNS delegation that 
+# database_path: The path to a directory on a fixed disk of the 
 # dns_domain_name: (required) The DNS name of the domain which 
-# domain_netbios_name: The netbios name of the domain. If not set, then 
+# domain_mode: Specifies the domain functional level of the 
+# domain_netbios_name: The NetBIOS name for the root domain in the new 
+# forest_mode: Specifies the forest functional level for the 
 # safe_mode_password: (required) Safe mode password for the domain 
 # sysvol_path: The path to a directory on a fixed disk of the 
 }- name: ${2:Name for win_domain module.}
   win_domain:
-${3:   ${4:database_path}: ${5:"#"}}
-${6:   ${7:dns_domain_name}: ${8:"#"}}
-${9:   ${10:domain_netbios_name}: ${11:"#"}}
-${12:   ${13:safe_mode_password}: ${14:"#"}}
-${15:   ${16:sysvol_path}: ${17:"#"}}
-${18:${19:   become: ${20:true}} 
-${21:   become_method: ${22:su}} 
-${23:   become_user: ${24:nobody}} 
-${25:   become_flags: ${26:"-s /bin/sh"}}} 
-${27:   when: ${28:variable is defined}} 
-${29:   with_items: ${30:array}} 
+${3:   ${4:create_dns_delegation}: ${5:"#"}}
+${6:   ${7:database_path}: ${8:"#"}}
+${9:   ${10:dns_domain_name}: ${11:"#"}}
+${12:   ${13:domain_mode}: ${14:"#"}}
+${15:   ${16:domain_netbios_name}: ${17:"#"}}
+${18:   ${19:forest_mode}: ${20:"#"}}
+${21:   ${22:safe_mode_password}: ${23:"#"}}
+${24:   ${25:sysvol_path}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>win_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

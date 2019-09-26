@@ -3,12 +3,14 @@
 ${1:# api_version: The version of the Docker API running on the 
 # auto_remove: enable auto-removal of the container on daemon 
 # blkio_weight: Block IO (relative weight), between 10 and 1000. 
-# cacert_path: Use a CA certificate when performing server 
+# ca_cert: Use a CA certificate when performing server 
 # cap_drop: List of capabilities to drop from the container. 
 # capabilities: List of capabilities to add to the container. 
-# cert_path: Path to the client's TLS certificate file. If 
 # cleanup: Use with `detach=false' to remove the container 
+# client_cert: Path to the client's TLS certificate file. If 
+# client_key: Path to the client's TLS key file. If the value 
 # command: Command to execute when the container starts. A 
+# comparisons: Allows to specify how properties of existing 
 # cpu_period: Limit CPU CFS (Completely Fair Scheduler) period 
 # cpu_quota: Limit CPU CFS (Completely Fair Scheduler) quota 
 # cpu_shares: CPU shares (relative weight). 
@@ -16,6 +18,10 @@ ${1:# api_version: The version of the Docker API running on the
 # cpuset_mems: Memory nodes (MEMs) in which to allow execution 
 # debug: Debug mode 
 # detach: Enable detached mode to leave the container 
+# device_read_bps: List of device path and read rate (bytes per 
+# device_read_iops: List of device and read rate (IO per second) 
+# device_write_bps: List of device and write rate (bytes per second) 
+# device_write_iops: List of device and write rate (IO per second) to 
 # devices: List of host device bindings to add to the 
 # dns_opts: list of DNS options 
 # dns_search_domains: List of custom DNS search domains. 
@@ -29,6 +35,8 @@ ${1:# api_version: The version of the Docker API running on the
 # exposed_ports: List of additional container ports which informs 
 # force_kill: Use the kill command when stopping a running 
 # groups: List of additional group names and/or IDs that 
+# healthcheck: Configure a check that is run to determine 
+# der: healthcheck) 
 # hostname: Container hostname. 
 # ignore_image: When `state' is `present' or `started' the 
 # image: Repository path and tag used to create the 
@@ -37,7 +45,6 @@ ${1:# api_version: The version of the Docker API running on the
 # ipc_mode: Set the IPC mode for the container. Can be one 
 # keep_volumes: Retain volumes associated with a removed 
 # kernel_memory: Kernel memory limit (format: 
-# key_path: Path to the client's TLS key file. If the value 
 # kill_signal: Override default signal used to kill a running 
 # labels: Dictionary of key value pairs. 
 # links: List of name aliases for linked containers in 
@@ -51,11 +58,13 @@ ${1:# api_version: The version of the Docker API running on the
 # name: (required) Assign a name to a new container or 
 # network_mode: Connect the container to a network. Choices are 
 # networks: List of networks the container belongs to. For 
+# networks_cli_compatible: When networks are provided to the module via the 
 # oom_killer: Whether or not to disable OOM Killer for the 
 # oom_score_adj: An integer value containing the score given to 
 # output_logs: If set to true, output of the container command 
 # paused: Use with the started state to pause running 
 # pid_mode: Set the PID namespace mode for the container. 
+# pids_limit: Set PIDs limit for the container. It accepts an 
 # privileged: Give extended privileges to the container. 
 # published_ports: List of ports to publish from the container to 
 # pull: If true, always pull the latest version of an 
@@ -65,6 +74,7 @@ ${1:# api_version: The version of the Docker API running on the
 # restart: Use with started state to force a matching 
 # restart_policy: Container restart policy. Place quotes around 
 # restart_retries: Use with restart policy to control maximum 
+# runtime: Runtime to use for the container. 
 # security_opts: List of security options in the form of 
 # shm_size: Size of `/dev/shm' (format: `<number>[<unit>]'). 
 # ssl_version: Provide a valid SSL version number. Default 
@@ -75,7 +85,6 @@ ${1:# api_version: The version of the Docker API running on the
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 
 # tls_hostname: When verifying the authenticity of the Docker 
-# tls_verify: Secure the connection to the API by using TLS 
 # tmpfs: Mount a tmpfs directory 
 # trust_image_content: If `yes', skip image verification. 
 # tty: Allocate a pseudo-TTY. 
@@ -83,6 +92,7 @@ ${1:# api_version: The version of the Docker API running on the
 # user: Sets the username or UID used and optionally the 
 # userns_mode: Set the user namespace mode for the container. 
 # uts: Set the UTS namespace mode for the container. 
+# validate_certs: Secure the connection to the API by using TLS 
 # volume_driver: The container volume driver. 
 # volumes: List of volumes to mount within the container. 
 # volumes_from: List of container names or Ids to get volumes 
@@ -92,96 +102,106 @@ ${1:# api_version: The version of the Docker API running on the
 ${3:   ${4:api_version}: ${5:"#"}}
 ${6:   ${7:auto_remove}: ${8:"#"}}
 ${9:   ${10:blkio_weight}: ${11:"#"}}
-${12:   ${13:cacert_path}: ${14:"#"}}
+${12:   ${13:ca_cert}: ${14:"#"}}
 ${15:   ${16:cap_drop}: ${17:"#"}}
 ${18:   ${19:capabilities}: ${20:"#"}}
-${21:   ${22:cert_path}: ${23:"#"}}
-${24:   ${25:cleanup}: ${26:"#"}}
-${27:   ${28:command}: ${29:"#"}}
-${30:   ${31:cpu_period}: ${32:"#"}}
-${33:   ${34:cpu_quota}: ${35:"#"}}
-${36:   ${37:cpu_shares}: ${38:"#"}}
-${39:   ${40:cpuset_cpus}: ${41:"#"}}
-${42:   ${43:cpuset_mems}: ${44:"#"}}
-${45:   ${46:debug}: ${47:"#"}}
-${48:   ${49:detach}: ${50:"#"}}
-${51:   ${52:devices}: ${53:"#"}}
-${54:   ${55:dns_opts}: ${56:"#"}}
-${57:   ${58:dns_search_domains}: ${59:"#"}}
-${60:   ${61:dns_servers}: ${62:"#"}}
-${63:   ${64:docker_host}: ${65:"#"}}
-${66:   ${67:domainname}: ${68:"#"}}
-${69:   ${70:entrypoint}: ${71:"#"}}
-${72:   ${73:env}: ${74:"#"}}
-${75:   ${76:env_file}: ${77:"#"}}
-${78:   ${79:etc_hosts}: ${80:"#"}}
-${81:   ${82:exposed_ports}: ${83:"#"}}
-${84:   ${85:force_kill}: ${86:"#"}}
-${87:   ${88:groups}: ${89:"#"}}
-${90:   ${91:hostname}: ${92:"#"}}
-${93:   ${94:ignore_image}: ${95:"#"}}
-${96:   ${97:image}: ${98:"#"}}
-${99:   ${100:init}: ${101:"#"}}
-${102:   ${103:interactive}: ${104:"#"}}
-${105:   ${106:ipc_mode}: ${107:"#"}}
-${108:   ${109:keep_volumes}: ${110:"#"}}
-${111:   ${112:kernel_memory}: ${113:"#"}}
-${114:   ${115:key_path}: ${116:"#"}}
-${117:   ${118:kill_signal}: ${119:"#"}}
-${120:   ${121:labels}: ${122:"#"}}
-${123:   ${124:links}: ${125:"#"}}
-${126:   ${127:log_driver}: ${128:"#"}}
-${129:   ${130:log_options}: ${131:"#"}}
-${132:   ${133:mac_address}: ${134:"#"}}
-${135:   ${136:memory}: ${137:"#"}}
-${138:   ${139:memory_reservation}: ${140:"#"}}
-${141:   ${142:memory_swap}: ${143:"#"}}
-${144:   ${145:memory_swappiness}: ${146:"#"}}
-${147:   ${148:name}: ${149:"#"}}
-${150:   ${151:network_mode}: ${152:"#"}}
-${153:   ${154:networks}: ${155:"#"}}
-${156:   ${157:oom_killer}: ${158:"#"}}
-${159:   ${160:oom_score_adj}: ${161:"#"}}
-${162:   ${163:output_logs}: ${164:"#"}}
-${165:   ${166:paused}: ${167:"#"}}
-${168:   ${169:pid_mode}: ${170:"#"}}
-${171:   ${172:privileged}: ${173:"#"}}
-${174:   ${175:published_ports}: ${176:"#"}}
-${177:   ${178:pull}: ${179:"#"}}
-${180:   ${181:purge_networks}: ${182:"#"}}
-${183:   ${184:read_only}: ${185:"#"}}
-${186:   ${187:recreate}: ${188:"#"}}
-${189:   ${190:restart}: ${191:"#"}}
-${192:   ${193:restart_policy}: ${194:"#"}}
-${195:   ${196:restart_retries}: ${197:"#"}}
-${198:   ${199:security_opts}: ${200:"#"}}
-${201:   ${202:shm_size}: ${203:"#"}}
-${204:   ${205:ssl_version}: ${206:"#"}}
-${207:   ${208:state}: ${209:"#"}}
-${210:   ${211:stop_signal}: ${212:"#"}}
-${213:   ${214:stop_timeout}: ${215:"#"}}
-${216:   ${217:sysctls}: ${218:"#"}}
-${219:   ${220:timeout}: ${221:"#"}}
-${222:   ${223:tls}: ${224:"#"}}
-${225:   ${226:tls_hostname}: ${227:"#"}}
-${228:   ${229:tls_verify}: ${230:"#"}}
-${231:   ${232:tmpfs}: ${233:"#"}}
-${234:   ${235:trust_image_content}: ${236:"#"}}
-${237:   ${238:tty}: ${239:"#"}}
-${240:   ${241:ulimits}: ${242:"#"}}
-${243:   ${244:user}: ${245:"#"}}
-${246:   ${247:userns_mode}: ${248:"#"}}
-${249:   ${250:uts}: ${251:"#"}}
-${252:   ${253:volume_driver}: ${254:"#"}}
-${255:   ${256:volumes}: ${257:"#"}}
-${258:   ${259:volumes_from}: ${260:"#"}}
-${261:   ${262:working_dir}: ${263:"#"}}
-${264:${265:   become: ${266:true}} 
-${267:   become_method: ${268:su}} 
-${269:   become_user: ${270:nobody}} 
-${271:   become_flags: ${272:"-s /bin/sh"}}} 
-${273:   when: ${274:variable is defined}} 
-${275:   with_items: ${276:array}} 
+${21:   ${22:cleanup}: ${23:"#"}}
+${24:   ${25:client_cert}: ${26:"#"}}
+${27:   ${28:client_key}: ${29:"#"}}
+${30:   ${31:command}: ${32:"#"}}
+${33:   ${34:comparisons}: ${35:"#"}}
+${36:   ${37:cpu_period}: ${38:"#"}}
+${39:   ${40:cpu_quota}: ${41:"#"}}
+${42:   ${43:cpu_shares}: ${44:"#"}}
+${45:   ${46:cpuset_cpus}: ${47:"#"}}
+${48:   ${49:cpuset_mems}: ${50:"#"}}
+${51:   ${52:debug}: ${53:"#"}}
+${54:   ${55:detach}: ${56:"#"}}
+${57:   ${58:device_read_bps}: ${59:"#"}}
+${60:   ${61:device_read_iops}: ${62:"#"}}
+${63:   ${64:device_write_bps}: ${65:"#"}}
+${66:   ${67:device_write_iops}: ${68:"#"}}
+${69:   ${70:devices}: ${71:"#"}}
+${72:   ${73:dns_opts}: ${74:"#"}}
+${75:   ${76:dns_search_domains}: ${77:"#"}}
+${78:   ${79:dns_servers}: ${80:"#"}}
+${81:   ${82:docker_host}: ${83:"#"}}
+${84:   ${85:domainname}: ${86:"#"}}
+${87:   ${88:entrypoint}: ${89:"#"}}
+${90:   ${91:env}: ${92:"#"}}
+${93:   ${94:env_file}: ${95:"#"}}
+${96:   ${97:etc_hosts}: ${98:"#"}}
+${99:   ${100:exposed_ports}: ${101:"#"}}
+${102:   ${103:force_kill}: ${104:"#"}}
+${105:   ${106:groups}: ${107:"#"}}
+${108:   ${109:healthcheck}: ${110:"#"}}
+${111:   ${112:der}: ${113:"#"}}
+${114:   ${115:hostname}: ${116:"#"}}
+${117:   ${118:ignore_image}: ${119:"#"}}
+${120:   ${121:image}: ${122:"#"}}
+${123:   ${124:init}: ${125:"#"}}
+${126:   ${127:interactive}: ${128:"#"}}
+${129:   ${130:ipc_mode}: ${131:"#"}}
+${132:   ${133:keep_volumes}: ${134:"#"}}
+${135:   ${136:kernel_memory}: ${137:"#"}}
+${138:   ${139:kill_signal}: ${140:"#"}}
+${141:   ${142:labels}: ${143:"#"}}
+${144:   ${145:links}: ${146:"#"}}
+${147:   ${148:log_driver}: ${149:"#"}}
+${150:   ${151:log_options}: ${152:"#"}}
+${153:   ${154:mac_address}: ${155:"#"}}
+${156:   ${157:memory}: ${158:"#"}}
+${159:   ${160:memory_reservation}: ${161:"#"}}
+${162:   ${163:memory_swap}: ${164:"#"}}
+${165:   ${166:memory_swappiness}: ${167:"#"}}
+${168:   ${169:name}: ${170:"#"}}
+${171:   ${172:network_mode}: ${173:"#"}}
+${174:   ${175:networks}: ${176:"#"}}
+${177:   ${178:networks_cli_compatible}: ${179:"#"}}
+${180:   ${181:oom_killer}: ${182:"#"}}
+${183:   ${184:oom_score_adj}: ${185:"#"}}
+${186:   ${187:output_logs}: ${188:"#"}}
+${189:   ${190:paused}: ${191:"#"}}
+${192:   ${193:pid_mode}: ${194:"#"}}
+${195:   ${196:pids_limit}: ${197:"#"}}
+${198:   ${199:privileged}: ${200:"#"}}
+${201:   ${202:published_ports}: ${203:"#"}}
+${204:   ${205:pull}: ${206:"#"}}
+${207:   ${208:purge_networks}: ${209:"#"}}
+${210:   ${211:read_only}: ${212:"#"}}
+${213:   ${214:recreate}: ${215:"#"}}
+${216:   ${217:restart}: ${218:"#"}}
+${219:   ${220:restart_policy}: ${221:"#"}}
+${222:   ${223:restart_retries}: ${224:"#"}}
+${225:   ${226:runtime}: ${227:"#"}}
+${228:   ${229:security_opts}: ${230:"#"}}
+${231:   ${232:shm_size}: ${233:"#"}}
+${234:   ${235:ssl_version}: ${236:"#"}}
+${237:   ${238:state}: ${239:"#"}}
+${240:   ${241:stop_signal}: ${242:"#"}}
+${243:   ${244:stop_timeout}: ${245:"#"}}
+${246:   ${247:sysctls}: ${248:"#"}}
+${249:   ${250:timeout}: ${251:"#"}}
+${252:   ${253:tls}: ${254:"#"}}
+${255:   ${256:tls_hostname}: ${257:"#"}}
+${258:   ${259:tmpfs}: ${260:"#"}}
+${261:   ${262:trust_image_content}: ${263:"#"}}
+${264:   ${265:tty}: ${266:"#"}}
+${267:   ${268:ulimits}: ${269:"#"}}
+${270:   ${271:user}: ${272:"#"}}
+${273:   ${274:userns_mode}: ${275:"#"}}
+${276:   ${277:uts}: ${278:"#"}}
+${279:   ${280:validate_certs}: ${281:"#"}}
+${282:   ${283:volume_driver}: ${284:"#"}}
+${285:   ${286:volumes}: ${287:"#"}}
+${288:   ${289:volumes_from}: ${290:"#"}}
+${291:   ${292:working_dir}: ${293:"#"}}
+${294:${295:   become: ${296:true}} 
+${297:   become_method: ${298:su}} 
+${299:   become_user: ${300:nobody}} 
+${301:   become_flags: ${302:"-s /bin/sh"}}} 
+${303:   when: ${304:variable is defined}} 
+${305:   with_items: ${306:array}} 
 ]]></content>
 	<tabTrigger>docker_container</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

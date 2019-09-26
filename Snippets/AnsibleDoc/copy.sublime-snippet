@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# attributes: Attributes the file or directory should have. To 
+${1:# attributes: The attributes the resulting file or directory 
 # backup: Create a backup file including the timestamp 
 # checksum: SHA1 checksum of the file being transferred. 
 # content: When used instead of `src', sets the contents of 
@@ -8,18 +8,18 @@ ${1:# attributes: Attributes the file or directory should have. To
 # dest: (required) Remote absolute path where the file 
 # directory_mode: When doing a recursive copy set the mode for the 
 # follow: This flag indicates that filesystem links in the 
-# force: the default is `yes', which will replace the 
+# force: Influence whether the remote file must always be 
 # group: Name of the group that should own the 
 # local_follow: This flag indicates that filesystem links in the 
-# mode: Mode the file or directory should be. For those 
+# mode: The permissions of the destination file or 
 # owner: Name of the user that should own the 
-# remote_src: If `no', it will search for `src' at 
-# selevel: Level part of the SELinux file context. This is 
-# serole: Role part of SELinux file context, `_default' 
-# setype: Type part of SELinux file context, `_default' 
-# seuser: User part of SELinux file context. Will default 
+# remote_src: Influence whether `src' needs to be transferred 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # src: Local path to a file to copy to the remote 
-# unsafe_writes: By default this module uses atomic operations to 
+# unsafe_writes: Influence when to use atomic operation to 
 # validate: The validation command to run before copying 
 }- name: ${2:Name for copy module.}
   copy:

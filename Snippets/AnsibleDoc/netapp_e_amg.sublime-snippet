@@ -9,7 +9,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # recovery: Recovery point warning threshold (minutes). The 
 # repo: Recovery point warning threshold 
 # secondary: (required) The ID of the secondary array to be 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: (required) A `state' of present will either 
 # sync: The synchronization interval in minutes 
 # sync: The threshold (in minutes) for notifying the 

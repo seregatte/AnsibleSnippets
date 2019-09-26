@@ -10,7 +10,7 @@ ${1:# allocation_mode: The method used for allocating encaps to
 # pool_allocation_mode: The method used for allocating encaps to 
 # pool_type: (required) The encap type of `pool'. 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # range_end: The end of encap range. 
 # range_name: The name to give to the encap range. 
 # range_start: The start of the encap range. 

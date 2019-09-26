@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_client_server_stats_log_disk_space: disk-space allocated for statistics (including 
+# pn_client_server_stats_log_enable: Enable or disable statistics. 
+# pn_client_server_stats_log_interval: interval to collect statistics. 
+# pn_client_server_stats_max_memory: maximum memory for client server statistics. 
+# pn_cliswitch: Target switch to run the CLI on. 
+# pn_connection_backup_enable: Enable backup for connection statistics 
+# pn_connection_backup_interval: backup interval for connection statistics 
+# pn_connection_max_memory: maximum memory allowed for connection 
+# pn_connection_stats_log_disk_space: disk-space allocated for statistics (including 
+# pn_connection_stats_log_enable: enable or disable statistics. 
+# pn_connection_stats_log_interval: interval to collect statistics. 
+# pn_connection_stats_max_memory: maximum memory allowed for connection 
+# pn_enable: Enable or disable collecting connections 
+# pn_fabric_connection_backup_enable: enable backup for fabric connection statistics 
+# pn_fabric_connection_backup_interval: backup interval for fabric connection statistics 
+# pn_fabric_connection_max_memory: maximum memory allowed for fabric connection 
+# pn_service_stat_max_memory: maximum memory allowed for service statistics. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_connection_stats_settings module.}
+  pn_connection_stats_settings:
+${3:   ${4:pn_client_server_stats_log_disk_space}: ${5:"#"}}
+${6:   ${7:pn_client_server_stats_log_enable}: ${8:"#"}}
+${9:   ${10:pn_client_server_stats_log_interval}: ${11:"#"}}
+${12:   ${13:pn_client_server_stats_max_memory}: ${14:"#"}}
+${15:   ${16:pn_cliswitch}: ${17:"#"}}
+${18:   ${19:pn_connection_backup_enable}: ${20:"#"}}
+${21:   ${22:pn_connection_backup_interval}: ${23:"#"}}
+${24:   ${25:pn_connection_max_memory}: ${26:"#"}}
+${27:   ${28:pn_connection_stats_log_disk_space}: ${29:"#"}}
+${30:   ${31:pn_connection_stats_log_enable}: ${32:"#"}}
+${33:   ${34:pn_connection_stats_log_interval}: ${35:"#"}}
+${36:   ${37:pn_connection_stats_max_memory}: ${38:"#"}}
+${39:   ${40:pn_enable}: ${41:"#"}}
+${42:   ${43:pn_fabric_connection_backup_enable}: ${44:"#"}}
+${45:   ${46:pn_fabric_connection_backup_interval}: ${47:"#"}}
+${48:   ${49:pn_fabric_connection_max_memory}: ${50:"#"}}
+${51:   ${52:pn_service_stat_max_memory}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>pn_connection_stats_settings</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

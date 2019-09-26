@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# action: Controls the behavior of `aliases'. Only 
+# aliases: A list of additional names (cname records) for 
+# canonical_name: A canonical name for the host entry. required 
+# ip_address: The ip address for the host entry. Can be either 
+# state: Whether the entry should be present or absent. 
+}- name: ${2:Name for win_hosts module.}
+  win_hosts:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:aliases}: ${8:"#"}}
+${9:   ${10:canonical_name}: ${11:"#"}}
+${12:   ${13:ip_address}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>win_hosts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

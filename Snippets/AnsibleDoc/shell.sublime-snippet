@@ -1,12 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# chdir: cd into this directory before running the 
-# creates: a filename, when it already exists, this step 
-# executable: change the shell used to execute the command. 
+${1:# chdir: Change into this directory before running the 
+# creates: A filename, when it already exists, this step 
+# executable: Change the shell used to execute the command. 
 # free_form: (required) The shell module takes a free form 
-# removes: a filename, when it does not exist, this step 
+# removes: A filename, when it does not exist, this step 
 # stdin: Set the stdin of the command directly to the 
-# warn: if command warnings are on in ansible.cfg, do 
+# stdin_add_newline: Whether to append a newline to stdin data. 
+# warn: Whether to enable task warnings. 
 }- name: ${2:Name for shell module.}
   shell:
 ${3:   ${4:chdir}: ${5:"#"}}
@@ -15,13 +16,14 @@ ${9:   ${10:executable}: ${11:"#"}}
 ${12:   ${13:free_form}: ${14:"#"}}
 ${15:   ${16:removes}: ${17:"#"}}
 ${18:   ${19:stdin}: ${20:"#"}}
-${21:   ${22:warn}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${21:   ${22:stdin_add_newline}: ${23:"#"}}
+${24:   ${25:warn}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>shell</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

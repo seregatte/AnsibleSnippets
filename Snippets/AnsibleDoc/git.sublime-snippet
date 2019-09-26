@@ -3,7 +3,7 @@
 ${1:# accept_hostkey: if `yes', ensure that "-o 
 # archive: Specify archive file path with extension. If 
 # bare: if `yes', repository will be created as a bare 
-# clone: If `no', do not clone the repository if it does 
+# clone: If `no', do not clone the repository even if it 
 # depth: Create a shallow clone with a history truncated 
 # dest: (required) The path of where the repository 
 # executable: Path to git executable to use. If not supplied, 

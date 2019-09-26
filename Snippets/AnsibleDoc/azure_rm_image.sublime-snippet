@@ -16,7 +16,7 @@ ${1:# ad_user: Active Directory username. Use when
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
-# source: (required) OS disk source from the same region, 
+# source: (required) OS disk source from the same region. 
 # state: Assert the state of the image. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

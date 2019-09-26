@@ -30,7 +30,7 @@ ${1:# appflowlog: Enable logging of AppFlow information for the
 # pathmonitor: Path monitoring for clustering. 
 # pathmonitorindv: Individual Path monitoring decisions. 
 # rtspsessionidremap: Enable RTSP session ID mapping for the service 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # servicegroupname: Name of the service group. Must begin with an 
 # hash: ', period 
 # servicemembers: A list of dictionaries describing each service 

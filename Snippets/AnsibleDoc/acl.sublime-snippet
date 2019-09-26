@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# default: if the target is a directory, setting this to 
-# entity: actual user or group that the ACL applies to 
-# entry: DEPRECATED. The acl to set or remove.  This must 
-# etype: the entity type of the ACL to apply, see setfacl 
-# follow: whether to follow symlinks on the path if a 
+${1:# default: If the target is a directory, setting this to 
+# entity: The actual user or group that the ACL applies to 
+# entry: DEPRECATED. The ACL to set or remove. This must 
+# etype: The entity type of the ACL to apply, see 
+# follow: Whether to follow symlinks on the path if a 
 # path: (required) The full path of the file or object. 
-# permissions: Permissions to apply/remove can be any 
+# permissions: The permissions to apply/remove can be any 
 # recalculate_mask: Select if and when to recalculate the effective 
-# recursive: Recursively sets the specified ACL (added in 
-# state: defines whether the ACL should be present or 
+# recursive: Recursively sets the specified ACL. Incompatible 
+# state: Define whether the ACL should be present or not. 
 # use_nfsv4_acls: Use NFSv4 ACLs instead of POSIX ACLs. 
 }- name: ${2:Name for acl module.}
   acl:

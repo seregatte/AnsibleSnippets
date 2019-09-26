@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# auto_config_url: The URL of a proxy configuration script. Proxy 
+# auto_detect: Whether to configure WinINet to automatically 
+# bypass: A list of hosts that will bypass the set proxy 
+# connection: The name of the IE connection to set the proxy 
+# proxy: A string or dict that specifies the proxy to be 
+}- name: ${2:Name for win_inet_proxy module.}
+  win_inet_proxy:
+${3:   ${4:auto_config_url}: ${5:"#"}}
+${6:   ${7:auto_detect}: ${8:"#"}}
+${9:   ${10:bypass}: ${11:"#"}}
+${12:   ${13:connection}: ${14:"#"}}
+${15:   ${16:proxy}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>win_inet_proxy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

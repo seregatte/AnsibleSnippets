@@ -8,8 +8,8 @@ ${1:# align: Set alignment for newly created partitions.
 # number: The number of the partition to work with or the 
 # part_end: Where the partition will end as offset from the 
 # part_start: Where the partition will start as offset from 
-# part_type: Is one of 'primary', 'extended' or 'logical' and 
-# state: If to create or delete a partition. If set to 
+# part_type: May be specified only with 'msdos' or 'dvh' 
+# state: Whether to create or delete a partition. If set 
 # unit: Selects the current default unit that Parted 
 }- name: ${2:Name for parted module.}
   parted:

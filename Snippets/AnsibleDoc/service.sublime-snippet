@@ -4,7 +4,7 @@ ${1:# arguments: Additional arguments provided on the command
 # enabled: Whether the service should start on boot. *At 
 # name: (required) Name of the service. 
 # pattern: If the service does not respond to the status 
-# runlevel: For OpenRC init scripts (ex: Gentoo) only.  The 
+# runlevel: For OpenRC init scripts (e.g. Gentoo) only. The 
 # sleep: If the service is being `restarted' then sleep 
 # state: `started'/`stopped' are idempotent actions that 
 # use: The service module actually uses system specific 

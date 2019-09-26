@@ -1,0 +1,74 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: The ADOM the configuration should belong to. 
+# arp_intf: Select an interface from available options that 
+# arp_reply: Enable/disable replying to ARP requests when an 
+# associated_interface: Associated interface name. 
+# block_size: Number of addresses in a block (64 to 4096, 
+# comments: Comment. 
+# dynamic_mapping: EXPERTS ONLY! KNOWLEDGE OF FMGR JSON API IS 
+# dynamic_mapping_arp_intf: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_arp_reply: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_associated_interface: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_block_size: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_comments: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_endip: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_num_blocks_per_user: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_pba_timeout: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_permit_any_host: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_source_endip: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_source_startip: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_startip: Dynamic Mapping clone of original suffixed 
+# dynamic_mapping_type: Dynamic Mapping clone of original suffixed 
+# endip: Final IPv4 address (inclusive) in the range for 
+# mode: Sets one of three modes for managing the object. 
+# name: IP pool name. 
+# num_blocks_per_user: Number of addresses blocks that can be used by a 
+# pba_timeout: Port block allocation timeout (seconds). 
+# permit_any_host: Enable/disable full cone NAT. choice | disable | 
+# source_endip: Final IPv4 address (inclusive) in the range of 
+# source_startip: First IPv4 address (inclusive) in the range of 
+# startip: First IPv4 address (inclusive) in the range for 
+# type: IP pool type (overload, one-to-one, fixed port 
+}- name: ${2:Name for fmgr_fwobj_ippool module.}
+  fmgr_fwobj_ippool:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:arp_intf}: ${8:"#"}}
+${9:   ${10:arp_reply}: ${11:"#"}}
+${12:   ${13:associated_interface}: ${14:"#"}}
+${15:   ${16:block_size}: ${17:"#"}}
+${18:   ${19:comments}: ${20:"#"}}
+${21:   ${22:dynamic_mapping}: ${23:"#"}}
+${24:   ${25:dynamic_mapping_arp_intf}: ${26:"#"}}
+${27:   ${28:dynamic_mapping_arp_reply}: ${29:"#"}}
+${30:   ${31:dynamic_mapping_associated_interface}: ${32:"#"}}
+${33:   ${34:dynamic_mapping_block_size}: ${35:"#"}}
+${36:   ${37:dynamic_mapping_comments}: ${38:"#"}}
+${39:   ${40:dynamic_mapping_endip}: ${41:"#"}}
+${42:   ${43:dynamic_mapping_num_blocks_per_user}: ${44:"#"}}
+${45:   ${46:dynamic_mapping_pba_timeout}: ${47:"#"}}
+${48:   ${49:dynamic_mapping_permit_any_host}: ${50:"#"}}
+${51:   ${52:dynamic_mapping_source_endip}: ${53:"#"}}
+${54:   ${55:dynamic_mapping_source_startip}: ${56:"#"}}
+${57:   ${58:dynamic_mapping_startip}: ${59:"#"}}
+${60:   ${61:dynamic_mapping_type}: ${62:"#"}}
+${63:   ${64:endip}: ${65:"#"}}
+${66:   ${67:mode}: ${68:"#"}}
+${69:   ${70:name}: ${71:"#"}}
+${72:   ${73:num_blocks_per_user}: ${74:"#"}}
+${75:   ${76:pba_timeout}: ${77:"#"}}
+${78:   ${79:permit_any_host}: ${80:"#"}}
+${81:   ${82:source_endip}: ${83:"#"}}
+${84:   ${85:source_startip}: ${86:"#"}}
+${87:   ${88:startip}: ${89:"#"}}
+${90:   ${91:type}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
+]]></content>
+	<tabTrigger>fmgr_fwobj_ippool</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

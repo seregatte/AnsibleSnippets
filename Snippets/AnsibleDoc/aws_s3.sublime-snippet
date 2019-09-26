@@ -3,6 +3,7 @@
 ${1:# aws_access_key: AWS access key id. If not set then the value of 
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # bucket: (required) Bucket name. 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # dest: The destination file path when downloading an 
 # dualstack: Enables Amazon S3 Dual-Stack Endpoints, allowing 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
@@ -24,7 +25,7 @@ ${1:# aws_access_key: AWS access key id. If not set then the value of
 # region: AWS region to create the bucket in. If not set 
 # retries: On recoverable failure, how many times to retry 
 # rgw: Enable Ceph RGW S3 support. This option requires 
-# s3_url: S3 URL endpoint for usage with Ceph, Eucalypus, 
+# s3_url: S3 URL endpoint for usage with Ceph, Eucalyptus 
 # security_token: AWS STS security token. If not set then the 
 # src: The source file path when performing a PUT 
 # validate_certs: When set to "no", SSL certificates will not be 
@@ -34,38 +35,39 @@ ${1:# aws_access_key: AWS access key id. If not set then the value of
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:bucket}: ${11:"#"}}
-${12:   ${13:dest}: ${14:"#"}}
-${15:   ${16:dualstack}: ${17:"#"}}
-${18:   ${19:ec2_url}: ${20:"#"}}
-${21:   ${22:encrypt}: ${23:"#"}}
-${24:   ${25:encryption_kms_key_id}: ${26:"#"}}
-${27:   ${28:encryption_mode}: ${29:"#"}}
-${30:   ${31:expiration}: ${32:"#"}}
-${33:   ${34:headers}: ${35:"#"}}
-${36:   ${37:ignore_nonexistent_bucket}: ${38:"#"}}
-${39:   ${40:marker}: ${41:"#"}}
-${42:   ${43:max_keys}: ${44:"#"}}
-${45:   ${46:metadata}: ${47:"#"}}
-${48:   ${49:mode}: ${50:"#"}}
-${51:   ${52:object}: ${53:"#"}}
-${54:   ${55:overwrite}: ${56:"#"}}
-${57:   ${58:permission}: ${59:"#"}}
-${60:   ${61:prefix}: ${62:"#"}}
-${63:   ${64:profile}: ${65:"#"}}
-${66:   ${67:region}: ${68:"#"}}
-${69:   ${70:retries}: ${71:"#"}}
-${72:   ${73:rgw}: ${74:"#"}}
-${75:   ${76:s3_url}: ${77:"#"}}
-${78:   ${79:security_token}: ${80:"#"}}
-${81:   ${82:src}: ${83:"#"}}
-${84:   ${85:validate_certs}: ${86:"#"}}
-${87:   ${88:version}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:dest}: ${17:"#"}}
+${18:   ${19:dualstack}: ${20:"#"}}
+${21:   ${22:ec2_url}: ${23:"#"}}
+${24:   ${25:encrypt}: ${26:"#"}}
+${27:   ${28:encryption_kms_key_id}: ${29:"#"}}
+${30:   ${31:encryption_mode}: ${32:"#"}}
+${33:   ${34:expiration}: ${35:"#"}}
+${36:   ${37:headers}: ${38:"#"}}
+${39:   ${40:ignore_nonexistent_bucket}: ${41:"#"}}
+${42:   ${43:marker}: ${44:"#"}}
+${45:   ${46:max_keys}: ${47:"#"}}
+${48:   ${49:metadata}: ${50:"#"}}
+${51:   ${52:mode}: ${53:"#"}}
+${54:   ${55:object}: ${56:"#"}}
+${57:   ${58:overwrite}: ${59:"#"}}
+${60:   ${61:permission}: ${62:"#"}}
+${63:   ${64:prefix}: ${65:"#"}}
+${66:   ${67:profile}: ${68:"#"}}
+${69:   ${70:region}: ${71:"#"}}
+${72:   ${73:retries}: ${74:"#"}}
+${75:   ${76:rgw}: ${77:"#"}}
+${78:   ${79:s3_url}: ${80:"#"}}
+${81:   ${82:security_token}: ${83:"#"}}
+${84:   ${85:src}: ${86:"#"}}
+${87:   ${88:validate_certs}: ${89:"#"}}
+${90:   ${91:version}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
 ]]></content>
 	<tabTrigger>aws_s3</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -8,7 +8,7 @@ ${1:# api_password: (required) The password to authenticate with the
 # recipients: The email addresses that will receive the email 
 # sender: This is the sender that the recipient will see. 
 # server: A fully qualified domain name, IPv4 address, or 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # state: Enable/disable the sending of email-based 
 # test: When a change is detected in the configuration, 
 # validate_certs: Should https certificates be validated? 

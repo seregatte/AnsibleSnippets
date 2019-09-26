@@ -12,7 +12,7 @@ ${1:# bounce_age: Bounce entry aging interval in seconds. Accepted
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # remote_ep_interval: Remote end point aging interval in seconds. 
 # state: Use `present' or `absent' for adding or 
 # tenant: The name of an existing tenant. 

@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# alicloud_access_key: Aliyun Cloud access key. If not set then the 
+# alicloud_region: The Aliyun Cloud region to use. If not specified 
+# alicloud_secret_key: Aliyun Cloud secret key. If not set then the 
+# alicloud_security_token: The Aliyun Cloud security token. If not 
+# availability_zone: Aliyun availability zone ID in which to launch 
+# instance_ids: A list of ECS instance ids. 
+# instance_names: A list of ECS instance names. 
+# instance_tags: A hash/dictionaries of instance tags. 
+}- name: ${2:Name for ali_instance_facts module.}
+  ali_instance_facts:
+${3:   ${4:alicloud_access_key}: ${5:"#"}}
+${6:   ${7:alicloud_region}: ${8:"#"}}
+${9:   ${10:alicloud_secret_key}: ${11:"#"}}
+${12:   ${13:alicloud_security_token}: ${14:"#"}}
+${15:   ${16:availability_zone}: ${17:"#"}}
+${18:   ${19:instance_ids}: ${20:"#"}}
+${21:   ${22:instance_names}: ${23:"#"}}
+${24:   ${25:instance_tags}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>ali_instance_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

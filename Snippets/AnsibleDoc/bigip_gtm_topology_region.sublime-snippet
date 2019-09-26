@@ -1,0 +1,34 @@
+<snippet>
+<content><![CDATA[
+${1:# name: (required) Specifies the name of the region. 
+# partition: Device partition to manage resources on. 
+# password: (required) The password for the user account 
+# provider: A dict object containing connection details. 
+# region_members: Specifies the list of region members. This list 
+# server: (required) The BIG-IP host. You may omit this 
+# server_port: The BIG-IP server port. You may omit this option 
+# state: When `state' is `present', ensures that the 
+# user: (required) The username to connect to the BIG-IP 
+# validate_certs: If `no', SSL certificates are not validated. Use 
+}- name: ${2:Name for bigip_gtm_topology_region module.}
+  bigip_gtm_topology_region:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:partition}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:provider}: ${14:"#"}}
+${15:   ${16:region_members}: ${17:"#"}}
+${18:   ${19:server}: ${20:"#"}}
+${21:   ${22:server_port}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:user}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
+]]></content>
+	<tabTrigger>bigip_gtm_topology_region</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

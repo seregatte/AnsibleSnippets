@@ -8,20 +8,24 @@ ${1:# account: Account the volume is related to.
 # api_timeout: HTTP timeout in seconds. If not given, the 
 # api_url: URL of the CloudStack API e.g. 
 # custom_id: Custom id to the resource. Allowed to Root 
+# device_id: ID of the device on a VM the volume is attached 
 # disk_offering: Name of the disk offering to be used. Required 
 # display_volume: Whether to display the volume to the end user or 
 # domain: Name of the domain the volume to be deployed in. 
 # force: Force removal of volume even it is attached to a 
+# format: The format for the volume. Only considered if 
 # max_iops: Max iops 
 # min_iops: Min iops 
+# mode: Mode for the volume extraction. Only considered 
 # name: (required) Name of the volume. `name' can only 
 # poll_async: Poll async jobs until job has finished. 
 # project: Name of the project the volume to be deployed 
 # shrink_ok: Whether to allow to shrink the volume. 
 # size: Size of disk in GB 
 # snapshot: The snapshot name for the disk volume. Required 
-# state: State of the volume. 
+# state: State of the volume. The choices `extracted' and 
 # tags: List of tags. Tags are a list of dictionaries 
+# url: URL to which the volume would be extracted on 
 # vm: Name of the virtual machine to attach the volume 
 # zone: Name of the zone in which the volume should be 
 }- name: ${2:Name for cs_volume module.}
@@ -34,28 +38,32 @@ ${15:   ${16:api_secret}: ${17:"#"}}
 ${18:   ${19:api_timeout}: ${20:"#"}}
 ${21:   ${22:api_url}: ${23:"#"}}
 ${24:   ${25:custom_id}: ${26:"#"}}
-${27:   ${28:disk_offering}: ${29:"#"}}
-${30:   ${31:display_volume}: ${32:"#"}}
-${33:   ${34:domain}: ${35:"#"}}
-${36:   ${37:force}: ${38:"#"}}
-${39:   ${40:max_iops}: ${41:"#"}}
-${42:   ${43:min_iops}: ${44:"#"}}
-${45:   ${46:name}: ${47:"#"}}
-${48:   ${49:poll_async}: ${50:"#"}}
-${51:   ${52:project}: ${53:"#"}}
-${54:   ${55:shrink_ok}: ${56:"#"}}
-${57:   ${58:size}: ${59:"#"}}
-${60:   ${61:snapshot}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:tags}: ${68:"#"}}
-${69:   ${70:vm}: ${71:"#"}}
-${72:   ${73:zone}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${27:   ${28:device_id}: ${29:"#"}}
+${30:   ${31:disk_offering}: ${32:"#"}}
+${33:   ${34:display_volume}: ${35:"#"}}
+${36:   ${37:domain}: ${38:"#"}}
+${39:   ${40:force}: ${41:"#"}}
+${42:   ${43:format}: ${44:"#"}}
+${45:   ${46:max_iops}: ${47:"#"}}
+${48:   ${49:min_iops}: ${50:"#"}}
+${51:   ${52:mode}: ${53:"#"}}
+${54:   ${55:name}: ${56:"#"}}
+${57:   ${58:poll_async}: ${59:"#"}}
+${60:   ${61:project}: ${62:"#"}}
+${63:   ${64:shrink_ok}: ${65:"#"}}
+${66:   ${67:size}: ${68:"#"}}
+${69:   ${70:snapshot}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:tags}: ${77:"#"}}
+${78:   ${79:url}: ${80:"#"}}
+${81:   ${82:vm}: ${83:"#"}}
+${84:   ${85:zone}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
 ]]></content>
 	<tabTrigger>cs_volume</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

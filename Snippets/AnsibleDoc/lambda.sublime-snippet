@@ -3,6 +3,7 @@
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
 # dead_letter_arn: The parent object that contains the target 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # description: A short, user-defined function description. 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # environment_variables: A dictionary of environment variables the Lambda 
@@ -18,7 +19,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # s3_key: The Amazon S3 object (the deployment package) 
 # s3_object_version: The Amazon S3 object (the deployment package) 
 # security_token: AWS STS security token. If not set then the 
-# state: Create or delete Lambda function 
+# state: Create or delete Lambda function. 
 # tags: tag dict to apply to the function (requires 
 # timeout: The function maximum execution time in seconds 
 # validate_certs: When set to "no", SSL certificates will not be 
@@ -30,34 +31,35 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
 ${9:   ${10:dead_letter_arn}: ${11:"#"}}
-${12:   ${13:description}: ${14:"#"}}
-${15:   ${16:ec2_url}: ${17:"#"}}
-${18:   ${19:environment_variables}: ${20:"#"}}
-${21:   ${22:handler}: ${23:"#"}}
-${24:   ${25:memory_size}: ${26:"#"}}
-${27:   ${28:name}: ${29:"#"}}
-${30:   ${31:profile}: ${32:"#"}}
-${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:}: ${38:"#"}}
-${39:   ${40:role}: ${41:"#"}}
-${42:   ${43:runtime}: ${44:"#"}}
-${45:   ${46:s3_bucket}: ${47:"#"}}
-${48:   ${49:s3_key}: ${50:"#"}}
-${51:   ${52:s3_object_version}: ${53:"#"}}
-${54:   ${55:security_token}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:tags}: ${62:"#"}}
-${63:   ${64:timeout}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:   ${70:vpc_security_group_ids}: ${71:"#"}}
-${72:   ${73:vpc_subnet_ids}: ${74:"#"}}
-${75:   ${76:zip_file}: ${77:"#"}}
-${78:${79:   become: ${80:true}} 
-${81:   become_method: ${82:su}} 
-${83:   become_user: ${84:nobody}} 
-${85:   become_flags: ${86:"-s /bin/sh"}}} 
-${87:   when: ${88:variable is defined}} 
-${89:   with_items: ${90:array}} 
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:environment_variables}: ${23:"#"}}
+${24:   ${25:handler}: ${26:"#"}}
+${27:   ${28:memory_size}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:profile}: ${35:"#"}}
+${36:   ${37:region}: ${38:"#"}}
+${39:   ${40:}: ${41:"#"}}
+${42:   ${43:role}: ${44:"#"}}
+${45:   ${46:runtime}: ${47:"#"}}
+${48:   ${49:s3_bucket}: ${50:"#"}}
+${51:   ${52:s3_key}: ${53:"#"}}
+${54:   ${55:s3_object_version}: ${56:"#"}}
+${57:   ${58:security_token}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:   ${64:tags}: ${65:"#"}}
+${66:   ${67:timeout}: ${68:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
+${72:   ${73:vpc_security_group_ids}: ${74:"#"}}
+${75:   ${76:vpc_subnet_ids}: ${77:"#"}}
+${78:   ${79:zip_file}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>lambda</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

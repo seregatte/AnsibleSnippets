@@ -7,7 +7,7 @@ ${1:# action_rule: The name of the action rule profile.
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
-# private_key: (required) PEM formatted file that contains your 
+# private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # tenant: The name of the tenant. 
 # timeout: The socket level timeout in seconds. 

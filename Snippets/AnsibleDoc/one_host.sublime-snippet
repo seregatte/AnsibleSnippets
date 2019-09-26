@@ -12,7 +12,7 @@ ${1:# api_password: The password or token for XMLRPC authentication.
 # template: The template or attribute changes to merge into 
 # validate_certs: Whether to validate the SSL certificates or not. 
 # vmm_mad_name: The name of the virtual machine manager mad 
-# wait_timeout: time to wait for the desired state to be reached 
+# wait_timeout: Time to wait for the desired state to be reached 
 }- name: ${2:Name for one_host module.}
   one_host:
 ${3:   ${4:api_password}: ${5:"#"}}

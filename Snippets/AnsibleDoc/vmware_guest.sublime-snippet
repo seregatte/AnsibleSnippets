@@ -3,6 +3,7 @@
 ${1:# annotation: A note or annotation to include in the virtual 
 # cdrom: A CD-ROM configuration for the virtual machine. 
 # cluster: The cluster name where the virtual machine will 
+# convert: Specify convert disk type while cloning template 
 # customization: Parameters for OS customization when cloning 
 # customization_spec: Unique name identifying the requested 
 # customvalues: Define a list of custom values to set on virtual 
@@ -24,54 +25,59 @@ ${1:# annotation: A note or annotation to include in the virtual
 # port: The port number of the vSphere vCenter or ESXi 
 # resource_pool: Use the given resource pool for virtual machine 
 # snapshot_src: Name of the existing snapshot to use to create a 
-# state: Specify state of the virtual machine be in. If 
+# state: Specify the state the virtual machine should be 
 # state_change_timeout: If the `state' is set to `shutdownguest', by 
 # template: Template or existing virtual machine used to 
+# use_instance_uuid: Whether to use the VMWare instance UUID rather 
 # username: The username of the vSphere vCenter or ESXi 
 # uuid: UUID of the virtual machine to manage if known, 
 # validate_certs: Allows connection when SSL certificates are not 
 # vapp_properties: A list of vApp properties For full list of 
+# wait_for_customization: Wait until vCenter detects all guest 
 # wait_for_ip_address: Wait until vCenter detects an IP address for the 
 }- name: ${2:Name for vmware_guest module.}
   vmware_guest:
 ${3:   ${4:annotation}: ${5:"#"}}
 ${6:   ${7:cdrom}: ${8:"#"}}
 ${9:   ${10:cluster}: ${11:"#"}}
-${12:   ${13:customization}: ${14:"#"}}
-${15:   ${16:customization_spec}: ${17:"#"}}
-${18:   ${19:customvalues}: ${20:"#"}}
-${21:   ${22:datacenter}: ${23:"#"}}
-${24:   ${25:datastore}: ${26:"#"}}
-${27:   ${28:disk}: ${29:"#"}}
-${30:   ${31:esxi_hostname}: ${32:"#"}}
-${33:   ${34:folder}: ${35:"#"}}
-${36:   ${37:force}: ${38:"#"}}
-${39:   ${40:guest_id}: ${41:"#"}}
-${42:   ${43:hardware}: ${44:"#"}}
-${45:   ${46:hostname}: ${47:"#"}}
-${48:   ${49:is_template}: ${50:"#"}}
-${51:   ${52:linked_clone}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:name_match}: ${59:"#"}}
-${60:   ${61:networks}: ${62:"#"}}
-${63:   ${64:password}: ${65:"#"}}
-${66:   ${67:port}: ${68:"#"}}
-${69:   ${70:resource_pool}: ${71:"#"}}
-${72:   ${73:snapshot_src}: ${74:"#"}}
-${75:   ${76:state}: ${77:"#"}}
-${78:   ${79:state_change_timeout}: ${80:"#"}}
-${81:   ${82:template}: ${83:"#"}}
-${84:   ${85:username}: ${86:"#"}}
-${87:   ${88:uuid}: ${89:"#"}}
-${90:   ${91:validate_certs}: ${92:"#"}}
-${93:   ${94:vapp_properties}: ${95:"#"}}
-${96:   ${97:wait_for_ip_address}: ${98:"#"}}
-${99:${100:   become: ${101:true}} 
-${102:   become_method: ${103:su}} 
-${104:   become_user: ${105:nobody}} 
-${106:   become_flags: ${107:"-s /bin/sh"}}} 
-${108:   when: ${109:variable is defined}} 
-${110:   with_items: ${111:array}} 
+${12:   ${13:convert}: ${14:"#"}}
+${15:   ${16:customization}: ${17:"#"}}
+${18:   ${19:customization_spec}: ${20:"#"}}
+${21:   ${22:customvalues}: ${23:"#"}}
+${24:   ${25:datacenter}: ${26:"#"}}
+${27:   ${28:datastore}: ${29:"#"}}
+${30:   ${31:disk}: ${32:"#"}}
+${33:   ${34:esxi_hostname}: ${35:"#"}}
+${36:   ${37:folder}: ${38:"#"}}
+${39:   ${40:force}: ${41:"#"}}
+${42:   ${43:guest_id}: ${44:"#"}}
+${45:   ${46:hardware}: ${47:"#"}}
+${48:   ${49:hostname}: ${50:"#"}}
+${51:   ${52:is_template}: ${53:"#"}}
+${54:   ${55:linked_clone}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:name_match}: ${62:"#"}}
+${63:   ${64:networks}: ${65:"#"}}
+${66:   ${67:password}: ${68:"#"}}
+${69:   ${70:port}: ${71:"#"}}
+${72:   ${73:resource_pool}: ${74:"#"}}
+${75:   ${76:snapshot_src}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:state_change_timeout}: ${83:"#"}}
+${84:   ${85:template}: ${86:"#"}}
+${87:   ${88:use_instance_uuid}: ${89:"#"}}
+${90:   ${91:username}: ${92:"#"}}
+${93:   ${94:uuid}: ${95:"#"}}
+${96:   ${97:validate_certs}: ${98:"#"}}
+${99:   ${100:vapp_properties}: ${101:"#"}}
+${102:   ${103:wait_for_customization}: ${104:"#"}}
+${105:   ${106:wait_for_ip_address}: ${107:"#"}}
+${108:${109:   become: ${110:true}} 
+${111:   become_method: ${112:su}} 
+${113:   become_user: ${114:nobody}} 
+${115:   become_flags: ${116:"-s /bin/sh"}}} 
+${117:   when: ${118:variable is defined}} 
+${119:   with_items: ${120:array}} 
 ]]></content>
 	<tabTrigger>vmware_guest</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

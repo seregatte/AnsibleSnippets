@@ -14,6 +14,7 @@ ${1:# ad_user: Active Directory username. Use when
 # frontend_port: (deprecated) Frontend port that will be exposed 
 # idle_timeout: (deprecated) Timeout for TCP idle connection in 
 # inbound_nat_pools: Defines an external port range for inbound NAT 
+# inbound_nat_rules: Collection of inbound NAT Rules used by a load 
 # load_balancing_rules: Object collection representing the load 
 # load_distribution: (deprecated) The type of load distribution that 
 # location: Valid azure location. Defaults to location of 
@@ -55,37 +56,38 @@ ${33:   ${34:frontend_ip_configurations}: ${35:"#"}}
 ${36:   ${37:frontend_port}: ${38:"#"}}
 ${39:   ${40:idle_timeout}: ${41:"#"}}
 ${42:   ${43:inbound_nat_pools}: ${44:"#"}}
-${45:   ${46:load_balancing_rules}: ${47:"#"}}
-${48:   ${49:load_distribution}: ${50:"#"}}
-${51:   ${52:location}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:natpool_backend_port}: ${59:"#"}}
-${60:   ${61:natpool_frontend_port_end}: ${62:"#"}}
-${63:   ${64:natpool_frontend_port_start}: ${65:"#"}}
-${66:   ${67:natpool_protocol}: ${68:"#"}}
-${69:   ${70:password}: ${71:"#"}}
-${72:   ${73:probe_fail_count}: ${74:"#"}}
-${75:   ${76:probe_interval}: ${77:"#"}}
-${78:   ${79:probe_port}: ${80:"#"}}
-${81:   ${82:probe_protocol}: ${83:"#"}}
-${84:   ${85:probe_request_path}: ${86:"#"}}
-${87:   ${88:probes}: ${89:"#"}}
-${90:   ${91:profile}: ${92:"#"}}
-${93:   ${94:protocol}: ${95:"#"}}
-${96:   ${97:public_ip_address_name}: ${98:"#"}}
-${99:   ${100:resource_group}: ${101:"#"}}
-${102:   ${103:secret}: ${104:"#"}}
-${105:   ${106:sku}: ${107:"#"}}
-${108:   ${109:state}: ${110:"#"}}
-${111:   ${112:subscription_id}: ${113:"#"}}
-${114:   ${115:tags}: ${116:"#"}}
-${117:   ${118:tenant}: ${119:"#"}}
-${120:${121:   become: ${122:true}} 
-${123:   become_method: ${124:su}} 
-${125:   become_user: ${126:nobody}} 
-${127:   become_flags: ${128:"-s /bin/sh"}}} 
-${129:   when: ${130:variable is defined}} 
-${131:   with_items: ${132:array}} 
+${45:   ${46:inbound_nat_rules}: ${47:"#"}}
+${48:   ${49:load_balancing_rules}: ${50:"#"}}
+${51:   ${52:load_distribution}: ${53:"#"}}
+${54:   ${55:location}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:natpool_backend_port}: ${62:"#"}}
+${63:   ${64:natpool_frontend_port_end}: ${65:"#"}}
+${66:   ${67:natpool_frontend_port_start}: ${68:"#"}}
+${69:   ${70:natpool_protocol}: ${71:"#"}}
+${72:   ${73:password}: ${74:"#"}}
+${75:   ${76:probe_fail_count}: ${77:"#"}}
+${78:   ${79:probe_interval}: ${80:"#"}}
+${81:   ${82:probe_port}: ${83:"#"}}
+${84:   ${85:probe_protocol}: ${86:"#"}}
+${87:   ${88:probe_request_path}: ${89:"#"}}
+${90:   ${91:probes}: ${92:"#"}}
+${93:   ${94:profile}: ${95:"#"}}
+${96:   ${97:protocol}: ${98:"#"}}
+${99:   ${100:public_ip_address_name}: ${101:"#"}}
+${102:   ${103:resource_group}: ${104:"#"}}
+${105:   ${106:secret}: ${107:"#"}}
+${108:   ${109:sku}: ${110:"#"}}
+${111:   ${112:state}: ${113:"#"}}
+${114:   ${115:subscription_id}: ${116:"#"}}
+${117:   ${118:tags}: ${119:"#"}}
+${120:   ${121:tenant}: ${122:"#"}}
+${123:${124:   become: ${125:true}} 
+${126:   become_method: ${127:su}} 
+${128:   become_user: ${129:nobody}} 
+${130:   become_flags: ${131:"-s /bin/sh"}}} 
+${132:   when: ${133:variable is defined}} 
+${134:   with_items: ${135:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_loadbalancer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

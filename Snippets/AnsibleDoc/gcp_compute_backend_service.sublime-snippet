@@ -4,18 +4,19 @@ ${1:# affinity_cookie_ttl_sec: Lifetime of cookies in seconds if
 # auth_kind: (required) The type of credential used. 
 # backends: The list of backends that serve this 
 # cdn_policy: Cloud CDN configuration for this BackendService. 
-# connection_draining: Settings for connection draining. 
+# connection_draining: Settings for connection draining . 
 # description: An optional description of this resource. 
 # enable_cdn: If true, enable Cloud CDN for this 
-# health_checks: The list of URLs to the HttpHealthCheck or 
+# health_checks: (required) The list of URLs to the 
 # iap: Settings for enabling Cloud Identity Aware 
 # load_balancing_scheme: Indicates whether the backend service will be 
-# name: Name of the resource. Provided by the client 
+# name: (required) Name of the resource. Provided by the 
 # port_name: Name of backend port. The same name should 
 # project: The Google Cloud Platform project to use. 
 # protocol: The protocol this BackendService uses to 
-# region: The region where the regional backend service 
 # scopes: Array of scopes to be used. 
+# security_policy: The security policy associated with this backend 
+# service_account_contents: A string representing the contents of a Service 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # session_affinity: Type of session affinity to use. The default is 
@@ -37,19 +38,20 @@ ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:port_name}: ${38:"#"}}
 ${39:   ${40:project}: ${41:"#"}}
 ${42:   ${43:protocol}: ${44:"#"}}
-${45:   ${46:region}: ${47:"#"}}
-${48:   ${49:scopes}: ${50:"#"}}
-${51:   ${52:service_account_email}: ${53:"#"}}
-${54:   ${55:service_account_file}: ${56:"#"}}
-${57:   ${58:session_affinity}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:timeout_sec}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${45:   ${46:scopes}: ${47:"#"}}
+${48:   ${49:security_policy}: ${50:"#"}}
+${51:   ${52:service_account_contents}: ${53:"#"}}
+${54:   ${55:service_account_email}: ${56:"#"}}
+${57:   ${58:service_account_file}: ${59:"#"}}
+${60:   ${61:session_affinity}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:timeout_sec}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_backend_service</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

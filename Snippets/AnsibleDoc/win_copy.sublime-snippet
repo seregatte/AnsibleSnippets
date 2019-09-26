@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# content: When used instead of `src', sets the contents of 
+${1:# backup: Determine whether a backup should be created. 
+# content: When used instead of `src', sets the contents of 
 # decrypt: This option controls the autodecryption of 
 # dest: (required) Remote absolute path where the file 
 # force: If set to `yes', the file will only be 
@@ -9,19 +10,20 @@ ${1:# content: When used instead of `src', sets the contents of
 # src: (required) Local path to a file to copy to the 
 }- name: ${2:Name for win_copy module.}
   win_copy:
-${3:   ${4:content}: ${5:"#"}}
-${6:   ${7:decrypt}: ${8:"#"}}
-${9:   ${10:dest}: ${11:"#"}}
-${12:   ${13:force}: ${14:"#"}}
-${15:   ${16:local_follow}: ${17:"#"}}
-${18:   ${19:remote_src}: ${20:"#"}}
-${21:   ${22:src}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${3:   ${4:backup}: ${5:"#"}}
+${6:   ${7:content}: ${8:"#"}}
+${9:   ${10:decrypt}: ${11:"#"}}
+${12:   ${13:dest}: ${14:"#"}}
+${15:   ${16:force}: ${17:"#"}}
+${18:   ${19:local_follow}: ${20:"#"}}
+${21:   ${22:remote_src}: ${23:"#"}}
+${24:   ${25:src}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>win_copy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

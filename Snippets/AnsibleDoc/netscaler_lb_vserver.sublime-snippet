@@ -74,7 +74,7 @@ ${1:# appflowlog: Apply AppFlow logging to the virtual server.
 # resrule: Default syntax expression specifying which part 
 # rhistate: Route Health Injection (RHI) functionality of 
 # rtspnat: Use network address translation (NAT) for RTSP 
-# save_config: If true the module will save the configuration 
+# save_config: If `yes' the module will save the configuration 
 # servicebindings: List of services along with the weights that are 
 # servicegroupbindings: List of service groups along with the weights 
 # servicetype: Protocol used by the service (also called the 

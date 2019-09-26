@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# api_key: (required) The API key obtained from the Memset 
+# name: (required) The server product name (i.e. 
+}- name: ${2:Name for memset_server_facts module.}
+  memset_server_facts:
+${3:   ${4:api_key}: ${5:"#"}}
+${6:   ${7:name}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>memset_server_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

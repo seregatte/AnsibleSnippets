@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when 
+# adfs_authority_url: Azure AD authority url. Use when authenticating 
+# api_profile: Selects an API profile to use when communicating 
+# auth_source: Controls the source of the credentials to use 
+# cache_name: (required) Name of the Azure Cache for Redis. 
+# cert_validation_mode: Controls the certificate validation behavior for 
+# client_id: Azure client ID. Use when authenticating with a 
+# cloud_environment: For cloud environments other than the US public 
+# end_ip_address: The end IP address of the Azure Cache for Redis 
+# name: (required) Name of the Firewall rule. 
+# password: Active Directory user password. Use when 
+# profile: Security profile found in ~/.azure/credentials 
+# resource_group: (required) Name of the resource group to which 
+# secret: Azure client secret. Use when authenticating 
+# start_ip_address: The start IP address of the Azure Cache for 
+# state: Assert the state of the Firewall rule of Azure 
+# subscription_id: Your Azure subscription Id. 
+# tenant: Azure tenant ID. Use when authenticating with a 
+}- name: ${2:Name for azure_rm_rediscachefirewallrule module.}
+  azure_rm_rediscachefirewallrule:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:adfs_authority_url}: ${8:"#"}}
+${9:   ${10:api_profile}: ${11:"#"}}
+${12:   ${13:auth_source}: ${14:"#"}}
+${15:   ${16:cache_name}: ${17:"#"}}
+${18:   ${19:cert_validation_mode}: ${20:"#"}}
+${21:   ${22:client_id}: ${23:"#"}}
+${24:   ${25:cloud_environment}: ${26:"#"}}
+${27:   ${28:end_ip_address}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:resource_group}: ${41:"#"}}
+${42:   ${43:secret}: ${44:"#"}}
+${45:   ${46:start_ip_address}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:subscription_id}: ${53:"#"}}
+${54:   ${55:tenant}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>azure_rm_rediscachefirewallrule</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,14 +1,14 @@
 <snippet>
 <content><![CDATA[
-${1:# authkey: Authentication key, required if version is v3 
+${1:# authkey: Authentication key. Required if version is v3. 
 # community: The SNMP community string, required if version 
 # host: (required) Set to target snmp server (normally 
-# integrity: Hashing algorithm, required if version is v3 
-# level: Authentication level, required if version is v3 
-# privacy: Encryption algorithm, required if level is 
-# privkey: Encryption key, required if version is authPriv 
-# username: Username for SNMPv3, required if version is v3 
-# version: (required) SNMP Version to use, v2/v2c or v3 
+# integrity: Hashing algorithm. Required if version is v3. 
+# level: Authentication level. Required if version is v3. 
+# privacy: Encryption algorithm. Required if level is 
+# privkey: Encryption key. Required if version is authPriv. 
+# username: Username for SNMPv3. Required if version is v3. 
+# version: (required) SNMP Version to use, v2/v2c or v3. 
 }- name: ${2:Name for snmp_facts module.}
   snmp_facts:
 ${3:   ${4:authkey}: ${5:"#"}}

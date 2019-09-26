@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# certname: The name to use when handling certificates. 
-# debug: Enable full debugging 
+# debug: Enable full debugging. 
 # environment: Puppet environment to be used. 
 # execute: Execute a specific piece of Puppet code. It has 
 # facter_basename: Basename of the facter output file. 
@@ -9,11 +9,12 @@ ${1:# certname: The name to use when handling certificates.
 # logdest: Where the puppet logs should go, if puppet apply 
 # manifest: Path to the manifest file to run puppet apply 
 # modulepath: Path to an alternate location for puppet 
+# noop: Override puppet.conf noop mode. When `yes', run 
 # puppetmaster: The hostname of the puppetmaster to contact. 
-# summarize: Whether to print a transaction summary 
-# tags: A comma-separated list of puppet tags to be 
+# summarize: Whether to print a transaction summary. 
+# tags: A list of puppet tags to be used. 
 # timeout: How long to wait for `puppet' to finish. 
-# verbose: Print extra information 
+# verbose: Print extra information. 
 }- name: ${2:Name for puppet module.}
   puppet:
 ${3:   ${4:certname}: ${5:"#"}}
@@ -25,17 +26,18 @@ ${18:   ${19:facts}: ${20:"#"}}
 ${21:   ${22:logdest}: ${23:"#"}}
 ${24:   ${25:manifest}: ${26:"#"}}
 ${27:   ${28:modulepath}: ${29:"#"}}
-${30:   ${31:puppetmaster}: ${32:"#"}}
-${33:   ${34:summarize}: ${35:"#"}}
-${36:   ${37:tags}: ${38:"#"}}
-${39:   ${40:timeout}: ${41:"#"}}
-${42:   ${43:verbose}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${30:   ${31:noop}: ${32:"#"}}
+${33:   ${34:puppetmaster}: ${35:"#"}}
+${36:   ${37:summarize}: ${38:"#"}}
+${39:   ${40:tags}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:verbose}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>puppet</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

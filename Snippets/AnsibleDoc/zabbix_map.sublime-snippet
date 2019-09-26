@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# data: Graph written in DOT language. 
+# default_image: Name of the Zabbix image used to display the 
+# expand_problem: Whether the the problem trigger will be 
+# height: Height of the map. 
+# highlight: Whether icon highlighting is enabled. 
+# http_login_password: Basic Auth password 
+# http_login_user: (required) Basic Auth login 
+# label_type: Map element label type. 
+# login_password: (required) Zabbix user password. 
+# login_user: (required) Zabbix user name. 
+# margin: Size of white space between map's borders and 
+# name: (required) Name of the map. 
+# server_url: (required) URL of Zabbix server, with protocol 
+# state: State of the map. On `present', it will create 
+# timeout: The timeout of API request (seconds). 
+# validate_certs: If set to False, SSL certificates will not be 
+# width: Width of the map. 
+}- name: ${2:Name for zabbix_map module.}
+  zabbix_map:
+${3:   ${4:data}: ${5:"#"}}
+${6:   ${7:default_image}: ${8:"#"}}
+${9:   ${10:expand_problem}: ${11:"#"}}
+${12:   ${13:height}: ${14:"#"}}
+${15:   ${16:highlight}: ${17:"#"}}
+${18:   ${19:http_login_password}: ${20:"#"}}
+${21:   ${22:http_login_user}: ${23:"#"}}
+${24:   ${25:label_type}: ${26:"#"}}
+${27:   ${28:login_password}: ${29:"#"}}
+${30:   ${31:login_user}: ${32:"#"}}
+${33:   ${34:margin}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:server_url}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:width}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>zabbix_map</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

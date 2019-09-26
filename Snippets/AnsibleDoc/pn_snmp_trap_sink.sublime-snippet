@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_cliswitch: Target switch to run the CLI on. 
+# pn_community: community type. 
+# pn_dest_host: destination host. 
+# pn_dest_port: destination port. 
+# pn_type: trap type. 
+# state: (required) State the action to perform. Use 
+}- name: ${2:Name for pn_snmp_trap_sink module.}
+  pn_snmp_trap_sink:
+${3:   ${4:pn_cliswitch}: ${5:"#"}}
+${6:   ${7:pn_community}: ${8:"#"}}
+${9:   ${10:pn_dest_host}: ${11:"#"}}
+${12:   ${13:pn_dest_port}: ${14:"#"}}
+${15:   ${16:pn_type}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>pn_snmp_trap_sink</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

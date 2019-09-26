@@ -1,9 +1,10 @@
 <snippet>
 <content><![CDATA[
-${1:# api_token: FlashBlade API token for admin privilaed user. 
+${1:# api_token: FlashBlade API token for admin privileged user. 
 # eradicate: Define whether to eradicate the filesystem on 
 # fastremove: Define whether the fast remove directory is 
 # fb_url: FlashBlade management IP address or Hostname. 
+# hard_limit: Define whether the capacity for a filesystem is 
 # http: Define whether to HTTP/HTTPS protocol is enabled 
 # name: (required) Filesystem Name. 
 # nfs: Define whether to NFS protocol is enabled for 
@@ -18,20 +19,21 @@ ${3:   ${4:api_token}: ${5:"#"}}
 ${6:   ${7:eradicate}: ${8:"#"}}
 ${9:   ${10:fastremove}: ${11:"#"}}
 ${12:   ${13:fb_url}: ${14:"#"}}
-${15:   ${16:http}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:nfs}: ${23:"#"}}
-${24:   ${25:nfs_rules}: ${26:"#"}}
-${27:   ${28:size}: ${29:"#"}}
-${30:   ${31:smb}: ${32:"#"}}
-${33:   ${34:snapshot}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${15:   ${16:hard_limit}: ${17:"#"}}
+${18:   ${19:http}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:nfs}: ${26:"#"}}
+${27:   ${28:nfs_rules}: ${29:"#"}}
+${30:   ${31:size}: ${32:"#"}}
+${33:   ${34:smb}: ${35:"#"}}
+${36:   ${37:snapshot}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>purefb_fs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

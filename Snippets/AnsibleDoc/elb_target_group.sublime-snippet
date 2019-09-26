@@ -2,6 +2,7 @@
 <content><![CDATA[
 ${1:# aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # deregistration_delay_timeout: The amount time for Elastic Load Balancing to 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # health_check_interval: The approximate amount of time, in seconds, 
@@ -36,42 +37,43 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
   elb_target_group:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
 ${6:   ${7:aws_secret_key}: ${8:"#"}}
-${9:   ${10:deregistration_delay_timeout}: ${11:"#"}}
-${12:   ${13:ec2_url}: ${14:"#"}}
-${15:   ${16:health_check_interval}: ${17:"#"}}
-${18:   ${19:health_check_path}: ${20:"#"}}
-${21:   ${22:health_check_port}: ${23:"#"}}
-${24:   ${25:health_check_protocol}: ${26:"#"}}
-${27:   ${28:health_check_timeout}: ${29:"#"}}
-${30:   ${31:healthy_threshold_count}: ${32:"#"}}
-${33:   ${34:modify_targets}: ${35:"#"}}
-${36:   ${37:name}: ${38:"#"}}
-${39:   ${40:port}: ${41:"#"}}
-${42:   ${43:profile}: ${44:"#"}}
-${45:   ${46:protocol}: ${47:"#"}}
-${48:   ${49:purge_tags}: ${50:"#"}}
-${51:   ${52:region}: ${53:"#"}}
-${54:   ${55:}: ${56:"#"}}
-${57:   ${58:security_token}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:stickiness_enabled}: ${65:"#"}}
-${66:   ${67:stickiness_lb_cookie_duration}: ${68:"#"}}
-${69:   ${70:stickiness_type}: ${71:"#"}}
-${72:   ${73:successful_response_codes}: ${74:"#"}}
-${75:   ${76:tags}: ${77:"#"}}
-${78:   ${79:target_type}: ${80:"#"}}
-${81:   ${82:targets}: ${83:"#"}}
-${84:   ${85:unhealthy_threshold_count}: ${86:"#"}}
-${87:   ${88:validate_certs}: ${89:"#"}}
-${90:   ${91:vpc_id}: ${92:"#"}}
-${93:   ${94:wait}: ${95:"#"}}
-${96:   ${97:wait_timeout}: ${98:"#"}}
-${99:${100:   become: ${101:true}} 
-${102:   become_method: ${103:su}} 
-${104:   become_user: ${105:nobody}} 
-${106:   become_flags: ${107:"-s /bin/sh"}}} 
-${108:   when: ${109:variable is defined}} 
-${110:   with_items: ${111:array}} 
+${9:   ${10:debug_botocore_endpoint_logs}: ${11:"#"}}
+${12:   ${13:deregistration_delay_timeout}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:health_check_interval}: ${20:"#"}}
+${21:   ${22:health_check_path}: ${23:"#"}}
+${24:   ${25:health_check_port}: ${26:"#"}}
+${27:   ${28:health_check_protocol}: ${29:"#"}}
+${30:   ${31:health_check_timeout}: ${32:"#"}}
+${33:   ${34:healthy_threshold_count}: ${35:"#"}}
+${36:   ${37:modify_targets}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:profile}: ${47:"#"}}
+${48:   ${49:protocol}: ${50:"#"}}
+${51:   ${52:purge_tags}: ${53:"#"}}
+${54:   ${55:region}: ${56:"#"}}
+${57:   ${58:}: ${59:"#"}}
+${60:   ${61:security_token}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:stickiness_enabled}: ${68:"#"}}
+${69:   ${70:stickiness_lb_cookie_duration}: ${71:"#"}}
+${72:   ${73:stickiness_type}: ${74:"#"}}
+${75:   ${76:successful_response_codes}: ${77:"#"}}
+${78:   ${79:tags}: ${80:"#"}}
+${81:   ${82:target_type}: ${83:"#"}}
+${84:   ${85:targets}: ${86:"#"}}
+${87:   ${88:unhealthy_threshold_count}: ${89:"#"}}
+${90:   ${91:validate_certs}: ${92:"#"}}
+${93:   ${94:vpc_id}: ${95:"#"}}
+${96:   ${97:wait}: ${98:"#"}}
+${99:   ${100:wait_timeout}: ${101:"#"}}
+${102:${103:   become: ${104:true}} 
+${105:   become_method: ${106:su}} 
+${107:   become_user: ${108:nobody}} 
+${109:   become_flags: ${110:"-s /bin/sh"}}} 
+${111:   when: ${112:variable is defined}} 
+${113:   with_items: ${114:array}} 
 ]]></content>
 	<tabTrigger>elb_target_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

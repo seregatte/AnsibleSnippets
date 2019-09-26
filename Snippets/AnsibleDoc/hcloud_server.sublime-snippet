@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: (required) This is the API Token for the Hetzner 
+# backups: Enable or disable Backups for the given Server. 
+# datacenter: Datacenter of Server. Required of no `location' 
+# endpoint: This is the API Endpoint for the Hetzner Cloud. 
+# force_upgrade: Force the upgrade of the server. Power off the 
+# id: The ID of the Hetzner Cloud server to manage. 
+# image: Image the server should be created from. 
+# labels: User-defined labels (key-value pairs). 
+# location: Location of Server. Required if no `datacenter' 
+# name: The Name of the Hetzner Cloud server to manage. 
+# server_type: The Server Type of the Hetzner Cloud server to 
+# ssh_keys: List of SSH key names The key names correspond 
+# state: State of the server. 
+# upgrade_disk: Resize the disk size, when resizing a server. If 
+# user_data: User Data to be passed to the server on 
+# volumes: List of Volumes IDs that should be attached to 
+}- name: ${2:Name for hcloud_server module.}
+  hcloud_server:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:backups}: ${8:"#"}}
+${9:   ${10:datacenter}: ${11:"#"}}
+${12:   ${13:endpoint}: ${14:"#"}}
+${15:   ${16:force_upgrade}: ${17:"#"}}
+${18:   ${19:id}: ${20:"#"}}
+${21:   ${22:image}: ${23:"#"}}
+${24:   ${25:labels}: ${26:"#"}}
+${27:   ${28:location}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:server_type}: ${35:"#"}}
+${36:   ${37:ssh_keys}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:upgrade_disk}: ${44:"#"}}
+${45:   ${46:user_data}: ${47:"#"}}
+${48:   ${49:volumes}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>hcloud_server</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

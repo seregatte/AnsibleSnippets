@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# ftype: File type. The following file type options can 
+${1:# ftype: The file type that should have SELinux contexts 
+# ignore_selinux_state: Useful for scenarios (chrooted environment) that 
 # reload: Reload SELinux policy after commit. Note that 
 # selevel: SELinux range for the specified target. 
 # setype: (required) SELinux type for the specified 
@@ -10,18 +11,19 @@ ${1:# ftype: File type. The following file type options can
 }- name: ${2:Name for sefcontext module.}
   sefcontext:
 ${3:   ${4:ftype}: ${5:"#"}}
-${6:   ${7:reload}: ${8:"#"}}
-${9:   ${10:selevel}: ${11:"#"}}
-${12:   ${13:setype}: ${14:"#"}}
-${15:   ${16:seuser}: ${17:"#"}}
-${18:   ${19:state}: ${20:"#"}}
-${21:   ${22:target}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${6:   ${7:ignore_selinux_state}: ${8:"#"}}
+${9:   ${10:reload}: ${11:"#"}}
+${12:   ${13:selevel}: ${14:"#"}}
+${15:   ${16:setype}: ${17:"#"}}
+${18:   ${19:seuser}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:target}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>sefcontext</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

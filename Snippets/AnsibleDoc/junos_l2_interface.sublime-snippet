@@ -5,6 +5,8 @@ ${1:# access_vlan: Configure given VLAN in access port. The value
 # aggregate: List of Layer-2 interface definitions. 
 # description: Description of Interface. 
 # enhanced_layer: True if your device has Enhanced Layer 2 
+# filter_input: The name of input filter of ethernet-switching. 
+# filter_output: The name of output filter of ethernet-switching. 
 # mode: Mode in which interface needs to be configured. 
 # name: Name of the interface excluding any logical unit 
 # native_vlan: Native VLAN to be configured in trunk port. The 
@@ -19,19 +21,21 @@ ${6:   ${7:active}: ${8:"#"}}
 ${9:   ${10:aggregate}: ${11:"#"}}
 ${12:   ${13:description}: ${14:"#"}}
 ${15:   ${16:enhanced_layer}: ${17:"#"}}
-${18:   ${19:mode}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:native_vlan}: ${26:"#"}}
-${27:   ${28:provider}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:trunk_vlans}: ${35:"#"}}
-${36:   ${37:unit}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${18:   ${19:filter_input}: ${20:"#"}}
+${21:   ${22:filter_output}: ${23:"#"}}
+${24:   ${25:mode}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:native_vlan}: ${32:"#"}}
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:trunk_vlans}: ${41:"#"}}
+${42:   ${43:unit}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>junos_l2_interface</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

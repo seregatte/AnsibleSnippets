@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# host: To define host for the node. 
+# metadata: To define metadata for the node. 
+# name: (required) To define name for the node. 
+# node_type: (required) To define type for the node. 
+# provider: A dict object containing connection details. 
+# seed: used to generate the UUID of the node 
+# state: State of the Skydive Node. If value is `present' 
+}- name: ${2:Name for skydive_node module.}
+  skydive_node:
+${3:   ${4:host}: ${5:"#"}}
+${6:   ${7:metadata}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:node_type}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:seed}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>skydive_node</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
