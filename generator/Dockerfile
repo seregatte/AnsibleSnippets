@@ -1,4 +1,4 @@
-FROM php:7.1-fpm-jessie
+FROM php:7.4-cli
 
 RUN apt-get update \
     && apt-get install --no-install-recommends --no-install-suggests -y \
