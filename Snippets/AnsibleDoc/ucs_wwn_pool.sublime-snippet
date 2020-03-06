@@ -3,7 +3,7 @@
 ${1:# description: A description of the WWNN or WWPN pool. Enter up 
 # first_addr: The first initiator in the World Wide Name (WWN) 
 # hostname: (required) IP address or hostname of Cisco UCS 
-# last_addr: The last initiator in the Worlde Wide Name (WWN) 
+# last_addr: The last initiator in the World Wide Name (WWN) 
 # name: (required) The name of the World Wide Node Name 
 # order: The Assignment Order field. This can be one of 
 # org_dn: Org dn (distinguished name) 

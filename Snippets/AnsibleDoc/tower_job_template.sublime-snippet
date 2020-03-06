@@ -3,7 +3,7 @@
 ${1:# ask_credential: Prompt user for credential on launch. 
 # ask_diff_mode: Prompt user to enable diff mode (show changes) 
 # ask_extra_vars: Prompt user for (extra_vars) on launch. 
-# ask_inventory: Propmt user for inventory on launch. 
+# ask_inventory: Prompt user for inventory on launch. 
 # ask_job_type: Prompt user for job type on launch. 
 # ask_limit: Prompt user for a limit on launch. 
 # ask_skip_tags: Prompt user for job tags to skip on launch. 

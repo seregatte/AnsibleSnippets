@@ -11,15 +11,10 @@ ${1:# activation_modes: Specifies what will cause an incoming connection
 # name: (required) Specifies the name of the profile. 
 # parent: Specifies the profile from which this profile 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # receive_window: Specifies the way that the HTTP/2 profile 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the profile exists. 
 # streams: Specifies the number of outstanding concurrent 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 # write_size: Specifies the total size of combined data 
 }- name: ${2:Name for bigip_profile_http2 module.}
   bigip_profile_http2:
@@ -34,22 +29,17 @@ ${24:   ${25:insert_header_name}: ${26:"#"}}
 ${27:   ${28:name}: ${29:"#"}}
 ${30:   ${31:parent}: ${32:"#"}}
 ${33:   ${34:partition}: ${35:"#"}}
-${36:   ${37:password}: ${38:"#"}}
-${39:   ${40:provider}: ${41:"#"}}
-${42:   ${43:receive_window}: ${44:"#"}}
-${45:   ${46:server}: ${47:"#"}}
-${48:   ${49:server_port}: ${50:"#"}}
-${51:   ${52:state}: ${53:"#"}}
-${54:   ${55:streams}: ${56:"#"}}
-${57:   ${58:user}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
-${63:   ${64:write_size}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${36:   ${37:provider}: ${38:"#"}}
+${39:   ${40:receive_window}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:streams}: ${47:"#"}}
+${48:   ${49:write_size}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_http2</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -6,6 +6,7 @@ ${1:# api_context: Avi API context that includes current session ID
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # controller: IP address or hostname of the controller. The 
 # description: User defined description for the object. 
 # hdr_persistence_profile: Specifies the custom http header persistence 
@@ -31,29 +32,30 @@ ${9:   ${10:app_cookie_persistence_profile}: ${11:"#"}}
 ${12:   ${13:avi_api_patch_op}: ${14:"#"}}
 ${15:   ${16:avi_api_update_method}: ${17:"#"}}
 ${18:   ${19:avi_credentials}: ${20:"#"}}
-${21:   ${22:controller}: ${23:"#"}}
-${24:   ${25:description}: ${26:"#"}}
-${27:   ${28:hdr_persistence_profile}: ${29:"#"}}
-${30:   ${31:http_cookie_persistence_profile}: ${32:"#"}}
-${33:   ${34:ip_persistence_profile}: ${35:"#"}}
-${36:   ${37:is_federated}: ${38:"#"}}
-${39:   ${40:name}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:persistence_type}: ${47:"#"}}
-${48:   ${49:server_hm_down_recovery}: ${50:"#"}}
-${51:   ${52:state}: ${53:"#"}}
-${54:   ${55:tenant}: ${56:"#"}}
-${57:   ${58:tenant_ref}: ${59:"#"}}
-${60:   ${61:tenant_uuid}: ${62:"#"}}
-${63:   ${64:url}: ${65:"#"}}
-${66:   ${67:username}: ${68:"#"}}
-${69:   ${70:uuid}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${21:   ${22:avi_disable_session_cache_as_fact}: ${23:"#"}}
+${24:   ${25:controller}: ${26:"#"}}
+${27:   ${28:description}: ${29:"#"}}
+${30:   ${31:hdr_persistence_profile}: ${32:"#"}}
+${33:   ${34:http_cookie_persistence_profile}: ${35:"#"}}
+${36:   ${37:ip_persistence_profile}: ${38:"#"}}
+${39:   ${40:is_federated}: ${41:"#"}}
+${42:   ${43:name}: ${44:"#"}}
+${45:   ${46:password}: ${47:"#"}}
+${48:   ${49:persistence_type}: ${50:"#"}}
+${51:   ${52:server_hm_down_recovery}: ${53:"#"}}
+${54:   ${55:state}: ${56:"#"}}
+${57:   ${58:tenant}: ${59:"#"}}
+${60:   ${61:tenant_ref}: ${62:"#"}}
+${63:   ${64:tenant_uuid}: ${65:"#"}}
+${66:   ${67:url}: ${68:"#"}}
+${69:   ${70:username}: ${71:"#"}}
+${72:   ${73:uuid}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>avi_applicationpersistenceprofile</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

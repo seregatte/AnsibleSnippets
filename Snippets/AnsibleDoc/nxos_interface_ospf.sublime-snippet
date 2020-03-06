@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# area: (required) Ospf area associated with this 
+# bfd: Enables bfd at interface level. This overrides 
 # cost: The cost associated with this 
 # dead_interval: Time interval an ospf neighbor waits for a hello 
 # hello_interval: Time between sending successive hello packets. 
@@ -18,26 +19,27 @@ ${1:# area: (required) Ospf area associated with this
 }- name: ${2:Name for nxos_interface_ospf module.}
   nxos_interface_ospf:
 ${3:   ${4:area}: ${5:"#"}}
-${6:   ${7:cost}: ${8:"#"}}
-${9:   ${10:dead_interval}: ${11:"#"}}
-${12:   ${13:hello_interval}: ${14:"#"}}
-${15:   ${16:interface}: ${17:"#"}}
-${18:   ${19:message_digest}: ${20:"#"}}
-${21:   ${22:message_digest_algorithm_type}: ${23:"#"}}
-${24:   ${25:message_digest_encryption_type}: ${26:"#"}}
-${27:   ${28:message_digest_key_id}: ${29:"#"}}
-${30:   ${31:message_digest_password}: ${32:"#"}}
-${33:   ${34:network}: ${35:"#"}}
-${36:   ${37:ospf}: ${38:"#"}}
-${39:   ${40:passive_interface}: ${41:"#"}}
-${42:   ${43:provider}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${6:   ${7:bfd}: ${8:"#"}}
+${9:   ${10:cost}: ${11:"#"}}
+${12:   ${13:dead_interval}: ${14:"#"}}
+${15:   ${16:hello_interval}: ${17:"#"}}
+${18:   ${19:interface}: ${20:"#"}}
+${21:   ${22:message_digest}: ${23:"#"}}
+${24:   ${25:message_digest_algorithm_type}: ${26:"#"}}
+${27:   ${28:message_digest_encryption_type}: ${29:"#"}}
+${30:   ${31:message_digest_key_id}: ${32:"#"}}
+${33:   ${34:message_digest_password}: ${35:"#"}}
+${36:   ${37:network}: ${38:"#"}}
+${39:   ${40:ospf}: ${41:"#"}}
+${42:   ${43:passive_interface}: ${44:"#"}}
+${45:   ${46:provider}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>nxos_interface_ospf</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

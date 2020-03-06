@@ -1,6 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# api_key: Token used to authenticate with the API. Can 
+${1:# affinity: Describes node affinity scheduling rules for the 
+# anti_affinity: Describes vm anti-affinity scheduling rules e.g. 
+# api_key: Token used to authenticate with the API. Can 
 # bootloader: Specify the bootloader of the virtual machine. 
 # ca_cert: Path to a CA certificate used to authenticate 
 # client_cert: Path to a certificate used to authenticate with 
@@ -20,6 +22,7 @@ ${1:# api_key: Token used to authenticate with the API. Can
 # force: If set to `no', and `state' is `present', an 
 # headless: Specify if the virtual machine should have 
 # host: Provide a URL for accessing the API. Can also be 
+# hostname: Specifies the hostname of the virtual machine. 
 # hugepage_size: Specify huge page size. 
 # interfaces: An interface defines a virtual network interface 
 # html: _v1_interfac 
@@ -34,68 +37,79 @@ ${1:# api_key: Token used to authenticate with the API. Can
 # patch: use-a 
 # name: (required) Name of the virtual machine preset. 
 # namespace: (required) Namespace where the virtual machine 
+# node_affinity: Describes vm affinity scheduling rules e.g. co- 
 # password: Provide a password for authenticating with the 
+# proxy: The URL of an HTTP proxy to use for the 
 # resource_definition: A partial YAML definition of the object being 
 # selector: Selector is a label query over a set of virtual 
 # smbios_uuid: In order to provide a consistent view on the 
 # state: Create or delete virtual machine presets. 
+# subdomain: If specified, the fully qualified virtual 
 # tablets: Specify tablets to be used as input devices 
 # username: Provide a username for authenticating with the 
 # validate_certs: Whether or not to verify the API server's SSL 
 # wait: `True' if the module should wait for the 
+# wait_sleep: Number of seconds to sleep between checks. 
 # wait_timeout: The amount of time in seconds the module should 
 }- name: ${2:Name for kubevirt_preset module.}
   kubevirt_preset:
-${3:   ${4:api_key}: ${5:"#"}}
-${6:   ${7:bootloader}: ${8:"#"}}
-${9:   ${10:ca_cert}: ${11:"#"}}
-${12:   ${13:client_cert}: ${14:"#"}}
-${15:   ${16:client_key}: ${17:"#"}}
-${18:   ${19:cloud_init_nocloud}: ${20:"#"}}
-${21:   ${22:s}: ${23:"#"}}
-${24:   ${25:context}: ${26:"#"}}
-${27:   ${28:cpu_cores}: ${29:"#"}}
-${30:   ${31:cpu_features}: ${32:"#"}}
-${33:   ${34:atdomain}: ${35:"#"}}
-${36:   ${37:cpu_limit}: ${38:"#"}}
-${39:   ${40:cpu_model}: ${41:"#"}}
-${42:   ${43:cpu_shares}: ${44:"#"}}
-${45:   ${46:disks}: ${47:"#"}}
-${48:   ${49:html}: ${50:"#"}}
-${51:   ${52:s}: ${53:"#"}}
-${54:   ${55:force}: ${56:"#"}}
-${57:   ${58:headless}: ${59:"#"}}
-${60:   ${61:host}: ${62:"#"}}
-${63:   ${64:hugepage_size}: ${65:"#"}}
-${66:   ${67:interfaces}: ${68:"#"}}
-${69:   ${70:html}: ${71:"#"}}
-${72:   ${73:html}: ${74:"#"}}
-${75:   ${76:kubeconfig}: ${77:"#"}}
-${78:   ${79:labels}: ${80:"#"}}
-${81:   ${82:}: ${83:"#"}}
-${84:   ${85:machine_type}: ${86:"#"}}
-${87:   ${88:memory}: ${89:"#"}}
-${90:   ${91:memory_limit}: ${92:"#"}}
-${93:   ${94:merge_type}: ${95:"#"}}
-${96:   ${97:patch}: ${98:"#"}}
-${99:   ${100:name}: ${101:"#"}}
-${102:   ${103:namespace}: ${104:"#"}}
-${105:   ${106:password}: ${107:"#"}}
-${108:   ${109:resource_definition}: ${110:"#"}}
-${111:   ${112:selector}: ${113:"#"}}
-${114:   ${115:smbios_uuid}: ${116:"#"}}
-${117:   ${118:state}: ${119:"#"}}
-${120:   ${121:tablets}: ${122:"#"}}
-${123:   ${124:username}: ${125:"#"}}
-${126:   ${127:validate_certs}: ${128:"#"}}
-${129:   ${130:wait}: ${131:"#"}}
-${132:   ${133:wait_timeout}: ${134:"#"}}
-${135:${136:   become: ${137:true}} 
-${138:   become_method: ${139:su}} 
-${140:   become_user: ${141:nobody}} 
-${142:   become_flags: ${143:"-s /bin/sh"}}} 
-${144:   when: ${145:variable is defined}} 
-${146:   with_items: ${147:array}} 
+${3:   ${4:affinity}: ${5:"#"}}
+${6:   ${7:anti_affinity}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:bootloader}: ${14:"#"}}
+${15:   ${16:ca_cert}: ${17:"#"}}
+${18:   ${19:client_cert}: ${20:"#"}}
+${21:   ${22:client_key}: ${23:"#"}}
+${24:   ${25:cloud_init_nocloud}: ${26:"#"}}
+${27:   ${28:s}: ${29:"#"}}
+${30:   ${31:context}: ${32:"#"}}
+${33:   ${34:cpu_cores}: ${35:"#"}}
+${36:   ${37:cpu_features}: ${38:"#"}}
+${39:   ${40:atdomain}: ${41:"#"}}
+${42:   ${43:cpu_limit}: ${44:"#"}}
+${45:   ${46:cpu_model}: ${47:"#"}}
+${48:   ${49:cpu_shares}: ${50:"#"}}
+${51:   ${52:disks}: ${53:"#"}}
+${54:   ${55:html}: ${56:"#"}}
+${57:   ${58:s}: ${59:"#"}}
+${60:   ${61:force}: ${62:"#"}}
+${63:   ${64:headless}: ${65:"#"}}
+${66:   ${67:host}: ${68:"#"}}
+${69:   ${70:hostname}: ${71:"#"}}
+${72:   ${73:hugepage_size}: ${74:"#"}}
+${75:   ${76:interfaces}: ${77:"#"}}
+${78:   ${79:html}: ${80:"#"}}
+${81:   ${82:html}: ${83:"#"}}
+${84:   ${85:kubeconfig}: ${86:"#"}}
+${87:   ${88:labels}: ${89:"#"}}
+${90:   ${91:}: ${92:"#"}}
+${93:   ${94:machine_type}: ${95:"#"}}
+${96:   ${97:memory}: ${98:"#"}}
+${99:   ${100:memory_limit}: ${101:"#"}}
+${102:   ${103:merge_type}: ${104:"#"}}
+${105:   ${106:patch}: ${107:"#"}}
+${108:   ${109:name}: ${110:"#"}}
+${111:   ${112:namespace}: ${113:"#"}}
+${114:   ${115:node_affinity}: ${116:"#"}}
+${117:   ${118:password}: ${119:"#"}}
+${120:   ${121:proxy}: ${122:"#"}}
+${123:   ${124:resource_definition}: ${125:"#"}}
+${126:   ${127:selector}: ${128:"#"}}
+${129:   ${130:smbios_uuid}: ${131:"#"}}
+${132:   ${133:state}: ${134:"#"}}
+${135:   ${136:subdomain}: ${137:"#"}}
+${138:   ${139:tablets}: ${140:"#"}}
+${141:   ${142:username}: ${143:"#"}}
+${144:   ${145:validate_certs}: ${146:"#"}}
+${147:   ${148:wait}: ${149:"#"}}
+${150:   ${151:wait_sleep}: ${152:"#"}}
+${153:   ${154:wait_timeout}: ${155:"#"}}
+${156:${157:   become: ${158:true}} 
+${159:   become_method: ${160:su}} 
+${161:   become_user: ${162:nobody}} 
+${163:   become_flags: ${164:"-s /bin/sh"}}} 
+${165:   when: ${166:variable is defined}} 
+${167:   with_items: ${168:array}} 
 ]]></content>
 	<tabTrigger>kubevirt_preset</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

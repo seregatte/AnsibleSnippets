@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# comments: Comments string. 
+# file_content: N/A 
+# file_name: N/A 
+# file_path: N/A 
+# targets: On what targets to execute this command. Targets 
+# version: Version of checkpoint. If not given one, the 
+# wait_for_task: Wait for the task to end. Such as publish task. 
+}- name: ${2:Name for cp_mgmt_put_file module.}
+  cp_mgmt_put_file:
+${3:   ${4:comments}: ${5:"#"}}
+${6:   ${7:file_content}: ${8:"#"}}
+${9:   ${10:file_name}: ${11:"#"}}
+${12:   ${13:file_path}: ${14:"#"}}
+${15:   ${16:targets}: ${17:"#"}}
+${18:   ${19:version}: ${20:"#"}}
+${21:   ${22:wait_for_task}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>cp_mgmt_put_file</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

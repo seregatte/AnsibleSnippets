@@ -6,6 +6,8 @@ ${1:# cluster: The cluster hosting the virtual machine. If set,
 # hostname: The hostname or IP address of the vSphere 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # timeout: Timeout in seconds. If set to positive integers, 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -26,24 +28,26 @@ ${9:   ${10:folder}: ${11:"#"}}
 ${12:   ${13:hostname}: ${14:"#"}}
 ${15:   ${16:password}: ${17:"#"}}
 ${18:   ${19:port}: ${20:"#"}}
-${21:   ${22:timeout}: ${23:"#"}}
-${24:   ${25:username}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:   ${31:vm_id}: ${32:"#"}}
-${33:   ${34:vm_id_type}: ${35:"#"}}
-${36:   ${37:vm_password}: ${38:"#"}}
-${39:   ${40:vm_shell}: ${41:"#"}}
-${42:   ${43:vm_shell_args}: ${44:"#"}}
-${45:   ${46:vm_shell_cwd}: ${47:"#"}}
-${48:   ${49:vm_shell_env}: ${50:"#"}}
-${51:   ${52:vm_username}: ${53:"#"}}
-${54:   ${55:wait_for_process}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${21:   ${22:proxy_host}: ${23:"#"}}
+${24:   ${25:proxy_port}: ${26:"#"}}
+${27:   ${28:timeout}: ${29:"#"}}
+${30:   ${31:username}: ${32:"#"}}
+${33:   ${34:validate_certs}: ${35:"#"}}
+${36:   ${37:vm_id}: ${38:"#"}}
+${39:   ${40:vm_id_type}: ${41:"#"}}
+${42:   ${43:vm_password}: ${44:"#"}}
+${45:   ${46:vm_shell}: ${47:"#"}}
+${48:   ${49:vm_shell_args}: ${50:"#"}}
+${51:   ${52:vm_shell_cwd}: ${53:"#"}}
+${54:   ${55:vm_shell_env}: ${56:"#"}}
+${57:   ${58:vm_username}: ${59:"#"}}
+${60:   ${61:wait_for_process}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>vmware_vm_shell</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

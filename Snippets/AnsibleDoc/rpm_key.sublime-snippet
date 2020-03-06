@@ -1,19 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# key: (required) Key that will be modified. Can be a 
+${1:# fingerprint: The long-form fingerprint of the key being 
+# key: (required) Key that will be modified. Can be a 
 # state: If the key will be imported or removed from the 
 # validate_certs: If `no' and the `key' is a url starting with 
 }- name: ${2:Name for rpm_key module.}
   rpm_key:
-${3:   ${4:key}: ${5:"#"}}
-${6:   ${7:state}: ${8:"#"}}
-${9:   ${10:validate_certs}: ${11:"#"}}
-${12:${13:   become: ${14:true}} 
-${15:   become_method: ${16:su}} 
-${17:   become_user: ${18:nobody}} 
-${19:   become_flags: ${20:"-s /bin/sh"}}} 
-${21:   when: ${22:variable is defined}} 
-${23:   with_items: ${24:array}} 
+${3:   ${4:fingerprint}: ${5:"#"}}
+${6:   ${7:key}: ${8:"#"}}
+${9:   ${10:state}: ${11:"#"}}
+${12:   ${13:validate_certs}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>rpm_key</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

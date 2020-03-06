@@ -9,7 +9,7 @@ ${1:# api_token: (required) This is the API Token for the Hetzner
 # location: Location of the Hetzner Cloud Volume. Required 
 # name: The Name of the Hetzner Cloud Block Volume to 
 # server: Server Name the Volume should be assigned to. 
-# size: The size of the Block Volume. Required if volume 
+# size: The size of the Block Volume in GB. Required if 
 # state: State of the volume. 
 }- name: ${2:Name for hcloud_volume module.}
   hcloud_volume:

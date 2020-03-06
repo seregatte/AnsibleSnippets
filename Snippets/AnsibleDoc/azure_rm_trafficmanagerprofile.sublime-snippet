@@ -9,7 +9,7 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # dns_config: The DNS settings of the Traffic Manager profile. 
-# location: Valid azure location. Defaults to 'global' 
+# location: Valid Azure location. Defaults to `global' 
 # profile: create-a 
 # monitor_config: The endpoint monitoring settings of the Traffic 
 # name: (required) Name of the Traffic Manager profile. 

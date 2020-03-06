@@ -13,6 +13,8 @@ ${1:# cluster: (required) Name of the cluster to add the host.
 # mem_shares: Memory shares are used in case of resource 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # resource_pool: (required) Resource pool name to manage. 
 # state: Add or remove the resource pool 
 # username: The username of the vSphere vCenter or ESXi 
@@ -32,16 +34,18 @@ ${30:   ${31:mem_reservation}: ${32:"#"}}
 ${33:   ${34:mem_shares}: ${35:"#"}}
 ${36:   ${37:password}: ${38:"#"}}
 ${39:   ${40:port}: ${41:"#"}}
-${42:   ${43:resource_pool}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:username}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${42:   ${43:proxy_host}: ${44:"#"}}
+${45:   ${46:proxy_port}: ${47:"#"}}
+${48:   ${49:resource_pool}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:username}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>vmware_resource_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

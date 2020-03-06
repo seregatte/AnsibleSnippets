@@ -9,7 +9,7 @@ ${1:# client_cert: PEM formatted certificate chain file to be used
 # path: The path to the json file containing the Grafana 
 # slug: Deprecated since Grafana 5. Use grafana 
 # state: (required) State of the dashboard. 
-# uid: uid of the dasboard to export when `state' is 
+# uid: uid of the dashboard to export when `state' is 
 # url: (required) The Grafana URL. 
 # url_password: The Grafana API password. 
 # url_username: The Grafana API user. 

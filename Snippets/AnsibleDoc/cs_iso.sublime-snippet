@@ -12,7 +12,7 @@ ${1:# account: Account the ISO is related to.
 # cross_zones: Whether the ISO should be synced or removed 
 # display_text: Display text of the ISO. If not specified, 
 # domain: Domain the ISO is related to. 
-# is_dynamically_scalable: Register the ISO having XS/VMWare tools 
+# is_dynamically_scalable: Register the ISO having XS/VMware tools 
 # is_featured: Register the ISO to be featured. Only used if 
 # is_public: Register the ISO to be publicly available to all 
 # is_ready: This flag is used for searching existing ISOs. 

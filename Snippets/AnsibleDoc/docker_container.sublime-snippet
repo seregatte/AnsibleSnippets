@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_version: The version of the Docker API running on the 
-# auto_remove: enable auto-removal of the container on daemon 
+# auto_remove: Enable auto-removal of the container on daemon 
 # blkio_weight: Block IO (relative weight), between 10 and 1000. 
 # ca_cert: Use a CA certificate when performing server 
 # cap_drop: List of capabilities to drop from the container. 
@@ -11,8 +11,8 @@ ${1:# api_version: The version of the Docker API running on the
 # client_key: Path to the client's TLS key file. If the value 
 # command: Command to execute when the container starts. A 
 # comparisons: Allows to specify how properties of existing 
-# cpu_period: Limit CPU CFS (Completely Fair Scheduler) period 
-# cpu_quota: Limit CPU CFS (Completely Fair Scheduler) quota 
+# cpu_period: Limit CPU CFS (Completely Fair Scheduler) 
+# cpu_quota: Limit CPU CFS (Completely Fair Scheduler) quota. 
 # cpu_shares: CPU shares (relative weight). 
 # cpuset_cpus: CPUs in which to allow execution `1,3' or `1-3'. 
 # cpuset_mems: Memory nodes (MEMs) in which to allow execution 
@@ -23,12 +23,12 @@ ${1:# api_version: The version of the Docker API running on the
 # device_write_bps: List of device and write rate (bytes per second) 
 # device_write_iops: List of device and write rate (IO per second) to 
 # devices: List of host device bindings to add to the 
-# dns_opts: list of DNS options 
+# dns_opts: List of DNS options. 
 # dns_search_domains: List of custom DNS search domains. 
 # dns_servers: List of custom DNS servers. 
 # docker_host: The URL or Unix socket path used to connect to 
 # domainname: Container domainname. 
-# entrypoint: Command that overwrites the default ENTRYPOINT 
+# entrypoint: Command that overwrites the default `ENTRYPOINT' 
 # env: Dictionary of key,value pairs. Values which 
 # env_file: Path to a file, present on the target, 
 # etc_hosts: Dict of host-to-IP mappings, where each host 
@@ -37,24 +37,25 @@ ${1:# api_version: The version of the Docker API running on the
 # groups: List of additional group names and/or IDs that 
 # healthcheck: Configure a check that is run to determine 
 # der: healthcheck) 
-# hostname: Container hostname. 
-# ignore_image: When `state' is `present' or `started' the 
+# hostname: The container's hostname. 
+# ignore_image: When `state' is `present' or `started', the 
 # image: Repository path and tag used to create the 
 # init: Run an init inside the container that forwards 
 # interactive: Keep stdin open after a container is launched, 
 # ipc_mode: Set the IPC mode for the container. Can be one 
 # keep_volumes: Retain volumes associated with a removed 
-# kernel_memory: Kernel memory limit (format: 
+# kernel_memory: Kernel memory limit in format 
 # kill_signal: Override default signal used to kill a running 
 # labels: Dictionary of key value pairs. 
 # links: List of name aliases for linked containers in 
 # log_driver: Specify the logging driver. Docker uses `json- 
 # log_options: Dictionary of options specific to the chosen 
-# mac_address: Container MAC address (e.g. 92:d0:c6:0a:29:33) 
-# memory: Memory limit (format: `<number>[<unit>]'). 
-# memory_reservation: Memory soft limit (format: `<number>[<unit>]'). 
-# memory_swap: Total memory limit (memory + swap, format: 
+# mac_address: Container MAC address (e.g. 92:d0:c6:0a:29:33). 
+# memory: Memory limit in format `<number>[<unit>]'. 
+# memory_reservation: Memory soft limit in format `<number>[<unit>]'. 
+# memory_swap: Total memory limit (memory + swap) in format 
 # memory_swappiness: Tune a container's memory swappiness behavior. 
+# mounts: Specification for mounts to be added to the 
 # name: (required) Assign a name to a new container or 
 # network_mode: Connect the container to a network. Choices are 
 # networks: List of networks the container belongs to. For 
@@ -76,7 +77,7 @@ ${1:# api_version: The version of the Docker API running on the
 # restart_retries: Use with restart policy to control maximum 
 # runtime: Runtime to use for the container. 
 # security_opts: List of security options in the form of 
-# shm_size: Size of `/dev/shm' (format: `<number>[<unit>]'). 
+# shm_size: Size of `/dev/shm' in format `<number>[<unit>]'. 
 # ssl_version: Provide a valid SSL version number. Default 
 # state: `absent' - A container matching the specified 
 # stop_signal: Override default signal used to stop the 
@@ -85,7 +86,7 @@ ${1:# api_version: The version of the Docker API running on the
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 
 # tls_hostname: When verifying the authenticity of the Docker 
-# tmpfs: Mount a tmpfs directory 
+# tmpfs: Mount a tmpfs directory. 
 # trust_image_content: If `yes', skip image verification. 
 # tty: Allocate a pseudo-TTY. 
 # ulimits: List of ulimit options. A ulimit is specified as 
@@ -95,7 +96,7 @@ ${1:# api_version: The version of the Docker API running on the
 # validate_certs: Secure the connection to the API by using TLS 
 # volume_driver: The container volume driver. 
 # volumes: List of volumes to mount within the container. 
-# volumes_from: List of container names or Ids to get volumes 
+# volumes_from: List of container names or IDs to get volumes 
 # working_dir: Path to the working directory. 
 }- name: ${2:Name for docker_container module.}
   docker_container:
@@ -154,54 +155,55 @@ ${156:   ${157:memory}: ${158:"#"}}
 ${159:   ${160:memory_reservation}: ${161:"#"}}
 ${162:   ${163:memory_swap}: ${164:"#"}}
 ${165:   ${166:memory_swappiness}: ${167:"#"}}
-${168:   ${169:name}: ${170:"#"}}
-${171:   ${172:network_mode}: ${173:"#"}}
-${174:   ${175:networks}: ${176:"#"}}
-${177:   ${178:networks_cli_compatible}: ${179:"#"}}
-${180:   ${181:oom_killer}: ${182:"#"}}
-${183:   ${184:oom_score_adj}: ${185:"#"}}
-${186:   ${187:output_logs}: ${188:"#"}}
-${189:   ${190:paused}: ${191:"#"}}
-${192:   ${193:pid_mode}: ${194:"#"}}
-${195:   ${196:pids_limit}: ${197:"#"}}
-${198:   ${199:privileged}: ${200:"#"}}
-${201:   ${202:published_ports}: ${203:"#"}}
-${204:   ${205:pull}: ${206:"#"}}
-${207:   ${208:purge_networks}: ${209:"#"}}
-${210:   ${211:read_only}: ${212:"#"}}
-${213:   ${214:recreate}: ${215:"#"}}
-${216:   ${217:restart}: ${218:"#"}}
-${219:   ${220:restart_policy}: ${221:"#"}}
-${222:   ${223:restart_retries}: ${224:"#"}}
-${225:   ${226:runtime}: ${227:"#"}}
-${228:   ${229:security_opts}: ${230:"#"}}
-${231:   ${232:shm_size}: ${233:"#"}}
-${234:   ${235:ssl_version}: ${236:"#"}}
-${237:   ${238:state}: ${239:"#"}}
-${240:   ${241:stop_signal}: ${242:"#"}}
-${243:   ${244:stop_timeout}: ${245:"#"}}
-${246:   ${247:sysctls}: ${248:"#"}}
-${249:   ${250:timeout}: ${251:"#"}}
-${252:   ${253:tls}: ${254:"#"}}
-${255:   ${256:tls_hostname}: ${257:"#"}}
-${258:   ${259:tmpfs}: ${260:"#"}}
-${261:   ${262:trust_image_content}: ${263:"#"}}
-${264:   ${265:tty}: ${266:"#"}}
-${267:   ${268:ulimits}: ${269:"#"}}
-${270:   ${271:user}: ${272:"#"}}
-${273:   ${274:userns_mode}: ${275:"#"}}
-${276:   ${277:uts}: ${278:"#"}}
-${279:   ${280:validate_certs}: ${281:"#"}}
-${282:   ${283:volume_driver}: ${284:"#"}}
-${285:   ${286:volumes}: ${287:"#"}}
-${288:   ${289:volumes_from}: ${290:"#"}}
-${291:   ${292:working_dir}: ${293:"#"}}
-${294:${295:   become: ${296:true}} 
-${297:   become_method: ${298:su}} 
-${299:   become_user: ${300:nobody}} 
-${301:   become_flags: ${302:"-s /bin/sh"}}} 
-${303:   when: ${304:variable is defined}} 
-${305:   with_items: ${306:array}} 
+${168:   ${169:mounts}: ${170:"#"}}
+${171:   ${172:name}: ${173:"#"}}
+${174:   ${175:network_mode}: ${176:"#"}}
+${177:   ${178:networks}: ${179:"#"}}
+${180:   ${181:networks_cli_compatible}: ${182:"#"}}
+${183:   ${184:oom_killer}: ${185:"#"}}
+${186:   ${187:oom_score_adj}: ${188:"#"}}
+${189:   ${190:output_logs}: ${191:"#"}}
+${192:   ${193:paused}: ${194:"#"}}
+${195:   ${196:pid_mode}: ${197:"#"}}
+${198:   ${199:pids_limit}: ${200:"#"}}
+${201:   ${202:privileged}: ${203:"#"}}
+${204:   ${205:published_ports}: ${206:"#"}}
+${207:   ${208:pull}: ${209:"#"}}
+${210:   ${211:purge_networks}: ${212:"#"}}
+${213:   ${214:read_only}: ${215:"#"}}
+${216:   ${217:recreate}: ${218:"#"}}
+${219:   ${220:restart}: ${221:"#"}}
+${222:   ${223:restart_policy}: ${224:"#"}}
+${225:   ${226:restart_retries}: ${227:"#"}}
+${228:   ${229:runtime}: ${230:"#"}}
+${231:   ${232:security_opts}: ${233:"#"}}
+${234:   ${235:shm_size}: ${236:"#"}}
+${237:   ${238:ssl_version}: ${239:"#"}}
+${240:   ${241:state}: ${242:"#"}}
+${243:   ${244:stop_signal}: ${245:"#"}}
+${246:   ${247:stop_timeout}: ${248:"#"}}
+${249:   ${250:sysctls}: ${251:"#"}}
+${252:   ${253:timeout}: ${254:"#"}}
+${255:   ${256:tls}: ${257:"#"}}
+${258:   ${259:tls_hostname}: ${260:"#"}}
+${261:   ${262:tmpfs}: ${263:"#"}}
+${264:   ${265:trust_image_content}: ${266:"#"}}
+${267:   ${268:tty}: ${269:"#"}}
+${270:   ${271:ulimits}: ${272:"#"}}
+${273:   ${274:user}: ${275:"#"}}
+${276:   ${277:userns_mode}: ${278:"#"}}
+${279:   ${280:uts}: ${281:"#"}}
+${282:   ${283:validate_certs}: ${284:"#"}}
+${285:   ${286:volume_driver}: ${287:"#"}}
+${288:   ${289:volumes}: ${290:"#"}}
+${291:   ${292:volumes_from}: ${293:"#"}}
+${294:   ${295:working_dir}: ${296:"#"}}
+${297:${298:   become: ${299:true}} 
+${300:   become_method: ${301:su}} 
+${302:   become_user: ${303:nobody}} 
+${304:   become_flags: ${305:"-s /bin/sh"}}} 
+${306:   when: ${307:variable is defined}} 
+${308:   with_items: ${309:array}} 
 ]]></content>
 	<tabTrigger>docker_container</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

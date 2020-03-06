@@ -17,14 +17,9 @@ ${1:# auth_priv_from: Specifies the lowest level of messages about
 # mail_to: Specifies the highest level of mail log messages 
 # messages_from: Specifies the lowest level of system messages to 
 # messages_to: Specifies the highest level of system messages 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
-# user: (required) The username to connect to the BIG-IP 
 # user_log_from: Specifies the lowest level of user account 
 # user_log_to: Specifies the highest level of user account 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_device_syslog module.}
   bigip_device_syslog:
 ${3:   ${4:auth_priv_from}: ${5:"#"}}
@@ -44,20 +39,15 @@ ${42:   ${43:mail_from}: ${44:"#"}}
 ${45:   ${46:mail_to}: ${47:"#"}}
 ${48:   ${49:messages_from}: ${50:"#"}}
 ${51:   ${52:messages_to}: ${53:"#"}}
-${54:   ${55:password}: ${56:"#"}}
-${57:   ${58:provider}: ${59:"#"}}
-${60:   ${61:server}: ${62:"#"}}
-${63:   ${64:server_port}: ${65:"#"}}
-${66:   ${67:user}: ${68:"#"}}
-${69:   ${70:user_log_from}: ${71:"#"}}
-${72:   ${73:user_log_to}: ${74:"#"}}
-${75:   ${76:validate_certs}: ${77:"#"}}
-${78:${79:   become: ${80:true}} 
-${81:   become_method: ${82:su}} 
-${83:   become_user: ${84:nobody}} 
-${85:   become_flags: ${86:"-s /bin/sh"}}} 
-${87:   when: ${88:variable is defined}} 
-${89:   with_items: ${90:array}} 
+${54:   ${55:provider}: ${56:"#"}}
+${57:   ${58:user_log_from}: ${59:"#"}}
+${60:   ${61:user_log_to}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>bigip_device_syslog</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

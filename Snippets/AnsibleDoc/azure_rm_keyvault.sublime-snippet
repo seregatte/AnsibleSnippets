@@ -19,12 +19,12 @@ ${1:# access_policies: An array of 0 to 16 identities that have access
 # recover_mode: Create vault in recovery mode. 
 # resource_group: (required) The name of the Resource Group to 
 # secret: Azure client secret. Use when authenticating 
-# sku: SKU details 
+# sku: SKU details. 
 # state: Assert the state of the KeyVault. Use `present' 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
-# vault_name: (required) Name of the vault 
+# vault_name: (required) Name of the vault. 
 # vault_tenant: The Azure Active Directory tenant ID that should 
 }- name: ${2:Name for azure_rm_keyvault module.}
   azure_rm_keyvault:

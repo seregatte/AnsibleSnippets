@@ -20,7 +20,7 @@ ${1:# configuration_mode: Disk group configuration mode. Choose one of the
 # use_remaining_disks: Specifies whether you can use all the remaining 
 # use_ssl: If `no', an HTTP connection will be used instead 
 # username: Username for Cisco UCS Manager authentication. 
-# virtual_drive: Configuraiton of virtual drive options. 
+# virtual_drive: Configuration of virtual drive options. 
 }- name: ${2:Name for ucs_disk_group_policy module.}
   ucs_disk_group_policy:
 ${3:   ${4:configuration_mode}: ${5:"#"}}

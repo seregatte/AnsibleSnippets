@@ -21,6 +21,7 @@ ${1:# api_timeout: How long should the socket layer wait before
 # name: (required) The name of the image when uploading 
 # owner: The owner of the image 
 # properties: Additional properties to be associated with this 
+# protected: Prevent image from being deleted 
 # ramdisk: The name of an existing ramdisk image that will 
 # region_name: Name of the region. 
 # state: Should the resource be present or absent. 
@@ -50,18 +51,19 @@ ${54:   ${55:min_ram}: ${56:"#"}}
 ${57:   ${58:name}: ${59:"#"}}
 ${60:   ${61:owner}: ${62:"#"}}
 ${63:   ${64:properties}: ${65:"#"}}
-${66:   ${67:ramdisk}: ${68:"#"}}
-${69:   ${70:region_name}: ${71:"#"}}
-${72:   ${73:state}: ${74:"#"}}
-${75:   ${76:timeout}: ${77:"#"}}
-${78:   ${79:validate_certs}: ${80:"#"}}
-${81:   ${82:wait}: ${83:"#"}}
-${84:${85:   become: ${86:true}} 
-${87:   become_method: ${88:su}} 
-${89:   become_user: ${90:nobody}} 
-${91:   become_flags: ${92:"-s /bin/sh"}}} 
-${93:   when: ${94:variable is defined}} 
-${95:   with_items: ${96:array}} 
+${66:   ${67:protected}: ${68:"#"}}
+${69:   ${70:ramdisk}: ${71:"#"}}
+${72:   ${73:region_name}: ${74:"#"}}
+${75:   ${76:state}: ${77:"#"}}
+${78:   ${79:timeout}: ${80:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
+${84:   ${85:wait}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
 ]]></content>
 	<tabTrigger>os_image</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

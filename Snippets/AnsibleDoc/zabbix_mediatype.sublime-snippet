@@ -1,0 +1,70 @@
+<snippet>
+<content><![CDATA[
+${1:# attempt_interval: The interval between retry attempts. Possible 
+# gsm_modem: Serial device name of the gsm modem. Required 
+# http_login_password: Basic Auth password 
+# http_login_user: (required) Basic Auth login 
+# login_password: (required) Zabbix user password. 
+# login_user: (required) Zabbix user name. 
+# max_attempts: The maximum number of attempts to send an alert. 
+# max_sessions: The maximum number of alerts that can be 
+# message_text_limit: The message text limit. Required when 
+# name: (required) Name of the media type. 
+# password: Authentication password. Required when 
+# script_name: The name of the executed script. Required when 
+# script_params: List of script parameters. Required when 
+# server_url: (required) URL of Zabbix server, with protocol 
+# smtp_authentication: Whether SMTP authentication with username and 
+# smtp_email: Email address from which notifications will be 
+# smtp_helo: SMTP HELO. Required when `type=email'. 
+# smtp_security: SMTP connection security level to use. 
+# smtp_server: SMTP server host. Required when `type=email'. 
+# smtp_server_port: SMTP server port. Required when `type=email'. 
+# smtp_verify_host: SSL verify host for SMTP. Can be specified when 
+# smtp_verify_peer: SSL verify peer for SMTP. Can be specified when 
+# state: Desired state of the mediatype. On `present', it 
+# status: Whether the media type is enabled or no. 
+# timeout: The timeout of API request (seconds). 
+# type: (required) Type of the media type. 
+# username: Username or Jabber identifier. Required when 
+# validate_certs: If set to False, SSL certificates will not be 
+}- name: ${2:Name for zabbix_mediatype module.}
+  zabbix_mediatype:
+${3:   ${4:attempt_interval}: ${5:"#"}}
+${6:   ${7:gsm_modem}: ${8:"#"}}
+${9:   ${10:http_login_password}: ${11:"#"}}
+${12:   ${13:http_login_user}: ${14:"#"}}
+${15:   ${16:login_password}: ${17:"#"}}
+${18:   ${19:login_user}: ${20:"#"}}
+${21:   ${22:max_attempts}: ${23:"#"}}
+${24:   ${25:max_sessions}: ${26:"#"}}
+${27:   ${28:message_text_limit}: ${29:"#"}}
+${30:   ${31:name}: ${32:"#"}}
+${33:   ${34:password}: ${35:"#"}}
+${36:   ${37:script_name}: ${38:"#"}}
+${39:   ${40:script_params}: ${41:"#"}}
+${42:   ${43:server_url}: ${44:"#"}}
+${45:   ${46:smtp_authentication}: ${47:"#"}}
+${48:   ${49:smtp_email}: ${50:"#"}}
+${51:   ${52:smtp_helo}: ${53:"#"}}
+${54:   ${55:smtp_security}: ${56:"#"}}
+${57:   ${58:smtp_server}: ${59:"#"}}
+${60:   ${61:smtp_server_port}: ${62:"#"}}
+${63:   ${64:smtp_verify_host}: ${65:"#"}}
+${66:   ${67:smtp_verify_peer}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:status}: ${74:"#"}}
+${75:   ${76:timeout}: ${77:"#"}}
+${78:   ${79:type}: ${80:"#"}}
+${81:   ${82:username}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
+]]></content>
+	<tabTrigger>zabbix_mediatype</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# channel: Define which release of a snap is installed and 
-# classic: Confinement policy. The classic confinment 
+# classic: Confinement policy. The classic confinement 
 # name: (required) Name of the snap to install or 
 # state: Desired state of the package. 
 }- name: ${2:Name for snap module.}

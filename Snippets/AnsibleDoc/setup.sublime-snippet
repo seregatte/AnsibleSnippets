@@ -1,8 +1,8 @@
 <snippet>
 <content><![CDATA[
-${1:# fact_path: path used for local ansible facts (`*.fact') - 
-# filter: if supplied, only return facts that match this 
-# gather_subset: if supplied, restrict the additional facts 
+${1:# fact_path: Path used for local ansible facts (`*.fact') - 
+# filter: If supplied, only return facts that match this 
+# gather_subset: If supplied, restrict the additional facts 
 # gather_timeout: Set the default timeout in seconds for 
 }- name: ${2:Name for setup module.}
   setup:

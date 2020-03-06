@@ -18,17 +18,17 @@ ${1:# ad_user: Active Directory username. Use when
 # forward_dead_lettered_messages_to: Queue or topic name to forward the Dead Letter 
 # forward_to: Queue or topic name to forward the messages for 
 # lock_duration_in_seconds: Timespan duration of a peek-lock. The amount of 
-# max_delivery_count: he maximum delivery count. A message is 
+# max_delivery_count: The maximum delivery count. A message is 
 # max_size_in_mb: The maximum size of the queue in megabytes, 
-# name: (required) name of the queue. 
+# name: (required) Name of the queue. 
 # namespace: (required) Servicebus namespace name. A 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # requires_duplicate_detection: A value indicating if this queue or topic 
 # requires_session: A value that indicates whether the queue 
-# resource_group: (required) name of resource group. 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the queue. Use 'present' to 
+# state: Assert the state of the queue. Use `present' to 
 # status: Status of the entity. 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

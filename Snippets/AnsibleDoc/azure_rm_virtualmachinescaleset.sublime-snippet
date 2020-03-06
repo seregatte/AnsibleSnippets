@@ -26,20 +26,21 @@ ${1:# ad_user: Active Directory username. Use when
 # overprovision: Specifies whether the Virtual Machine Scale Set 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
-# remove_on_absent: When removing a VM using state 'absent', also 
+# remove_on_absent: When removing a VM using `state=absent', also 
 # resource_group: (required) Name of the resource group containing 
 # secret: Azure client secret. Use when authenticating 
 # security_group: Existing security group with which to associate 
-# short_hostname: Short host name 
+# short_hostname: Short host name. 
+# single_placement_group: When true this limits the scale set to a single 
 # ssh_password_enabled: When the os_type is Linux, setting 
-# ssh_public_keys: For os_type Linux provide a list of SSH keys. 
+# ssh_public_keys: For `os_type=Linux' provide a list of SSH keys. 
 # state: Assert the state of the virtual machine scale 
 # subnet_name: Subnet name. 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
 # tier: SKU Tier. 
-# upgrade_policy: Upgrade policy. 
+# upgrade_policy: Upgrade policy. Required when creating the Azure 
 # virtual_network_name: Virtual Network name. 
 # virtual_network_resource_group: When creating a virtual machine, if a specific 
 # vm_size: A valid Azure VM size value. For example, 
@@ -77,25 +78,26 @@ ${84:   ${85:resource_group}: ${86:"#"}}
 ${87:   ${88:secret}: ${89:"#"}}
 ${90:   ${91:security_group}: ${92:"#"}}
 ${93:   ${94:short_hostname}: ${95:"#"}}
-${96:   ${97:ssh_password_enabled}: ${98:"#"}}
-${99:   ${100:ssh_public_keys}: ${101:"#"}}
-${102:   ${103:state}: ${104:"#"}}
-${105:   ${106:subnet_name}: ${107:"#"}}
-${108:   ${109:subscription_id}: ${110:"#"}}
-${111:   ${112:tags}: ${113:"#"}}
-${114:   ${115:tenant}: ${116:"#"}}
-${117:   ${118:tier}: ${119:"#"}}
-${120:   ${121:upgrade_policy}: ${122:"#"}}
-${123:   ${124:virtual_network_name}: ${125:"#"}}
-${126:   ${127:virtual_network_resource_group}: ${128:"#"}}
-${129:   ${130:vm_size}: ${131:"#"}}
-${132:   ${133:zones}: ${134:"#"}}
-${135:${136:   become: ${137:true}} 
-${138:   become_method: ${139:su}} 
-${140:   become_user: ${141:nobody}} 
-${142:   become_flags: ${143:"-s /bin/sh"}}} 
-${144:   when: ${145:variable is defined}} 
-${146:   with_items: ${147:array}} 
+${96:   ${97:single_placement_group}: ${98:"#"}}
+${99:   ${100:ssh_password_enabled}: ${101:"#"}}
+${102:   ${103:ssh_public_keys}: ${104:"#"}}
+${105:   ${106:state}: ${107:"#"}}
+${108:   ${109:subnet_name}: ${110:"#"}}
+${111:   ${112:subscription_id}: ${113:"#"}}
+${114:   ${115:tags}: ${116:"#"}}
+${117:   ${118:tenant}: ${119:"#"}}
+${120:   ${121:tier}: ${122:"#"}}
+${123:   ${124:upgrade_policy}: ${125:"#"}}
+${126:   ${127:virtual_network_name}: ${128:"#"}}
+${129:   ${130:virtual_network_resource_group}: ${131:"#"}}
+${132:   ${133:vm_size}: ${134:"#"}}
+${135:   ${136:zones}: ${137:"#"}}
+${138:${139:   become: ${140:true}} 
+${141:   become_method: ${142:su}} 
+${143:   become_user: ${144:nobody}} 
+${145:   become_flags: ${146:"-s /bin/sh"}}} 
+${147:   when: ${148:variable is defined}} 
+${149:   with_items: ${150:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_virtualmachinescaleset</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

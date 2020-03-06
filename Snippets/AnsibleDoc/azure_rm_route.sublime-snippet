@@ -9,12 +9,12 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# name: (required) name of the route. 
+# name: (required) Name of the route. 
 # next_hop_ip_address: The IP address packets should be forwarded to. 
 # next_hop_type: The type of Azure hop the packet should be sent 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
-# resource_group: (required) name of resource group. 
+# resource_group: (required) Name of resource group. 
 # route_table_name: (required) The name of the route table. 
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the route. Use `present' to 

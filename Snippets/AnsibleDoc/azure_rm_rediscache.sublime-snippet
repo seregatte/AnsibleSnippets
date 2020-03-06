@@ -8,7 +8,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# enable_non_ssl_port: When true, the non-ssl redis server port 6379 
+# enable_non_ssl_port: When set `enable_non_ssl_port=true', the non-ssl 
 # location: Resource location. If not set, location from the 
 # maxfragmentationmemory_reserved: Configures the amount of memory in MB that is 
 # : advanced- 
@@ -25,8 +25,8 @@ ${1:# ad_user: Active Directory username. Use when
 # regenerate_key: Regenerate Redis cache's access keys. 
 # resource_group: (required) Name of the resource group to which 
 # secret: Azure client secret. Use when authenticating 
-# shard_count: The number of shards to be created when `sku' is 
-# sku: Sku info of Azure Cache for Redis. 
+# shard_count: The number of shards to be created when 
+# sku: SKU info of Azure Cache for Redis. 
 # state: Assert the state of the Azure Cache for Redis. 
 # static_ip: Static IP address. Required when deploying an 
 # subnet: Subnet in a virtual network to deploy the Azure 

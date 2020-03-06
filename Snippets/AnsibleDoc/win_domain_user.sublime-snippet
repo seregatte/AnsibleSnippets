@@ -24,7 +24,7 @@ ${1:# account_locked: `no' will unlock the user account if locked.
 # state_province: Configures the user's state or province. 
 # street: Configures the user's street address. 
 # surname: Configures the user's last name (surname). 
-# update_password: `always' will update passwords if they differ. 
+# update_password: `always' will always update passwords. 
 # upn: Configures the User Principal Name (UPN) for the 
 # user_cannot_change_password: `yes' will prevent the user from changing their 
 }- name: ${2:Name for win_domain_user module.}

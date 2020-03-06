@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# baseuri: (required) Base URI of iDRAC controller 
+# category: (required) Category to execute on iDRAC 
+# command: (required) List of commands to execute on iDRAC 
+# password: (required) Password for authentication with 
+# timeout: Timeout in seconds for URL requests to OOB 
+# username: (required) User for authentication with iDRAC 
+}- name: ${2:Name for idrac_redfish_info module.}
+  idrac_redfish_info:
+${3:   ${4:baseuri}: ${5:"#"}}
+${6:   ${7:category}: ${8:"#"}}
+${9:   ${10:command}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:timeout}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>idrac_redfish_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

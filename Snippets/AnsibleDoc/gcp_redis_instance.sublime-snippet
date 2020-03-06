@@ -4,6 +4,7 @@ ${1:# alternative_location_id: Only applicable to STANDARD_HA tier which
 # auth_kind: (required) The type of credential used. 
 # authorized_network: The full name of the Google Compute Engine 
 # display_name: An arbitrary and optional user-provided name for 
+# env_type: Specifies which Ansible environment you're 
 # labels: Resource labels to represent user provided 
 # location_id: The zone where the instance will be provisioned. 
 # memory_size_gb: (required) Redis memory size in GiB. 
@@ -15,7 +16,7 @@ ${1:# alternative_location_id: Only applicable to STANDARD_HA tier which
 # region: (required) The name of the Redis region of the 
 # reserved_ip_range: The CIDR range of internal addresses that are 
 # scopes: Array of scopes to be used. 
-# service_account_contents: A string representing the contents of a Service 
+# service_account_contents: The contents of a Service Account JSON file, 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # state: Whether the given object should exist in GCP 
@@ -26,28 +27,29 @@ ${3:   ${4:alternative_location_id}: ${5:"#"}}
 ${6:   ${7:auth_kind}: ${8:"#"}}
 ${9:   ${10:authorized_network}: ${11:"#"}}
 ${12:   ${13:display_name}: ${14:"#"}}
-${15:   ${16:labels}: ${17:"#"}}
-${18:   ${19:location_id}: ${20:"#"}}
-${21:   ${22:memory_size_gb}: ${23:"#"}}
-${24:   ${25:name}: ${26:"#"}}
-${27:   ${28:project}: ${29:"#"}}
-${30:   ${31:redis_configs}: ${32:"#"}}
-${33:   ${34:nces}: ${35:"#"}}
-${36:   ${37:redis_version}: ${38:"#"}}
-${39:   ${40:region}: ${41:"#"}}
-${42:   ${43:reserved_ip_range}: ${44:"#"}}
-${45:   ${46:scopes}: ${47:"#"}}
-${48:   ${49:service_account_contents}: ${50:"#"}}
-${51:   ${52:service_account_email}: ${53:"#"}}
-${54:   ${55:service_account_file}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:tier}: ${62:"#"}}
-${63:${64:   become: ${65:true}} 
-${66:   become_method: ${67:su}} 
-${68:   become_user: ${69:nobody}} 
-${70:   become_flags: ${71:"-s /bin/sh"}}} 
-${72:   when: ${73:variable is defined}} 
-${74:   with_items: ${75:array}} 
+${15:   ${16:env_type}: ${17:"#"}}
+${18:   ${19:labels}: ${20:"#"}}
+${21:   ${22:location_id}: ${23:"#"}}
+${24:   ${25:memory_size_gb}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:project}: ${32:"#"}}
+${33:   ${34:redis_configs}: ${35:"#"}}
+${36:   ${37:nces}: ${38:"#"}}
+${39:   ${40:redis_version}: ${41:"#"}}
+${42:   ${43:region}: ${44:"#"}}
+${45:   ${46:reserved_ip_range}: ${47:"#"}}
+${48:   ${49:scopes}: ${50:"#"}}
+${51:   ${52:service_account_contents}: ${53:"#"}}
+${54:   ${55:service_account_email}: ${56:"#"}}
+${57:   ${58:service_account_file}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:   ${64:tier}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>gcp_redis_instance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

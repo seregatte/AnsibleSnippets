@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# log_format_delimiter: Specifies the delimiter string when using a 
+# log_ip_errors: Modify log settings for logging of IP error 
+# log_matches_accept_rule: Modify log settings for ACL rules configured 
+# log_matches_drop_rule: Modify log settings for ACL rules configured 
+# log_matches_reject_rule: Modify log settings for ACL rules configured 
+# log_message_fields: Specifies a set of fields to be logged. This 
+# log_publisher: Specifies the name of the log publisher used for 
+# log_storage_format: Specifies the type of the storage format. When 
+# log_tcp_errors: Modify log settings for logging of TCP error 
+# log_tcp_events: Modify log settings for logging of TCP events on 
+# log_translation_fields: This option is used to enable or disable the 
+# partition: Device partition to create log profile on. 
+# profile_name: (required) Specifies the name of the AFM log 
+# provider: A dict object containing connection details. 
+# rate_limit: Defines a rate limit for all combined network 
+# state: When `state' is `present', ensures the resource 
+}- name: ${2:Name for bigip_firewall_log_profile_network module.}
+  bigip_firewall_log_profile_network:
+${3:   ${4:log_format_delimiter}: ${5:"#"}}
+${6:   ${7:log_ip_errors}: ${8:"#"}}
+${9:   ${10:log_matches_accept_rule}: ${11:"#"}}
+${12:   ${13:log_matches_drop_rule}: ${14:"#"}}
+${15:   ${16:log_matches_reject_rule}: ${17:"#"}}
+${18:   ${19:log_message_fields}: ${20:"#"}}
+${21:   ${22:log_publisher}: ${23:"#"}}
+${24:   ${25:log_storage_format}: ${26:"#"}}
+${27:   ${28:log_tcp_errors}: ${29:"#"}}
+${30:   ${31:log_tcp_events}: ${32:"#"}}
+${33:   ${34:log_translation_fields}: ${35:"#"}}
+${36:   ${37:partition}: ${38:"#"}}
+${39:   ${40:profile_name}: ${41:"#"}}
+${42:   ${43:provider}: ${44:"#"}}
+${45:   ${46:rate_limit}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>bigip_firewall_log_profile_network</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -5,19 +5,19 @@ ${1:# ad_user: Active Directory username. Use when
 # api_profile: Selects an API profile to use when communicating 
 # append_tags: Use to control if tags field is canonical or 
 # auth_source: Controls the source of the credentials to use 
-# backend_address_pools: List of backend address pools 
+# backend_address_pools: List of backend address pools. 
 # backend_port: (deprecated) Backend port that will be exposed 
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# frontend_ip_configurations: List of frontend IPs to be used 
+# frontend_ip_configurations: List of frontend IPs to be used. 
 # frontend_port: (deprecated) Frontend port that will be exposed 
 # idle_timeout: (deprecated) Timeout for TCP idle connection in 
 # inbound_nat_pools: Defines an external port range for inbound NAT 
 # inbound_nat_rules: Collection of inbound NAT Rules used by a load 
 # load_balancing_rules: Object collection representing the load 
 # load_distribution: (deprecated) The type of load distribution that 
-# location: Valid azure location. Defaults to location of 
+# location: Valid Azure location. Defaults to location of 
 # name: (required) Name of the load balancer. 
 # natpool_backend_port: (deprecated) Backend port used by the NAT pool. 
 # natpool_frontend_port_end: (deprecated) End of the port range for a NAT 
@@ -28,7 +28,7 @@ ${1:# ad_user: Active Directory username. Use when
 # probe_interval: (deprecated) Time (in seconds) between endpoint 
 # probe_port: (deprecated) The port that the health probe will 
 # probe_protocol: (deprecated) The protocol to use for the health 
-# probe_request_path: (deprecated) The URL that an HTTP probe will use 
+# probe_request_path: (deprecated) The URL that an HTTP probe or HTTPS 
 # probes: List of probe definitions used to check endpoint 
 # profile: Security profile found in ~/.azure/credentials 
 # protocol: (deprecated) The protocol (TCP or UDP) that the 

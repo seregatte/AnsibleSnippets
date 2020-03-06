@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# account_sid: The Twillio accound SID. Required if 
+${1:# account_sid: The Twillio account SID. Required if 
 # account_token: The Twillio account token. Required if 
 # api_url: The HipChat API URL. Required if 
 # channels: The destination Slack channels. Required if 

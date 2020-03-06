@@ -1,0 +1,38 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# event_source_arn: For query type 'mappings', this is the Amazon 
+# function_name: The name of the lambda function for which 
+# profile: Uses a boto profile. Only works with boto >= 
+# query: (required) Specifies the resource type for which 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for lambda_info module.}
+  lambda_info:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:debug_botocore_endpoint_logs}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:event_source_arn}: ${17:"#"}}
+${18:   ${19:function_name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:query}: ${26:"#"}}
+${27:   ${28:region}: ${29:"#"}}
+${30:   ${31:}: ${32:"#"}}
+${33:   ${34:security_token}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
+]]></content>
+	<tabTrigger>lambda_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

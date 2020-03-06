@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF 
-# affinity_label_mappings: Mappper which maps affinity label name between 
+${1:# affinity_group_mappings: Mapper which maps affinity name between VM's OVF 
+# affinity_label_mappings: Mapper which maps affinity label name between 
 # allow_partial_import: Boolean indication whether to allow partial 
 # auth: (required) Dictionary with values needed to 
 # ballooning_enabled: If `true', use memory ballooning. Memory balloon 
@@ -21,7 +21,7 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # cpu_pinning: CPU Pinning topology to map virtual machine CPU 
 # cpu_shares: Set a CPU shares for this Virtual Machine. 
 # cpu_sockets: Number of virtual CPUs sockets of the Virtual 
-# cpu_threads: Number of virtual CPUs sockets of the Virtual 
+# cpu_threads: Number of threads per core of the Virtual 
 # custom_compatibility_version: Enables a virtual machine to be customized to 
 # custom_properties: Properties sent to VDSM to configure various 
 # delete_protected: If `yes' Virtual Machine will be set as delete 
@@ -71,6 +71,8 @@ ${1:# affinity_group_mappings: Mapper which maps affinty name between VM's OVF
 # serial_policy: Specify a serial number policy for the Virtual 
 # serial_policy_value: Allows you to specify a custom serial number. 
 # smartcard_enabled: If `true', use smart card authentication. 
+# snapshot_name: Snapshot to clone VM from. Snapshot with 
+# snapshot_vm: Source VM to clone VM from. VM should have 
 # soundcard_enabled: If `true', the sound card is added to the 
 # sso: `True' enable Single Sign On by Guest Agent, 
 # state: Should the Virtual Machine be running/stopped/pr 
@@ -163,31 +165,33 @@ ${204:   ${205:serial_console}: ${206:"#"}}
 ${207:   ${208:serial_policy}: ${209:"#"}}
 ${210:   ${211:serial_policy_value}: ${212:"#"}}
 ${213:   ${214:smartcard_enabled}: ${215:"#"}}
-${216:   ${217:soundcard_enabled}: ${218:"#"}}
-${219:   ${220:sso}: ${221:"#"}}
-${222:   ${223:state}: ${224:"#"}}
-${225:   ${226:stateless}: ${227:"#"}}
-${228:   ${229:storage_domain}: ${230:"#"}}
-${231:   ${232:sysprep}: ${233:"#"}}
-${234:   ${235:template}: ${236:"#"}}
-${237:   ${238:template_version}: ${239:"#"}}
-${240:   ${241:ticket}: ${242:"#"}}
-${243:   ${244:timeout}: ${245:"#"}}
-${246:   ${247:timezone}: ${248:"#"}}
-${249:   ${250:type}: ${251:"#"}}
-${252:   ${253:usb_support}: ${254:"#"}}
-${255:   ${256:use_latest_template_version}: ${257:"#"}}
-${258:   ${259:vmware}: ${260:"#"}}
-${261:   ${262:vnic_profile_mappings}: ${263:"#"}}
-${264:   ${265:wait}: ${266:"#"}}
-${267:   ${268:watchdog}: ${269:"#"}}
-${270:   ${271:xen}: ${272:"#"}}
-${273:${274:   become: ${275:true}} 
-${276:   become_method: ${277:su}} 
-${278:   become_user: ${279:nobody}} 
-${280:   become_flags: ${281:"-s /bin/sh"}}} 
-${282:   when: ${283:variable is defined}} 
-${284:   with_items: ${285:array}} 
+${216:   ${217:snapshot_name}: ${218:"#"}}
+${219:   ${220:snapshot_vm}: ${221:"#"}}
+${222:   ${223:soundcard_enabled}: ${224:"#"}}
+${225:   ${226:sso}: ${227:"#"}}
+${228:   ${229:state}: ${230:"#"}}
+${231:   ${232:stateless}: ${233:"#"}}
+${234:   ${235:storage_domain}: ${236:"#"}}
+${237:   ${238:sysprep}: ${239:"#"}}
+${240:   ${241:template}: ${242:"#"}}
+${243:   ${244:template_version}: ${245:"#"}}
+${246:   ${247:ticket}: ${248:"#"}}
+${249:   ${250:timeout}: ${251:"#"}}
+${252:   ${253:timezone}: ${254:"#"}}
+${255:   ${256:type}: ${257:"#"}}
+${258:   ${259:usb_support}: ${260:"#"}}
+${261:   ${262:use_latest_template_version}: ${263:"#"}}
+${264:   ${265:vmware}: ${266:"#"}}
+${267:   ${268:vnic_profile_mappings}: ${269:"#"}}
+${270:   ${271:wait}: ${272:"#"}}
+${273:   ${274:watchdog}: ${275:"#"}}
+${276:   ${277:xen}: ${278:"#"}}
+${279:${280:   become: ${281:true}} 
+${282:   become_method: ${283:su}} 
+${284:   become_user: ${285:nobody}} 
+${286:   become_flags: ${287:"-s /bin/sh"}}} 
+${288:   when: ${289:variable is defined}} 
+${290:   with_items: ${291:array}} 
 ]]></content>
 	<tabTrigger>ovirt_vm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

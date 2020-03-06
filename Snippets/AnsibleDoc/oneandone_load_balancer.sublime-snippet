@@ -8,7 +8,7 @@ ${1:# add_rules: A list of rules that will be added to an
 # description: Description of the load balancer. maxLength=256 
 # health_check_interval: (required) Health check period in seconds. 
 # health_check_parse: Regular expression to check. Required for HTTP 
-# health_check_path: Url to call for cheking. Required for HTTP 
+# health_check_path: Url to call for checking. Required for HTTP 
 # health_check_test: (required) Type of the health check. At the 
 # load_balancer: (required) The identifier (id or name) of the 
 # method: (required) Balancing procedure. 

@@ -10,18 +10,18 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# identity: The identity type. Set this to 'SystemAssigned' 
+# identity: The identity type. Set this to `SystemAssigned' 
 # location: Resource location. 
 # name: (required) The name of the server. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) The name of the resource group that 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the SQL server. Use 
+# state: State of the SQL server. Use `present' to create 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
-# version: The version of the server. For example '12.0'. 
+# version: The version of the server. For example `12.0'. 
 }- name: ${2:Name for azure_rm_sqlserver module.}
   azure_rm_sqlserver:
 ${3:   ${4:ad_user}: ${5:"#"}}

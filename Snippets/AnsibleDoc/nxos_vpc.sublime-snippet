@@ -1,12 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# auto_recovery: Enables/Disables auto recovery 
+${1:# auto_recovery: Enables/Disables auto recovery on platforms that 
+# auto_recovery_reload_delay: Manages auto-recovery reload-delay timer in 
 # delay_restore: manages delay restore command and config value 
+# delay_restore_interface_vlan: manages delay restore interface-vlan command and 
+# delay_restore_orphan_port: manages delay restore orphan-port command and 
 # domain: (required) VPC domain 
 # peer_gw: Enables/Disables peer gateway 
 # pkl_dest: Destination (remote) IP address used for peer 
 # pkl_src: Source IP address used for peer keepalive link 
-# pkl_vrf: VRF used for peer keepalive link 
+# pkl_vrf: VRF used for peer keepalive link The VRF must 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # role_priority: Role priority for device. Remember lower is 
 # state: (required) Manages desired state of the resource 
@@ -14,22 +17,25 @@ ${1:# auto_recovery: Enables/Disables auto recovery
 }- name: ${2:Name for nxos_vpc module.}
   nxos_vpc:
 ${3:   ${4:auto_recovery}: ${5:"#"}}
-${6:   ${7:delay_restore}: ${8:"#"}}
-${9:   ${10:domain}: ${11:"#"}}
-${12:   ${13:peer_gw}: ${14:"#"}}
-${15:   ${16:pkl_dest}: ${17:"#"}}
-${18:   ${19:pkl_src}: ${20:"#"}}
-${21:   ${22:pkl_vrf}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:role_priority}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:system_priority}: ${35:"#"}}
-${36:${37:   become: ${38:true}} 
-${39:   become_method: ${40:su}} 
-${41:   become_user: ${42:nobody}} 
-${43:   become_flags: ${44:"-s /bin/sh"}}} 
-${45:   when: ${46:variable is defined}} 
-${47:   with_items: ${48:array}} 
+${6:   ${7:auto_recovery_reload_delay}: ${8:"#"}}
+${9:   ${10:delay_restore}: ${11:"#"}}
+${12:   ${13:delay_restore_interface_vlan}: ${14:"#"}}
+${15:   ${16:delay_restore_orphan_port}: ${17:"#"}}
+${18:   ${19:domain}: ${20:"#"}}
+${21:   ${22:peer_gw}: ${23:"#"}}
+${24:   ${25:pkl_dest}: ${26:"#"}}
+${27:   ${28:pkl_src}: ${29:"#"}}
+${30:   ${31:pkl_vrf}: ${32:"#"}}
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:role_priority}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:system_priority}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>nxos_vpc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -5,15 +5,10 @@ ${1:# assigned_role: Specifies the authorization (level of access)
 # line_order: Specifies the order of the line in the file 
 # name: (required) Specifies the name of the remote 
 # partition_access: Specifies the accessible partitions for the 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # remote_access: Enables or disables remote access for the 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', guarantees that the remote role 
 # terminal_access: Specifies terminal-based accessibility for 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_remote_role module.}
   bigip_remote_role:
 ${3:   ${4:assigned_role}: ${5:"#"}}
@@ -21,21 +16,16 @@ ${6:   ${7:attribute_string}: ${8:"#"}}
 ${9:   ${10:line_order}: ${11:"#"}}
 ${12:   ${13:name}: ${14:"#"}}
 ${15:   ${16:partition_access}: ${17:"#"}}
-${18:   ${19:password}: ${20:"#"}}
-${21:   ${22:provider}: ${23:"#"}}
-${24:   ${25:remote_access}: ${26:"#"}}
-${27:   ${28:server}: ${29:"#"}}
-${30:   ${31:server_port}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:terminal_access}: ${38:"#"}}
-${39:   ${40:user}: ${41:"#"}}
-${42:   ${43:validate_certs}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:remote_access}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:terminal_access}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>bigip_remote_role</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

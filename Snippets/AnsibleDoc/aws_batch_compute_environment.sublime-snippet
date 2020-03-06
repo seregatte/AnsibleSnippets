@@ -22,7 +22,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # security_token: AWS STS security token. If not set then the 
 # service_role: (required) The full Amazon Resource Name (ARN) 
 # spot_iam_fleet_role: The Amazon Resource Name (ARN) of the Amazon EC2 
-# state: (required) Describes the desired state. 
+# state: Describes the desired state. 
 # subnets: (required) The VPC subnets into which the 
 # tags: Key-value pair tags to be applied to resources 
 # type: (required) The type of the compute environment. 

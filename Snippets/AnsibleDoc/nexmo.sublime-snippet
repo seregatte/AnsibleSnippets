@@ -5,7 +5,7 @@ ${1:# api_key: (required) Nexmo API Key
 # client_cert: PEM formatted certificate chain file to be used 
 # client_key: PEM formatted file that contains your private 
 # dest: (required) Phone number(s) to send SMS message 
-# force: If `yes' do not get a cached copy. 
+# force: If `yes' do not get a cached copy. Alias 
 # force_basic_auth: Credentials specified with `url_username' and 
 # http_agent: Header to identify as, generally appears in web 
 # msg: (required) Message to text to send. Messages 

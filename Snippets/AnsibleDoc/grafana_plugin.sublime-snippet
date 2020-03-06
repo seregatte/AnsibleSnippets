@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# grafana_plugin_url: Custom Grafana plugin URL. Requires grafana 
-# grafana_plugins_dir: Directory where Grafana plugin will be 
-# grafana_repo: Grafana repository. If not set, gafana-cli will 
+${1:# grafana_plugin_url: Full URL to the plugin zip file instead of 
+# grafana_plugins_dir: Directory where the Grafana plugin will be 
+# grafana_repo: URL to the Grafana plugin repository. If 
 # name: (required) Name of the plugin. 
-# state: Status of the Grafana plugin. If latest is set, 
-# version: Version of the plugin to install. Default to 
+# state: Whether the plugin should be installed. 
+# version: Version of the plugin to install. Defaults to 
 }- name: ${2:Name for grafana_plugin module.}
   grafana_plugin:
 ${3:   ${4:grafana_plugin_url}: ${5:"#"}}

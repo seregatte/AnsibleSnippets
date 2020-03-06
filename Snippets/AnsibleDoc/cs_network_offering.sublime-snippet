@@ -21,7 +21,7 @@ ${1:# api_http_method: HTTP method used to query the API endpoint. If
 # service_capabilities: Desired service capabilities as part of network 
 # service_offering: The service offering name or ID used by virtual 
 # service_providers: Provider to service mapping. If not specified, 
-# specify_ip_ranges: Wheter the network offering supports specifying 
+# specify_ip_ranges: Whether the network offering supports specifying 
 # specify_vlan: Whether the network offering supports vlans or 
 # state: State of the network offering. 
 # supported_services: Services supported by the network offering. A 

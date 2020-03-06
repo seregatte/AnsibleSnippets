@@ -8,7 +8,7 @@ ${1:# api_timeout: How long should the socket layer wait before
 # client_cert: A path to a client certificate to use as part of 
 # client_key: A path to a client key to use as part of the SSL 
 # cloud: Named cloud or cloud config to operate against. 
-# domain: ID of the domain to scope the role association 
+# domain: Name or ID of the domain to scope the role 
 # group: Name or ID for the group. Valid only with 
 # interface: Endpoint URL type to fetch from the service 
 # project: Name or ID of the project to scope the role 

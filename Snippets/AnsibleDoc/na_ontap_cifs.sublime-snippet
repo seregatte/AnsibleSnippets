@@ -10,8 +10,10 @@ ${1:# hostname: (required) The hostname or IP address of the
 # share_properties: The list of properties for the CIFS share 
 # state: Whether the specified CIFS share should exist or 
 # symlink_properties: The list of symlink properties for this CIFS 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
+# vscan_fileop_profile: Profile_set of file_ops to which vscan on access 
 # vserver: (required) Vserver containing the CIFS share. 
 }- name: ${2:Name for na_ontap_cifs module.}
   na_ontap_cifs:
@@ -25,15 +27,17 @@ ${21:   ${22:share_name}: ${23:"#"}}
 ${24:   ${25:share_properties}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:symlink_properties}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:vserver}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${33:   ${34:use_rest}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vscan_fileop_profile}: ${44:"#"}}
+${45:   ${46:vserver}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cifs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

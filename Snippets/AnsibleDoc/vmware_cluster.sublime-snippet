@@ -18,8 +18,13 @@ ${1:# cluster_name: (required) The name of the cluster to be
 # ha_vm_min_up_time: The number of seconds for the virtual machine's 
 # ha_vm_monitoring: Indicates the state of virtual machine health 
 # hostname: The hostname or IP address of the vSphere 
+# ignore_drs: If set to `yes', DRS will not be configured; all 
+# ignore_ha: If set to `yes', HA will not be configured; all 
+# ignore_vsan: If set to `yes', VSAN will not be configured; 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # state: Create `present' or remove `absent' a VMware 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -44,18 +49,23 @@ ${45:   ${46:ha_vm_max_failures}: ${47:"#"}}
 ${48:   ${49:ha_vm_min_up_time}: ${50:"#"}}
 ${51:   ${52:ha_vm_monitoring}: ${53:"#"}}
 ${54:   ${55:hostname}: ${56:"#"}}
-${57:   ${58:password}: ${59:"#"}}
-${60:   ${61:port}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:username}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:   ${73:vsan_auto_claim_storage}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${57:   ${58:ignore_drs}: ${59:"#"}}
+${60:   ${61:ignore_ha}: ${62:"#"}}
+${63:   ${64:ignore_vsan}: ${65:"#"}}
+${66:   ${67:password}: ${68:"#"}}
+${69:   ${70:port}: ${71:"#"}}
+${72:   ${73:proxy_host}: ${74:"#"}}
+${75:   ${76:proxy_port}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:username}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:   ${88:vsan_auto_claim_storage}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>vmware_cluster</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

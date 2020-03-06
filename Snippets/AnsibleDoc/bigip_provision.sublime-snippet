@@ -1,31 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# level: Sets the provisioning level for the requested 
+# memory: Sets additional memory for management module. 
 # module: (required) The module to provision in BIG-IP. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the provisioned module on the 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_provision module.}
   bigip_provision:
 ${3:   ${4:level}: ${5:"#"}}
-${6:   ${7:module}: ${8:"#"}}
-${9:   ${10:password}: ${11:"#"}}
+${6:   ${7:memory}: ${8:"#"}}
+${9:   ${10:module}: ${11:"#"}}
 ${12:   ${13:provider}: ${14:"#"}}
-${15:   ${16:server}: ${17:"#"}}
-${18:   ${19:server_port}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:user}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${15:   ${16:state}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>bigip_provision</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -13,15 +13,10 @@ ${1:# agent_type: Specifies the SNMP agent running on the
 # name: (required) Monitor name. 
 # parent: The parent template of this monitor template. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # time_until_up: Specifies the number of seconds to wait after a 
 # timeout: Specifies the number of seconds the target has 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 # version: Specifies the version of SNMP that the host 
 }- name: ${2:Name for bigip_monitor_snmp_dca module.}
   bigip_monitor_snmp_dca:
@@ -38,22 +33,17 @@ ${30:   ${31:memory_threshold}: ${32:"#"}}
 ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:parent}: ${38:"#"}}
 ${39:   ${40:partition}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:provider}: ${47:"#"}}
-${48:   ${49:server}: ${50:"#"}}
-${51:   ${52:server_port}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:time_until_up}: ${59:"#"}}
-${60:   ${61:timeout}: ${62:"#"}}
-${63:   ${64:user}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:   ${70:version}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${42:   ${43:provider}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:time_until_up}: ${50:"#"}}
+${51:   ${52:timeout}: ${53:"#"}}
+${54:   ${55:version}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>bigip_monitor_snmp_dca</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

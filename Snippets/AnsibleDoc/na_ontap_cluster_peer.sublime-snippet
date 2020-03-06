@@ -14,6 +14,7 @@ ${1:# dest_cluster_name: The name of the destination cluster name in the
 # source_cluster_name: The name of the source cluster name in the peer 
 # source_intercluster_lifs: List of intercluster addresses of the source 
 # state: Whether the specified cluster peer should exist 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_cluster_peer module.}
@@ -32,14 +33,15 @@ ${33:   ${34:password}: ${35:"#"}}
 ${36:   ${37:source_cluster_name}: ${38:"#"}}
 ${39:   ${40:source_intercluster_lifs}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${45:   ${46:use_rest}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cluster_peer</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -13,6 +13,7 @@ ${1:# broadcast_domain: (required) Specify the required broadcast_domain
 # password: (required) Password for the specified user. 
 # state: Whether the specified network interface group 
 # subnet: (required) Specify the subnet (ip and mask). 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_net_subnet module.}
@@ -30,14 +31,15 @@ ${30:   ${31:ontapi}: ${32:"#"}}
 ${33:   ${34:password}: ${35:"#"}}
 ${36:   ${37:state}: ${38:"#"}}
 ${39:   ${40:subnet}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${42:   ${43:use_rest}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_net_subnet</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

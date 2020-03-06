@@ -9,19 +9,19 @@ ${1:# attributes: The attributes the resulting file or directory
 # owner: Name of the user that should own the 
 # path: (required) Path of the file containing the 
 # principals: Certificates may be limited to be valid for a 
-# public_key: (required) The path to the public key that will 
+# public_key: The path to the public key that will be signed 
 # selevel: The level part of the SELinux file context. This 
 # serial_number: Specify the certificate serial number. The 
 # serole: The role part of the SELinux file context. When 
 # setype: The type part of the SELinux file context. When 
 # seuser: The user part of the SELinux file context. By 
-# signing_key: (required) The path to the private openssh key 
+# signing_key: The path to the private openssh key that is used 
 # state: Whether the host or user certificate should 
-# type: (required) Whether the module should generate a 
+# type: Whether the module should generate a host or a 
 # unsafe_writes: Influence when to use atomic operation to 
 # valid_at: Check if the certificate is valid at a certain 
-# valid_from: (required) The point in time the certificate is 
-# valid_to: (required) The point in time the certificate is 
+# valid_from: The point in time the certificate is valid from. 
+# valid_to: The point in time the certificate is valid to. 
 }- name: ${2:Name for openssh_cert module.}
   openssh_cert:
 ${3:   ${4:attributes}: ${5:"#"}}

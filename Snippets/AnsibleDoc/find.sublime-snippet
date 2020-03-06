@@ -2,8 +2,8 @@
 <content><![CDATA[
 ${1:# age: Select files whose age is equal to or greater 
 # age_stamp: Choose the file property against which we 
-# contains: One or more regex patterns which should be 
-# depth: Set the maximum number of levels to decend into. 
+# contains: A regular expression or pattern which should be 
+# depth: Set the maximum number of levels to descend 
 # excludes: One or more (shell or regex) patterns, which 
 # file_type: Type of file to select. The 'link' and 'any' 
 # follow: Set this to `yes' to follow symlinks in path for 

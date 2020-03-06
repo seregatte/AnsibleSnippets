@@ -8,6 +8,7 @@ ${1:# action_group_ref: The alert config will trigger the selected alert
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # category: (required) Determines whether an alert is raised 
 # controller: IP address or hostname of the controller. The 
 # description: A custom description field. 
@@ -40,34 +41,35 @@ ${15:   ${16:autoscale_alert}: ${17:"#"}}
 ${18:   ${19:avi_api_patch_op}: ${20:"#"}}
 ${21:   ${22:avi_api_update_method}: ${23:"#"}}
 ${24:   ${25:avi_credentials}: ${26:"#"}}
-${27:   ${28:category}: ${29:"#"}}
-${30:   ${31:controller}: ${32:"#"}}
-${33:   ${34:description}: ${35:"#"}}
-${36:   ${37:enabled}: ${38:"#"}}
-${39:   ${40:expiry_time}: ${41:"#"}}
-${42:   ${43:name}: ${44:"#"}}
-${45:   ${46:obj_uuid}: ${47:"#"}}
-${48:   ${49:object_type}: ${50:"#"}}
-${51:   ${52:password}: ${53:"#"}}
-${54:   ${55:recommendation}: ${56:"#"}}
-${57:   ${58:rolling_window}: ${59:"#"}}
-${60:   ${61:source}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:summary}: ${68:"#"}}
-${69:   ${70:tenant}: ${71:"#"}}
-${72:   ${73:tenant_ref}: ${74:"#"}}
-${75:   ${76:tenant_uuid}: ${77:"#"}}
-${78:   ${79:threshold}: ${80:"#"}}
-${81:   ${82:throttle}: ${83:"#"}}
-${84:   ${85:url}: ${86:"#"}}
-${87:   ${88:username}: ${89:"#"}}
-${90:   ${91:uuid}: ${92:"#"}}
-${93:${94:   become: ${95:true}} 
-${96:   become_method: ${97:su}} 
-${98:   become_user: ${99:nobody}} 
-${100:   become_flags: ${101:"-s /bin/sh"}}} 
-${102:   when: ${103:variable is defined}} 
-${104:   with_items: ${105:array}} 
+${27:   ${28:avi_disable_session_cache_as_fact}: ${29:"#"}}
+${30:   ${31:category}: ${32:"#"}}
+${33:   ${34:controller}: ${35:"#"}}
+${36:   ${37:description}: ${38:"#"}}
+${39:   ${40:enabled}: ${41:"#"}}
+${42:   ${43:expiry_time}: ${44:"#"}}
+${45:   ${46:name}: ${47:"#"}}
+${48:   ${49:obj_uuid}: ${50:"#"}}
+${51:   ${52:object_type}: ${53:"#"}}
+${54:   ${55:password}: ${56:"#"}}
+${57:   ${58:recommendation}: ${59:"#"}}
+${60:   ${61:rolling_window}: ${62:"#"}}
+${63:   ${64:source}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:summary}: ${71:"#"}}
+${72:   ${73:tenant}: ${74:"#"}}
+${75:   ${76:tenant_ref}: ${77:"#"}}
+${78:   ${79:tenant_uuid}: ${80:"#"}}
+${81:   ${82:threshold}: ${83:"#"}}
+${84:   ${85:throttle}: ${86:"#"}}
+${87:   ${88:url}: ${89:"#"}}
+${90:   ${91:username}: ${92:"#"}}
+${93:   ${94:uuid}: ${95:"#"}}
+${96:${97:   become: ${98:true}} 
+${99:   become_method: ${100:su}} 
+${101:   become_user: ${102:nobody}} 
+${103:   become_flags: ${104:"-s /bin/sh"}}} 
+${105:   when: ${106:variable is defined}} 
+${107:   with_items: ${108:array}} 
 ]]></content>
 	<tabTrigger>avi_alertconfig</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -3,7 +3,7 @@
 ${1:# ad_user: Active Directory username. Use when 
 # adfs_authority_url: Azure AD authority url. Use when authenticating 
 # api_profile: Selects an API profile to use when communicating 
-# app_settings: Dictionary containing application settings 
+# app_settings: Dictionary containing application settings. 
 # append_tags: Use to control if tags field is canonical or 
 # auth_source: Controls the source of the credentials to use 
 # cert_validation_mode: Controls the certificate validation behavior for 
@@ -11,11 +11,11 @@ ${1:# ad_user: Active Directory username. Use when
 # cloud_environment: For cloud environments other than the US public 
 # container_settings: Web app container settings. 
 # location: Valid Azure location. Defaults to location of 
-# name: (required) Name of the Azure Function App 
+# name: (required) Name of the Azure Function App. 
 # password: Active Directory user password. Use when 
 # plan: App service plan. It can be name of existing app 
 # profile: Security profile found in ~/.azure/credentials 
-# resource_group: (required) Name of resource group 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the Function App. Use 
 # storage_account: (required) Name of the storage account to use. 

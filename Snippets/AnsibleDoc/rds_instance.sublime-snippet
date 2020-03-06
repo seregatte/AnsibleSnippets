@@ -34,9 +34,10 @@ ${1:# allocated_storage: The amount of storage (in gibibytes) to allocate
 # force_update_password: Set to True to update your cluster password with 
 # iops: The Provisioned IOPS (I/O operations per second) 
 # kms_key_id: The ARN of the AWS KMS key identifier for an 
-# license_model: The license model for the DB instance. 
+# license_model: The license model for the DB instance. Several 
 # master_user_password: An 8-41 character password for the master 
 # master_username: The name of the master user for the DB cluster. 
+# max_allocated_storage: The upper limit to which Amazon RDS can 
 # monitoring_interval: The interval, in seconds, when Enhanced 
 # monitoring_role_arn: The ARN for the IAM role that permits RDS to 
 # multi_az: Specifies if the DB instance is a Multi-AZ 
@@ -117,53 +118,54 @@ ${102:   ${103:kms_key_id}: ${104:"#"}}
 ${105:   ${106:license_model}: ${107:"#"}}
 ${108:   ${109:master_user_password}: ${110:"#"}}
 ${111:   ${112:master_username}: ${113:"#"}}
-${114:   ${115:monitoring_interval}: ${116:"#"}}
-${117:   ${118:monitoring_role_arn}: ${119:"#"}}
-${120:   ${121:multi_az}: ${122:"#"}}
-${123:   ${124:new_db_instance_identifier}: ${125:"#"}}
-${126:   ${127:option_group_name}: ${128:"#"}}
-${129:   ${130:performance_insights_kms_key_id}: ${131:"#"}}
-${132:   ${133:performance_insights_retention_period}: ${134:"#"}}
-${135:   ${136:port}: ${137:"#"}}
-${138:   ${139:preferred_backup_window}: ${140:"#"}}
-${141:   ${142:preferred_maintenance_window}: ${143:"#"}}
-${144:   ${145:processor_features}: ${146:"#"}}
-${147:   ${148:profile}: ${149:"#"}}
-${150:   ${151:promotion_tier}: ${152:"#"}}
-${153:   ${154:publicly_accessible}: ${155:"#"}}
-${156:   ${157:purge_cloudwatch_logs_exports}: ${158:"#"}}
-${159:   ${160:purge_tags}: ${161:"#"}}
-${162:   ${163:read_replica}: ${164:"#"}}
-${165:   ${166:region}: ${167:"#"}}
-${168:   ${169:}: ${170:"#"}}
-${171:   ${172:restore_time}: ${173:"#"}}
-${174:   ${175:s3_bucket_name}: ${176:"#"}}
-${177:   ${178:s3_ingestion_role_arn}: ${179:"#"}}
-${180:   ${181:s3_prefix}: ${182:"#"}}
-${183:   ${184:security_token}: ${185:"#"}}
-${186:   ${187:skip_final_snapshot}: ${188:"#"}}
-${189:   ${190:snapshot_identifier}: ${191:"#"}}
-${192:   ${193:source_db_instance_identifier}: ${194:"#"}}
-${195:   ${196:source_engine}: ${197:"#"}}
-${198:   ${199:source_engine_version}: ${200:"#"}}
-${201:   ${202:source_region}: ${203:"#"}}
-${204:   ${205:state}: ${206:"#"}}
-${207:   ${208:storage_encrypted}: ${209:"#"}}
-${210:   ${211:storage_type}: ${212:"#"}}
-${213:   ${214:tags}: ${215:"#"}}
-${216:   ${217:tde_credential_arn}: ${218:"#"}}
-${219:   ${220:tde_credential_password}: ${221:"#"}}
-${222:   ${223:timezone}: ${224:"#"}}
-${225:   ${226:use_latest_restorable_time}: ${227:"#"}}
-${228:   ${229:validate_certs}: ${230:"#"}}
-${231:   ${232:vpc_security_group_ids}: ${233:"#"}}
-${234:   ${235:wait}: ${236:"#"}}
-${237:${238:   become: ${239:true}} 
-${240:   become_method: ${241:su}} 
-${242:   become_user: ${243:nobody}} 
-${244:   become_flags: ${245:"-s /bin/sh"}}} 
-${246:   when: ${247:variable is defined}} 
-${248:   with_items: ${249:array}} 
+${114:   ${115:max_allocated_storage}: ${116:"#"}}
+${117:   ${118:monitoring_interval}: ${119:"#"}}
+${120:   ${121:monitoring_role_arn}: ${122:"#"}}
+${123:   ${124:multi_az}: ${125:"#"}}
+${126:   ${127:new_db_instance_identifier}: ${128:"#"}}
+${129:   ${130:option_group_name}: ${131:"#"}}
+${132:   ${133:performance_insights_kms_key_id}: ${134:"#"}}
+${135:   ${136:performance_insights_retention_period}: ${137:"#"}}
+${138:   ${139:port}: ${140:"#"}}
+${141:   ${142:preferred_backup_window}: ${143:"#"}}
+${144:   ${145:preferred_maintenance_window}: ${146:"#"}}
+${147:   ${148:processor_features}: ${149:"#"}}
+${150:   ${151:profile}: ${152:"#"}}
+${153:   ${154:promotion_tier}: ${155:"#"}}
+${156:   ${157:publicly_accessible}: ${158:"#"}}
+${159:   ${160:purge_cloudwatch_logs_exports}: ${161:"#"}}
+${162:   ${163:purge_tags}: ${164:"#"}}
+${165:   ${166:read_replica}: ${167:"#"}}
+${168:   ${169:region}: ${170:"#"}}
+${171:   ${172:}: ${173:"#"}}
+${174:   ${175:restore_time}: ${176:"#"}}
+${177:   ${178:s3_bucket_name}: ${179:"#"}}
+${180:   ${181:s3_ingestion_role_arn}: ${182:"#"}}
+${183:   ${184:s3_prefix}: ${185:"#"}}
+${186:   ${187:security_token}: ${188:"#"}}
+${189:   ${190:skip_final_snapshot}: ${191:"#"}}
+${192:   ${193:snapshot_identifier}: ${194:"#"}}
+${195:   ${196:source_db_instance_identifier}: ${197:"#"}}
+${198:   ${199:source_engine}: ${200:"#"}}
+${201:   ${202:source_engine_version}: ${203:"#"}}
+${204:   ${205:source_region}: ${206:"#"}}
+${207:   ${208:state}: ${209:"#"}}
+${210:   ${211:storage_encrypted}: ${212:"#"}}
+${213:   ${214:storage_type}: ${215:"#"}}
+${216:   ${217:tags}: ${218:"#"}}
+${219:   ${220:tde_credential_arn}: ${221:"#"}}
+${222:   ${223:tde_credential_password}: ${224:"#"}}
+${225:   ${226:timezone}: ${227:"#"}}
+${228:   ${229:use_latest_restorable_time}: ${230:"#"}}
+${231:   ${232:validate_certs}: ${233:"#"}}
+${234:   ${235:vpc_security_group_ids}: ${236:"#"}}
+${237:   ${238:wait}: ${239:"#"}}
+${240:${241:   become: ${242:true}} 
+${243:   become_method: ${244:su}} 
+${245:   become_user: ${246:nobody}} 
+${247:   become_flags: ${248:"-s /bin/sh"}}} 
+${249:   when: ${250:variable is defined}} 
+${251:   with_items: ${252:array}} 
 ]]></content>
 	<tabTrigger>rds_instance</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

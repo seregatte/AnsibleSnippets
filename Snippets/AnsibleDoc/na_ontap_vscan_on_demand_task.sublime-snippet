@@ -20,6 +20,7 @@ ${1:# cross_junction: Specifies whether the On-Demand task is allowed
 # schedule: Schedule of the task. The task will be run as 
 # state: Whether a Vscan on demand task is present or not 
 # task_name: (required) Name of the task. 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) the name of the data vserver to use. 
@@ -45,15 +46,16 @@ ${51:   ${52:scan_priority}: ${53:"#"}}
 ${54:   ${55:schedule}: ${56:"#"}}
 ${57:   ${58:state}: ${59:"#"}}
 ${60:   ${61:task_name}: ${62:"#"}}
-${63:   ${64:username}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:   ${70:vserver}: ${71:"#"}}
-${72:${73:   become: ${74:true}} 
-${75:   become_method: ${76:su}} 
-${77:   become_user: ${78:nobody}} 
-${79:   become_flags: ${80:"-s /bin/sh"}}} 
-${81:   when: ${82:variable is defined}} 
-${83:   with_items: ${84:array}} 
+${63:   ${64:use_rest}: ${65:"#"}}
+${66:   ${67:username}: ${68:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
+${72:   ${73:vserver}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_vscan_on_demand_task</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

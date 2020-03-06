@@ -1,0 +1,56 @@
+<snippet>
+<content><![CDATA[
+${1:# access: Access settings (write, read, or no access) for 
+# api_context: Avi API context that includes current session ID 
+# api_version: Avi API version of to use for Avi API and 
+# avi_api_patch_op: Patch operation to use when using 
+# avi_api_update_method: Default method for object update is HTTP PUT. 
+# avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
+# controller: IP address or hostname of the controller. The 
+# default_tenant_ref: Default tenant reference. This can also be full 
+# email: Email address of the user. This field is used 
+# is_active: Activates the current user account. 
+# is_superuser: If the user will need to have the same 
+# name: (required) Full name of the user. 
+# obj_password: (required) You may either enter a case-sensitive 
+# obj_username: (required) Name that the user will supply when 
+# password: Password of Avi user in Avi controller. The 
+# state: The state that should be applied on the entity. 
+# tenant: Name of tenant used for all Avi API calls and 
+# tenant_uuid: UUID of tenant used for all Avi API calls and 
+# user_profile_ref: Refer user profile. This can also be full URI 
+# username: Username used for accessing Avi controller. The 
+}- name: ${2:Name for avi_user module.}
+  avi_user:
+${3:   ${4:access}: ${5:"#"}}
+${6:   ${7:api_context}: ${8:"#"}}
+${9:   ${10:api_version}: ${11:"#"}}
+${12:   ${13:avi_api_patch_op}: ${14:"#"}}
+${15:   ${16:avi_api_update_method}: ${17:"#"}}
+${18:   ${19:avi_credentials}: ${20:"#"}}
+${21:   ${22:avi_disable_session_cache_as_fact}: ${23:"#"}}
+${24:   ${25:controller}: ${26:"#"}}
+${27:   ${28:default_tenant_ref}: ${29:"#"}}
+${30:   ${31:email}: ${32:"#"}}
+${33:   ${34:is_active}: ${35:"#"}}
+${36:   ${37:is_superuser}: ${38:"#"}}
+${39:   ${40:name}: ${41:"#"}}
+${42:   ${43:obj_password}: ${44:"#"}}
+${45:   ${46:obj_username}: ${47:"#"}}
+${48:   ${49:password}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:tenant}: ${56:"#"}}
+${57:   ${58:tenant_uuid}: ${59:"#"}}
+${60:   ${61:user_profile_ref}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
+]]></content>
+	<tabTrigger>avi_user</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

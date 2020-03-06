@@ -10,12 +10,15 @@ ${1:# allow_reassociation: Specify this option to allow an Elastic IP
 # private_ip_address: The primary or secondary private IP address to 
 # profile: Uses a boto profile. Only works with boto >= 
 # public_ip: The IP address of a previously allocated EIP. If 
+# public_ipv4_pool: Allocates the new Elastic IP from the provided 
 # region: The AWS region to use. If not specified then the 
 # : ec2_region 
 # release_on_disassociation: whether or not to automatically release the EIP 
 # reuse_existing_ip_allowed: Reuse an EIP that is not associated to a device 
 # security_token: AWS STS security token. If not set then the 
 # state: If present, allocate an EIP or associate an 
+# tag_name: When reuse_existing_ip_allowed is true, 
+# tag_value: Supplements tag_name but also checks that the 
 # validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for ec2_eip module.}
   ec2_eip:
@@ -29,19 +32,22 @@ ${21:   ${22:in_vpc}: ${23:"#"}}
 ${24:   ${25:private_ip_address}: ${26:"#"}}
 ${27:   ${28:profile}: ${29:"#"}}
 ${30:   ${31:public_ip}: ${32:"#"}}
-${33:   ${34:region}: ${35:"#"}}
-${36:   ${37:}: ${38:"#"}}
-${39:   ${40:release_on_disassociation}: ${41:"#"}}
-${42:   ${43:reuse_existing_ip_allowed}: ${44:"#"}}
-${45:   ${46:security_token}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${33:   ${34:public_ipv4_pool}: ${35:"#"}}
+${36:   ${37:region}: ${38:"#"}}
+${39:   ${40:}: ${41:"#"}}
+${42:   ${43:release_on_disassociation}: ${44:"#"}}
+${45:   ${46:reuse_existing_ip_allowed}: ${47:"#"}}
+${48:   ${49:security_token}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:tag_name}: ${56:"#"}}
+${57:   ${58:tag_value}: ${59:"#"}}
+${60:   ${61:validate_certs}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>ec2_eip</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

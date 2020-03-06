@@ -3,7 +3,7 @@
 ${1:# delegate_to: Where the module will be run 
 # description: A user-defined description of the organization. 
 # hostname: (required) IP address or hostname of Cisco UCS 
-# org_name: The name of the orgranization. Enter up to 16 
+# org_name: The name of the organization. Enter up to 16 
 # parent_org_path: A forward slash / separated hierarchical path 
 # password: (required) Password for Cisco UCS Manager 
 # port: Port number to be used during connection (by 

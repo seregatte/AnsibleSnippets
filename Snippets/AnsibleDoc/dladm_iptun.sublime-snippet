@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# local_address: Literat IP address or hostname corresponding to 
+${1:# local_address: Literal IP address or hostname corresponding to 
 # name: (required) IP tunnel interface name. 
 # remote_address: Literal IP address or hostname corresponding to 
 # state: Create or delete Solaris/illumos VNIC. 

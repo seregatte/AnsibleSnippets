@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# property: (required) Specifies the name of property we 
-# protocol: (required) Specifies the procotol for which we 
+# protocol: (required) Specifies the protocol for which we 
 # state: Set or reset the property value. 
 # temporary: Specifies that the property value is temporary. 
 # value: Specifies the value we want to set for the 

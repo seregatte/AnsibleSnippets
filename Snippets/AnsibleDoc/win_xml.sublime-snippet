@@ -2,24 +2,28 @@
 <content><![CDATA[
 ${1:# attribute: The attribute name if the type is 'attribute'. 
 # backup: Determine whether a backup should be created. 
-# fragment: (required) The string representation of the XML 
-# path: (required) The path of remote servers XML. 
-# type: (required) The type of XML you are working with. 
-# xpath: (required) The node of the remote server XML 
+# count: When set to `yes', return the number of nodes 
+# fragment: The string representation of the XML fragment 
+# path: (required) Path to the file to operate on. 
+# state: Set or remove the nodes (or attributes) matched 
+# type: (required) The type of XML node you are working 
+# xpath: (required) Xpath to select the node or nodes to 
 }- name: ${2:Name for win_xml module.}
   win_xml:
 ${3:   ${4:attribute}: ${5:"#"}}
 ${6:   ${7:backup}: ${8:"#"}}
-${9:   ${10:fragment}: ${11:"#"}}
-${12:   ${13:path}: ${14:"#"}}
-${15:   ${16:type}: ${17:"#"}}
-${18:   ${19:xpath}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${9:   ${10:count}: ${11:"#"}}
+${12:   ${13:fragment}: ${14:"#"}}
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:type}: ${23:"#"}}
+${24:   ${25:xpath}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>win_xml</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

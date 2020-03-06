@@ -9,15 +9,10 @@ ${1:# description: Description of the profile.
 # name: (required) Specifies the name of the OneConnect 
 # parent: Specifies the profile from which this profile 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # share_pools: Indicates that connections may be shared not 
 # source_mask: Specifies a value that the system applies to the 
 # state: When `present', ensures that the profile exists. 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_profile_oneconnect module.}
   bigip_profile_oneconnect:
 ${3:   ${4:description}: ${5:"#"}}
@@ -29,21 +24,16 @@ ${18:   ${19:maximum_size}: ${20:"#"}}
 ${21:   ${22:name}: ${23:"#"}}
 ${24:   ${25:parent}: ${26:"#"}}
 ${27:   ${28:partition}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:provider}: ${35:"#"}}
-${36:   ${37:server}: ${38:"#"}}
-${39:   ${40:server_port}: ${41:"#"}}
-${42:   ${43:share_pools}: ${44:"#"}}
-${45:   ${46:source_mask}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:user}: ${53:"#"}}
-${54:   ${55:validate_certs}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${30:   ${31:provider}: ${32:"#"}}
+${33:   ${34:share_pools}: ${35:"#"}}
+${36:   ${37:source_mask}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_oneconnect</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

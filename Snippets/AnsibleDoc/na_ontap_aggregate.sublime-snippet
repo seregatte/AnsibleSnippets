@@ -21,6 +21,7 @@ ${1:# disk_count: Number of disks to place into the aggregate,
 # state: Whether the specified aggregate should exist or 
 # time_out: time to wait for aggregate creation in seconds 
 # unmount_volumes: If set to "TRUE", this option specifies that all 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # wait_for_online: Set this parameter to 'true' for synchronous 
@@ -47,15 +48,16 @@ ${54:   ${55:spare_pool}: ${56:"#"}}
 ${57:   ${58:state}: ${59:"#"}}
 ${60:   ${61:time_out}: ${62:"#"}}
 ${63:   ${64:unmount_volumes}: ${65:"#"}}
-${66:   ${67:username}: ${68:"#"}}
-${69:   ${70:validate_certs}: ${71:"#"}}
-${72:   ${73:wait_for_online}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${66:   ${67:use_rest}: ${68:"#"}}
+${69:   ${70:username}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:   ${76:wait_for_online}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_aggregate</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

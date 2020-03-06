@@ -18,6 +18,7 @@ ${1:# aggr_list: List of aggregates assigned for volume
 # snapshot_policy: Default snapshot policy setting for all volumes 
 # state: Whether the specified SVM should exist or not. 
 # subtype: The subtype for vserver to be created. Cannot be 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_svm module.}
@@ -40,14 +41,15 @@ ${45:   ${46:root_volume_security_style}: ${47:"#"}}
 ${48:   ${49:snapshot_policy}: ${50:"#"}}
 ${51:   ${52:state}: ${53:"#"}}
 ${54:   ${55:subtype}: ${56:"#"}}
-${57:   ${58:username}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
-${63:${64:   become: ${65:true}} 
-${66:   become_method: ${67:su}} 
-${68:   become_user: ${69:nobody}} 
-${70:   become_flags: ${71:"-s /bin/sh"}}} 
-${72:   when: ${73:variable is defined}} 
-${74:   with_items: ${75:array}} 
+${57:   ${58:use_rest}: ${59:"#"}}
+${60:   ${61:username}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_svm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

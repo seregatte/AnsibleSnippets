@@ -5,7 +5,7 @@ ${1:# aggregate: List of logging definitions.
 # dest_level: Set logging severity levels. 
 # event: Link/trunk enable/default interface 
 # facility: Facility name for logging. 
-# facility_level: Set logging serverity levels for facility based 
+# facility_level: Set logging severity levels for facility based 
 # facility_link_status: Set logging facility ethpm link status. Not 
 # file_size: Set logfile size 
 # interface: Interface to be used while configuring source- 

@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when 
+# adfs_authority_url: Azure AD authority url. Use when authenticating 
+# api_profile: Selects an API profile to use when communicating 
+# auth_source: Controls the source of the credentials to use 
+# cert_validation_mode: Controls the certificate validation behavior for 
+# client_id: Azure client ID. Use when authenticating with a 
+# cloud_environment: For cloud environments other than the US public 
+# list_keys: List keys for a automation account. Note this 
+# list_statistics: List statistics details for a automation 
+# list_usages: List usage details for a automation account. 
+# name: The name of the automation account. 
+# password: Active Directory user password. Use when 
+# profile: Security profile found in ~/.azure/credentials 
+# resource_group: (required) The name of the resource group. 
+# secret: Azure client secret. Use when authenticating 
+# subscription_id: Your Azure subscription Id. 
+# tags: Limit results by providing a list of tags. 
+# tenant: Azure tenant ID. Use when authenticating with a 
+}- name: ${2:Name for azure_rm_automationaccount_info module.}
+  azure_rm_automationaccount_info:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:adfs_authority_url}: ${8:"#"}}
+${9:   ${10:api_profile}: ${11:"#"}}
+${12:   ${13:auth_source}: ${14:"#"}}
+${15:   ${16:cert_validation_mode}: ${17:"#"}}
+${18:   ${19:client_id}: ${20:"#"}}
+${21:   ${22:cloud_environment}: ${23:"#"}}
+${24:   ${25:list_keys}: ${26:"#"}}
+${27:   ${28:list_statistics}: ${29:"#"}}
+${30:   ${31:list_usages}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:password}: ${38:"#"}}
+${39:   ${40:profile}: ${41:"#"}}
+${42:   ${43:resource_group}: ${44:"#"}}
+${45:   ${46:secret}: ${47:"#"}}
+${48:   ${49:subscription_id}: ${50:"#"}}
+${51:   ${52:tags}: ${53:"#"}}
+${54:   ${55:tenant}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>azure_rm_automationaccount_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

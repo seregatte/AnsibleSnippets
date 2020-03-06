@@ -15,7 +15,7 @@ ${1:# account: Account the template, snapshot or VM is related
 # domain: Domain the template, snapshot or VM is related 
 # format: The format for the template. Only considered if 
 # hypervisor: Name the hypervisor to be used for creating the 
-# is_dynamically_scalable: Register the template having XS/VMWare tools 
+# is_dynamically_scalable: Register the template having XS/VMware tools 
 # is_extractable: Allows the template or its derivatives to be 
 # is_featured: Register the template to be featured. Only used 
 # is_public: Register the template to be publicly available 

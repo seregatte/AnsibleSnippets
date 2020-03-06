@@ -7,6 +7,9 @@ ${1:# api_token: FlashBlade API token for admin privileged user.
 # dstype: The type of directory service to work on 
 # enable: Whether to enable or disable directory service 
 # fb_url: FlashBlade management IP address or Hostname. 
+# join_ou: The optional organizational unit (OU) where the 
+# nis_domain: The NIS domain to search This cannot be used in 
+# nis_servers: A list of up to 30 IP addresses or FQDNs for NIS 
 # state: Create or delete directory service configuration 
 # uri: A list of up to 30 URIs of the directory 
 }- name: ${2:Name for purefb_ds module.}
@@ -18,14 +21,17 @@ ${12:   ${13:bind_user}: ${14:"#"}}
 ${15:   ${16:dstype}: ${17:"#"}}
 ${18:   ${19:enable}: ${20:"#"}}
 ${21:   ${22:fb_url}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:uri}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${24:   ${25:join_ou}: ${26:"#"}}
+${27:   ${28:nis_domain}: ${29:"#"}}
+${30:   ${31:nis_servers}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:uri}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>purefb_ds</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

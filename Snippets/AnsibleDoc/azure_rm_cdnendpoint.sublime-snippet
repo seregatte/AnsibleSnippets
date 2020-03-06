@@ -20,12 +20,12 @@ ${1:# ad_user: Active Directory username. Use when
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # profile_name: (required) Name of the CDN profile where the 
-# purge: Use with `state' `present' to purge the 
-# purge_content_paths: Use with `state' `present' and `purge' `true' to 
+# purge: Use with `state=present' to purge the endpoint. 
+# purge_content_paths: Use with `state=present' and `purge=true' to 
 # query_string_caching_behavior: Defines how CDN caches requests that include 
 # resource_group: (required) Name of a resource group where the 
 # secret: Azure client secret. Use when authenticating 
-# started: Use with `state' `present' to start the 
+# started: Use with `state=present' to start the endpoint. 
 # state: Assert the state of the Azure CDN endpoint. Use 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

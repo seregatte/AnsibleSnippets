@@ -6,14 +6,11 @@ ${1:# address: Specifies the IP address that will receive
 # forward_to: When `type' is `remote-syslog', specifies the 
 # name: (required) Specifies the name of the log 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # pool: When `type' is `remote-high-speed-log', 
 # pool_settings: This parameter is only available when `type' is 
 # port: Specifies the port of the IP address that will 
 # protocol: When `type' is `remote-high-speed-log', 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # server_ssl_profile: If the `transport_profile' is a TCP profile, you 
 # state: When `present', ensures that the resource 
 # syslog_format: Specifies the method to use to format the logs 
@@ -22,8 +19,6 @@ ${1:# address: Specifies the IP address that will receive
 # template_retransmit_interval: Enter the time (in seconds) between each 
 # transport_profile: Is a transport profile based on either TCP or 
 # type: (required) Specifies the type of log 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_log_destination module.}
   bigip_log_destination:
 ${3:   ${4:address}: ${5:"#"}}
@@ -32,30 +27,25 @@ ${9:   ${10:distribution}: ${11:"#"}}
 ${12:   ${13:forward_to}: ${14:"#"}}
 ${15:   ${16:name}: ${17:"#"}}
 ${18:   ${19:partition}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:pool}: ${26:"#"}}
-${27:   ${28:pool_settings}: ${29:"#"}}
-${30:   ${31:port}: ${32:"#"}}
-${33:   ${34:protocol}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:server}: ${41:"#"}}
-${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:server_ssl_profile}: ${47:"#"}}
-${48:   ${49:state}: ${50:"#"}}
-${51:   ${52:syslog_format}: ${53:"#"}}
-${54:   ${55:syslog_settings}: ${56:"#"}}
-${57:   ${58:template_delete_delay}: ${59:"#"}}
-${60:   ${61:template_retransmit_interval}: ${62:"#"}}
-${63:   ${64:transport_profile}: ${65:"#"}}
-${66:   ${67:type}: ${68:"#"}}
-${69:   ${70:user}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${21:   ${22:pool}: ${23:"#"}}
+${24:   ${25:pool_settings}: ${26:"#"}}
+${27:   ${28:port}: ${29:"#"}}
+${30:   ${31:protocol}: ${32:"#"}}
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:server_ssl_profile}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:syslog_format}: ${44:"#"}}
+${45:   ${46:syslog_settings}: ${47:"#"}}
+${48:   ${49:template_delete_delay}: ${50:"#"}}
+${51:   ${52:template_retransmit_interval}: ${53:"#"}}
+${54:   ${55:transport_profile}: ${56:"#"}}
+${57:   ${58:type}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>bigip_log_destination</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -10,18 +10,12 @@ ${1:# address: Virtual address. This value cannot be modified
 # name: Name of the virtual address. If this parameter 
 # netmask: Netmask of the provided virtual address. This 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # route_advertisement: Specifies whether the system uses route 
 # route_domain: The route domain of the `address' that you want 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # spanning: Enables all BIG-IP systems in a device group to 
 # state: The virtual address state. If `absent', an 
 # traffic_group: The traffic group for the virtual address. When 
-# use_route_advertisement: Specifies whether the system uses route 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_virtual_address module.}
   bigip_virtual_address:
 ${3:   ${4:address}: ${5:"#"}}
@@ -34,24 +28,18 @@ ${21:   ${22:icmp_echo}: ${23:"#"}}
 ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:netmask}: ${29:"#"}}
 ${30:   ${31:partition}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:route_advertisement}: ${41:"#"}}
-${42:   ${43:route_domain}: ${44:"#"}}
-${45:   ${46:server}: ${47:"#"}}
-${48:   ${49:server_port}: ${50:"#"}}
-${51:   ${52:spanning}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:traffic_group}: ${59:"#"}}
-${60:   ${61:use_route_advertisement}: ${62:"#"}}
-${63:   ${64:user}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:route_advertisement}: ${38:"#"}}
+${39:   ${40:route_domain}: ${41:"#"}}
+${42:   ${43:spanning}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:traffic_group}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>bigip_virtual_address</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

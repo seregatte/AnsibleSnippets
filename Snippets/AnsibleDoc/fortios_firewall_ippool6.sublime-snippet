@@ -1,10 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# firewall_ippool6: Configure IPv6 IP pools. 
-# host: (required) FortiOS or FortiGate ip address. 
+# host: FortiOS or FortiGate IP address. 
 # https: Indicates if the requests towards FortiGate must 
 # password: FortiOS or FortiGate password. 
-# username: (required) FortiOS or FortiGate username. 
+# ssl_verify: Ensures FortiGate certificate must be verified 
+# state: Indicates whether to create or remove the 
+# username: FortiOS or FortiGate username. 
 # vdom: Virtual domain, among those defined previously. 
 }- name: ${2:Name for fortios_firewall_ippool6 module.}
   fortios_firewall_ippool6:
@@ -12,14 +14,16 @@ ${3:   ${4:firewall_ippool6}: ${5:"#"}}
 ${6:   ${7:host}: ${8:"#"}}
 ${9:   ${10:https}: ${11:"#"}}
 ${12:   ${13:password}: ${14:"#"}}
-${15:   ${16:username}: ${17:"#"}}
-${18:   ${19:vdom}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${15:   ${16:ssl_verify}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:   ${25:vdom}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>fortios_firewall_ippool6</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

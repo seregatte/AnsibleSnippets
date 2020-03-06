@@ -1,0 +1,68 @@
+<snippet>
+<content><![CDATA[
+${1:# action: Action-the enforced profile. 
+# auto_publish_session: Publish the current session if changes have been 
+# comments: Comments string. 
+# destination: Collection of Network objects identified by the 
+# destination_negate: True if negate is set for destination. 
+# details_level: The level of detail for some of the fields in 
+# enabled: Enable/Disable the rule. 
+# exception_group_name: The name of the exception-group. 
+# exception_group_uid: The UID of the exception-group. 
+# ignore_errors: Apply changes ignoring errors. You won't be able 
+# ignore_warnings: Apply changes ignoring warnings. 
+# install_on: Which Gateways identified by the name or UID to 
+# layer: Layer that the rule belongs to identified by the 
+# name: (required) The name of the exception. 
+# position: Position in the rulebase. 
+# protected_scope: Collection of objects defining Protected Scope 
+# protected_scope_negate: True if negate is set for Protected Scope. 
+# protection_or_site: Name of the protection or site. 
+# rule_name: The name of the parent rule. 
+# service: Collection of Network objects identified by the 
+# service_negate: True if negate is set for Service. 
+# source: Collection of Network objects identified by the 
+# source_negate: True if negate is set for source. 
+# state: State of the access rule (present or absent). 
+# track: Packet tracking. 
+# version: Version of checkpoint. If not given one, the 
+# wait_for_task: Wait for the task to end. Such as publish task. 
+}- name: ${2:Name for cp_mgmt_threat_exception module.}
+  cp_mgmt_threat_exception:
+${3:   ${4:action}: ${5:"#"}}
+${6:   ${7:auto_publish_session}: ${8:"#"}}
+${9:   ${10:comments}: ${11:"#"}}
+${12:   ${13:destination}: ${14:"#"}}
+${15:   ${16:destination_negate}: ${17:"#"}}
+${18:   ${19:details_level}: ${20:"#"}}
+${21:   ${22:enabled}: ${23:"#"}}
+${24:   ${25:exception_group_name}: ${26:"#"}}
+${27:   ${28:exception_group_uid}: ${29:"#"}}
+${30:   ${31:ignore_errors}: ${32:"#"}}
+${33:   ${34:ignore_warnings}: ${35:"#"}}
+${36:   ${37:install_on}: ${38:"#"}}
+${39:   ${40:layer}: ${41:"#"}}
+${42:   ${43:name}: ${44:"#"}}
+${45:   ${46:position}: ${47:"#"}}
+${48:   ${49:protected_scope}: ${50:"#"}}
+${51:   ${52:protected_scope_negate}: ${53:"#"}}
+${54:   ${55:protection_or_site}: ${56:"#"}}
+${57:   ${58:rule_name}: ${59:"#"}}
+${60:   ${61:service}: ${62:"#"}}
+${63:   ${64:service_negate}: ${65:"#"}}
+${66:   ${67:source}: ${68:"#"}}
+${69:   ${70:source_negate}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:track}: ${77:"#"}}
+${78:   ${79:version}: ${80:"#"}}
+${81:   ${82:wait_for_task}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
+]]></content>
+	<tabTrigger>cp_mgmt_threat_exception</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

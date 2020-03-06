@@ -23,9 +23,10 @@ ${1:# api_key: Token used to authenticate with the API. Can
 # namespace: (required) Namespace where the Template object 
 # objects: List of any valid API objects, such as a 
 # parameters: Parameters allow a value to be supplied by the 
-# l: writing- 
+# ml: writing- 
 # password: Provide a password for authenticating with the 
 # provider_display_name: The name of the person or organization providing 
+# proxy: The URL of an HTTP proxy to use for the 
 # state: Determines if an object should be created, 
 # support_url: A URL where support can be obtained for the 
 # username: Provide a username for authenticating with the 
@@ -56,20 +57,21 @@ ${60:   ${61:name}: ${62:"#"}}
 ${63:   ${64:namespace}: ${65:"#"}}
 ${66:   ${67:objects}: ${68:"#"}}
 ${69:   ${70:parameters}: ${71:"#"}}
-${72:   ${73:l}: ${74:"#"}}
+${72:   ${73:ml}: ${74:"#"}}
 ${75:   ${76:password}: ${77:"#"}}
 ${78:   ${79:provider_display_name}: ${80:"#"}}
-${81:   ${82:state}: ${83:"#"}}
-${84:   ${85:support_url}: ${86:"#"}}
-${87:   ${88:username}: ${89:"#"}}
-${90:   ${91:validate_certs}: ${92:"#"}}
-${93:   ${94:version}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${81:   ${82:proxy}: ${83:"#"}}
+${84:   ${85:state}: ${86:"#"}}
+${87:   ${88:support_url}: ${89:"#"}}
+${90:   ${91:username}: ${92:"#"}}
+${93:   ${94:validate_certs}: ${95:"#"}}
+${96:   ${97:version}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>kubevirt_template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

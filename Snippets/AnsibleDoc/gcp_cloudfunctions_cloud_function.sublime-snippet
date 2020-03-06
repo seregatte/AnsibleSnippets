@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# available_memory_mb: The amount of memory in MB available for a 
+# description: User-provided description of a function. 
+# entry_point: The name of the function (as defined in source 
+# env_type: Specifies which Ansible environment you're 
+# environment_variables: Environment variables that shall be available 
+# event_trigger: An HTTPS endpoint type of source that can be 
+# https_trigger: An HTTPS endpoint type of source that can be 
+# labels: A set of key/value label pairs associated with 
+# location: (required) The location of this cloud function. 
+# name: (required) A user-defined name of the function. 
+# project: The Google Cloud Platform project to use. 
+# runtime: The runtime in which the function is going to 
+# scopes: Array of scopes to be used. 
+# service_account_contents: The contents of a Service Account JSON file, 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# source_archive_url: The Google Cloud Storage URL, starting with 
+# source_repository: The source repository where a function is 
+# source_upload_url: The Google Cloud Storage signed URL used for 
+# state: Whether the given object should exist in GCP 
+# timeout: The function execution timeout. Execution is 
+# trigger_http: Use HTTP to trigger this function. 
+}- name: ${2:Name for gcp_cloudfunctions_cloud_function module.}
+  gcp_cloudfunctions_cloud_function:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:available_memory_mb}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:entry_point}: ${14:"#"}}
+${15:   ${16:env_type}: ${17:"#"}}
+${18:   ${19:environment_variables}: ${20:"#"}}
+${21:   ${22:event_trigger}: ${23:"#"}}
+${24:   ${25:https_trigger}: ${26:"#"}}
+${27:   ${28:labels}: ${29:"#"}}
+${30:   ${31:location}: ${32:"#"}}
+${33:   ${34:name}: ${35:"#"}}
+${36:   ${37:project}: ${38:"#"}}
+${39:   ${40:runtime}: ${41:"#"}}
+${42:   ${43:scopes}: ${44:"#"}}
+${45:   ${46:service_account_contents}: ${47:"#"}}
+${48:   ${49:service_account_email}: ${50:"#"}}
+${51:   ${52:service_account_file}: ${53:"#"}}
+${54:   ${55:source_archive_url}: ${56:"#"}}
+${57:   ${58:source_repository}: ${59:"#"}}
+${60:   ${61:source_upload_url}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:timeout}: ${68:"#"}}
+${69:   ${70:trigger_http}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>gcp_cloudfunctions_cloud_function</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

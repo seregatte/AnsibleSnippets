@@ -1,9 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# address: Postal address of device's location. 
-# auth_key: Authentication key provided by the dashboard. 
+# auth_key: (required) Authentication key provided by the 
 # host: Hostname for Meraki dashboard. Can be used to 
 # hostname: Hostname of network device to search for. 
+# internal_error_retry_time: Number of seconds to retry if server returns an 
 # lat: Latitude of device's geographic location. Use 
 # lldp_cdp_timespan: Timespan, in seconds, used to query LLDP and CDP 
 # lng: Longitude of device's geographic location. Use 
@@ -13,8 +14,10 @@ ${1:# address: Postal address of device's location.
 # net_name: Name of a network. 
 # note: Informational notes about a device. Limited to 
 # org_id: ID of organization. 
-# org_name: Name of organization. If `clone' is specified, 
+# org_name: Name of organization. 
+# output_format: Instructs module whether response keys should be 
 # output_level: Set amount of debug output during module 
+# rate_limit_retry_time: Number of seconds to retry if rate limiter is 
 # serial: Serial number of a device to query. 
 # serial_lldp_cdp: Serial number of device to query LLDP/CDP 
 # serial_uplink: Serial number of device to query uplink 
@@ -30,32 +33,35 @@ ${3:   ${4:address}: ${5:"#"}}
 ${6:   ${7:auth_key}: ${8:"#"}}
 ${9:   ${10:host}: ${11:"#"}}
 ${12:   ${13:hostname}: ${14:"#"}}
-${15:   ${16:lat}: ${17:"#"}}
-${18:   ${19:lldp_cdp_timespan}: ${20:"#"}}
-${21:   ${22:lng}: ${23:"#"}}
-${24:   ${25:model}: ${26:"#"}}
-${27:   ${28:move_map_marker}: ${29:"#"}}
-${30:   ${31:net_id}: ${32:"#"}}
-${33:   ${34:net_name}: ${35:"#"}}
-${36:   ${37:note}: ${38:"#"}}
-${39:   ${40:org_id}: ${41:"#"}}
-${42:   ${43:org_name}: ${44:"#"}}
-${45:   ${46:output_level}: ${47:"#"}}
-${48:   ${49:serial}: ${50:"#"}}
-${51:   ${52:serial_lldp_cdp}: ${53:"#"}}
-${54:   ${55:serial_uplink}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:tags}: ${62:"#"}}
-${63:   ${64:timeout}: ${65:"#"}}
-${66:   ${67:use_https}: ${68:"#"}}
-${69:   ${70:use_proxy}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${15:   ${16:internal_error_retry_time}: ${17:"#"}}
+${18:   ${19:lat}: ${20:"#"}}
+${21:   ${22:lldp_cdp_timespan}: ${23:"#"}}
+${24:   ${25:lng}: ${26:"#"}}
+${27:   ${28:model}: ${29:"#"}}
+${30:   ${31:move_map_marker}: ${32:"#"}}
+${33:   ${34:net_id}: ${35:"#"}}
+${36:   ${37:net_name}: ${38:"#"}}
+${39:   ${40:note}: ${41:"#"}}
+${42:   ${43:org_id}: ${44:"#"}}
+${45:   ${46:org_name}: ${47:"#"}}
+${48:   ${49:output_format}: ${50:"#"}}
+${51:   ${52:output_level}: ${53:"#"}}
+${54:   ${55:rate_limit_retry_time}: ${56:"#"}}
+${57:   ${58:serial}: ${59:"#"}}
+${60:   ${61:serial_lldp_cdp}: ${62:"#"}}
+${63:   ${64:serial_uplink}: ${65:"#"}}
+${66:   ${67:state}: ${68:"#"}}
+${69:   ${70:tags}: ${71:"#"}}
+${72:   ${73:timeout}: ${74:"#"}}
+${75:   ${76:use_https}: ${77:"#"}}
+${78:   ${79:use_proxy}: ${80:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>meraki_device</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

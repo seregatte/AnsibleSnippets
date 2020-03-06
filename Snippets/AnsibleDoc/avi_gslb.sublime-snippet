@@ -2,9 +2,11 @@
 <content><![CDATA[
 ${1:# api_context: Avi API context that includes current session ID 
 # api_version: Avi API version of to use for Avi API and 
+# async_interval: Frequency with which messages are propagated to 
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # clear_on_max_retries: Max retries after which the remote site is 
 # client_ip_addr_group: Group to specify if the client ip addresses are 
 # controller: IP address or hostname of the controller. The 
@@ -16,6 +18,7 @@ ${1:# api_context: Avi API context that includes current session ID
 # name: (required) Name for the gslb object. 
 # password: Password of Avi user in Avi controller. The 
 # send_interval: Frequency with which group members communicate. 
+# send_interval_prior_to_maintenance_mode: The user can specify a send-interval while 
 # sites: Select avi site member belonging to this gslb. 
 # state: The state that should be applied on the entity. 
 # tenant: Name of tenant used for all Avi API calls and 
@@ -30,36 +33,39 @@ ${1:# api_context: Avi API context that includes current session ID
   avi_gslb:
 ${3:   ${4:api_context}: ${5:"#"}}
 ${6:   ${7:api_version}: ${8:"#"}}
-${9:   ${10:avi_api_patch_op}: ${11:"#"}}
-${12:   ${13:avi_api_update_method}: ${14:"#"}}
-${15:   ${16:avi_credentials}: ${17:"#"}}
-${18:   ${19:clear_on_max_retries}: ${20:"#"}}
-${21:   ${22:client_ip_addr_group}: ${23:"#"}}
-${24:   ${25:controller}: ${26:"#"}}
-${27:   ${28:description}: ${29:"#"}}
-${30:   ${31:dns_configs}: ${32:"#"}}
-${33:   ${34:is_federated}: ${35:"#"}}
-${36:   ${37:leader_cluster_uuid}: ${38:"#"}}
-${39:   ${40:maintenance_mode}: ${41:"#"}}
-${42:   ${43:name}: ${44:"#"}}
-${45:   ${46:password}: ${47:"#"}}
-${48:   ${49:send_interval}: ${50:"#"}}
-${51:   ${52:sites}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:tenant}: ${59:"#"}}
-${60:   ${61:tenant_ref}: ${62:"#"}}
-${63:   ${64:tenant_uuid}: ${65:"#"}}
-${66:   ${67:third_party_sites}: ${68:"#"}}
-${69:   ${70:url}: ${71:"#"}}
-${72:   ${73:username}: ${74:"#"}}
-${75:   ${76:uuid}: ${77:"#"}}
-${78:   ${79:view_id}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${9:   ${10:async_interval}: ${11:"#"}}
+${12:   ${13:avi_api_patch_op}: ${14:"#"}}
+${15:   ${16:avi_api_update_method}: ${17:"#"}}
+${18:   ${19:avi_credentials}: ${20:"#"}}
+${21:   ${22:avi_disable_session_cache_as_fact}: ${23:"#"}}
+${24:   ${25:clear_on_max_retries}: ${26:"#"}}
+${27:   ${28:client_ip_addr_group}: ${29:"#"}}
+${30:   ${31:controller}: ${32:"#"}}
+${33:   ${34:description}: ${35:"#"}}
+${36:   ${37:dns_configs}: ${38:"#"}}
+${39:   ${40:is_federated}: ${41:"#"}}
+${42:   ${43:leader_cluster_uuid}: ${44:"#"}}
+${45:   ${46:maintenance_mode}: ${47:"#"}}
+${48:   ${49:name}: ${50:"#"}}
+${51:   ${52:password}: ${53:"#"}}
+${54:   ${55:send_interval}: ${56:"#"}}
+${57:   ${58:send_interval_prior_to_maintenance_mode}: ${59:"#"}}
+${60:   ${61:sites}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:tenant}: ${68:"#"}}
+${69:   ${70:tenant_ref}: ${71:"#"}}
+${72:   ${73:tenant_uuid}: ${74:"#"}}
+${75:   ${76:third_party_sites}: ${77:"#"}}
+${78:   ${79:url}: ${80:"#"}}
+${81:   ${82:username}: ${83:"#"}}
+${84:   ${85:uuid}: ${86:"#"}}
+${87:   ${88:view_id}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
 ]]></content>
 	<tabTrigger>avi_gslb</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

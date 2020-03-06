@@ -4,9 +4,11 @@ ${1:# api_context: Avi API context that includes current session ID
 # api_version: Avi API version of to use for Avi API and 
 # apic_configuration: Apicconfiguration settings for cloud. 
 # apic_mode: Boolean flag to set apic_mode. Default value 
+# autoscale_polling_interval: Cloudconnector polling interval for external 
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # aws_configuration: Awsconfiguration settings for cloud. 
 # azure_configuration: Field introduced in 17.2.1. 
 # cloudstack_configuration: Cloudstackconfiguration settings for cloud. 
@@ -18,11 +20,13 @@ ${1:# api_context: Avi API context that includes current session ID
 # east_west_dns_provider_ref: Dns profile for east-west services. It is a 
 # east_west_ipam_provider_ref: Ipam profile for east-west services. Warning - 
 # enable_vip_static_routes: Use static routes for vip side network 
+# gcp_configuration: Google cloud platform configuration. Field 
+# ip6_autocfg_enabled: Enable ipv6 auto configuration. Field introduced 
 # ipam_provider_ref: Ipam profile for the cloud. It is a reference to 
 # license_tier: Specifies the default license tier which would 
 # license_type: If no license type is specified then default 
 # linuxserver_configuration: Linuxserverconfiguration settings for cloud. 
-# mesos_configuration: Mesosconfiguration settings for cloud. 
+# mesos_configuration: Field deprecated in 18.2.2. 
 # mtu: Mtu setting for the cloud. Default value when 
 # name: (required) Name of the object. 
 # nsx_configuration: Configuration parameters for nsx manager. Field 
@@ -50,52 +54,56 @@ ${3:   ${4:api_context}: ${5:"#"}}
 ${6:   ${7:api_version}: ${8:"#"}}
 ${9:   ${10:apic_configuration}: ${11:"#"}}
 ${12:   ${13:apic_mode}: ${14:"#"}}
-${15:   ${16:avi_api_patch_op}: ${17:"#"}}
-${18:   ${19:avi_api_update_method}: ${20:"#"}}
-${21:   ${22:avi_credentials}: ${23:"#"}}
-${24:   ${25:aws_configuration}: ${26:"#"}}
-${27:   ${28:azure_configuration}: ${29:"#"}}
-${30:   ${31:cloudstack_configuration}: ${32:"#"}}
-${33:   ${34:controller}: ${35:"#"}}
-${36:   ${37:custom_tags}: ${38:"#"}}
-${39:   ${40:dhcp_enabled}: ${41:"#"}}
-${42:   ${43:dns_provider_ref}: ${44:"#"}}
-${45:   ${46:docker_configuration}: ${47:"#"}}
-${48:   ${49:east_west_dns_provider_ref}: ${50:"#"}}
-${51:   ${52:east_west_ipam_provider_ref}: ${53:"#"}}
-${54:   ${55:enable_vip_static_routes}: ${56:"#"}}
-${57:   ${58:ipam_provider_ref}: ${59:"#"}}
-${60:   ${61:license_tier}: ${62:"#"}}
-${63:   ${64:license_type}: ${65:"#"}}
-${66:   ${67:linuxserver_configuration}: ${68:"#"}}
-${69:   ${70:mesos_configuration}: ${71:"#"}}
-${72:   ${73:mtu}: ${74:"#"}}
-${75:   ${76:name}: ${77:"#"}}
-${78:   ${79:nsx_configuration}: ${80:"#"}}
-${81:   ${82:obj_name_prefix}: ${83:"#"}}
-${84:   ${85:openstack_configuration}: ${86:"#"}}
-${87:   ${88:oshiftk8s_configuration}: ${89:"#"}}
-${90:   ${91:password}: ${92:"#"}}
-${93:   ${94:prefer_static_routes}: ${95:"#"}}
-${96:   ${97:proxy_configuration}: ${98:"#"}}
-${99:   ${100:rancher_configuration}: ${101:"#"}}
-${102:   ${103:state}: ${104:"#"}}
-${105:   ${106:state_based_dns_registration}: ${107:"#"}}
-${108:   ${109:tenant}: ${110:"#"}}
-${111:   ${112:tenant_ref}: ${113:"#"}}
-${114:   ${115:tenant_uuid}: ${116:"#"}}
-${117:   ${118:url}: ${119:"#"}}
-${120:   ${121:username}: ${122:"#"}}
-${123:   ${124:uuid}: ${125:"#"}}
-${126:   ${127:vca_configuration}: ${128:"#"}}
-${129:   ${130:vcenter_configuration}: ${131:"#"}}
-${132:   ${133:vtype}: ${134:"#"}}
-${135:${136:   become: ${137:true}} 
-${138:   become_method: ${139:su}} 
-${140:   become_user: ${141:nobody}} 
-${142:   become_flags: ${143:"-s /bin/sh"}}} 
-${144:   when: ${145:variable is defined}} 
-${146:   with_items: ${147:array}} 
+${15:   ${16:autoscale_polling_interval}: ${17:"#"}}
+${18:   ${19:avi_api_patch_op}: ${20:"#"}}
+${21:   ${22:avi_api_update_method}: ${23:"#"}}
+${24:   ${25:avi_credentials}: ${26:"#"}}
+${27:   ${28:avi_disable_session_cache_as_fact}: ${29:"#"}}
+${30:   ${31:aws_configuration}: ${32:"#"}}
+${33:   ${34:azure_configuration}: ${35:"#"}}
+${36:   ${37:cloudstack_configuration}: ${38:"#"}}
+${39:   ${40:controller}: ${41:"#"}}
+${42:   ${43:custom_tags}: ${44:"#"}}
+${45:   ${46:dhcp_enabled}: ${47:"#"}}
+${48:   ${49:dns_provider_ref}: ${50:"#"}}
+${51:   ${52:docker_configuration}: ${53:"#"}}
+${54:   ${55:east_west_dns_provider_ref}: ${56:"#"}}
+${57:   ${58:east_west_ipam_provider_ref}: ${59:"#"}}
+${60:   ${61:enable_vip_static_routes}: ${62:"#"}}
+${63:   ${64:gcp_configuration}: ${65:"#"}}
+${66:   ${67:ip6_autocfg_enabled}: ${68:"#"}}
+${69:   ${70:ipam_provider_ref}: ${71:"#"}}
+${72:   ${73:license_tier}: ${74:"#"}}
+${75:   ${76:license_type}: ${77:"#"}}
+${78:   ${79:linuxserver_configuration}: ${80:"#"}}
+${81:   ${82:mesos_configuration}: ${83:"#"}}
+${84:   ${85:mtu}: ${86:"#"}}
+${87:   ${88:name}: ${89:"#"}}
+${90:   ${91:nsx_configuration}: ${92:"#"}}
+${93:   ${94:obj_name_prefix}: ${95:"#"}}
+${96:   ${97:openstack_configuration}: ${98:"#"}}
+${99:   ${100:oshiftk8s_configuration}: ${101:"#"}}
+${102:   ${103:password}: ${104:"#"}}
+${105:   ${106:prefer_static_routes}: ${107:"#"}}
+${108:   ${109:proxy_configuration}: ${110:"#"}}
+${111:   ${112:rancher_configuration}: ${113:"#"}}
+${114:   ${115:state}: ${116:"#"}}
+${117:   ${118:state_based_dns_registration}: ${119:"#"}}
+${120:   ${121:tenant}: ${122:"#"}}
+${123:   ${124:tenant_ref}: ${125:"#"}}
+${126:   ${127:tenant_uuid}: ${128:"#"}}
+${129:   ${130:url}: ${131:"#"}}
+${132:   ${133:username}: ${134:"#"}}
+${135:   ${136:uuid}: ${137:"#"}}
+${138:   ${139:vca_configuration}: ${140:"#"}}
+${141:   ${142:vcenter_configuration}: ${143:"#"}}
+${144:   ${145:vtype}: ${146:"#"}}
+${147:${148:   become: ${149:true}} 
+${150:   become_method: ${151:su}} 
+${152:   become_user: ${153:nobody}} 
+${154:   become_flags: ${155:"-s /bin/sh"}}} 
+${156:   when: ${157:variable is defined}} 
+${158:   with_items: ${159:array}} 
 ]]></content>
 	<tabTrigger>avi_cloud</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

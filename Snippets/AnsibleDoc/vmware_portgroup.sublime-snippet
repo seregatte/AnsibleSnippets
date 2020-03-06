@@ -3,37 +3,43 @@
 ${1:# cluster_name: Name of cluster name for host membership. 
 # hostname: The hostname or IP address of the vSphere 
 # hosts: List of name of host or hosts on which portgroup 
-# network_policy: Network policy specifies layer 2 security 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
-# portgroup_name: (required) Portgroup name to add. 
+# portgroup: (required) Portgroup name to add. 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
+# security: Network policy specifies layer 2 security 
 # state: Determines if the portgroup should be present or 
-# switch_name: (required) vSwitch to modify. 
-# teaming_policy: Dictionary which configures the different 
+# switch: (required) vSwitch to modify. 
+# teaming: Dictionary which configures the different 
+# traffic_shaping: Dictionary which configures traffic shaping for 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
-# vlan_id: (required) VLAN ID to assign to portgroup. 
+# vlan_id: VLAN ID to assign to portgroup. Set to 0 (no 
 }- name: ${2:Name for vmware_portgroup module.}
   vmware_portgroup:
 ${3:   ${4:cluster_name}: ${5:"#"}}
 ${6:   ${7:hostname}: ${8:"#"}}
 ${9:   ${10:hosts}: ${11:"#"}}
-${12:   ${13:network_policy}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:port}: ${20:"#"}}
-${21:   ${22:portgroup_name}: ${23:"#"}}
-${24:   ${25:state}: ${26:"#"}}
-${27:   ${28:switch_name}: ${29:"#"}}
-${30:   ${31:teaming_policy}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:vlan_id}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:port}: ${17:"#"}}
+${18:   ${19:portgroup}: ${20:"#"}}
+${21:   ${22:proxy_host}: ${23:"#"}}
+${24:   ${25:proxy_port}: ${26:"#"}}
+${27:   ${28:security}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:switch}: ${35:"#"}}
+${36:   ${37:teaming}: ${38:"#"}}
+${39:   ${40:traffic_shaping}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:   ${49:vlan_id}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>vmware_portgroup</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

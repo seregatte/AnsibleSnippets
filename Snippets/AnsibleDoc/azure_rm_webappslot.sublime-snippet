@@ -13,7 +13,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cloud_environment: For cloud environments other than the US public 
 # configuration_source: Source slot to clone configurations from when 
 # container_settings: Web app slot container settings. 
-# deployment_source: Deployment source for git 
+# deployment_source: Deployment source for git. 
 # frameworks: Set of run time framework settings. Each setting 
 # location: Resource location. If not set, location from the 
 # name: (required) Unique name of the deployment slot to 
@@ -23,7 +23,7 @@ ${1:# ad_user: Active Directory username. Use when
 # resource_group: (required) Name of the resource group to which 
 # secret: Azure client secret. Use when authenticating 
 # startup_file: The slot startup file. This only applies for 
-# state: Assert the state of the Web App deployment slot. 
+# state: State of the Web App deployment slot. Use 
 # subscription_id: Your Azure subscription Id. 
 # swap: Swap deployment slots of a web app. 
 # tags: Dictionary of string:string pairs to assign as 

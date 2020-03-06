@@ -4,6 +4,7 @@ ${1:# api_timeout: Timeout in seconds for calls to the
 # api_token: cloudscale.ch API token. This can also be passed 
 # name: Name of the server group. Either `name' or 
 # state: State of the server group. 
+# tags: Tags assosiated with the server groups. Set this 
 # type: Type of the server group. 
 # uuid: UUID of the server group. Either `name' or 
 }- name: ${2:Name for cloudscale_server_group module.}
@@ -12,14 +13,15 @@ ${3:   ${4:api_timeout}: ${5:"#"}}
 ${6:   ${7:api_token}: ${8:"#"}}
 ${9:   ${10:name}: ${11:"#"}}
 ${12:   ${13:state}: ${14:"#"}}
-${15:   ${16:type}: ${17:"#"}}
-${18:   ${19:uuid}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${15:   ${16:tags}: ${17:"#"}}
+${18:   ${19:type}: ${20:"#"}}
+${21:   ${22:uuid}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>cloudscale_server_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

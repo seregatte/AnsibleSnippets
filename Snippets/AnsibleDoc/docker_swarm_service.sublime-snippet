@@ -23,10 +23,10 @@ ${1:# api_version: The version of the Docker API running on the
 # der: healthcheck) 
 # hostname: Container hostname. Corresponds to the 
 # hosts: Dict of host-to-IP mappings, where each host 
-# image: (required) Service image path and tag. 
+# image: Service image path and tag. Corresponds to the 
 # labels: Dictionary of key value pairs. Corresponds to 
 # limit_cpu: Service CPU limit. `0' equals no limit. 
-# limit_memory: Service memory limit (format: 
+# limit_memory: Service memory limit in format 
 # limits: Configures service resource limits. 
 # log_driver: Configure the logging driver for a service. 
 # log_driver_options: Options for service logging driver. Corresponds 
@@ -34,14 +34,14 @@ ${1:# api_version: The version of the Docker API running on the
 # mode: Service replication mode. Service will be 
 # mounts: List of dictionaries describing the service 
 # name: (required) Service name. Corresponds to the 
-# networks: List of the service networks names. Prior to API 
+# networks: List of the service networks names or 
 # placement: Configures service placement preferences and 
 # publish: List of dictionaries describing the service 
 # read_only: Mount the containers root filesystem as read 
 # replicas: Number of containers instantiated in the 
 # reservations: Configures service resource reservations. 
 # reserve_cpu: Service CPU reservation. `0' equals no 
-# reserve_memory: Service memory reservation (format: 
+# reserve_memory: Service memory reservation in format 
 # resolve_image: If the current image digest should be resolved 
 # restart_config: Configures if and how to restart containers when 
 # restart_policy: Restart condition of the service. Corresponds to 
@@ -51,7 +51,7 @@ ${1:# api_version: The version of the Docker API running on the
 # rollback_config: Configures how the service should be rolled back 
 # secrets: List of dictionaries describing the service 
 # ssl_version: Provide a valid SSL version number. Default 
-# state: (required) `absent' - A service matching the 
+# state: `absent' - A service matching the specified name 
 # stop_grace_period: Time to wait before force killing a container. 
 # stop_signal: Override default signal used to stop the 
 # timeout: The maximum amount of time in seconds to wait on 

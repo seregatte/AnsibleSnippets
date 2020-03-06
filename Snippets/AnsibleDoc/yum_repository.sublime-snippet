@@ -35,8 +35,8 @@ ${1:# async: If set to `yes' Yum will download packages and
 # priority: Enforce ordered protection of repositories. The 
 # protect: Protect packages from updates from other 
 # proxy: URL to the proxy server that yum should use. Set 
-# proxy_password: Username to use for proxy. 
-# proxy_username: Password for this proxy. 
+# proxy_password: Password for this proxy. 
+# proxy_username: Username to use for proxy. 
 # repo_gpgcheck: This tells yum whether or not it should perform 
 # reposdir: Directory where the `.repo' files will be 
 # retries: Set the number of times any attempt to retrieve 

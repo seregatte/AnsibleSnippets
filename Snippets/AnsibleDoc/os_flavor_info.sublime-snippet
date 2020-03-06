@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
+# availability_zone: Ignored. Present for backwards compatibility 
+# ca_cert: A path to a CA Cert bundle that can be used as 
+# client_cert: A path to a client certificate to use as part of 
+# client_key: A path to a client key to use as part of the SSL 
+# cloud: Named cloud or cloud config to operate against. 
+# ephemeral: A string used for filtering flavors based on the 
+# interface: Endpoint URL type to fetch from the service 
+# limit: Limits the number of flavors returned. All 
+# name: A flavor name. Cannot be used with `ram' or 
+# ram: A string used for filtering flavors based on the 
+# region_name: Name of the region. 
+# timeout: How long should ansible wait for the requested 
+# validate_certs: Whether or not SSL API requests should be 
+# vcpus: A string used for filtering flavors based on the 
+# wait: Should ansible wait until the requested resource 
+}- name: ${2:Name for os_flavor_info module.}
+  os_flavor_info:
+${3:   ${4:api_timeout}: ${5:"#"}}
+${6:   ${7:auth}: ${8:"#"}}
+${9:   ${10:auth_type}: ${11:"#"}}
+${12:   ${13:availability_zone}: ${14:"#"}}
+${15:   ${16:ca_cert}: ${17:"#"}}
+${18:   ${19:client_cert}: ${20:"#"}}
+${21:   ${22:client_key}: ${23:"#"}}
+${24:   ${25:cloud}: ${26:"#"}}
+${27:   ${28:ephemeral}: ${29:"#"}}
+${30:   ${31:interface}: ${32:"#"}}
+${33:   ${34:limit}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:ram}: ${41:"#"}}
+${42:   ${43:region_name}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:vcpus}: ${53:"#"}}
+${54:   ${55:wait}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>os_flavor_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

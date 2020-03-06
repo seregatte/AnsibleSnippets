@@ -14,6 +14,7 @@ ${1:# certname: The name to use when handling certificates.
 # summarize: Whether to print a transaction summary. 
 # tags: A list of puppet tags to be used. 
 # timeout: How long to wait for `puppet' to finish. 
+# use_srv_records: Toggles use_srv_records flag 
 # verbose: Print extra information. 
 }- name: ${2:Name for puppet module.}
   puppet:
@@ -31,13 +32,14 @@ ${33:   ${34:puppetmaster}: ${35:"#"}}
 ${36:   ${37:summarize}: ${38:"#"}}
 ${39:   ${40:tags}: ${41:"#"}}
 ${42:   ${43:timeout}: ${44:"#"}}
-${45:   ${46:verbose}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${45:   ${46:use_srv_records}: ${47:"#"}}
+${48:   ${49:verbose}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>puppet</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

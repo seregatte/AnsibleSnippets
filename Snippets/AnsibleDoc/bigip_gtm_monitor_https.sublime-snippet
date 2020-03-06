@@ -10,23 +10,18 @@ ${1:# cipher_list: Specifies the list of ciphers for this monitor.
 # name: (required) Monitor name. 
 # parent: The parent template of this monitor template. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # port: Port address part of the IP/port definition. If 
 # probe_timeout: Specifies the number of seconds after which the 
 # provider: A dict object containing connection details. 
 # receive: The receive string for the monitor call. 
 # reverse: Instructs the system to mark the target resource 
 # send: The send string for the monitor call. When 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # target_password: Specifies the password, if the monitored target 
 # target_username: Specifies the user name, if the monitored target 
 # timeout: The number of seconds in which the node or 
 # transparent: Specifies whether the monitor operates in 
 # update_password: `always' will update passwords if the 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_monitor_https module.}
   bigip_gtm_monitor_https:
 ${3:   ${4:cipher_list}: ${5:"#"}}
@@ -39,29 +34,24 @@ ${21:   ${22:ip}: ${23:"#"}}
 ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:parent}: ${29:"#"}}
 ${30:   ${31:partition}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:port}: ${38:"#"}}
-${39:   ${40:probe_timeout}: ${41:"#"}}
-${42:   ${43:provider}: ${44:"#"}}
-${45:   ${46:receive}: ${47:"#"}}
-${48:   ${49:reverse}: ${50:"#"}}
-${51:   ${52:send}: ${53:"#"}}
-${54:   ${55:server}: ${56:"#"}}
-${57:   ${58:server_port}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:target_password}: ${65:"#"}}
-${66:   ${67:target_username}: ${68:"#"}}
-${69:   ${70:timeout}: ${71:"#"}}
-${72:   ${73:transparent}: ${74:"#"}}
-${75:   ${76:update_password}: ${77:"#"}}
-${78:   ${79:user}: ${80:"#"}}
-${81:   ${82:validate_certs}: ${83:"#"}}
-${84:${85:   become: ${86:true}} 
-${87:   become_method: ${88:su}} 
-${89:   become_user: ${90:nobody}} 
-${91:   become_flags: ${92:"-s /bin/sh"}}} 
-${93:   when: ${94:variable is defined}} 
-${95:   with_items: ${96:array}} 
+${33:   ${34:port}: ${35:"#"}}
+${36:   ${37:probe_timeout}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:receive}: ${44:"#"}}
+${45:   ${46:reverse}: ${47:"#"}}
+${48:   ${49:send}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:target_password}: ${56:"#"}}
+${57:   ${58:target_username}: ${59:"#"}}
+${60:   ${61:timeout}: ${62:"#"}}
+${63:   ${64:transparent}: ${65:"#"}}
+${66:   ${67:update_password}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
 ]]></content>
 	<tabTrigger>bigip_gtm_monitor_https</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

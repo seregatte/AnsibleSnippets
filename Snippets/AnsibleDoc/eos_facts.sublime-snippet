@@ -2,20 +2,22 @@
 <content><![CDATA[
 ${1:# auth_pass: *Deprecated* Starting with Ansible 2.5 we 
 # authorize: *Deprecated* Starting with Ansible 2.5 we 
+# gather_network_resources: When supplied, this argument will restrict the 
 # gather_subset: When supplied, this argument will restrict the 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 }- name: ${2:Name for eos_facts module.}
   eos_facts:
 ${3:   ${4:auth_pass}: ${5:"#"}}
 ${6:   ${7:authorize}: ${8:"#"}}
-${9:   ${10:gather_subset}: ${11:"#"}}
-${12:   ${13:provider}: ${14:"#"}}
-${15:${16:   become: ${17:true}} 
-${18:   become_method: ${19:su}} 
-${20:   become_user: ${21:nobody}} 
-${22:   become_flags: ${23:"-s /bin/sh"}}} 
-${24:   when: ${25:variable is defined}} 
-${26:   with_items: ${27:array}} 
+${9:   ${10:gather_network_resources}: ${11:"#"}}
+${12:   ${13:gather_subset}: ${14:"#"}}
+${15:   ${16:provider}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>eos_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

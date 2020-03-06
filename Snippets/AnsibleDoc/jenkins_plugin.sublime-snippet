@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# client_cert: PEM formatted certificate chain file to be used 
 # client_key: PEM formatted file that contains your private 
-# force: If `yes' do not get a cached copy. 
+# force: If `yes' do not get a cached copy. Alias 
 # force_basic_auth: Credentials specified with `url_username' and 
 # group: Name of the Jenkins group on the OS. 
 # http_agent: Header to identify as, generally appears in web 

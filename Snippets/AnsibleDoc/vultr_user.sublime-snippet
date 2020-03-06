@@ -7,6 +7,7 @@ ${1:# acls: List of ACLs this users should have, see
 # api_endpoint: URL to API endpint (without trailing slash). The 
 # api_key: API key of the Vultr API. The ENV variable 
 # api_retries: Amount of retries in case of the Vultr API 
+# api_retry_max_delay: Retry backoff delay in seconds is exponential up 
 # api_timeout: HTTP timeout to Vultr API. The ENV variable 
 # email: Email of the user. Required if `state=present'. 
 # force: Password will only be changed with enforcement. 
@@ -23,19 +24,20 @@ ${12:   ${13:api_enabled}: ${14:"#"}}
 ${15:   ${16:api_endpoint}: ${17:"#"}}
 ${18:   ${19:api_key}: ${20:"#"}}
 ${21:   ${22:api_retries}: ${23:"#"}}
-${24:   ${25:api_timeout}: ${26:"#"}}
-${27:   ${28:email}: ${29:"#"}}
-${30:   ${31:force}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:password}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:validate_certs}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${24:   ${25:api_retry_max_delay}: ${26:"#"}}
+${27:   ${28:api_timeout}: ${29:"#"}}
+${30:   ${31:email}: ${32:"#"}}
+${33:   ${34:force}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>vultr_user</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

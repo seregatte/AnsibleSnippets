@@ -1,8 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# a_pool: Name of container cloud application that 
-# ab_pool: A/b pool configuration. 
+# ab_pool: A/b pool configuration. Field deprecated in 
 # ab_priority: Priority of this pool in a a-b pool pair. 
+# analytics_policy: Determines analytics settings for the pool. 
+# analytics_profile_ref: Specifies settings related to analytics. It is a 
 # api_context: Avi API context that includes current session ID 
 # api_version: Avi API version of to use for Avi API and 
 # apic_epg_name: Synchronize cisco apic epg members with pool 
@@ -13,14 +15,17 @@ ${1:# a_pool: Name of container cloud application that
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # capacity_estimation: Inline estimation of capacity of servers. 
 # capacity_estimation_ttfb_thresh: The maximum time-to-first-byte of a server. 
 # cloud_config_cksum: Checksum of cloud configuration for pool. 
 # cloud_ref: It is a reference to an object of type cloud. 
+# conn_pool_properties: Connection pool properties. Field introduced in 
 # connection_ramp_duration: Duration for which new connections will be 
 # controller: IP address or hostname of the controller. The 
 # created_by: Creator name. 
 # default_server_port: Traffic sent to servers will use this 
+# delete_server_on_dns_refresh: Indicates whether existing ips are 
 # description: A description of the pool. 
 # domain_name: Comma separated list of domain names which will 
 # east_west: Inherited config from virtualservice. 
@@ -36,27 +41,31 @@ ${1:# a_pool: Name of container cloud application that
 # ipaddrgroup_ref: Use list of servers from ip address group. It is 
 # lb_algorithm: The load balancing algorithm will pick a server 
 # lb_algorithm_consistent_hash_hdr: Http header name to be used for the hash key. 
-# lb_algorithm_core_nonaffinity: Degree of non-affinity for core afffinity based 
+# lb_algorithm_core_nonaffinity: Degree of non-affinity for core affinity based 
 # lb_algorithm_hash: Criteria used as a key for determining the hash 
 # lookup_server_by_name: Allow server lookup by name. Field introduced in 
 # max_concurrent_connections_per_server: The maximum number of concurrent connections 
 # max_conn_rate_per_server: Rate limit connections to each server. 
+# min_health_monitors_up: Minimum number of health monitors in up state to 
+# min_servers_up: Minimum number of servers in up state for 
 # name: (required) The name of the pool. 
 # networks: (internal-use) networks designated as containing 
 # nsx_securitygroup: A list of nsx service groups where the servers 
 # password: Password of Avi user in Avi controller. The 
 # pki_profile_ref: Avi will validate the ssl certificate present by 
 # placement_networks: Manually select the networks and subnets used to 
-# prst_hdr_name: Header name for custom header persistence. 
+# prst_hdr_name: Header name for custom header persistence. Field 
 # request_queue_depth: Minimum number of requests to be queued when 
 # request_queue_enabled: Enable request queue when pool is full. Default 
 # rewrite_host_header_to_server_name: Rewrite incoming host header to server name of 
 # rewrite_host_header_to_sni: If sni server name is specified, rewrite 
-# server_auto_scale: Server autoscale. Not used anymore. Default 
-# server_count: Number of server_count. Default value when not 
+# server_auto_scale: Server autoscale. Not used anymore. Field 
+# server_count: Field deprecated in 18.2.1. 
 # server_name: Fully qualified dns hostname which will be used 
 # server_reselect: Server reselect configuration for http requests. 
+# server_timeout: Server timeout value specifies the time within 
 # servers: The pool directs load balanced traffic to this 
+# service_metadata: Metadata pertaining to the service provided by 
 # sni_enabled: Enable tls sni for server connections. If 
 # ssl_key_and_certificate_ref: Service engines will present a client ssl 
 # ssl_profile_ref: When enabled, avi re-encrypts traffic to the 
@@ -74,78 +83,87 @@ ${1:# a_pool: Name of container cloud application that
 ${3:   ${4:a_pool}: ${5:"#"}}
 ${6:   ${7:ab_pool}: ${8:"#"}}
 ${9:   ${10:ab_priority}: ${11:"#"}}
-${12:   ${13:api_context}: ${14:"#"}}
-${15:   ${16:api_version}: ${17:"#"}}
-${18:   ${19:apic_epg_name}: ${20:"#"}}
-${21:   ${22:application_persistence_profile_ref}: ${23:"#"}}
-${24:   ${25:autoscale_launch_config_ref}: ${26:"#"}}
-${27:   ${28:autoscale_networks}: ${29:"#"}}
-${30:   ${31:autoscale_policy_ref}: ${32:"#"}}
-${33:   ${34:avi_api_patch_op}: ${35:"#"}}
-${36:   ${37:avi_api_update_method}: ${38:"#"}}
-${39:   ${40:avi_credentials}: ${41:"#"}}
-${42:   ${43:capacity_estimation}: ${44:"#"}}
-${45:   ${46:capacity_estimation_ttfb_thresh}: ${47:"#"}}
-${48:   ${49:cloud_config_cksum}: ${50:"#"}}
-${51:   ${52:cloud_ref}: ${53:"#"}}
-${54:   ${55:connection_ramp_duration}: ${56:"#"}}
-${57:   ${58:controller}: ${59:"#"}}
-${60:   ${61:created_by}: ${62:"#"}}
-${63:   ${64:default_server_port}: ${65:"#"}}
-${66:   ${67:description}: ${68:"#"}}
-${69:   ${70:domain_name}: ${71:"#"}}
-${72:   ${73:east_west}: ${74:"#"}}
-${75:   ${76:enabled}: ${77:"#"}}
-${78:   ${79:external_autoscale_groups}: ${80:"#"}}
-${81:   ${82:fail_action}: ${83:"#"}}
-${84:   ${85:fewest_tasks_feedback_delay}: ${86:"#"}}
-${87:   ${88:graceful_disable_timeout}: ${89:"#"}}
-${90:   ${91:gslb_sp_enabled}: ${92:"#"}}
-${93:   ${94:health_monitor_refs}: ${95:"#"}}
-${96:   ${97:host_check_enabled}: ${98:"#"}}
-${99:   ${100:inline_health_monitor}: ${101:"#"}}
-${102:   ${103:ipaddrgroup_ref}: ${104:"#"}}
-${105:   ${106:lb_algorithm}: ${107:"#"}}
-${108:   ${109:lb_algorithm_consistent_hash_hdr}: ${110:"#"}}
-${111:   ${112:lb_algorithm_core_nonaffinity}: ${113:"#"}}
-${114:   ${115:lb_algorithm_hash}: ${116:"#"}}
-${117:   ${118:lookup_server_by_name}: ${119:"#"}}
-${120:   ${121:max_concurrent_connections_per_server}: ${122:"#"}}
-${123:   ${124:max_conn_rate_per_server}: ${125:"#"}}
-${126:   ${127:name}: ${128:"#"}}
-${129:   ${130:networks}: ${131:"#"}}
-${132:   ${133:nsx_securitygroup}: ${134:"#"}}
-${135:   ${136:password}: ${137:"#"}}
-${138:   ${139:pki_profile_ref}: ${140:"#"}}
-${141:   ${142:placement_networks}: ${143:"#"}}
-${144:   ${145:prst_hdr_name}: ${146:"#"}}
-${147:   ${148:request_queue_depth}: ${149:"#"}}
-${150:   ${151:request_queue_enabled}: ${152:"#"}}
-${153:   ${154:rewrite_host_header_to_server_name}: ${155:"#"}}
-${156:   ${157:rewrite_host_header_to_sni}: ${158:"#"}}
-${159:   ${160:server_auto_scale}: ${161:"#"}}
-${162:   ${163:server_count}: ${164:"#"}}
-${165:   ${166:server_name}: ${167:"#"}}
-${168:   ${169:server_reselect}: ${170:"#"}}
-${171:   ${172:servers}: ${173:"#"}}
-${174:   ${175:sni_enabled}: ${176:"#"}}
-${177:   ${178:ssl_key_and_certificate_ref}: ${179:"#"}}
-${180:   ${181:ssl_profile_ref}: ${182:"#"}}
-${183:   ${184:state}: ${185:"#"}}
-${186:   ${187:tenant}: ${188:"#"}}
-${189:   ${190:tenant_ref}: ${191:"#"}}
-${192:   ${193:tenant_uuid}: ${194:"#"}}
-${195:   ${196:url}: ${197:"#"}}
-${198:   ${199:use_service_port}: ${200:"#"}}
-${201:   ${202:username}: ${203:"#"}}
-${204:   ${205:uuid}: ${206:"#"}}
-${207:   ${208:vrf_ref}: ${209:"#"}}
-${210:${211:   become: ${212:true}} 
-${213:   become_method: ${214:su}} 
-${215:   become_user: ${216:nobody}} 
-${217:   become_flags: ${218:"-s /bin/sh"}}} 
-${219:   when: ${220:variable is defined}} 
-${221:   with_items: ${222:array}} 
+${12:   ${13:analytics_policy}: ${14:"#"}}
+${15:   ${16:analytics_profile_ref}: ${17:"#"}}
+${18:   ${19:api_context}: ${20:"#"}}
+${21:   ${22:api_version}: ${23:"#"}}
+${24:   ${25:apic_epg_name}: ${26:"#"}}
+${27:   ${28:application_persistence_profile_ref}: ${29:"#"}}
+${30:   ${31:autoscale_launch_config_ref}: ${32:"#"}}
+${33:   ${34:autoscale_networks}: ${35:"#"}}
+${36:   ${37:autoscale_policy_ref}: ${38:"#"}}
+${39:   ${40:avi_api_patch_op}: ${41:"#"}}
+${42:   ${43:avi_api_update_method}: ${44:"#"}}
+${45:   ${46:avi_credentials}: ${47:"#"}}
+${48:   ${49:avi_disable_session_cache_as_fact}: ${50:"#"}}
+${51:   ${52:capacity_estimation}: ${53:"#"}}
+${54:   ${55:capacity_estimation_ttfb_thresh}: ${56:"#"}}
+${57:   ${58:cloud_config_cksum}: ${59:"#"}}
+${60:   ${61:cloud_ref}: ${62:"#"}}
+${63:   ${64:conn_pool_properties}: ${65:"#"}}
+${66:   ${67:connection_ramp_duration}: ${68:"#"}}
+${69:   ${70:controller}: ${71:"#"}}
+${72:   ${73:created_by}: ${74:"#"}}
+${75:   ${76:default_server_port}: ${77:"#"}}
+${78:   ${79:delete_server_on_dns_refresh}: ${80:"#"}}
+${81:   ${82:description}: ${83:"#"}}
+${84:   ${85:domain_name}: ${86:"#"}}
+${87:   ${88:east_west}: ${89:"#"}}
+${90:   ${91:enabled}: ${92:"#"}}
+${93:   ${94:external_autoscale_groups}: ${95:"#"}}
+${96:   ${97:fail_action}: ${98:"#"}}
+${99:   ${100:fewest_tasks_feedback_delay}: ${101:"#"}}
+${102:   ${103:graceful_disable_timeout}: ${104:"#"}}
+${105:   ${106:gslb_sp_enabled}: ${107:"#"}}
+${108:   ${109:health_monitor_refs}: ${110:"#"}}
+${111:   ${112:host_check_enabled}: ${113:"#"}}
+${114:   ${115:inline_health_monitor}: ${116:"#"}}
+${117:   ${118:ipaddrgroup_ref}: ${119:"#"}}
+${120:   ${121:lb_algorithm}: ${122:"#"}}
+${123:   ${124:lb_algorithm_consistent_hash_hdr}: ${125:"#"}}
+${126:   ${127:lb_algorithm_core_nonaffinity}: ${128:"#"}}
+${129:   ${130:lb_algorithm_hash}: ${131:"#"}}
+${132:   ${133:lookup_server_by_name}: ${134:"#"}}
+${135:   ${136:max_concurrent_connections_per_server}: ${137:"#"}}
+${138:   ${139:max_conn_rate_per_server}: ${140:"#"}}
+${141:   ${142:min_health_monitors_up}: ${143:"#"}}
+${144:   ${145:min_servers_up}: ${146:"#"}}
+${147:   ${148:name}: ${149:"#"}}
+${150:   ${151:networks}: ${152:"#"}}
+${153:   ${154:nsx_securitygroup}: ${155:"#"}}
+${156:   ${157:password}: ${158:"#"}}
+${159:   ${160:pki_profile_ref}: ${161:"#"}}
+${162:   ${163:placement_networks}: ${164:"#"}}
+${165:   ${166:prst_hdr_name}: ${167:"#"}}
+${168:   ${169:request_queue_depth}: ${170:"#"}}
+${171:   ${172:request_queue_enabled}: ${173:"#"}}
+${174:   ${175:rewrite_host_header_to_server_name}: ${176:"#"}}
+${177:   ${178:rewrite_host_header_to_sni}: ${179:"#"}}
+${180:   ${181:server_auto_scale}: ${182:"#"}}
+${183:   ${184:server_count}: ${185:"#"}}
+${186:   ${187:server_name}: ${188:"#"}}
+${189:   ${190:server_reselect}: ${191:"#"}}
+${192:   ${193:server_timeout}: ${194:"#"}}
+${195:   ${196:servers}: ${197:"#"}}
+${198:   ${199:service_metadata}: ${200:"#"}}
+${201:   ${202:sni_enabled}: ${203:"#"}}
+${204:   ${205:ssl_key_and_certificate_ref}: ${206:"#"}}
+${207:   ${208:ssl_profile_ref}: ${209:"#"}}
+${210:   ${211:state}: ${212:"#"}}
+${213:   ${214:tenant}: ${215:"#"}}
+${216:   ${217:tenant_ref}: ${218:"#"}}
+${219:   ${220:tenant_uuid}: ${221:"#"}}
+${222:   ${223:url}: ${224:"#"}}
+${225:   ${226:use_service_port}: ${227:"#"}}
+${228:   ${229:username}: ${230:"#"}}
+${231:   ${232:uuid}: ${233:"#"}}
+${234:   ${235:vrf_ref}: ${236:"#"}}
+${237:${238:   become: ${239:true}} 
+${240:   become_method: ${241:su}} 
+${242:   become_user: ${243:nobody}} 
+${244:   become_flags: ${245:"-s /bin/sh"}}} 
+${246:   when: ${247:variable is defined}} 
+${248:   with_items: ${249:array}} 
 ]]></content>
 	<tabTrigger>avi_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

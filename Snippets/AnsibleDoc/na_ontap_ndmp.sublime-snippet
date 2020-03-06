@@ -1,0 +1,72 @@
+<snippet>
+<content><![CDATA[
+${1:# abort_on_disk_error: Enable abort on disk error. 
+# authtype: Authentication type. 
+# backup_log_enable: Enable backup log. 
+# data_port_range: Data port range. 
+# debug_enable: Enable debug. 
+# debug_filter: Debug filter. 
+# dump_detailed_stats: Enable logging of VM stats for dump. 
+# dump_logical_find: Enable logical find for dump. 
+# enable: Enable NDMP on vserver. 
+# fh_dir_retry_interval: FH throttle value for dir. 
+# fh_node_retry_interval: FH throttle value for node. 
+# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# ignore_ctime_enabled: Ignore ctime. 
+# is_secure_control_connection_enabled: Is secure control connection enabled. 
+# offset_map_enable: Enable offset map. 
+# ontapi: The ontap api version to use 
+# password: (required) Password for the specified user. 
+# per_qtree_exclude_enable: Enable per qtree exclusion. 
+# preferred_interface_role: Preferred interface role. 
+# restore_vm_cache_size: Restore VM file cache size. 
+# secondary_debug_filter: Secondary debug filter. 
+# tcpnodelay: Enable TCP nodelay. 
+# tcpwinsize: TCP window size. 
+# use_rest: REST API if supported by the target system for 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `no', the SSL certificates will not be 
+# vserver: (required) Name of the vserver. 
+}- name: ${2:Name for na_ontap_ndmp module.}
+  na_ontap_ndmp:
+${3:   ${4:abort_on_disk_error}: ${5:"#"}}
+${6:   ${7:authtype}: ${8:"#"}}
+${9:   ${10:backup_log_enable}: ${11:"#"}}
+${12:   ${13:data_port_range}: ${14:"#"}}
+${15:   ${16:debug_enable}: ${17:"#"}}
+${18:   ${19:debug_filter}: ${20:"#"}}
+${21:   ${22:dump_detailed_stats}: ${23:"#"}}
+${24:   ${25:dump_logical_find}: ${26:"#"}}
+${27:   ${28:enable}: ${29:"#"}}
+${30:   ${31:fh_dir_retry_interval}: ${32:"#"}}
+${33:   ${34:fh_node_retry_interval}: ${35:"#"}}
+${36:   ${37:hostname}: ${38:"#"}}
+${39:   ${40:http_port}: ${41:"#"}}
+${42:   ${43:https}: ${44:"#"}}
+${45:   ${46:ignore_ctime_enabled}: ${47:"#"}}
+${48:   ${49:is_secure_control_connection_enabled}: ${50:"#"}}
+${51:   ${52:offset_map_enable}: ${53:"#"}}
+${54:   ${55:ontapi}: ${56:"#"}}
+${57:   ${58:password}: ${59:"#"}}
+${60:   ${61:per_qtree_exclude_enable}: ${62:"#"}}
+${63:   ${64:preferred_interface_role}: ${65:"#"}}
+${66:   ${67:restore_vm_cache_size}: ${68:"#"}}
+${69:   ${70:secondary_debug_filter}: ${71:"#"}}
+${72:   ${73:tcpnodelay}: ${74:"#"}}
+${75:   ${76:tcpwinsize}: ${77:"#"}}
+${78:   ${79:use_rest}: ${80:"#"}}
+${81:   ${82:username}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:   ${88:vserver}: ${89:"#"}}
+${90:${91:   become: ${92:true}} 
+${93:   become_method: ${94:su}} 
+${95:   become_user: ${96:nobody}} 
+${97:   become_flags: ${98:"-s /bin/sh"}}} 
+${99:   when: ${100:variable is defined}} 
+${101:   with_items: ${102:array}} 
+]]></content>
+	<tabTrigger>na_ontap_ndmp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

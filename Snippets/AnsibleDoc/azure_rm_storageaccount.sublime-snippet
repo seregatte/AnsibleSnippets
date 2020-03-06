@@ -13,15 +13,15 @@ ${1:# access_tier: The access tier for this storage account.
 # cloud_environment: For cloud environments other than the US public 
 # custom_domain: User domain assigned to the storage account. 
 # force_delete_nonempty: Attempt deletion if resource already exists and 
-# https_only: Allows https traffic only to storage service if 
-# kind: The 'kind' of storage. 
-# location: Valid azure location. Defaults to location of 
+# https_only: Allows https traffic only to storage service 
+# kind: The kind of storage. 
+# location: Valid Azure location. Defaults to location of 
 # name: Name of the storage account to update or create. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) Name of the resource group to use. 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the storage account. Use 
+# state: State of the storage account. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 

@@ -7,7 +7,7 @@ ${1:# force: Only updates an existing macro if set to `yes'.
 # login_password: (required) Zabbix user password. 
 # login_user: (required) Zabbix user name. 
 # macro_name: (required) Name of the host macro without the 
-# macro_value: (required) Value of the host macro. 
+# macro_value: Value of the host macro. Required if 
 # server_url: (required) URL of Zabbix server, with protocol 
 # state: State of the macro. On `present', it will create 
 # timeout: The timeout of API request (seconds). 

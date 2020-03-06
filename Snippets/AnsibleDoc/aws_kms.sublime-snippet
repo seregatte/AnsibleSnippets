@@ -3,23 +3,23 @@
 ${1:# alias: An alias for a key. For safety, even though KMS 
 # aws_access_key: AWS access key. If not set then the value of the 
 # aws_secret_key: AWS secret key. If not set then the value of the 
-# clean_invalid_entries: If adding/removing a role and invalid grantees 
 # debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # description: A description of the CMK. Use a description that 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # enabled: Whether or not a key is enabled 
-# grant_types: List of grants to give to user/role. Likely 
 # grants: A list of grants to apply to the key. Each item 
 # key_id: Key ID or ARN of the key. One of `alias' or 
-# mode: Grant or deny access. 
 # policy: policy to apply to the KMS key See https://docs. 
+# policy_clean_invalid_entries: (deprecated) If adding/removing a role and 
+# policy_grant_types: (deprecated) List of grants to give to 
+# policy_mode: (deprecated) Grant or deny access. Used for 
+# policy_role_arn: (deprecated) ARN of role to allow/deny access. 
+# policy_role_name: (deprecated) Role to allow/deny access. One of 
 # profile: Uses a boto profile. Only works with boto >= 
 # purge_grants: Whether the `grants' argument should cause 
 # purge_tags: Whether the `tags' argument should cause tags 
 # region: The AWS region to use. If not specified then the 
 # : ec2_region 
-# role_arn: ARN of role to allow/deny access. One of 
-# role_name: Role to allow/deny access. One of `role_name' or 
 # security_token: AWS STS security token. If not set then the 
 # state: Whether a key should be present or absent. Note 
 # tags: A dictionary of tags to apply to a key. 
@@ -29,23 +29,23 @@ ${1:# alias: An alias for a key. For safety, even though KMS
 ${3:   ${4:alias}: ${5:"#"}}
 ${6:   ${7:aws_access_key}: ${8:"#"}}
 ${9:   ${10:aws_secret_key}: ${11:"#"}}
-${12:   ${13:clean_invalid_entries}: ${14:"#"}}
-${15:   ${16:debug_botocore_endpoint_logs}: ${17:"#"}}
-${18:   ${19:description}: ${20:"#"}}
-${21:   ${22:ec2_url}: ${23:"#"}}
-${24:   ${25:enabled}: ${26:"#"}}
-${27:   ${28:grant_types}: ${29:"#"}}
-${30:   ${31:grants}: ${32:"#"}}
-${33:   ${34:key_id}: ${35:"#"}}
-${36:   ${37:mode}: ${38:"#"}}
-${39:   ${40:policy}: ${41:"#"}}
-${42:   ${43:profile}: ${44:"#"}}
-${45:   ${46:purge_grants}: ${47:"#"}}
-${48:   ${49:purge_tags}: ${50:"#"}}
-${51:   ${52:region}: ${53:"#"}}
-${54:   ${55:}: ${56:"#"}}
-${57:   ${58:role_arn}: ${59:"#"}}
-${60:   ${61:role_name}: ${62:"#"}}
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:ec2_url}: ${20:"#"}}
+${21:   ${22:enabled}: ${23:"#"}}
+${24:   ${25:grants}: ${26:"#"}}
+${27:   ${28:key_id}: ${29:"#"}}
+${30:   ${31:policy}: ${32:"#"}}
+${33:   ${34:policy_clean_invalid_entries}: ${35:"#"}}
+${36:   ${37:policy_grant_types}: ${38:"#"}}
+${39:   ${40:policy_mode}: ${41:"#"}}
+${42:   ${43:policy_role_arn}: ${44:"#"}}
+${45:   ${46:policy_role_name}: ${47:"#"}}
+${48:   ${49:profile}: ${50:"#"}}
+${51:   ${52:purge_grants}: ${53:"#"}}
+${54:   ${55:purge_tags}: ${56:"#"}}
+${57:   ${58:region}: ${59:"#"}}
+${60:   ${61:}: ${62:"#"}}
 ${63:   ${64:security_token}: ${65:"#"}}
 ${66:   ${67:state}: ${68:"#"}}
 ${69:   ${70:tags}: ${71:"#"}}

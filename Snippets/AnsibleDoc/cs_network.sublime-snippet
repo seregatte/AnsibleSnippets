@@ -28,6 +28,7 @@ ${1:# account: Account the network is related to.
 # start_ipv6: The beginning IPv6 address of the network 
 # state: State of the network. 
 # subdomain_access: Defines whether to allow subdomains to use 
+# tags: List of tags. Tags are a list of dictionaries 
 # vlan: The ID or VID of the network. 
 # vpc: Name of the VPC of the network. 
 # zone: Name of the zone in which the network should be 
@@ -61,15 +62,16 @@ ${75:   ${76:start_ip}: ${77:"#"}}
 ${78:   ${79:start_ipv6}: ${80:"#"}}
 ${81:   ${82:state}: ${83:"#"}}
 ${84:   ${85:subdomain_access}: ${86:"#"}}
-${87:   ${88:vlan}: ${89:"#"}}
-${90:   ${91:vpc}: ${92:"#"}}
-${93:   ${94:zone}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${87:   ${88:tags}: ${89:"#"}}
+${90:   ${91:vlan}: ${92:"#"}}
+${93:   ${94:vpc}: ${95:"#"}}
+${96:   ${97:zone}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>cs_network</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

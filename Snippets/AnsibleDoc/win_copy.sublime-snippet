@@ -7,7 +7,7 @@ ${1:# backup: Determine whether a backup should be created.
 # force: If set to `yes', the file will only be 
 # local_follow: This flag indicates that filesystem links in the 
 # remote_src: If `no', it will search for src at 
-# src: (required) Local path to a file to copy to the 
+# src: Local path to a file to copy to the remote 
 }- name: ${2:Name for win_copy module.}
   win_copy:
 ${3:   ${4:backup}: ${5:"#"}}

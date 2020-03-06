@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# oauth_token: DigitalOcean OAuth token. There are several 
+# tag_name: Tag name that can be used to identify and 
+# timeout: The timeout in seconds used for polling 
+# validate_certs: If set to `no', the SSL certificates will not be 
+}- name: ${2:Name for digital_ocean_tag_info module.}
+  digital_ocean_tag_info:
+${3:   ${4:oauth_token}: ${5:"#"}}
+${6:   ${7:tag_name}: ${8:"#"}}
+${9:   ${10:timeout}: ${11:"#"}}
+${12:   ${13:validate_certs}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>digital_ocean_tag_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

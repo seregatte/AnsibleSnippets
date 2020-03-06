@@ -2,28 +2,18 @@
 <content><![CDATA[
 ${1:# filter: Perform regex filter of response. Filtering is 
 # include: (required) Fact category to collect. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_facts module.}
   bigip_gtm_facts:
 ${3:   ${4:filter}: ${5:"#"}}
 ${6:   ${7:include}: ${8:"#"}}
-${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:provider}: ${14:"#"}}
-${15:   ${16:server}: ${17:"#"}}
-${18:   ${19:server_port}: ${20:"#"}}
-${21:   ${22:user}: ${23:"#"}}
-${24:   ${25:validate_certs}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${9:   ${10:provider}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
 ]]></content>
 	<tabTrigger>bigip_gtm_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

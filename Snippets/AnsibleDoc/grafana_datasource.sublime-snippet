@@ -23,7 +23,7 @@ ${1:# access: The access mode for this datasource.
 # name: (required) The name of the datasource. 
 # org_id: Grafana Organisation ID in which the datasource 
 # password: The datasource password 
-# sslmode: SSL mode for `postgres' datasoure type. 
+# sslmode: SSL mode for `postgres' datasource type. 
 # state: Status of the datasource 
 # time_field: Name of the time field in elasticsearch ds. For 
 # time_interval: Minimum group by interval for `influxdb' or 

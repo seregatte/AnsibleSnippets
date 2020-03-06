@@ -12,15 +12,10 @@ ${1:# access_conflict_policy: Sets the conflict resolution policy for Access
 # force: Forces rediscovery and import of existing 
 # ha_name: DSC cluster name of the BIG-IP device to be 
 # modules: List of modules to be discovered and imported 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: The state of the managed device on the system. 
 # statistics: Specify the statistics collection for discovered 
 # use_bigiq_sync: When set to true, BIG-IQ will manually 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 # versioned_conflict_policy: Sets the conflict resolution policy for LTM 
 }- name: ${2:Name for bigiq_device_discovery module.}
   bigiq_device_discovery:
@@ -36,22 +31,17 @@ ${27:   ${28:device_username}: ${29:"#"}}
 ${30:   ${31:force}: ${32:"#"}}
 ${33:   ${34:ha_name}: ${35:"#"}}
 ${36:   ${37:modules}: ${38:"#"}}
-${39:   ${40:password}: ${41:"#"}}
-${42:   ${43:provider}: ${44:"#"}}
-${45:   ${46:server}: ${47:"#"}}
-${48:   ${49:server_port}: ${50:"#"}}
-${51:   ${52:state}: ${53:"#"}}
-${54:   ${55:statistics}: ${56:"#"}}
-${57:   ${58:use_bigiq_sync}: ${59:"#"}}
-${60:   ${61:user}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:   ${67:versioned_conflict_policy}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:statistics}: ${47:"#"}}
+${48:   ${49:use_bigiq_sync}: ${50:"#"}}
+${51:   ${52:versioned_conflict_policy}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>bigiq_device_discovery</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

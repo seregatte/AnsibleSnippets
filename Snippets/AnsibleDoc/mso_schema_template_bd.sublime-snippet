@@ -20,7 +20,7 @@ ${1:# bd: The name of the BD to manage.
 # use_ssl: If `no', an HTTP connection will be used instead 
 # username: The username to use for authentication. 
 # validate_certs: If `no', SSL certificates will not be validated. 
-# vrf: The VRF associated to this BD. 
+# vrf: The VRF associated to this BD. This is required 
 }- name: ${2:Name for mso_schema_template_bd module.}
   mso_schema_template_bd:
 ${3:   ${4:bd}: ${5:"#"}}

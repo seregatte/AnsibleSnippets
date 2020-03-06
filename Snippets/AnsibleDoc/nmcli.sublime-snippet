@@ -4,7 +4,7 @@ ${1:# ageingtime: This is only used with bridge - [ageing-time
 # arp_interval: This is only used with bond - ARP interval. 
 # arp_ip_target: This is only used with bond - ARP IP target. 
 # autoconnect: Whether the connection should start on boot. 
-# conn_name: (required) Where conn_name will be the name used 
+# conn_name: (required) The name used to call the connection. 
 # dhcp_client_id: DHCP Client Identifier sent to the DHCP server. 
 # dns4: A list of up to 3 dns servers. IPv4 format e.g. 
 # dns4_search: A list of DNS search domains. 
