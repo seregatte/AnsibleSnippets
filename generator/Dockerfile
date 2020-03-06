@@ -13,3 +13,5 @@ RUN apt-get update \
 RUN pip install --upgrade markupsafe setuptools
 RUN pip install --upgrade ansible
 RUN ansible --version
+
+WORKDIR /var/www/html
