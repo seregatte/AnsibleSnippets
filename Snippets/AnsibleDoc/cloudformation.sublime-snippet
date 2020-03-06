@@ -5,7 +5,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # backoff_delay: Number of seconds to wait for the next retry. 
 # backoff_max_delay: Maximum amount of time to wait between retries. 
 # backoff_retries: Number of times to retry operation. AWS API 
-# capabilities: Specify capabilites that stack template 
+# capabilities: Specify capabilities that stack template 
 # changeset_name: Name given to the changeset when creating a 
 # create_changeset: If stack already exists create a changeset 
 # create_timeout: The amount of time (in minutes) that can pass 
@@ -14,6 +14,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # events_limit: Maximum number of CloudFormation events to fetch 
 # notification_arns: The Simple Notification Service (SNS) topic ARNs 
+# on_create_failure: Action to take upon failure of stack creation. 
 # profile: Uses a boto profile. Only works with boto >= 
 # region: The AWS region to use. If not specified then the 
 # : ec2_region 
@@ -47,29 +48,30 @@ ${33:   ${34:disable_rollback}: ${35:"#"}}
 ${36:   ${37:ec2_url}: ${38:"#"}}
 ${39:   ${40:events_limit}: ${41:"#"}}
 ${42:   ${43:notification_arns}: ${44:"#"}}
-${45:   ${46:profile}: ${47:"#"}}
-${48:   ${49:region}: ${50:"#"}}
-${51:   ${52:}: ${53:"#"}}
-${54:   ${55:role_arn}: ${56:"#"}}
-${57:   ${58:security_token}: ${59:"#"}}
-${60:   ${61:stack_name}: ${62:"#"}}
-${63:   ${64:stack_policy}: ${65:"#"}}
-${66:   ${67:sources}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:tags}: ${74:"#"}}
-${75:   ${76:template}: ${77:"#"}}
-${78:   ${79:template_body}: ${80:"#"}}
-${81:   ${82:template_format}: ${83:"#"}}
-${84:   ${85:template_parameters}: ${86:"#"}}
-${87:   ${88:template_url}: ${89:"#"}}
-${90:   ${91:termination_protection}: ${92:"#"}}
-${93:   ${94:validate_certs}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${45:   ${46:on_create_failure}: ${47:"#"}}
+${48:   ${49:profile}: ${50:"#"}}
+${51:   ${52:region}: ${53:"#"}}
+${54:   ${55:}: ${56:"#"}}
+${57:   ${58:role_arn}: ${59:"#"}}
+${60:   ${61:security_token}: ${62:"#"}}
+${63:   ${64:stack_name}: ${65:"#"}}
+${66:   ${67:stack_policy}: ${68:"#"}}
+${69:   ${70:sources}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:tags}: ${77:"#"}}
+${78:   ${79:template}: ${80:"#"}}
+${81:   ${82:template_body}: ${83:"#"}}
+${84:   ${85:template_format}: ${86:"#"}}
+${87:   ${88:template_parameters}: ${89:"#"}}
+${90:   ${91:template_url}: ${92:"#"}}
+${93:   ${94:termination_protection}: ${95:"#"}}
+${96:   ${97:validate_certs}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>cloudformation</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# api_account: Name of the ini section in the `vultr.ini' file. 
+# api_endpoint: URL to API endpint (without trailing slash). The 
+# api_key: API key of the Vultr API. The ENV variable 
+# api_retries: Amount of retries in case of the Vultr API 
+# api_retry_max_delay: Retry backoff delay in seconds is exponential up 
+# api_timeout: HTTP timeout to Vultr API. The ENV variable 
+# validate_certs: Validate SSL certs of the Vultr API. 
+}- name: ${2:Name for vultr_os_info module.}
+  vultr_os_info:
+${3:   ${4:api_account}: ${5:"#"}}
+${6:   ${7:api_endpoint}: ${8:"#"}}
+${9:   ${10:api_key}: ${11:"#"}}
+${12:   ${13:api_retries}: ${14:"#"}}
+${15:   ${16:api_retry_max_delay}: ${17:"#"}}
+${18:   ${19:api_timeout}: ${20:"#"}}
+${21:   ${22:validate_certs}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>vultr_os_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

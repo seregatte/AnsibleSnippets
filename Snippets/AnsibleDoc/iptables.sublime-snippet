@@ -10,6 +10,7 @@ ${1:# action: Whether the rule should be appended at the
 # flush: Flushes the specified table and chain of all 
 # fragment: This means that the rule only refers to second 
 # gateway: This specifies the IP address of host to send 
+# gid_owner: Specifies the GID or group to use in match by 
 # goto: This specifies that the processing should 
 # icmp_type: This allows specification of the ICMP type, 
 # in_interface: Name of an interface via which a packet was 
@@ -51,41 +52,42 @@ ${21:   ${22:dst_range}: ${23:"#"}}
 ${24:   ${25:flush}: ${26:"#"}}
 ${27:   ${28:fragment}: ${29:"#"}}
 ${30:   ${31:gateway}: ${32:"#"}}
-${33:   ${34:goto}: ${35:"#"}}
-${36:   ${37:icmp_type}: ${38:"#"}}
-${39:   ${40:in_interface}: ${41:"#"}}
-${42:   ${43:ip_version}: ${44:"#"}}
-${45:   ${46:jump}: ${47:"#"}}
-${48:   ${49:limit}: ${50:"#"}}
-${51:   ${52:limit_burst}: ${53:"#"}}
-${54:   ${55:log_level}: ${56:"#"}}
-${57:   ${58:log_prefix}: ${59:"#"}}
-${60:   ${61:match}: ${62:"#"}}
-${63:   ${64:out_interface}: ${65:"#"}}
-${66:   ${67:policy}: ${68:"#"}}
-${69:   ${70:protocol}: ${71:"#"}}
-${72:   ${73:reject_with}: ${74:"#"}}
-${75:   ${76:rule_num}: ${77:"#"}}
-${78:   ${79:set_counters}: ${80:"#"}}
-${81:   ${82:set_dscp_mark}: ${83:"#"}}
-${84:   ${85:set_dscp_mark_class}: ${86:"#"}}
-${87:   ${88:source}: ${89:"#"}}
-${90:   ${91:source_port}: ${92:"#"}}
-${93:   ${94:src_range}: ${95:"#"}}
-${96:   ${97:state}: ${98:"#"}}
-${99:   ${100:syn}: ${101:"#"}}
-${102:   ${103:table}: ${104:"#"}}
-${105:   ${106:tcp_flags}: ${107:"#"}}
-${108:   ${109:to_destination}: ${110:"#"}}
-${111:   ${112:to_ports}: ${113:"#"}}
-${114:   ${115:to_source}: ${116:"#"}}
-${117:   ${118:uid_owner}: ${119:"#"}}
-${120:${121:   become: ${122:true}} 
-${123:   become_method: ${124:su}} 
-${125:   become_user: ${126:nobody}} 
-${127:   become_flags: ${128:"-s /bin/sh"}}} 
-${129:   when: ${130:variable is defined}} 
-${131:   with_items: ${132:array}} 
+${33:   ${34:gid_owner}: ${35:"#"}}
+${36:   ${37:goto}: ${38:"#"}}
+${39:   ${40:icmp_type}: ${41:"#"}}
+${42:   ${43:in_interface}: ${44:"#"}}
+${45:   ${46:ip_version}: ${47:"#"}}
+${48:   ${49:jump}: ${50:"#"}}
+${51:   ${52:limit}: ${53:"#"}}
+${54:   ${55:limit_burst}: ${56:"#"}}
+${57:   ${58:log_level}: ${59:"#"}}
+${60:   ${61:log_prefix}: ${62:"#"}}
+${63:   ${64:match}: ${65:"#"}}
+${66:   ${67:out_interface}: ${68:"#"}}
+${69:   ${70:policy}: ${71:"#"}}
+${72:   ${73:protocol}: ${74:"#"}}
+${75:   ${76:reject_with}: ${77:"#"}}
+${78:   ${79:rule_num}: ${80:"#"}}
+${81:   ${82:set_counters}: ${83:"#"}}
+${84:   ${85:set_dscp_mark}: ${86:"#"}}
+${87:   ${88:set_dscp_mark_class}: ${89:"#"}}
+${90:   ${91:source}: ${92:"#"}}
+${93:   ${94:source_port}: ${95:"#"}}
+${96:   ${97:src_range}: ${98:"#"}}
+${99:   ${100:state}: ${101:"#"}}
+${102:   ${103:syn}: ${104:"#"}}
+${105:   ${106:table}: ${107:"#"}}
+${108:   ${109:tcp_flags}: ${110:"#"}}
+${111:   ${112:to_destination}: ${113:"#"}}
+${114:   ${115:to_ports}: ${116:"#"}}
+${117:   ${118:to_source}: ${119:"#"}}
+${120:   ${121:uid_owner}: ${122:"#"}}
+${123:${124:   become: ${125:true}} 
+${126:   become_method: ${127:su}} 
+${128:   become_user: ${129:nobody}} 
+${130:   become_flags: ${131:"-s /bin/sh"}}} 
+${132:   when: ${133:variable is defined}} 
+${134:   with_items: ${135:array}} 
 ]]></content>
 	<tabTrigger>iptables</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

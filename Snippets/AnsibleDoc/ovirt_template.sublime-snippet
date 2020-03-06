@@ -2,8 +2,11 @@
 <content><![CDATA[
 ${1:# allow_partial_import: Boolean indication whether to allow partial 
 # auth: (required) Dictionary with values needed to 
+# ballooning_enabled: If `true', use memory ballooning. Memory balloon 
 # clone_name: Name for importing Template from storage domain. 
 # clone_permissions: If `True' then the permissions of the VM (only 
+# cloud_init: Dictionary with values for Unix-like Virtual 
+# cloud_init_nics: List of dictionaries representing network 
 # cluster: Name of the cluster, where template should be 
 # cluster_mappings: Mapper which maps cluster name between 
 # cpu_profile: CPU profile to be set to template. 
@@ -21,14 +24,21 @@ ${1:# allow_partial_import: Boolean indication whether to allow partial
 # memory_max: Upper bound of template memory up to which 
 # name: Name of the template to manage. 
 # nested_attributes: Specifies list of the attributes which should be 
+# nics: List of NICs, which should be attached to 
 # operating_system: Operating system of the template. Default value 
 # poll_interval: Number of the seconds the module waits until 
 # role_mappings: Mapper which maps role name between Template's 
 # seal: 'Sealing' is an operation that erases all 
+# smartcard_enabled: If `true', use smart card authentication. 
+# soundcard_enabled: If `true', the sound card is added to the 
+# sso: `True' enable Single Sign On by Guest Agent, 
 # state: Should the template be 
 # storage_domain: When `state' is `imported' this parameter 
+# sysprep: Dictionary with values for Windows Virtual 
 # template_image_disk_name: When `state' is `imported' and `image_provider' 
 # timeout: The amount of time in seconds the module should 
+# timezone: Sets time zone offset of the guest hardware 
+# usb_support: `True' enable USB support, `False' to disable 
 # version: `name' - The name of this version. `number' - 
 # vm: Name of the VM, which will be used to create 
 # vnic_profile_mappings: Mapper which maps an external virtual NIC 
@@ -37,43 +47,53 @@ ${1:# allow_partial_import: Boolean indication whether to allow partial
   ovirt_template:
 ${3:   ${4:allow_partial_import}: ${5:"#"}}
 ${6:   ${7:auth}: ${8:"#"}}
-${9:   ${10:clone_name}: ${11:"#"}}
-${12:   ${13:clone_permissions}: ${14:"#"}}
-${15:   ${16:cluster}: ${17:"#"}}
-${18:   ${19:cluster_mappings}: ${20:"#"}}
-${21:   ${22:cpu_profile}: ${23:"#"}}
-${24:   ${25:description}: ${26:"#"}}
-${27:   ${28:domain_mappings}: ${29:"#"}}
-${30:   ${31:exclusive}: ${32:"#"}}
-${33:   ${34:export_domain}: ${35:"#"}}
-${36:   ${37:fetch_nested}: ${38:"#"}}
-${39:   ${40:id}: ${41:"#"}}
-${42:   ${43:image_disk}: ${44:"#"}}
-${45:   ${46:image_provider}: ${47:"#"}}
-${48:   ${49:io_threads}: ${50:"#"}}
-${51:   ${52:memory}: ${53:"#"}}
-${54:   ${55:memory_guaranteed}: ${56:"#"}}
-${57:   ${58:memory_max}: ${59:"#"}}
-${60:   ${61:name}: ${62:"#"}}
-${63:   ${64:nested_attributes}: ${65:"#"}}
-${66:   ${67:operating_system}: ${68:"#"}}
-${69:   ${70:poll_interval}: ${71:"#"}}
-${72:   ${73:role_mappings}: ${74:"#"}}
-${75:   ${76:seal}: ${77:"#"}}
-${78:   ${79:state}: ${80:"#"}}
-${81:   ${82:storage_domain}: ${83:"#"}}
-${84:   ${85:template_image_disk_name}: ${86:"#"}}
-${87:   ${88:timeout}: ${89:"#"}}
-${90:   ${91:version}: ${92:"#"}}
-${93:   ${94:vm}: ${95:"#"}}
-${96:   ${97:vnic_profile_mappings}: ${98:"#"}}
-${99:   ${100:wait}: ${101:"#"}}
-${102:${103:   become: ${104:true}} 
-${105:   become_method: ${106:su}} 
-${107:   become_user: ${108:nobody}} 
-${109:   become_flags: ${110:"-s /bin/sh"}}} 
-${111:   when: ${112:variable is defined}} 
-${113:   with_items: ${114:array}} 
+${9:   ${10:ballooning_enabled}: ${11:"#"}}
+${12:   ${13:clone_name}: ${14:"#"}}
+${15:   ${16:clone_permissions}: ${17:"#"}}
+${18:   ${19:cloud_init}: ${20:"#"}}
+${21:   ${22:cloud_init_nics}: ${23:"#"}}
+${24:   ${25:cluster}: ${26:"#"}}
+${27:   ${28:cluster_mappings}: ${29:"#"}}
+${30:   ${31:cpu_profile}: ${32:"#"}}
+${33:   ${34:description}: ${35:"#"}}
+${36:   ${37:domain_mappings}: ${38:"#"}}
+${39:   ${40:exclusive}: ${41:"#"}}
+${42:   ${43:export_domain}: ${44:"#"}}
+${45:   ${46:fetch_nested}: ${47:"#"}}
+${48:   ${49:id}: ${50:"#"}}
+${51:   ${52:image_disk}: ${53:"#"}}
+${54:   ${55:image_provider}: ${56:"#"}}
+${57:   ${58:io_threads}: ${59:"#"}}
+${60:   ${61:memory}: ${62:"#"}}
+${63:   ${64:memory_guaranteed}: ${65:"#"}}
+${66:   ${67:memory_max}: ${68:"#"}}
+${69:   ${70:name}: ${71:"#"}}
+${72:   ${73:nested_attributes}: ${74:"#"}}
+${75:   ${76:nics}: ${77:"#"}}
+${78:   ${79:operating_system}: ${80:"#"}}
+${81:   ${82:poll_interval}: ${83:"#"}}
+${84:   ${85:role_mappings}: ${86:"#"}}
+${87:   ${88:seal}: ${89:"#"}}
+${90:   ${91:smartcard_enabled}: ${92:"#"}}
+${93:   ${94:soundcard_enabled}: ${95:"#"}}
+${96:   ${97:sso}: ${98:"#"}}
+${99:   ${100:state}: ${101:"#"}}
+${102:   ${103:storage_domain}: ${104:"#"}}
+${105:   ${106:sysprep}: ${107:"#"}}
+${108:   ${109:template_image_disk_name}: ${110:"#"}}
+${111:   ${112:timeout}: ${113:"#"}}
+${114:   ${115:timezone}: ${116:"#"}}
+${117:   ${118:usb_support}: ${119:"#"}}
+${120:   ${121:version}: ${122:"#"}}
+${123:   ${124:vm}: ${125:"#"}}
+${126:   ${127:vnic_profile_mappings}: ${128:"#"}}
+${129:   ${130:wait}: ${131:"#"}}
+${132:${133:   become: ${134:true}} 
+${135:   become_method: ${136:su}} 
+${137:   become_user: ${138:nobody}} 
+${139:   become_flags: ${140:"-s /bin/sh"}}} 
+${141:   when: ${142:variable is defined}} 
+${143:   with_items: ${144:array}} 
 ]]></content>
 	<tabTrigger>ovirt_template</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

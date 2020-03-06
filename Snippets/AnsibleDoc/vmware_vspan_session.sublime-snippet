@@ -11,6 +11,8 @@ ${1:# description: The description for the session.
 # normal_traffic_allowed: Whether or not destination ports can send and 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # sampling_rate: Sampling rate of the session. If its value is n, 
 # session_type: Select the mirroring type. - 
 # source_port_received: Source port for which received packets are 
@@ -35,23 +37,25 @@ ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:normal_traffic_allowed}: ${29:"#"}}
 ${30:   ${31:password}: ${32:"#"}}
 ${33:   ${34:port}: ${35:"#"}}
-${36:   ${37:sampling_rate}: ${38:"#"}}
-${39:   ${40:session_type}: ${41:"#"}}
-${42:   ${43:source_port_received}: ${44:"#"}}
-${45:   ${46:source_port_transmitted}: ${47:"#"}}
-${48:   ${49:source_vm_received}: ${50:"#"}}
-${51:   ${52:source_vm_transmitted}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:strip_original_vlan}: ${59:"#"}}
-${60:   ${61:switch}: ${62:"#"}}
-${63:   ${64:username}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${36:   ${37:proxy_host}: ${38:"#"}}
+${39:   ${40:proxy_port}: ${41:"#"}}
+${42:   ${43:sampling_rate}: ${44:"#"}}
+${45:   ${46:session_type}: ${47:"#"}}
+${48:   ${49:source_port_received}: ${50:"#"}}
+${51:   ${52:source_port_transmitted}: ${53:"#"}}
+${54:   ${55:source_vm_received}: ${56:"#"}}
+${57:   ${58:source_vm_transmitted}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:   ${64:strip_original_vlan}: ${65:"#"}}
+${66:   ${67:switch}: ${68:"#"}}
+${69:   ${70:username}: ${71:"#"}}
+${72:   ${73:validate_certs}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>vmware_vspan_session</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_cliswitch: Target switch to run the CLI on. 
+# pn_ip: Primary IP address. 
+# pn_location: switch name. 
+# pn_name: vtep name. 
+# pn_switch_in_cluster: Tells whether switch in cluster or not. 
+# pn_virtual_ip: Virtual/Secondary IP address. 
+# pn_vrouter_name: name of the vrouter service. 
+# state: vtep configuration command. 
+}- name: ${2:Name for pn_vtep module.}
+  pn_vtep:
+${3:   ${4:pn_cliswitch}: ${5:"#"}}
+${6:   ${7:pn_ip}: ${8:"#"}}
+${9:   ${10:pn_location}: ${11:"#"}}
+${12:   ${13:pn_name}: ${14:"#"}}
+${15:   ${16:pn_switch_in_cluster}: ${17:"#"}}
+${18:   ${19:pn_virtual_ip}: ${20:"#"}}
+${21:   ${22:pn_vrouter_name}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>pn_vtep</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

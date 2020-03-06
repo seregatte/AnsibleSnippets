@@ -18,12 +18,12 @@ ${1:# ad_user: Active Directory username. Use when
 # forward_to: Queue or topic name to forward the messages for 
 # lock_duration_in_seconds: Timespan duration of a peek-lock. The amount of 
 # max_delivery_count: he maximum delivery count. A message is 
-# name: (required) name of the servicebus subscription. 
+# name: (required) Name of the servicebus subscription. 
 # namespace: (required) Servicebus namespace name. A 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # requires_session: A value that indicates whether the subscription 
-# resource_group: (required) name of resource group. 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the servicebus subscription. 
 # status: Status of the entity. 

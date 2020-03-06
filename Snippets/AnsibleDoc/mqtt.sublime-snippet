@@ -10,6 +10,7 @@ ${1:# ca_cert: The path to the Certificate Authority
 # qos: QoS (Quality of Service) 
 # retain: Setting this flag causes the broker to retain 
 # server: MQTT broker address/name 
+# tls_version: Specifies the version of the SSL/TLS protocol to 
 # topic: (required) MQTT topic name 
 # username: Username to authenticate against the broker. 
 }- name: ${2:Name for mqtt module.}
@@ -24,14 +25,15 @@ ${21:   ${22:port}: ${23:"#"}}
 ${24:   ${25:qos}: ${26:"#"}}
 ${27:   ${28:retain}: ${29:"#"}}
 ${30:   ${31:server}: ${32:"#"}}
-${33:   ${34:topic}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${33:   ${34:tls_version}: ${35:"#"}}
+${36:   ${37:topic}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>mqtt</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

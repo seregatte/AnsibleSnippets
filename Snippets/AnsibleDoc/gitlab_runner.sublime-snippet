@@ -13,7 +13,7 @@ ${1:# access_level: Determines if a runner can pick up jobs from
 # run_untagged: Run untagged jobs or not. 
 # state: Make sure that the runner with the same name 
 # tag_list: The tags that apply to the runner. 
-# url: (required) The URL of the Gitlab server, with 
+# url: The URL of the GitLab server, with protocol 
 # validate_certs: Whether or not to validate SSL certs when 
 }- name: ${2:Name for gitlab_runner module.}
   gitlab_runner:

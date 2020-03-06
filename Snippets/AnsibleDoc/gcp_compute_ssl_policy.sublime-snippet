@@ -3,12 +3,13 @@
 ${1:# auth_kind: (required) The type of credential used. 
 # custom_features: A list of features enabled when the selected 
 # description: An optional description of this resource. 
+# env_type: Specifies which Ansible environment you're 
 # min_tls_version: The minimum version of SSL protocol that can be 
 # name: (required) Name of the resource. Provided by the 
 # profile: Profile specifies the set of SSL features that 
 # project: The Google Cloud Platform project to use. 
 # scopes: Array of scopes to be used. 
-# service_account_contents: A string representing the contents of a Service 
+# service_account_contents: The contents of a Service Account JSON file, 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # state: Whether the given object should exist in GCP 
@@ -17,21 +18,22 @@ ${1:# auth_kind: (required) The type of credential used.
 ${3:   ${4:auth_kind}: ${5:"#"}}
 ${6:   ${7:custom_features}: ${8:"#"}}
 ${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:min_tls_version}: ${14:"#"}}
-${15:   ${16:name}: ${17:"#"}}
-${18:   ${19:profile}: ${20:"#"}}
-${21:   ${22:project}: ${23:"#"}}
-${24:   ${25:scopes}: ${26:"#"}}
-${27:   ${28:service_account_contents}: ${29:"#"}}
-${30:   ${31:service_account_email}: ${32:"#"}}
-${33:   ${34:service_account_file}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${12:   ${13:env_type}: ${14:"#"}}
+${15:   ${16:min_tls_version}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:project}: ${26:"#"}}
+${27:   ${28:scopes}: ${29:"#"}}
+${30:   ${31:service_account_contents}: ${32:"#"}}
+${33:   ${34:service_account_email}: ${35:"#"}}
+${36:   ${37:service_account_file}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_ssl_policy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

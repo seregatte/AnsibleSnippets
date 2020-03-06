@@ -1,0 +1,30 @@
+<snippet>
+<content><![CDATA[
+${1:# host: FortiOS or FortiGate IP address. 
+# https: Indicates if the requests towards FortiGate must 
+# password: FortiOS or FortiGate password. 
+# ssl_verify: Ensures FortiGate certificate must be verified 
+# state: (required) Indicates whether to create or remove 
+# system_vxlan: Configure VXLAN devices. 
+# username: FortiOS or FortiGate username. 
+# vdom: Virtual domain, among those defined previously. 
+}- name: ${2:Name for fortios_system_vxlan module.}
+  fortios_system_vxlan:
+${3:   ${4:host}: ${5:"#"}}
+${6:   ${7:https}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:ssl_verify}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:system_vxlan}: ${20:"#"}}
+${21:   ${22:username}: ${23:"#"}}
+${24:   ${25:vdom}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
+]]></content>
+	<tabTrigger>fortios_system_vxlan</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

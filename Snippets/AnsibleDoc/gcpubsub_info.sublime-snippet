@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# state: list is the only valid option. 
+# topic: GCP pubsub topic name.  Only the name, not the 
+# view: (required) Choices are 'topics' or 
+}- name: ${2:Name for gcpubsub_info module.}
+  gcpubsub_info:
+${3:   ${4:state}: ${5:"#"}}
+${6:   ${7:topic}: ${8:"#"}}
+${9:   ${10:view}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>gcpubsub_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

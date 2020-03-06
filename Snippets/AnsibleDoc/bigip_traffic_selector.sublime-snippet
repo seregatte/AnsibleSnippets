@@ -6,14 +6,9 @@ ${1:# description: Description of the traffic selector.
 # name: (required) Specifies the name of the traffic 
 # order: Specifies the order in which traffic is matched, 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # source_address: Specifies the host or network IP address from 
 # state: When `present', ensures that the resource 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_traffic_selector module.}
   bigip_traffic_selector:
 ${3:   ${4:description}: ${5:"#"}}
@@ -22,20 +17,15 @@ ${9:   ${10:ipsec_policy}: ${11:"#"}}
 ${12:   ${13:name}: ${14:"#"}}
 ${15:   ${16:order}: ${17:"#"}}
 ${18:   ${19:partition}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:server}: ${29:"#"}}
-${30:   ${31:server_port}: ${32:"#"}}
-${33:   ${34:source_address}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:user}: ${41:"#"}}
-${42:   ${43:validate_certs}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${21:   ${22:provider}: ${23:"#"}}
+${24:   ${25:source_address}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>bigip_traffic_selector</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

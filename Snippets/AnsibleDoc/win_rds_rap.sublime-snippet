@@ -3,7 +3,7 @@
 ${1:# allowed_ports: List of port numbers through which connections 
 # computer_group: The computer group name that is associated with 
 # computer_group_type: The computer group type: `rdg_group': RD 
-# description: Optionnal description of the resource 
+# description: Optional description of the resource 
 # name: (required) Name of the resource authorization 
 # state: The state of resource authorization policy. If 
 # user_groups: List of user groups that are associated with 

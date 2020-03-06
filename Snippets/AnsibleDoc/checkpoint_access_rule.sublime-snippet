@@ -3,7 +3,7 @@
 ${1:# action: Action of the access rule (accept, drop, inform, 
 # auto_install_policy: Install the package policy if changes have been 
 # auto_publish_session: Publish the current session if changes have been 
-# destination: Destionation object of the access rule. 
+# destination: Destination object of the access rule. 
 # enabled: Enabled or disabled flag. 
 # layer: (required) Layer to attach the access rule to. 
 # name: Name of the access rule. 

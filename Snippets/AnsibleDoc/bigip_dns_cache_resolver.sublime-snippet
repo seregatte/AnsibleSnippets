@@ -4,34 +4,24 @@ ${1:# answer_default_zones: Specifies whether the system answers DNS queries
 # forward_zones: Forward zones associated with the cache. To 
 # name: (required) Specifies the name of the cache. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # route_domain: Specifies the route domain the resolver uses for 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the resource 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_dns_cache_resolver module.}
   bigip_dns_cache_resolver:
 ${3:   ${4:answer_default_zones}: ${5:"#"}}
 ${6:   ${7:forward_zones}: ${8:"#"}}
 ${9:   ${10:name}: ${11:"#"}}
 ${12:   ${13:partition}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:provider}: ${20:"#"}}
-${21:   ${22:route_domain}: ${23:"#"}}
-${24:   ${25:server}: ${26:"#"}}
-${27:   ${28:server_port}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:user}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${15:   ${16:provider}: ${17:"#"}}
+${18:   ${19:route_domain}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
 ]]></content>
 	<tabTrigger>bigip_dns_cache_resolver</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

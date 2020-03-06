@@ -27,7 +27,7 @@ ${1:# alias: Indicates if this is an alias record.
 # wait: Wait until the changes have been replicated to 
 # wait_timeout: How long to wait for the changes to be 
 # weight: Weighted resource record sets only. Among 
-# zone: (required) The DNS zone to modify 
+# zone: The DNS zone to modify This is a required 
 }- name: ${2:Name for route53 module.}
   route53:
 ${3:   ${4:alias}: ${5:"#"}}

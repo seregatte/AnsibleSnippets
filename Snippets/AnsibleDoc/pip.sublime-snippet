@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# chdir: cd into this directory before running the 
 # editable: Pass the editable flag. 
-# executable: The explicit executable or a pathname to the 
+# executable: The explicit executable or pathname for the pip 
 # extra_args: Extra arguments passed to pip. 
 # name: The name of a Python library to install or the 
 # requirements: The path to a pip requirements file, which 

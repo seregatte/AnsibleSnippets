@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aggregate: List of Interfaces definitions. 
+# check_running_config: Check running configuration. This can be set as 
+# delay: Time in seconds to wait before checking for the 
+# description: Name of the description. 
+# enabled: Interface link status 
+# name: Name of the Interface. 
+# neighbors: Check the operational state of given interface 
+# power: Inline power on Power over Ethernet (PoE) ports. 
+# rx_rate: Receiver rate in bits per second (bps). This is 
+# speed: Interface link speed/duplex 
+# state: State of the Interface configuration, `up' means 
+# stp: enable/disable stp for the interface 
+# tx_rate: Transmit rate in bits per second (bps). This is 
+}- name: ${2:Name for icx_interface module.}
+  icx_interface:
+${3:   ${4:aggregate}: ${5:"#"}}
+${6:   ${7:check_running_config}: ${8:"#"}}
+${9:   ${10:delay}: ${11:"#"}}
+${12:   ${13:description}: ${14:"#"}}
+${15:   ${16:enabled}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:neighbors}: ${23:"#"}}
+${24:   ${25:power}: ${26:"#"}}
+${27:   ${28:rx_rate}: ${29:"#"}}
+${30:   ${31:speed}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:stp}: ${38:"#"}}
+${39:   ${40:tx_rate}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>icx_interface</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

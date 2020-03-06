@@ -12,6 +12,7 @@ ${1:# anti_affinity_with: UUID of another server to create an anti-
 # server_groups: List of UUID or names of server groups. Mutually 
 # ssh_keys: List of SSH public keys. Use the full content of 
 # state: State of the server. 
+# tags: Tags assosiated with the servers. Set this to 
 # use_ipv6: Enable IPv6 on the public network interface. 
 # use_private_network: Attach a private network interface to the 
 # use_public_network: Attach a public network interface to the server. 
@@ -32,18 +33,19 @@ ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:server_groups}: ${32:"#"}}
 ${33:   ${34:ssh_keys}: ${35:"#"}}
 ${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:use_ipv6}: ${41:"#"}}
-${42:   ${43:use_private_network}: ${44:"#"}}
-${45:   ${46:use_public_network}: ${47:"#"}}
-${48:   ${49:user_data}: ${50:"#"}}
-${51:   ${52:uuid}: ${53:"#"}}
-${54:   ${55:volume_size_gb}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${39:   ${40:tags}: ${41:"#"}}
+${42:   ${43:use_ipv6}: ${44:"#"}}
+${45:   ${46:use_private_network}: ${47:"#"}}
+${48:   ${49:use_public_network}: ${50:"#"}}
+${51:   ${52:user_data}: ${53:"#"}}
+${54:   ${55:uuid}: ${56:"#"}}
+${57:   ${58:volume_size_gb}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>cloudscale_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

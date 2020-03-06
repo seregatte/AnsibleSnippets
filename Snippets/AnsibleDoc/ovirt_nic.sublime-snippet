@@ -4,6 +4,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # fetch_nested: If `True' the module will fetch additional data 
 # id: ID of the nic to manage. 
 # interface: Type of the network interface. For example 
+# linked: Defines if the NIC is linked to the virtual 
 # mac_address: Custom MAC address of the network interface, by 
 # name: (required) Name of the network interface to 
 # nested_attributes: Specifies list of the attributes which should be 
@@ -21,23 +22,24 @@ ${3:   ${4:auth}: ${5:"#"}}
 ${6:   ${7:fetch_nested}: ${8:"#"}}
 ${9:   ${10:id}: ${11:"#"}}
 ${12:   ${13:interface}: ${14:"#"}}
-${15:   ${16:mac_address}: ${17:"#"}}
-${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:nested_attributes}: ${23:"#"}}
-${24:   ${25:network}: ${26:"#"}}
-${27:   ${28:poll_interval}: ${29:"#"}}
-${30:   ${31:profile}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:template}: ${38:"#"}}
-${39:   ${40:timeout}: ${41:"#"}}
-${42:   ${43:vm}: ${44:"#"}}
-${45:   ${46:wait}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${15:   ${16:linked}: ${17:"#"}}
+${18:   ${19:mac_address}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:nested_attributes}: ${26:"#"}}
+${27:   ${28:network}: ${29:"#"}}
+${30:   ${31:poll_interval}: ${32:"#"}}
+${33:   ${34:profile}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:template}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:vm}: ${47:"#"}}
+${48:   ${49:wait}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>ovirt_nic</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

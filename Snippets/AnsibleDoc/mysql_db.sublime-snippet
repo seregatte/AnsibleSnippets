@@ -13,7 +13,7 @@ ${1:# ca_cert: The path to a Certificate Authority (CA)
 # login_port: Port of the MySQL server. Requires `login_host' 
 # login_unix_socket: The path to a Unix domain socket for local 
 # login_user: The username used to authenticate with. 
-# name: (required) name of the database to add or remove 
+# name: (required) name of the database to add or 
 # quick: Option used for dumping large tables 
 # single_transaction: Execute the dump in a single transaction 
 # state: The database state 

@@ -7,7 +7,7 @@ ${1:# allow_useg: Allows micro-segmentation. The APIC defaults to
 # domain: Name of the physical or virtual domain being 
 # domain_type: Specify whether the Domain is a physical (phys), 
 # encap: The VLAN encapsulation for the EPG when binding 
-# encap_mode: The ecapsulataion method to be used. The APIC 
+# encap_mode: The encapsulation method to be used. The APIC 
 # epg: Name of the end point group. 
 # host: (required) IP Address or hostname of APIC 
 # netflow: Determines if netflow should be enabled. The 
@@ -18,6 +18,7 @@ ${1:# allow_useg: Allows micro-segmentation. The APIC defaults to
 # private_key: (required) Either a PEM-formatted private key 
 # resolution_immediacy: Determines when the policies should be resolved 
 # state: Use `present' or `absent' for adding or 
+# switching_mode: Switching Mode used by the switch 
 # tenant: Name of an existing tenant. 
 # timeout: The socket level timeout in seconds. 
 # use_proxy: If `no', it will not use a proxy, even if one is 
@@ -45,19 +46,20 @@ ${45:   ${46:primary_encap}: ${47:"#"}}
 ${48:   ${49:private_key}: ${50:"#"}}
 ${51:   ${52:resolution_immediacy}: ${53:"#"}}
 ${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:tenant}: ${59:"#"}}
-${60:   ${61:timeout}: ${62:"#"}}
-${63:   ${64:use_proxy}: ${65:"#"}}
-${66:   ${67:use_ssl}: ${68:"#"}}
-${69:   ${70:username}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
-${75:   ${76:vm_provider}: ${77:"#"}}
-${78:${79:   become: ${80:true}} 
-${81:   become_method: ${82:su}} 
-${83:   become_user: ${84:nobody}} 
-${85:   become_flags: ${86:"-s /bin/sh"}}} 
-${87:   when: ${88:variable is defined}} 
-${89:   with_items: ${90:array}} 
+${57:   ${58:switching_mode}: ${59:"#"}}
+${60:   ${61:tenant}: ${62:"#"}}
+${63:   ${64:timeout}: ${65:"#"}}
+${66:   ${67:use_proxy}: ${68:"#"}}
+${69:   ${70:use_ssl}: ${71:"#"}}
+${72:   ${73:username}: ${74:"#"}}
+${75:   ${76:validate_certs}: ${77:"#"}}
+${78:   ${79:vm_provider}: ${80:"#"}}
+${81:${82:   become: ${83:true}} 
+${84:   become_method: ${85:su}} 
+${86:   become_user: ${87:nobody}} 
+${88:   become_flags: ${89:"-s /bin/sh"}}} 
+${90:   when: ${91:variable is defined}} 
+${92:   with_items: ${93:array}} 
 ]]></content>
 	<tabTrigger>aci_epg_to_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

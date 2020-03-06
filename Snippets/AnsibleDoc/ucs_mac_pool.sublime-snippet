@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# descrption: A description of the MAC pool. Enter up to 256 
+${1:# description: A description of the MAC pool. Enter up to 256 
 # first_addr: The first MAC address in the block of addresses. 
 # hostname: (required) IP address or hostname of Cisco UCS 
 # last_addr: The last MAC address in the block of addresses. 
@@ -16,7 +16,7 @@ ${1:# descrption: A description of the MAC pool. Enter up to 256
 # username: Username for Cisco UCS Manager authentication. 
 }- name: ${2:Name for ucs_mac_pool module.}
   ucs_mac_pool:
-${3:   ${4:descrption}: ${5:"#"}}
+${3:   ${4:description}: ${5:"#"}}
 ${6:   ${7:first_addr}: ${8:"#"}}
 ${9:   ${10:hostname}: ${11:"#"}}
 ${12:   ${13:last_addr}: ${14:"#"}}

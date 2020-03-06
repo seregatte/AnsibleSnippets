@@ -24,7 +24,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # role: The name or full Amazon Resource Name (ARN) of 
 # scheduling_strategy: The scheduling strategy, defaults to "REPLICA" 
 # security_token: AWS STS security token. If not set then the 
-# service_registries: describes service disovery registries this 
+# service_registries: describes service discovery registries this 
 # state: (required) The desired state of the service 
 # task_definition: The task definition the service will run. This 
 # validate_certs: When set to "no", SSL certificates will not be 

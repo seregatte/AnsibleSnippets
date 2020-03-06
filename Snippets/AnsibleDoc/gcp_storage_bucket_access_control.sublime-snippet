@@ -4,11 +4,12 @@ ${1:# auth_kind: (required) The type of credential used.
 # bucket: (required) The name of the bucket. This field 
 # entity: (required) The entity holding the permission, in 
 # entity_id: The ID for the entity. 
+# env_type: Specifies which Ansible environment you're 
 # project: The Google Cloud Platform project to use. 
 # project_team: The project team associated with the entity. 
-# role: The access permission for the entity. 
+# role: The access permission for the entity. Some valid 
 # scopes: Array of scopes to be used. 
-# service_account_contents: A string representing the contents of a Service 
+# service_account_contents: The contents of a Service Account JSON file, 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # state: Whether the given object should exist in GCP 
@@ -18,20 +19,21 @@ ${3:   ${4:auth_kind}: ${5:"#"}}
 ${6:   ${7:bucket}: ${8:"#"}}
 ${9:   ${10:entity}: ${11:"#"}}
 ${12:   ${13:entity_id}: ${14:"#"}}
-${15:   ${16:project}: ${17:"#"}}
-${18:   ${19:project_team}: ${20:"#"}}
-${21:   ${22:role}: ${23:"#"}}
-${24:   ${25:scopes}: ${26:"#"}}
-${27:   ${28:service_account_contents}: ${29:"#"}}
-${30:   ${31:service_account_email}: ${32:"#"}}
-${33:   ${34:service_account_file}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${15:   ${16:env_type}: ${17:"#"}}
+${18:   ${19:project}: ${20:"#"}}
+${21:   ${22:project_team}: ${23:"#"}}
+${24:   ${25:role}: ${26:"#"}}
+${27:   ${28:scopes}: ${29:"#"}}
+${30:   ${31:service_account_contents}: ${32:"#"}}
+${33:   ${34:service_account_email}: ${35:"#"}}
+${36:   ${37:service_account_file}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>gcp_storage_bucket_access_control</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

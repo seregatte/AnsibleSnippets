@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# interface: Full name of interface, i.e. 40GE1/0/22. 
 # jumbo_max: Maximum frame size. The default value is 9216. 
-# jumbo_min: Non-jumbo frame size threshod. The default value 
+# jumbo_min: Non-jumbo frame size threshold. The default 
 # mtu: MTU for a specific interface. The value is an 
 # state: Specify desired state of the resource. 
 }- name: ${2:Name for ce_mtu module.}

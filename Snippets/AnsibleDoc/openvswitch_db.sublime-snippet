@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# col: (required) Identifies the column in the record. 
 # key: Identifies the key in the record column, when 
-# record: (required) Identifies the recoard in the table. 
+# record: (required) Identifies the record in the table. 
 # state: Configures the state of the key. When set to 
 # table: (required) Identifies the table in the database. 
 # timeout: How long to wait for ovs-vswitchd to respond 

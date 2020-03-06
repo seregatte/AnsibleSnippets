@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# failover_ip: (required) The failover IP address. 
+# hetzner_password: (required) The password for the Robot webservice 
+# hetzner_user: (required) The username for the Robot webservice 
+}- name: ${2:Name for hetzner_failover_ip_info module.}
+  hetzner_failover_ip_info:
+${3:   ${4:failover_ip}: ${5:"#"}}
+${6:   ${7:hetzner_password}: ${8:"#"}}
+${9:   ${10:hetzner_user}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>hetzner_failover_ip_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

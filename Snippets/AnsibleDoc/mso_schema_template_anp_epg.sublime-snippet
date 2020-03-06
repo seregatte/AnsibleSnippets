@@ -5,11 +5,12 @@ ${1:# anp: (required) The name of the ANP.
 # display_name: The name as displayed on the MSO web interface. 
 # epg: The name of the EPG to manage. 
 # host: (required) IP Address or hostname of the ACI 
-# intersite_multicaste_source: Whether intersite multicase source is enabled. 
+# intersite_multicaste_source: Whether intersite multicast source is enabled. 
 # intra_epg_isolation: Whether intra EPG isolation is enforced. When 
 # output_level: Influence the output of this ACI module. 
 # password: (required) The password to use for 
 # port: Port number to be used for the REST connection. 
+# preferred_group: Whether this EPG is added to preferred group or 
 # schema: (required) The name of the schema. 
 # state: Use `present' or `absent' for adding or 
 # subnets: The subnets associated to this ANP. 
@@ -20,6 +21,7 @@ ${1:# anp: (required) The name of the ANP.
 # useg_epg: Whether this is a USEG EPG. 
 # username: The username to use for authentication. 
 # validate_certs: If `no', SSL certificates will not be validated. 
+# vrf: The VRF associated to this ANP. 
 }- name: ${2:Name for mso_schema_template_anp_epg module.}
   mso_schema_template_anp_epg:
 ${3:   ${4:anp}: ${5:"#"}}
@@ -32,22 +34,24 @@ ${21:   ${22:intra_epg_isolation}: ${23:"#"}}
 ${24:   ${25:output_level}: ${26:"#"}}
 ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:port}: ${32:"#"}}
-${33:   ${34:schema}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:subnets}: ${41:"#"}}
-${42:   ${43:template}: ${44:"#"}}
-${45:   ${46:timeout}: ${47:"#"}}
-${48:   ${49:use_proxy}: ${50:"#"}}
-${51:   ${52:use_ssl}: ${53:"#"}}
-${54:   ${55:useg_epg}: ${56:"#"}}
-${57:   ${58:username}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
-${63:${64:   become: ${65:true}} 
-${66:   become_method: ${67:su}} 
-${68:   become_user: ${69:nobody}} 
-${70:   become_flags: ${71:"-s /bin/sh"}}} 
-${72:   when: ${73:variable is defined}} 
-${74:   with_items: ${75:array}} 
+${33:   ${34:preferred_group}: ${35:"#"}}
+${36:   ${37:schema}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:subnets}: ${44:"#"}}
+${45:   ${46:template}: ${47:"#"}}
+${48:   ${49:timeout}: ${50:"#"}}
+${51:   ${52:use_proxy}: ${53:"#"}}
+${54:   ${55:use_ssl}: ${56:"#"}}
+${57:   ${58:useg_epg}: ${59:"#"}}
+${60:   ${61:username}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:   ${67:vrf}: ${68:"#"}}
+${69:${70:   become: ${71:true}} 
+${72:   become_method: ${73:su}} 
+${74:   become_user: ${75:nobody}} 
+${76:   become_flags: ${77:"-s /bin/sh"}}} 
+${78:   when: ${79:variable is defined}} 
+${80:   with_items: ${81:array}} 
 ]]></content>
 	<tabTrigger>mso_schema_template_anp_epg</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

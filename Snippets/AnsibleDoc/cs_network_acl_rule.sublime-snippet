@@ -8,7 +8,7 @@ ${1:# account: Account the VPC is related to.
 # api_secret: Secret key of the CloudStack API. If not set, 
 # api_timeout: HTTP timeout in seconds. If not given, the 
 # api_url: URL of the CloudStack API e.g. 
-# cidr: CIDR of the rule. 
+# cidrs: CIDRs of the rule. 
 # domain: Domain the VPC is related to. 
 # end_port: End port for this rule. Considered if 
 # icmp_code: Error code for this icmp message. Considered if 
@@ -35,7 +35,7 @@ ${15:   ${16:api_region}: ${17:"#"}}
 ${18:   ${19:api_secret}: ${20:"#"}}
 ${21:   ${22:api_timeout}: ${23:"#"}}
 ${24:   ${25:api_url}: ${26:"#"}}
-${27:   ${28:cidr}: ${29:"#"}}
+${27:   ${28:cidrs}: ${29:"#"}}
 ${30:   ${31:domain}: ${32:"#"}}
 ${33:   ${34:end_port}: ${35:"#"}}
 ${36:   ${37:icmp_code}: ${38:"#"}}

@@ -5,7 +5,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
 # identity: (required) The SES identity to attach or remove 
-# policy: A properly formated JSON sending authorization 
+# policy: A properly formatted JSON sending authorization 
 # policy_name: (required) The name used to identify the policy 
 # profile: Uses a boto profile. Only works with boto >= 
 # region: The AWS region to use. If not specified then the 

@@ -2,19 +2,19 @@
 <content><![CDATA[
 ${1:# access_level: The access level to the group. One of the 
 # api_password: The password to use for authentication against 
-# api_token: Gitlab token for logging in. 
+# api_token: GitLab token for logging in. 
 # api_url: The resolvable endpoint for the API 
 # api_username: The username to use for authentication against 
 # confirm: Require confirmation. 
 # email: (required) The email that belongs to the user. 
 # external: Define external parameter for this user 
 # group: Id or Full path of parent group in the form of 
-# isadmin: Grant admin privilieges to the user 
-# login_password: Gitlab password for login_user 
-# login_user: Gitlab user name. 
+# isadmin: Grant admin privileges to the user 
+# login_password: GitLab password for login_user 
+# login_user: GitLab user name. 
 # name: (required) Name of the user you want to create 
 # password: (required) The password of the user. GitLab 
-# server_url: (required) The URL of the Gitlab server, with 
+# server_url: The URL of the GitLab server, with protocol 
 # sshkey_file: The ssh key itself. 
 # sshkey_name: The name of the sshkey 
 # state: create or delete group. Possible values are 

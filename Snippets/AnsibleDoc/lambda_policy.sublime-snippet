@@ -15,7 +15,7 @@ ${1:# action: (required) The AWS Lambda action you want to
 # security_token: AWS STS security token. If not set then the 
 # source_account: The AWS account ID (without a hyphen) of the 
 # source_arn: This is optional; however, when granting Amazon 
-# state: (required) Describes the desired state. 
+# state: Describes the desired state. 
 # statement_id: (required) A unique statement identifier. 
 # validate_certs: When set to "no", SSL certificates will not be 
 # version: Version of the Lambda function. Mutually 

@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: (required) FlashArray API token for admin 
+# connection: Type of connection between arrays. 
+# fa_url: (required) FlashArray management IPv4 address or 
+# state: Create or delete array connection 
+# target_api: API token for target array 
+# target_url: (required) Management IP address of remote 
+}- name: ${2:Name for purefa_connect module.}
+  purefa_connect:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:connection}: ${8:"#"}}
+${9:   ${10:fa_url}: ${11:"#"}}
+${12:   ${13:state}: ${14:"#"}}
+${15:   ${16:target_api}: ${17:"#"}}
+${18:   ${19:target_url}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>purefa_connect</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

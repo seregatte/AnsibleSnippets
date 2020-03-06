@@ -1,58 +1,60 @@
 <snippet>
 <content><![CDATA[
-${1:# accept_terms: Accept terms for marketplace images that require 
+${1:# accept_terms: Accept terms for Marketplace images that require 
 # ad_user: Active Directory username. Use when 
 # adfs_authority_url: Azure AD authority url. Use when authenticating 
 # admin_password: Password for the admin username. Not required if 
-# admin_username: Admin username used to access the host after it 
-# allocated: Toggle that controls if the machine is 
+# admin_username: Admin username used to access the VM after it is 
+# allocated: Whether the VM is allocated or deallocated, only 
 # api_profile: Selects an API profile to use when communicating 
 # append_tags: Use to control if tags field is canonical or 
 # auth_source: Controls the source of the credentials to use 
 # availability_set: Name or ID of an existing availability set to 
+# boot_diagnostics: Manage boot diagnostics settings for a VM. Boot 
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# custom_data: Data which is made available to the virtual 
-# data_disks: Describes list of data disks. 
-# generalized: Use with state `present' to generalize the 
-# image: (required) Specifies the image used to build the 
-# license_type: Specifies that the image or disk that is being 
-# location: Valid Azure location. Defaults to location of 
-# managed_disk_type: Managed OS disk type 
-# name: (required) Name of the virtual machine. 
-# network_interface_names: List of existing network interface names to add 
-# open_ports: If a network interface is created when creating 
+# custom_data: Data made available to the VM and used by 
+# : cloud-init- 
+# data_disks: Describes list of data disks. Use 
+# generalized: Whether the VM is generalized or not. Set to 
+# image: (required) The image used to build the VM. For 
+# license_type: On-premise license for the image or disk. Only 
+# location: Valid Azure location for the VM. Defaults to 
+# managed_disk_type: Managed OS disk type. Create OS disk with 
+# name: (required) Name of the VM. 
+# network_interface_names: Network interface names to add to the VM. Can be 
+# open_ports: List of ports to open in the security group for 
 # os_disk_caching: Type of OS disk caching. 
-# os_disk_name: OS disk name 
+# os_disk_name: OS disk name. 
 # os_disk_size_gb: Type of OS disk size in GB. 
 # os_type: Base type of operating system. 
 # password: Active Directory user password. Use when 
-# plan: A dictionary describing a third-party billing 
+# plan: Third-party billing plan for the VM. 
 # profile: Security profile found in ~/.azure/credentials 
-# public_ip_allocation_method: If a public IP address is created when creating 
-# remove_on_absent: When removing a VM using state 'absent', also 
+# public_ip_allocation_method: Allocation method for the public IP of the VM. 
+# remove_on_absent: Associated resources to remove when removing a 
 # resource_group: (required) Name of the resource group containing 
-# restarted: Use with state `present' to restart a running 
+# restarted: Set to `true' with `state=present' to restart a 
 # secret: Azure client secret. Use when authenticating 
-# short_hostname: Name assigned internally to the host. On a linux 
-# ssh_password_enabled: When the os_type is Linux, setting 
-# ssh_public_keys: For os_type Linux provide a list of SSH keys. 
-# started: Use with state `present' to start the machine. 
-# state: Assert the state of the virtual machine. State 
-# storage_account_name: Name of an existing storage account that 
-# storage_blob_name: Name of the storage blob used to hold the VM's 
+# short_hostname: Name assigned internally to the host. On a Linux 
+# ssh_password_enabled: Whether to enable or disable SSH passwords. When 
+# ssh_public_keys: For `os_type=Linux' provide a list of SSH keys. 
+# started: Whether the VM is started or stopped. Set to 
+# state: State of the VM. Set to `present' to create a VM 
+# storage_account_name: Name of a storage account that supports creation 
+# storage_blob_name: Name of the storage blob used to hold the OS 
 # storage_container_name: Name of the container to use within the storage 
-# subnet_name: When creating a virtual machine, if a network 
+# subnet_name: Subnet for the VM. Defaults to the first subnet 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
-# virtual_network_name: When creating a virtual machine, if a network 
-# virtual_network_resource_group: When creating a virtual machine, if a specific 
-# vm_identity: Identity for the virtual machine. 
+# virtual_network_name: The virtual network to use when creating a VM. 
+# virtual_network_resource_group: The resource group to use when creating a VM 
+# vm_identity: Identity for the VM. 
 # vm_size: A valid Azure VM size value. For example, 
 # winrm: List of Windows Remote Management configurations 
-# zones: A list of Availability Zones for your virtual 
+# zones: A list of Availability Zones for your VM. 
 }- name: ${2:Name for azure_rm_virtualmachine module.}
   azure_rm_virtualmachine:
 ${3:   ${4:accept_terms}: ${5:"#"}}
@@ -65,55 +67,57 @@ ${21:   ${22:api_profile}: ${23:"#"}}
 ${24:   ${25:append_tags}: ${26:"#"}}
 ${27:   ${28:auth_source}: ${29:"#"}}
 ${30:   ${31:availability_set}: ${32:"#"}}
-${33:   ${34:cert_validation_mode}: ${35:"#"}}
-${36:   ${37:client_id}: ${38:"#"}}
-${39:   ${40:cloud_environment}: ${41:"#"}}
-${42:   ${43:custom_data}: ${44:"#"}}
-${45:   ${46:data_disks}: ${47:"#"}}
-${48:   ${49:generalized}: ${50:"#"}}
-${51:   ${52:image}: ${53:"#"}}
-${54:   ${55:license_type}: ${56:"#"}}
-${57:   ${58:location}: ${59:"#"}}
-${60:   ${61:managed_disk_type}: ${62:"#"}}
-${63:   ${64:name}: ${65:"#"}}
-${66:   ${67:network_interface_names}: ${68:"#"}}
-${69:   ${70:open_ports}: ${71:"#"}}
-${72:   ${73:os_disk_caching}: ${74:"#"}}
-${75:   ${76:os_disk_name}: ${77:"#"}}
-${78:   ${79:os_disk_size_gb}: ${80:"#"}}
-${81:   ${82:os_type}: ${83:"#"}}
-${84:   ${85:password}: ${86:"#"}}
-${87:   ${88:plan}: ${89:"#"}}
-${90:   ${91:profile}: ${92:"#"}}
-${93:   ${94:public_ip_allocation_method}: ${95:"#"}}
-${96:   ${97:remove_on_absent}: ${98:"#"}}
-${99:   ${100:resource_group}: ${101:"#"}}
-${102:   ${103:restarted}: ${104:"#"}}
-${105:   ${106:secret}: ${107:"#"}}
-${108:   ${109:short_hostname}: ${110:"#"}}
-${111:   ${112:ssh_password_enabled}: ${113:"#"}}
-${114:   ${115:ssh_public_keys}: ${116:"#"}}
-${117:   ${118:started}: ${119:"#"}}
-${120:   ${121:state}: ${122:"#"}}
-${123:   ${124:storage_account_name}: ${125:"#"}}
-${126:   ${127:storage_blob_name}: ${128:"#"}}
-${129:   ${130:storage_container_name}: ${131:"#"}}
-${132:   ${133:subnet_name}: ${134:"#"}}
-${135:   ${136:subscription_id}: ${137:"#"}}
-${138:   ${139:tags}: ${140:"#"}}
-${141:   ${142:tenant}: ${143:"#"}}
-${144:   ${145:virtual_network_name}: ${146:"#"}}
-${147:   ${148:virtual_network_resource_group}: ${149:"#"}}
-${150:   ${151:vm_identity}: ${152:"#"}}
-${153:   ${154:vm_size}: ${155:"#"}}
-${156:   ${157:winrm}: ${158:"#"}}
-${159:   ${160:zones}: ${161:"#"}}
-${162:${163:   become: ${164:true}} 
-${165:   become_method: ${166:su}} 
-${167:   become_user: ${168:nobody}} 
-${169:   become_flags: ${170:"-s /bin/sh"}}} 
-${171:   when: ${172:variable is defined}} 
-${173:   with_items: ${174:array}} 
+${33:   ${34:boot_diagnostics}: ${35:"#"}}
+${36:   ${37:cert_validation_mode}: ${38:"#"}}
+${39:   ${40:client_id}: ${41:"#"}}
+${42:   ${43:cloud_environment}: ${44:"#"}}
+${45:   ${46:custom_data}: ${47:"#"}}
+${48:   ${49:}: ${50:"#"}}
+${51:   ${52:data_disks}: ${53:"#"}}
+${54:   ${55:generalized}: ${56:"#"}}
+${57:   ${58:image}: ${59:"#"}}
+${60:   ${61:license_type}: ${62:"#"}}
+${63:   ${64:location}: ${65:"#"}}
+${66:   ${67:managed_disk_type}: ${68:"#"}}
+${69:   ${70:name}: ${71:"#"}}
+${72:   ${73:network_interface_names}: ${74:"#"}}
+${75:   ${76:open_ports}: ${77:"#"}}
+${78:   ${79:os_disk_caching}: ${80:"#"}}
+${81:   ${82:os_disk_name}: ${83:"#"}}
+${84:   ${85:os_disk_size_gb}: ${86:"#"}}
+${87:   ${88:os_type}: ${89:"#"}}
+${90:   ${91:password}: ${92:"#"}}
+${93:   ${94:plan}: ${95:"#"}}
+${96:   ${97:profile}: ${98:"#"}}
+${99:   ${100:public_ip_allocation_method}: ${101:"#"}}
+${102:   ${103:remove_on_absent}: ${104:"#"}}
+${105:   ${106:resource_group}: ${107:"#"}}
+${108:   ${109:restarted}: ${110:"#"}}
+${111:   ${112:secret}: ${113:"#"}}
+${114:   ${115:short_hostname}: ${116:"#"}}
+${117:   ${118:ssh_password_enabled}: ${119:"#"}}
+${120:   ${121:ssh_public_keys}: ${122:"#"}}
+${123:   ${124:started}: ${125:"#"}}
+${126:   ${127:state}: ${128:"#"}}
+${129:   ${130:storage_account_name}: ${131:"#"}}
+${132:   ${133:storage_blob_name}: ${134:"#"}}
+${135:   ${136:storage_container_name}: ${137:"#"}}
+${138:   ${139:subnet_name}: ${140:"#"}}
+${141:   ${142:subscription_id}: ${143:"#"}}
+${144:   ${145:tags}: ${146:"#"}}
+${147:   ${148:tenant}: ${149:"#"}}
+${150:   ${151:virtual_network_name}: ${152:"#"}}
+${153:   ${154:virtual_network_resource_group}: ${155:"#"}}
+${156:   ${157:vm_identity}: ${158:"#"}}
+${159:   ${160:vm_size}: ${161:"#"}}
+${162:   ${163:winrm}: ${164:"#"}}
+${165:   ${166:zones}: ${167:"#"}}
+${168:${169:   become: ${170:true}} 
+${171:   become_method: ${172:su}} 
+${173:   become_user: ${174:nobody}} 
+${175:   become_flags: ${176:"-s /bin/sh"}}} 
+${177:   when: ${178:variable is defined}} 
+${179:   with_items: ${180:array}} 
 ]]></content>
 	<tabTrigger>azure_rm_virtualmachine</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

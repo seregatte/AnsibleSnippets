@@ -1,9 +1,11 @@
 <snippet>
 <content><![CDATA[
-${1:# host: (required) FortiOS or FortiGate ip address. 
+${1:# host: FortiOS or FortiGate IP address. 
 # https: Indicates if the requests towards FortiGate must 
 # password: FortiOS or FortiGate password. 
-# username: (required) FortiOS or FortiGate username. 
+# ssl_verify: Ensures FortiGate certificate must be verified 
+# state: Indicates whether to create or remove the 
+# username: FortiOS or FortiGate username. 
 # vdom: Virtual domain, among those defined previously. 
 # wireless_controller_wtp_profile: Configure WTP profiles or FortiAP profiles that 
 }- name: ${2:Name for fortios_wireless_controller_wtp_profile module.}
@@ -11,15 +13,17 @@ ${1:# host: (required) FortiOS or FortiGate ip address.
 ${3:   ${4:host}: ${5:"#"}}
 ${6:   ${7:https}: ${8:"#"}}
 ${9:   ${10:password}: ${11:"#"}}
-${12:   ${13:username}: ${14:"#"}}
-${15:   ${16:vdom}: ${17:"#"}}
-${18:   ${19:wireless_controller_wtp_profile}: ${20:"#"}}
-${21:${22:   become: ${23:true}} 
-${24:   become_method: ${25:su}} 
-${26:   become_user: ${27:nobody}} 
-${28:   become_flags: ${29:"-s /bin/sh"}}} 
-${30:   when: ${31:variable is defined}} 
-${32:   with_items: ${33:array}} 
+${12:   ${13:ssl_verify}: ${14:"#"}}
+${15:   ${16:state}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:   ${22:vdom}: ${23:"#"}}
+${24:   ${25:wireless_controller_wtp_profile}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>fortios_wireless_controller_wtp_profile</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

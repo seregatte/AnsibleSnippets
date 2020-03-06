@@ -1,0 +1,78 @@
+<snippet>
+<content><![CDATA[
+${1:# pn_advertisement_interval: Minimum interval between sending BGP routing 
+# pn_allowas_in: Allow/reject routes with local AS in AS_PATH. 
+# pn_bfd: BFD protocol support for fault detection. 
+# pn_bfd_multihop: always use BFD multi-hop port for fault 
+# pn_cliswitch: Target switch to run the CLI on. 
+# pn_connect_retry_interval: BGP Connect retry interval (seconds). 
+# pn_default_originate: announce default routes to the neighbor or not. 
+# pn_ebgp_multihop: value for external BGP from 1 to 255. 
+# pn_interface: Interface to reach the neighbor. 
+# pn_max_prefix: maximum number of prefixes. 
+# pn_max_prefix_warn_only: warn if the maximum number of prefixes is 
+# pn_multi_protocol: Multi-protocol features. 
+# pn_neighbor: (required) IP address for BGP neighbor. 
+# pn_neighbor_holdtime: BGP Holdtime (seconds). 
+# pn_neighbor_keepalive_interval: BGP Keepalive interval (seconds). 
+# pn_next_hop_self: BGP next hop is self or not. 
+# pn_no_route_map_in: Remove ingress route-map from BGP neighbor. 
+# pn_no_route_map_out: Remove egress route-map from BGP neighbor. 
+# pn_override_capability: override capability. 
+# pn_password: password for MD5 BGP. 
+# pn_prefix_list_in: prefixes used for filtering. 
+# pn_prefix_list_out: prefixes used for filtering outgoing packets. 
+# pn_remote_as: BGP remote AS from 1 to 4294967295. 
+# pn_route_map_in: route map in for nbr. 
+# pn_route_map_out: route map out for nbr. 
+# pn_route_reflector_client: set as route reflector client. 
+# pn_send_community: send any community attribute to neighbor. 
+# pn_soft_reconfig_inbound: soft reset to reconfigure inbound traffic. 
+# pn_update_source: IP address of BGP packets required for peering 
+# pn_vrouter_name: (required) name of service config. 
+# pn_weight: default weight value between 0 and 65535 for the 
+# state: vrouter-bgp configuration command. 
+}- name: ${2:Name for pn_vrouter_bgp module.}
+  pn_vrouter_bgp:
+${3:   ${4:pn_advertisement_interval}: ${5:"#"}}
+${6:   ${7:pn_allowas_in}: ${8:"#"}}
+${9:   ${10:pn_bfd}: ${11:"#"}}
+${12:   ${13:pn_bfd_multihop}: ${14:"#"}}
+${15:   ${16:pn_cliswitch}: ${17:"#"}}
+${18:   ${19:pn_connect_retry_interval}: ${20:"#"}}
+${21:   ${22:pn_default_originate}: ${23:"#"}}
+${24:   ${25:pn_ebgp_multihop}: ${26:"#"}}
+${27:   ${28:pn_interface}: ${29:"#"}}
+${30:   ${31:pn_max_prefix}: ${32:"#"}}
+${33:   ${34:pn_max_prefix_warn_only}: ${35:"#"}}
+${36:   ${37:pn_multi_protocol}: ${38:"#"}}
+${39:   ${40:pn_neighbor}: ${41:"#"}}
+${42:   ${43:pn_neighbor_holdtime}: ${44:"#"}}
+${45:   ${46:pn_neighbor_keepalive_interval}: ${47:"#"}}
+${48:   ${49:pn_next_hop_self}: ${50:"#"}}
+${51:   ${52:pn_no_route_map_in}: ${53:"#"}}
+${54:   ${55:pn_no_route_map_out}: ${56:"#"}}
+${57:   ${58:pn_override_capability}: ${59:"#"}}
+${60:   ${61:pn_password}: ${62:"#"}}
+${63:   ${64:pn_prefix_list_in}: ${65:"#"}}
+${66:   ${67:pn_prefix_list_out}: ${68:"#"}}
+${69:   ${70:pn_remote_as}: ${71:"#"}}
+${72:   ${73:pn_route_map_in}: ${74:"#"}}
+${75:   ${76:pn_route_map_out}: ${77:"#"}}
+${78:   ${79:pn_route_reflector_client}: ${80:"#"}}
+${81:   ${82:pn_send_community}: ${83:"#"}}
+${84:   ${85:pn_soft_reconfig_inbound}: ${86:"#"}}
+${87:   ${88:pn_update_source}: ${89:"#"}}
+${90:   ${91:pn_vrouter_name}: ${92:"#"}}
+${93:   ${94:pn_weight}: ${95:"#"}}
+${96:   ${97:state}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
+]]></content>
+	<tabTrigger>pn_vrouter_bgp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

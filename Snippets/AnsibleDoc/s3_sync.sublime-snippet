@@ -13,7 +13,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # include: Shell pattern-style file matching. Used before 
 # key_prefix: In addition to file path, prepend s3 path with 
 # mime_map: Dict entry from extension to MIME type. This 
-# mode: (required) sync direction. 
+# mode: sync direction. 
 # permission: Canned ACL to apply to synced files. Changing 
 # profile: Uses a boto profile. Only works with boto >= 
 # region: The AWS region to use. If not specified then the 

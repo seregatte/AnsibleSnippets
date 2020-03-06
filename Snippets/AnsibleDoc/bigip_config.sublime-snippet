@@ -1,33 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# merge_content: Loads the specified configuration that you want 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # reset: Loads the default configuration on the device. 
 # save: The `save' argument instructs the module to save 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 # verify: Validates the specified configuration to see 
 }- name: ${2:Name for bigip_config module.}
   bigip_config:
 ${3:   ${4:merge_content}: ${5:"#"}}
-${6:   ${7:password}: ${8:"#"}}
-${9:   ${10:provider}: ${11:"#"}}
-${12:   ${13:reset}: ${14:"#"}}
-${15:   ${16:save}: ${17:"#"}}
-${18:   ${19:server}: ${20:"#"}}
-${21:   ${22:server_port}: ${23:"#"}}
-${24:   ${25:user}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:   ${31:verify}: ${32:"#"}}
-${33:${34:   become: ${35:true}} 
-${36:   become_method: ${37:su}} 
-${38:   become_user: ${39:nobody}} 
-${40:   become_flags: ${41:"-s /bin/sh"}}} 
-${42:   when: ${43:variable is defined}} 
-${44:   with_items: ${45:array}} 
+${6:   ${7:provider}: ${8:"#"}}
+${9:   ${10:reset}: ${11:"#"}}
+${12:   ${13:save}: ${14:"#"}}
+${15:   ${16:verify}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>bigip_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

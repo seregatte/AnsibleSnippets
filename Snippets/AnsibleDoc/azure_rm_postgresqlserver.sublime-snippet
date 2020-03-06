@@ -10,7 +10,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# create_mode: Create mode of SQL Server 
+# create_mode: Create mode of SQL Server. 
 # enforce_ssl: Enable SSL enforcement. 
 # location: Resource location. If not set, location from the 
 # name: (required) The name of the server. 

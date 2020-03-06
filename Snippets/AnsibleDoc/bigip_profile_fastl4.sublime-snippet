@@ -20,15 +20,12 @@ ${1:# client_timeout: Specifies a timeout for Late Binding. This is
 # name: (required) Specifies the name of the profile. 
 # parent: Specifies the profile from which this profile 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # reassemble_fragments: When `yes', specifies that the system 
 # receive_window_size: Specifies the amount of data the BIG-IP system 
 # reset_on_timeout: When `yes', specifies that the system sends a 
 # rtt_from_client: When `yes', specifies that the system uses TCP 
 # rtt_from_server: When `yes', specifies that the system uses TCP 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # server_sack: Specifies whether the BIG-IP system processes 
 # server_timestamp: Specifies whether the BIG-IP system processes 
 # state: When `present', ensures that the profile exists. 
@@ -41,8 +38,6 @@ ${1:# client_timeout: Specifies a timeout for Late Binding. This is
 # tcp_timestamp_mode: Specifies the action that the system should take 
 # tcp_wscale_mode: Specifies the action that the system should take 
 # timeout_recovery: Specifies how to handle client-timeout errors 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_profile_fastl4 module.}
   bigip_profile_fastl4:
 ${3:   ${4:client_timeout}: ${5:"#"}}
@@ -65,35 +60,30 @@ ${51:   ${52:mss_override}: ${53:"#"}}
 ${54:   ${55:name}: ${56:"#"}}
 ${57:   ${58:parent}: ${59:"#"}}
 ${60:   ${61:partition}: ${62:"#"}}
-${63:   ${64:password}: ${65:"#"}}
-${66:   ${67:provider}: ${68:"#"}}
-${69:   ${70:reassemble_fragments}: ${71:"#"}}
-${72:   ${73:receive_window_size}: ${74:"#"}}
-${75:   ${76:reset_on_timeout}: ${77:"#"}}
-${78:   ${79:rtt_from_client}: ${80:"#"}}
-${81:   ${82:rtt_from_server}: ${83:"#"}}
-${84:   ${85:server}: ${86:"#"}}
-${87:   ${88:server_port}: ${89:"#"}}
-${90:   ${91:server_sack}: ${92:"#"}}
-${93:   ${94:server_timestamp}: ${95:"#"}}
-${96:   ${97:state}: ${98:"#"}}
-${99:   ${100:syn_cookie_mss}: ${101:"#"}}
-${102:   ${103:tcp_close_timeout}: ${104:"#"}}
-${105:   ${106:tcp_generate_isn}: ${107:"#"}}
-${108:   ${109:tcp_handshake_timeout}: ${110:"#"}}
-${111:   ${112:tcp_strip_sack}: ${113:"#"}}
-${114:   ${115:tcp_time_wait_timeout}: ${116:"#"}}
-${117:   ${118:tcp_timestamp_mode}: ${119:"#"}}
-${120:   ${121:tcp_wscale_mode}: ${122:"#"}}
-${123:   ${124:timeout_recovery}: ${125:"#"}}
-${126:   ${127:user}: ${128:"#"}}
-${129:   ${130:validate_certs}: ${131:"#"}}
-${132:${133:   become: ${134:true}} 
-${135:   become_method: ${136:su}} 
-${137:   become_user: ${138:nobody}} 
-${139:   become_flags: ${140:"-s /bin/sh"}}} 
-${141:   when: ${142:variable is defined}} 
-${143:   with_items: ${144:array}} 
+${63:   ${64:provider}: ${65:"#"}}
+${66:   ${67:reassemble_fragments}: ${68:"#"}}
+${69:   ${70:receive_window_size}: ${71:"#"}}
+${72:   ${73:reset_on_timeout}: ${74:"#"}}
+${75:   ${76:rtt_from_client}: ${77:"#"}}
+${78:   ${79:rtt_from_server}: ${80:"#"}}
+${81:   ${82:server_sack}: ${83:"#"}}
+${84:   ${85:server_timestamp}: ${86:"#"}}
+${87:   ${88:state}: ${89:"#"}}
+${90:   ${91:syn_cookie_mss}: ${92:"#"}}
+${93:   ${94:tcp_close_timeout}: ${95:"#"}}
+${96:   ${97:tcp_generate_isn}: ${98:"#"}}
+${99:   ${100:tcp_handshake_timeout}: ${101:"#"}}
+${102:   ${103:tcp_strip_sack}: ${104:"#"}}
+${105:   ${106:tcp_time_wait_timeout}: ${107:"#"}}
+${108:   ${109:tcp_timestamp_mode}: ${110:"#"}}
+${111:   ${112:tcp_wscale_mode}: ${113:"#"}}
+${114:   ${115:timeout_recovery}: ${116:"#"}}
+${117:${118:   become: ${119:true}} 
+${120:   become_method: ${121:su}} 
+${122:   become_user: ${123:nobody}} 
+${124:   become_flags: ${125:"-s /bin/sh"}}} 
+${126:   when: ${127:variable is defined}} 
+${128:   with_items: ${129:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_fastl4</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -9,7 +9,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # path: (required) URI being used to execute API calls. 
 # port: Port number to be used for REST connection. The 
 # private_key: (required) Either a PEM-formatted private key 
-# src: Name of the absolute path of the filname that 
+# src: Name of the absolute path of the filename that 
 # timeout: The socket level timeout in seconds. 
 # use_proxy: If `no', it will not use a proxy, even if one is 
 # use_ssl: If `no', an HTTP connection will be used instead 

@@ -13,6 +13,7 @@ ${1:# admin_password: Specifies the cifs server admin password.
 # password: (required) Password for the specified user. 
 # service_state: CIFS Server Administrative Status. 
 # state: Whether the specified cifs_server should exist 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) The name of the vserver to use. 
@@ -32,16 +33,17 @@ ${30:   ${31:ou}: ${32:"#"}}
 ${33:   ${34:password}: ${35:"#"}}
 ${36:   ${37:service_state}: ${38:"#"}}
 ${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:   ${49:vserver}: ${50:"#"}}
-${51:   ${52:workgroup}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${42:   ${43:use_rest}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:vserver}: ${53:"#"}}
+${54:   ${55:workgroup}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cifs_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

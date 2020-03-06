@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: (required) FlashArray API token for admin 
+# fa_url: (required) FlashArray management IPv4 address or 
+# password: The SMTP password. 
+# relay_host: IPv4 or IPv6 address or FQDN. A port number may 
+# sender_domain: Domain name. 
+# state: Set or delete SMTP configuration 
+# user: The SMTP username. 
+}- name: ${2:Name for purefa_smtp module.}
+  purefa_smtp:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:fa_url}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:relay_host}: ${14:"#"}}
+${15:   ${16:sender_domain}: ${17:"#"}}
+${18:   ${19:state}: ${20:"#"}}
+${21:   ${22:user}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>purefa_smtp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

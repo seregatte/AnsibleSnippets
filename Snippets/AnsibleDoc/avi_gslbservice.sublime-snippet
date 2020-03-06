@@ -6,6 +6,7 @@ ${1:# api_context: Avi API context that includes current session ID
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # controller: IP address or hostname of the controller. The 
 # controller_health_status_enabled: Gs member's overall health status is derived 
 # created_by: Creator name. Field introduced in 17.1.2. 
@@ -16,6 +17,7 @@ ${1:# api_context: Avi API context that includes current session ID
 # groups: Select list of pools belonging to this gslb 
 # health_monitor_refs: Verify vs health by applying one or more health 
 # health_monitor_scope: Health monitor probe can be executed for all the 
+# hm_off: This field is an internal field and is used in 
 # is_federated: This field indicates that this object is 
 # min_members: The minimum number of members to distribute 
 # name: (required) Name for the gslb service. 
@@ -41,39 +43,41 @@ ${9:   ${10:application_persistence_profile_ref}: ${11:"#"}}
 ${12:   ${13:avi_api_patch_op}: ${14:"#"}}
 ${15:   ${16:avi_api_update_method}: ${17:"#"}}
 ${18:   ${19:avi_credentials}: ${20:"#"}}
-${21:   ${22:controller}: ${23:"#"}}
-${24:   ${25:controller_health_status_enabled}: ${26:"#"}}
-${27:   ${28:created_by}: ${29:"#"}}
-${30:   ${31:description}: ${32:"#"}}
-${33:   ${34:domain_names}: ${35:"#"}}
-${36:   ${37:down_response}: ${38:"#"}}
-${39:   ${40:enabled}: ${41:"#"}}
-${42:   ${43:groups}: ${44:"#"}}
-${45:   ${46:health_monitor_refs}: ${47:"#"}}
-${48:   ${49:health_monitor_scope}: ${50:"#"}}
-${51:   ${52:is_federated}: ${53:"#"}}
-${54:   ${55:min_members}: ${56:"#"}}
-${57:   ${58:name}: ${59:"#"}}
-${60:   ${61:num_dns_ip}: ${62:"#"}}
-${63:   ${64:password}: ${65:"#"}}
-${66:   ${67:pool_algorithm}: ${68:"#"}}
-${69:   ${70:site_persistence_enabled}: ${71:"#"}}
-${72:   ${73:state}: ${74:"#"}}
-${75:   ${76:tenant}: ${77:"#"}}
-${78:   ${79:tenant_ref}: ${80:"#"}}
-${81:   ${82:tenant_uuid}: ${83:"#"}}
-${84:   ${85:ttl}: ${86:"#"}}
-${87:   ${88:url}: ${89:"#"}}
-${90:   ${91:use_edns_client_subnet}: ${92:"#"}}
-${93:   ${94:username}: ${95:"#"}}
-${96:   ${97:uuid}: ${98:"#"}}
-${99:   ${100:wildcard_match}: ${101:"#"}}
-${102:${103:   become: ${104:true}} 
-${105:   become_method: ${106:su}} 
-${107:   become_user: ${108:nobody}} 
-${109:   become_flags: ${110:"-s /bin/sh"}}} 
-${111:   when: ${112:variable is defined}} 
-${113:   with_items: ${114:array}} 
+${21:   ${22:avi_disable_session_cache_as_fact}: ${23:"#"}}
+${24:   ${25:controller}: ${26:"#"}}
+${27:   ${28:controller_health_status_enabled}: ${29:"#"}}
+${30:   ${31:created_by}: ${32:"#"}}
+${33:   ${34:description}: ${35:"#"}}
+${36:   ${37:domain_names}: ${38:"#"}}
+${39:   ${40:down_response}: ${41:"#"}}
+${42:   ${43:enabled}: ${44:"#"}}
+${45:   ${46:groups}: ${47:"#"}}
+${48:   ${49:health_monitor_refs}: ${50:"#"}}
+${51:   ${52:health_monitor_scope}: ${53:"#"}}
+${54:   ${55:hm_off}: ${56:"#"}}
+${57:   ${58:is_federated}: ${59:"#"}}
+${60:   ${61:min_members}: ${62:"#"}}
+${63:   ${64:name}: ${65:"#"}}
+${66:   ${67:num_dns_ip}: ${68:"#"}}
+${69:   ${70:password}: ${71:"#"}}
+${72:   ${73:pool_algorithm}: ${74:"#"}}
+${75:   ${76:site_persistence_enabled}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:tenant}: ${83:"#"}}
+${84:   ${85:tenant_ref}: ${86:"#"}}
+${87:   ${88:tenant_uuid}: ${89:"#"}}
+${90:   ${91:ttl}: ${92:"#"}}
+${93:   ${94:url}: ${95:"#"}}
+${96:   ${97:use_edns_client_subnet}: ${98:"#"}}
+${99:   ${100:username}: ${101:"#"}}
+${102:   ${103:uuid}: ${104:"#"}}
+${105:   ${106:wildcard_match}: ${107:"#"}}
+${108:${109:   become: ${110:true}} 
+${111:   become_method: ${112:su}} 
+${113:   become_user: ${114:nobody}} 
+${115:   become_flags: ${116:"-s /bin/sh"}}} 
+${117:   when: ${118:variable is defined}} 
+${119:   with_items: ${120:array}} 
 ]]></content>
 	<tabTrigger>avi_gslbservice</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

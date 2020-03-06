@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# details_level: The level of detail for some of the fields in 
+# limit: No more than that many results will be returned. 
+# name: Object name. This parameter is relevant only for 
+# offset: Skip that many results before beginning to 
+# order: Sorts results by the given field. By default the 
+# version: Version of checkpoint. If not given one, the 
+}- name: ${2:Name for cp_mgmt_threat_layer_facts module.}
+  cp_mgmt_threat_layer_facts:
+${3:   ${4:details_level}: ${5:"#"}}
+${6:   ${7:limit}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:offset}: ${14:"#"}}
+${15:   ${16:order}: ${17:"#"}}
+${18:   ${19:version}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>cp_mgmt_threat_layer_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

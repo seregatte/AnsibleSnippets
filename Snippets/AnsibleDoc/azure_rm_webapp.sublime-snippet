@@ -8,27 +8,27 @@ ${1:# ad_user: Active Directory username. Use when
 # append_tags: Use to control if tags field is canonical or 
 # auth_source: Controls the source of the credentials to use 
 # cert_validation_mode: Controls the certificate validation behavior for 
-# client_affinity_enabled: True to enable client affinity; False to stop 
+# client_affinity_enabled: Whether or not to send session affinity cookies, 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # container_settings: Web app container settings. 
-# deployment_source: Deployment source for git 
-# dns_registration: If true web app hostname is not registered with 
+# deployment_source: Deployment source for git. 
+# dns_registration: Whether or not the web app hostname is 
 # frameworks: Set of run time framework settings. Each setting 
 # https_only: Configures web site to accept only https 
 # location: Resource location. If not set, location from the 
 # name: (required) Unique name of the app to create or 
 # password: Active Directory user password. Use when 
-# plan: App service plan. Required for creation. It can 
+# plan: App service plan. Required for creation. Can be 
 # profile: Security profile found in ~/.azure/credentials 
 # purge_app_settings: Purge any existing application settings. Replace 
 # resource_group: (required) Name of the resource group to which 
-# scm_type: Repository type of deployment source. Eg. 
-# e: scmtype for 
+# scm_type: Repository type of deployment source, for 
+# date: scmtype. 
 # secret: Azure client secret. Use when authenticating 
-# skip_custom_domain_verification: If true, custom (non *.azurewebsites.net) 
-# startup_file: The web's startup file. This only applies for 
-# state: Assert the state of the Web App. Use `present' 
+# skip_custom_domain_verification: Whether or not to skip verification of custom 
+# startup_file: The web's startup file. Used only for Linux web 
+# state: State of the Web App. Use `present' to create or 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
@@ -59,7 +59,7 @@ ${63:   ${64:profile}: ${65:"#"}}
 ${66:   ${67:purge_app_settings}: ${68:"#"}}
 ${69:   ${70:resource_group}: ${71:"#"}}
 ${72:   ${73:scm_type}: ${74:"#"}}
-${75:   ${76:e}: ${77:"#"}}
+${75:   ${76:date}: ${77:"#"}}
 ${78:   ${79:secret}: ${80:"#"}}
 ${81:   ${82:skip_custom_domain_verification}: ${83:"#"}}
 ${84:   ${85:startup_file}: ${86:"#"}}

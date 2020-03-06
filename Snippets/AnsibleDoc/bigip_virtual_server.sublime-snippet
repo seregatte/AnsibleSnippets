@@ -19,7 +19,6 @@ ${1:# address_translation: Specifies, when `enabled', that the system
 # mirror: Specifies that the system mirrors connections on 
 # name: (required) Virtual server name. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # policies: Specifies the policies for the virtual server. 
 # pool: Default pool for the virtual server. If you want 
 # port: Port of the virtual server. Required when 
@@ -32,15 +31,11 @@ ${1:# address_translation: Specifies, when `enabled', that the system
 # rate_limit_src_mask: Specifies a mask, in bits, to be applied to the 
 # security_log_profiles: Specifies the log profile applied to the virtual 
 # security_nat_policy: Specify the Firewall NAT policies for the 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # snat: Source network address policy. When `type' is 
 # source: Specifies an IP address or network from which 
 # source_port: Specifies whether the system preserves the 
 # state: The virtual server state. If `absent', delete 
 # type: Specifies the network service provided by this 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_virtual_server module.}
   bigip_virtual_server:
 ${3:   ${4:address_translation}: ${5:"#"}}
@@ -62,34 +57,29 @@ ${48:   ${49:metadata}: ${50:"#"}}
 ${51:   ${52:mirror}: ${53:"#"}}
 ${54:   ${55:name}: ${56:"#"}}
 ${57:   ${58:partition}: ${59:"#"}}
-${60:   ${61:password}: ${62:"#"}}
-${63:   ${64:policies}: ${65:"#"}}
-${66:   ${67:pool}: ${68:"#"}}
-${69:   ${70:port}: ${71:"#"}}
-${72:   ${73:port_translation}: ${74:"#"}}
-${75:   ${76:profiles}: ${77:"#"}}
-${78:   ${79:provider}: ${80:"#"}}
-${81:   ${82:rate_limit}: ${83:"#"}}
-${84:   ${85:rate_limit_dst_mask}: ${86:"#"}}
-${87:   ${88:rate_limit_mode}: ${89:"#"}}
-${90:   ${91:rate_limit_src_mask}: ${92:"#"}}
-${93:   ${94:security_log_profiles}: ${95:"#"}}
-${96:   ${97:security_nat_policy}: ${98:"#"}}
-${99:   ${100:server}: ${101:"#"}}
-${102:   ${103:server_port}: ${104:"#"}}
-${105:   ${106:snat}: ${107:"#"}}
-${108:   ${109:source}: ${110:"#"}}
-${111:   ${112:source_port}: ${113:"#"}}
-${114:   ${115:state}: ${116:"#"}}
-${117:   ${118:type}: ${119:"#"}}
-${120:   ${121:user}: ${122:"#"}}
-${123:   ${124:validate_certs}: ${125:"#"}}
-${126:${127:   become: ${128:true}} 
-${129:   become_method: ${130:su}} 
-${131:   become_user: ${132:nobody}} 
-${133:   become_flags: ${134:"-s /bin/sh"}}} 
-${135:   when: ${136:variable is defined}} 
-${137:   with_items: ${138:array}} 
+${60:   ${61:policies}: ${62:"#"}}
+${63:   ${64:pool}: ${65:"#"}}
+${66:   ${67:port}: ${68:"#"}}
+${69:   ${70:port_translation}: ${71:"#"}}
+${72:   ${73:profiles}: ${74:"#"}}
+${75:   ${76:provider}: ${77:"#"}}
+${78:   ${79:rate_limit}: ${80:"#"}}
+${81:   ${82:rate_limit_dst_mask}: ${83:"#"}}
+${84:   ${85:rate_limit_mode}: ${86:"#"}}
+${87:   ${88:rate_limit_src_mask}: ${89:"#"}}
+${90:   ${91:security_log_profiles}: ${92:"#"}}
+${93:   ${94:security_nat_policy}: ${95:"#"}}
+${96:   ${97:snat}: ${98:"#"}}
+${99:   ${100:source}: ${101:"#"}}
+${102:   ${103:source_port}: ${104:"#"}}
+${105:   ${106:state}: ${107:"#"}}
+${108:   ${109:type}: ${110:"#"}}
+${111:${112:   become: ${113:true}} 
+${114:   become_method: ${115:su}} 
+${116:   become_user: ${117:nobody}} 
+${118:   become_flags: ${119:"-s /bin/sh"}}} 
+${120:   when: ${121:variable is defined}} 
+${122:   with_items: ${123:array}} 
 ]]></content>
 	<tabTrigger>bigip_virtual_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

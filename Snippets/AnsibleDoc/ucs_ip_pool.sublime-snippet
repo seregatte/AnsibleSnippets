@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# default_gw: The default gateway associated with the IPv4 
-# descrption: The user-defined description of the IP address 
+# description: The user-defined description of the IP address 
 # first_addr: The first IPv4 address in the IPv4 addresses 
 # hostname: (required) IP address or hostname of Cisco UCS 
 # ipv6_default_gw: The default gateway associated with the IPv6 
@@ -27,7 +27,7 @@ ${1:# default_gw: The default gateway associated with the IPv4
 }- name: ${2:Name for ucs_ip_pool module.}
   ucs_ip_pool:
 ${3:   ${4:default_gw}: ${5:"#"}}
-${6:   ${7:descrption}: ${8:"#"}}
+${6:   ${7:description}: ${8:"#"}}
 ${9:   ${10:first_addr}: ${11:"#"}}
 ${12:   ${13:hostname}: ${14:"#"}}
 ${15:   ${16:ipv6_default_gw}: ${17:"#"}}

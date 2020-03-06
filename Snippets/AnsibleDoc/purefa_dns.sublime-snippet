@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_token: (required) FlashArray API token for admin 
-# domain: Domain suffix to be appended when perofrming DNS 
+# domain: Domain suffix to be appended when performing DNS 
 # fa_url: (required) FlashArray management IPv4 address or 
 # nameservers: List of up to 3 unique DNS server IP addresses. 
 # state: Set or delete directory service configuration 

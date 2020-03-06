@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# letter: (required) The letter of the network path to map 
 # password: The password for `username' that is used when 
-# path: The UNC path to map the drive to. This is 
+# path: The UNC path to map the drive to. If pointing to 
 # state: If `present' will ensure the mapped drive 
 # username: The username that is used when testing the 
 }- name: ${2:Name for win_mapped_drive module.}

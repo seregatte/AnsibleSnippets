@@ -1,15 +1,23 @@
 <snippet>
 <content><![CDATA[
-${1:# auth_key: Authentication key provided by the dashboard. 
+${1:# access: Type of SNMP access. 
+# auth_key: (required) Authentication key provided by the 
+# community_string: SNMP community string. Only relevant if `access' 
 # host: Hostname for Meraki dashboard. Can be used to 
+# internal_error_retry_time: Number of seconds to retry if server returns an 
+# net_id: ID of network. 
+# net_name: Name of network. 
 # org_id: ID of organization. 
 # org_name: Name of organization. 
+# output_format: Instructs module whether response keys should be 
 # output_level: Set amount of debug output during module 
 # peer_ips: Semi-colon delimited IP addresses which can 
+# rate_limit_retry_time: Number of seconds to retry if rate limiter is 
 # state: Specifies whether SNMP information should be 
 # timeout: Time to timeout for HTTP requests. 
 # use_https: If `no', it will use HTTP. Otherwise it will use 
 # use_proxy: If `no', it will not use a proxy, even if one is 
+# users: Information about users with access to SNMP. 
 # v2c_enabled: Specifies whether SNMPv2c is enabled. 
 # v3_auth_mode: Sets authentication mode for SNMPv3. 
 # v3_auth_pass: Authentication password for SNMPv3. Must be at 
@@ -19,29 +27,37 @@ ${1:# auth_key: Authentication key provided by the dashboard.
 # validate_certs: Whether to validate HTTP certificates. 
 }- name: ${2:Name for meraki_snmp module.}
   meraki_snmp:
-${3:   ${4:auth_key}: ${5:"#"}}
-${6:   ${7:host}: ${8:"#"}}
-${9:   ${10:org_id}: ${11:"#"}}
-${12:   ${13:org_name}: ${14:"#"}}
-${15:   ${16:output_level}: ${17:"#"}}
-${18:   ${19:peer_ips}: ${20:"#"}}
-${21:   ${22:state}: ${23:"#"}}
-${24:   ${25:timeout}: ${26:"#"}}
-${27:   ${28:use_https}: ${29:"#"}}
-${30:   ${31:use_proxy}: ${32:"#"}}
-${33:   ${34:v2c_enabled}: ${35:"#"}}
-${36:   ${37:v3_auth_mode}: ${38:"#"}}
-${39:   ${40:v3_auth_pass}: ${41:"#"}}
-${42:   ${43:v3_enabled}: ${44:"#"}}
-${45:   ${46:v3_priv_mode}: ${47:"#"}}
-${48:   ${49:v3_priv_pass}: ${50:"#"}}
-${51:   ${52:validate_certs}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${3:   ${4:access}: ${5:"#"}}
+${6:   ${7:auth_key}: ${8:"#"}}
+${9:   ${10:community_string}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:   ${16:internal_error_retry_time}: ${17:"#"}}
+${18:   ${19:net_id}: ${20:"#"}}
+${21:   ${22:net_name}: ${23:"#"}}
+${24:   ${25:org_id}: ${26:"#"}}
+${27:   ${28:org_name}: ${29:"#"}}
+${30:   ${31:output_format}: ${32:"#"}}
+${33:   ${34:output_level}: ${35:"#"}}
+${36:   ${37:peer_ips}: ${38:"#"}}
+${39:   ${40:rate_limit_retry_time}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
+${48:   ${49:use_https}: ${50:"#"}}
+${51:   ${52:use_proxy}: ${53:"#"}}
+${54:   ${55:users}: ${56:"#"}}
+${57:   ${58:v2c_enabled}: ${59:"#"}}
+${60:   ${61:v3_auth_mode}: ${62:"#"}}
+${63:   ${64:v3_auth_pass}: ${65:"#"}}
+${66:   ${67:v3_enabled}: ${68:"#"}}
+${69:   ${70:v3_priv_mode}: ${71:"#"}}
+${72:   ${73:v3_priv_pass}: ${74:"#"}}
+${75:   ${76:validate_certs}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>meraki_snmp</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

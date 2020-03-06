@@ -1,0 +1,44 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when 
+# adfs_authority_url: Azure AD authority url. Use when authenticating 
+# api_profile: Selects an API profile to use when communicating 
+# auth_source: Controls the source of the credentials to use 
+# cert_validation_mode: Controls the certificate validation behavior for 
+# client_id: Azure client ID. Use when authenticating with a 
+# cloud_environment: For cloud environments other than the US public 
+# gallery_name: (required) The name of the shared image gallery 
+# name: Resource name 
+# password: Active Directory user password. Use when 
+# profile: Security profile found in ~/.azure/credentials 
+# resource_group: (required) The name of the resource group. 
+# secret: Azure client secret. Use when authenticating 
+# subscription_id: Your Azure subscription Id. 
+# tenant: Azure tenant ID. Use when authenticating with a 
+}- name: ${2:Name for azure_rm_galleryimage_info module.}
+  azure_rm_galleryimage_info:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:adfs_authority_url}: ${8:"#"}}
+${9:   ${10:api_profile}: ${11:"#"}}
+${12:   ${13:auth_source}: ${14:"#"}}
+${15:   ${16:cert_validation_mode}: ${17:"#"}}
+${18:   ${19:client_id}: ${20:"#"}}
+${21:   ${22:cloud_environment}: ${23:"#"}}
+${24:   ${25:gallery_name}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:profile}: ${35:"#"}}
+${36:   ${37:resource_group}: ${38:"#"}}
+${39:   ${40:secret}: ${41:"#"}}
+${42:   ${43:subscription_id}: ${44:"#"}}
+${45:   ${46:tenant}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
+]]></content>
+	<tabTrigger>azure_rm_galleryimage_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -10,6 +10,7 @@ ${1:# access_level: The name of the role to manage.
 # password: (required) Password for the specified user. 
 # query: A query for the role. The query must apply to 
 # state: Whether the specified user should exist or not. 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) The name of the vserver to use. 
@@ -25,15 +26,16 @@ ${21:   ${22:ontapi}: ${23:"#"}}
 ${24:   ${25:password}: ${26:"#"}}
 ${27:   ${28:query}: ${29:"#"}}
 ${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:username}: ${35:"#"}}
-${36:   ${37:validate_certs}: ${38:"#"}}
-${39:   ${40:vserver}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${33:   ${34:use_rest}: ${35:"#"}}
+${36:   ${37:username}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:   ${43:vserver}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_user_role</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -1,12 +1,16 @@
 <snippet>
 <content><![CDATA[
-${1:# active_standby: Service engines in active/standby mode for ha 
+${1:# accelerated_networking: Enable accelerated networking option for azure 
+# active_standby: Service engines in active/standby mode for ha 
+# additional_config_memory: Indicates the percent of config memory used for 
 # advertise_backend_networks: Advertise reach-ability of backend server 
 # aggressive_failure_detection: Enable aggressive failover configuration for ha. 
 # algo: In compact placement, virtual services are 
 # allow_burst: Allow ses to be created using burst license. 
 # api_context: Avi API context that includes current session ID 
 # api_version: Avi API version of to use for Avi API and 
+# app_cache_percent: A percent value of total se memory reserved for 
+# app_learning_memory_percent: A percent value of total se memory reserved for 
 # archive_shm_limit: Amount of se memory in gb until which shared 
 # async_ssl: Ssl handshakes will be handled by dedicated ssl 
 # async_ssl_threads: Number of async ssl threads per se_dp. Allowed 
@@ -18,8 +22,11 @@ ${1:# active_standby: Service engines in active/standby mode for ha
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
+# bgp_state_update_interval: Bgp peer state update interval. Allowed values 
 # buffer_se: Excess service engine capacity provisioned for 
 # cloud_ref: It is a reference to an object of type cloud. 
+# config_debugs_on_all_cores: Enable config debugs on all cores of se. Field 
 # connection_memory_percentage: Percentage of memory for connection state. This 
 # controller: IP address or hostname of the controller. The 
 # cpu_reserve: Boolean flag to set cpu_reserve. Default value 
@@ -27,24 +34,34 @@ ${1:# active_standby: Service engines in active/standby mode for ha
 # custom_securitygroups_data: Custom security groups to be associated with 
 # custom_securitygroups_mgmt: Custom security groups to be associated with 
 # custom_tag: Custom tag will be used to create the tags for 
+# data_network_id: Subnet used to spin up the data nic for service 
+# datascript_timeout: Number of instructions before datascript times 
 # dedicated_dispatcher_core: Dedicate the core that handles packet 
 # description: User defined description for the object. 
+# disable_avi_securitygroups: By default, avi creates and manages security 
 # disable_csum_offloads: Stop using tcp/udp and ip checksum offload 
 # disable_gro: Disable generic receive offload (gro) in dpdk 
+# disable_se_memory_check: If set, disable the config memory check done in 
 # disable_tso: Disable tcp segmentation offload (tso) in dpdk 
 # disk_per_se: Amount of disk space for each of the service 
 # distribute_load_active_standby: Use both the active and standby service engines 
+# distribute_queues: Distributes queue ownership among cores so 
 # enable_hsm_priming: (this is a beta feature). Enable hsm key 
+# enable_multi_lb: Applicable only for azure cloud with basic sku 
 # enable_routing: Enable routing for this serviceenginegroup . 
 # enable_vip_on_all_interfaces: Enable vip on all interfaces of se. Field 
 # enable_vmac: Use virtual mac address for interfaces on which 
+# ephemeral_portrange_end: End local ephemeral port number for outbound 
+# ephemeral_portrange_start: Start local ephemeral port number for outbound 
 # extra_config_multiplier: Multiplier for extra config to support large 
 # extra_shared_config_memory: Extra config memory to support large geo db 
 # floating_intf_ip: If serviceenginegroup is configured for legacy 
 # floating_intf_ip_se_2: If serviceenginegroup is configured for legacy 
 # flow_table_new_syn_max_entries: Maximum number of flow table entries that have 
+# free_list_size: Number of entries in the free list. Field 
 # ha_mode: High availability mode for all the virtual 
 # hardwaresecuritymodulegroup_ref: It is a reference to an object of type 
+# heap_minimum_config_memory: Minimum required heap memory to apply any 
 # hm_on_standby: Enable active health monitoring from the standby 
 # host_attribute_key: Key of a (key, value) pair identifying a label 
 # host_attribute_value: Value of a (key, value) pair identifying a label 
@@ -53,24 +70,33 @@ ${1:# active_standby: Service engines in active/standby mode for ha
 # ignore_rtt_threshold: Ignore rtt samples if it is above threshold. 
 # ingress_access_data: Program se security group ingress rules to allow 
 # ingress_access_mgmt: Program se security group ingress rules to allow 
-# instance_flavor: Instance/flavor type for se instance. 
-# iptables: Iptable rules. 
+# instance_flavor: Instance/flavor name for se instance. 
+# iptables: Iptables rules. 
 # least_load_core_selection: Select core with least load for new flow. 
 # license_tier: Specifies the license tier which would be used. 
 # license_type: If no license type is specified then default 
 # log_disksz: Maximum disk capacity (in mb) to be allocated to 
 # max_cpu_usage: When cpu usage on an se exceeds this threshold, 
+# max_memory_per_mempool: Max bytes that can be allocated in a single 
+# max_public_ips_per_lb: Applicable to azure platform only. Maximum 
+# max_rules_per_lb: Applicable to azure platform only. Maximum 
 # max_scaleout_per_vs: Maximum number of active service engines for the 
 # max_se: Maximum number of services engines in this 
 # max_vs_per_se: Maximum number of virtual services that can be 
 # mem_reserve: Boolean flag to set mem_reserve. Default value 
+# memory_for_config_update: Indicates the percent of memory reserved for 
 # memory_per_se: Amount of memory for each of the service engine 
 # mgmt_network_ref: Management network to use for avi service 
 # mgmt_subnet: Management subnet to use for avi service 
 # min_cpu_usage: When cpu usage on an se falls below the minimum 
 # min_scaleout_per_vs: Minimum number of active service engines for the 
+# min_se: Minimum number of services engines in this group 
+# minimum_connection_memory: Indicates the percent of memory reserved for 
+# minimum_required_config_memory: Required available config memory to apply any 
+# n_log_streaming_threads: Number of threads to use for log streaming. 
 # name: (required) Name of the object. 
 # non_significant_log_throttle: This setting limits the number of non- 
+# num_dispatcher_cores: Number of dispatcher cores (0,1,2,4,8 or 16). If 
 # num_flow_cores_sum_changes_to_ignore: Number of changes in num flow cores sum to 
 # openstack_availability_zone: Field deprecated in 17.1.1. 
 # openstack_availability_zones: Field introduced in 17.1.1. 
@@ -81,29 +107,44 @@ ${1:# active_standby: Service engines in active/standby mode for ha
 # per_app: Per-app se mode is designed for deploying 
 # placement_mode: If placement mode is 'auto', virtual services 
 # realtime_se_metrics: Enable or disable real time se metrics. 
+# reboot_on_stop: Reboot the system if the se is stopped. Field 
 # se_bandwidth_type: Select the se bandwidth for the bandwidth 
 # se_deprovision_delay: Duration to preserve unused service engine 
 # se_dos_profile: Dosthresholdprofile settings for 
+# se_dpdk_pmd: Determines if dpdk pool mode driver should be 
+# se_flow_probe_retries: Flow probe retry count if no replies are 
+# se_flow_probe_timer: Timeout in milliseconds for flow probe entries. 
 # se_ipc_udp_port: Udp port for se_dp ipc in docker bridge mode. 
 # se_name_prefix: Prefix to use for virtual machine name of 
+# se_pcap_lookahead: Enables lookahead mode of packet receive in pcap 
+# se_pcap_reinit_frequency: Frequency in seconds at which periodically a 
+# se_pcap_reinit_threshold: Threshold for input packet receive errors in 
 # se_probe_port: Tcp port on se where echo service will be run. 
 # se_remote_punt_udp_port: Udp port for punted packets in docker bridge 
+# se_routing: Enable routing via service engine datapath. When 
 # se_sb_dedicated_core: Sideband traffic will be handled by a dedicated 
 # se_sb_threads: Number of sideband threads per se. Allowed 
 # se_thread_multiplier: Multiplier for se threads based on vcpu. Allowed 
+# se_tracert_port_range: Traceroute port range. Field introduced in 
 # se_tunnel_mode: Determines if dsr from secondary se is active or 
 # se_tunnel_udp_port: Udp port for tunneled packets from secondary to 
 # se_udp_encap_ipc: Determines if se-se ipc messages are 
+# se_use_dpdk: Determines if dpdk library should be used or not 
 # se_vs_hb_max_pkts_in_batch: Maximum number of aggregated vs heartbeat 
 # se_vs_hb_max_vs_in_pkt: Maximum number of virtualservices for which 
+# self_se_election: Enable ses to elect a primary amongst themselves 
+# service_ip6_subnets: Ipv6 subnets assigned to the se group. Required 
 # service_ip_subnets: Subnets assigned to the se group. Required for 
+# shm_minimum_config_memory: Minimum required shared memory to apply any 
 # significant_log_throttle: This setting limits the number of significant 
+# ssl_preprocess_sni_hostname: (beta) preprocess ssl client hello for sni 
 # state: The state that should be applied on the entity. 
 # tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
 # tenant_uuid: UUID of tenant used for all Avi API calls and 
 # udf_log_throttle: This setting limits the number of udf logs 
 # url: Avi controller URL of the object. 
+# use_standard_alb: Use standard sku azure load balancer. By default 
 # username: Username used for accessing Avi controller. The 
 # uuid: Unique object identifier of the object. 
 # vcenter_clusters: Vcenterclusters settings for serviceenginegroup. 
@@ -113,141 +154,196 @@ ${1:# active_standby: Service engines in active/standby mode for ha
 # vcenter_folder: Folder to place all the service engine virtual 
 # vcenter_hosts: Vcenterhosts settings for serviceenginegroup. 
 # vcpus_per_se: Number of vcpus for each of the service engine 
+# vip_asg: When vip_asg is set, vip configuration will be 
 # vs_host_redundancy: Ensure primary and secondary service engines are 
 # vs_scalein_timeout: Time to wait for the scaled in se to drain 
 # vs_scalein_timeout_for_upgrade: During se upgrade, time to wait for the scaled- 
 # vs_scaleout_timeout: Time to wait for the scaled out se to become 
-# vss_placement: If set, virtual services will be placed on only 
+# vs_se_scaleout_additional_wait_time: Wait time for sending scaleout ready 
+# vs_se_scaleout_ready_timeout: Timeout in seconds for service engine to 
+# vs_switchover_timeout: During se upgrade in a legacy active/standby 
+# vss_placement: Parameters to place virtual services on only a 
+# vss_placement_enabled: If set, virtual services will be placed on only 
+# waf_learning_interval: Frequency with which se publishes waf learning. 
+# waf_learning_memory: Amount of memory reserved on se for waf 
 # waf_mempool: Enable memory pool for waf. Field introduced in 
 # waf_mempool_size: Memory pool size used for waf. Field introduced 
 }- name: ${2:Name for avi_serviceenginegroup module.}
   avi_serviceenginegroup:
-${3:   ${4:active_standby}: ${5:"#"}}
-${6:   ${7:advertise_backend_networks}: ${8:"#"}}
-${9:   ${10:aggressive_failure_detection}: ${11:"#"}}
-${12:   ${13:algo}: ${14:"#"}}
-${15:   ${16:allow_burst}: ${17:"#"}}
-${18:   ${19:api_context}: ${20:"#"}}
-${21:   ${22:api_version}: ${23:"#"}}
-${24:   ${25:archive_shm_limit}: ${26:"#"}}
-${27:   ${28:async_ssl}: ${29:"#"}}
-${30:   ${31:async_ssl_threads}: ${32:"#"}}
-${33:   ${34:auto_rebalance}: ${35:"#"}}
-${36:   ${37:auto_rebalance_capacity_per_se}: ${38:"#"}}
-${39:   ${40:auto_rebalance_criteria}: ${41:"#"}}
-${42:   ${43:auto_rebalance_interval}: ${44:"#"}}
-${45:   ${46:auto_redistribute_active_standby_load}: ${47:"#"}}
-${48:   ${49:avi_api_patch_op}: ${50:"#"}}
-${51:   ${52:avi_api_update_method}: ${53:"#"}}
-${54:   ${55:avi_credentials}: ${56:"#"}}
-${57:   ${58:buffer_se}: ${59:"#"}}
-${60:   ${61:cloud_ref}: ${62:"#"}}
-${63:   ${64:connection_memory_percentage}: ${65:"#"}}
-${66:   ${67:controller}: ${68:"#"}}
-${69:   ${70:cpu_reserve}: ${71:"#"}}
-${72:   ${73:cpu_socket_affinity}: ${74:"#"}}
-${75:   ${76:custom_securitygroups_data}: ${77:"#"}}
-${78:   ${79:custom_securitygroups_mgmt}: ${80:"#"}}
-${81:   ${82:custom_tag}: ${83:"#"}}
-${84:   ${85:dedicated_dispatcher_core}: ${86:"#"}}
-${87:   ${88:description}: ${89:"#"}}
-${90:   ${91:disable_csum_offloads}: ${92:"#"}}
-${93:   ${94:disable_gro}: ${95:"#"}}
-${96:   ${97:disable_tso}: ${98:"#"}}
-${99:   ${100:disk_per_se}: ${101:"#"}}
-${102:   ${103:distribute_load_active_standby}: ${104:"#"}}
-${105:   ${106:enable_hsm_priming}: ${107:"#"}}
-${108:   ${109:enable_routing}: ${110:"#"}}
-${111:   ${112:enable_vip_on_all_interfaces}: ${113:"#"}}
-${114:   ${115:enable_vmac}: ${116:"#"}}
-${117:   ${118:extra_config_multiplier}: ${119:"#"}}
-${120:   ${121:extra_shared_config_memory}: ${122:"#"}}
-${123:   ${124:floating_intf_ip}: ${125:"#"}}
-${126:   ${127:floating_intf_ip_se_2}: ${128:"#"}}
-${129:   ${130:flow_table_new_syn_max_entries}: ${131:"#"}}
-${132:   ${133:ha_mode}: ${134:"#"}}
-${135:   ${136:hardwaresecuritymodulegroup_ref}: ${137:"#"}}
-${138:   ${139:hm_on_standby}: ${140:"#"}}
-${141:   ${142:host_attribute_key}: ${143:"#"}}
-${144:   ${145:host_attribute_value}: ${146:"#"}}
-${147:   ${148:host_gateway_monitor}: ${149:"#"}}
-${150:   ${151:hypervisor}: ${152:"#"}}
-${153:   ${154:ignore_rtt_threshold}: ${155:"#"}}
-${156:   ${157:ingress_access_data}: ${158:"#"}}
-${159:   ${160:ingress_access_mgmt}: ${161:"#"}}
-${162:   ${163:instance_flavor}: ${164:"#"}}
-${165:   ${166:iptables}: ${167:"#"}}
-${168:   ${169:least_load_core_selection}: ${170:"#"}}
-${171:   ${172:license_tier}: ${173:"#"}}
-${174:   ${175:license_type}: ${176:"#"}}
-${177:   ${178:log_disksz}: ${179:"#"}}
-${180:   ${181:max_cpu_usage}: ${182:"#"}}
-${183:   ${184:max_scaleout_per_vs}: ${185:"#"}}
-${186:   ${187:max_se}: ${188:"#"}}
-${189:   ${190:max_vs_per_se}: ${191:"#"}}
-${192:   ${193:mem_reserve}: ${194:"#"}}
-${195:   ${196:memory_per_se}: ${197:"#"}}
-${198:   ${199:mgmt_network_ref}: ${200:"#"}}
-${201:   ${202:mgmt_subnet}: ${203:"#"}}
-${204:   ${205:min_cpu_usage}: ${206:"#"}}
-${207:   ${208:min_scaleout_per_vs}: ${209:"#"}}
-${210:   ${211:name}: ${212:"#"}}
-${213:   ${214:non_significant_log_throttle}: ${215:"#"}}
-${216:   ${217:num_flow_cores_sum_changes_to_ignore}: ${218:"#"}}
-${219:   ${220:openstack_availability_zone}: ${221:"#"}}
-${222:   ${223:openstack_availability_zones}: ${224:"#"}}
-${225:   ${226:openstack_mgmt_network_name}: ${227:"#"}}
-${228:   ${229:openstack_mgmt_network_uuid}: ${230:"#"}}
-${231:   ${232:os_reserved_memory}: ${233:"#"}}
-${234:   ${235:password}: ${236:"#"}}
-${237:   ${238:per_app}: ${239:"#"}}
-${240:   ${241:placement_mode}: ${242:"#"}}
-${243:   ${244:realtime_se_metrics}: ${245:"#"}}
-${246:   ${247:se_bandwidth_type}: ${248:"#"}}
-${249:   ${250:se_deprovision_delay}: ${251:"#"}}
-${252:   ${253:se_dos_profile}: ${254:"#"}}
-${255:   ${256:se_ipc_udp_port}: ${257:"#"}}
-${258:   ${259:se_name_prefix}: ${260:"#"}}
-${261:   ${262:se_probe_port}: ${263:"#"}}
-${264:   ${265:se_remote_punt_udp_port}: ${266:"#"}}
-${267:   ${268:se_sb_dedicated_core}: ${269:"#"}}
-${270:   ${271:se_sb_threads}: ${272:"#"}}
-${273:   ${274:se_thread_multiplier}: ${275:"#"}}
-${276:   ${277:se_tunnel_mode}: ${278:"#"}}
-${279:   ${280:se_tunnel_udp_port}: ${281:"#"}}
-${282:   ${283:se_udp_encap_ipc}: ${284:"#"}}
-${285:   ${286:se_vs_hb_max_pkts_in_batch}: ${287:"#"}}
-${288:   ${289:se_vs_hb_max_vs_in_pkt}: ${290:"#"}}
-${291:   ${292:service_ip_subnets}: ${293:"#"}}
-${294:   ${295:significant_log_throttle}: ${296:"#"}}
-${297:   ${298:state}: ${299:"#"}}
-${300:   ${301:tenant}: ${302:"#"}}
-${303:   ${304:tenant_ref}: ${305:"#"}}
-${306:   ${307:tenant_uuid}: ${308:"#"}}
-${309:   ${310:udf_log_throttle}: ${311:"#"}}
-${312:   ${313:url}: ${314:"#"}}
-${315:   ${316:username}: ${317:"#"}}
-${318:   ${319:uuid}: ${320:"#"}}
-${321:   ${322:vcenter_clusters}: ${323:"#"}}
-${324:   ${325:vcenter_datastore_mode}: ${326:"#"}}
-${327:   ${328:vcenter_datastores}: ${329:"#"}}
-${330:   ${331:vcenter_datastores_include}: ${332:"#"}}
-${333:   ${334:vcenter_folder}: ${335:"#"}}
-${336:   ${337:vcenter_hosts}: ${338:"#"}}
-${339:   ${340:vcpus_per_se}: ${341:"#"}}
-${342:   ${343:vs_host_redundancy}: ${344:"#"}}
-${345:   ${346:vs_scalein_timeout}: ${347:"#"}}
-${348:   ${349:vs_scalein_timeout_for_upgrade}: ${350:"#"}}
-${351:   ${352:vs_scaleout_timeout}: ${353:"#"}}
-${354:   ${355:vss_placement}: ${356:"#"}}
-${357:   ${358:waf_mempool}: ${359:"#"}}
-${360:   ${361:waf_mempool_size}: ${362:"#"}}
-${363:${364:   become: ${365:true}} 
-${366:   become_method: ${367:su}} 
-${368:   become_user: ${369:nobody}} 
-${370:   become_flags: ${371:"-s /bin/sh"}}} 
-${372:   when: ${373:variable is defined}} 
-${374:   with_items: ${375:array}} 
+${3:   ${4:accelerated_networking}: ${5:"#"}}
+${6:   ${7:active_standby}: ${8:"#"}}
+${9:   ${10:additional_config_memory}: ${11:"#"}}
+${12:   ${13:advertise_backend_networks}: ${14:"#"}}
+${15:   ${16:aggressive_failure_detection}: ${17:"#"}}
+${18:   ${19:algo}: ${20:"#"}}
+${21:   ${22:allow_burst}: ${23:"#"}}
+${24:   ${25:api_context}: ${26:"#"}}
+${27:   ${28:api_version}: ${29:"#"}}
+${30:   ${31:app_cache_percent}: ${32:"#"}}
+${33:   ${34:app_learning_memory_percent}: ${35:"#"}}
+${36:   ${37:archive_shm_limit}: ${38:"#"}}
+${39:   ${40:async_ssl}: ${41:"#"}}
+${42:   ${43:async_ssl_threads}: ${44:"#"}}
+${45:   ${46:auto_rebalance}: ${47:"#"}}
+${48:   ${49:auto_rebalance_capacity_per_se}: ${50:"#"}}
+${51:   ${52:auto_rebalance_criteria}: ${53:"#"}}
+${54:   ${55:auto_rebalance_interval}: ${56:"#"}}
+${57:   ${58:auto_redistribute_active_standby_load}: ${59:"#"}}
+${60:   ${61:avi_api_patch_op}: ${62:"#"}}
+${63:   ${64:avi_api_update_method}: ${65:"#"}}
+${66:   ${67:avi_credentials}: ${68:"#"}}
+${69:   ${70:avi_disable_session_cache_as_fact}: ${71:"#"}}
+${72:   ${73:bgp_state_update_interval}: ${74:"#"}}
+${75:   ${76:buffer_se}: ${77:"#"}}
+${78:   ${79:cloud_ref}: ${80:"#"}}
+${81:   ${82:config_debugs_on_all_cores}: ${83:"#"}}
+${84:   ${85:connection_memory_percentage}: ${86:"#"}}
+${87:   ${88:controller}: ${89:"#"}}
+${90:   ${91:cpu_reserve}: ${92:"#"}}
+${93:   ${94:cpu_socket_affinity}: ${95:"#"}}
+${96:   ${97:custom_securitygroups_data}: ${98:"#"}}
+${99:   ${100:custom_securitygroups_mgmt}: ${101:"#"}}
+${102:   ${103:custom_tag}: ${104:"#"}}
+${105:   ${106:data_network_id}: ${107:"#"}}
+${108:   ${109:datascript_timeout}: ${110:"#"}}
+${111:   ${112:dedicated_dispatcher_core}: ${113:"#"}}
+${114:   ${115:description}: ${116:"#"}}
+${117:   ${118:disable_avi_securitygroups}: ${119:"#"}}
+${120:   ${121:disable_csum_offloads}: ${122:"#"}}
+${123:   ${124:disable_gro}: ${125:"#"}}
+${126:   ${127:disable_se_memory_check}: ${128:"#"}}
+${129:   ${130:disable_tso}: ${131:"#"}}
+${132:   ${133:disk_per_se}: ${134:"#"}}
+${135:   ${136:distribute_load_active_standby}: ${137:"#"}}
+${138:   ${139:distribute_queues}: ${140:"#"}}
+${141:   ${142:enable_hsm_priming}: ${143:"#"}}
+${144:   ${145:enable_multi_lb}: ${146:"#"}}
+${147:   ${148:enable_routing}: ${149:"#"}}
+${150:   ${151:enable_vip_on_all_interfaces}: ${152:"#"}}
+${153:   ${154:enable_vmac}: ${155:"#"}}
+${156:   ${157:ephemeral_portrange_end}: ${158:"#"}}
+${159:   ${160:ephemeral_portrange_start}: ${161:"#"}}
+${162:   ${163:extra_config_multiplier}: ${164:"#"}}
+${165:   ${166:extra_shared_config_memory}: ${167:"#"}}
+${168:   ${169:floating_intf_ip}: ${170:"#"}}
+${171:   ${172:floating_intf_ip_se_2}: ${173:"#"}}
+${174:   ${175:flow_table_new_syn_max_entries}: ${176:"#"}}
+${177:   ${178:free_list_size}: ${179:"#"}}
+${180:   ${181:ha_mode}: ${182:"#"}}
+${183:   ${184:hardwaresecuritymodulegroup_ref}: ${185:"#"}}
+${186:   ${187:heap_minimum_config_memory}: ${188:"#"}}
+${189:   ${190:hm_on_standby}: ${191:"#"}}
+${192:   ${193:host_attribute_key}: ${194:"#"}}
+${195:   ${196:host_attribute_value}: ${197:"#"}}
+${198:   ${199:host_gateway_monitor}: ${200:"#"}}
+${201:   ${202:hypervisor}: ${203:"#"}}
+${204:   ${205:ignore_rtt_threshold}: ${206:"#"}}
+${207:   ${208:ingress_access_data}: ${209:"#"}}
+${210:   ${211:ingress_access_mgmt}: ${212:"#"}}
+${213:   ${214:instance_flavor}: ${215:"#"}}
+${216:   ${217:iptables}: ${218:"#"}}
+${219:   ${220:least_load_core_selection}: ${221:"#"}}
+${222:   ${223:license_tier}: ${224:"#"}}
+${225:   ${226:license_type}: ${227:"#"}}
+${228:   ${229:log_disksz}: ${230:"#"}}
+${231:   ${232:max_cpu_usage}: ${233:"#"}}
+${234:   ${235:max_memory_per_mempool}: ${236:"#"}}
+${237:   ${238:max_public_ips_per_lb}: ${239:"#"}}
+${240:   ${241:max_rules_per_lb}: ${242:"#"}}
+${243:   ${244:max_scaleout_per_vs}: ${245:"#"}}
+${246:   ${247:max_se}: ${248:"#"}}
+${249:   ${250:max_vs_per_se}: ${251:"#"}}
+${252:   ${253:mem_reserve}: ${254:"#"}}
+${255:   ${256:memory_for_config_update}: ${257:"#"}}
+${258:   ${259:memory_per_se}: ${260:"#"}}
+${261:   ${262:mgmt_network_ref}: ${263:"#"}}
+${264:   ${265:mgmt_subnet}: ${266:"#"}}
+${267:   ${268:min_cpu_usage}: ${269:"#"}}
+${270:   ${271:min_scaleout_per_vs}: ${272:"#"}}
+${273:   ${274:min_se}: ${275:"#"}}
+${276:   ${277:minimum_connection_memory}: ${278:"#"}}
+${279:   ${280:minimum_required_config_memory}: ${281:"#"}}
+${282:   ${283:n_log_streaming_threads}: ${284:"#"}}
+${285:   ${286:name}: ${287:"#"}}
+${288:   ${289:non_significant_log_throttle}: ${290:"#"}}
+${291:   ${292:num_dispatcher_cores}: ${293:"#"}}
+${294:   ${295:num_flow_cores_sum_changes_to_ignore}: ${296:"#"}}
+${297:   ${298:openstack_availability_zone}: ${299:"#"}}
+${300:   ${301:openstack_availability_zones}: ${302:"#"}}
+${303:   ${304:openstack_mgmt_network_name}: ${305:"#"}}
+${306:   ${307:openstack_mgmt_network_uuid}: ${308:"#"}}
+${309:   ${310:os_reserved_memory}: ${311:"#"}}
+${312:   ${313:password}: ${314:"#"}}
+${315:   ${316:per_app}: ${317:"#"}}
+${318:   ${319:placement_mode}: ${320:"#"}}
+${321:   ${322:realtime_se_metrics}: ${323:"#"}}
+${324:   ${325:reboot_on_stop}: ${326:"#"}}
+${327:   ${328:se_bandwidth_type}: ${329:"#"}}
+${330:   ${331:se_deprovision_delay}: ${332:"#"}}
+${333:   ${334:se_dos_profile}: ${335:"#"}}
+${336:   ${337:se_dpdk_pmd}: ${338:"#"}}
+${339:   ${340:se_flow_probe_retries}: ${341:"#"}}
+${342:   ${343:se_flow_probe_timer}: ${344:"#"}}
+${345:   ${346:se_ipc_udp_port}: ${347:"#"}}
+${348:   ${349:se_name_prefix}: ${350:"#"}}
+${351:   ${352:se_pcap_lookahead}: ${353:"#"}}
+${354:   ${355:se_pcap_reinit_frequency}: ${356:"#"}}
+${357:   ${358:se_pcap_reinit_threshold}: ${359:"#"}}
+${360:   ${361:se_probe_port}: ${362:"#"}}
+${363:   ${364:se_remote_punt_udp_port}: ${365:"#"}}
+${366:   ${367:se_routing}: ${368:"#"}}
+${369:   ${370:se_sb_dedicated_core}: ${371:"#"}}
+${372:   ${373:se_sb_threads}: ${374:"#"}}
+${375:   ${376:se_thread_multiplier}: ${377:"#"}}
+${378:   ${379:se_tracert_port_range}: ${380:"#"}}
+${381:   ${382:se_tunnel_mode}: ${383:"#"}}
+${384:   ${385:se_tunnel_udp_port}: ${386:"#"}}
+${387:   ${388:se_udp_encap_ipc}: ${389:"#"}}
+${390:   ${391:se_use_dpdk}: ${392:"#"}}
+${393:   ${394:se_vs_hb_max_pkts_in_batch}: ${395:"#"}}
+${396:   ${397:se_vs_hb_max_vs_in_pkt}: ${398:"#"}}
+${399:   ${400:self_se_election}: ${401:"#"}}
+${402:   ${403:service_ip6_subnets}: ${404:"#"}}
+${405:   ${406:service_ip_subnets}: ${407:"#"}}
+${408:   ${409:shm_minimum_config_memory}: ${410:"#"}}
+${411:   ${412:significant_log_throttle}: ${413:"#"}}
+${414:   ${415:ssl_preprocess_sni_hostname}: ${416:"#"}}
+${417:   ${418:state}: ${419:"#"}}
+${420:   ${421:tenant}: ${422:"#"}}
+${423:   ${424:tenant_ref}: ${425:"#"}}
+${426:   ${427:tenant_uuid}: ${428:"#"}}
+${429:   ${430:udf_log_throttle}: ${431:"#"}}
+${432:   ${433:url}: ${434:"#"}}
+${435:   ${436:use_standard_alb}: ${437:"#"}}
+${438:   ${439:username}: ${440:"#"}}
+${441:   ${442:uuid}: ${443:"#"}}
+${444:   ${445:vcenter_clusters}: ${446:"#"}}
+${447:   ${448:vcenter_datastore_mode}: ${449:"#"}}
+${450:   ${451:vcenter_datastores}: ${452:"#"}}
+${453:   ${454:vcenter_datastores_include}: ${455:"#"}}
+${456:   ${457:vcenter_folder}: ${458:"#"}}
+${459:   ${460:vcenter_hosts}: ${461:"#"}}
+${462:   ${463:vcpus_per_se}: ${464:"#"}}
+${465:   ${466:vip_asg}: ${467:"#"}}
+${468:   ${469:vs_host_redundancy}: ${470:"#"}}
+${471:   ${472:vs_scalein_timeout}: ${473:"#"}}
+${474:   ${475:vs_scalein_timeout_for_upgrade}: ${476:"#"}}
+${477:   ${478:vs_scaleout_timeout}: ${479:"#"}}
+${480:   ${481:vs_se_scaleout_additional_wait_time}: ${482:"#"}}
+${483:   ${484:vs_se_scaleout_ready_timeout}: ${485:"#"}}
+${486:   ${487:vs_switchover_timeout}: ${488:"#"}}
+${489:   ${490:vss_placement}: ${491:"#"}}
+${492:   ${493:vss_placement_enabled}: ${494:"#"}}
+${495:   ${496:waf_learning_interval}: ${497:"#"}}
+${498:   ${499:waf_learning_memory}: ${500:"#"}}
+${501:   ${502:waf_mempool}: ${503:"#"}}
+${504:   ${505:waf_mempool_size}: ${506:"#"}}
+${507:${508:   become: ${509:true}} 
+${510:   become_method: ${511:su}} 
+${512:   become_user: ${513:nobody}} 
+${514:   become_flags: ${515:"-s /bin/sh"}}} 
+${516:   when: ${517:variable is defined}} 
+${518:   with_items: ${519:array}} 
 ]]></content>
 	<tabTrigger>avi_serviceenginegroup</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

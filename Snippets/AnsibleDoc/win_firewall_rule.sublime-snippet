@@ -4,7 +4,7 @@ ${1:# action: What to do with the items this rule is for.
 # description: Description for the firewall rule. 
 # direction: Whether this rule is for inbound or outbound 
 # enabled: Whether this firewall rule is enabled or 
-# force: Replace any existing rule by removing it first. 
+# group: The group name for the rule. 
 # localip: The local ip address this rule applies to. Set 
 # localport: The local port this rule applies to. Set to 
 # name: (required) The rule's display name. 
@@ -21,7 +21,7 @@ ${3:   ${4:action}: ${5:"#"}}
 ${6:   ${7:description}: ${8:"#"}}
 ${9:   ${10:direction}: ${11:"#"}}
 ${12:   ${13:enabled}: ${14:"#"}}
-${15:   ${16:force}: ${17:"#"}}
+${15:   ${16:group}: ${17:"#"}}
 ${18:   ${19:localip}: ${20:"#"}}
 ${21:   ${22:localport}: ${23:"#"}}
 ${24:   ${25:name}: ${26:"#"}}

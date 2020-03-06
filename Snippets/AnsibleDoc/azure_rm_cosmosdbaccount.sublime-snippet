@@ -16,7 +16,7 @@ ${1:# ad_user: Active Directory username. Use when
 # enable_multiple_write_locations: Enables the account to write in multiple 
 # enable_table: Enable Table. 
 # geo_rep_locations: An array that contains the georeplication 
-# ip_range_filter: Cosmos DB Firewall Support: This value specifies 
+# ip_range_filter: Cosmos DB Firewall support. This value specifies 
 # is_virtual_network_filter_enabled: Flag to indicate whether to enable/disable 
 # kind: Indicates the type of database account. This can 
 # location: The location of the resource group to which the 

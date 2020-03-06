@@ -10,18 +10,13 @@ ${1:# action: Specifies the action for the firewall rule. When
 # parent_policy: The policy which contains the rule to be 
 # parent_rule_list: The rule list which contains the rule to be 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # protocol: Specifies the protocol to which the rule 
 # provider: A dict object containing connection details. 
 # rule_list: Specifies an existing rule list to use in the 
 # schedule: Specifies a schedule for the firewall rule. You 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # source: Specifies packet sources to which the rule 
 # state: When `state' is `present', ensures that the rule 
 # status: Indicates the activity state of the rule or rule 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_firewall_rule module.}
   bigip_firewall_rule:
 ${3:   ${4:action}: ${5:"#"}}
@@ -34,24 +29,19 @@ ${21:   ${22:name}: ${23:"#"}}
 ${24:   ${25:parent_policy}: ${26:"#"}}
 ${27:   ${28:parent_rule_list}: ${29:"#"}}
 ${30:   ${31:partition}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:protocol}: ${38:"#"}}
-${39:   ${40:provider}: ${41:"#"}}
-${42:   ${43:rule_list}: ${44:"#"}}
-${45:   ${46:schedule}: ${47:"#"}}
-${48:   ${49:server}: ${50:"#"}}
-${51:   ${52:server_port}: ${53:"#"}}
-${54:   ${55:source}: ${56:"#"}}
-${57:   ${58:state}: ${59:"#"}}
-${60:   ${61:status}: ${62:"#"}}
-${63:   ${64:user}: ${65:"#"}}
-${66:   ${67:validate_certs}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${33:   ${34:protocol}: ${35:"#"}}
+${36:   ${37:provider}: ${38:"#"}}
+${39:   ${40:rule_list}: ${41:"#"}}
+${42:   ${43:schedule}: ${44:"#"}}
+${45:   ${46:source}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:status}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>bigip_firewall_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

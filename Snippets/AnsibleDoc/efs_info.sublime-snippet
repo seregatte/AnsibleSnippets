@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# id: ID of Amazon EFS. 
+# name: Creation Token of Amazon EFS file system. 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# tags: List of tags of Amazon EFS. Should be defined as 
+# targets: List of targets on which to filter the returned 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for efs_info module.}
+  efs_info:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:debug_botocore_endpoint_logs}: ${11:"#"}}
+${12:   ${13:ec2_url}: ${14:"#"}}
+${15:   ${16:id}: ${17:"#"}}
+${18:   ${19:name}: ${20:"#"}}
+${21:   ${22:profile}: ${23:"#"}}
+${24:   ${25:region}: ${26:"#"}}
+${27:   ${28:}: ${29:"#"}}
+${30:   ${31:security_token}: ${32:"#"}}
+${33:   ${34:tags}: ${35:"#"}}
+${36:   ${37:targets}: ${38:"#"}}
+${39:   ${40:validate_certs}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>efs_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

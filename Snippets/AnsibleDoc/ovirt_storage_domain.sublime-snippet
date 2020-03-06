@@ -17,6 +17,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # id: Id of the storage domain to be imported. 
 # iscsi: Dictionary with values for iSCSI storage type: 
 # localfs: Dictionary with values for localfs storage type: 
+# managed_block_storage: Dictionary with values for managed block storage 
 # name: Name of the storage domain to manage. (Not 
 # nested_attributes: Specifies list of the attributes which should be 
 # nfs: Dictionary with values for NFS storage type: 
@@ -46,22 +47,23 @@ ${42:   ${43:host}: ${44:"#"}}
 ${45:   ${46:id}: ${47:"#"}}
 ${48:   ${49:iscsi}: ${50:"#"}}
 ${51:   ${52:localfs}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:nested_attributes}: ${59:"#"}}
-${60:   ${61:nfs}: ${62:"#"}}
-${63:   ${64:poll_interval}: ${65:"#"}}
-${66:   ${67:posixfs}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:timeout}: ${74:"#"}}
-${75:   ${76:wait}: ${77:"#"}}
-${78:   ${79:warning_low_space}: ${80:"#"}}
-${81:   ${82:wipe_after_delete}: ${83:"#"}}
-${84:${85:   become: ${86:true}} 
-${87:   become_method: ${88:su}} 
-${89:   become_user: ${90:nobody}} 
-${91:   become_flags: ${92:"-s /bin/sh"}}} 
-${93:   when: ${94:variable is defined}} 
-${95:   with_items: ${96:array}} 
+${54:   ${55:managed_block_storage}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:nested_attributes}: ${62:"#"}}
+${63:   ${64:nfs}: ${65:"#"}}
+${66:   ${67:poll_interval}: ${68:"#"}}
+${69:   ${70:posixfs}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:timeout}: ${77:"#"}}
+${78:   ${79:wait}: ${80:"#"}}
+${81:   ${82:warning_low_space}: ${83:"#"}}
+${84:   ${85:wipe_after_delete}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
 ]]></content>
 	<tabTrigger>ovirt_storage_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

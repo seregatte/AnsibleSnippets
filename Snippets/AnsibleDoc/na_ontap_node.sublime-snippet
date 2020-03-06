@@ -7,6 +7,7 @@ ${1:# from_name: (required) The name of the node to be renamed.
 # name: (required) The new name for the node 
 # ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_node module.}
@@ -18,14 +19,15 @@ ${12:   ${13:https}: ${14:"#"}}
 ${15:   ${16:name}: ${17:"#"}}
 ${18:   ${19:ontapi}: ${20:"#"}}
 ${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:username}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${24:   ${25:use_rest}: ${26:"#"}}
+${27:   ${28:username}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_node</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

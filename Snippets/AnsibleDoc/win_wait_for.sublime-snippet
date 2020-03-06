@@ -6,7 +6,7 @@ ${1:# connect_timeout: The maximum number of seconds to wait for a
 # host: A resolvable hostname or IP address to wait for. 
 # path: The path to a file on the filesystem to check. 
 # port: The port number to poll on `host'. 
-# search_regex: Can be used to match a string in a file. If 
+# regex: Can be used to match a string in a file. If 
 # sleep: Number of seconds to sleep between checks. 
 # state: When checking a port, `started' will ensure the 
 # timeout: The maximum number of seconds to wait for. 
@@ -18,7 +18,7 @@ ${9:   ${10:exclude_hosts}: ${11:"#"}}
 ${12:   ${13:host}: ${14:"#"}}
 ${15:   ${16:path}: ${17:"#"}}
 ${18:   ${19:port}: ${20:"#"}}
-${21:   ${22:search_regex}: ${23:"#"}}
+${21:   ${22:regex}: ${23:"#"}}
 ${24:   ${25:sleep}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
 ${30:   ${31:timeout}: ${32:"#"}}

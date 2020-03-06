@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# ca_cert: Specifies the name of a file containing SSL 
-# db: Name of database to connect. 
+# db: Name of a database to connect to. 
 # login_host: Host running the database. 
 # login_password: The password used to authenticate with. 
 # login_unix_socket: Path to a Unix domain socket for local 

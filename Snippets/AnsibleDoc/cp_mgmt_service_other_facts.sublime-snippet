@@ -1,0 +1,28 @@
+<snippet>
+<content><![CDATA[
+${1:# details_level: The level of detail for some of the fields in 
+# limit: No more than that many results will be returned. 
+# name: Object name. This parameter is relevant only for 
+# offset: Skip that many results before beginning to 
+# order: Sorts results by the given field. By default the 
+# show_membership: Indicates whether to calculate and show "groups" 
+# version: Version of checkpoint. If not given one, the 
+}- name: ${2:Name for cp_mgmt_service_other_facts module.}
+  cp_mgmt_service_other_facts:
+${3:   ${4:details_level}: ${5:"#"}}
+${6:   ${7:limit}: ${8:"#"}}
+${9:   ${10:name}: ${11:"#"}}
+${12:   ${13:offset}: ${14:"#"}}
+${15:   ${16:order}: ${17:"#"}}
+${18:   ${19:show_membership}: ${20:"#"}}
+${21:   ${22:version}: ${23:"#"}}
+${24:${25:   become: ${26:true}} 
+${27:   become_method: ${28:su}} 
+${29:   become_user: ${30:nobody}} 
+${31:   become_flags: ${32:"-s /bin/sh"}}} 
+${33:   when: ${34:variable is defined}} 
+${35:   with_items: ${36:array}} 
+]]></content>
+	<tabTrigger>cp_mgmt_service_other_facts</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

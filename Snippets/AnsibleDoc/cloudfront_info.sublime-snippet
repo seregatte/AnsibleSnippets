@@ -1,0 +1,70 @@
+<snippet>
+<content><![CDATA[
+${1:# all_lists: Get all cloudfront lists that do not require 
+# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
+# distribution: Get information about a distribution. Requires 
+# distribution_config: Get the configuration information about a 
+# distribution_id: The id of the CloudFront distribution. Used with 
+# domain_name_alias: Can be used instead of `distribution_id' - uses 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# invalidation: Get information about an invalidation. Requires 
+# invalidation_id: The id of the invalidation to get information 
+# list_distributions: Get a list of cloudfront distributions. 
+# list_distributions_by_web_acl_id: Get a list of distributions using web acl id as 
+# list_invalidations: Get a list of invalidations. Requires 
+# list_origin_access_identities: Get a list of cloudfront origin access 
+# list_streaming_distributions: Get a list of streaming distributions. 
+# origin_access_identity: Get information about an origin access identity. 
+# origin_access_identity_config: Get the configuration information about an 
+# origin_access_identity_id: The id of the cloudfront origin access identity 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# streaming_distribution: Get information about a specified RTMP 
+# streaming_distribution_config: Get the configuration information about a 
+# summary: Returns a summary of all distributions, 
+# validate_certs: When set to "no", SSL certificates will not be 
+# web_acl_id: Used with `list_distributions_by_web_acl_id'. 
+}- name: ${2:Name for cloudfront_info module.}
+  cloudfront_info:
+${3:   ${4:all_lists}: ${5:"#"}}
+${6:   ${7:aws_access_key}: ${8:"#"}}
+${9:   ${10:aws_secret_key}: ${11:"#"}}
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:distribution}: ${17:"#"}}
+${18:   ${19:distribution_config}: ${20:"#"}}
+${21:   ${22:distribution_id}: ${23:"#"}}
+${24:   ${25:domain_name_alias}: ${26:"#"}}
+${27:   ${28:ec2_url}: ${29:"#"}}
+${30:   ${31:invalidation}: ${32:"#"}}
+${33:   ${34:invalidation_id}: ${35:"#"}}
+${36:   ${37:list_distributions}: ${38:"#"}}
+${39:   ${40:list_distributions_by_web_acl_id}: ${41:"#"}}
+${42:   ${43:list_invalidations}: ${44:"#"}}
+${45:   ${46:list_origin_access_identities}: ${47:"#"}}
+${48:   ${49:list_streaming_distributions}: ${50:"#"}}
+${51:   ${52:origin_access_identity}: ${53:"#"}}
+${54:   ${55:origin_access_identity_config}: ${56:"#"}}
+${57:   ${58:origin_access_identity_id}: ${59:"#"}}
+${60:   ${61:profile}: ${62:"#"}}
+${63:   ${64:region}: ${65:"#"}}
+${66:   ${67:}: ${68:"#"}}
+${69:   ${70:security_token}: ${71:"#"}}
+${72:   ${73:streaming_distribution}: ${74:"#"}}
+${75:   ${76:streaming_distribution_config}: ${77:"#"}}
+${78:   ${79:summary}: ${80:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
+${84:   ${85:web_acl_id}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
+]]></content>
+	<tabTrigger>cloudfront_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

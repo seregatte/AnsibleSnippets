@@ -1,15 +1,15 @@
 <snippet>
 <content><![CDATA[
-${1:# cidr: (required) the range of available subnets in the 
+${1:# cidr: (required) The range of available subnets in the 
 # domain: (required) The name of the Domain to scope to 
 # id: The id of resource to be managed. 
 # identity_endpoint: (required) The Identity authentication URL. 
-# name: (required) the name of vpc. 
+# name: (required) The name of vpc. 
 # password: (required) The password to login with. 
 # project: (required) The name of the Tenant (Identity v2) 
-# region: (required) The region to which the project 
+# region: The region to which the project belongs. 
 # state: Whether the given object should exist in vpc. 
-# timeouts: The timeouts for create/update/delete operation. 
+# timeouts: The timeouts for each operations. 
 # user: (required) The user name to login with 
 }- name: ${2:Name for hwc_network_vpc module.}
   hwc_network_vpc:

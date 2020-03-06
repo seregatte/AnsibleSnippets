@@ -1,0 +1,24 @@
+<snippet>
+<content><![CDATA[
+${1:# auth: (required) Dictionary with values needed to 
+# data_center: (required) Name of the datacenter where quota 
+# fetch_nested: If `yes' the module will fetch additional data 
+# name: Name of the quota, can be used as glob 
+# nested_attributes: Specifies list of the attributes which should be 
+}- name: ${2:Name for ovirt_quota_info module.}
+  ovirt_quota_info:
+${3:   ${4:auth}: ${5:"#"}}
+${6:   ${7:data_center}: ${8:"#"}}
+${9:   ${10:fetch_nested}: ${11:"#"}}
+${12:   ${13:name}: ${14:"#"}}
+${15:   ${16:nested_attributes}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
+]]></content>
+	<tabTrigger>ovirt_quota_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

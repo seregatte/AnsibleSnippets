@@ -6,16 +6,11 @@ ${1:# add_analytics: Collects statistics of the BIG-IP that the
 # domain_names: Specifies host names that are used to access the 
 # inbound_virtual: Settings to configure the virtual which will 
 # name: (required) Name of the new application. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # redirect_virtual: Settings to configure the virtual which will 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # servers: A list of servers that the application is hosted 
 # service_environment: Specifies the name of service environment that 
 # state: The state of the resource on the system. When 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 # wait: If the module should wait for the application to 
 }- name: ${2:Name for bigiq_application_https_waf module.}
   bigiq_application_https_waf:
@@ -25,23 +20,18 @@ ${9:   ${10:description}: ${11:"#"}}
 ${12:   ${13:domain_names}: ${14:"#"}}
 ${15:   ${16:inbound_virtual}: ${17:"#"}}
 ${18:   ${19:name}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:redirect_virtual}: ${29:"#"}}
-${30:   ${31:server}: ${32:"#"}}
-${33:   ${34:server_port}: ${35:"#"}}
-${36:   ${37:servers}: ${38:"#"}}
-${39:   ${40:service_environment}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:user}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:wait}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${21:   ${22:provider}: ${23:"#"}}
+${24:   ${25:redirect_virtual}: ${26:"#"}}
+${27:   ${28:servers}: ${29:"#"}}
+${30:   ${31:service_environment}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:wait}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>bigiq_application_https_waf</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

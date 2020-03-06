@@ -9,6 +9,7 @@ ${1:# domains: List of DNS domains such as 'sales.bar.com'. The
 # password: (required) Password for the specified user. 
 # skip_validation: By default, all nameservers are checked to 
 # state: Whether the DNS servers should be enabled for 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) The name of the vserver to use. 
@@ -23,15 +24,16 @@ ${18:   ${19:ontapi}: ${20:"#"}}
 ${21:   ${22:password}: ${23:"#"}}
 ${24:   ${25:skip_validation}: ${26:"#"}}
 ${27:   ${28:state}: ${29:"#"}}
-${30:   ${31:username}: ${32:"#"}}
-${33:   ${34:validate_certs}: ${35:"#"}}
-${36:   ${37:vserver}: ${38:"#"}}
-${39:${40:   become: ${41:true}} 
-${42:   become_method: ${43:su}} 
-${44:   become_user: ${45:nobody}} 
-${46:   become_flags: ${47:"-s /bin/sh"}}} 
-${48:   when: ${49:variable is defined}} 
-${50:   with_items: ${51:array}} 
+${30:   ${31:use_rest}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:vserver}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_dns</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

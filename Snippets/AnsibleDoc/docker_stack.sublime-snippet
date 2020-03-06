@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# absent_retries: If `>0' and `state==absent' the module will 
-# absent_retries_interval: Interval in seconds between `absent_retries' 
+${1:# absent_retries: If `>0' and `state' is `absent' the module will 
+# absent_retries_interval: Interval in seconds between consecutive 
 # compose: List of compose definitions. Any element may be 
 # name: (required) Stack name 
 # prune: If true will add the `--prune' option to the 

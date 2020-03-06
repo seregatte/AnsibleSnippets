@@ -15,6 +15,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # security_token: AWS STS security token. If not set then the 
 # state: whether the Web ACL should be present or absent 
 # validate_certs: When set to "no", SSL certificates will not be 
+# waf_regional: Whether to use waf_regional module. Defaults to 
 }- name: ${2:Name for aws_waf_web_acl module.}
   aws_waf_web_acl:
 ${3:   ${4:aws_access_key}: ${5:"#"}}
@@ -32,12 +33,13 @@ ${36:   ${37:rules}: ${38:"#"}}
 ${39:   ${40:security_token}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}
 ${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${48:   ${49:waf_regional}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>aws_waf_web_acl</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

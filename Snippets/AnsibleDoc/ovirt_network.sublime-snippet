@@ -5,7 +5,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # comment: Comment of the network. 
 # data_center: Datacenter name where network reside. 
 # description: Description of the network. 
-# external_provider: Name of external network provider. 
+# external_provider: Name of external network provider. At first it 
 # fetch_nested: If `True' the module will fetch additional data 
 # id: ID of the network to manage. 
 # label: Name of the label to assign to the network. 

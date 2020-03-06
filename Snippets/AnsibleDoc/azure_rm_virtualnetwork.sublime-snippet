@@ -10,15 +10,15 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # dns_servers: Custom list of DNS servers. Maximum length of 
-# location: Valid azure location. Defaults to location of 
-# name: (required) name of the virtual network. 
+# location: Valid Azure location. Defaults to location of 
+# name: (required) Name of the virtual network. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
-# purge_address_prefixes: Use with state present to remove any existing 
-# purge_dns_servers: Use with state present to remove existing DNS 
-# resource_group: (required) name of resource group. 
+# purge_address_prefixes: Use with `state=present' to remove any existing 
+# purge_dns_servers: Use with `state=present' to remove existing DNS 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the virtual network. Use 
+# state: State of the virtual network. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 

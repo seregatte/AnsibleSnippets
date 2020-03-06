@@ -17,6 +17,8 @@ ${1:# device: Search VMkernel adapter by device name. The
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
 # portgroup_name: (required) The name of the port group for the 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # state: If set to `present', the VMKernel adapter will 
 # subnet_mask: The Subnet Mask for the VMKernel interface. Use 
 # username: The username of the vSphere vCenter or ESXi 
@@ -41,17 +43,19 @@ ${42:   ${43:network}: ${44:"#"}}
 ${45:   ${46:password}: ${47:"#"}}
 ${48:   ${49:port}: ${50:"#"}}
 ${51:   ${52:portgroup_name}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:subnet_mask}: ${59:"#"}}
-${60:   ${61:username}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:   ${67:vswitch_name}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${54:   ${55:proxy_host}: ${56:"#"}}
+${57:   ${58:proxy_port}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:   ${64:subnet_mask}: ${65:"#"}}
+${66:   ${67:username}: ${68:"#"}}
+${69:   ${70:validate_certs}: ${71:"#"}}
+${72:   ${73:vswitch_name}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>vmware_vmkernel</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

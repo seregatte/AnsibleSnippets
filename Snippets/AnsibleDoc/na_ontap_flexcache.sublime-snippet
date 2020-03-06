@@ -18,6 +18,7 @@ ${1:# aggr_list: List of aggregates to host target FlexCache
 # size_unit: The unit used to interpret the size parameter. 
 # state: Whether the specified relationship should exist 
 # time_out: time to wait for flexcache creation or deletion 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # volume: (required) Name of the target volume for the 
@@ -42,16 +43,17 @@ ${45:   ${46:size}: ${47:"#"}}
 ${48:   ${49:size_unit}: ${50:"#"}}
 ${51:   ${52:state}: ${53:"#"}}
 ${54:   ${55:time_out}: ${56:"#"}}
-${57:   ${58:username}: ${59:"#"}}
-${60:   ${61:validate_certs}: ${62:"#"}}
-${63:   ${64:volume}: ${65:"#"}}
-${66:   ${67:vserver}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${57:   ${58:use_rest}: ${59:"#"}}
+${60:   ${61:username}: ${62:"#"}}
+${63:   ${64:validate_certs}: ${65:"#"}}
+${66:   ${67:volume}: ${68:"#"}}
+${69:   ${70:vserver}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_flexcache</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

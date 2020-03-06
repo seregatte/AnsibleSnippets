@@ -1,31 +1,37 @@
 <snippet>
 <content><![CDATA[
-${1:# datacenter: (required) The datacenter on the vCenter server 
-# datastore: (required) The datastore on the vCenter server 
-# host: (required) The vCenter server on which the 
-# login: (required) The login name to authenticate on the 
-# password: (required) The password to authenticate on the 
-# path: (required) The file to push to the datastore on 
-# src: (required) The file to push to vCenter 
+${1:# datacenter: The datacenter on the vCenter server that holds 
+# datastore: (required) The datastore to push files to. 
+# hostname: The hostname or IP address of the vSphere 
+# password: The password of the vSphere vCenter or ESXi 
+# path: (required) The file to push to the datastore. 
+# port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
+# src: (required) The file to push to vCenter. 
 # timeout: The timeout in seconds for the upload to the 
-# validate_certs: If `no', SSL certificates will not be validated. 
+# username: The username of the vSphere vCenter or ESXi 
+# validate_certs: Allows connection when SSL certificates are not 
 }- name: ${2:Name for vsphere_copy module.}
   vsphere_copy:
 ${3:   ${4:datacenter}: ${5:"#"}}
 ${6:   ${7:datastore}: ${8:"#"}}
-${9:   ${10:host}: ${11:"#"}}
-${12:   ${13:login}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:path}: ${20:"#"}}
-${21:   ${22:src}: ${23:"#"}}
-${24:   ${25:timeout}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${9:   ${10:hostname}: ${11:"#"}}
+${12:   ${13:password}: ${14:"#"}}
+${15:   ${16:path}: ${17:"#"}}
+${18:   ${19:port}: ${20:"#"}}
+${21:   ${22:proxy_host}: ${23:"#"}}
+${24:   ${25:proxy_port}: ${26:"#"}}
+${27:   ${28:src}: ${29:"#"}}
+${30:   ${31:timeout}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:${40:   become: ${41:true}} 
+${42:   become_method: ${43:su}} 
+${44:   become_user: ${45:nobody}} 
+${46:   become_flags: ${47:"-s /bin/sh"}}} 
+${48:   when: ${49:variable is defined}} 
+${50:   with_items: ${51:array}} 
 ]]></content>
 	<tabTrigger>vsphere_copy</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

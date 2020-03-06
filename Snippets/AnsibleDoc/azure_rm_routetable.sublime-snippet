@@ -10,10 +10,10 @@ ${1:# ad_user: Active Directory username. Use when
 # cloud_environment: For cloud environments other than the US public 
 # disable_bgp_route_propagation: Specified whether to disable the routes learned 
 # location: Region of the resource. Derived from 
-# name: (required) name of the route table. 
+# name: (required) Name of the route table. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
-# resource_group: (required) name of resource group. 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the route table. Use 
 # subscription_id: Your Azure subscription Id. 

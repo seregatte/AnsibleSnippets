@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# comment: Text field that can be used for any purposed 
+${1:# comment: Text field that can be used for any purposes 
 # config_file: Specify a config file from which `login_user' 
 # load_to_runtime: Dynamically load config to runtime memory. 
 # login_host: The host used to connect to ProxySQL admin 

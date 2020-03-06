@@ -4,11 +4,11 @@ ${1:# api_timeout: HTTP timeout to Scaleway API in seconds.
 # api_token: Scaleway OAuth token. 
 # api_url: Scaleway API URL. 
 # description: Description of the Security Group. 
-# inbound_default_policy: Default policy for incoming trafic. 
+# inbound_default_policy: Default policy for incoming traffic. 
 # name: (required) Name of the Security Group. 
 # organization: (required) Organization identifier. 
 # organization_default: Create security group to be the default one. 
-# outbound_default_policy: Default policy for outcoming trafic. 
+# outbound_default_policy: Default policy for outcoming traffic. 
 # query_parameters: List of parameters passed to the query string. 
 # region: (required) Scaleway region to use (for example 
 # state: Indicate desired state of the Security Group. 

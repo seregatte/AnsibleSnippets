@@ -14,16 +14,11 @@ ${1:# address: IP address of the node. This can be either IPv4
 # monitors: Specifies the health monitors that the system 
 # name: (required) Specifies the name of the node. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # quorum: Monitor quorum value when `monitor_type' is 
 # rate_limit: Node rate limit (connections-per-second). 
 # ratio: Node ratio weight. Valid values range from 1 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: Specifies the current state of the node. 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_node module.}
   bigip_node:
 ${3:   ${4:address}: ${5:"#"}}
@@ -40,22 +35,17 @@ ${33:   ${34:monitor_type}: ${35:"#"}}
 ${36:   ${37:monitors}: ${38:"#"}}
 ${39:   ${40:name}: ${41:"#"}}
 ${42:   ${43:partition}: ${44:"#"}}
-${45:   ${46:password}: ${47:"#"}}
-${48:   ${49:provider}: ${50:"#"}}
-${51:   ${52:quorum}: ${53:"#"}}
-${54:   ${55:rate_limit}: ${56:"#"}}
-${57:   ${58:ratio}: ${59:"#"}}
-${60:   ${61:server}: ${62:"#"}}
-${63:   ${64:server_port}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:user}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${45:   ${46:provider}: ${47:"#"}}
+${48:   ${49:quorum}: ${50:"#"}}
+${51:   ${52:rate_limit}: ${53:"#"}}
+${54:   ${55:ratio}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>bigip_node</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

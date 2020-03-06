@@ -15,6 +15,7 @@ ${1:# apdex_response_threshold: If a client receives an http response in less
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # client_log_config: Configure which logs are sent to the avi 
 # client_log_streaming_config: Configure to stream logs to an external server. 
 # conn_lossy_ooo_threshold: A connection between client and avi is 
@@ -27,8 +28,11 @@ ${1:# apdex_response_threshold: If a client receives an http response in less
 # conn_server_lossy_zero_win_size_event_threshold: A server connection is considered lossy when 
 # controller: IP address or hostname of the controller. The 
 # description: User defined description for the object. 
+# disable_ondemand_metrics: Virtual service (vs) metrics are processed only 
 # disable_se_analytics: Disable node (service engine) level analytics 
 # disable_server_analytics: Disable analytics on backend servers. This may 
+# disable_vs_analytics: Disable virtualservice (frontend) analytics. 
+# enable_advanced_analytics: Enables advanced analytics features like anomaly 
 # exclude_client_close_before_request_as_error: Exclude client closed connection before an http 
 # exclude_dns_policy_drop_as_significant: Exclude dns policy drops from the list of 
 # exclude_gs_down_as_error: Exclude queries to gslb services that are 
@@ -40,9 +44,11 @@ ${1:# apdex_response_threshold: If a client receives an http response in less
 # exclude_persistence_change_as_error: Exclude persistence server changed while load 
 # exclude_server_dns_error_as_error: Exclude server dns error response from the list 
 # exclude_server_tcp_reset_as_error: Exclude server tcp reset from errors. It is 
+# exclude_sip_error_codes: List of sip status codes to be excluded from 
 # exclude_syn_retransmit_as_error: Exclude 'server unanswered syns' from the list 
 # exclude_tcp_reset_as_error: Exclude tcp resets by client from the list of 
 # exclude_unsupported_dns_query_as_error: Exclude unsupported dns queries from the list of 
+# healthscore_max_server_limit: Skips health score computation of pool servers 
 # hs_event_throttle_window: Time window (in secs) within which only unique 
 # hs_max_anomaly_penalty: Maximum penalty that may be deducted from health 
 # hs_max_resources_penalty: Maximum penalty that may be deducted from health 
@@ -70,9 +76,12 @@ ${1:# apdex_response_threshold: If a client receives an http response in less
 # hs_security_tls12_score: Score assigned when supporting tls1.2 encryption 
 # hs_security_weak_signature_algo_penalty: Penalty for allowing weak signature 
 # name: (required) The name of the analytics profile. 
+# ondemand_metrics_idle_timeout: This flag sets the time duration of no live data 
 # password: Password of Avi user in Avi controller. The 
 # ranges: List of http status code ranges to be excluded 
 # resp_code_block: Block of http response codes to be excluded from 
+# sensitive_log_profile: Rules applied to the http application log for 
+# sip_log_depth: Maximum number of sip messages added in logs for 
 # state: The state that should be applied on the entity. 
 # tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
@@ -97,77 +106,86 @@ ${36:   ${37:api_version}: ${38:"#"}}
 ${39:   ${40:avi_api_patch_op}: ${41:"#"}}
 ${42:   ${43:avi_api_update_method}: ${44:"#"}}
 ${45:   ${46:avi_credentials}: ${47:"#"}}
-${48:   ${49:client_log_config}: ${50:"#"}}
-${51:   ${52:client_log_streaming_config}: ${53:"#"}}
-${54:   ${55:conn_lossy_ooo_threshold}: ${56:"#"}}
-${57:   ${58:conn_lossy_timeo_rexmt_threshold}: ${59:"#"}}
-${60:   ${61:conn_lossy_total_rexmt_threshold}: ${62:"#"}}
-${63:   ${64:conn_lossy_zero_win_size_event_threshold}: ${65:"#"}}
-${66:   ${67:conn_server_lossy_ooo_threshold}: ${68:"#"}}
-${69:   ${70:conn_server_lossy_timeo_rexmt_threshold}: ${71:"#"}}
-${72:   ${73:conn_server_lossy_total_rexmt_threshold}: ${74:"#"}}
-${75:   ${76:conn_server_lossy_zero_win_size_event_threshold}: ${77:"#"}}
-${78:   ${79:controller}: ${80:"#"}}
-${81:   ${82:description}: ${83:"#"}}
-${84:   ${85:disable_se_analytics}: ${86:"#"}}
-${87:   ${88:disable_server_analytics}: ${89:"#"}}
-${90:   ${91:exclude_client_close_before_request_as_error}: ${92:"#"}}
-${93:   ${94:exclude_dns_policy_drop_as_significant}: ${95:"#"}}
-${96:   ${97:exclude_gs_down_as_error}: ${98:"#"}}
-${99:   ${100:exclude_http_error_codes}: ${101:"#"}}
-${102:   ${103:exclude_invalid_dns_domain_as_error}: ${104:"#"}}
-${105:   ${106:exclude_invalid_dns_query_as_error}: ${107:"#"}}
-${108:   ${109:exclude_no_dns_record_as_error}: ${110:"#"}}
-${111:   ${112:exclude_no_valid_gs_member_as_error}: ${113:"#"}}
-${114:   ${115:exclude_persistence_change_as_error}: ${116:"#"}}
-${117:   ${118:exclude_server_dns_error_as_error}: ${119:"#"}}
-${120:   ${121:exclude_server_tcp_reset_as_error}: ${122:"#"}}
-${123:   ${124:exclude_syn_retransmit_as_error}: ${125:"#"}}
-${126:   ${127:exclude_tcp_reset_as_error}: ${128:"#"}}
-${129:   ${130:exclude_unsupported_dns_query_as_error}: ${131:"#"}}
-${132:   ${133:hs_event_throttle_window}: ${134:"#"}}
-${135:   ${136:hs_max_anomaly_penalty}: ${137:"#"}}
-${138:   ${139:hs_max_resources_penalty}: ${140:"#"}}
-${141:   ${142:hs_max_security_penalty}: ${143:"#"}}
-${144:   ${145:hs_min_dos_rate}: ${146:"#"}}
-${147:   ${148:hs_performance_boost}: ${149:"#"}}
-${150:   ${151:hs_pscore_traffic_threshold_l4_client}: ${152:"#"}}
-${153:   ${154:hs_pscore_traffic_threshold_l4_server}: ${155:"#"}}
-${156:   ${157:hs_security_certscore_expired}: ${158:"#"}}
-${159:   ${160:hs_security_certscore_gt30d}: ${161:"#"}}
-${162:   ${163:hs_security_certscore_le07d}: ${164:"#"}}
-${165:   ${166:hs_security_certscore_le30d}: ${167:"#"}}
-${168:   ${169:hs_security_chain_invalidity_penalty}: ${170:"#"}}
-${171:   ${172:hs_security_cipherscore_eq000b}: ${173:"#"}}
-${174:   ${175:hs_security_cipherscore_ge128b}: ${176:"#"}}
-${177:   ${178:hs_security_cipherscore_lt128b}: ${179:"#"}}
-${180:   ${181:hs_security_encalgo_score_none}: ${182:"#"}}
-${183:   ${184:hs_security_encalgo_score_rc4}: ${185:"#"}}
-${186:   ${187:hs_security_hsts_penalty}: ${188:"#"}}
-${189:   ${190:hs_security_nonpfs_penalty}: ${191:"#"}}
-${192:   ${193:hs_security_selfsignedcert_penalty}: ${194:"#"}}
-${195:   ${196:hs_security_ssl30_score}: ${197:"#"}}
-${198:   ${199:hs_security_tls10_score}: ${200:"#"}}
-${201:   ${202:hs_security_tls11_score}: ${203:"#"}}
-${204:   ${205:hs_security_tls12_score}: ${206:"#"}}
-${207:   ${208:hs_security_weak_signature_algo_penalty}: ${209:"#"}}
-${210:   ${211:name}: ${212:"#"}}
-${213:   ${214:password}: ${215:"#"}}
-${216:   ${217:ranges}: ${218:"#"}}
-${219:   ${220:resp_code_block}: ${221:"#"}}
-${222:   ${223:state}: ${224:"#"}}
-${225:   ${226:tenant}: ${227:"#"}}
-${228:   ${229:tenant_ref}: ${230:"#"}}
-${231:   ${232:tenant_uuid}: ${233:"#"}}
-${234:   ${235:url}: ${236:"#"}}
-${237:   ${238:username}: ${239:"#"}}
-${240:   ${241:uuid}: ${242:"#"}}
-${243:${244:   become: ${245:true}} 
-${246:   become_method: ${247:su}} 
-${248:   become_user: ${249:nobody}} 
-${250:   become_flags: ${251:"-s /bin/sh"}}} 
-${252:   when: ${253:variable is defined}} 
-${254:   with_items: ${255:array}} 
+${48:   ${49:avi_disable_session_cache_as_fact}: ${50:"#"}}
+${51:   ${52:client_log_config}: ${53:"#"}}
+${54:   ${55:client_log_streaming_config}: ${56:"#"}}
+${57:   ${58:conn_lossy_ooo_threshold}: ${59:"#"}}
+${60:   ${61:conn_lossy_timeo_rexmt_threshold}: ${62:"#"}}
+${63:   ${64:conn_lossy_total_rexmt_threshold}: ${65:"#"}}
+${66:   ${67:conn_lossy_zero_win_size_event_threshold}: ${68:"#"}}
+${69:   ${70:conn_server_lossy_ooo_threshold}: ${71:"#"}}
+${72:   ${73:conn_server_lossy_timeo_rexmt_threshold}: ${74:"#"}}
+${75:   ${76:conn_server_lossy_total_rexmt_threshold}: ${77:"#"}}
+${78:   ${79:conn_server_lossy_zero_win_size_event_threshold}: ${80:"#"}}
+${81:   ${82:controller}: ${83:"#"}}
+${84:   ${85:description}: ${86:"#"}}
+${87:   ${88:disable_ondemand_metrics}: ${89:"#"}}
+${90:   ${91:disable_se_analytics}: ${92:"#"}}
+${93:   ${94:disable_server_analytics}: ${95:"#"}}
+${96:   ${97:disable_vs_analytics}: ${98:"#"}}
+${99:   ${100:enable_advanced_analytics}: ${101:"#"}}
+${102:   ${103:exclude_client_close_before_request_as_error}: ${104:"#"}}
+${105:   ${106:exclude_dns_policy_drop_as_significant}: ${107:"#"}}
+${108:   ${109:exclude_gs_down_as_error}: ${110:"#"}}
+${111:   ${112:exclude_http_error_codes}: ${113:"#"}}
+${114:   ${115:exclude_invalid_dns_domain_as_error}: ${116:"#"}}
+${117:   ${118:exclude_invalid_dns_query_as_error}: ${119:"#"}}
+${120:   ${121:exclude_no_dns_record_as_error}: ${122:"#"}}
+${123:   ${124:exclude_no_valid_gs_member_as_error}: ${125:"#"}}
+${126:   ${127:exclude_persistence_change_as_error}: ${128:"#"}}
+${129:   ${130:exclude_server_dns_error_as_error}: ${131:"#"}}
+${132:   ${133:exclude_server_tcp_reset_as_error}: ${134:"#"}}
+${135:   ${136:exclude_sip_error_codes}: ${137:"#"}}
+${138:   ${139:exclude_syn_retransmit_as_error}: ${140:"#"}}
+${141:   ${142:exclude_tcp_reset_as_error}: ${143:"#"}}
+${144:   ${145:exclude_unsupported_dns_query_as_error}: ${146:"#"}}
+${147:   ${148:healthscore_max_server_limit}: ${149:"#"}}
+${150:   ${151:hs_event_throttle_window}: ${152:"#"}}
+${153:   ${154:hs_max_anomaly_penalty}: ${155:"#"}}
+${156:   ${157:hs_max_resources_penalty}: ${158:"#"}}
+${159:   ${160:hs_max_security_penalty}: ${161:"#"}}
+${162:   ${163:hs_min_dos_rate}: ${164:"#"}}
+${165:   ${166:hs_performance_boost}: ${167:"#"}}
+${168:   ${169:hs_pscore_traffic_threshold_l4_client}: ${170:"#"}}
+${171:   ${172:hs_pscore_traffic_threshold_l4_server}: ${173:"#"}}
+${174:   ${175:hs_security_certscore_expired}: ${176:"#"}}
+${177:   ${178:hs_security_certscore_gt30d}: ${179:"#"}}
+${180:   ${181:hs_security_certscore_le07d}: ${182:"#"}}
+${183:   ${184:hs_security_certscore_le30d}: ${185:"#"}}
+${186:   ${187:hs_security_chain_invalidity_penalty}: ${188:"#"}}
+${189:   ${190:hs_security_cipherscore_eq000b}: ${191:"#"}}
+${192:   ${193:hs_security_cipherscore_ge128b}: ${194:"#"}}
+${195:   ${196:hs_security_cipherscore_lt128b}: ${197:"#"}}
+${198:   ${199:hs_security_encalgo_score_none}: ${200:"#"}}
+${201:   ${202:hs_security_encalgo_score_rc4}: ${203:"#"}}
+${204:   ${205:hs_security_hsts_penalty}: ${206:"#"}}
+${207:   ${208:hs_security_nonpfs_penalty}: ${209:"#"}}
+${210:   ${211:hs_security_selfsignedcert_penalty}: ${212:"#"}}
+${213:   ${214:hs_security_ssl30_score}: ${215:"#"}}
+${216:   ${217:hs_security_tls10_score}: ${218:"#"}}
+${219:   ${220:hs_security_tls11_score}: ${221:"#"}}
+${222:   ${223:hs_security_tls12_score}: ${224:"#"}}
+${225:   ${226:hs_security_weak_signature_algo_penalty}: ${227:"#"}}
+${228:   ${229:name}: ${230:"#"}}
+${231:   ${232:ondemand_metrics_idle_timeout}: ${233:"#"}}
+${234:   ${235:password}: ${236:"#"}}
+${237:   ${238:ranges}: ${239:"#"}}
+${240:   ${241:resp_code_block}: ${242:"#"}}
+${243:   ${244:sensitive_log_profile}: ${245:"#"}}
+${246:   ${247:sip_log_depth}: ${248:"#"}}
+${249:   ${250:state}: ${251:"#"}}
+${252:   ${253:tenant}: ${254:"#"}}
+${255:   ${256:tenant_ref}: ${257:"#"}}
+${258:   ${259:tenant_uuid}: ${260:"#"}}
+${261:   ${262:url}: ${263:"#"}}
+${264:   ${265:username}: ${266:"#"}}
+${267:   ${268:uuid}: ${269:"#"}}
+${270:${271:   become: ${272:true}} 
+${273:   become_method: ${274:su}} 
+${275:   become_user: ${276:nobody}} 
+${277:   become_flags: ${278:"-s /bin/sh"}}} 
+${279:   when: ${280:variable is defined}} 
+${281:   with_items: ${282:array}} 
 ]]></content>
 	<tabTrigger>avi_analyticsprofile</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

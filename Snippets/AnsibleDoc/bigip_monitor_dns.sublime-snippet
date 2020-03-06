@@ -13,7 +13,6 @@ ${1:# accept_rcode: Specifies the RCODE required in the response for
 # name: (required) Specifies the name of the monitor. 
 # parent: The parent template of this monitor template. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # port: Port address part of the IP/port definition. If 
 # provider: A dict object containing connection details. 
 # query_name: Specifies a query name for the monitor to use in 
@@ -21,15 +20,11 @@ ${1:# accept_rcode: Specifies the RCODE required in the response for
 # receive: Specifies the IP address that the monitor uses 
 # reverse: Specifies whether the monitor operates in 
 # sampling_timespan: Specifies the length, in seconds, of the probe 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the monitor exists. 
 # time_until_up: Specifies the amount of time in seconds after 
 # timeout: The number of seconds in which the node or 
 # transparent: Specifies whether the monitor operates in 
 # up_interval: Specifies the interval for the system to use to 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_monitor_dns module.}
   bigip_monitor_dns:
 ${3:   ${4:accept_rcode}: ${5:"#"}}
@@ -45,29 +40,24 @@ ${30:   ${31:manual_resume}: ${32:"#"}}
 ${33:   ${34:name}: ${35:"#"}}
 ${36:   ${37:parent}: ${38:"#"}}
 ${39:   ${40:partition}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:port}: ${47:"#"}}
-${48:   ${49:provider}: ${50:"#"}}
-${51:   ${52:query_name}: ${53:"#"}}
-${54:   ${55:query_type}: ${56:"#"}}
-${57:   ${58:receive}: ${59:"#"}}
-${60:   ${61:reverse}: ${62:"#"}}
-${63:   ${64:sampling_timespan}: ${65:"#"}}
-${66:   ${67:server}: ${68:"#"}}
-${69:   ${70:server_port}: ${71:"#"}}
-${72:   ${73:state}: ${74:"#"}}
-${75:   ${76:time_until_up}: ${77:"#"}}
-${78:   ${79:timeout}: ${80:"#"}}
-${81:   ${82:transparent}: ${83:"#"}}
-${84:   ${85:up_interval}: ${86:"#"}}
-${87:   ${88:user}: ${89:"#"}}
-${90:   ${91:validate_certs}: ${92:"#"}}
-${93:${94:   become: ${95:true}} 
-${96:   become_method: ${97:su}} 
-${98:   become_user: ${99:nobody}} 
-${100:   become_flags: ${101:"-s /bin/sh"}}} 
-${102:   when: ${103:variable is defined}} 
-${104:   with_items: ${105:array}} 
+${42:   ${43:port}: ${44:"#"}}
+${45:   ${46:provider}: ${47:"#"}}
+${48:   ${49:query_name}: ${50:"#"}}
+${51:   ${52:query_type}: ${53:"#"}}
+${54:   ${55:receive}: ${56:"#"}}
+${57:   ${58:reverse}: ${59:"#"}}
+${60:   ${61:sampling_timespan}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:time_until_up}: ${68:"#"}}
+${69:   ${70:timeout}: ${71:"#"}}
+${72:   ${73:transparent}: ${74:"#"}}
+${75:   ${76:up_interval}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>bigip_monitor_dns</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

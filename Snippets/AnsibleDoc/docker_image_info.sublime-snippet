@@ -6,7 +6,7 @@ ${1:# api_version: The version of the Docker API running on the
 # client_key: Path to the client's TLS key file. If the value 
 # debug: Debug mode 
 # docker_host: The URL or Unix socket path used to connect to 
-# name: (required) An image name or a list of image 
+# name: An image name or a list of image names. Name 
 # ssl_version: Provide a valid SSL version number. Default 
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 

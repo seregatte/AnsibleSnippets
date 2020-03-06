@@ -17,13 +17,8 @@ ${1:# collect_geo: Enables or disables the collection of the names
 # notification_email_addresses: Specifies which email addresses receive alerts 
 # parent: Specifies the profile from which this profile 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the profile exists. 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_profile_analytics module.}
   bigip_profile_analytics:
 ${3:   ${4:collect_geo}: ${5:"#"}}
@@ -43,19 +38,14 @@ ${42:   ${43:notification_by_syslog}: ${44:"#"}}
 ${45:   ${46:notification_email_addresses}: ${47:"#"}}
 ${48:   ${49:parent}: ${50:"#"}}
 ${51:   ${52:partition}: ${53:"#"}}
-${54:   ${55:password}: ${56:"#"}}
-${57:   ${58:provider}: ${59:"#"}}
-${60:   ${61:server}: ${62:"#"}}
-${63:   ${64:server_port}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:user}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${54:   ${55:provider}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_analytics</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

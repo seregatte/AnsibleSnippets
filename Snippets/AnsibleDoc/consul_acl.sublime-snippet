@@ -4,11 +4,11 @@ ${1:# host: host of the consul agent defaults to localhost
 # mgmt_token: a management token is required to manipulate the 
 # name: the name that should be associated with the acl 
 # port: the port on which the consul agent is running 
-# rules: a list of the rules that should be associated 
+# rules: rules that should be associated with a given 
 # scheme: the protocol scheme on which the consul agent is 
 # state: whether the ACL pair should be present or absent 
-# token: the token key indentifying an ACL rule set. If 
-# token_type: the type of token that should be created, either 
+# token: the token key identifying an ACL rule set. If 
+# token_type: the type of token that should be created 
 # validate_certs: whether to verify the tls certificate of the 
 }- name: ${2:Name for consul_acl module.}
   consul_acl:

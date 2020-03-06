@@ -9,16 +9,11 @@ ${1:# allow: Specifies, if you have enabled HTTPD access, the
 # hostname_lookup: Sets whether or not to display the hostname, if 
 # log_level: Sets the minimum httpd log level. 
 # max_clients: Sets the maximum number of clients that can 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # redirect_http_to_https: Whether or not to redirect http requests to the 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # ssl_cipher_suite: Specifies the ciphers that the system uses. The 
 # ssl_port: The HTTPS port to listen on. 
 # ssl_protocols: The list of SSL protocols to accept on the 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_device_httpd module.}
   bigip_device_httpd:
 ${3:   ${4:allow}: ${5:"#"}}
@@ -30,22 +25,17 @@ ${18:   ${19:fast_cgi_timeout}: ${20:"#"}}
 ${21:   ${22:hostname_lookup}: ${23:"#"}}
 ${24:   ${25:log_level}: ${26:"#"}}
 ${27:   ${28:max_clients}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:provider}: ${35:"#"}}
-${36:   ${37:redirect_http_to_https}: ${38:"#"}}
-${39:   ${40:server}: ${41:"#"}}
-${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:ssl_cipher_suite}: ${47:"#"}}
-${48:   ${49:ssl_port}: ${50:"#"}}
-${51:   ${52:ssl_protocols}: ${53:"#"}}
-${54:   ${55:user}: ${56:"#"}}
-${57:   ${58:validate_certs}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${30:   ${31:provider}: ${32:"#"}}
+${33:   ${34:redirect_http_to_https}: ${35:"#"}}
+${36:   ${37:ssl_cipher_suite}: ${38:"#"}}
+${39:   ${40:ssl_port}: ${41:"#"}}
+${42:   ${43:ssl_protocols}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>bigip_device_httpd</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

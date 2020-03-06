@@ -3,7 +3,7 @@
 ${1:# ad_user: Active Directory username. Use when 
 # adfs_authority_url: Azure AD authority url. Use when authenticating 
 # api_profile: Selects an API profile to use when communicating 
-# assignable_scopes: List of assignable scope of this definition. 
+# assignable_scopes: List of assignable scopes of this definition. 
 # auth_source: Controls the source of the credentials to use 
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
@@ -11,7 +11,7 @@ ${1:# ad_user: Active Directory username. Use when
 # description: The role definition description. 
 # name: (required) Unique name of role definition. 
 # password: Active Directory user password. Use when 
-# permissions: Set of role definition peremissions. See 
+# permissions: Set of role definition permissions. See 
 # profile: Security profile found in ~/.azure/credentials 
 # scope: The scope of the role definition. 
 # secret: Azure client secret. Use when authenticating 

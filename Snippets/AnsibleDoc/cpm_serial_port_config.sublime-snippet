@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# baud: This is the baud rate to assign to the port. 
+# break_allow: This is if the break character is allowed to be 
+# cmd: This is the Admin Mode to assign to the port, 
+# cpm_password: (required) This is the Password of the WTI 
+# cpm_url: (required) This is the URL of the WTI device to 
+# cpm_username: (required) This is the Username of the WTI 
+# echo: -This is the command echo parameter to assign to 
+# handshake: This is the handshake to assign to the port, 
+# logoff: This is the logout character to assign to the 
+# mode: This is the port mode to assign to the port, 0 
+# parity: This is the parity to assign to the port, 
+# port: (required) This is the port number that is 
+# portname: This is the Name of the Port that is displayed. 
+# seq: This is the type of Sequence Disconnect to 
+# stopbits: This is the stop bits to assign to the port, 0=1 
+# tout: This is the Port Activity Timeout to assign to 
+# use_https: Designates to use an https connection or http 
+# use_proxy: Flag to control if the lookup will observe HTTP 
+# validate_certs: If false, SSL certificates will not be 
+}- name: ${2:Name for cpm_serial_port_config module.}
+  cpm_serial_port_config:
+${3:   ${4:baud}: ${5:"#"}}
+${6:   ${7:break_allow}: ${8:"#"}}
+${9:   ${10:cmd}: ${11:"#"}}
+${12:   ${13:cpm_password}: ${14:"#"}}
+${15:   ${16:cpm_url}: ${17:"#"}}
+${18:   ${19:cpm_username}: ${20:"#"}}
+${21:   ${22:echo}: ${23:"#"}}
+${24:   ${25:handshake}: ${26:"#"}}
+${27:   ${28:logoff}: ${29:"#"}}
+${30:   ${31:mode}: ${32:"#"}}
+${33:   ${34:parity}: ${35:"#"}}
+${36:   ${37:port}: ${38:"#"}}
+${39:   ${40:portname}: ${41:"#"}}
+${42:   ${43:seq}: ${44:"#"}}
+${45:   ${46:stopbits}: ${47:"#"}}
+${48:   ${49:tout}: ${50:"#"}}
+${51:   ${52:use_https}: ${53:"#"}}
+${54:   ${55:use_proxy}: ${56:"#"}}
+${57:   ${58:validate_certs}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>cpm_serial_port_config</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

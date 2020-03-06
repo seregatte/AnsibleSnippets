@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# attributes: The attributes the resulting file or directory 
-# backup: Determine whether a backup should be created. 
+# backup: Create a backup file including the timestamp 
 # block_end_string: The string marking the end of a block. 
 # block_start_string: The string marking the beginning of a block. 
 # dest: (required) Location to render the template to on 

@@ -3,13 +3,15 @@
 ${1:# datacenter_name: Name of the datacenter to add the datastore. The 
 # datastore_name: (required) Name of the datastore to add/remove. 
 # datastore_type: (required) Type of the datastore to configure 
-# esxi_hostname: (required) ESXi hostname to manage the 
+# esxi_hostname: ESXi hostname to manage the datastore. Required 
 # hostname: The hostname or IP address of the vSphere 
 # nfs_path: Resource path on NFS host. Required if datastore 
 # nfs_ro: ReadOnly or ReadWrite mount. Unused if datastore 
 # nfs_server: NFS host serving nfs datastore. Required if 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # state: present: Mount datastore on host if datastore is 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -27,17 +29,19 @@ ${21:   ${22:nfs_ro}: ${23:"#"}}
 ${24:   ${25:nfs_server}: ${26:"#"}}
 ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:port}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:vmfs_device_name}: ${44:"#"}}
-${45:   ${46:vmfs_version}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${33:   ${34:proxy_host}: ${35:"#"}}
+${36:   ${37:proxy_port}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:   ${49:vmfs_device_name}: ${50:"#"}}
+${51:   ${52:vmfs_version}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>vmware_host_datastore</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

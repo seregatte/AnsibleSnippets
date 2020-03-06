@@ -8,17 +8,17 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# name: (required) name of the sas policy. 
+# name: (required) Name of the SAS policy. 
 # namespace: (required) Manage SAS policy for a namespace 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # queue: Type of the messaging queue. Cannot set `topc' 
 # regenerate_primary_key: Regenerate the SAS policy primary key. 
 # regenerate_secondary_key: Regenerate the SAS policy secondary key. 
-# resource_group: (required) name of resource group. 
+# resource_group: (required) Name of resource group. 
 # rights: (required) Claim rights of the SAS policy. 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the route. Use 'present' to 
+# state: Assert the state of the route. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 

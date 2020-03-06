@@ -4,7 +4,7 @@ ${1:# array_add: Add new elements to the array for a key which
 # domain: The domain is a domain name of the form 
 # host: The host on which the preference should apply. 
 # key: (required) The key of the user preference. 
-# path: The path in which to search for `osx_defaults'. 
+# path: The path in which to search for `defaults'. 
 # state: The state of the user defaults. If set to `list' 
 # type: The type of value to write. 
 # value: The value to write. Only required when 

@@ -7,7 +7,7 @@ ${1:# access_key: Access Key ID of the S3 target
 # fa_url: (required) FlashArray management IPv4 address or 
 # initialize: Define whether to initialize the S3 bucket 
 # name: (required) The name of the offload target 
-# options: Additonal mount options for the NFS share 
+# options: Additional mount options for the NFS share 
 # protocol: Define which protocol the offload engine uses 
 # secret: Secret Access Key for the S3 target 
 # share: NFS export on the NFS server 

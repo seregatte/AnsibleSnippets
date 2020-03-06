@@ -14,6 +14,7 @@ ${1:# allow_suid: If 'true', NFS server will honor SetUID bits in
 # rw_rule: List of Read Write access specifications for the 
 # state: Whether the specified export policy rule should 
 # super_user_security: List of Read Write access specifications for the 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) Name of the vserver to use. 
@@ -33,15 +34,16 @@ ${33:   ${34:rule_index}: ${35:"#"}}
 ${36:   ${37:rw_rule}: ${38:"#"}}
 ${39:   ${40:state}: ${41:"#"}}
 ${42:   ${43:super_user_security}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:vserver}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${45:   ${46:use_rest}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:   ${55:vserver}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_export_policy_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

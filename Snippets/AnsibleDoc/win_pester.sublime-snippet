@@ -1,17 +1,21 @@
 <snippet>
 <content><![CDATA[
 ${1:# path: (required) Path to a pester test file or a 
+# tags: Runs only tests in Describe blocks with 
+# test_parameters: Allows to specify parameters to the test script. 
 # version: Minimum version of the pester module that has to 
 }- name: ${2:Name for win_pester module.}
   win_pester:
 ${3:   ${4:path}: ${5:"#"}}
-${6:   ${7:version}: ${8:"#"}}
-${9:${10:   become: ${11:true}} 
-${12:   become_method: ${13:su}} 
-${14:   become_user: ${15:nobody}} 
-${16:   become_flags: ${17:"-s /bin/sh"}}} 
-${18:   when: ${19:variable is defined}} 
-${20:   with_items: ${21:array}} 
+${6:   ${7:tags}: ${8:"#"}}
+${9:   ${10:test_parameters}: ${11:"#"}}
+${12:   ${13:version}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>win_pester</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

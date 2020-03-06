@@ -10,6 +10,8 @@ ${1:# affinity_rule: If set to `True', the DRS rule will be an
 # mandatory: If set to `True', the DRS rule will be 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # state: (required) If set to `present' and the rule 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -26,16 +28,18 @@ ${21:   ${22:hostname}: ${23:"#"}}
 ${24:   ${25:mandatory}: ${26:"#"}}
 ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:port}: ${32:"#"}}
-${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:vm_group_name}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${33:   ${34:proxy_host}: ${35:"#"}}
+${36:   ${37:proxy_port}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:username}: ${44:"#"}}
+${45:   ${46:validate_certs}: ${47:"#"}}
+${48:   ${49:vm_group_name}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>vmware_vm_host_drs_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>
