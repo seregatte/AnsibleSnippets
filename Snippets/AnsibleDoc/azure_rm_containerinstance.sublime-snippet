@@ -11,7 +11,7 @@ ${1:# ad_user: Active Directory username. Use when
 # containers: List of containers. Required when creation. 
 # dns_name_label: The Dns name label for the IP. 
 # force_update: Force update of existing container instance. Any 
-# ip_address: The IP address type of the container group 
+# ip_address: The IP address type of the container group. 
 # location: Valid azure location. Defaults to location of 
 # name: (required) The name of the container group. 
 # os_type: The OS type of containers. 

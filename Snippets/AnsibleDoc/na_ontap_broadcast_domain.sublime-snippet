@@ -11,6 +11,7 @@ ${1:# from_name: Specify the  broadcast domain name to be split
 # password: (required) Password for the specified user. 
 # ports: Specify the ports associated with this broadcast 
 # state: Whether the specified broadcast domain should 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_broadcast_domain module.}
@@ -26,14 +27,15 @@ ${24:   ${25:ontapi}: ${26:"#"}}
 ${27:   ${28:password}: ${29:"#"}}
 ${30:   ${31:ports}: ${32:"#"}}
 ${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${36:   ${37:use_rest}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_broadcast_domain</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

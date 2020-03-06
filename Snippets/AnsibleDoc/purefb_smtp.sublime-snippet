@@ -1,0 +1,22 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: FlashBlade API token for admin privileged user. 
+# domain: (required) Domain name for alert messages 
+# fb_url: FlashBlade management IP address or Hostname. 
+# host: Relay server name 
+}- name: ${2:Name for purefb_smtp module.}
+  purefb_smtp:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:domain}: ${8:"#"}}
+${9:   ${10:fb_url}: ${11:"#"}}
+${12:   ${13:host}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
+]]></content>
+	<tabTrigger>purefb_smtp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

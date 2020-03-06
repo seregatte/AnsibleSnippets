@@ -10,16 +10,16 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # diagnostics_profile: (required) Should VM Diagnostics be enabled for 
-# linux_profile: (required) The linux profile suboptions. 
+# linux_profile: (required) The Linux profile suboptions. 
 # location: Valid azure location. Defaults to location of 
 # master_profile: (required) Master profile suboptions. 
-# name: (required) Name of the Container Services 
+# name: (required) Name of the Azure Container 
 # orchestration_platform: (required) Specifies the Container Orchestration 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) Name of a resource group where the 
 # secret: Azure client secret. Use when authenticating 
-# service_principal: The service principal suboptions. 
+# service_principal: The service principal suboptions. Required when 
 # state: Assert the state of the ACS. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

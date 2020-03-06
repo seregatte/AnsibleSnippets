@@ -13,6 +13,7 @@ ${1:# bind_portset: Name of a current portset to bind to the newly
 # ostype: OS type of the initiators within the group. 
 # password: (required) Password for the specified user. 
 # state: Whether the specified Igroup should exist or 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: (required) The name of the vserver to use. 
@@ -31,15 +32,16 @@ ${30:   ${31:ontapi}: ${32:"#"}}
 ${33:   ${34:ostype}: ${35:"#"}}
 ${36:   ${37:password}: ${38:"#"}}
 ${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:   ${49:vserver}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${42:   ${43:use_rest}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:vserver}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_igroup</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

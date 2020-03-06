@@ -12,7 +12,7 @@ ${1:# aws_access_key: AWS access key. If not set then the value of the
 # region: The AWS region to use. If not specified then the 
 # : ec2_region 
 # security_token: AWS STS security token. If not set then the 
-# state: (required) Describes the desired state. 
+# state: Describes the desired state. 
 # validate_certs: When set to "no", SSL certificates will not be 
 }- name: ${2:Name for aws_batch_job_queue module.}
   aws_batch_job_queue:

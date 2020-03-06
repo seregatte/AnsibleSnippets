@@ -3,13 +3,14 @@
 ${1:# auth_kind: (required) The type of credential used. 
 # check_interval_sec: How often (in seconds) to send a health check. 
 # description: An optional description of this resource. 
+# env_type: Specifies which Ansible environment you're 
 # healthy_threshold: A so-far unhealthy instance will be marked 
 # http_health_check: A nested object resource. 
 # https_health_check: A nested object resource. 
 # name: (required) Name of the resource. Provided by the 
 # project: The Google Cloud Platform project to use. 
 # scopes: Array of scopes to be used. 
-# service_account_contents: A string representing the contents of a Service 
+# service_account_contents: The contents of a Service Account JSON file, 
 # service_account_email: An optional service account email address if 
 # service_account_file: The path of a Service Account JSON file if 
 # ssl_health_check: A nested object resource. 
@@ -23,27 +24,28 @@ ${1:# auth_kind: (required) The type of credential used.
 ${3:   ${4:auth_kind}: ${5:"#"}}
 ${6:   ${7:check_interval_sec}: ${8:"#"}}
 ${9:   ${10:description}: ${11:"#"}}
-${12:   ${13:healthy_threshold}: ${14:"#"}}
-${15:   ${16:http_health_check}: ${17:"#"}}
-${18:   ${19:https_health_check}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:project}: ${26:"#"}}
-${27:   ${28:scopes}: ${29:"#"}}
-${30:   ${31:service_account_contents}: ${32:"#"}}
-${33:   ${34:service_account_email}: ${35:"#"}}
-${36:   ${37:service_account_file}: ${38:"#"}}
-${39:   ${40:ssl_health_check}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:tcp_health_check}: ${47:"#"}}
-${48:   ${49:timeout_sec}: ${50:"#"}}
-${51:   ${52:type}: ${53:"#"}}
-${54:   ${55:unhealthy_threshold}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${12:   ${13:env_type}: ${14:"#"}}
+${15:   ${16:healthy_threshold}: ${17:"#"}}
+${18:   ${19:http_health_check}: ${20:"#"}}
+${21:   ${22:https_health_check}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:project}: ${29:"#"}}
+${30:   ${31:scopes}: ${32:"#"}}
+${33:   ${34:service_account_contents}: ${35:"#"}}
+${36:   ${37:service_account_email}: ${38:"#"}}
+${39:   ${40:service_account_file}: ${41:"#"}}
+${42:   ${43:ssl_health_check}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:   ${49:tcp_health_check}: ${50:"#"}}
+${51:   ${52:timeout_sec}: ${53:"#"}}
+${54:   ${55:type}: ${56:"#"}}
+${57:   ${58:unhealthy_threshold}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>gcp_compute_health_check</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

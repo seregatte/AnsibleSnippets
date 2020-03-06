@@ -12,20 +12,15 @@ ${1:# cache_error_timeout: Specifies the lifetime of an error response in
 # name: (required) Specifies the name of the OCSP 
 # partition: Device partition to manage resources on. 
 # passphrase: Specifies a passphrase used to sign an OCSP 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # proxy_server_pool: Specifies the proxy server pool the BIG-IP 
 # responder_url: Specifies the absolute URL that overrides the 
 # route_domain: Specifies the route domain for fetching an OCSP 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the resource 
 # status_age: Specifies the maximum allowed lag time that the 
 # strict_responder_checking: Specifies whether the responder's certificate is 
 # trusted_responders: Specifies the certificates used for validating 
 # update_password: `always' will allow to update passwords if the 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_ssl_ocsp module.}
   bigip_ssl_ocsp:
 ${3:   ${4:cache_error_timeout}: ${5:"#"}}
@@ -40,26 +35,21 @@ ${27:   ${28:key}: ${29:"#"}}
 ${30:   ${31:name}: ${32:"#"}}
 ${33:   ${34:partition}: ${35:"#"}}
 ${36:   ${37:passphrase}: ${38:"#"}}
-${39:   ${40:password}: ${41:"#"}}
-${42:   ${43:provider}: ${44:"#"}}
-${45:   ${46:proxy_server_pool}: ${47:"#"}}
-${48:   ${49:responder_url}: ${50:"#"}}
-${51:   ${52:route_domain}: ${53:"#"}}
-${54:   ${55:server}: ${56:"#"}}
-${57:   ${58:server_port}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:status_age}: ${65:"#"}}
-${66:   ${67:strict_responder_checking}: ${68:"#"}}
-${69:   ${70:trusted_responders}: ${71:"#"}}
-${72:   ${73:update_password}: ${74:"#"}}
-${75:   ${76:user}: ${77:"#"}}
-${78:   ${79:validate_certs}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:proxy_server_pool}: ${44:"#"}}
+${45:   ${46:responder_url}: ${47:"#"}}
+${48:   ${49:route_domain}: ${50:"#"}}
+${51:   ${52:state}: ${53:"#"}}
+${54:   ${55:status_age}: ${56:"#"}}
+${57:   ${58:strict_responder_checking}: ${59:"#"}}
+${60:   ${61:trusted_responders}: ${62:"#"}}
+${63:   ${64:update_password}: ${65:"#"}}
+${66:${67:   become: ${68:true}} 
+${69:   become_method: ${70:su}} 
+${71:   become_user: ${72:nobody}} 
+${73:   become_flags: ${74:"-s /bin/sh"}}} 
+${75:   when: ${76:variable is defined}} 
+${77:   with_items: ${78:array}} 
 ]]></content>
 	<tabTrigger>bigip_ssl_ocsp</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

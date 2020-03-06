@@ -10,17 +10,12 @@ ${1:# after: The ordered set of commands to append to the end
 # lines: The ordered set of commands that should be 
 # match: Instructs the module on the way to perform the 
 # parents: The ordered set of parents that uniquely 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # replace: Instructs the module on the way to perform the 
 # route_domain: Route domain to manage BGP configuration on. 
 # running_config: The module, by default, will connect to the 
 # save_when: When changes are made to the device running- 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # src: The `src' argument provides a path to the 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_imish_config module.}
   bigip_imish_config:
 ${3:   ${4:after}: ${5:"#"}}
@@ -33,23 +28,18 @@ ${21:   ${22:intended_config}: ${23:"#"}}
 ${24:   ${25:lines}: ${26:"#"}}
 ${27:   ${28:match}: ${29:"#"}}
 ${30:   ${31:parents}: ${32:"#"}}
-${33:   ${34:password}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:replace}: ${41:"#"}}
-${42:   ${43:route_domain}: ${44:"#"}}
-${45:   ${46:running_config}: ${47:"#"}}
-${48:   ${49:save_when}: ${50:"#"}}
-${51:   ${52:server}: ${53:"#"}}
-${54:   ${55:server_port}: ${56:"#"}}
-${57:   ${58:src}: ${59:"#"}}
-${60:   ${61:user}: ${62:"#"}}
-${63:   ${64:validate_certs}: ${65:"#"}}
-${66:${67:   become: ${68:true}} 
-${69:   become_method: ${70:su}} 
-${71:   become_user: ${72:nobody}} 
-${73:   become_flags: ${74:"-s /bin/sh"}}} 
-${75:   when: ${76:variable is defined}} 
-${77:   with_items: ${78:array}} 
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:replace}: ${38:"#"}}
+${39:   ${40:route_domain}: ${41:"#"}}
+${42:   ${43:running_config}: ${44:"#"}}
+${45:   ${46:save_when}: ${47:"#"}}
+${48:   ${49:src}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>bigip_imish_config</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

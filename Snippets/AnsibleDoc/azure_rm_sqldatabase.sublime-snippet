@@ -8,7 +8,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# collation: The collation of the database. If `create_mode' 
+# collation: The collation of the database. If not 
 # create_mode: Specifies the mode of database creation. 
 # edition: The edition of the database. The 
 # elastic_pool_name: The name of the elastic pool the database is in. 
@@ -19,14 +19,14 @@ ${1:# ad_user: Active Directory username. Use when
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # read_scale: If the database is a geo-secondary, indicates 
-# recovery_services_recovery_point_resource_id: Required if `create_mode' is 
+# recovery_services_recovery_point_resource_id: Required if `create_mode=restore_long_term_reten 
 # resource_group: (required) The name of the resource group that 
-# restore_point_in_time: Required if `create_mode' is 
+# restore_point_in_time: Required if `create_mode=point_in_time_restore', 
 # sample_name: Indicates the name of the sample schema to apply 
 # secret: Azure client secret. Use when authenticating 
 # server_name: (required) The name of the server. 
-# source_database_deletion_date: Required if `create_mode' is `restore' and 
-# source_database_id: Required unless `create_mode' is `default' or 
+# source_database_deletion_date: Required if `create_mode=restore' and 
+# source_database_id: Required unless `create_mode=default' or `create 
 # state: Assert the state of the SQL Database. Use 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

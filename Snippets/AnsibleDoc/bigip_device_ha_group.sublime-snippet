@@ -4,36 +4,26 @@ ${1:# active_bonus: Specifies the extra value to be added to the
 # description: User created HA group description. 
 # enable: When set to `no' the system disables the ha 
 # name: (required) Name of the HA group to 
-# password: (required) The password for the user account 
 # pools: Specifies pools to contribute to the ha score. 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `present', ensures that the resource 
 # trunks: Specifies trunks to contribute to the ha score. 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_device_ha_group module.}
   bigip_device_ha_group:
 ${3:   ${4:active_bonus}: ${5:"#"}}
 ${6:   ${7:description}: ${8:"#"}}
 ${9:   ${10:enable}: ${11:"#"}}
 ${12:   ${13:name}: ${14:"#"}}
-${15:   ${16:password}: ${17:"#"}}
-${18:   ${19:pools}: ${20:"#"}}
-${21:   ${22:provider}: ${23:"#"}}
-${24:   ${25:server}: ${26:"#"}}
-${27:   ${28:server_port}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:trunks}: ${35:"#"}}
-${36:   ${37:user}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${15:   ${16:pools}: ${17:"#"}}
+${18:   ${19:provider}: ${20:"#"}}
+${21:   ${22:state}: ${23:"#"}}
+${24:   ${25:trunks}: ${26:"#"}}
+${27:${28:   become: ${29:true}} 
+${30:   become_method: ${31:su}} 
+${32:   become_user: ${33:nobody}} 
+${34:   become_flags: ${35:"-s /bin/sh"}}} 
+${36:   when: ${37:variable is defined}} 
+${38:   with_items: ${39:array}} 
 ]]></content>
 	<tabTrigger>bigip_device_ha_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

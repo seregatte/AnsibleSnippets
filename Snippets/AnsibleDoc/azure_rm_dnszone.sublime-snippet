@@ -8,7 +8,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# name: (required) name of the DNS Zone. 
+# name: (required) Name of the DNS zone. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # registration_virtual_networks: A list of references to virtual networks that 
@@ -19,7 +19,7 @@ ${1:# ad_user: Active Directory username. Use when
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
-# type: The type of this DNS zone (public or private) 
+# type: The type of this DNS zone (`public' or 
 }- name: ${2:Name for azure_rm_dnszone module.}
   azure_rm_dnszone:
 ${3:   ${4:ad_user}: ${5:"#"}}

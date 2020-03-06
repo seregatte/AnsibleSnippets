@@ -1,0 +1,14 @@
+<snippet>
+<content><![CDATA[
+${1:}- name: ${2:Name for fortios_switch_controller_security_policy_802_1 module.}
+  fortios_switch_controller_security_policy_802_1:
+${3:${4:   become: ${5:true}} 
+${6:   become_method: ${7:su}} 
+${8:   become_user: ${9:nobody}} 
+${10:   become_flags: ${11:"-s /bin/sh"}}} 
+${12:   when: ${13:variable is defined}} 
+${14:   with_items: ${15:array}} 
+]]></content>
+	<tabTrigger>fortios_switch_controller_security_policy_802_1</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

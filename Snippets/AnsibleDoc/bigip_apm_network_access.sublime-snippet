@@ -1,0 +1,54 @@
+<snippet>
+<content><![CDATA[
+${1:# allow_local_dns: Enables local access to DNS servers configured 
+# allow_local_subnet: Enables local subnet access and local access to 
+# description: User created network access description. 
+# dns_address_space: Specifies a list of domain names describing the 
+# dtls: When `yes' the network access connection uses 
+# dtls_port: Specifies the port number that the network 
+# excluded_dns_addresses: Specifies the DNS address spaces for which 
+# excluded_ipv4_adresses: Specifies IPV4 address spaces for which traffic 
+# excluded_ipv6_adresses: Specifies IPV6 address spaces for which traffic 
+# ip_version: Supported IP version on the network access 
+# ipv4_address_space: Specifies a list of IPv4 hosts or networks 
+# ipv4_lease_pool: Specifies IPV4 lease pool resource to use with 
+# ipv6_address_space: Specifies a list of IPv6 hosts or networks 
+# ipv6_lease_pool: Specifies IPV6 lease pool resource to use with 
+# name: (required) Specifies the name of the APM network 
+# partition: Device partition to manage resources on. 
+# provider: A dict object containing connection details. 
+# snat_pool: Specifies the name of a SNAT pool used for 
+# split_tunnel: Specifies that only the traffic targeted to a 
+# state: When `state' is `present', ensures that the ACL 
+}- name: ${2:Name for bigip_apm_network_access module.}
+  bigip_apm_network_access:
+${3:   ${4:allow_local_dns}: ${5:"#"}}
+${6:   ${7:allow_local_subnet}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:dns_address_space}: ${14:"#"}}
+${15:   ${16:dtls}: ${17:"#"}}
+${18:   ${19:dtls_port}: ${20:"#"}}
+${21:   ${22:excluded_dns_addresses}: ${23:"#"}}
+${24:   ${25:excluded_ipv4_adresses}: ${26:"#"}}
+${27:   ${28:excluded_ipv6_adresses}: ${29:"#"}}
+${30:   ${31:ip_version}: ${32:"#"}}
+${33:   ${34:ipv4_address_space}: ${35:"#"}}
+${36:   ${37:ipv4_lease_pool}: ${38:"#"}}
+${39:   ${40:ipv6_address_space}: ${41:"#"}}
+${42:   ${43:ipv6_lease_pool}: ${44:"#"}}
+${45:   ${46:name}: ${47:"#"}}
+${48:   ${49:partition}: ${50:"#"}}
+${51:   ${52:provider}: ${53:"#"}}
+${54:   ${55:snat_pool}: ${56:"#"}}
+${57:   ${58:split_tunnel}: ${59:"#"}}
+${60:   ${61:state}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
+]]></content>
+	<tabTrigger>bigip_apm_network_access</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

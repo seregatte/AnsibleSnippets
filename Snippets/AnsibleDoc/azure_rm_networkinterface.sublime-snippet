@@ -8,22 +8,22 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# create_with_security_group: Specifies whether a security group should be be 
-# dns_servers: Which DNS servers should the NIC lookup List of 
-# enable_accelerated_networking: Specifies whether the network interface should 
-# enable_ip_forwarding: Whether to enable IP forwarding 
-# ip_configurations: List of ip configuration if contains mutilple 
-# location: Valid azure location. Defaults to location of 
+# create_with_security_group: Whether a security group should be be created 
+# dns_servers: Which DNS servers should the NIC lookup. List of 
+# enable_accelerated_networking: Whether the network interface should be created 
+# enable_ip_forwarding: Whether to enable IP forwarding. 
+# ip_configurations: List of IP configurations. Each configuration 
+# location: Valid Azure location. Defaults to location of 
 # name: (required) Name of the network interface. 
 # open_ports: When a default security group is created for a 
 # os_type: Determines any rules to be added to a default 
 # password: Active Directory user password. Use when 
 # private_ip_address: (Deprecate) Valid IPv4 address that falls within 
-# private_ip_allocation_method: (Deprecate) Specify whether or not the assigned 
+# private_ip_allocation_method: (Deprecate) Whether or not the assigned IP 
 # profile: Security profile found in ~/.azure/credentials 
 # public_ip: (Deprecate) When creating a network interface, 
 # public_ip_address_name: (Deprecate) Name of an existing public IP 
-# public_ip_allocation_method: (Deprecate) If a public_ip_address_name is not 
+# public_ip_allocation_method: (Deprecate) If a `public_ip_address_name' is not 
 # resource_group: (required) Name of a resource group where the 
 # secret: Azure client secret. Use when authenticating 
 # security_group: An existing security group with which to 

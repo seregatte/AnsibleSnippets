@@ -9,16 +9,11 @@ ${1:# alternate_lb_method: The load balancing mode that the system tries if
 # monitors: Specifies the health monitors that the system 
 # name: (required) Name of the GTM pool. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # preferred_lb_method: The load balancing mode that the system tries 
 # provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: Pool state. When `present', ensures that the 
 # ttl: Specifies the number of seconds that the IP 
 # type: The type of GTM pool that you want to create. On 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_pool module.}
   bigip_gtm_pool:
 ${3:   ${4:alternate_lb_method}: ${5:"#"}}
@@ -30,22 +25,17 @@ ${18:   ${19:members}: ${20:"#"}}
 ${21:   ${22:monitors}: ${23:"#"}}
 ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:partition}: ${29:"#"}}
-${30:   ${31:password}: ${32:"#"}}
-${33:   ${34:preferred_lb_method}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:server}: ${41:"#"}}
-${42:   ${43:server_port}: ${44:"#"}}
-${45:   ${46:state}: ${47:"#"}}
-${48:   ${49:ttl}: ${50:"#"}}
-${51:   ${52:type}: ${53:"#"}}
-${54:   ${55:user}: ${56:"#"}}
-${57:   ${58:validate_certs}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${30:   ${31:preferred_lb_method}: ${32:"#"}}
+${33:   ${34:provider}: ${35:"#"}}
+${36:   ${37:state}: ${38:"#"}}
+${39:   ${40:ttl}: ${41:"#"}}
+${42:   ${43:type}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>bigip_gtm_pool</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

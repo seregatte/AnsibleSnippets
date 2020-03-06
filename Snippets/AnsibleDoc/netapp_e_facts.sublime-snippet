@@ -1,9 +1,9 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_password: (required) The password to authenticate with the 
-# api_url: (required) The url to the SANtricity WebServices 
+# api_url: (required) The url to the SANtricity Web 
 # api_username: (required) The username to authenticate with the 
-# ssid: (required) The ID of the array to manage. This 
+# ssid: The ID of the array to manage. This value must 
 # validate_certs: Should https certificates be validated? 
 }- name: ${2:Name for netapp_e_facts module.}
   netapp_e_facts:

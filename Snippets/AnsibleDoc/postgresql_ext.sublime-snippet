@@ -13,6 +13,7 @@ ${1:# ca_cert: Specifies the name of a file containing SSL
 # session_role: Switch to session_role after connecting. The 
 # ssl_mode: Determines whether or with what priority a 
 # state: The database extension state. 
+# version: Extension version to add or update to. Has 
 }- name: ${2:Name for postgresql_ext module.}
   postgresql_ext:
 ${3:   ${4:ca_cert}: ${5:"#"}}
@@ -28,12 +29,13 @@ ${30:   ${31:schema}: ${32:"#"}}
 ${33:   ${34:session_role}: ${35:"#"}}
 ${36:   ${37:ssl_mode}: ${38:"#"}}
 ${39:   ${40:state}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${42:   ${43:version}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>postgresql_ext</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

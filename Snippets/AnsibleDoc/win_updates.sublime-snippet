@@ -6,7 +6,7 @@ ${1:# blacklist: A list of update titles or KB numbers that can
 # reboot: Ansible will automatically reboot the remote 
 # reboot_timeout: The time in seconds to wait until the host is 
 # server_selection: Defines the Windows Update source catalog. 
-# state: Controls whether found updates are returned as a 
+# state: Controls whether found updates are downloaded or 
 # use_scheduled_task: Will not auto elevate the remote process with 
 # whitelist: A list of update titles or KB numbers that can 
 }- name: ${2:Name for win_updates module.}

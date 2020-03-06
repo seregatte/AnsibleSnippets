@@ -12,7 +12,7 @@ ${1:# ad_user: Active Directory username. Use when
 # domain_name: The customizable portion of the FQDN assigned to 
 # idle_timeout: Idle timeout in minutes. 
 # ip_tags: List of IpTag associated with the public IP 
-# location: Valid azure location. Defaults to location of 
+# location: Valid Azure location. Defaults to location of 
 # name: (required) Name of the Public IP. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 

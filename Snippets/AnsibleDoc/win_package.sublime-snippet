@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# arguments: Any arguments the installer needs to either 
 # chdir: Set the specified path as the current working 
-# creates_path: Will check the existance of the path specified 
+# creates_path: Will check the existence of the path specified 
 # creates_service: Will check the existing of the service specified 
 # creates_version: Will check the file version property of the file 
 # expected_return_code: One or more return codes from the package 

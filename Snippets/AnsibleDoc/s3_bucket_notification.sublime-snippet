@@ -1,0 +1,50 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# bucket_name: (required) S3 bucket name 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# event_name: (required) unique name for event notification on 
+# events: (required) Events that you want to be triggering 
+# lambda_alias: Name of the Lambda function alias. Mutually 
+# lambda_function_arn: The ARN of the lambda function. 
+# lambda_version: Version of the Lambda function. Mutually 
+# prefix: Optional prefix to limit the notifications to 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# state: (required) Describes the desired state. 
+# suffix: Optional suffix to limit the notifications to 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for s3_bucket_notification module.}
+  s3_bucket_notification:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:bucket_name}: ${11:"#"}}
+${12:   ${13:debug_botocore_endpoint_logs}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:event_name}: ${20:"#"}}
+${21:   ${22:events}: ${23:"#"}}
+${24:   ${25:lambda_alias}: ${26:"#"}}
+${27:   ${28:lambda_function_arn}: ${29:"#"}}
+${30:   ${31:lambda_version}: ${32:"#"}}
+${33:   ${34:prefix}: ${35:"#"}}
+${36:   ${37:profile}: ${38:"#"}}
+${39:   ${40:region}: ${41:"#"}}
+${42:   ${43:}: ${44:"#"}}
+${45:   ${46:security_token}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:suffix}: ${53:"#"}}
+${54:   ${55:validate_certs}: ${56:"#"}}
+${57:${58:   become: ${59:true}} 
+${60:   become_method: ${61:su}} 
+${62:   become_user: ${63:nobody}} 
+${64:   become_flags: ${65:"-s /bin/sh"}}} 
+${66:   when: ${67:variable is defined}} 
+${68:   with_items: ${69:array}} 
+]]></content>
+	<tabTrigger>s3_bucket_notification</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

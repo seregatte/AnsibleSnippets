@@ -1,15 +1,17 @@
 <snippet>
 <content><![CDATA[
-${1:# gather_subset: When supplied, this argument will restrict the 
+${1:# gather_network_resources: When supplied, this argument will restrict the 
+# gather_subset: When supplied, this argument will restrict the 
 }- name: ${2:Name for exos_facts module.}
   exos_facts:
-${3:   ${4:gather_subset}: ${5:"#"}}
-${6:${7:   become: ${8:true}} 
-${9:   become_method: ${10:su}} 
-${11:   become_user: ${12:nobody}} 
-${13:   become_flags: ${14:"-s /bin/sh"}}} 
-${15:   when: ${16:variable is defined}} 
-${17:   with_items: ${18:array}} 
+${3:   ${4:gather_network_resources}: ${5:"#"}}
+${6:   ${7:gather_subset}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
 ]]></content>
 	<tabTrigger>exos_facts</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

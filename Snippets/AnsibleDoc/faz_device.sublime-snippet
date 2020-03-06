@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# adom: (required) The ADOM the configuration should 
+# device_ip: The IP of the device being added to 
+# device_password: The password of the device being added to 
+# device_serial: The serial number of the device being added to 
+# device_unique_name: The desired "friendly" name of the device being 
+# device_username: The username of the device being added to 
+# faz_quota: Specifies the quota for the device in FAZ 
+# mgmt_mode: (required) Management Mode of the device you are 
+# mode: Add or delete devices. Or promote unregistered 
+# os_minor_vers: (required) Minor OS rev of the device. 
+# os_type: (required) The os type of the device being added 
+# os_ver: (required) Major OS rev of the device 
+# platform_str: Required for determine the platform for VM 
+}- name: ${2:Name for faz_device module.}
+  faz_device:
+${3:   ${4:adom}: ${5:"#"}}
+${6:   ${7:device_ip}: ${8:"#"}}
+${9:   ${10:device_password}: ${11:"#"}}
+${12:   ${13:device_serial}: ${14:"#"}}
+${15:   ${16:device_unique_name}: ${17:"#"}}
+${18:   ${19:device_username}: ${20:"#"}}
+${21:   ${22:faz_quota}: ${23:"#"}}
+${24:   ${25:mgmt_mode}: ${26:"#"}}
+${27:   ${28:mode}: ${29:"#"}}
+${30:   ${31:os_minor_vers}: ${32:"#"}}
+${33:   ${34:os_type}: ${35:"#"}}
+${36:   ${37:os_ver}: ${38:"#"}}
+${39:   ${40:platform_str}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>faz_device</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

@@ -11,6 +11,7 @@ ${1:# force: Setting to 'true' forces the deletion of the
 # ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # state: Whether the specified policy group should exist 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # vserver: Name of the vserver to use. 
@@ -27,15 +28,16 @@ ${24:   ${25:name}: ${26:"#"}}
 ${27:   ${28:ontapi}: ${29:"#"}}
 ${30:   ${31:password}: ${32:"#"}}
 ${33:   ${34:state}: ${35:"#"}}
-${36:   ${37:username}: ${38:"#"}}
-${39:   ${40:validate_certs}: ${41:"#"}}
-${42:   ${43:vserver}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${36:   ${37:use_rest}: ${38:"#"}}
+${39:   ${40:username}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:   ${46:vserver}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_qos_policy_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

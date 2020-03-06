@@ -3,7 +3,7 @@
 ${1:# bounce_age: Bounce entry aging interval in seconds. Accepted 
 # bounce_trigger: Determines if the bounce entries are installed 
 # certificate_name: The X.509 certificate name attached to the APIC 
-# description: Description for the End point rentention policy. 
+# description: Description for the End point retention policy. 
 # epr_policy: The name of the end point retention policy. 
 # hold_interval: Hold interval in seconds. Accepted values range 
 # host: (required) IP Address or hostname of APIC 

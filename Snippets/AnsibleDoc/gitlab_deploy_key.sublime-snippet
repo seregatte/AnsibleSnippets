@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_password: The password to use for authentication against 
-# api_token: Gitlab token for logging in. 
+# api_token: GitLab token for logging in. 
 # api_url: The resolvable endpoint for the API 
 # api_username: The username to use for authentication against 
 # can_push: Whether this key can push to the project 

@@ -4,36 +4,44 @@ ${1:# api_token: FlashBlade API token for admin privileged user.
 # eradicate: Define whether to eradicate the filesystem on 
 # fastremove: Define whether the fast remove directory is 
 # fb_url: FlashBlade management IP address or Hostname. 
+# group_quota: Default quota in M, G, T or P units for a group 
 # hard_limit: Define whether the capacity for a filesystem is 
 # http: Define whether to HTTP/HTTPS protocol is enabled 
 # name: (required) Filesystem Name. 
-# nfs: Define whether to NFS protocol is enabled for 
+# nfs: (Deprecate) Define whether to NFSv3 protocol is 
 # nfs_rules: Define the NFS rules in operation. 
+# nfsv3: Define whether to NFSv3 protocol is enabled for 
+# nfsv4: Define whether to NFSv4.1 protocol is enabled 
 # size: Volume size in M, G, T or P units. See examples. 
 # smb: Define whether to SMB protocol is enabled for 
 # snapshot: Define whether a snapshot directory is enabled 
 # state: Create, delete or modifies a filesystem. 
+# user_quota: Default quota in M, G, T or P units for a user 
 }- name: ${2:Name for purefb_fs module.}
   purefb_fs:
 ${3:   ${4:api_token}: ${5:"#"}}
 ${6:   ${7:eradicate}: ${8:"#"}}
 ${9:   ${10:fastremove}: ${11:"#"}}
 ${12:   ${13:fb_url}: ${14:"#"}}
-${15:   ${16:hard_limit}: ${17:"#"}}
-${18:   ${19:http}: ${20:"#"}}
-${21:   ${22:name}: ${23:"#"}}
-${24:   ${25:nfs}: ${26:"#"}}
-${27:   ${28:nfs_rules}: ${29:"#"}}
-${30:   ${31:size}: ${32:"#"}}
-${33:   ${34:smb}: ${35:"#"}}
-${36:   ${37:snapshot}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${15:   ${16:group_quota}: ${17:"#"}}
+${18:   ${19:hard_limit}: ${20:"#"}}
+${21:   ${22:http}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:nfs}: ${29:"#"}}
+${30:   ${31:nfs_rules}: ${32:"#"}}
+${33:   ${34:nfsv3}: ${35:"#"}}
+${36:   ${37:nfsv4}: ${38:"#"}}
+${39:   ${40:size}: ${41:"#"}}
+${42:   ${43:smb}: ${44:"#"}}
+${45:   ${46:snapshot}: ${47:"#"}}
+${48:   ${49:state}: ${50:"#"}}
+${51:   ${52:user_quota}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>purefb_fs</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

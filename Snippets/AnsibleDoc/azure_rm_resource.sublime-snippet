@@ -5,7 +5,7 @@ ${1:# ad_user: Active Directory username. Use when
 # api_profile: Selects an API profile to use when communicating 
 # api_version: Specific API version to be used. 
 # auth_source: Controls the source of the credentials to use 
-# body: The body of the http request/response to the web 
+# body: The body of the HTTP request/response to the web 
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
@@ -22,7 +22,7 @@ ${1:# ad_user: Active Directory username. Use when
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the resource. Use `present' 
 # status_code: A valid, numeric, HTTP status code that 
-# subresource: List of subresources 
+# subresource: List of subresources. 
 # subscription_id: Your Azure subscription Id. 
 # tenant: Azure tenant ID. Use when authenticating with a 
 # url: Azure RM Resource URL. 

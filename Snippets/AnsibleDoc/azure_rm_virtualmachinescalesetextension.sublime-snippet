@@ -8,8 +8,8 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# location: Valid azure location. Defaults to location of 
-# name: Name of the VMSS extension 
+# location: Valid Azure location. Defaults to location of 
+# name: Name of the VMSS extension. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # protected_settings: A dictionary containing protected extension 

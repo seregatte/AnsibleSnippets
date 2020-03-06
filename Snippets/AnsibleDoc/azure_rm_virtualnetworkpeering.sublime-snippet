@@ -16,11 +16,11 @@ ${1:# ad_user: Active Directory username. Use when
 # remote_virtual_network: Remote virtual network to be peered. It can be 
 # resource_group: (required) Name of a resource group where the 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the virtual network peering. 
+# state: State of the virtual network peering. Use 
 # subscription_id: Your Azure subscription Id. 
 # tenant: Azure tenant ID. Use when authenticating with a 
 # use_remote_gateways: If remote gateways can be used on this virtual 
-# virtual_network: (required) Virtual network to be peered. It can 
+# virtual_network: (required) Name or resource ID of the virtual 
 }- name: ${2:Name for azure_rm_virtualnetworkpeering module.}
   azure_rm_virtualnetworkpeering:
 ${3:   ${4:ad_user}: ${5:"#"}}

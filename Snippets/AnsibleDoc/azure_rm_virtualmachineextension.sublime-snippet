@@ -8,8 +8,8 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# location: Valid azure location. Defaults to location of 
-# name: (required) Name of the vm extension 
+# location: Valid Azure location. Defaults to location of 
+# name: (required) Name of the vm extension. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # protected_settings: Json formatted protected settings for the 
@@ -17,7 +17,7 @@ ${1:# ad_user: Active Directory username. Use when
 # resource_group: (required) Name of a resource group where the vm 
 # secret: Azure client secret. Use when authenticating 
 # settings: Json formatted public settings for the 
-# state: Assert the state of the vm extension. Use 
+# state: State of the vm extension. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tenant: Azure tenant ID. Use when authenticating with a 
 # type_handler_version: The type version of the extension handler. 

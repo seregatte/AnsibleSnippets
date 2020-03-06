@@ -14,7 +14,7 @@ ${1:# bd: The name of the Bridge Domain.
 # preferred: Determines if the Subnet is preferred over all 
 # private_key: (required) Either a PEM-formatted private key 
 # route_profile: The Route Profile to the associate with the 
-# route_profile_l3_out: The L3 Out that contains the assocated Route 
+# route_profile_l3_out: The L3 Out that contains the associated Route 
 # scope: Determines the scope of the Subnet. The 
 # state: Use `present' or `absent' for adding or 
 # subnet_control: Determines the Subnet's Control State. The 

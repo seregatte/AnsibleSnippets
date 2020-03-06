@@ -14,7 +14,7 @@ ${1:# ad_user: Active Directory username. Use when
 # expiration_date: The expiration date for VM. 
 # image: The Microsoft Azure Marketplace image reference 
 # lab_name: (required) The name of the lab. 
-# lab_subnet: An existing subnet within lab's virtual network 
+# lab_subnet: An existing subnet within lab's virtual network. 
 # name: (required) The name of the virtual machine. 
 # notes: The notes of the virtual machine. 
 # os_type: Base type of operating system. 

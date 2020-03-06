@@ -8,6 +8,7 @@ ${1:# certificate_name: The X.509 certificate name attached to the APIC
 # password: (required) The password to use for 
 # port: Port number to be used for REST connection. The 
 # port_security: (required) The name of the port security. 
+# port_security_timeout: The delay time in seconds before MAC learning is 
 # private_key: (required) Either a PEM-formatted private key 
 # state: Use `present' or `absent' for adding or 
 # timeout: The socket level timeout in seconds. 
@@ -25,19 +26,20 @@ ${15:   ${16:output_level}: ${17:"#"}}
 ${18:   ${19:password}: ${20:"#"}}
 ${21:   ${22:port}: ${23:"#"}}
 ${24:   ${25:port_security}: ${26:"#"}}
-${27:   ${28:private_key}: ${29:"#"}}
-${30:   ${31:state}: ${32:"#"}}
-${33:   ${34:timeout}: ${35:"#"}}
-${36:   ${37:use_proxy}: ${38:"#"}}
-${39:   ${40:use_ssl}: ${41:"#"}}
-${42:   ${43:username}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${27:   ${28:port_security_timeout}: ${29:"#"}}
+${30:   ${31:private_key}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:timeout}: ${38:"#"}}
+${39:   ${40:use_proxy}: ${41:"#"}}
+${42:   ${43:use_ssl}: ${44:"#"}}
+${45:   ${46:username}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
 ]]></content>
 	<tabTrigger>aci_interface_policy_port_security</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

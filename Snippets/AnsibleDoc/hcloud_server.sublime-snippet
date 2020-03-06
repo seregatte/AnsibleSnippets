@@ -10,6 +10,7 @@ ${1:# api_token: (required) This is the API Token for the Hetzner
 # labels: User-defined labels (key-value pairs). 
 # location: Location of Server. Required if no `datacenter' 
 # name: The Name of the Hetzner Cloud server to manage. 
+# rescue_mode: Add the Hetzner rescue system type you want the 
 # server_type: The Server Type of the Hetzner Cloud server to 
 # ssh_keys: List of SSH key names The key names correspond 
 # state: State of the server. 
@@ -28,18 +29,19 @@ ${21:   ${22:image}: ${23:"#"}}
 ${24:   ${25:labels}: ${26:"#"}}
 ${27:   ${28:location}: ${29:"#"}}
 ${30:   ${31:name}: ${32:"#"}}
-${33:   ${34:server_type}: ${35:"#"}}
-${36:   ${37:ssh_keys}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:upgrade_disk}: ${44:"#"}}
-${45:   ${46:user_data}: ${47:"#"}}
-${48:   ${49:volumes}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${33:   ${34:rescue_mode}: ${35:"#"}}
+${36:   ${37:server_type}: ${38:"#"}}
+${39:   ${40:ssh_keys}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:upgrade_disk}: ${47:"#"}}
+${48:   ${49:user_data}: ${50:"#"}}
+${51:   ${52:volumes}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>hcloud_server</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

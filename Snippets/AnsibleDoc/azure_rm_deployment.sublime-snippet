@@ -17,7 +17,7 @@ ${1:# ad_user: Active Directory username. Use when
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) The resource group name to use or 
 # secret: Azure client secret. Use when authenticating 
-# state: If state is `present', template will be created. 
+# state: If `state=present', template will be created. If 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # template: A hash containing the templates inline. This 

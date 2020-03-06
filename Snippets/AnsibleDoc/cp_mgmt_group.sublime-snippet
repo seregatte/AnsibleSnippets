@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# auto_publish_session: Publish the current session if changes have been 
+# color: Color of the object. Should be one of existing 
+# comments: Comments string. 
+# details_level: The level of detail for some of the fields in 
+# groups: Collection of group identifiers. 
+# ignore_errors: Apply changes ignoring errors. You won't be able 
+# ignore_warnings: Apply changes ignoring warnings. 
+# members: Collection of Network objects identified by the 
+# name: (required) Object name. 
+# state: State of the access rule (present or absent). 
+# tags: Collection of tag identifiers. 
+# version: Version of checkpoint. If not given one, the 
+# wait_for_task: Wait for the task to end. Such as publish task. 
+}- name: ${2:Name for cp_mgmt_group module.}
+  cp_mgmt_group:
+${3:   ${4:auto_publish_session}: ${5:"#"}}
+${6:   ${7:color}: ${8:"#"}}
+${9:   ${10:comments}: ${11:"#"}}
+${12:   ${13:details_level}: ${14:"#"}}
+${15:   ${16:groups}: ${17:"#"}}
+${18:   ${19:ignore_errors}: ${20:"#"}}
+${21:   ${22:ignore_warnings}: ${23:"#"}}
+${24:   ${25:members}: ${26:"#"}}
+${27:   ${28:name}: ${29:"#"}}
+${30:   ${31:state}: ${32:"#"}}
+${33:   ${34:tags}: ${35:"#"}}
+${36:   ${37:version}: ${38:"#"}}
+${39:   ${40:wait_for_task}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>cp_mgmt_group</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

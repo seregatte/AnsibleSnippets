@@ -25,6 +25,7 @@ ${1:# api_password: Password of the user to login into OpenNebula
 # template_id: ID of a VM template to use to create a new 
 # template_name: Name of VM template to use to create a new 
 # vcpu: Number of CPUs (cores) new VM will have. 
+# vm_start_on_hold: Set to true to put vm on hold while creating 
 # wait: Wait for the instance to reach its desired state 
 # wait_timeout: How long before wait gives up, in seconds 
 }- name: ${2:Name for one_vm module.}
@@ -54,14 +55,15 @@ ${66:   ${67:state}: ${68:"#"}}
 ${69:   ${70:template_id}: ${71:"#"}}
 ${72:   ${73:template_name}: ${74:"#"}}
 ${75:   ${76:vcpu}: ${77:"#"}}
-${78:   ${79:wait}: ${80:"#"}}
-${81:   ${82:wait_timeout}: ${83:"#"}}
-${84:${85:   become: ${86:true}} 
-${87:   become_method: ${88:su}} 
-${89:   become_user: ${90:nobody}} 
-${91:   become_flags: ${92:"-s /bin/sh"}}} 
-${93:   when: ${94:variable is defined}} 
-${95:   with_items: ${96:array}} 
+${78:   ${79:vm_start_on_hold}: ${80:"#"}}
+${81:   ${82:wait}: ${83:"#"}}
+${84:   ${85:wait_timeout}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
 ]]></content>
 	<tabTrigger>one_vm</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

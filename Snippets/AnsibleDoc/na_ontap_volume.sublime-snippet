@@ -5,6 +5,7 @@ ${1:# aggr_list: an array of names of aggregates to be used for
 # aggregate_name: The name of the aggregate the flexvol should 
 # atime_update: This is an advanced option, the default is True. 
 # auto_provision_as: Automatically provision a FlexGroup volume. 
+# comment: Sets a comment associated with the volume. 
 # efficiency_policy: Allows a storage efficiency policy to be set on 
 # encrypt: Whether or not to enable Volume Encryption. 
 # from_name: Name of the existing volume to be renamed to 
@@ -16,23 +17,30 @@ ${1:# aggr_list: an array of names of aggregates to be used for
 # junction_path: Junction path of the volume. To unmount, use 
 # language: Language to use for Volume Default uses SVM 
 # name: (required) The name of the volume to manage. 
+# nvfail_enabled: If true, the controller performs additional work 
 # ontapi: The ontap api version to use 
 # password: (required) Password for the specified user. 
 # percent_snapshot_space: Amount of space reserved for snapshot copies of 
 # policy: Name of the export policy. 
+# qos_adaptive_policy_group: Specifies a QoS adaptive policy group to be set 
+# qos_policy_group: Specifies a QoS policy group to be set on 
 # size: The size of the volume in (size_unit). Required 
 # size_unit: The unit used to interpret the size parameter. 
 # snapdir_access: This is an advanced option, the default is 
 # snapshot_policy: The name of the snapshot policy. the default 
 # space_guarantee: Space guarantee style for the volume. 
+# space_slo: Specifies the space SLO type for the volume. The 
 # state: Whether the specified volume should exist or 
+# tiering_policy: The tiering policy that is to be associated with 
 # time_out: time to wait for flexGroup creation, 
 # type: The volume type, either read-write (RW) or data- 
 # unix_permissions: Unix permission bits in octal or symbolic 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # volume_security_style: The security style associated with this volume. 
 # vserver: (required) Name of the vserver to use. 
+# vserver_dr_protection: Specifies the protection type for the volume in 
 # wait_for_completion: Set this parameter to 'true' for synchronous 
 }- name: ${2:Name for na_ontap_volume module.}
   na_ontap_volume:
@@ -41,41 +49,49 @@ ${6:   ${7:aggr_list_multiplier}: ${8:"#"}}
 ${9:   ${10:aggregate_name}: ${11:"#"}}
 ${12:   ${13:atime_update}: ${14:"#"}}
 ${15:   ${16:auto_provision_as}: ${17:"#"}}
-${18:   ${19:efficiency_policy}: ${20:"#"}}
-${21:   ${22:encrypt}: ${23:"#"}}
-${24:   ${25:from_name}: ${26:"#"}}
-${27:   ${28:hostname}: ${29:"#"}}
-${30:   ${31:http_port}: ${32:"#"}}
-${33:   ${34:https}: ${35:"#"}}
-${36:   ${37:is_infinite}: ${38:"#"}}
-${39:   ${40:is_online}: ${41:"#"}}
-${42:   ${43:junction_path}: ${44:"#"}}
-${45:   ${46:language}: ${47:"#"}}
-${48:   ${49:name}: ${50:"#"}}
-${51:   ${52:ontapi}: ${53:"#"}}
-${54:   ${55:password}: ${56:"#"}}
-${57:   ${58:percent_snapshot_space}: ${59:"#"}}
-${60:   ${61:policy}: ${62:"#"}}
-${63:   ${64:size}: ${65:"#"}}
-${66:   ${67:size_unit}: ${68:"#"}}
-${69:   ${70:snapdir_access}: ${71:"#"}}
-${72:   ${73:snapshot_policy}: ${74:"#"}}
-${75:   ${76:space_guarantee}: ${77:"#"}}
-${78:   ${79:state}: ${80:"#"}}
-${81:   ${82:time_out}: ${83:"#"}}
-${84:   ${85:type}: ${86:"#"}}
-${87:   ${88:unix_permissions}: ${89:"#"}}
-${90:   ${91:username}: ${92:"#"}}
-${93:   ${94:validate_certs}: ${95:"#"}}
-${96:   ${97:volume_security_style}: ${98:"#"}}
-${99:   ${100:vserver}: ${101:"#"}}
-${102:   ${103:wait_for_completion}: ${104:"#"}}
-${105:${106:   become: ${107:true}} 
-${108:   become_method: ${109:su}} 
-${110:   become_user: ${111:nobody}} 
-${112:   become_flags: ${113:"-s /bin/sh"}}} 
-${114:   when: ${115:variable is defined}} 
-${116:   with_items: ${117:array}} 
+${18:   ${19:comment}: ${20:"#"}}
+${21:   ${22:efficiency_policy}: ${23:"#"}}
+${24:   ${25:encrypt}: ${26:"#"}}
+${27:   ${28:from_name}: ${29:"#"}}
+${30:   ${31:hostname}: ${32:"#"}}
+${33:   ${34:http_port}: ${35:"#"}}
+${36:   ${37:https}: ${38:"#"}}
+${39:   ${40:is_infinite}: ${41:"#"}}
+${42:   ${43:is_online}: ${44:"#"}}
+${45:   ${46:junction_path}: ${47:"#"}}
+${48:   ${49:language}: ${50:"#"}}
+${51:   ${52:name}: ${53:"#"}}
+${54:   ${55:nvfail_enabled}: ${56:"#"}}
+${57:   ${58:ontapi}: ${59:"#"}}
+${60:   ${61:password}: ${62:"#"}}
+${63:   ${64:percent_snapshot_space}: ${65:"#"}}
+${66:   ${67:policy}: ${68:"#"}}
+${69:   ${70:qos_adaptive_policy_group}: ${71:"#"}}
+${72:   ${73:qos_policy_group}: ${74:"#"}}
+${75:   ${76:size}: ${77:"#"}}
+${78:   ${79:size_unit}: ${80:"#"}}
+${81:   ${82:snapdir_access}: ${83:"#"}}
+${84:   ${85:snapshot_policy}: ${86:"#"}}
+${87:   ${88:space_guarantee}: ${89:"#"}}
+${90:   ${91:space_slo}: ${92:"#"}}
+${93:   ${94:state}: ${95:"#"}}
+${96:   ${97:tiering_policy}: ${98:"#"}}
+${99:   ${100:time_out}: ${101:"#"}}
+${102:   ${103:type}: ${104:"#"}}
+${105:   ${106:unix_permissions}: ${107:"#"}}
+${108:   ${109:use_rest}: ${110:"#"}}
+${111:   ${112:username}: ${113:"#"}}
+${114:   ${115:validate_certs}: ${116:"#"}}
+${117:   ${118:volume_security_style}: ${119:"#"}}
+${120:   ${121:vserver}: ${122:"#"}}
+${123:   ${124:vserver_dr_protection}: ${125:"#"}}
+${126:   ${127:wait_for_completion}: ${128:"#"}}
+${129:${130:   become: ${131:true}} 
+${132:   become_method: ${133:su}} 
+${134:   become_user: ${135:nobody}} 
+${136:   become_flags: ${137:"-s /bin/sh"}}} 
+${138:   when: ${139:variable is defined}} 
+${140:   with_items: ${141:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_volume</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

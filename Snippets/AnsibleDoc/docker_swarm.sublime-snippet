@@ -29,7 +29,7 @@ ${1:# advertise_addr: Externally reachable address advertised to other
 # signing_ca_key: The desired signing CA key for all swarm node 
 # snapshot_interval: Number of logs entries between snapshot. Docker 
 # ssl_version: Provide a valid SSL version number. Default 
-# state: (required) Set to `present', to create/update a 
+# state: Set to `present', to create/update a new 
 # subnet_size: Default address pool subnet mask length. Only 
 # task_history_retention_limit: Maximum number of tasks history stored. Docker 
 # timeout: The maximum amount of time in seconds to wait on 

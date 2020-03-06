@@ -14,6 +14,7 @@ ${1:# autonegotiate_admin: Enables or disables Ethernet auto-negotiation of
 # ports: (required) Specifies the name of port(s). 
 # speed_admin: Specifies the user preferred speed setting of 
 # state: Whether the specified net port should exist or 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 }- name: ${2:Name for na_ontap_net_port module.}
@@ -32,14 +33,15 @@ ${33:   ${34:password}: ${35:"#"}}
 ${36:   ${37:ports}: ${38:"#"}}
 ${39:   ${40:speed_admin}: ${41:"#"}}
 ${42:   ${43:state}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:${52:   become: ${53:true}} 
-${54:   become_method: ${55:su}} 
-${56:   become_user: ${57:nobody}} 
-${58:   become_flags: ${59:"-s /bin/sh"}}} 
-${60:   when: ${61:variable is defined}} 
-${62:   with_items: ${63:array}} 
+${45:   ${46:use_rest}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_net_port</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

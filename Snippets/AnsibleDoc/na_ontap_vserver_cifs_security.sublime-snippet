@@ -1,0 +1,60 @@
+<snippet>
+<content><![CDATA[
+${1:# hostname: (required) The hostname or IP address of the 
+# http_port: Override the default port (80 or 443) with this 
+# https: Enable and disable https 
+# is_aes_encryption_enabled: Determine whether AES-128 and AES-256 encryption 
+# is_password_complexity_required: Determine whether password complexity is 
+# is_signing_required: Determine whether signing is required for 
+# is_smb_encryption_required: Determine whether SMB encryption is required for 
+# kerberos_clock_skew: The clock skew in minutes is the tolerance for 
+# kerberos_kdc_timeout: Determine the timeout value in seconds for KDC 
+# kerberos_renew_age: Determine the maximum amount of time in days for 
+# kerberos_ticket_age: Determine the maximum amount of time in hours 
+# lm_compatibility_level: Determine the LM compatibility level. 
+# ontapi: The ontap api version to use 
+# password: (required) Password for the specified user. 
+# referral_enabled_for_ad_ldap: Determine whether LDAP referral chasing is 
+# session_security_for_ad_ldap: Determine the level of security required for 
+# smb1_enabled_for_dc_connections: Determine if SMB version 1 is used for 
+# smb2_enabled_for_dc_connections: Determine if SMB version 2 is used for 
+# use_rest: REST API if supported by the target system for 
+# use_start_tls_for_ad_ldap: Determine whether to use start_tls for AD LDAP 
+# username: (required) This can be a Cluster-scoped or SVM- 
+# validate_certs: If set to `no', the SSL certificates will not be 
+# vserver: (required) name of the vserver. 
+}- name: ${2:Name for na_ontap_vserver_cifs_security module.}
+  na_ontap_vserver_cifs_security:
+${3:   ${4:hostname}: ${5:"#"}}
+${6:   ${7:http_port}: ${8:"#"}}
+${9:   ${10:https}: ${11:"#"}}
+${12:   ${13:is_aes_encryption_enabled}: ${14:"#"}}
+${15:   ${16:is_password_complexity_required}: ${17:"#"}}
+${18:   ${19:is_signing_required}: ${20:"#"}}
+${21:   ${22:is_smb_encryption_required}: ${23:"#"}}
+${24:   ${25:kerberos_clock_skew}: ${26:"#"}}
+${27:   ${28:kerberos_kdc_timeout}: ${29:"#"}}
+${30:   ${31:kerberos_renew_age}: ${32:"#"}}
+${33:   ${34:kerberos_ticket_age}: ${35:"#"}}
+${36:   ${37:lm_compatibility_level}: ${38:"#"}}
+${39:   ${40:ontapi}: ${41:"#"}}
+${42:   ${43:password}: ${44:"#"}}
+${45:   ${46:referral_enabled_for_ad_ldap}: ${47:"#"}}
+${48:   ${49:session_security_for_ad_ldap}: ${50:"#"}}
+${51:   ${52:smb1_enabled_for_dc_connections}: ${53:"#"}}
+${54:   ${55:smb2_enabled_for_dc_connections}: ${56:"#"}}
+${57:   ${58:use_rest}: ${59:"#"}}
+${60:   ${61:use_start_tls_for_ad_ldap}: ${62:"#"}}
+${63:   ${64:username}: ${65:"#"}}
+${66:   ${67:validate_certs}: ${68:"#"}}
+${69:   ${70:vserver}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
+]]></content>
+	<tabTrigger>na_ontap_vserver_cifs_security</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

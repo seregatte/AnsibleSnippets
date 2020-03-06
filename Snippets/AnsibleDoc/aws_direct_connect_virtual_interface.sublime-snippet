@@ -10,7 +10,7 @@ ${1:# address_type: The type of IP address for the BGP peer.
 # customer_address: The customer address CIDR with which to create 
 # debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
 # ec2_url: Url to use to connect to EC2 or your Eucalyptus 
-# id_to_associate: The ID of the link aggrecation group or 
+# id_to_associate: The ID of the link aggregation group or 
 # name: The name of the virtual interface. 
 # profile: Uses a boto profile. Only works with boto >= 
 # public: The type of virtual interface. 

@@ -8,7 +8,7 @@ ${1:# as: (required) AS number
 # bgp: This is an overloaded bgp fifth argument. Usage 
 # bgp: This is an overloaded bgp sixth argument. Usage 
 # bgp: This is an overloaded bgp seventh argument. Use 
-# bgp: This is an overloaded bgp eigth argument. Usage 
+# bgp: This is an overloaded bgp eight argument. Usage 
 # device: (required) This specifies the type of device 
 # enable: Configures the password used to enter Global 
 # host: (required) This is the variable used to search 

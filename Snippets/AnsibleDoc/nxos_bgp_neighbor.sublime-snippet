@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# asn: (required) BGP autonomous system number. Valid 
+# bfd: Enables/Disables BFD for a given neighbor. 
 # capability_negotiation: Configure whether or not to negotiate capability 
 # connected_check: Configure whether or not to check for directly 
 # description: Description of the neighbor. 
@@ -27,35 +28,36 @@ ${1:# asn: (required) BGP autonomous system number. Valid
 }- name: ${2:Name for nxos_bgp_neighbor module.}
   nxos_bgp_neighbor:
 ${3:   ${4:asn}: ${5:"#"}}
-${6:   ${7:capability_negotiation}: ${8:"#"}}
-${9:   ${10:connected_check}: ${11:"#"}}
-${12:   ${13:description}: ${14:"#"}}
-${15:   ${16:dynamic_capability}: ${17:"#"}}
-${18:   ${19:ebgp_multihop}: ${20:"#"}}
-${21:   ${22:local_as}: ${23:"#"}}
-${24:   ${25:log_neighbor_changes}: ${26:"#"}}
-${27:   ${28:low_memory_exempt}: ${29:"#"}}
-${30:   ${31:maximum_peers}: ${32:"#"}}
-${33:   ${34:neighbor}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:pwd}: ${41:"#"}}
-${42:   ${43:pwd_type}: ${44:"#"}}
-${45:   ${46:remote_as}: ${47:"#"}}
-${48:   ${49:remove_private_as}: ${50:"#"}}
-${51:   ${52:shutdown}: ${53:"#"}}
-${54:   ${55:state}: ${56:"#"}}
-${57:   ${58:suppress_4_byte_as}: ${59:"#"}}
-${60:   ${61:timers_holdtime}: ${62:"#"}}
-${63:   ${64:timers_keepalive}: ${65:"#"}}
-${66:   ${67:transport_passive_only}: ${68:"#"}}
-${69:   ${70:update_source}: ${71:"#"}}
-${72:   ${73:vrf}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${6:   ${7:bfd}: ${8:"#"}}
+${9:   ${10:capability_negotiation}: ${11:"#"}}
+${12:   ${13:connected_check}: ${14:"#"}}
+${15:   ${16:description}: ${17:"#"}}
+${18:   ${19:dynamic_capability}: ${20:"#"}}
+${21:   ${22:ebgp_multihop}: ${23:"#"}}
+${24:   ${25:local_as}: ${26:"#"}}
+${27:   ${28:log_neighbor_changes}: ${29:"#"}}
+${30:   ${31:low_memory_exempt}: ${32:"#"}}
+${33:   ${34:maximum_peers}: ${35:"#"}}
+${36:   ${37:neighbor}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:pwd}: ${44:"#"}}
+${45:   ${46:pwd_type}: ${47:"#"}}
+${48:   ${49:remote_as}: ${50:"#"}}
+${51:   ${52:remove_private_as}: ${53:"#"}}
+${54:   ${55:shutdown}: ${56:"#"}}
+${57:   ${58:state}: ${59:"#"}}
+${60:   ${61:suppress_4_byte_as}: ${62:"#"}}
+${63:   ${64:timers_holdtime}: ${65:"#"}}
+${66:   ${67:timers_keepalive}: ${68:"#"}}
+${69:   ${70:transport_passive_only}: ${71:"#"}}
+${72:   ${73:update_source}: ${74:"#"}}
+${75:   ${76:vrf}: ${77:"#"}}
+${78:${79:   become: ${80:true}} 
+${81:   become_method: ${82:su}} 
+${83:   become_user: ${84:nobody}} 
+${85:   become_flags: ${86:"-s /bin/sh"}}} 
+${87:   when: ${88:variable is defined}} 
+${89:   with_items: ${90:array}} 
 ]]></content>
 	<tabTrigger>nxos_bgp_neighbor</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

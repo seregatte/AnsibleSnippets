@@ -1,0 +1,52 @@
+<snippet>
+<content><![CDATA[
+${1:# ad_user: Active Directory username. Use when 
+# adfs_authority_url: Azure AD authority url. Use when authenticating 
+# api_profile: Selects an API profile to use when communicating 
+# auth_source: Controls the source of the credentials to use 
+# cert_validation_mode: Controls the certificate validation behavior for 
+# client_id: Azure client ID. Use when authenticating with a 
+# cloud_environment: For cloud environments other than the US public 
+# name: Limit results to a specific servicebus. 
+# namespace: Servicebus namespace name. A namespace is a 
+# password: Active Directory user password. Use when 
+# profile: Security profile found in ~/.azure/credentials 
+# resource_group: Limit results in a specific resource group. 
+# secret: Azure client secret. Use when authenticating 
+# show_sas_policies: Whether to show the SAS policies. Not support 
+# subscription_id: Your Azure subscription Id. 
+# tags: Limit results by providing a list of tags. 
+# tenant: Azure tenant ID. Use when authenticating with a 
+# topic: Topic name. Required when `type=subscription'. 
+# type: Type of the resource. 
+}- name: ${2:Name for azure_rm_servicebus_info module.}
+  azure_rm_servicebus_info:
+${3:   ${4:ad_user}: ${5:"#"}}
+${6:   ${7:adfs_authority_url}: ${8:"#"}}
+${9:   ${10:api_profile}: ${11:"#"}}
+${12:   ${13:auth_source}: ${14:"#"}}
+${15:   ${16:cert_validation_mode}: ${17:"#"}}
+${18:   ${19:client_id}: ${20:"#"}}
+${21:   ${22:cloud_environment}: ${23:"#"}}
+${24:   ${25:name}: ${26:"#"}}
+${27:   ${28:namespace}: ${29:"#"}}
+${30:   ${31:password}: ${32:"#"}}
+${33:   ${34:profile}: ${35:"#"}}
+${36:   ${37:resource_group}: ${38:"#"}}
+${39:   ${40:secret}: ${41:"#"}}
+${42:   ${43:show_sas_policies}: ${44:"#"}}
+${45:   ${46:subscription_id}: ${47:"#"}}
+${48:   ${49:tags}: ${50:"#"}}
+${51:   ${52:tenant}: ${53:"#"}}
+${54:   ${55:topic}: ${56:"#"}}
+${57:   ${58:type}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
+]]></content>
+	<tabTrigger>azure_rm_servicebus_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

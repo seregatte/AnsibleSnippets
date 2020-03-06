@@ -19,6 +19,7 @@ ${1:# access_modes: Contains the desired access modes the volume
 # name: (required) Use to specify a PVC object name. 
 # namespace: (required) Use to specify a PVC object 
 # password: Provide a password for authenticating with the 
+# proxy: The URL of an HTTP proxy to use for the 
 # resource_definition: A partial YAML definition of the PVC object 
 # selector: A label query over volumes to consider for 
 # size: How much storage to allocate to the PVC. 
@@ -52,24 +53,25 @@ ${48:   ${49:patch}: ${50:"#"}}
 ${51:   ${52:name}: ${53:"#"}}
 ${54:   ${55:namespace}: ${56:"#"}}
 ${57:   ${58:password}: ${59:"#"}}
-${60:   ${61:resource_definition}: ${62:"#"}}
-${63:   ${64:selector}: ${65:"#"}}
-${66:   ${67:size}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:storage_class_name}: ${74:"#"}}
-${75:   ${76:volumes}: ${77:"#"}}
-${78:   ${79:username}: ${80:"#"}}
-${81:   ${82:validate_certs}: ${83:"#"}}
-${84:   ${85:volume_mode}: ${86:"#"}}
-${87:   ${88:volume_name}: ${89:"#"}}
-${90:   ${91:wait}: ${92:"#"}}
-${93:   ${94:wait_timeout}: ${95:"#"}}
-${96:${97:   become: ${98:true}} 
-${99:   become_method: ${100:su}} 
-${101:   become_user: ${102:nobody}} 
-${103:   become_flags: ${104:"-s /bin/sh"}}} 
-${105:   when: ${106:variable is defined}} 
-${107:   with_items: ${108:array}} 
+${60:   ${61:proxy}: ${62:"#"}}
+${63:   ${64:resource_definition}: ${65:"#"}}
+${66:   ${67:selector}: ${68:"#"}}
+${69:   ${70:size}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:storage_class_name}: ${77:"#"}}
+${78:   ${79:volumes}: ${80:"#"}}
+${81:   ${82:username}: ${83:"#"}}
+${84:   ${85:validate_certs}: ${86:"#"}}
+${87:   ${88:volume_mode}: ${89:"#"}}
+${90:   ${91:volume_name}: ${92:"#"}}
+${93:   ${94:wait}: ${95:"#"}}
+${96:   ${97:wait_timeout}: ${98:"#"}}
+${99:${100:   become: ${101:true}} 
+${102:   become_method: ${103:su}} 
+${104:   become_user: ${105:nobody}} 
+${106:   become_flags: ${107:"-s /bin/sh"}}} 
+${108:   when: ${109:variable is defined}} 
+${110:   with_items: ${111:array}} 
 ]]></content>
 	<tabTrigger>kubevirt_pvc</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

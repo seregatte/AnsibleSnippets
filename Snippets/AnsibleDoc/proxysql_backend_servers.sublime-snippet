@@ -12,7 +12,7 @@ ${1:# comment: Text field that can be used for any purposed
 # login_user: The username used to authenticate to ProxySQL 
 # max_connections: The maximum number of connections ProxySQL will 
 # max_latency_ms: Ping time is monitored regularly. If a host has 
-# max_replication_lag: If greater than 0, ProxySQL will reguarly 
+# max_replication_lag: If greater than 0, ProxySQL will regularly 
 # port: The port at which the mysqld instance can be 
 # save_to_disk: Save config to sqlite db on disk to persist the 
 # state: When `present' - adds the host, when `absent' - 

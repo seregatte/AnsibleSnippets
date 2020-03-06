@@ -9,7 +9,7 @@ ${1:# acknowledge_default_message: Update operation (known as "Acknowledge
 # default_subject: Problem message default subject. 
 # esc_period: Default operation step duration. Must be greater 
 # eval_type: Filter condition evaluation method. Defaults to 
-# event_source: (required) Type of events that the action will 
+# event_source: Type of events that the action will handle. 
 # formula: User-defined expression to be used for 
 # http_login_password: Basic Auth password 
 # http_login_user: (required) Basic Auth login 

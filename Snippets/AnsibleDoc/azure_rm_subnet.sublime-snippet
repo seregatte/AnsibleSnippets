@@ -12,7 +12,7 @@ ${1:# ad_user: Active Directory username. Use when
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) Name of resource group. 
-# route_table: The reference of the RouteTable resource. It can 
+# route_table: The reference of the RouteTable resource. Can be 
 # secret: Azure client secret. Use when authenticating 
 # security_group: Existing security group with which to associate 
 # service_endpoints: An array of service endpoints. 

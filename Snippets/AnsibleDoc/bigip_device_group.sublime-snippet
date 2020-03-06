@@ -6,15 +6,10 @@ ${1:# auto_sync: Indicates whether configuration synchronization
 # max_incremental_sync_size: Specifies the size of the changes cache for 
 # name: (required) Specifies the name of the device 
 # network_failover: Indicates whether failover occurs over the 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # save_on_auto_sync: When performing an auto-sync, specifies whether 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
 # state: When `state' is `present', ensures the device 
 # type: Specifies that the type of group. A `sync- 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_device_group module.}
   bigip_device_group:
 ${3:   ${4:auto_sync}: ${5:"#"}}
@@ -23,21 +18,16 @@ ${9:   ${10:full_sync}: ${11:"#"}}
 ${12:   ${13:max_incremental_sync_size}: ${14:"#"}}
 ${15:   ${16:name}: ${17:"#"}}
 ${18:   ${19:network_failover}: ${20:"#"}}
-${21:   ${22:password}: ${23:"#"}}
-${24:   ${25:provider}: ${26:"#"}}
-${27:   ${28:save_on_auto_sync}: ${29:"#"}}
-${30:   ${31:server}: ${32:"#"}}
-${33:   ${34:server_port}: ${35:"#"}}
-${36:   ${37:state}: ${38:"#"}}
-${39:   ${40:type}: ${41:"#"}}
-${42:   ${43:user}: ${44:"#"}}
-${45:   ${46:validate_certs}: ${47:"#"}}
-${48:${49:   become: ${50:true}} 
-${51:   become_method: ${52:su}} 
-${53:   become_user: ${54:nobody}} 
-${55:   become_flags: ${56:"-s /bin/sh"}}} 
-${57:   when: ${58:variable is defined}} 
-${59:   with_items: ${60:array}} 
+${21:   ${22:provider}: ${23:"#"}}
+${24:   ${25:save_on_auto_sync}: ${26:"#"}}
+${27:   ${28:state}: ${29:"#"}}
+${30:   ${31:type}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>bigip_device_group</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

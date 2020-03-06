@@ -1,16 +1,16 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_password: The password to use for authentication against 
-# api_token: Gitlab token for logging in. 
+# api_token: GitLab token for logging in. 
 # api_url: The resolvable endpoint for the API 
 # api_username: The username to use for authentication against 
 # description: A description for the group. 
-# login_password: Gitlab password for login_user 
-# login_user: Gitlab user name. 
+# login_password: GitLab password for login_user 
+# login_user: GitLab user name. 
 # name: (required) Name of the group you want to create. 
 # parent: Allow to create subgroups Id or Full path of 
 # path: The path of the group you want to create, this 
-# server_url: (required) The URL of the Gitlab server, with 
+# server_url: The URL of the GitLab server, with protocol 
 # state: create or delete group. Possible values are 
 # validate_certs: Whether or not to validate SSL certs when 
 # visibility: Default visibility of the group 

@@ -3,7 +3,7 @@
 ${1:# pn_cliswitch: Target switch to run the CLI on. 
 # pn_cos: CoS priority. 
 # pn_max_bw_limit: Maximum b/w in percentage. 
-# pn_min_bw_guarantee: Minimum b/w in precentage. 
+# pn_min_bw_guarantee: Minimum b/w in percentage. 
 # pn_port: physical port number. 
 # pn_weight: Scheduling weight (1 to 127) after b/w guarantee 
 # state: (required) State the action to perform. Use 

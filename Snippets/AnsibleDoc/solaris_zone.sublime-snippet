@@ -4,7 +4,7 @@ ${1:# attach_options: Extra options to the zoneadm attach command. For
 # config: The zonecfg configuration commands for this 
 # create_options: Extra options to the zonecfg(1M) create command. 
 # install_options: Extra options to the zoneadm(1M) install 
-# name: (required) Zone name. 
+# name: (required) Zone name. A zone name must be unique 
 # path: The path where the zone will be created. This is 
 # root_password: The password hash for the root account. If not 
 # sparse: Whether to create a sparse (`true') or whole 

@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# depth: Specifiies recurion depth. 
+${1:# depth: Specifies recursion depth. 
 # name: (required) ZFS dataset name. 
 # parsable: Specifies if property values should be displayed 
 # properties: Specifies which dataset properties should be 

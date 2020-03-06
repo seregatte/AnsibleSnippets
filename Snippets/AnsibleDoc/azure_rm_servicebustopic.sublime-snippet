@@ -15,14 +15,14 @@ ${1:# ad_user: Active Directory username. Use when
 # enable_express: Value that indicates whether Express Entities 
 # enable_partitioning: A value that indicates whether the topic is to 
 # max_size_in_mb: The maximum size of the topic in megabytes, 
-# name: (required) name of the topic. 
+# name: (required) Name of the topic. 
 # namespace: (required) Servicebus namespace name. A 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # requires_duplicate_detection: A value indicating if this topic requires 
-# resource_group: (required) name of resource group. 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
-# state: Assert the state of the topic. Use 'present' to 
+# state: Assert the state of the topic. Use `present' to 
 # status: Status of the entity. 
 # subscription_id: Your Azure subscription Id. 
 # support_ordering: Value that indicates whether the topic supports 

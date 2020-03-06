@@ -1,31 +1,21 @@
 <snippet>
 <content><![CDATA[
-${1:# password: (required) The password for the user account 
-# provider: A dict object containing connection details. 
-# server: (required) The BIG-IP host. You may omit this 
-# server_port: The BIG-IP server port. You may omit this option 
+${1:# provider: A dict object containing connection details. 
 # synchronization: Specifies whether this system is a member of a 
 # synchronization_group_name: Specifies the name of the synchronization group 
 # synchronize_zone_files: Specifies that the system synchronizes Domain 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_gtm_global module.}
   bigip_gtm_global:
-${3:   ${4:password}: ${5:"#"}}
-${6:   ${7:provider}: ${8:"#"}}
-${9:   ${10:server}: ${11:"#"}}
-${12:   ${13:server_port}: ${14:"#"}}
-${15:   ${16:synchronization}: ${17:"#"}}
-${18:   ${19:synchronization_group_name}: ${20:"#"}}
-${21:   ${22:synchronize_zone_files}: ${23:"#"}}
-${24:   ${25:user}: ${26:"#"}}
-${27:   ${28:validate_certs}: ${29:"#"}}
-${30:${31:   become: ${32:true}} 
-${33:   become_method: ${34:su}} 
-${35:   become_user: ${36:nobody}} 
-${37:   become_flags: ${38:"-s /bin/sh"}}} 
-${39:   when: ${40:variable is defined}} 
-${41:   with_items: ${42:array}} 
+${3:   ${4:provider}: ${5:"#"}}
+${6:   ${7:synchronization}: ${8:"#"}}
+${9:   ${10:synchronization_group_name}: ${11:"#"}}
+${12:   ${13:synchronize_zone_files}: ${14:"#"}}
+${15:${16:   become: ${17:true}} 
+${18:   become_method: ${19:su}} 
+${20:   become_user: ${21:nobody}} 
+${22:   become_flags: ${23:"-s /bin/sh"}}} 
+${24:   when: ${25:variable is defined}} 
+${26:   with_items: ${27:array}} 
 ]]></content>
 	<tabTrigger>bigip_gtm_global</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

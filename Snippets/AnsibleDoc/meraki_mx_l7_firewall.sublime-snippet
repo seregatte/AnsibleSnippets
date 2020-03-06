@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_key: (required) Authentication key provided by the 
+# categories: When `True', specifies that applications and 
+# host: Hostname for Meraki dashboard. Can be used to 
+# internal_error_retry_time: Number of seconds to retry if server returns an 
+# net_id: ID of network which MX firewall is in. 
+# net_name: Name of network which MX firewall is in. 
+# org_id: ID of organization. 
+# org_name: Name of organization. 
+# output_format: Instructs module whether response keys should be 
+# output_level: Set amount of debug output during module 
+# rate_limit_retry_time: Number of seconds to retry if rate limiter is 
+# rules: List of layer 7 firewall rules. 
+# state: Query or modify a firewall rule. 
+# timeout: Time to timeout for HTTP requests. 
+# use_https: If `no', it will use HTTP. Otherwise it will use 
+# use_proxy: If `no', it will not use a proxy, even if one is 
+# validate_certs: Whether to validate HTTP certificates. 
+}- name: ${2:Name for meraki_mx_l7_firewall module.}
+  meraki_mx_l7_firewall:
+${3:   ${4:auth_key}: ${5:"#"}}
+${6:   ${7:categories}: ${8:"#"}}
+${9:   ${10:host}: ${11:"#"}}
+${12:   ${13:internal_error_retry_time}: ${14:"#"}}
+${15:   ${16:net_id}: ${17:"#"}}
+${18:   ${19:net_name}: ${20:"#"}}
+${21:   ${22:org_id}: ${23:"#"}}
+${24:   ${25:org_name}: ${26:"#"}}
+${27:   ${28:output_format}: ${29:"#"}}
+${30:   ${31:output_level}: ${32:"#"}}
+${33:   ${34:rate_limit_retry_time}: ${35:"#"}}
+${36:   ${37:rules}: ${38:"#"}}
+${39:   ${40:state}: ${41:"#"}}
+${42:   ${43:timeout}: ${44:"#"}}
+${45:   ${46:use_https}: ${47:"#"}}
+${48:   ${49:use_proxy}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>meraki_mx_l7_firewall</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

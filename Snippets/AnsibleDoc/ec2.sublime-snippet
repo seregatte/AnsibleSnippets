@@ -19,7 +19,7 @@ ${1:# assign_public_ip: When provisioning within vpc, assign a public IP
 # instance_tags: A hash/dictionary of tags to add to the new 
 # instance_type: (required) Instance type to use for the 
 # kernel: Kernel `eki' to use for the instance. 
-# key_name: Key pair to use on the instance. 
+# key_name: key pair to use on the instance. The SSH key 
 # monitoring: Enable detailed monitoring (CloudWatch) for 
 # network_interfaces: A list of existing network interfaces to attach 
 # placement_group: Placement group for the instance when using EC2 

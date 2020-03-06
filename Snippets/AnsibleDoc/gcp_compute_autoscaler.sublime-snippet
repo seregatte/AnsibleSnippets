@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# auth_kind: (required) The type of credential used. 
+# autoscaling_policy: (required) The configuration parameters for the 
+# description: An optional description of this resource. 
+# env_type: Specifies which Ansible environment you're 
+# name: (required) Name of the resource. The name must 
+# project: The Google Cloud Platform project to use. 
+# scopes: Array of scopes to be used. 
+# service_account_contents: The contents of a Service Account JSON file, 
+# service_account_email: An optional service account email address if 
+# service_account_file: The path of a Service Account JSON file if 
+# state: Whether the given object should exist in GCP 
+# target: (required) URL of the managed instance group 
+# zone: (required) URL of the zone where the instance 
+}- name: ${2:Name for gcp_compute_autoscaler module.}
+  gcp_compute_autoscaler:
+${3:   ${4:auth_kind}: ${5:"#"}}
+${6:   ${7:autoscaling_policy}: ${8:"#"}}
+${9:   ${10:description}: ${11:"#"}}
+${12:   ${13:env_type}: ${14:"#"}}
+${15:   ${16:name}: ${17:"#"}}
+${18:   ${19:project}: ${20:"#"}}
+${21:   ${22:scopes}: ${23:"#"}}
+${24:   ${25:service_account_contents}: ${26:"#"}}
+${27:   ${28:service_account_email}: ${29:"#"}}
+${30:   ${31:service_account_file}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:target}: ${38:"#"}}
+${39:   ${40:zone}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>gcp_compute_autoscaler</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

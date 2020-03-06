@@ -14,7 +14,7 @@ ${1:# boot_order: This option uses complex arguments and is a list
 # name: The name of the VM. 
 # osver: The operating system option in RHEV/oVirt. 
 # password: The password for user authentication. 
-# port: The port on which the API is reacheable. 
+# port: The port on which the API is reachable. 
 # server: The name/IP of your RHEV-m/oVirt instance. 
 # state: This serves to create/remove/update or 
 # timeout: The timeout you wish to define for power 

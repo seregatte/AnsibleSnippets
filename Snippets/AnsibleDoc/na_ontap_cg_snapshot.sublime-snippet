@@ -9,6 +9,7 @@ ${1:# hostname: (required) The hostname or IP address of the
 # snapshot: (required) The provided name of the snapshot 
 # state: If you want to create a snapshot. 
 # timeout: Timeout selector. 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # volumes: (required) A list of volumes in this filer that 
@@ -24,16 +25,17 @@ ${18:   ${19:snapmirror_label}: ${20:"#"}}
 ${21:   ${22:snapshot}: ${23:"#"}}
 ${24:   ${25:state}: ${26:"#"}}
 ${27:   ${28:timeout}: ${29:"#"}}
-${30:   ${31:username}: ${32:"#"}}
-${33:   ${34:validate_certs}: ${35:"#"}}
-${36:   ${37:volumes}: ${38:"#"}}
-${39:   ${40:vserver}: ${41:"#"}}
-${42:${43:   become: ${44:true}} 
-${45:   become_method: ${46:su}} 
-${47:   become_user: ${48:nobody}} 
-${49:   become_flags: ${50:"-s /bin/sh"}}} 
-${51:   when: ${52:variable is defined}} 
-${53:   with_items: ${54:array}} 
+${30:   ${31:use_rest}: ${32:"#"}}
+${33:   ${34:username}: ${35:"#"}}
+${36:   ${37:validate_certs}: ${38:"#"}}
+${39:   ${40:volumes}: ${41:"#"}}
+${42:   ${43:vserver}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_cg_snapshot</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

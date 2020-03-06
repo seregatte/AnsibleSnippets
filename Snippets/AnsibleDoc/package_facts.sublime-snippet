@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# manager: The package manager used by the system so we can 
-# strategy: This option controls how the module queres the 
+# strategy: This option controls how the module queries the 
 }- name: ${2:Name for package_facts module.}
   package_facts:
 ${3:   ${4:manager}: ${5:"#"}}

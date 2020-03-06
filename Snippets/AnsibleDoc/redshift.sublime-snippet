@@ -22,7 +22,7 @@ ${1:# allow_version_upgrade: flag to determinate if upgrade of version is
 # node_type: The node type of the cluster. Must be specified 
 # number_of_nodes: Number of nodes. Only used when cluster_type 
 # password: Master database password. Used only when 
-# port: which port the cluster is listining 
+# port: which port the cluster is listening 
 # preferred_maintenance_window: maintenance window 
 # profile: Uses a boto profile. Only works with boto >= 
 # publicly_accessible: if the cluster is accessible publicly or not 

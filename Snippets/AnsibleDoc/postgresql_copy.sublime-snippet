@@ -1,0 +1,46 @@
+<snippet>
+<content><![CDATA[
+${1:# ca_cert: Specifies the name of a file containing SSL 
+# columns: List of column names for the src/dst table to 
+# copy_from: Copy data from a file to a table (appending the 
+# copy_to: Copy the contents of a table to a file. Can also 
+# db: Name of database to connect to. 
+# dst: Copy data to `dst=tablename' from 
+# login_host: Host running the database. 
+# login_password: The password used to authenticate with. 
+# login_unix_socket: Path to a Unix domain socket for local 
+# login_user: The username used to authenticate with. 
+# options: Options of COPY command. See the full list of 
+# port: Database port to connect to. 
+# program: Mark `src'/`dst' as a program. Data will be 
+# session_role: Switch to session_role after connecting. The 
+# src: Copy data from `copy_from' to `src=tablename'. 
+# ssl_mode: Determines whether or with what priority a 
+}- name: ${2:Name for postgresql_copy module.}
+  postgresql_copy:
+${3:   ${4:ca_cert}: ${5:"#"}}
+${6:   ${7:columns}: ${8:"#"}}
+${9:   ${10:copy_from}: ${11:"#"}}
+${12:   ${13:copy_to}: ${14:"#"}}
+${15:   ${16:db}: ${17:"#"}}
+${18:   ${19:dst}: ${20:"#"}}
+${21:   ${22:login_host}: ${23:"#"}}
+${24:   ${25:login_password}: ${26:"#"}}
+${27:   ${28:login_unix_socket}: ${29:"#"}}
+${30:   ${31:login_user}: ${32:"#"}}
+${33:   ${34:options}: ${35:"#"}}
+${36:   ${37:port}: ${38:"#"}}
+${39:   ${40:program}: ${41:"#"}}
+${42:   ${43:session_role}: ${44:"#"}}
+${45:   ${46:src}: ${47:"#"}}
+${48:   ${49:ssl_mode}: ${50:"#"}}
+${51:${52:   become: ${53:true}} 
+${54:   become_method: ${55:su}} 
+${56:   become_user: ${57:nobody}} 
+${58:   become_flags: ${59:"-s /bin/sh"}}} 
+${60:   when: ${61:variable is defined}} 
+${62:   with_items: ${63:array}} 
+]]></content>
+	<tabTrigger>postgresql_copy</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

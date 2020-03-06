@@ -3,19 +3,21 @@
 ${1:# database: (required) The name of a getent database 
 # fail_key: If a supplied key is missing this will make the 
 # key: Key from which to return values from the 
+# service: Override all databases with the specified 
 # split: Character used to split the database values into 
 }- name: ${2:Name for getent module.}
   getent:
 ${3:   ${4:database}: ${5:"#"}}
 ${6:   ${7:fail_key}: ${8:"#"}}
 ${9:   ${10:key}: ${11:"#"}}
-${12:   ${13:split}: ${14:"#"}}
-${15:${16:   become: ${17:true}} 
-${18:   become_method: ${19:su}} 
-${20:   become_user: ${21:nobody}} 
-${22:   become_flags: ${23:"-s /bin/sh"}}} 
-${24:   when: ${25:variable is defined}} 
-${26:   with_items: ${27:array}} 
+${12:   ${13:service}: ${14:"#"}}
+${15:   ${16:split}: ${17:"#"}}
+${18:${19:   become: ${20:true}} 
+${21:   become_method: ${22:su}} 
+${23:   become_user: ${24:nobody}} 
+${25:   become_flags: ${26:"-s /bin/sh"}}} 
+${27:   when: ${28:variable is defined}} 
+${29:   with_items: ${30:array}} 
 ]]></content>
 	<tabTrigger>getent</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

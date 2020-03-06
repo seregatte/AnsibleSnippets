@@ -8,7 +8,7 @@ ${1:# ad_user: Active Directory username. Use when
 # cert_validation_mode: Controls the certificate validation behavior for 
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
-# location: Valid azure location. Defaults to location of 
+# location: Valid Azure location. Defaults to location of 
 # name: (required) Name of the availability set. 
 # password: Active Directory user password. Use when 
 # platform_fault_domain_count: Fault domains define the group of virtual 

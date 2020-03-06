@@ -6,6 +6,7 @@ ${1:# api_context: Avi API context that includes current session ID
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # cloud_ref: It is a reference to an object of type cloud. 
 # container_mode: Boolean flag to set container_mode. Default 
 # container_type: Enum options - container_type_bridge, 
@@ -37,35 +38,36 @@ ${9:   ${10:availability_zone}: ${11:"#"}}
 ${12:   ${13:avi_api_patch_op}: ${14:"#"}}
 ${15:   ${16:avi_api_update_method}: ${17:"#"}}
 ${18:   ${19:avi_credentials}: ${20:"#"}}
-${21:   ${22:cloud_ref}: ${23:"#"}}
-${24:   ${25:container_mode}: ${26:"#"}}
-${27:   ${28:container_type}: ${29:"#"}}
-${30:   ${31:controller}: ${32:"#"}}
-${33:   ${34:controller_created}: ${35:"#"}}
-${36:   ${37:controller_ip}: ${38:"#"}}
-${39:   ${40:data_vnics}: ${41:"#"}}
-${42:   ${43:enable_state}: ${44:"#"}}
-${45:   ${46:flavor}: ${47:"#"}}
-${48:   ${49:host_ref}: ${50:"#"}}
-${51:   ${52:hypervisor}: ${53:"#"}}
-${54:   ${55:mgmt_vnic}: ${56:"#"}}
-${57:   ${58:name}: ${59:"#"}}
-${60:   ${61:password}: ${62:"#"}}
-${63:   ${64:resources}: ${65:"#"}}
-${66:   ${67:se_group_ref}: ${68:"#"}}
-${69:   ${70:state}: ${71:"#"}}
-${72:   ${73:tenant}: ${74:"#"}}
-${75:   ${76:tenant_ref}: ${77:"#"}}
-${78:   ${79:tenant_uuid}: ${80:"#"}}
-${81:   ${82:url}: ${83:"#"}}
-${84:   ${85:username}: ${86:"#"}}
-${87:   ${88:uuid}: ${89:"#"}}
-${90:${91:   become: ${92:true}} 
-${93:   become_method: ${94:su}} 
-${95:   become_user: ${96:nobody}} 
-${97:   become_flags: ${98:"-s /bin/sh"}}} 
-${99:   when: ${100:variable is defined}} 
-${101:   with_items: ${102:array}} 
+${21:   ${22:avi_disable_session_cache_as_fact}: ${23:"#"}}
+${24:   ${25:cloud_ref}: ${26:"#"}}
+${27:   ${28:container_mode}: ${29:"#"}}
+${30:   ${31:container_type}: ${32:"#"}}
+${33:   ${34:controller}: ${35:"#"}}
+${36:   ${37:controller_created}: ${38:"#"}}
+${39:   ${40:controller_ip}: ${41:"#"}}
+${42:   ${43:data_vnics}: ${44:"#"}}
+${45:   ${46:enable_state}: ${47:"#"}}
+${48:   ${49:flavor}: ${50:"#"}}
+${51:   ${52:host_ref}: ${53:"#"}}
+${54:   ${55:hypervisor}: ${56:"#"}}
+${57:   ${58:mgmt_vnic}: ${59:"#"}}
+${60:   ${61:name}: ${62:"#"}}
+${63:   ${64:password}: ${65:"#"}}
+${66:   ${67:resources}: ${68:"#"}}
+${69:   ${70:se_group_ref}: ${71:"#"}}
+${72:   ${73:state}: ${74:"#"}}
+${75:   ${76:tenant}: ${77:"#"}}
+${78:   ${79:tenant_ref}: ${80:"#"}}
+${81:   ${82:tenant_uuid}: ${83:"#"}}
+${84:   ${85:url}: ${86:"#"}}
+${87:   ${88:username}: ${89:"#"}}
+${90:   ${91:uuid}: ${92:"#"}}
+${93:${94:   become: ${95:true}} 
+${96:   become_method: ${97:su}} 
+${98:   become_user: ${99:nobody}} 
+${100:   become_flags: ${101:"-s /bin/sh"}}} 
+${102:   when: ${103:variable is defined}} 
+${104:   with_items: ${105:array}} 
 ]]></content>
 	<tabTrigger>avi_serviceengine</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

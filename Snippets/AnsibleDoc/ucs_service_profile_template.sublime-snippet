@@ -27,7 +27,7 @@ ${1:# bios_policy: The name of the BIOS policy you want to
 # san_connectivity_policy: The name of the SAN connectivity policy you want 
 # scrub_policy: The name of the scrub policy you want to 
 # server_pool: The name of the server pool you want to 
-# server_pool_qualification: The name of the server pool policy qualificaiton 
+# server_pool_qualification: The name of the server pool policy qualification 
 # sol_policy: The name of the Serial over LAN (SoL) policy you 
 # state: If `present', will verify Service Profile 
 # storage_profile: The name of the storage profile you want to 

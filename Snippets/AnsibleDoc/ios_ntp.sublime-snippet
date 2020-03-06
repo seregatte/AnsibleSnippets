@@ -5,7 +5,7 @@ ${1:# acl: ACL for peer/server access restricition.
 # auth_key: md5 NTP authentication key of tye 7. 
 # auth_pass: *Deprecated* Starting with Ansible 2.5 we 
 # authorize: *Deprecated* Starting with Ansible 2.5 we 
-# key_id: auth_key id. Datat type string 
+# key_id: auth_key id. Data type string 
 # logging: Enable NTP logs. Data type boolean. 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # server: Network address of NTP server. 

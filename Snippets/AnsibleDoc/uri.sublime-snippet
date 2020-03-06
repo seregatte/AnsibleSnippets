@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# : Any parameter starting with "HEADER_" is a sent 
+${1:# attributes: The attributes the resulting file or directory 
 # body: The body of the http request/response to the web 
 # body_format: The serialization format of the body. When set 
 # client_cert: PEM formatted certificate chain file to be used 
@@ -8,19 +8,26 @@ ${1:# : Any parameter starting with "HEADER_" is a sent
 # creates: A filename, when it already exists, this step 
 # dest: A path of where to download the file to (if 
 # follow_redirects: Whether or not the URI module should follow 
-# force: If `yes' do not get a cached copy. 
+# force: If `yes' do not get a cached copy. Alias 
 # force_basic_auth: Force the sending of the Basic authentication 
+# group: Name of the group that should own the 
 # headers: Add custom HTTP headers to a request in the 
 # http_agent: Header to identify as, generally appears in web 
 # method: The HTTP method of the request or response. In 
-# others: All arguments accepted by the [file] module also 
+# mode: The permissions the resulting file or directory 
+# owner: Name of the user that should own the 
 # remote_src: If `no', the module will search for src on 
 # removes: A filename, when it does not exist, this step 
 # return_content: Whether or not to return the body of the 
+# selevel: The level part of the SELinux file context. This 
+# serole: The role part of the SELinux file context. When 
+# setype: The type part of the SELinux file context. When 
+# seuser: The user part of the SELinux file context. By 
 # src: Path to file to be submitted to the remote 
 # status_code: A list of valid, numeric, HTTP status codes that 
 # timeout: The socket level timeout in seconds 
 # unix_socket: Path to Unix domain socket to use for connection 
+# unsafe_writes: Influence when to use atomic operation to 
 # url: (required) HTTP or HTTPS URL in the form 
 # url_password: A password for the module to use for Digest, 
 # url_username: A username for the module to use for Digest, 
@@ -28,7 +35,7 @@ ${1:# : Any parameter starting with "HEADER_" is a sent
 # validate_certs: If `no', SSL certificates will not be validated. 
 }- name: ${2:Name for uri module.}
   uri:
-${3:   ${4:}: ${5:"#"}}
+${3:   ${4:attributes}: ${5:"#"}}
 ${6:   ${7:body}: ${8:"#"}}
 ${9:   ${10:body_format}: ${11:"#"}}
 ${12:   ${13:client_cert}: ${14:"#"}}
@@ -38,28 +45,35 @@ ${21:   ${22:dest}: ${23:"#"}}
 ${24:   ${25:follow_redirects}: ${26:"#"}}
 ${27:   ${28:force}: ${29:"#"}}
 ${30:   ${31:force_basic_auth}: ${32:"#"}}
-${33:   ${34:headers}: ${35:"#"}}
-${36:   ${37:http_agent}: ${38:"#"}}
-${39:   ${40:method}: ${41:"#"}}
-${42:   ${43:others}: ${44:"#"}}
-${45:   ${46:remote_src}: ${47:"#"}}
-${48:   ${49:removes}: ${50:"#"}}
-${51:   ${52:return_content}: ${53:"#"}}
-${54:   ${55:src}: ${56:"#"}}
-${57:   ${58:status_code}: ${59:"#"}}
-${60:   ${61:timeout}: ${62:"#"}}
-${63:   ${64:unix_socket}: ${65:"#"}}
-${66:   ${67:url}: ${68:"#"}}
-${69:   ${70:url_password}: ${71:"#"}}
-${72:   ${73:url_username}: ${74:"#"}}
-${75:   ${76:use_proxy}: ${77:"#"}}
-${78:   ${79:validate_certs}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${33:   ${34:group}: ${35:"#"}}
+${36:   ${37:headers}: ${38:"#"}}
+${39:   ${40:http_agent}: ${41:"#"}}
+${42:   ${43:method}: ${44:"#"}}
+${45:   ${46:mode}: ${47:"#"}}
+${48:   ${49:owner}: ${50:"#"}}
+${51:   ${52:remote_src}: ${53:"#"}}
+${54:   ${55:removes}: ${56:"#"}}
+${57:   ${58:return_content}: ${59:"#"}}
+${60:   ${61:selevel}: ${62:"#"}}
+${63:   ${64:serole}: ${65:"#"}}
+${66:   ${67:setype}: ${68:"#"}}
+${69:   ${70:seuser}: ${71:"#"}}
+${72:   ${73:src}: ${74:"#"}}
+${75:   ${76:status_code}: ${77:"#"}}
+${78:   ${79:timeout}: ${80:"#"}}
+${81:   ${82:unix_socket}: ${83:"#"}}
+${84:   ${85:unsafe_writes}: ${86:"#"}}
+${87:   ${88:url}: ${89:"#"}}
+${90:   ${91:url_password}: ${92:"#"}}
+${93:   ${94:url_username}: ${95:"#"}}
+${96:   ${97:use_proxy}: ${98:"#"}}
+${99:   ${100:validate_certs}: ${101:"#"}}
+${102:${103:   become: ${104:true}} 
+${105:   become_method: ${106:su}} 
+${107:   become_user: ${108:nobody}} 
+${109:   become_flags: ${110:"-s /bin/sh"}}} 
+${111:   when: ${112:variable is defined}} 
+${113:   with_items: ${114:array}} 
 ]]></content>
 	<tabTrigger>uri</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

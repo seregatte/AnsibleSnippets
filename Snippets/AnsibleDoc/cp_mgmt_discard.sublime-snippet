@@ -1,0 +1,20 @@
+<snippet>
+<content><![CDATA[
+${1:# uid: Session unique identifier. Specify it to discard 
+# version: Version of checkpoint. If not given one, the 
+# wait_for_task: Wait for the task to end. Such as publish task. 
+}- name: ${2:Name for cp_mgmt_discard module.}
+  cp_mgmt_discard:
+${3:   ${4:uid}: ${5:"#"}}
+${6:   ${7:version}: ${8:"#"}}
+${9:   ${10:wait_for_task}: ${11:"#"}}
+${12:${13:   become: ${14:true}} 
+${15:   become_method: ${16:su}} 
+${17:   become_user: ${18:nobody}} 
+${19:   become_flags: ${20:"-s /bin/sh"}}} 
+${21:   when: ${22:variable is defined}} 
+${23:   with_items: ${24:array}} 
+]]></content>
+	<tabTrigger>cp_mgmt_discard</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

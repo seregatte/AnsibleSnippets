@@ -1,9 +1,10 @@
 <snippet>
 <content><![CDATA[
 ${1:# chdir: Change into this directory before running the 
+# cmd: The command to run followed by optional 
 # creates: A filename, when it already exists, this step 
 # executable: Change the shell used to execute the command. 
-# free_form: (required) The shell module takes a free form 
+# free_form: The shell module takes a free form command to 
 # removes: A filename, when it does not exist, this step 
 # stdin: Set the stdin of the command directly to the 
 # stdin_add_newline: Whether to append a newline to stdin data. 
@@ -11,19 +12,20 @@ ${1:# chdir: Change into this directory before running the
 }- name: ${2:Name for shell module.}
   shell:
 ${3:   ${4:chdir}: ${5:"#"}}
-${6:   ${7:creates}: ${8:"#"}}
-${9:   ${10:executable}: ${11:"#"}}
-${12:   ${13:free_form}: ${14:"#"}}
-${15:   ${16:removes}: ${17:"#"}}
-${18:   ${19:stdin}: ${20:"#"}}
-${21:   ${22:stdin_add_newline}: ${23:"#"}}
-${24:   ${25:warn}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${6:   ${7:cmd}: ${8:"#"}}
+${9:   ${10:creates}: ${11:"#"}}
+${12:   ${13:executable}: ${14:"#"}}
+${15:   ${16:free_form}: ${17:"#"}}
+${18:   ${19:removes}: ${20:"#"}}
+${21:   ${22:stdin}: ${23:"#"}}
+${24:   ${25:stdin_add_newline}: ${26:"#"}}
+${27:   ${28:warn}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>shell</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

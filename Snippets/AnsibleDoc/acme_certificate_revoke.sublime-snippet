@@ -8,8 +8,8 @@ ${1:# account_key_content: Content of the ACME account RSA or Elliptic
 # certificate: (required) Path to the certificate to revoke. 
 # private_key_content: Content of the certificate's private key. Note 
 # private_key_src: Path to the certificate's private key. Note that 
-# revoke_reason: One of the revocation reasonCodes defined in L(h 
-# : section-5.3.1, 
+# revoke_reason: One of the revocation reasonCodes defined in 
+# html: sect 
 # select_crypto_backend: Determines which crypto backend to use. The 
 # validate_certs: Whether calls to the ACME directory will 
 }- name: ${2:Name for acme_certificate_revoke module.}
@@ -23,7 +23,7 @@ ${18:   ${19:certificate}: ${20:"#"}}
 ${21:   ${22:private_key_content}: ${23:"#"}}
 ${24:   ${25:private_key_src}: ${26:"#"}}
 ${27:   ${28:revoke_reason}: ${29:"#"}}
-${30:   ${31:}: ${32:"#"}}
+${30:   ${31:html}: ${32:"#"}}
 ${33:   ${34:select_crypto_backend}: ${35:"#"}}
 ${36:   ${37:validate_certs}: ${38:"#"}}
 ${39:${40:   become: ${41:true}} 

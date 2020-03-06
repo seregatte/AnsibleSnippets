@@ -8,7 +8,7 @@ ${1:# api_version: The version of the Docker API running on the
 # debug: Debug mode 
 # docker_host: The URL or Unix socket path used to connect to 
 # email: The email address for the registry account. 
-# password: (required) The plaintext password for the 
+# password: The plaintext password for the registry account. 
 # reauthorize: Refresh existing authentication found in the 
 # registry_url: The registry URL. 
 # ssl_version: Provide a valid SSL version number. Default 
@@ -16,7 +16,7 @@ ${1:# api_version: The version of the Docker API running on the
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 
 # tls_hostname: When verifying the authenticity of the Docker 
-# username: (required) The username for the registry account 
+# username: The username for the registry account. Required 
 # validate_certs: Secure the connection to the API by using TLS 
 }- name: ${2:Name for docker_login module.}
   docker_login:

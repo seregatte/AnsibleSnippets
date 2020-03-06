@@ -10,18 +10,18 @@ ${1:# ad_user: Active Directory username. Use when
 # cloud_environment: For cloud environments other than the US public 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
-# record_mode: whether existing record values not sent to the 
-# record_type: (required) the type of record set to create or 
-# records: list of records to be created depending on the 
-# relative_name: (required) relative name of the record set 
-# resource_group: (required) name of resource group 
+# record_mode: Whether existing record values not sent to the 
+# record_type: (required) The type of record set to create or 
+# records: List of records to be created depending on the 
+# relative_name: (required) Relative name of the record set. 
+# resource_group: (required) Name of resource group. 
 # secret: Azure client secret. Use when authenticating 
 # state: Assert the state of the record set. Use 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
-# time_to_live: time to live of the record set in seconds 
-# zone_name: (required) name of the existing DNS zone in 
+# time_to_live: Time to live of the record set in seconds. 
+# zone_name: (required) Name of the existing DNS zone in 
 }- name: ${2:Name for azure_rm_dnsrecordset module.}
   azure_rm_dnsrecordset:
 ${3:   ${4:ad_user}: ${5:"#"}}

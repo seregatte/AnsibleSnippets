@@ -6,6 +6,7 @@ ${1:# api_context: Avi API context that includes current session ID
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
 # company_name: Name of the company to show in error page. Field 
 # controller: IP address or hostname of the controller. The 
 # error_pages: Defined error pages for http status codes. Field 
@@ -27,25 +28,26 @@ ${9:   ${10:app_name}: ${11:"#"}}
 ${12:   ${13:avi_api_patch_op}: ${14:"#"}}
 ${15:   ${16:avi_api_update_method}: ${17:"#"}}
 ${18:   ${19:avi_credentials}: ${20:"#"}}
-${21:   ${22:company_name}: ${23:"#"}}
-${24:   ${25:controller}: ${26:"#"}}
-${27:   ${28:error_pages}: ${29:"#"}}
-${30:   ${31:host_name}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:password}: ${38:"#"}}
-${39:   ${40:state}: ${41:"#"}}
-${42:   ${43:tenant}: ${44:"#"}}
-${45:   ${46:tenant_ref}: ${47:"#"}}
-${48:   ${49:tenant_uuid}: ${50:"#"}}
-${51:   ${52:url}: ${53:"#"}}
-${54:   ${55:username}: ${56:"#"}}
-${57:   ${58:uuid}: ${59:"#"}}
-${60:${61:   become: ${62:true}} 
-${63:   become_method: ${64:su}} 
-${65:   become_user: ${66:nobody}} 
-${67:   become_flags: ${68:"-s /bin/sh"}}} 
-${69:   when: ${70:variable is defined}} 
-${71:   with_items: ${72:array}} 
+${21:   ${22:avi_disable_session_cache_as_fact}: ${23:"#"}}
+${24:   ${25:company_name}: ${26:"#"}}
+${27:   ${28:controller}: ${29:"#"}}
+${30:   ${31:error_pages}: ${32:"#"}}
+${33:   ${34:host_name}: ${35:"#"}}
+${36:   ${37:name}: ${38:"#"}}
+${39:   ${40:password}: ${41:"#"}}
+${42:   ${43:state}: ${44:"#"}}
+${45:   ${46:tenant}: ${47:"#"}}
+${48:   ${49:tenant_ref}: ${50:"#"}}
+${51:   ${52:tenant_uuid}: ${53:"#"}}
+${54:   ${55:url}: ${56:"#"}}
+${57:   ${58:username}: ${59:"#"}}
+${60:   ${61:uuid}: ${62:"#"}}
+${63:${64:   become: ${65:true}} 
+${66:   become_method: ${67:su}} 
+${68:   become_user: ${69:nobody}} 
+${70:   become_flags: ${71:"-s /bin/sh"}}} 
+${72:   when: ${73:variable is defined}} 
+${74:   with_items: ${75:array}} 
 ]]></content>
 	<tabTrigger>avi_errorpageprofile</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

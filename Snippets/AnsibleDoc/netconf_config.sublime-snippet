@@ -8,7 +8,7 @@ ${1:# backup: This argument will cause the module to create a
 # content: The configuration data as defined by the 
 # default_operation: The default operation for <edit-config> rpc, 
 # delete: It instructs the module to delete the 
-# error_option: This option control the netconf server action 
+# error_option: This option controls the netconf server action 
 # format: The format of the configuration provided as 
 # host: (required) Specifies the DNS host name or 
 # hostkey_verify: If set to `yes', the ssh host key of the device 

@@ -1,9 +1,13 @@
 <snippet>
 <content><![CDATA[
-${1:# description: Description of the profile. 
+${1:# accept_xff: Enables or disables trusting the client IP 
+# description: Description of the profile. 
 # dns_resolver: Specifies the name of a configured DNS resolver, 
 # encrypt_cookie_secret: Passphrase for cookie encryption. When creating 
 # encrypt_cookies: Cookie names for the system to encrypt. To 
+# enforcement: Specifies protocol enforcement settings for the 
+# fallback_host: Specifies an HTTP fallback host. When creating a 
+# fallback_status_codes: Specifies one or more HTTP error codes from 
 # header_erase: The name of a header, in an HTTP request, which 
 # header_insert: A string that the system inserts as a header in 
 # hsts_mode: When set to `yes', enables the HSTS settings. 
@@ -11,51 +15,55 @@ ${1:# description: Description of the profile.
 # insert_xforwarded_for: When specified system inserts an X-Forwarded-For 
 # maximum_age: Specifies the maximum length of time, in 
 # name: (required) Specifies the name of the profile. 
+# oneconnect_transformations: Enables the system to perform HTTP header 
 # parent: Specifies the profile from which this profile 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # proxy_type: Specifies the proxy mode for the profile. When 
 # redirect_rewrite: Specifies whether the system rewrites the URIs 
-# server: (required) The BIG-IP host. You may omit this 
+# request_chunking: Specifies how to handle chunked and unchunked 
+# response_chunking: Specifies how to handle chunked and unchunked 
 # server_agent_name: Specifies the string used as the server name in 
-# server_port: The BIG-IP server port. You may omit this option 
+# sflow: Specifies sFlow settings for the HTTP profile. 
 # state: When `present', ensures that the profile exists. 
 # update_password: `always' will update passwords if the 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
+# xff_alternative_names: Specifies alternative XFF headers instead of the 
 }- name: ${2:Name for bigip_profile_http module.}
   bigip_profile_http:
-${3:   ${4:description}: ${5:"#"}}
-${6:   ${7:dns_resolver}: ${8:"#"}}
-${9:   ${10:encrypt_cookie_secret}: ${11:"#"}}
-${12:   ${13:encrypt_cookies}: ${14:"#"}}
-${15:   ${16:header_erase}: ${17:"#"}}
-${18:   ${19:header_insert}: ${20:"#"}}
-${21:   ${22:hsts_mode}: ${23:"#"}}
-${24:   ${25:include_subdomains}: ${26:"#"}}
-${27:   ${28:insert_xforwarded_for}: ${29:"#"}}
-${30:   ${31:maximum_age}: ${32:"#"}}
-${33:   ${34:name}: ${35:"#"}}
-${36:   ${37:parent}: ${38:"#"}}
-${39:   ${40:partition}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:provider}: ${47:"#"}}
-${48:   ${49:proxy_type}: ${50:"#"}}
-${51:   ${52:redirect_rewrite}: ${53:"#"}}
-${54:   ${55:server}: ${56:"#"}}
-${57:   ${58:server_agent_name}: ${59:"#"}}
-${60:   ${61:server_port}: ${62:"#"}}
-${63:   ${64:state}: ${65:"#"}}
-${66:   ${67:update_password}: ${68:"#"}}
-${69:   ${70:user}: ${71:"#"}}
-${72:   ${73:validate_certs}: ${74:"#"}}
-${75:${76:   become: ${77:true}} 
-${78:   become_method: ${79:su}} 
-${80:   become_user: ${81:nobody}} 
-${82:   become_flags: ${83:"-s /bin/sh"}}} 
-${84:   when: ${85:variable is defined}} 
-${86:   with_items: ${87:array}} 
+${3:   ${4:accept_xff}: ${5:"#"}}
+${6:   ${7:description}: ${8:"#"}}
+${9:   ${10:dns_resolver}: ${11:"#"}}
+${12:   ${13:encrypt_cookie_secret}: ${14:"#"}}
+${15:   ${16:encrypt_cookies}: ${17:"#"}}
+${18:   ${19:enforcement}: ${20:"#"}}
+${21:   ${22:fallback_host}: ${23:"#"}}
+${24:   ${25:fallback_status_codes}: ${26:"#"}}
+${27:   ${28:header_erase}: ${29:"#"}}
+${30:   ${31:header_insert}: ${32:"#"}}
+${33:   ${34:hsts_mode}: ${35:"#"}}
+${36:   ${37:include_subdomains}: ${38:"#"}}
+${39:   ${40:insert_xforwarded_for}: ${41:"#"}}
+${42:   ${43:maximum_age}: ${44:"#"}}
+${45:   ${46:name}: ${47:"#"}}
+${48:   ${49:oneconnect_transformations}: ${50:"#"}}
+${51:   ${52:parent}: ${53:"#"}}
+${54:   ${55:partition}: ${56:"#"}}
+${57:   ${58:provider}: ${59:"#"}}
+${60:   ${61:proxy_type}: ${62:"#"}}
+${63:   ${64:redirect_rewrite}: ${65:"#"}}
+${66:   ${67:request_chunking}: ${68:"#"}}
+${69:   ${70:response_chunking}: ${71:"#"}}
+${72:   ${73:server_agent_name}: ${74:"#"}}
+${75:   ${76:sflow}: ${77:"#"}}
+${78:   ${79:state}: ${80:"#"}}
+${81:   ${82:update_password}: ${83:"#"}}
+${84:   ${85:xff_alternative_names}: ${86:"#"}}
+${87:${88:   become: ${89:true}} 
+${90:   become_method: ${91:su}} 
+${92:   become_user: ${93:nobody}} 
+${94:   become_flags: ${95:"-s /bin/sh"}}} 
+${96:   when: ${97:variable is defined}} 
+${98:   with_items: ${99:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_http</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -13,21 +13,16 @@ ${1:# advertised_cert_authority: Specifies that the CAs that the system
 # options: Options that the system uses for SSL processing 
 # parent: The parent template of this monitor template. 
 # partition: Device partition to manage resources on. 
-# password: (required) The password for the user account 
 # provider: A dict object containing connection details. 
 # renegotiation: Enables or disables SSL renegotiation. When 
 # retain_certificate: When `yes', client certificate is retained in 
 # secure_renegotiation: Specifies the method of secure renegotiations 
-# server: (required) The BIG-IP host. You may omit this 
 # server_name: Specifies the fully qualified DNS hostname of 
-# server_port: The BIG-IP server port. You may omit this option 
 # sni_default: Indicates that the system uses this profile as 
 # sni_require: Requires that the network peers also provide SNI 
 # state: When `present', ensures that the profile exists. 
 # strict_resume: Enables or disables the resumption of SSL 
 # trusted_cert_authority: Specifies a client CA that the system trusts. 
-# user: (required) The username to connect to the BIG-IP 
-# validate_certs: If `no', SSL certificates are not validated. Use 
 }- name: ${2:Name for bigip_profile_client_ssl module.}
   bigip_profile_client_ssl:
 ${3:   ${4:advertised_cert_authority}: ${5:"#"}}
@@ -43,27 +38,22 @@ ${30:   ${31:name}: ${32:"#"}}
 ${33:   ${34:options}: ${35:"#"}}
 ${36:   ${37:parent}: ${38:"#"}}
 ${39:   ${40:partition}: ${41:"#"}}
-${42:   ${43:password}: ${44:"#"}}
-${45:   ${46:provider}: ${47:"#"}}
-${48:   ${49:renegotiation}: ${50:"#"}}
-${51:   ${52:retain_certificate}: ${53:"#"}}
-${54:   ${55:secure_renegotiation}: ${56:"#"}}
-${57:   ${58:server}: ${59:"#"}}
-${60:   ${61:server_name}: ${62:"#"}}
-${63:   ${64:server_port}: ${65:"#"}}
-${66:   ${67:sni_default}: ${68:"#"}}
-${69:   ${70:sni_require}: ${71:"#"}}
-${72:   ${73:state}: ${74:"#"}}
-${75:   ${76:strict_resume}: ${77:"#"}}
-${78:   ${79:trusted_cert_authority}: ${80:"#"}}
-${81:   ${82:user}: ${83:"#"}}
-${84:   ${85:validate_certs}: ${86:"#"}}
-${87:${88:   become: ${89:true}} 
-${90:   become_method: ${91:su}} 
-${92:   become_user: ${93:nobody}} 
-${94:   become_flags: ${95:"-s /bin/sh"}}} 
-${96:   when: ${97:variable is defined}} 
-${98:   with_items: ${99:array}} 
+${42:   ${43:provider}: ${44:"#"}}
+${45:   ${46:renegotiation}: ${47:"#"}}
+${48:   ${49:retain_certificate}: ${50:"#"}}
+${51:   ${52:secure_renegotiation}: ${53:"#"}}
+${54:   ${55:server_name}: ${56:"#"}}
+${57:   ${58:sni_default}: ${59:"#"}}
+${60:   ${61:sni_require}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:strict_resume}: ${68:"#"}}
+${69:   ${70:trusted_cert_authority}: ${71:"#"}}
+${72:${73:   become: ${74:true}} 
+${75:   become_method: ${76:su}} 
+${77:   become_user: ${78:nobody}} 
+${79:   become_flags: ${80:"-s /bin/sh"}}} 
+${81:   when: ${82:variable is defined}} 
+${83:   with_items: ${84:array}} 
 ]]></content>
 	<tabTrigger>bigip_profile_client_ssl</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

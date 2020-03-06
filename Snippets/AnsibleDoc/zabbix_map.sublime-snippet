@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# data: Graph written in DOT language. 
 # default_image: Name of the Zabbix image used to display the 
-# expand_problem: Whether the the problem trigger will be 
+# expand_problem: Whether the problem trigger will be displayed 
 # height: Height of the map. 
 # highlight: Whether icon highlighting is enabled. 
 # http_login_password: Basic Auth password 

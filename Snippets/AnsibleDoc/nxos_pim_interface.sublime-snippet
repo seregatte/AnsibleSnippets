@@ -1,6 +1,7 @@
 <snippet>
 <content><![CDATA[
-${1:# border: Configures interface to be a boundary of a PIM 
+${1:# bfd: Enables BFD for PIM at the interface level. This 
+# border: Configures interface to be a boundary of a PIM 
 # dr_prio: Configures priority for PIM DR election on 
 # hello_auth_key: Authentication for hellos on this interface. 
 # hello_interval: Hello interval in milliseconds for this 
@@ -16,26 +17,27 @@ ${1:# border: Configures interface to be a boundary of a PIM
 # state: Manages desired state of the resource. 
 }- name: ${2:Name for nxos_pim_interface module.}
   nxos_pim_interface:
-${3:   ${4:border}: ${5:"#"}}
-${6:   ${7:dr_prio}: ${8:"#"}}
-${9:   ${10:hello_auth_key}: ${11:"#"}}
-${12:   ${13:hello_interval}: ${14:"#"}}
-${15:   ${16:interface}: ${17:"#"}}
-${18:   ${19:jp_policy_in}: ${20:"#"}}
-${21:   ${22:jp_policy_out}: ${23:"#"}}
-${24:   ${25:jp_type_in}: ${26:"#"}}
-${27:   ${28:jp_type_out}: ${29:"#"}}
-${30:   ${31:neighbor_policy}: ${32:"#"}}
-${33:   ${34:neighbor_type}: ${35:"#"}}
-${36:   ${37:provider}: ${38:"#"}}
-${39:   ${40:sparse}: ${41:"#"}}
-${42:   ${43:state}: ${44:"#"}}
-${45:${46:   become: ${47:true}} 
-${48:   become_method: ${49:su}} 
-${50:   become_user: ${51:nobody}} 
-${52:   become_flags: ${53:"-s /bin/sh"}}} 
-${54:   when: ${55:variable is defined}} 
-${56:   with_items: ${57:array}} 
+${3:   ${4:bfd}: ${5:"#"}}
+${6:   ${7:border}: ${8:"#"}}
+${9:   ${10:dr_prio}: ${11:"#"}}
+${12:   ${13:hello_auth_key}: ${14:"#"}}
+${15:   ${16:hello_interval}: ${17:"#"}}
+${18:   ${19:interface}: ${20:"#"}}
+${21:   ${22:jp_policy_in}: ${23:"#"}}
+${24:   ${25:jp_policy_out}: ${26:"#"}}
+${27:   ${28:jp_type_in}: ${29:"#"}}
+${30:   ${31:jp_type_out}: ${32:"#"}}
+${33:   ${34:neighbor_policy}: ${35:"#"}}
+${36:   ${37:neighbor_type}: ${38:"#"}}
+${39:   ${40:provider}: ${41:"#"}}
+${42:   ${43:sparse}: ${44:"#"}}
+${45:   ${46:state}: ${47:"#"}}
+${48:${49:   become: ${50:true}} 
+${51:   become_method: ${52:su}} 
+${53:   become_user: ${54:nobody}} 
+${55:   become_flags: ${56:"-s /bin/sh"}}} 
+${57:   when: ${58:variable is defined}} 
+${59:   with_items: ${60:array}} 
 ]]></content>
 	<tabTrigger>nxos_pim_interface</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

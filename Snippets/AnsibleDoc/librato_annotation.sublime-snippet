@@ -1,7 +1,7 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_key: (required) Librato account api key 
-# description: The description contains extra meta-data about a 
+# description: The description contains extra metadata about a 
 # end_time: The unix timestamp indicating the time at which 
 # links: (required) See examples 
 # name: The annotation stream name If the annotation 

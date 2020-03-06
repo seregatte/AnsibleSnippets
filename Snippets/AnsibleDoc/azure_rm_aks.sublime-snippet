@@ -14,7 +14,7 @@ ${1:# aad_profile: Profile of Azure Active Directory configuration.
 # dns_prefix: DNS prefix specified when creating the managed 
 # enable_rbac: Enable RBAC. Existing non-RBAC enabled AKS 
 # kubernetes_version: Version of Kubernetes specified when creating 
-# linux_profile: The linux profile suboptions. 
+# linux_profile: The Linux profile suboptions. 
 # location: Valid azure location. Defaults to location of 
 # name: (required) Name of the managed Azure Container 
 # network_profile: Profile of network configuration. 

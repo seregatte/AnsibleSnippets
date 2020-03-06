@@ -1,10 +1,12 @@
 <snippet>
 <content><![CDATA[
 ${1:# active_standby_se_tag: This configuration only applies if the 
+# allow_invalid_client_cert: Process request even if invalid client 
 # analytics_policy: Determines analytics settings for the 
 # analytics_profile_ref: Specifies settings related to analytics. It is a 
 # api_context: Avi API context that includes current session ID 
 # api_version: Avi API version of to use for Avi API and 
+# apic_contract_graph: The name of the contract/graph associated with 
 # application_profile_ref: Enable application layer specific features for 
 # auto_allocate_floating_ip: Auto-allocate floating/elastic ip from the cloud 
 # auto_allocate_ip: Auto-allocate vip from the provided subnet. 
@@ -14,6 +16,8 @@ ${1:# active_standby_se_tag: This configuration only applies if the
 # avi_api_patch_op: Patch operation to use when using 
 # avi_api_update_method: Default method for object update is HTTP PUT. 
 # avi_credentials: Avi Credentials dictionary which can be used in 
+# avi_disable_session_cache_as_fact: It disables avi session information to be cached 
+# azure_availability_set: (internal-use)applicable for azure only. Azure 
 # bulk_sync_kvcache: (this is a beta feature). Sync key-value cache 
 # client_auth: Http authentication configuration for protected 
 # close_client_conn_on_config_update: Close client connection on vs config update. 
@@ -51,6 +55,7 @@ ${1:# active_standby_se_tag: This configuration only applies if the
 # limit_doser: Limit potential dos attackers who exceed 
 # max_cps_per_client: Maximum connections per second per client ip. 
 # microservice_ref: Microservice representing the virtual service. 
+# min_pools_up: Minimum number of up pools to mark vs up. Field 
 # name: (required) Name for the virtual service. 
 # network_profile_ref: Determines network settings such as protocol, 
 # network_ref: Manually override the network on which the 
@@ -63,8 +68,10 @@ ${1:# active_standby_se_tag: This configuration only applies if the
 # port_uuid: (internal-use) network port assigned to the 
 # remove_listening_port_on_vs_down: Remove listening port if virtualservice is down. 
 # requests_rate_limit: Rate limit the incoming requests to this virtual 
+# saml_sp_config: Application-specific saml config. Field 
 # scaleout_ecmp: Disable re-distribution of flows across service 
 # se_group_ref: The service engine group to use for this virtual 
+# security_policy_ref: Security policy applied on the traffic of the 
 # server_network_profile_ref: Determines the network settings profile for the 
 # service_metadata: Metadata pertaining to the service provided by 
 # service_pool_select: Select pool based on destination port. 
@@ -74,7 +81,10 @@ ${1:# active_standby_se_tag: This configuration only applies if the
 # sp_pool_refs: Gslb pools used to manage site-persistence 
 # ssl_key_and_certificate_refs: Select or create one or two certificates, ec 
 # ssl_profile_ref: Determines the set of ssl versions and ciphers 
+# ssl_profile_selectors: Select ssl profile based on client ip address 
 # ssl_sess_cache_avg_size: Expected number of ssl session cache entries 
+# sso_policy: Client authentication and authorization policy 
+# sso_policy_ref: The sso policy attached to the virtualservice. 
 # state: The state that should be applied on the entity. 
 # static_dns_records: List of static dns records applied to this 
 # subnet: Subnet providing reachability for client facing 
@@ -82,6 +92,7 @@ ${1:# active_standby_se_tag: This configuration only applies if the
 # tenant: Name of tenant used for all Avi API calls and 
 # tenant_ref: It is a reference to an object of type tenant. 
 # tenant_uuid: UUID of tenant used for all Avi API calls and 
+# topology_policies: Topology policies applied on the dns traffic of 
 # traffic_clone_profile_ref: Server network or list of servers for cloning 
 # traffic_enabled: Knob to enable the virtual service traffic on 
 # type: Specify if this is a normal virtual service, or 
@@ -95,115 +106,128 @@ ${1:# active_standby_se_tag: This configuration only applies if the
 # vip: List of virtual service ips. While creating a 
 # vrf_context_ref: Virtual routing context that the virtual service 
 # vs_datascripts: Datascripts applied on the data traffic of the 
+# vsvip_cloud_config_cksum: Checksum of cloud configuration for vsvip. 
 # vsvip_ref: Mostly used during the creation of shared vs, 
 # waf_policy_ref: Waf policy for the virtual service. It is a 
 # weight: The quality of service weight to assign to 
 }- name: ${2:Name for avi_virtualservice module.}
   avi_virtualservice:
 ${3:   ${4:active_standby_se_tag}: ${5:"#"}}
-${6:   ${7:analytics_policy}: ${8:"#"}}
-${9:   ${10:analytics_profile_ref}: ${11:"#"}}
-${12:   ${13:api_context}: ${14:"#"}}
-${15:   ${16:api_version}: ${17:"#"}}
-${18:   ${19:application_profile_ref}: ${20:"#"}}
-${21:   ${22:auto_allocate_floating_ip}: ${23:"#"}}
-${24:   ${25:auto_allocate_ip}: ${26:"#"}}
-${27:   ${28:availability_zone}: ${29:"#"}}
-${30:   ${31:avi_allocated_fip}: ${32:"#"}}
-${33:   ${34:avi_allocated_vip}: ${35:"#"}}
-${36:   ${37:avi_api_patch_op}: ${38:"#"}}
-${39:   ${40:avi_api_update_method}: ${41:"#"}}
-${42:   ${43:avi_credentials}: ${44:"#"}}
-${45:   ${46:bulk_sync_kvcache}: ${47:"#"}}
-${48:   ${49:client_auth}: ${50:"#"}}
-${51:   ${52:close_client_conn_on_config_update}: ${53:"#"}}
-${54:   ${55:cloud_config_cksum}: ${56:"#"}}
-${57:   ${58:cloud_ref}: ${59:"#"}}
-${60:   ${61:cloud_type}: ${62:"#"}}
-${63:   ${64:connections_rate_limit}: ${65:"#"}}
-${66:   ${67:content_rewrite}: ${68:"#"}}
-${69:   ${70:controller}: ${71:"#"}}
-${72:   ${73:created_by}: ${74:"#"}}
-${75:   ${76:delay_fairness}: ${77:"#"}}
-${78:   ${79:description}: ${80:"#"}}
-${81:   ${82:discovered_network_ref}: ${83:"#"}}
-${84:   ${85:discovered_networks}: ${86:"#"}}
-${87:   ${88:discovered_subnet}: ${89:"#"}}
-${90:   ${91:dns_info}: ${92:"#"}}
-${93:   ${94:dns_policies}: ${95:"#"}}
-${96:   ${97:east_west_placement}: ${98:"#"}}
-${99:   ${100:enable_autogw}: ${101:"#"}}
-${102:   ${103:enable_rhi}: ${104:"#"}}
-${105:   ${106:enable_rhi_snat}: ${107:"#"}}
-${108:   ${109:enabled}: ${110:"#"}}
-${111:   ${112:error_page_profile_ref}: ${113:"#"}}
-${114:   ${115:floating_ip}: ${116:"#"}}
-${117:   ${118:floating_subnet_uuid}: ${119:"#"}}
-${120:   ${121:flow_dist}: ${122:"#"}}
-${123:   ${124:flow_label_type}: ${125:"#"}}
-${126:   ${127:fqdn}: ${128:"#"}}
-${129:   ${130:host_name_xlate}: ${131:"#"}}
-${132:   ${133:http_policies}: ${134:"#"}}
-${135:   ${136:ign_pool_net_reach}: ${137:"#"}}
-${138:   ${139:ip_address}: ${140:"#"}}
-${141:   ${142:ipam_network_subnet}: ${143:"#"}}
-${144:   ${145:l4_policies}: ${146:"#"}}
-${147:   ${148:limit_doser}: ${149:"#"}}
-${150:   ${151:max_cps_per_client}: ${152:"#"}}
-${153:   ${154:microservice_ref}: ${155:"#"}}
-${156:   ${157:name}: ${158:"#"}}
-${159:   ${160:network_profile_ref}: ${161:"#"}}
-${162:   ${163:network_ref}: ${164:"#"}}
-${165:   ${166:network_security_policy_ref}: ${167:"#"}}
-${168:   ${169:nsx_securitygroup}: ${170:"#"}}
-${171:   ${172:password}: ${173:"#"}}
-${174:   ${175:performance_limits}: ${176:"#"}}
-${177:   ${178:pool_group_ref}: ${179:"#"}}
-${180:   ${181:pool_ref}: ${182:"#"}}
-${183:   ${184:port_uuid}: ${185:"#"}}
-${186:   ${187:remove_listening_port_on_vs_down}: ${188:"#"}}
-${189:   ${190:requests_rate_limit}: ${191:"#"}}
-${192:   ${193:scaleout_ecmp}: ${194:"#"}}
-${195:   ${196:se_group_ref}: ${197:"#"}}
-${198:   ${199:server_network_profile_ref}: ${200:"#"}}
-${201:   ${202:service_metadata}: ${203:"#"}}
-${204:   ${205:service_pool_select}: ${206:"#"}}
-${207:   ${208:services}: ${209:"#"}}
-${210:   ${211:sideband_profile}: ${212:"#"}}
-${213:   ${214:snat_ip}: ${215:"#"}}
-${216:   ${217:sp_pool_refs}: ${218:"#"}}
-${219:   ${220:ssl_key_and_certificate_refs}: ${221:"#"}}
-${222:   ${223:ssl_profile_ref}: ${224:"#"}}
-${225:   ${226:ssl_sess_cache_avg_size}: ${227:"#"}}
-${228:   ${229:state}: ${230:"#"}}
-${231:   ${232:static_dns_records}: ${233:"#"}}
-${234:   ${235:subnet}: ${236:"#"}}
-${237:   ${238:subnet_uuid}: ${239:"#"}}
-${240:   ${241:tenant}: ${242:"#"}}
-${243:   ${244:tenant_ref}: ${245:"#"}}
-${246:   ${247:tenant_uuid}: ${248:"#"}}
-${249:   ${250:traffic_clone_profile_ref}: ${251:"#"}}
-${252:   ${253:traffic_enabled}: ${254:"#"}}
-${255:   ${256:type}: ${257:"#"}}
-${258:   ${259:url}: ${260:"#"}}
-${261:   ${262:use_bridge_ip_as_vip}: ${263:"#"}}
-${264:   ${265:use_vip_as_snat}: ${266:"#"}}
-${267:   ${268:username}: ${269:"#"}}
-${270:   ${271:uuid}: ${272:"#"}}
-${273:   ${274:vh_domain_name}: ${275:"#"}}
-${276:   ${277:vh_parent_vs_uuid}: ${278:"#"}}
-${279:   ${280:vip}: ${281:"#"}}
-${282:   ${283:vrf_context_ref}: ${284:"#"}}
-${285:   ${286:vs_datascripts}: ${287:"#"}}
-${288:   ${289:vsvip_ref}: ${290:"#"}}
-${291:   ${292:waf_policy_ref}: ${293:"#"}}
-${294:   ${295:weight}: ${296:"#"}}
-${297:${298:   become: ${299:true}} 
-${300:   become_method: ${301:su}} 
-${302:   become_user: ${303:nobody}} 
-${304:   become_flags: ${305:"-s /bin/sh"}}} 
-${306:   when: ${307:variable is defined}} 
-${308:   with_items: ${309:array}} 
+${6:   ${7:allow_invalid_client_cert}: ${8:"#"}}
+${9:   ${10:analytics_policy}: ${11:"#"}}
+${12:   ${13:analytics_profile_ref}: ${14:"#"}}
+${15:   ${16:api_context}: ${17:"#"}}
+${18:   ${19:api_version}: ${20:"#"}}
+${21:   ${22:apic_contract_graph}: ${23:"#"}}
+${24:   ${25:application_profile_ref}: ${26:"#"}}
+${27:   ${28:auto_allocate_floating_ip}: ${29:"#"}}
+${30:   ${31:auto_allocate_ip}: ${32:"#"}}
+${33:   ${34:availability_zone}: ${35:"#"}}
+${36:   ${37:avi_allocated_fip}: ${38:"#"}}
+${39:   ${40:avi_allocated_vip}: ${41:"#"}}
+${42:   ${43:avi_api_patch_op}: ${44:"#"}}
+${45:   ${46:avi_api_update_method}: ${47:"#"}}
+${48:   ${49:avi_credentials}: ${50:"#"}}
+${51:   ${52:avi_disable_session_cache_as_fact}: ${53:"#"}}
+${54:   ${55:azure_availability_set}: ${56:"#"}}
+${57:   ${58:bulk_sync_kvcache}: ${59:"#"}}
+${60:   ${61:client_auth}: ${62:"#"}}
+${63:   ${64:close_client_conn_on_config_update}: ${65:"#"}}
+${66:   ${67:cloud_config_cksum}: ${68:"#"}}
+${69:   ${70:cloud_ref}: ${71:"#"}}
+${72:   ${73:cloud_type}: ${74:"#"}}
+${75:   ${76:connections_rate_limit}: ${77:"#"}}
+${78:   ${79:content_rewrite}: ${80:"#"}}
+${81:   ${82:controller}: ${83:"#"}}
+${84:   ${85:created_by}: ${86:"#"}}
+${87:   ${88:delay_fairness}: ${89:"#"}}
+${90:   ${91:description}: ${92:"#"}}
+${93:   ${94:discovered_network_ref}: ${95:"#"}}
+${96:   ${97:discovered_networks}: ${98:"#"}}
+${99:   ${100:discovered_subnet}: ${101:"#"}}
+${102:   ${103:dns_info}: ${104:"#"}}
+${105:   ${106:dns_policies}: ${107:"#"}}
+${108:   ${109:east_west_placement}: ${110:"#"}}
+${111:   ${112:enable_autogw}: ${113:"#"}}
+${114:   ${115:enable_rhi}: ${116:"#"}}
+${117:   ${118:enable_rhi_snat}: ${119:"#"}}
+${120:   ${121:enabled}: ${122:"#"}}
+${123:   ${124:error_page_profile_ref}: ${125:"#"}}
+${126:   ${127:floating_ip}: ${128:"#"}}
+${129:   ${130:floating_subnet_uuid}: ${131:"#"}}
+${132:   ${133:flow_dist}: ${134:"#"}}
+${135:   ${136:flow_label_type}: ${137:"#"}}
+${138:   ${139:fqdn}: ${140:"#"}}
+${141:   ${142:host_name_xlate}: ${143:"#"}}
+${144:   ${145:http_policies}: ${146:"#"}}
+${147:   ${148:ign_pool_net_reach}: ${149:"#"}}
+${150:   ${151:ip_address}: ${152:"#"}}
+${153:   ${154:ipam_network_subnet}: ${155:"#"}}
+${156:   ${157:l4_policies}: ${158:"#"}}
+${159:   ${160:limit_doser}: ${161:"#"}}
+${162:   ${163:max_cps_per_client}: ${164:"#"}}
+${165:   ${166:microservice_ref}: ${167:"#"}}
+${168:   ${169:min_pools_up}: ${170:"#"}}
+${171:   ${172:name}: ${173:"#"}}
+${174:   ${175:network_profile_ref}: ${176:"#"}}
+${177:   ${178:network_ref}: ${179:"#"}}
+${180:   ${181:network_security_policy_ref}: ${182:"#"}}
+${183:   ${184:nsx_securitygroup}: ${185:"#"}}
+${186:   ${187:password}: ${188:"#"}}
+${189:   ${190:performance_limits}: ${191:"#"}}
+${192:   ${193:pool_group_ref}: ${194:"#"}}
+${195:   ${196:pool_ref}: ${197:"#"}}
+${198:   ${199:port_uuid}: ${200:"#"}}
+${201:   ${202:remove_listening_port_on_vs_down}: ${203:"#"}}
+${204:   ${205:requests_rate_limit}: ${206:"#"}}
+${207:   ${208:saml_sp_config}: ${209:"#"}}
+${210:   ${211:scaleout_ecmp}: ${212:"#"}}
+${213:   ${214:se_group_ref}: ${215:"#"}}
+${216:   ${217:security_policy_ref}: ${218:"#"}}
+${219:   ${220:server_network_profile_ref}: ${221:"#"}}
+${222:   ${223:service_metadata}: ${224:"#"}}
+${225:   ${226:service_pool_select}: ${227:"#"}}
+${228:   ${229:services}: ${230:"#"}}
+${231:   ${232:sideband_profile}: ${233:"#"}}
+${234:   ${235:snat_ip}: ${236:"#"}}
+${237:   ${238:sp_pool_refs}: ${239:"#"}}
+${240:   ${241:ssl_key_and_certificate_refs}: ${242:"#"}}
+${243:   ${244:ssl_profile_ref}: ${245:"#"}}
+${246:   ${247:ssl_profile_selectors}: ${248:"#"}}
+${249:   ${250:ssl_sess_cache_avg_size}: ${251:"#"}}
+${252:   ${253:sso_policy}: ${254:"#"}}
+${255:   ${256:sso_policy_ref}: ${257:"#"}}
+${258:   ${259:state}: ${260:"#"}}
+${261:   ${262:static_dns_records}: ${263:"#"}}
+${264:   ${265:subnet}: ${266:"#"}}
+${267:   ${268:subnet_uuid}: ${269:"#"}}
+${270:   ${271:tenant}: ${272:"#"}}
+${273:   ${274:tenant_ref}: ${275:"#"}}
+${276:   ${277:tenant_uuid}: ${278:"#"}}
+${279:   ${280:topology_policies}: ${281:"#"}}
+${282:   ${283:traffic_clone_profile_ref}: ${284:"#"}}
+${285:   ${286:traffic_enabled}: ${287:"#"}}
+${288:   ${289:type}: ${290:"#"}}
+${291:   ${292:url}: ${293:"#"}}
+${294:   ${295:use_bridge_ip_as_vip}: ${296:"#"}}
+${297:   ${298:use_vip_as_snat}: ${299:"#"}}
+${300:   ${301:username}: ${302:"#"}}
+${303:   ${304:uuid}: ${305:"#"}}
+${306:   ${307:vh_domain_name}: ${308:"#"}}
+${309:   ${310:vh_parent_vs_uuid}: ${311:"#"}}
+${312:   ${313:vip}: ${314:"#"}}
+${315:   ${316:vrf_context_ref}: ${317:"#"}}
+${318:   ${319:vs_datascripts}: ${320:"#"}}
+${321:   ${322:vsvip_cloud_config_cksum}: ${323:"#"}}
+${324:   ${325:vsvip_ref}: ${326:"#"}}
+${327:   ${328:waf_policy_ref}: ${329:"#"}}
+${330:   ${331:weight}: ${332:"#"}}
+${333:${334:   become: ${335:true}} 
+${336:   become_method: ${337:su}} 
+${338:   become_user: ${339:nobody}} 
+${340:   become_flags: ${341:"-s /bin/sh"}}} 
+${342:   when: ${343:variable is defined}} 
+${344:   with_items: ${345:array}} 
 ]]></content>
 	<tabTrigger>avi_virtualservice</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

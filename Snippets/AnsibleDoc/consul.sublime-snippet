@@ -1,24 +1,24 @@
 <snippet>
 <content><![CDATA[
-${1:# check_id: an ID for the service check, defaults to the 
-# check_name: a name for the service check, defaults to the 
+${1:# check_id: an ID for the service check. If `state=absent', 
+# check_name: a name for the service check. Required if 
 # host: host of the consul agent defaults to localhost 
-# http: checks can be registered with an http endpoint. 
+# http: checks can be registered with an HTTP endpoint. 
 # interval: the interval at which the service check will be 
 # notes: Notes to attach to check when registering it. 
 # port: the port on which the consul agent is running 
 # scheme: the protocol scheme on which the consul agent is 
 # script: the script/command that will be run periodically 
 # service_address: the address to advertise that the service will 
-# service_id: the ID for the service, must be unique per node, 
+# service_id: the ID for the service, must be unique per node. 
 # service_name: Unique name for the service on a node, must be 
 # service_port: the port on which the service is listening. Can 
-# state: (required) register or deregister the consul 
-# tags: a list of tags that will be attached to the 
+# state: register or deregister the consul service, 
+# tags: tags that will be attached to the service 
 # timeout: A custom HTTP check timeout. The consul default 
-# token: the token key indentifying an ACL rule set. May 
+# token: the token key identifying an ACL rule set. May 
 # ttl: checks can be registered with a ttl instead of a 
-# validate_certs: whether to verify the tls certificate of the 
+# validate_certs: whether to verify the TLS certificate of the 
 }- name: ${2:Name for consul module.}
   consul:
 ${3:   ${4:check_id}: ${5:"#"}}

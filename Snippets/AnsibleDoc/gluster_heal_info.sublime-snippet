@@ -1,0 +1,18 @@
+<snippet>
+<content><![CDATA[
+${1:# name: (required) The volume name. 
+# status_filter: Determines which facts are to be returned. If 
+}- name: ${2:Name for gluster_heal_info module.}
+  gluster_heal_info:
+${3:   ${4:name}: ${5:"#"}}
+${6:   ${7:status_filter}: ${8:"#"}}
+${9:${10:   become: ${11:true}} 
+${12:   become_method: ${13:su}} 
+${14:   become_user: ${15:nobody}} 
+${16:   become_flags: ${17:"-s /bin/sh"}}} 
+${18:   when: ${19:variable is defined}} 
+${20:   with_items: ${21:array}} 
+]]></content>
+	<tabTrigger>gluster_heal_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

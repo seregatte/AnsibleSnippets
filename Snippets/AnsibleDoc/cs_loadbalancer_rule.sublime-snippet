@@ -13,6 +13,7 @@ ${1:# account: Account the rule is related to.
 # domain: Domain the rule is related to. 
 # ip_address: (required) Public IP address from where the 
 # name: (required) The name of the load balancer rule. 
+# network: Name of the network. 
 # open_firewall: Whether the firewall rule for public port should 
 # poll_async: Poll async jobs until job has finished. 
 # private_port: The private port of the private ip 
@@ -21,6 +22,7 @@ ${1:# account: Account the rule is related to.
 # public_port: (required) The public port from where the 
 # state: State of the rule. 
 # tags: List of tags. Tags are a list of dictionaries 
+# vpc: Name of the VPC. 
 # zone: Name of the zone in which the rule should be 
 }- name: ${2:Name for cs_loadbalancer_rule module.}
   cs_loadbalancer_rule:
@@ -37,21 +39,23 @@ ${30:   ${31:description}: ${32:"#"}}
 ${33:   ${34:domain}: ${35:"#"}}
 ${36:   ${37:ip_address}: ${38:"#"}}
 ${39:   ${40:name}: ${41:"#"}}
-${42:   ${43:open_firewall}: ${44:"#"}}
-${45:   ${46:poll_async}: ${47:"#"}}
-${48:   ${49:private_port}: ${50:"#"}}
-${51:   ${52:project}: ${53:"#"}}
-${54:   ${55:protocol}: ${56:"#"}}
-${57:   ${58:public_port}: ${59:"#"}}
-${60:   ${61:state}: ${62:"#"}}
-${63:   ${64:tags}: ${65:"#"}}
-${66:   ${67:zone}: ${68:"#"}}
-${69:${70:   become: ${71:true}} 
-${72:   become_method: ${73:su}} 
-${74:   become_user: ${75:nobody}} 
-${76:   become_flags: ${77:"-s /bin/sh"}}} 
-${78:   when: ${79:variable is defined}} 
-${80:   with_items: ${81:array}} 
+${42:   ${43:network}: ${44:"#"}}
+${45:   ${46:open_firewall}: ${47:"#"}}
+${48:   ${49:poll_async}: ${50:"#"}}
+${51:   ${52:private_port}: ${53:"#"}}
+${54:   ${55:project}: ${56:"#"}}
+${57:   ${58:protocol}: ${59:"#"}}
+${60:   ${61:public_port}: ${62:"#"}}
+${63:   ${64:state}: ${65:"#"}}
+${66:   ${67:tags}: ${68:"#"}}
+${69:   ${70:vpc}: ${71:"#"}}
+${72:   ${73:zone}: ${74:"#"}}
+${75:${76:   become: ${77:true}} 
+${78:   become_method: ${79:su}} 
+${80:   become_user: ${81:nobody}} 
+${82:   become_flags: ${83:"-s /bin/sh"}}} 
+${84:   when: ${85:variable is defined}} 
+${86:   with_items: ${87:array}} 
 ]]></content>
 	<tabTrigger>cs_loadbalancer_rule</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

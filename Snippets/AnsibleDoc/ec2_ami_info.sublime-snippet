@@ -1,0 +1,42 @@
+<snippet>
+<content><![CDATA[
+${1:# aws_access_key: AWS access key. If not set then the value of the 
+# aws_secret_key: AWS secret key. If not set then the value of the 
+# debug_botocore_endpoint_logs: Use a botocore.endpoint logger to parse the 
+# describe_image_attributes: Describe attributes (like launchPermission) of 
+# ec2_url: Url to use to connect to EC2 or your Eucalyptus 
+# executable_users: Filter images by users with explicit launch 
+# filters: A dict of filters to apply. Each dict item 
+# image_ids: One or more image IDs. 
+# owners: Filter the images by the owner. Valid options 
+# profile: Uses a boto profile. Only works with boto >= 
+# region: The AWS region to use. If not specified then the 
+# : ec2_region 
+# security_token: AWS STS security token. If not set then the 
+# validate_certs: When set to "no", SSL certificates will not be 
+}- name: ${2:Name for ec2_ami_info module.}
+  ec2_ami_info:
+${3:   ${4:aws_access_key}: ${5:"#"}}
+${6:   ${7:aws_secret_key}: ${8:"#"}}
+${9:   ${10:debug_botocore_endpoint_logs}: ${11:"#"}}
+${12:   ${13:describe_image_attributes}: ${14:"#"}}
+${15:   ${16:ec2_url}: ${17:"#"}}
+${18:   ${19:executable_users}: ${20:"#"}}
+${21:   ${22:filters}: ${23:"#"}}
+${24:   ${25:image_ids}: ${26:"#"}}
+${27:   ${28:owners}: ${29:"#"}}
+${30:   ${31:profile}: ${32:"#"}}
+${33:   ${34:region}: ${35:"#"}}
+${36:   ${37:}: ${38:"#"}}
+${39:   ${40:security_token}: ${41:"#"}}
+${42:   ${43:validate_certs}: ${44:"#"}}
+${45:${46:   become: ${47:true}} 
+${48:   become_method: ${49:su}} 
+${50:   become_user: ${51:nobody}} 
+${52:   become_flags: ${53:"-s /bin/sh"}}} 
+${54:   when: ${55:variable is defined}} 
+${56:   with_items: ${57:array}} 
+]]></content>
+	<tabTrigger>ec2_ami_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

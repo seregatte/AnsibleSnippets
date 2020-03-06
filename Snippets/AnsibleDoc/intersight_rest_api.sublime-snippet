@@ -1,6 +1,6 @@
 <snippet>
 <content><![CDATA[
-${1:# api_body: The paylod for API requests used to modify 
+${1:# api_body: The payload for API requests used to modify 
 # api_key_id: (required) Public API Key ID associated with the 
 # api_private_key: (required) Filename (absolute path) of a PEM 
 # api_uri: URI used to access the Intersight API. 

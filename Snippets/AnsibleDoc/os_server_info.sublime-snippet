@@ -1,0 +1,48 @@
+<snippet>
+<content><![CDATA[
+${1:# all_projects: Whether to list servers from all projects or 
+# api_timeout: How long should the socket layer wait before 
+# auth: Dictionary containing auth information as needed 
+# auth_type: Name of the auth plugin to use. If the cloud 
+# availability_zone: Ignored. Present for backwards compatibility 
+# ca_cert: A path to a CA Cert bundle that can be used as 
+# client_cert: A path to a client certificate to use as part of 
+# client_key: A path to a client key to use as part of the SSL 
+# cloud: Named cloud or cloud config to operate against. 
+# detailed: when true, return additional detail about 
+# filters: restrict results to servers matching a 
+# interface: Endpoint URL type to fetch from the service 
+# region_name: Name of the region. 
+# server: restrict results to servers with names or UUID 
+# timeout: How long should ansible wait for the requested 
+# validate_certs: Whether or not SSL API requests should be 
+# wait: Should ansible wait until the requested resource 
+}- name: ${2:Name for os_server_info module.}
+  os_server_info:
+${3:   ${4:all_projects}: ${5:"#"}}
+${6:   ${7:api_timeout}: ${8:"#"}}
+${9:   ${10:auth}: ${11:"#"}}
+${12:   ${13:auth_type}: ${14:"#"}}
+${15:   ${16:availability_zone}: ${17:"#"}}
+${18:   ${19:ca_cert}: ${20:"#"}}
+${21:   ${22:client_cert}: ${23:"#"}}
+${24:   ${25:client_key}: ${26:"#"}}
+${27:   ${28:cloud}: ${29:"#"}}
+${30:   ${31:detailed}: ${32:"#"}}
+${33:   ${34:filters}: ${35:"#"}}
+${36:   ${37:interface}: ${38:"#"}}
+${39:   ${40:region_name}: ${41:"#"}}
+${42:   ${43:server}: ${44:"#"}}
+${45:   ${46:timeout}: ${47:"#"}}
+${48:   ${49:validate_certs}: ${50:"#"}}
+${51:   ${52:wait}: ${53:"#"}}
+${54:${55:   become: ${56:true}} 
+${57:   become_method: ${58:su}} 
+${59:   become_user: ${60:nobody}} 
+${61:   become_flags: ${62:"-s /bin/sh"}}} 
+${63:   when: ${64:variable is defined}} 
+${65:   with_items: ${66:array}} 
+]]></content>
+	<tabTrigger>os_server_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

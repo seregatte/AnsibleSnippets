@@ -1,0 +1,40 @@
+<snippet>
+<content><![CDATA[
+${1:# api_token: (required) FlashArray API token for admin 
+# auth_passphrase: SNMPv3 only. Passphrase of 8 - 32 characters. 
+# auth_protocol: SNMP v3 only. Hash algorithm to use 
+# community: SNMP v2c only. Manager community ID. Between 1 
+# fa_url: (required) FlashArray management IPv4 address or 
+# host: (required) IPv4 or IPv6 address or FQDN to send 
+# name: (required) Name of SNMP Manager 
+# notification: Action to perform on event. 
+# privacy_passphrase: SNMPv3 only. Passphrase to encrypt SNMP 
+# privacy_protocol: SNMP v3 only. Encryption protocol to use 
+# state: Create or delete SNMP manager 
+# user: SNMP v3 only. User ID recognized by the 
+# version: Version of SNMP protocol to use for the manager. 
+}- name: ${2:Name for purefa_snmp module.}
+  purefa_snmp:
+${3:   ${4:api_token}: ${5:"#"}}
+${6:   ${7:auth_passphrase}: ${8:"#"}}
+${9:   ${10:auth_protocol}: ${11:"#"}}
+${12:   ${13:community}: ${14:"#"}}
+${15:   ${16:fa_url}: ${17:"#"}}
+${18:   ${19:host}: ${20:"#"}}
+${21:   ${22:name}: ${23:"#"}}
+${24:   ${25:notification}: ${26:"#"}}
+${27:   ${28:privacy_passphrase}: ${29:"#"}}
+${30:   ${31:privacy_protocol}: ${32:"#"}}
+${33:   ${34:state}: ${35:"#"}}
+${36:   ${37:user}: ${38:"#"}}
+${39:   ${40:version}: ${41:"#"}}
+${42:${43:   become: ${44:true}} 
+${45:   become_method: ${46:su}} 
+${47:   become_user: ${48:nobody}} 
+${49:   become_flags: ${50:"-s /bin/sh"}}} 
+${51:   when: ${52:variable is defined}} 
+${53:   with_items: ${54:array}} 
+]]></content>
+	<tabTrigger>purefa_snmp</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>

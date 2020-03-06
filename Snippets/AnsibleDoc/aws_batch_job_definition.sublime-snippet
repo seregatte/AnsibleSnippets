@@ -21,7 +21,7 @@ ${1:# attempts: Retry strategy - The number of times to move a
 # region: The AWS region to use. If not specified then the 
 # : ec2_region 
 # security_token: AWS STS security token. If not set then the 
-# state: (required) Describes the desired state. 
+# state: Describes the desired state. 
 # type: (required) The type of job definition 
 # ulimits: A list of ulimits to set in the container. This 
 # user: The user name to use inside the container. This 

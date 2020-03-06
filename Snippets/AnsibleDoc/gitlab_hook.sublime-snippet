@@ -1,23 +1,23 @@
 <snippet>
 <content><![CDATA[
 ${1:# api_password: The password to use for authentication against 
-# api_token: Gitlab token for logging in. 
+# api_token: GitLab token for logging in. 
 # api_url: The resolvable endpoint for the API 
 # api_username: The username to use for authentication against 
 # hook_url: (required) The url that you want GitLab to post 
 # hook_validate_certs: Whether GitLab will do SSL verification when 
-# issues_events: Trigger hook on issues events 
-# job_events: Trigger hook on job events 
-# merge_requests_events: Trigger hook on merge requests events 
-# note_events: Trigger hook on note events 
-# pipeline_events: Trigger hook on pipeline events 
+# issues_events: Trigger hook on issues events. 
+# job_events: Trigger hook on job events. 
+# merge_requests_events: Trigger hook on merge requests events. 
+# note_events: Trigger hook on note events or when someone adds 
+# pipeline_events: Trigger hook on pipeline events. 
 # project: (required) Id or Full path of the project in the 
-# push_events: Trigger hook on push events 
+# push_events: Trigger hook on push events. 
 # state: (required) When `present' the hook will be 
-# tag_push_events: Trigger hook on tag push events 
+# tag_push_events: Trigger hook on tag push events. 
 # token: Secret token to validate hook messages at the 
 # validate_certs: Whether or not to validate SSL certs when 
-# wiki_page_events: Trigger hook on wiki events 
+# wiki_page_events: Trigger hook on wiki events. 
 }- name: ${2:Name for gitlab_hook module.}
   gitlab_hook:
 ${3:   ${4:api_password}: ${5:"#"}}

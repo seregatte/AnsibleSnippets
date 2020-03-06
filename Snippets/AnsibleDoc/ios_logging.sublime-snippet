@@ -6,7 +6,7 @@ ${1:# aggregate: List of logging definitions.
 # dest: Destination of the logs. 
 # facility: Set logging facility. 
 # level: Set logging severity levels. 
-# name: If value of `dest' is `file' it indicates file- 
+# name: The hostname or IP address of the destination. 
 # provider: *Deprecated* Starting with Ansible 2.5 we 
 # size: Size of buffer. The acceptable value is in range 
 # state: State of the logging configuration. 

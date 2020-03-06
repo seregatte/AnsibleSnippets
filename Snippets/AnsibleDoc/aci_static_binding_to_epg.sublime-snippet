@@ -2,7 +2,7 @@
 <content><![CDATA[
 ${1:# ap: Name of an existing application network profile, 
 # certificate_name: The X.509 certificate name attached to the APIC 
-# deploy_immediacy: The Deployement Immediacy of Static EPG on PC, 
+# deploy_immediacy: The Deployment Immediacy of Static EPG on PC, 
 # description: Description for the static path to EPG binding. 
 # encap_id: The encapsulation ID associating the `epg' with 
 # epg: The name of the end point group. 

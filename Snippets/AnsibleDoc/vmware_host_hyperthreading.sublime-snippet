@@ -5,6 +5,8 @@ ${1:# cluster_name: Name of the cluster from which all host systems
 # hostname: The hostname or IP address of the vSphere 
 # password: The password of the vSphere vCenter or ESXi 
 # port: The port number of the vSphere vCenter or ESXi 
+# proxy_host: Address of a proxy that will receive all HTTPS 
+# proxy_port: Port of the HTTP proxy that will receive all 
 # state: Enable or disable Hyperthreading. You need to 
 # username: The username of the vSphere vCenter or ESXi 
 # validate_certs: Allows connection when SSL certificates are not 
@@ -15,15 +17,17 @@ ${6:   ${7:esxi_hostname}: ${8:"#"}}
 ${9:   ${10:hostname}: ${11:"#"}}
 ${12:   ${13:password}: ${14:"#"}}
 ${15:   ${16:port}: ${17:"#"}}
-${18:   ${19:state}: ${20:"#"}}
-${21:   ${22:username}: ${23:"#"}}
-${24:   ${25:validate_certs}: ${26:"#"}}
-${27:${28:   become: ${29:true}} 
-${30:   become_method: ${31:su}} 
-${32:   become_user: ${33:nobody}} 
-${34:   become_flags: ${35:"-s /bin/sh"}}} 
-${36:   when: ${37:variable is defined}} 
-${38:   with_items: ${39:array}} 
+${18:   ${19:proxy_host}: ${20:"#"}}
+${21:   ${22:proxy_port}: ${23:"#"}}
+${24:   ${25:state}: ${26:"#"}}
+${27:   ${28:username}: ${29:"#"}}
+${30:   ${31:validate_certs}: ${32:"#"}}
+${33:${34:   become: ${35:true}} 
+${36:   become_method: ${37:su}} 
+${38:   become_user: ${39:nobody}} 
+${40:   become_flags: ${41:"-s /bin/sh"}}} 
+${42:   when: ${43:variable is defined}} 
+${44:   with_items: ${45:array}} 
 ]]></content>
 	<tabTrigger>vmware_host_hyperthreading</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

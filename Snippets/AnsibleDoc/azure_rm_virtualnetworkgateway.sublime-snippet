@@ -10,21 +10,21 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # enable_bgp: Whether BGP is enabled for this virtual network 
-# gateway_type: The type of this virtual network gateway 
-# ip_configurations: List of ip configurations 
-# location: Valid azure location. Defaults to location of 
+# gateway_type: The type of this virtual network gateway. 
+# ip_configurations: List of IP configurations. 
+# location: Valid Azure location. Defaults to location of 
 # name: (required) Name of VPN Gateway. 
 # password: Active Directory user password. Use when 
 # profile: Security profile found in ~/.azure/credentials 
 # resource_group: (required) Name of a resource group where VPN 
 # secret: Azure client secret. Use when authenticating 
 # sku: The reference of the VirtualNetworkGatewaySku 
-# state: Assert the state of the VPN Gateway. Use 
+# state: State of the VPN Gateway. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 
 # tenant: Azure tenant ID. Use when authenticating with a 
 # virtual_network: (required) An existing virtual network with 
-# vpn_type: The type of this virtual network gateway 
+# vpn_type: The type of this virtual private network. 
 }- name: ${2:Name for azure_rm_virtualnetworkgateway module.}
   azure_rm_virtualnetworkgateway:
 ${3:   ${4:ad_user}: ${5:"#"}}

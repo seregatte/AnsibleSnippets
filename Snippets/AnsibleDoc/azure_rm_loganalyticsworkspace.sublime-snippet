@@ -16,7 +16,7 @@ ${1:# ad_user: Active Directory username. Use when
 # resource_group: (required) Name of resource group. 
 # retention_in_days: The workspace data retention in days. -1 means 
 # secret: Azure client secret. Use when authenticating 
-# sku: The SKU of the workspace 
+# sku: The SKU of the workspace. 
 # state: Assert the state of the image. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tags: Dictionary of string:string pairs to assign as 

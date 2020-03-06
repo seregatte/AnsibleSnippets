@@ -15,7 +15,7 @@ ${1:# ad_user: Active Directory username. Use when
 # secret: Azure client secret. Use when authenticating 
 # server_name: (required) The name of the server. 
 # start_ip_address: The start IP address of the firewall rule. Must 
-# state: Assert the state of the SQL Database. Use 
+# state: State of the SQL Database. Use `present' to 
 # subscription_id: Your Azure subscription Id. 
 # tenant: Azure tenant ID. Use when authenticating with a 
 }- name: ${2:Name for azure_rm_sqlfirewallrule module.}

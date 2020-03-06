@@ -14,6 +14,7 @@ ${1:# disk_limit: The amount of disk space that is reserved for
 # state: Whether the specified quota should exist or not. 
 # threshold: The amount of disk space the target would have 
 # type: (required) The type of quota rule 
+# use_rest: REST API if supported by the target system for 
 # username: (required) This can be a Cluster-scoped or SVM- 
 # validate_certs: If set to `no', the SSL certificates will not be 
 # volume: (required) The name of the volume that the quota 
@@ -34,16 +35,17 @@ ${33:   ${34:set_quota_status}: ${35:"#"}}
 ${36:   ${37:state}: ${38:"#"}}
 ${39:   ${40:threshold}: ${41:"#"}}
 ${42:   ${43:type}: ${44:"#"}}
-${45:   ${46:username}: ${47:"#"}}
-${48:   ${49:validate_certs}: ${50:"#"}}
-${51:   ${52:volume}: ${53:"#"}}
-${54:   ${55:vserver}: ${56:"#"}}
-${57:${58:   become: ${59:true}} 
-${60:   become_method: ${61:su}} 
-${62:   become_user: ${63:nobody}} 
-${64:   become_flags: ${65:"-s /bin/sh"}}} 
-${66:   when: ${67:variable is defined}} 
-${68:   with_items: ${69:array}} 
+${45:   ${46:use_rest}: ${47:"#"}}
+${48:   ${49:username}: ${50:"#"}}
+${51:   ${52:validate_certs}: ${53:"#"}}
+${54:   ${55:volume}: ${56:"#"}}
+${57:   ${58:vserver}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>na_ontap_quotas</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -2,16 +2,16 @@
 <content><![CDATA[
 ${1:# ca_cert: Specifies the name of a file containing SSL 
 # db: Name of database to connect to. 
-# immediately_reserve: Optional parameter the when `yes' specifies that 
+# immediately_reserve: Optional parameter that when `yes' specifies 
 # login_host: Host running the database. 
 # login_password: The password used to authenticate with. 
 # login_unix_socket: Path to a Unix domain socket for local 
 # login_user: The username used to authenticate with. 
-# name: (required) Name of the slot to add or remove. 
+# name: (required) Name of the replication slot to add 
 # output_plugin: All logical slots must indicate which output 
 # port: Database port to connect to. 
 # session_role: Switch to session_role after connecting. The 
-# slot_type: Slot type. For more information see 
+# slot_type: Slot type. 
 # ssl_mode: Determines whether or with what priority a 
 # state: The slot state. `state=present' implies the slot 
 }- name: ${2:Name for postgresql_slot module.}

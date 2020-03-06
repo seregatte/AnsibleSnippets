@@ -9,7 +9,7 @@ ${1:# ad_user: Active Directory username. Use when
 # client_id: Azure client ID. Use when authenticating with a 
 # cloud_environment: For cloud environments other than the US public 
 # cluster_definition: The cluster definition. 
-# cluster_version: The version of the cluster. For example `3.6' 
+# cluster_version: The version of the cluster. For example `3.6'. 
 # compute_profile_roles: The list of roles in the cluster. 
 # location: Resource location. If not set, location from the 
 # name: (required) The name of the cluster. 

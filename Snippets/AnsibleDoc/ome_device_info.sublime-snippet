@@ -1,0 +1,26 @@
+<snippet>
+<content><![CDATA[
+${1:# fact_subset: `basic_inventory' returns the list of the 
+# hostname: (required) Target IP Address or hostname. 
+# password: (required) Target user password. 
+# port: Target HTTPS port. 
+# system_query_options: `system_query_options' applicable for the 
+# username: (required) Target username. 
+}- name: ${2:Name for ome_device_info module.}
+  ome_device_info:
+${3:   ${4:fact_subset}: ${5:"#"}}
+${6:   ${7:hostname}: ${8:"#"}}
+${9:   ${10:password}: ${11:"#"}}
+${12:   ${13:port}: ${14:"#"}}
+${15:   ${16:system_query_options}: ${17:"#"}}
+${18:   ${19:username}: ${20:"#"}}
+${21:${22:   become: ${23:true}} 
+${24:   become_method: ${25:su}} 
+${26:   become_user: ${27:nobody}} 
+${28:   become_flags: ${29:"-s /bin/sh"}}} 
+${30:   when: ${31:variable is defined}} 
+${32:   with_items: ${33:array}} 
+]]></content>
+	<tabTrigger>ome_device_info</tabTrigger>
+	<scope>source.yaml,source.ansible</scope>
+</snippet>
