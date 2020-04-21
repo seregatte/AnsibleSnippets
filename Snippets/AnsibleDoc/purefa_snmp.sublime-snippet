@@ -5,7 +5,7 @@ ${1:# api_token: (required) FlashArray API token for admin
 # auth_protocol: SNMP v3 only. Hash algorithm to use 
 # community: SNMP v2c only. Manager community ID. Between 1 
 # fa_url: (required) FlashArray management IPv4 address or 
-# host: (required) IPv4 or IPv6 address or FQDN to send 
+# host: IPv4 or IPv6 address or FQDN to send trap 
 # name: (required) Name of SNMP Manager 
 # notification: Action to perform on event. 
 # privacy_passphrase: SNMPv3 only. Passphrase to encrypt SNMP 
