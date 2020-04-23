@@ -43,7 +43,7 @@ ${1:# api_version: The version of the Docker API running on the
 # init: Run an init inside the container that forwards 
 # interactive: Keep stdin open after a container is launched, 
 # ipc_mode: Set the IPC mode for the container. Can be one 
-# keep_volumes: Retain volumes associated with a removed 
+# keep_volumes: Retain anonymous volumes associated with a 
 # kernel_memory: Kernel memory limit in format 
 # kill_signal: Override default signal used to kill a running 
 # labels: Dictionary of key value pairs. 

@@ -6,7 +6,7 @@ ${1:# checkout: If `no', do not check out the repository if it
 # export: If `yes', do export instead of checkout/update. 
 # force: If `yes', modified files will be discarded. If 
 # in_place: If the directory exists, then the working copy 
-# password: `--password' parameter passed to svn. 
+# password: `--password' parameter passed to svn when svn is 
 # repo: (required) The subversion URL to the repository. 
 # revision: Specific revision to checkout. 
 # switch: If `no', do not call svn switch before update. 
