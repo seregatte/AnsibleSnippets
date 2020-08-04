@@ -1,13 +1,13 @@
 <snippet>
 <content><![CDATA[
 ${1:# allow_micro_segmentation: Specifies microsegmentation is enabled or not. 
-# anp: The name of the ANP. 
+# anp: (required) The name of the ANP. 
 # deployment_immediacy: The deployment immediacy of the domain. 
 # domain_association_type: The type of domain to associate. 
 # domain_profile: The domain profile name. 
 # enhanced_lagpolicy_dn: Distinguished name of EPG lagpolicy. This 
 # enhanced_lagpolicy_name: EPG enhanced lagpolicy name. This attribute can 
-# epg: The name of the EPG. 
+# epg: (required) The name of the EPG. 
 # host: (required) IP Address or hostname of the ACI 
 # micro_seg_vlan: Virtual LAN for microsegmentation. This 
 # micro_seg_vlan_type: Virtual LAN type for microsegmentation. This 

@@ -15,7 +15,7 @@ ${1:# api_version: The version of the Docker API running on the
 # mage_prune: filte 
 # networks: Whether to list networks. 
 # networks_filters: A dictionary of filter values used for selecting 
-# ne: filtering) 
+# etwork_prune: fil 
 # ssl_version: Provide a valid SSL version number. Default 
 # timeout: The maximum amount of time in seconds to wait on 
 # tls: Secure the connection to the API by using TLS 
@@ -24,7 +24,7 @@ ${1:# api_version: The version of the Docker API running on the
 # verbose_output: When set to `yes' and `networks', `volumes', 
 # volumes: Whether to list volumes. 
 # volumes_filters: A dictionary of filter values used for selecting 
-# e: filtering) for 
+# olume_prune: filt 
 }- name: ${2:Name for docker_host_info module.}
   docker_host_info:
 ${3:   ${4:api_version}: ${5:"#"}}
@@ -42,7 +42,7 @@ ${36:   ${37:images_filters}: ${38:"#"}}
 ${39:   ${40:mage_prune}: ${41:"#"}}
 ${42:   ${43:networks}: ${44:"#"}}
 ${45:   ${46:networks_filters}: ${47:"#"}}
-${48:   ${49:ne}: ${50:"#"}}
+${48:   ${49:etwork_prune}: ${50:"#"}}
 ${51:   ${52:ssl_version}: ${53:"#"}}
 ${54:   ${55:timeout}: ${56:"#"}}
 ${57:   ${58:tls}: ${59:"#"}}
@@ -51,7 +51,7 @@ ${63:   ${64:validate_certs}: ${65:"#"}}
 ${66:   ${67:verbose_output}: ${68:"#"}}
 ${69:   ${70:volumes}: ${71:"#"}}
 ${72:   ${73:volumes_filters}: ${74:"#"}}
-${75:   ${76:e}: ${77:"#"}}
+${75:   ${76:olume_prune}: ${77:"#"}}
 ${78:${79:   become: ${80:true}} 
 ${81:   become_method: ${82:su}} 
 ${83:   become_user: ${84:nobody}} 
