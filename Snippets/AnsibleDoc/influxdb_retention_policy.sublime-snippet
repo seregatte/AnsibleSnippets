@@ -1,11 +1,11 @@
 <snippet>
 <content><![CDATA[
 ${1:# database_name: (required) Name of the database. 
-# default: (required) Sets the retention policy as default 
+# default: Sets the retention policy as default retention 
 # duration: (required) Determines how long InfluxDB should 
 # hostname: The hostname or IP address on which InfluxDB 
 # password: Password that will be used to authenticate 
-# policy_name: (required) Name of the retention policy 
+# policy_name: (required) Name of the retention policy. 
 # port: The port on which InfluxDB server is listening 
 # proxies: HTTP(S) proxy to use for Requests to connect to 
 # replication: (required) Determines how many independent 
