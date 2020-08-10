@@ -15,7 +15,7 @@ ${1:# auth: (required) Dictionary with values needed to
 # poll_interval: Number of the seconds the module waits until 
 # state: Should the network be present or absent 
 # timeout: The amount of time in seconds the module should 
-# vlan_tag: Specify VLAN tag. 
+# vlan_tag: Specify VLAN tag. NOTE - To remove the vlan_tag 
 # vm_network: If `True' network will be marked as network for 
 # wait: `yes' if the module should wait for the entity 
 }- name: ${2:Name for ovirt_network module.}
