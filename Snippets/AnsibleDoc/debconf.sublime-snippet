@@ -4,7 +4,7 @@ ${1:# name: (required) Name of package to configure.
 # question: A debconf configuration setting. 
 # unseen: Do not set 'seen' flag when pre-seeding. 
 # value: Value to set the configuration to. 
-# vtype: The type of the value supplied. `seen' was added 
+# vtype: The type of the value supplied. It is highly 
 }- name: ${2:Name for debconf module.}
   debconf:
 ${3:   ${4:name}: ${5:"#"}}
