@@ -7,7 +7,7 @@ ${1:# after: If specified, only content after this match will
 # encoding: The character encoding for reading and writing 
 # group: Name of the group that should own the 
 # mode: The permissions the resulting file or directory 
-# others: All arguments accepted by the [file] module also 
+# others: All arguments accepted by the 
 # owner: Name of the user that should own the 
 # path: (required) The file to modify. Before Ansible 
 # regexp: (required) The regular expression to look for in 
