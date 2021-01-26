@@ -3,7 +3,7 @@
 ${1:# action: Whether the rule should be appended at the 
 # chain: Specify the iptables chain to modify. This could 
 # comment: This specifies a comment that will be added to 
-# ctstate: `ctstate' is a list of the connection states to 
+# ctstate: A list of the connection states to match in the 
 # destination: Destination specification. Address can be either 
 # destination_port: Destination port or port range specification. 
 # dst_range: Specifies the destination IP range to match in 
@@ -40,6 +40,7 @@ ${1:# action: Whether the rule should be appended at the
 # to_ports: This specifies a destination port or range of 
 # to_source: This specifies a source address to use with 
 # uid_owner: Specifies the UID or username to use in match by 
+# wait: Wait N seconds for the xtables lock to prevent 
 }- name: ${2:Name for iptables module.}
   iptables:
 ${3:   ${4:action}: ${5:"#"}}
@@ -82,12 +83,13 @@ ${111:   ${112:to_destination}: ${113:"#"}}
 ${114:   ${115:to_ports}: ${116:"#"}}
 ${117:   ${118:to_source}: ${119:"#"}}
 ${120:   ${121:uid_owner}: ${122:"#"}}
-${123:${124:   become: ${125:true}} 
-${126:   become_method: ${127:su}} 
-${128:   become_user: ${129:nobody}} 
-${130:   become_flags: ${131:"-s /bin/sh"}}} 
-${132:   when: ${133:variable is defined}} 
-${134:   with_items: ${135:array}} 
+${123:   ${124:wait}: ${125:"#"}}
+${126:${127:   become: ${128:true}} 
+${129:   become_method: ${130:su}} 
+${131:   become_user: ${132:nobody}} 
+${133:   become_flags: ${134:"-s /bin/sh"}}} 
+${135:   when: ${136:variable is defined}} 
+${137:   with_items: ${138:array}} 
 ]]></content>
 	<tabTrigger>iptables</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

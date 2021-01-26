@@ -6,6 +6,8 @@ ${1:# codename: Override the distribution codename to use for
 # repo: (required) A source string for the repository. 
 # state: A source string state. 
 # update_cache: Run the equivalent of `apt-get update' when a 
+# update_cache_retries: Amount of retries if the cache update fails. 
+# update_cache_retry_max_delay: Use an exponential backoff delay for each retry 
 # validate_certs: If `no', SSL certificates for the target repo 
 }- name: ${2:Name for apt_repository module.}
   apt_repository:
@@ -15,13 +17,15 @@ ${9:   ${10:mode}: ${11:"#"}}
 ${12:   ${13:repo}: ${14:"#"}}
 ${15:   ${16:state}: ${17:"#"}}
 ${18:   ${19:update_cache}: ${20:"#"}}
-${21:   ${22:validate_certs}: ${23:"#"}}
-${24:${25:   become: ${26:true}} 
-${27:   become_method: ${28:su}} 
-${29:   become_user: ${30:nobody}} 
-${31:   become_flags: ${32:"-s /bin/sh"}}} 
-${33:   when: ${34:variable is defined}} 
-${35:   with_items: ${36:array}} 
+${21:   ${22:update_cache_retries}: ${23:"#"}}
+${24:   ${25:update_cache_retry_max_delay}: ${26:"#"}}
+${27:   ${28:validate_certs}: ${29:"#"}}
+${30:${31:   become: ${32:true}} 
+${33:   become_method: ${34:su}} 
+${35:   become_user: ${36:nobody}} 
+${37:   become_flags: ${38:"-s /bin/sh"}}} 
+${39:   when: ${40:variable is defined}} 
+${41:   with_items: ${42:array}} 
 ]]></content>
 	<tabTrigger>apt_repository</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

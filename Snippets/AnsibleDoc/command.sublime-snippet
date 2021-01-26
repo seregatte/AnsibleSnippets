@@ -3,9 +3,9 @@
 ${1:# argv: Passes the command as a list rather than a 
 # chdir: Change into this directory before running the 
 # cmd: The command to run. 
-# creates: A filename or (since 2.0) glob pattern. If it 
-# free_form: The command module takes a free form command to 
-# removes: A filename or (since 2.0) glob pattern. If it 
+# creates: A filename or (since 2.0) glob pattern. If a 
+# free_form: The command module takes a free form string as a 
+# removes: A filename or (since 2.0) glob pattern. If a 
 # stdin: Set the stdin of the command directly to the 
 # stdin_add_newline: If set to `yes', append a newline to stdin data. 
 # strip_empty_ends: Strip empty lines from the end of stdout/stderr 
