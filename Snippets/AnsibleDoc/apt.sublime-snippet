@@ -16,6 +16,8 @@ ${1:# allow_unauthenticated: Ignore if packages cannot be authenticated. This
 # purge: Will force purging of configuration files if the 
 # state: Indicates the desired package state. `latest' 
 # update_cache: Run the equivalent of `apt-get update' before 
+# update_cache_retries: Amount of retries if the cache update fails. 
+# update_cache_retry_max_delay: Use an exponential backoff delay for each retry 
 # upgrade: If yes or safe, performs an aptitude safe- 
 }- name: ${2:Name for apt module.}
   apt:
@@ -35,13 +37,15 @@ ${39:   ${40:policy_rc_d}: ${41:"#"}}
 ${42:   ${43:purge}: ${44:"#"}}
 ${45:   ${46:state}: ${47:"#"}}
 ${48:   ${49:update_cache}: ${50:"#"}}
-${51:   ${52:upgrade}: ${53:"#"}}
-${54:${55:   become: ${56:true}} 
-${57:   become_method: ${58:su}} 
-${59:   become_user: ${60:nobody}} 
-${61:   become_flags: ${62:"-s /bin/sh"}}} 
-${63:   when: ${64:variable is defined}} 
-${65:   with_items: ${66:array}} 
+${51:   ${52:update_cache_retries}: ${53:"#"}}
+${54:   ${55:update_cache_retry_max_delay}: ${56:"#"}}
+${57:   ${58:upgrade}: ${59:"#"}}
+${60:${61:   become: ${62:true}} 
+${63:   become_method: ${64:su}} 
+${65:   become_user: ${66:nobody}} 
+${67:   become_flags: ${68:"-s /bin/sh"}}} 
+${69:   when: ${70:variable is defined}} 
+${71:   with_items: ${72:array}} 
 ]]></content>
 	<tabTrigger>apt</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>

@@ -2,21 +2,21 @@
 <content><![CDATA[
 ${1:# backup: If set, create a backup of the crontab before it 
 # cron_file: If specified, uses this file instead of an 
-# day: Day of the month the job should run ( 1-31, *, 
+# day: Day of the month the job should run (`1-31', 
 # disabled: If the job should be disabled (commented out) in 
 # env: If set, manages a crontab's environment 
-# hour: Hour when the job should run ( 0-23, *, */2, etc 
+# hour: Hour when the job should run (`0-23', `*', 
 # insertafter: Used with `state=present' and `env'. If 
 # insertbefore: Used with `state=present' and `env'. If 
 # job: The command to execute or, if env is set, the 
-# minute: Minute when the job should run ( 0-59, *, */2, 
-# month: Month of the year the job should run ( 1-12, *, 
+# minute: Minute when the job should run (`0-59', `*', 
+# month: Month of the year the job should run (`1-12', 
 # name: Description of a crontab entry or, if env is 
 # reboot: If the job should be run at reboot. This option 
 # special_time: Special time specification nickname. 
 # state: Whether to ensure the job or environment 
 # user: The specific user whose crontab should be 
-# weekday: Day of the week that the job should run ( 0-6 
+# weekday: Day of the week that the job should run (`0-6' 
 }- name: ${2:Name for cron module.}
   cron:
 ${3:   ${4:backup}: ${5:"#"}}

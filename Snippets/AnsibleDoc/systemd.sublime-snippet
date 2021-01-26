@@ -7,7 +7,7 @@ ${1:# daemon_reexec: Run daemon_reexec command before doing any other
 # masked: Whether the unit should be masked or not, a 
 # name: Name of the service. This parameter takes the 
 # no_block: Do not synchronously wait for the requested 
-# scope: run systemctl within a given service manager 
+# scope: Run systemctl within a given service manager 
 # state: `started'/`stopped' are idempotent actions that 
 # user: (deprecated) run ``systemctl`` talking to the 
 }- name: ${2:Name for systemd module.}

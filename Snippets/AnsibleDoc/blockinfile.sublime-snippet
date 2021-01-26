@@ -5,8 +5,8 @@ ${1:# attributes: The attributes the resulting file or directory
 # block: The text to insert inside the marker lines. If 
 # create: Create a new file if it does not exist. 
 # group: Name of the group that should own the 
-# insertafter: If specified, the block will be inserted after 
-# insertbefore: If specified, the block will be inserted before 
+# insertafter: If specified and no begin/ending `marker' lines 
+# insertbefore: If specified and no begin/ending `marker' lines 
 # marker: The marker line template. `{mark}' will be 
 # marker_begin: This will be inserted at `{mark}' in the opening 
 # marker_end: This will be inserted at `{mark}' in the closing 

@@ -18,7 +18,7 @@ ${1:# append: If `yes', add the user to the groups specified
 # non_unique: Optionally when used with the -u option, this 
 # password: Optionally set the user's password to this 
 # : how-do-i 
-# password_lock: Lock the password (usermod -L, pw lock, usermod 
+# password_lock: Lock the password (`usermod -L', `usermod -U', 
 # profile: Sets the profile of the user. Does nothing when 
 # remove: This only affects `state=absent', it attempts to 
 # role: Sets the role of the user. Does nothing when 

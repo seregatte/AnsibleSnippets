@@ -10,7 +10,7 @@ ${1:# attributes: The attributes the resulting file or directory
 # insertbefore: Used with `state=present'. If specified, the 
 # line: The line to insert/replace into the file. 
 # mode: The permissions the resulting file or directory 
-# others: All arguments accepted by the [file] module also 
+# others: All arguments accepted by the 
 # owner: Name of the user that should own the 
 # path: (required) The file to modify. Before Ansible 
 # regexp: The regular expression to look for in every line 

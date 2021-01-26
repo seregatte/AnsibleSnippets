@@ -13,6 +13,7 @@ ${1:# allow_downgrade: Specify if the named package and version is
 # enable_plugin: `Plugin' name to enable for the install/update 
 # enablerepo: `Repoid' of repositories to enable for the 
 # exclude: Package name(s) to exclude when state=present, 
+# install_repoquery: If repoquery is not available, install yum- 
 # install_weak_deps: Will also install all packages linked by a weak 
 # installroot: Specifies an alternative installroot, relative 
 # list: Package name to run the equivalent of yum list 
@@ -41,25 +42,26 @@ ${30:   ${31:download_only}: ${32:"#"}}
 ${33:   ${34:enable_plugin}: ${35:"#"}}
 ${36:   ${37:enablerepo}: ${38:"#"}}
 ${39:   ${40:exclude}: ${41:"#"}}
-${42:   ${43:install_weak_deps}: ${44:"#"}}
-${45:   ${46:installroot}: ${47:"#"}}
-${48:   ${49:list}: ${50:"#"}}
-${51:   ${52:lock_timeout}: ${53:"#"}}
-${54:   ${55:name}: ${56:"#"}}
-${57:   ${58:releasever}: ${59:"#"}}
-${60:   ${61:security}: ${62:"#"}}
-${63:   ${64:skip_broken}: ${65:"#"}}
-${66:   ${67:state}: ${68:"#"}}
-${69:   ${70:update_cache}: ${71:"#"}}
-${72:   ${73:update_only}: ${74:"#"}}
-${75:   ${76:use_backend}: ${77:"#"}}
-${78:   ${79:validate_certs}: ${80:"#"}}
-${81:${82:   become: ${83:true}} 
-${84:   become_method: ${85:su}} 
-${86:   become_user: ${87:nobody}} 
-${88:   become_flags: ${89:"-s /bin/sh"}}} 
-${90:   when: ${91:variable is defined}} 
-${92:   with_items: ${93:array}} 
+${42:   ${43:install_repoquery}: ${44:"#"}}
+${45:   ${46:install_weak_deps}: ${47:"#"}}
+${48:   ${49:installroot}: ${50:"#"}}
+${51:   ${52:list}: ${53:"#"}}
+${54:   ${55:lock_timeout}: ${56:"#"}}
+${57:   ${58:name}: ${59:"#"}}
+${60:   ${61:releasever}: ${62:"#"}}
+${63:   ${64:security}: ${65:"#"}}
+${66:   ${67:skip_broken}: ${68:"#"}}
+${69:   ${70:state}: ${71:"#"}}
+${72:   ${73:update_cache}: ${74:"#"}}
+${75:   ${76:update_only}: ${77:"#"}}
+${78:   ${79:use_backend}: ${80:"#"}}
+${81:   ${82:validate_certs}: ${83:"#"}}
+${84:${85:   become: ${86:true}} 
+${87:   become_method: ${88:su}} 
+${89:   become_user: ${90:nobody}} 
+${91:   become_flags: ${92:"-s /bin/sh"}}} 
+${93:   when: ${94:variable is defined}} 
+${95:   with_items: ${96:array}} 
 ]]></content>
 	<tabTrigger>yum</tabTrigger>
 	<scope>source.yaml,source.ansible</scope>
